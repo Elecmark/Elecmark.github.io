@@ -10,9 +10,9 @@
 # BASIC INFORMATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 info:
   # Site title
-  title: Theme Redefine
+  title: Pu DianHeng
   # Author name
-  author: The Redefine Team
+  author: ELecmark
   # Site URL
   url: https://redefine.ohevan.com
 # BASIC INFORMATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
@@ -21,11 +21,11 @@ info:
 # IMAGE CONFIGURATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 defaults:
   # Favicon
-  favicon: /images/redefine-favicon.svg
+  favicon: /images/pdh-logo.ico
   # Site logo
-  logo: 
+  logo: /images/pdh-logo.ico 
   # Site avatar
-  avatar: /images/redefine-avatar.svg
+  avatar: /images/pdh-logo.ico 
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -44,12 +44,12 @@ global:
   fonts:
     # Chinese fonts
     chinese: 
-      enable: false # Whether to enable custom chinese font
+      enable: true # Whether to enable custom chinese font
       family:  # Font family
       url:  # Font URL to CSS file
     # English fonts
     english: 
-      enable: false # Whether to enable custom chinese font
+      enable: true # Whether to enable custom chinese font
       family:  # Font family
       url:  # Font URL to CSS file
   # Content max width
@@ -62,7 +62,7 @@ global:
     scale: false # scale effect
   # Scroll progress
   scroll_progress:
-    bar: false # progress bar
+    bar: true # progress bar
     percentage: true # percentage
   # Website counter
   website_counter:
@@ -106,7 +106,7 @@ home_banner:
     light: /images/wallhaven-wqery6-light.webp # light mode
     dark: /images/wallhaven-wqery6-dark.webp # dark mode
   # Home banner title
-  title: Theme Redefine
+  title: OUC-普典衡
   # Home banner subtitle
   subtitle:
     text: [] # subtitle text, array
@@ -172,19 +172,22 @@ navbar:
     Home: 
       path: / 
       icon: fa-regular fa-house # can be empty
-    # Archives: 
-    #   path: /archives 
-    #   icon: fa-regular fa-archive # can be empty
-    # Status: 
-    #   path: https://status.evanluo.top/
-    #   icon: fa-regular fa-chart-bar
-    # About: 
-    #   icon: fa-regular fa-user
-    #   submenus:
-    #     Me: /about
-    #     Github: https://github.com/EvanNotFound/hexo-theme-redefine
-    #     Blog: https://ohevan.com
-    #     Friends: /friends
+    My Github: # 一级菜单栏名称
+      path: https://github.com/Elecmark # 网址，可以为相对路径或者绝对路径
+      icon: fa-brands fa-github # Fontawesome图标名称（可选）
+    Archives: 
+      path: /archives 
+      icon: fa-regular fa-archive # can be empty
+    Status: 
+      path: https://status.evanluo.top/
+      icon: fa-regular fa-chart-bar
+    About: 
+      icon: fa-regular fa-user
+      submenus:
+        Me: /about
+        #Github: https://github.com/EvanNotFound/hexo-theme-redefine
+        #Blog: https://ohevan.com
+        #Friends: /friends
     # Links: 
     #   icon: fa-regular fa-link
     #   submenus:
@@ -195,7 +198,7 @@ navbar:
   # Navbar search (local search). Requires hexo-generator-searchdb (npm i hexo-generator-searchdb). See https://github.com/theme-next/hexo-generator-searchdb
   search:
     # Whether to enable
-    enable: false
+    enable: true
     # Preload search data when the page loads
     preload: true
 # NAVIGATION BAR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
@@ -251,8 +254,8 @@ articles:
   # Author label
   author_label: 
     enable: true # Whether to enable
-    auto: false # Whether to automatically add author label, e.g. Lv1, Lv2, Lv3...
-    list: []
+    auto: true # Whether to automatically add author label, e.g. Lv1, Lv2, Lv3...
+    list: [VIP]
   # Code block settings
   code_block:
     copy: true # Whether to enable code block copy button
@@ -335,7 +338,7 @@ footer:
   # Icon in footer, write fontawesome icon code here
   icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
   # The start time of the website, format: YYYY/MM/DD HH:mm:ss
-  start: 2022/9/24 19:02:20
+  start: 2023/9/24 19:02:20
   # Footer message
   customize:
   # ICP record number. See https://beian.miit.gov.cn/

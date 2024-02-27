@@ -25,6 +25,7 @@ source_dir: source
 public_dir: public
 tag_dir: tags
 archive_dir: archives
+about_dir: about
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
@@ -97,11 +98,13 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-redefine-main
+theme: redefine
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: https://github.com/Elecmark/Elecmark.github.io.git
+  repository: git@github.com:Elecmark/Elecmark.github.io.git
   branch: main
+  keep_files:
+    - about/index.html
