@@ -4599,7 +4599,7 @@ html.is-animating .scroll-progress-bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(120deg, rgba(247,135,54,0.208) 0%, rgba(54,125,247,0.208) 100%);
+  background: linear-gradient(120deg, rgba(247,135,54,0.145) 0%, rgba(54,125,247,0.145) 100%);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding-top: 2px;
@@ -9492,12 +9492,6 @@ html.is-animating .scroll-progress-bar {
 .aplayer .aplayer-icon-forward,
 .aplayer .aplayer-icon-lrc {
   display: none;
-}
-.aplayer .aplayer-icon-lrc {
-  pointer-events: none;
-}
-.aplayer .aplayer-icon-lrc svg {
-  opacity: 0.4;
 }
 .aplayer .aplayer-icon-lrc-inactivity svg {
   opacity: 0.4;
