@@ -1712,7 +1712,7 @@
 <iframe 
 src="//player.bilibili.com/player.html?aid=1701692717&bvid=BV15K421x7aj&cid=1463230031&p=1" scrolling="no" border="0" 
 frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe>
+height: 0; left: 0; top: 0;"> </iframe>
 
 <p><img  
                      lazyload
