@@ -1,0 +1,50 @@
+生效的主题配置文件是：D:\Blog\Elecmark\_config.redefine.yml
+
+右键Elecmark根目录，选Git Bash终端
+
+创建页面输入：
+
+hexo new page xxxxx
+
+创建博客输入：
+
+hexo new "博客名"
+
+然后去Elecmark\source\_posts下面找对应的md编辑（md用到的图片放在Elecmark\source\images\博客名）下
+编辑好后保存
+终端输入懒人指令上传到云端，同时在本地跑起：
+
+hexo g && hexo d && hexo s
+
+
+文章头格式：
+title: 《让蛋仔飞》技术报告
+date: 2024-01-08 18:06:06
+tags:
+  - 《让蛋仔飞》
+  - Unity
+  - 微信小游戏
+  - 技术报告
+categories:
+  - 游戏开发
+  - Unity
+  - 微信小游戏
+excerpt: "个人依靠Unity开发的微信小游戏《让蛋仔飞》的技术报告"
+thumbnail: "../images/《让蛋仔飞》技术报告/thumbnail.png"
+cover: "../images/《让蛋仔飞》技术报告/code.jpg"
+sticky: 100
+
+title: 标题
+date: 时间
+tags:
+  - 第一个tag
+  - 第二个tag
+  - ...
+categories:
+  - 根目录
+  - 二级目录
+  - ...
+excerpt: "简介"
+thumbnail: 帖子缩略图
+cover: 帖子首部图
+sticky: 置顶优先级，数字越大越靠近顶部

@@ -104,7 +104,7 @@ theme: redefine
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: git@github.com:Elecmark/Elecmark.github.io.git
+  repository: https://github.com/Elecmark/Elecmark.github.io.git
   branch: main
   keep_files:
     - about/index.html
