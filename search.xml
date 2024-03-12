@@ -1803,4 +1803,120 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
         <tag>动画</tag>
       </tags>
   </entry>
+  <entry>
+    <title>经典C++游戏《潜艇大战》改编练习</title>
+    <url>/2024/03/12/c/</url>
+    <content><![CDATA[<h2 id="原版效果："><a href="#原版效果：" class="headerlink" title="原版效果："></a>原版效果：</h2><h3 id="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："><a href="#依靠鼠标点击去炸毁潜艇得分，类似打地鼠：" class="headerlink" title="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："></a>依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif"
+                      alt="ShipDemo_old"
+                ></p>
+<h2 id="改编效果："><a href="#改编效果：" class="headerlink" title="改编效果："></a>改编效果：</h2><h3 id="靠船左右移动投炸弹炸毁潜艇得分："><a href="#靠船左右移动投炸弹炸毁潜艇得分：" class="headerlink" title="靠船左右移动投炸弹炸毁潜艇得分："></a>靠船左右移动投炸弹炸毁潜艇得分：</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_new.gif"
+                      alt="ShipDemo_new"
+                ></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本报告详细分析了《潜艇大战》游戏从原版到改编版本中的关键代码变化。原版游戏的核心玩法是使用鼠标点击来炸毁潜艇并得分，类似于“打地鼠”的游戏模式。改编版本则通过控制船的左右移动并投掷炸弹来炸毁潜艇以得分。</p>
+<h2 id="1-核心视图类-CChildView-类分析"><a href="#1-核心视图类-CChildView-类分析" class="headerlink" title="1. 核心视图类 (CChildView) 类分析"></a>1. 核心视图类 (<code>CChildView</code>) 类分析</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p><code>CChildView</code> 类是《潜艇大战》游戏的核心视图类，负责管理游戏对象、处理用户输入、绘制游戏界面等。</p>
+<h3 id="OnTimer-方法分析"><a href="#OnTimer-方法分析" class="headerlink" title="OnTimer 方法分析"></a><code>OnTimer</code> 方法分析</h3><h4 id="创建和管理潜艇"><a href="#创建和管理潜艇" class="headerlink" title="创建和管理潜艇"></a>创建和管理潜艇</h4><p><strong>潜艇创建逻辑</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(nCreator==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    m_Objects.<span class="built_in">AddTail</span>(<span class="keyword">new</span> <span class="built_in">CSubmarine</span>(<span class="built_in">random</span>(<span class="number">2</span>)%<span class="number">2</span>?<span class="literal">true</span>:<span class="literal">false</span>, <span class="built_in">random</span>(GAME_HEIGHT-SHIP_VERT_POS-SHIP_HEIGHT*<span class="number">2</span><span class="number">-30</span>)+SHIP_VERT_POS+SHIP_HEIGHT+<span class="number">30</span>, <span class="built_in">random</span>(<span class="number">4</span>), <span class="built_in">random</span>(<span class="number">4</span>)+<span class="number">3</span>));</span><br><span class="line">    nCreator = <span class="built_in">random</span>(<span class="number">50</span>) + <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><code>nCreator</code> 用于控制潜艇生成的时间间隔。当它变为 0，代码会创建一个新的 <code>CSubmarine</code> 对象并将其添加到游戏对象列表 <code>m_Objects</code>。</li>
+<li>每个潜艇的位置、类型和速度都是随机生成的，提供了游戏的可变性和挑战性。</li>
+</ul>
+<p><strong>潜艇管理逻辑</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">POSITION pos1, pos2;</span><br><span class="line"><span class="keyword">for</span>(pos1=m_Objects.<span class="built_in">GetHeadPosition</span>(); (pos2=pos1)!=<span class="literal">NULL</span>;)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(((CMyObject*)m_Objects.<span class="built_in">GetNext</span>(pos1))-&gt;<span class="built_in">Draw</span>(&amp;m_VirtualDC, m_bGamePause))</span><br><span class="line">    &#123;</span><br><span class="line">        pLastObj = m_Objects.<span class="built_in">GetAt</span>(pos2);</span><br><span class="line">        m_Objects.<span class="built_in">RemoveAt</span>(pos2);</span><br><span class="line">        <span class="keyword">delete</span> pLastObj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>这段代码遍历 <code>m_Objects</code> 中的所有游戏对象，并对它们调用 <code>Draw</code> 方法。</li>
+<li>如果 <code>Draw</code> 方法返回 <code>true</code>，表明对象（如潜艇）需要被移除。这通常在对象（如潜艇被击中或移动出屏幕）结束其生命周期时发生。</li>
+</ul>
+<h4 id="游戏画面渲染"><a href="#游戏画面渲染" class="headerlink" title="游戏画面渲染"></a>游戏画面渲染</h4><p><strong>背景绘制</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, SKY_COLOR);</span><br><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, GAME_WIDTH, GAME_HEIGHT, SEA_COLOR);</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>这里使用 <code>FillSolidRect</code> 在虚拟设备上下文 <code>m_VirtualDC</code> 上绘制天空和海洋背景。</li>
+<li><code>SKY_COLOR</code> 和 <code>SEA_COLOR</code> 定义了天空和海洋的颜色。</li>
+</ul>
+<p><strong>最终渲染到屏幕</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">dc.<span class="built_in">BitBlt</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, GAME_HEIGHT, &amp;m_VirtualDC, <span class="number">0</span>, <span class="number">0</span>, SRCCOPY);</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>使用 <code>BitBlt</code> 方法将虚拟设备上下文的内容传输到实际的屏幕上下文。</li>
+<li>这种方法可以避免闪烁并提高绘图效率。</li>
+</ul>
+<h4 id="其他重要逻辑"><a href="#其他重要逻辑" class="headerlink" title="其他重要逻辑"></a>其他重要逻辑</h4><p><strong>游戏暂停功能</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(m_bGamePause) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>控制游戏暂停。当 <code>m_bGamePause</code> 为 <code>true</code> 时，<code>OnTimer</code> 将提前返回，不执行任何游戏更新逻辑。</li>
+</ul>
+<p><strong>潜艇生成计数器更新</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">nCreator--;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><code>nCreator</code> 每次 <code>OnTimer</code> 被调用时递减，控制潜艇的生成频率。</li>
+</ul>
+<p>总结来说，<code>OnTimer</code> 方法是游戏的心脏，负责潜艇的生成和管理、游戏画面的更新和渲染，以及控制游戏的暂停和继续。这个方法充分展示了游戏循环的典型结构，包括对象管理、状态更新和画面渲染。</p>
+<h2 id="2-潜艇类-CSubmarine-的变更"><a href="#2-潜艇类-CSubmarine-的变更" class="headerlink" title="2. 潜艇类 (CSubmarine) 的变更"></a>2. 潜艇类 (<code>CSubmarine</code>) 的变更</h2><h3 id="原版"><a href="#原版" class="headerlink" title="原版"></a>原版</h3><p>在原版中，<code>CSubmarine</code> 类主要负责潜艇的初始化、移动、绘图和销毁。这个类使用了 <code>CImageList</code> 来处理潜艇的图像。潜艇的移动是基于它们的方向 (<code>m_bDirect</code>) 和速度 (<code>m_nSpeed</code>)。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CSubmarine::<span class="built_in">CSubmarine</span>(<span class="type">bool</span> bDir, <span class="type">int</span> nVert, <span class="type">int</span> nType, <span class="type">int</span> nSpeed)</span><br><span class="line">&#123;</span><br><span class="line">    m_bDirect = bDir;</span><br><span class="line">    m_ptPos.x = m_bDirect ? GAME_WIDTH : -SUBMARINE_WIDTH;</span><br><span class="line">    m_ptPos.y = nVert;</span><br><span class="line">    <span class="comment">// ...[其他初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="改编版本"><a href="#改编版本" class="headerlink" title="改编版本"></a>改编版本</h3><p>在改版中，<code>CSubmarine</code> 类增加了 <code>GetRect()</code> 方法，用于获取潜艇的碰撞箱。这是为了适应游戏中的新机制，如导弹与潜艇的碰撞检测。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CSubmarine::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + SubmarineWidth, m_ptPos.y + SubmarineHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="3-新增导弹类-CMissile"><a href="#3-新增导弹类-CMissile" class="headerlink" title="3. 新增导弹类 (CMissile)"></a>3. 新增导弹类 (<code>CMissile</code>)</h2><p>在改编版本中，新增了导弹类 <code>CMissile</code>。这一变化扩展了游戏的交互性和复杂度。</p>
+<h3 id="原版-1"><a href="#原版-1" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中没有导弹类的概念。</p>
+<h3 id="改编版本-1"><a href="#改编版本-1" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中添加了 <code>CMissile</code> 类，并在主游戏循环中处理导弹的移动和碰撞检测。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">typeid</span>(*pObj) == <span class="built_in">typeid</span>(CMissile))</span><br><span class="line">&#123;</span><br><span class="line">    CMissile* pMissile = (CMissile*)pObj;</span><br><span class="line">    pMissile-&gt;<span class="built_in">Move</span>(); <span class="comment">// 移动导弹</span></span><br><span class="line">    <span class="comment">// ... [碰撞检测和处理代码] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><p><strong>构造函数</strong>：初始化导弹的位置和生命周期。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CMissile::<span class="built_in">CMissile</span>(CPoint ptPos) : <span class="built_in">CMyObject</span>(ptPos)</span><br><span class="line">&#123;</span><br><span class="line">    m_nLifetime = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// ...[初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong><code>Move</code> 方法</strong>：控制导弹的移动。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMissile::Move</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_ptPos.y += <span class="number">20</span>;  <span class="comment">// ...[移动逻辑]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong><code>GetRect</code> 方法</strong>：为碰撞检测提供导弹的矩形区域。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CMissile::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + MissileWidth, m_ptPos.y + MissileHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>导弹图像处理</strong>：使用 GDI+ 从资源加载 PNG 图片并创建图像列表。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">CMissile::LoadImage</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...[加载和处理 PNG 图片的代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h2 id="4-控制机制的改变"><a href="#4-控制机制的改变" class="headerlink" title="4. 控制机制的改变"></a>4. 控制机制的改变</h2><h3 id="原版-2"><a href="#原版-2" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中，玩家通过鼠标点击潜艇位置来摧毁它们。这是通过 <code>OnLButtonDown</code> 函数实现的：</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnLButtonDown</span><span class="params">(UINT nFlags, CPoint point)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">if</span>(pSub-&gt;<span class="built_in">GetRect</span>().<span class="built_in">PtInRect</span>(point))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建爆炸和计分</span></span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">delete</span> pSub;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="改编版本-2"><a href="#改编版本-2" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本引入了键盘控制。通过 <code>OnKeyDown</code> 函数，玩家可以通过左右键移动船，并用空格键发射导弹。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnKeyDown</span><span class="params">(UINT nChar, UINT nRepCnt, UINT nFlags)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (nChar == VK_SPACE || nChar == VK_RETURN) <span class="comment">// 发射导弹</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">if</span> (!missileExists)</span><br><span class="line">        &#123;</span><br><span class="line">            CMissile* pMissile = <span class="keyword">new</span> <span class="built_in">CMissile</span>(<span class="built_in">CPoint</span>(shipPos.x, SHIP_VERT_POS));</span><br><span class="line">            m_Objects.<span class="built_in">AddTail</span>(pMissile);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="5-分数统计的变更"><a href="#5-分数统计的变更" class="headerlink" title="5. 分数统计的变更"></a>5. 分数统计的变更</h2><p>为了适应新的游戏玩法，分数统计方式也做了调整。</p>
+<h3 id="原版-3"><a href="#原版-3" class="headerlink" title="原版"></a>原版</h3><p>原版游戏仅在鼠标点击潜艇时计分。</p>
+<h3 id="改编版本-3"><a href="#改编版本-3" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中，分数统计不仅包括击毁潜艇的分数，还统计了击毁的潜艇数量。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">m_nTotalScore += pScore-&gt;<span class="built_in">GetScoreValue</span>(); <span class="comment">// 累加分数</span></span><br><span class="line">++m_nDestroyedSubmarines;  <span class="comment">// 增加被击毁的潜艇数量</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="6-界面信息显示的改进"><a href="#6-界面信息显示的改进" class="headerlink" title="6. 界面信息显示的改进"></a>6. 界面信息显示的改进</h2><p>改编版本在界面上添加了更多的信息显示，如总潜艇数、击毁潜艇数等，增强了游戏的可玩性和信息反馈。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CString destroyedString;</span><br><span class="line">destroyedString.<span class="built_in">Format</span>(<span class="string">&quot;击毁潜艇数: %d&quot;</span>, m_nDestroyedSubmarines);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(<span class="number">130</span>, <span class="number">10</span>, destroyedString); <span class="comment">// 显示击毁潜艇数</span></span><br><span class="line"></span><br><span class="line">CString scoreString;</span><br><span class="line">scoreString.<span class="built_in">Format</span>(<span class="string">&quot;总分: %d&quot;</span>, m_nTotalScore);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(GAME_WIDTH - <span class="number">100</span>, <span class="number">10</span>, scoreString); <span class="comment">// 显示总分</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参与《潜艇大战》游戏的改编过程，我在游戏开发方面获得了实质性的技能提升。通过这个项目，我学到了以下几个关键的技术点：</p>
+<ol>
+<li><strong>交互控制的实现</strong>：通过替换原有的鼠标点击控制为键盘控制，我学会了如何处理和响应键盘事件。这提高了我的能力，使我能够在未来的项目中灵活地设计和实现用户交互。</li>
+<li><strong>游戏逻辑的编写</strong>：在实现导弹发射和移动的逻辑时，我加深了对游戏循环和对象状态管理的理解。这对于理解如何构建游戏的动态元素和保持其连贯性非常有帮助。</li>
+<li><strong>碰撞检测的处理</strong>：实现导弹和潜艇之间的碰撞检测增强了我在游戏物理和交互方面的技术知识，这在很多游戏开发项目中都是一个核心技能。</li>
+<li><strong>图形和用户界面的更新</strong>：改进游戏的界面显示，例如增加得分和击毁潜艇数的显示，让我更加熟悉了图形界面的编程和数据可视化。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>项目报告</tag>
+        <tag>作品集</tag>
+        <tag>《潜艇大战》</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
 </search>
