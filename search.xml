@@ -1998,7 +1998,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
                       alt="加载歌单完成"
                 ></p>
 <p>歌单加载完成后会提示“双击歌曲开始播放”</p>
-<h3 id="线下功能展示："><a href="#线下功能展示：" class="headerlink" title="线下功能展示："></a><strong>线下功能展示：</strong></h3><p><img  
+<h3 id="线下功能展示"><a href="#线下功能展示" class="headerlink" title="线下功能展示"></a><strong>线下功能展示</strong></h3><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E6%96%B0%E5%BB%BA%E6%AD%8C%E5%8D%95.png"
@@ -2040,7 +2040,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
                       alt="-按钮"
                 ></p>
 <h4 id="“-”编辑歌单"><a href="#“-”编辑歌单" class="headerlink" title="“-”编辑歌单"></a>“-”编辑歌单</h4><p>选中本地歌单中的某歌单后会打开编辑面板，与创建面板功能相似，不过“取消”按钮变味了“删除”，点击删除按钮后歌单从test中删除</p>
-<h3 id="播放功能展示："><a href="#播放功能展示：" class="headerlink" title="播放功能展示："></a><strong>播放功能展示：</strong></h3><p><img  
+<h3 id="播放功能展示"><a href="#播放功能展示" class="headerlink" title="播放功能展示"></a><strong>播放功能展示</strong></h3><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8F%8C%E5%87%BB%E6%92%AD%E6%94%BE.png"
