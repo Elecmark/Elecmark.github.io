@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/09/24/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Alpha冲刺1</title>
     <url>/2023/11/19/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Alpha%E5%86%B2%E5%88%BA-1-3/</url>
     <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
@@ -708,6 +690,207 @@
       </tags>
   </entry>
   <entry>
+    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺2</title>
+    <url>/2023/12/18/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-2-3/</url>
+    <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
+<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
+<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
+<li>普典衡</li>
+<li>司宇萌</li>
+<li>孙文秀</li>
+<li>王诗梦</li>
+<li>王菲</li>
+</ul>
+<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
+<li>过去完成的任务：<ul>
+<li>前端微调，使导航栏固定在屏幕，删除冗余按钮，使下拉菜单正常实现，进行了UI和背景调整的美化工作</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b2/1.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>继续优化滚动式前端，添加轮转图片，设计网页介绍UI和按钮UI等等</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>动画效果还未实现</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习了前端动效以及美化，阅读了相关案例代码</li>
+</ul>
+</li>
+</ul>
+<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
+<li>过去完成的任务：<ul>
+<li>更改页面结构为滑动式长页面，增添了模态框，增添了轮播图片动效</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b2/2.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>修改UI里的一些新的bug，完成前后端的对接工作，丰富美化页面</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>模型未接入，模型训练困难，轮播图总是自己放大，动画效果加载失败</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习了前端动效美化知识，阅读了相关代码</li>
+</ul>
+</li>
+</ul>
+<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
+<li>过去完成的任务：<ul>
+<li>参考老师的代码，实现了CBDnet模型进行去噪，模型训练完成。</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b2/3.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>协助负责后端的同学进行模型的调用。</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>采用CNN模型，总是会出现图片部位丢失的错误，所以改用CBDnet模型。由于模型是用GPU运行的，我只能在同学的电脑上运行</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习到了CBDnet的有关知识。</li>
+</ul>
+</li>
+</ul>
+<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
+<li>过去完成的任务：<ul>
+<li>辅助训练备选模型，挑选出效果最好的模型，解决图片上传报错的问题</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b2/4.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>进一步实现图片的传输，完成前后端对接工作</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>模型训练的效果图存在各种各样的问题，图片的传输依旧有点混乱</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>了解到不同的路径写法，学习到不同路径对图片传输的影响</li>
+</ul>
+</li>
+</ul>
+<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
+<li>过去完成的任务：<ul>
+<li>辅助训练模型，编写后端接口</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b2/5.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成后端任务，实现图片的传输与保存</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>训练的模型去噪效果不是很好，图片太过模糊，并且对图片格式要求很严格</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习了python的一些基础知识</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
+<li>网站前端改为滚动式，美化了界面，结构重新设计</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b2/6.png"
+                      alt="6"
+                ></li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b2/7.png"
+                      alt="7"
+                ></li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b2/8.png"
+                      alt="8"
+                ></li>
+</ul>
+<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b2/10.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
+<li><p><strong>时间</strong>：2023.12.17 19:00</p>
+</li>
+<li><p><strong>地点</strong>：腾讯会议</p>
+</li>
+<li><p><strong>内容</strong>：</p>
+<h4 id="1-前端开发进展"><a href="#1-前端开发进展" class="headerlink" title="1. 前端开发进展"></a>1. 前端开发进展</h4><ul>
+<li><strong>界面重设计</strong>：网站前端已改为滚动式，为用户提供了更流畅的浏览体验。</li>
+<li><strong>UI&#x2F;UX改善</strong>：对用户界面和体验进行了显著的美化和优化，使网站更加吸引用户。</li>
+<li><strong>动效和微调</strong>：实现了一些基本的动画效果，对导航栏、下拉菜单等元素进行了微调，以提高页面的整体美观性和用户体验。</li>
+</ul>
+<h4 id="2-后端开发与模型训练"><a href="#2-后端开发与模型训练" class="headerlink" title="2. 后端开发与模型训练"></a>2. 后端开发与模型训练</h4><ul>
+<li><strong>模型选择与训练</strong>：经过对比，选择了CBDnet模型进行去噪处理，模型训练有初步成果。</li>
+<li><strong>后端接口与集成</strong>：开发了后端接口，正在努力实现前后端的顺畅对接，以及图片的有效传输与保存。</li>
+</ul>
+<h4 id="3-遇到的挑战"><a href="#3-遇到的挑战" class="headerlink" title="3. 遇到的挑战"></a>3. 遇到的挑战</h4><ul>
+<li><strong>模型效果与优化</strong>：目前模型去噪效果存在一些问题，如图片模糊、格式要求严格等，团队正在积极寻找解决方案。</li>
+<li><strong>动画效果实现</strong>：一些复杂的动画效果实现上存在困难，团队成员正在学习相关技术以改善这一点。</li>
+</ul>
+<h4 id="4-收获与展望"><a href="#4-收获与展望" class="headerlink" title="4. 收获与展望"></a>4. 收获与展望</h4><ul>
+<li><strong>技术提升</strong>：通过本项目，团队成员在前端设计、后端开发和模型训练方面都有了显著的成长。</li>
+<li><strong>团队协作</strong>：加强了团队间的沟通和协作，通过共同解决问题增强了团队凝聚力。</li>
+</ul>
+<h4 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h4><ul>
+<li>本次Beta冲刺阶段，团队成员共同努力，取得了显著的进步。尽管面临诸多挑战，但团队通过有效的沟通和协作，不断优化项目，朝着最终目标稳步前进。未来，团队将继续致力于解决剩余的技术难题，并期待在项目最终阶段呈现出更加完善的成果。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>软件工程</category>
+        <category>云去噪</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>项目报告</tag>
+        <tag>云去噪</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1</title>
     <url>/2023/12/10/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-1-3/</url>
     <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
@@ -1097,609 +1280,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺2</title>
-    <url>/2023/12/18/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-2-3/</url>
-    <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
-<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
-<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
-<li>普典衡</li>
-<li>司宇萌</li>
-<li>孙文秀</li>
-<li>王诗梦</li>
-<li>王菲</li>
-</ul>
-<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
-<li>过去完成的任务：<ul>
-<li>前端微调，使导航栏固定在屏幕，删除冗余按钮，使下拉菜单正常实现，进行了UI和背景调整的美化工作</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b2/1.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>继续优化滚动式前端，添加轮转图片，设计网页介绍UI和按钮UI等等</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>动画效果还未实现</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习了前端动效以及美化，阅读了相关案例代码</li>
-</ul>
-</li>
-</ul>
-<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
-<li>过去完成的任务：<ul>
-<li>更改页面结构为滑动式长页面，增添了模态框，增添了轮播图片动效</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b2/2.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>修改UI里的一些新的bug，完成前后端的对接工作，丰富美化页面</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>模型未接入，模型训练困难，轮播图总是自己放大，动画效果加载失败</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习了前端动效美化知识，阅读了相关代码</li>
-</ul>
-</li>
-</ul>
-<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
-<li>过去完成的任务：<ul>
-<li>参考老师的代码，实现了CBDnet模型进行去噪，模型训练完成。</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b2/3.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>协助负责后端的同学进行模型的调用。</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>采用CNN模型，总是会出现图片部位丢失的错误，所以改用CBDnet模型。由于模型是用GPU运行的，我只能在同学的电脑上运行</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习到了CBDnet的有关知识。</li>
-</ul>
-</li>
-</ul>
-<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
-<li>过去完成的任务：<ul>
-<li>辅助训练备选模型，挑选出效果最好的模型，解决图片上传报错的问题</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b2/4.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>进一步实现图片的传输，完成前后端对接工作</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>模型训练的效果图存在各种各样的问题，图片的传输依旧有点混乱</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>了解到不同的路径写法，学习到不同路径对图片传输的影响</li>
-</ul>
-</li>
-</ul>
-<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
-<li>过去完成的任务：<ul>
-<li>辅助训练模型，编写后端接口</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b2/5.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成后端任务，实现图片的传输与保存</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>训练的模型去噪效果不是很好，图片太过模糊，并且对图片格式要求很严格</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习了python的一些基础知识</li>
-</ul>
-</li>
-</ul>
-<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
-<li>网站前端改为滚动式，美化了界面，结构重新设计</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b2/6.png"
-                      alt="6"
-                ></li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b2/7.png"
-                      alt="7"
-                ></li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b2/8.png"
-                      alt="8"
-                ></li>
-</ul>
-<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b2/10.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
-<li><p><strong>时间</strong>：2023.12.17 19:00</p>
-</li>
-<li><p><strong>地点</strong>：腾讯会议</p>
-</li>
-<li><p><strong>内容</strong>：</p>
-<h4 id="1-前端开发进展"><a href="#1-前端开发进展" class="headerlink" title="1. 前端开发进展"></a>1. 前端开发进展</h4><ul>
-<li><strong>界面重设计</strong>：网站前端已改为滚动式，为用户提供了更流畅的浏览体验。</li>
-<li><strong>UI&#x2F;UX改善</strong>：对用户界面和体验进行了显著的美化和优化，使网站更加吸引用户。</li>
-<li><strong>动效和微调</strong>：实现了一些基本的动画效果，对导航栏、下拉菜单等元素进行了微调，以提高页面的整体美观性和用户体验。</li>
-</ul>
-<h4 id="2-后端开发与模型训练"><a href="#2-后端开发与模型训练" class="headerlink" title="2. 后端开发与模型训练"></a>2. 后端开发与模型训练</h4><ul>
-<li><strong>模型选择与训练</strong>：经过对比，选择了CBDnet模型进行去噪处理，模型训练有初步成果。</li>
-<li><strong>后端接口与集成</strong>：开发了后端接口，正在努力实现前后端的顺畅对接，以及图片的有效传输与保存。</li>
-</ul>
-<h4 id="3-遇到的挑战"><a href="#3-遇到的挑战" class="headerlink" title="3. 遇到的挑战"></a>3. 遇到的挑战</h4><ul>
-<li><strong>模型效果与优化</strong>：目前模型去噪效果存在一些问题，如图片模糊、格式要求严格等，团队正在积极寻找解决方案。</li>
-<li><strong>动画效果实现</strong>：一些复杂的动画效果实现上存在困难，团队成员正在学习相关技术以改善这一点。</li>
-</ul>
-<h4 id="4-收获与展望"><a href="#4-收获与展望" class="headerlink" title="4. 收获与展望"></a>4. 收获与展望</h4><ul>
-<li><strong>技术提升</strong>：通过本项目，团队成员在前端设计、后端开发和模型训练方面都有了显著的成长。</li>
-<li><strong>团队协作</strong>：加强了团队间的沟通和协作，通过共同解决问题增强了团队凝聚力。</li>
-</ul>
-<h4 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h4><ul>
-<li>本次Beta冲刺阶段，团队成员共同努力，取得了显著的进步。尽管面临诸多挑战，但团队通过有效的沟通和协作，不断优化项目，朝着最终目标稳步前进。未来，团队将继续致力于解决剩余的技术难题，并期待在项目最终阶段呈现出更加完善的成果。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>软件工程</category>
-        <category>云去噪</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>项目报告</tag>
-        <tag>云去噪</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《让蛋仔飞》项目报告</title>
-    <url>/2024/01/09/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</url>
-    <content><![CDATA[<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_01.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_01"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_02.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_02"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_03.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_03"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_04.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_04"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_05.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_05"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_06.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_06"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_07.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_07"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_08.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_08"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_09.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_09"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_10.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_10"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_11.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_11"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_12.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_12"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_13.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_13"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_14.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_14"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_15.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_15"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_16.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_16"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_17.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_17"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_18.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_18"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_19.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_19"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_20.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_20"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_21.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_21"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_22.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_22"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_23.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_23"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_24.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_24"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_25.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_25"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_26.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_26"
-                ><br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_27.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_27"
-                ></p>
-]]></content>
-      <categories>
-        <category>游戏开发</category>
-        <category>Unity</category>
-        <category>微信小游戏</category>
-      </categories>
-      <tags>
-        <tag>项目报告</tag>
-        <tag>《让蛋仔飞》</tag>
-        <tag>Unity</tag>
-        <tag>微信小游戏</tag>
-        <tag>作品集</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《让蛋仔飞》技术报告</title>
-    <url>/2024/01/08/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/</url>
-    <content><![CDATA[<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><ul>
-<li><p>项目名称：《让蛋仔飞》</p>
-</li>
-<li><p>开发者：普典衡</p>
-</li>
-<li><p>分工：</p>
-<p>普典衡：</p>
-<p>策划-玩法，数值</p>
-<p>程序-前端，后端</p>
-<p>美术-UI，动画</p>
-</li>
-</ul>
-<h2 id="2-游戏内容介绍"><a href="#2-游戏内容介绍" class="headerlink" title="2. 游戏内容介绍"></a>2. 游戏内容介绍</h2><ul>
-<li>游戏背景：一个简单而有趣的游戏环境，主要集中于轻松、快节奏的体验。</li>
-<li>角色道具：玩家扮演的是不同种类的卡通蛋角色，如荷包蛋、倒霉蛋等。卡通风格的刀和叉作为障碍物。</li>
-<li>场景：使用明亮、鲜艳的色调和简单的卡通风格，界面清晰展示游戏选项。</li>
-<li>主要情节：游戏集中于提供快节奏、直观易懂的体验，没有复杂的情节或故事线。</li>
-<li>玩法：操作主角蛋躲避障碍物，通过点击或触摸屏幕控制跳跃。</li>
-<li>功能（系统）：包括游戏控制系统、皮肤系统、排行榜系统等。</li>
-</ul>
-<h2 id="3-主要特点"><a href="#3-主要特点" class="headerlink" title="3. 主要特点"></a>3. 主要特点</h2><ul>
-<li>整体风格：简洁而有趣，易于上手。</li>
-<li>娱乐性与挑战性：结合逐渐增加的难度提供持续挑战。</li>
-<li>社交性：通过排行榜系统增加游戏的社交动力。</li>
-<li>个性化体验：通过皮肤系统允许玩家自定义角色外观。</li>
-</ul>
-<h2 id="4-算法说明"><a href="#4-算法说明" class="headerlink" title="4. 算法说明"></a>4. 算法说明</h2><p>   Unity（C#）代码部分：</p>
-<h3 id="游戏控制和角色行为"><a href="#游戏控制和角色行为" class="headerlink" title="游戏控制和角色行为"></a>游戏控制和角色行为</h3><h4 id="EggyController-类："><a href="#EggyController-类：" class="headerlink" title="EggyController 类："></a><code>EggyController</code> 类：</h4><p>   负责处理蛋角色的基本行为，包括跳跃、得分、游戏开始&#x2F;结束逻辑、无敌状态、碰撞处理以及游戏速度的调整。</p>
-<h5 id="游戏开始-结束逻辑"><a href="#游戏开始-结束逻辑" class="headerlink" title="游戏开始&#x2F;结束逻辑"></a>游戏开始&#x2F;结束逻辑</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (isControl &amp;&amp; !IsPointerOverUIObject()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetMouseButtonDown(<span class="number">0</span>) &amp;&amp; !gameStarted) &#123;</span><br><span class="line">            StartGame();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (gameStarted) &#123;</span><br><span class="line">            Jump();</span><br><span class="line">        &#125;</span><br><span class="line">        CheckPosition();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StartGame</span>()</span> &#123;</span><br><span class="line">    gameStarted = <span class="literal">true</span>;</span><br><span class="line">    Time.timeScale = <span class="number">1</span>; <span class="comment">// 恢复时间流逝</span></span><br><span class="line">    <span class="comment">// 其他游戏开始逻辑</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CheckPosition</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 检查蛋的位置，确定游戏是否结束</span></span><br><span class="line">    <span class="comment">// 如果蛋落出屏幕，则结束游戏</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>   此部分代码控制游戏的开始和结束。当玩家点击屏幕时，游戏开始，而当游戏角色掉出屏幕时，游戏结束。</p>
-<h5 id="跳跃逻辑"><a href="#跳跃逻辑" class="headerlink" title="跳跃逻辑"></a>跳跃逻辑</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Jump</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (Input.GetMouseButtonDown(<span class="number">0</span>)) &#123;</span><br><span class="line">        rb.velocity = Vector2.up * jumpForce;</span><br><span class="line">        StartCoroutine(BounceEffect());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">IEnumerator <span class="title">BounceEffect</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 实现蛋的跳跃动画效果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>   这段代码负责处理玩家角色的跳跃动作。玩家点击屏幕时，角色会向上跳跃。</p>
-<h5 id="得分逻辑"><a href="#得分逻辑" class="headerlink" title="得分逻辑"></a>得分逻辑</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OnTriggerEnter2D</span>(<span class="params">Collider2D other</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!isGameOver &amp;&amp; other.gameObject.tag == <span class="string">&quot;ScoreZone&quot;</span>) &#123;</span><br><span class="line">        score++;</span><br><span class="line">        UpdateScoreText();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">UpdateScoreText</span>()</span> &#123;</span><br><span class="line">    scoreText.text = score.ToString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>   当角色通过特定区域时，玩家得分。这通过检测角色是否触碰到标记为 “ScoreZone” 的触发器来实现。</p>
-<h5 id="无敌状态"><a href="#无敌状态" class="headerlink" title="无敌状态"></a>无敌状态</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function">IEnumerator <span class="title">InvincibilityTime</span>()</span> &#123;</span><br><span class="line">    isInvincible = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// 实现无敌状态效果，如闪烁等</span></span><br><span class="line">    <span class="function"><span class="keyword">yield</span> <span class="keyword">return</span> <span class="keyword">new</span> <span class="title">WaitForSeconds</span>(<span class="params"><span class="number">3</span></span>)</span>; <span class="comment">// 无敌时间</span></span><br><span class="line">    isInvincible = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>   在某些情况下，角色会进入无敌状态，这段时间内不会被障碍物伤害。</p>
-<h5 id="碰撞处理"><a href="#碰撞处理" class="headerlink" title="碰撞处理"></a>碰撞处理</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OnCollisionEnter2D</span>(<span class="params">Collision2D collision</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (collision.gameObject.tag == <span class="string">&quot;KF&quot;</span> &amp;&amp; !isGameOver &amp;&amp; !isInvincible) &#123;</span><br><span class="line">        iscollide = <span class="literal">true</span>;</span><br><span class="line">        StartCoroutine(HandleGameOver());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>   当角色与标记为 “KF” 的障碍物发生碰撞时，游戏结束逻辑被触发。</p>
-<h5 id="游戏速度调整"><a href="#游戏速度调整" class="headerlink" title="游戏速度调整"></a>游戏速度调整</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">UpdateGameSpeed</span>()</span> &#123;</span><br><span class="line">    Time.timeScale = Mathf.Min(<span class="number">1</span> + score * speedupspeed, maxTimeScale);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>   随着玩家得分的提高，游戏的时间流逝速度加快，从而增加游戏难度。</p>
-<h4 id="Background-类："><a href="#Background-类：" class="headerlink" title="Background 类："></a><code>Background</code> 类：</h4><p>   管理游戏背景的移动，以创建滚动效果，增加游戏的动态感。</p>
-<h5 id="初始化背景属性"><a href="#初始化背景属性" class="headerlink" title="初始化背景属性"></a>初始化背景属性</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">    backgroundWidth = GetComponent&lt;SpriteRenderer&gt;().bounds.size.x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   在游戏开始时，计算背景图像的宽度，以便于后续确定何时克隆新的背景。</p>
-<h5 id="背景移动逻辑"><a href="#背景移动逻辑" class="headerlink" title="背景移动逻辑"></a>背景移动逻辑</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!EggyController.isGameOver) &#123;</span><br><span class="line">        transform.Translate(-speed * Time.deltaTime, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   在每一帧中，如果游戏未结束，背景将以设定的速度向左移动，创建出持续滚动的效果。</p>
-<h5 id="背景克隆和销毁"><a href="#背景克隆和销毁" class="headerlink" title="背景克隆和销毁"></a>背景克隆和销毁</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (transform.position.x &lt; <span class="number">0</span> &amp;&amp; !hasCloned) &#123;</span><br><span class="line">    CloneBackground();</span><br><span class="line">    hasCloned = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (transform.position.x &lt; <span class="number">-18</span>) &#123;</span><br><span class="line">    Destroy(gameObject);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   当背景移动到屏幕中央时，克隆一个新的背景对象，以实现无缝连接的滚动效果。一旦背景移出屏幕一定范围，它将被销毁，以节省资源。</p>
-<h5 id="克隆背景方法"><a href="#克隆背景方法" class="headerlink" title="克隆背景方法"></a>克隆背景方法</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CloneBackground</span>()</span> &#123;</span><br><span class="line">    Instantiate(gameObject, <span class="keyword">new</span> Vector3(transform.position.x + backgroundWidth, transform.position.y, transform.position.z), Quaternion.identity);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   这个方法在原有背景的基础上创建一个新的背景实例，放置在当前背景的右侧，确保两个背景图像在水平方向上连续。</p>
-<h3 id="游戏界面和用户交互"><a href="#游戏界面和用户交互" class="headerlink" title="游戏界面和用户交互"></a>游戏界面和用户交互</h3><h4 id="MenuManager-类："><a href="#MenuManager-类：" class="headerlink" title="MenuManager 类："></a><code>MenuManager</code> 类：</h4><p>   管理游戏菜单的显示和皮肤选择，提供玩家选择不同皮肤的功能。</p>
-<h5 id="初始化和皮肤状态管理"><a href="#初始化和皮肤状态管理" class="headerlink" title="初始化和皮肤状态管理"></a>初始化和皮肤状态管理</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 确保主页UI初始时是显示的</span></span><br><span class="line">    gameElements.SetActive(<span class="literal">false</span>);</span><br><span class="line">    homePageUI.SetActive(<span class="literal">true</span>);</span><br><span class="line">    <span class="comment">// 获取并显示累计总得分</span></span><br><span class="line">    <span class="built_in">int</span> totalScore = PlayerPrefs.GetInt(<span class="string">&quot;TotalScore&quot;</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 获取并显示死亡次数</span></span><br><span class="line">    <span class="built_in">int</span> deathCount = PlayerPrefs.GetInt(<span class="string">&quot;DeathCount&quot;</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 获取并显示复活总数</span></span><br><span class="line">    <span class="built_in">int</span> resurrectionCount = PlayerPrefs.GetInt(<span class="string">&quot;ResurrectionCount&quot;</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在对应的Text组件中显示这些值</span></span><br><span class="line">    <span class="comment">// 这里假设你有三个Text组件分别用于显示总得分、死亡次数和复活总数</span></span><br><span class="line">    <span class="comment">// 如果你的Text组件命名不同，需要根据实际情况修改下面的代码</span></span><br><span class="line">    totalScoreText.text = <span class="string">&quot;总得分: &quot;</span> + totalScore.ToString();</span><br><span class="line">    deathCountText.text = <span class="string">&quot;失败数: &quot;</span> + deathCount.ToString();</span><br><span class="line">    resurrectionCountText.text = <span class="string">&quot;复活数: &quot;</span> + resurrectionCount.ToString();</span><br><span class="line"></span><br><span class="line">    Time.timeScale = <span class="number">1</span>;</span><br><span class="line">    gameElements.SetActive(<span class="literal">true</span>); <span class="comment">// 先激活</span></span><br><span class="line">    ApplySkinToEggy(skinManager.skins[PlayerPrefs.GetInt(<span class="string">&quot;eggy&quot;</span>, <span class="number">0</span>)].name); <span class="comment">// 应用皮肤</span></span><br><span class="line">    gameElements.SetActive(<span class="literal">false</span>); <span class="comment">// 再隐藏，如果需要的话</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化皮肤列表</span></span><br><span class="line">    InitializeSkinsUnlockState();</span><br><span class="line">    LoadCurrentSkin();</span><br><span class="line">    UpdateEggyDisplay(skinManager.skins[currentSkinIndex]);</span><br><span class="line"></span><br><span class="line">    unlockButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">    selectButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">InitializeSkinsUnlockState</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 默认皮肤已解锁</span></span><br><span class="line">    PlayerPrefs.SetInt(<span class="string">&quot;eggy0&quot;</span>, <span class="number">1</span>); <span class="comment">// 1表示解锁，0表示未解锁</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他皮肤的初始状态</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; skinManager.skins.Count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!PlayerPrefs.HasKey(<span class="string">&quot;eggy&quot;</span> + i))</span><br><span class="line">        &#123;</span><br><span class="line">            PlayerPrefs.SetInt(<span class="string">&quot;eggy&quot;</span> + i, <span class="number">0</span>); <span class="comment">// 初始化为未解锁</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!PlayerPrefs.HasKey(<span class="string">&quot;eggyUnlockable&quot;</span> + i))</span><br><span class="line">        &#123;</span><br><span class="line">            PlayerPrefs.SetInt(<span class="string">&quot;eggyUnlockable&quot;</span> + i, <span class="number">0</span>); <span class="comment">// 初始化为不能解锁</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">LoadCurrentSkin</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 读取当前皮肤</span></span><br><span class="line">    currentSkinIndex = PlayerPrefs.GetInt(<span class="string">&quot;eggy&quot;</span>, <span class="number">0</span>);</span><br><span class="line">            			           UpdateEggyDisplay(skinManager.skins[currentSkinIndex]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   这部分代码在游戏开始时初始化UI元素和皮肤状态，包括设置默认皮肤和加载已解锁的皮肤。</p>
-<h5 id="游戏开始和皮肤应用"><a href="#游戏开始和皮肤应用" class="headerlink" title="游戏开始和皮肤应用"></a>游戏开始和皮肤应用</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">StartGame</span>()</span> &#123;</span><br><span class="line">    Time.timeScale = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 激活游戏元素</span></span><br><span class="line">    gameElements.SetActive(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 隐藏主页UI</span></span><br><span class="line">    homePageUI.SetActive(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他开始游戏的设置...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ApplySkinToEggy</span>(<span class="params"><span class="built_in">string</span> skinName</span>)</span> &#123;</span><br><span class="line">    Skin skin = skinManager.GetSkin(skinName);</span><br><span class="line">    <span class="keyword">if</span> (skin != <span class="literal">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        EggyController eggyController = Object.FindObjectOfType&lt;EggyController&gt;();</span><br><span class="line">        <span class="keyword">if</span> (eggyController != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            eggyController.ChangeAppearance(skin.image);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            Debug.LogError(<span class="string">&quot;EggyController instance not found in the scene.&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   当玩家选择开始游戏时，这部分代码负责切换游戏的视图状态，并应用玩家选择的皮肤。</p>
-<h5 id="皮肤选择和解锁"><a href="#皮肤选择和解锁" class="headerlink" title="皮肤选择和解锁"></a>皮肤选择和解锁</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">NextSkin</span>()</span> &#123;</span><br><span class="line">    currentSkinIndex = (currentSkinIndex + <span class="number">1</span>) % skinManager.skins.Count;</span><br><span class="line">    UpdateEggyDisplay(skinManager.skins[currentSkinIndex]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PreviousSkin</span>()</span> &#123;</span><br><span class="line">    currentSkinIndex = (currentSkinIndex - <span class="number">1</span> + skinManager.skins.Count) % skinManager.skins.Count;</span><br><span class="line">    UpdateEggyDisplay(skinManager.skins[currentSkinIndex]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SelectSkin</span>()</span> &#123;</span><br><span class="line">    PlayerPrefs.SetInt(<span class="string">&quot;eggy&quot;</span>, currentSkinIndex); <span class="comment">// 保存当前选择的皮肤</span></span><br><span class="line">    gameElements.SetActive(<span class="literal">true</span>); <span class="comment">// 先激活</span></span><br><span class="line">    ApplySkinToEggy(skinManager.skins[currentSkinIndex].name);<span class="comment">//应用皮肤</span></span><br><span class="line">    gameElements.SetActive(<span class="literal">false</span>); <span class="comment">// 再隐藏，如果需要的话</span></span><br><span class="line">    selectButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">UnlockSkin</span>()</span> &#123;</span><br><span class="line">    <span class="built_in">bool</span> canUnlock = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (currentSkinIndex)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>: <span class="comment">// eggy1解锁条件 - 累计失败500次</span></span><br><span class="line">            <span class="built_in">int</span> deathCount = PlayerPrefs.GetInt(<span class="string">&quot;DeathCount&quot;</span>,<span class="number">0</span>);</span><br><span class="line">            canUnlock = deathCount &gt;= <span class="number">500</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>: <span class="comment">// eggy2解锁条件 - 累计达到10000分</span></span><br><span class="line">            <span class="built_in">int</span> totalScore = PlayerPrefs.GetInt(<span class="string">&quot;TotalScore&quot;</span>,<span class="number">0</span>);</span><br><span class="line">            canUnlock = totalScore &gt;= <span class="number">10000</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>: <span class="comment">// eggy3解锁条件 - 累计复活50次</span></span><br><span class="line">            <span class="built_in">int</span> resurrectionCount = PlayerPrefs.GetInt(<span class="string">&quot;ResurrectionCount&quot;</span>, <span class="number">0</span>);</span><br><span class="line">            canUnlock = resurrectionCount &gt;= <span class="number">50</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">            <span class="keyword">if</span> (PlayerPrefs.GetInt(<span class="string">&quot;eggyUnlockable&quot;</span> + currentSkinIndex, <span class="number">0</span>) == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                canUnlock = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="literal">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (canUnlock)</span><br><span class="line">    &#123;</span><br><span class="line">        PlayerPrefs.SetInt(<span class="string">&quot;eggy&quot;</span> + currentSkinIndex, <span class="number">1</span>); <span class="comment">// 解锁当前皮肤</span></span><br><span class="line">        skinManager.skins[currentSkinIndex].isUnlocked = <span class="literal">true</span>; <span class="comment">// 更新皮肤管理器中的状态</span></span><br><span class="line">        UpdateEggyDisplay(skinManager.skins[currentSkinIndex]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        StartCoroutine(ShowUnlockConditionFailed());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">UpdateEggyDisplay</span>(<span class="params">Skin skin</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 更新皮肤信息</span></span><br><span class="line">    NameText.text = skin.name;</span><br><span class="line">    IntroductionText.text = skin.description;</span><br><span class="line">    unlockConditionText.text = skin.unlockCondition;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 保存原始皮肤图像并重置Eggy</span></span><br><span class="line">    eggyDisplay.SetSkinImage(skin.image);</span><br><span class="line">    eggyDisplay.ResetEggy(); <span class="comment">// 重置Eggy的位置和状态</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取解锁和选中状态</span></span><br><span class="line">    <span class="built_in">bool</span> isUnlocked = PlayerPrefs.GetInt(<span class="string">&quot;eggy&quot;</span> + currentSkinIndex, <span class="number">0</span>) == <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">bool</span> isSelected = PlayerPrefs.GetInt(<span class="string">&quot;eggy&quot;</span>, <span class="number">0</span>) == currentSkinIndex;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根据解锁状态和选中状态控制按钮显示</span></span><br><span class="line">    <span class="keyword">if</span> (isUnlocked &amp;&amp; isSelected)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 当前皮肤已解锁且为当前选中皮肤</span></span><br><span class="line">        unlockButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">        selectButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (isUnlocked)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 当前皮肤已解锁但不是当前选中皮肤</span></span><br><span class="line">        unlockButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">        selectButton.gameObject.SetActive(<span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 当前皮肤未解锁</span></span><br><span class="line">        unlockButton.gameObject.SetActive(<span class="literal">true</span>);</span><br><span class="line">        selectButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    eggyDisplay.SetUnlocked(isUnlocked);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   这些方法允许玩家在不同皮肤之间选择和切换，并根据游戏进度解锁新的皮肤。</p>
-<h4 id="EggyDisplay-类：用于控制蛋角色在游戏中的显示，包括皮肤更换和解锁动画效果。"><a href="#EggyDisplay-类：用于控制蛋角色在游戏中的显示，包括皮肤更换和解锁动画效果。" class="headerlink" title="EggyDisplay 类：用于控制蛋角色在游戏中的显示，包括皮肤更换和解锁动画效果。"></a><code>EggyDisplay</code> 类：用于控制蛋角色在游戏中的显示，包括皮肤更换和解锁动画效果。</h4><h5 id="初始化和设置皮肤"><a href="#初始化和设置皮肤" class="headerlink" title="初始化和设置皮肤"></a>初始化和设置皮肤</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">    eggyRenderer = GetComponent&lt;SpriteRenderer&gt;();</span><br><span class="line">    originalSprite = eggyRenderer.sprite;</span><br><span class="line">    originalPosition = transform.position;</span><br><span class="line">    originalScale = transform.localScale;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetSkinImage</span>(<span class="params">Sprite skinImage</span>)</span> &#123;</span><br><span class="line">    originalSprite = skinImage;</span><br><span class="line">    eggyRenderer.sprite = skinImage;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   在游戏开始时，该类初始化蛋角色的渲染器，并保存其原始状态。<code>SetSkinImage</code> 方法用于更换角色的皮肤。</p>
-<h5 id="皮肤解锁动画"><a href="#皮肤解锁动画" class="headerlink" title="皮肤解锁动画"></a>皮肤解锁动画</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetUnlocked</span>(<span class="params"><span class="built_in">bool</span> unlocked</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (unlocked) &#123;</span><br><span class="line">        StartCoroutine(UnlockedAnimation());</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        eggyRenderer.sprite = ApplyBlackMask(eggyRenderer.sprite);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> IEnumerator <span class="title">UnlockedAnimation</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 动画效果，如呼吸效果和跳跃动画</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   通过 <code>SetUnlocked</code> 方法，可以控制是否展示皮肤解锁动画。如果皮肤已解锁，会播放一个特殊的动画效果，如呼吸和跳跃动作。</p>
-<h5 id="辅助方法：黑色遮罩和重置状态"><a href="#辅助方法：黑色遮罩和重置状态" class="headerlink" title="辅助方法：黑色遮罩和重置状态"></a>辅助方法：黑色遮罩和重置状态</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> Sprite <span class="title">ApplyBlackMask</span>(<span class="params">Sprite originalSprite</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 将黑色遮罩应用于未解锁的皮肤图像</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ResetEggy</span>()</span> &#123;</span><br><span class="line">    StopAllCoroutines();</span><br><span class="line">    transform.localScale = originalScale;</span><br><span class="line">    transform.position = originalPosition;</span><br><span class="line">    <span class="comment">// 重置其他状态</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   <code>ApplyBlackMask</code> 方法用于给未解锁的皮肤添加一个黑色遮罩，而 <code>ResetEggy</code> 方法则用于重置蛋角色的状态，包括位置和缩放。</p>
-<h3 id="游戏障碍物和挑战"><a href="#游戏障碍物和挑战" class="headerlink" title="游戏障碍物和挑战"></a>游戏障碍物和挑战</h3><h4 id="KnifeForkController-和-KFController-类："><a href="#KnifeForkController-和-KFController-类：" class="headerlink" title="KnifeForkController 和 KFController 类："></a><code>KnifeForkController</code> 和 <code>KFController</code> 类：</h4><p>   负责生成和管理刀叉障碍物，控制它们的出现频率、速度和运动。</p>
-<h4 id="KnifeForkController-类："><a href="#KnifeForkController-类：" class="headerlink" title="KnifeForkController 类："></a><code>KnifeForkController</code> 类：</h4><p>   负责刀叉障碍物的生成和管理</p>
-<h5 id="初始化和生成刀叉"><a href="#初始化和生成刀叉" class="headerlink" title="初始化和生成刀叉"></a>初始化和生成刀叉</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> GameObject knifeForkPrefab; <span class="comment">// 刀叉预制体</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> spawnRate = <span class="number">2f</span>; <span class="comment">// 生成间隔（秒）</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">    nextSpawnTime = Time.time + spawnRate; <span class="comment">// 设置下一次生成时间</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!isGameOver &amp;&amp; Time.time &gt;= nextSpawnTime)</span><br><span class="line">    &#123;</span><br><span class="line">        SpawnKnifeFork();</span><br><span class="line">        nextSpawnTime = Time.time + spawnRate;</span><br><span class="line">        forksCount++; <span class="comment">// 增加已生成的刀叉数量</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检查EggyController的游戏结束状态</span></span><br><span class="line">    <span class="keyword">if</span> (EggyController.isGameOver)</span><br><span class="line">    &#123;</span><br><span class="line">        isGameOver = <span class="literal">true</span>;</span><br><span class="line">        GameOver();</span><br><span class="line">    &#125;<span class="keyword">else</span> isGameOver = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SpawnKnifeFork</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">float</span> gapY = Random.Range(-gapSize, gapSize); <span class="comment">// 随机间隔</span></span><br><span class="line">    Quaternion rotation = Random.Range(<span class="number">0</span>, <span class="number">2</span>) == <span class="number">0</span> ? Quaternion.identity : Quaternion.Euler(<span class="number">0</span>, <span class="number">0</span>, <span class="number">180</span>); <span class="comment">// 随机旋转180度</span></span><br><span class="line">    Vector3 spawnPosition = <span class="keyword">new</span> Vector3(transform.position.x, gapY, transform.position.z);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根据旋转来设置初始速度方向</span></span><br><span class="line">    <span class="built_in">float</span> initialMoveDirection = (rotation == Quaternion.identity) ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    GameObject newKnifeFork = Instantiate(knifeForkPrefab, spawnPosition, rotation);</span><br><span class="line">    spawnedForks.Add(newKnifeFork); <span class="comment">// 将已生成的刀叉添加到列表</span></span><br><span class="line">    StartCoroutine(MoveAndDestroyKnifeFork(newKnifeFork, initialMoveDirection)); <span class="comment">// 设置移动速度并在移出屏幕后销毁</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h5 id="刀叉运动和销毁"><a href="#刀叉运动和销毁" class="headerlink" title="刀叉运动和销毁"></a>刀叉运动和销毁</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function">IEnumerator <span class="title">MoveAndDestroyKnifeFork</span>(<span class="params">GameObject knifeFork, <span class="built_in">float</span> initialMoveDirection</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 控制刀叉的移动和销毁</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StopKnifeFork</span>(<span class="params">GameObject knifeFork</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (knifeFork != <span class="literal">null</span>) <span class="comment">// 检查刀叉是否为null</span></span><br><span class="line">    &#123;</span><br><span class="line">        Rigidbody2D kfRigidbody = knifeFork.GetComponent&lt;Rigidbody2D&gt;();</span><br><span class="line">        kfRigidbody.velocity = Vector2.zero; <span class="comment">// 停止刀叉的速度</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h5 id="游戏结束和重置"><a href="#游戏结束和重置" class="headerlink" title="游戏结束和重置"></a>游戏结束和重置</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">GameOver</span>()</span> &#123;</span><br><span class="line">    isGameOver = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// 停止所有已生成的刀叉的移动</span></span><br><span class="line">    <span class="keyword">foreach</span> (GameObject fork <span class="keyword">in</span> spawnedForks)</span><br><span class="line">    &#123;</span><br><span class="line">        StopKnifeFork(fork);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ResetGame</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 重置刀叉控制器的状态</span></span><br><span class="line">    isGameOver = <span class="literal">false</span>;</span><br><span class="line">    forksCount = <span class="number">0</span>;</span><br><span class="line">    nextSpawnTime = Time.time + spawnRate;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 销毁所有已生成的刀叉</span></span><br><span class="line">    <span class="keyword">foreach</span> (GameObject fork <span class="keyword">in</span> spawnedForks)</span><br><span class="line">    &#123;</span><br><span class="line">        Destroy(fork);</span><br><span class="line">    &#125;</span><br><span class="line">    spawnedForks.Clear(); <span class="comment">// 清空列表</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="KFController-类："><a href="#KFController-类：" class="headerlink" title="KFController 类："></a><code>KFController</code> 类：</h4><p>   负责单个刀叉障碍物的行为</p>
-<h5 id="刀叉障碍物的物理行为"><a href="#刀叉障碍物的物理行为" class="headerlink" title="刀叉障碍物的物理行为"></a>刀叉障碍物的物理行为</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> kfFallSpeed = <span class="number">20f</span>; <span class="comment">// KF的下降速度</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OnCollisionEnter2D</span>(<span class="params">Collision2D collision</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (collision.gameObject.CompareTag(<span class="string">&quot;eggy&quot;</span>)) &#123;</span><br><span class="line">        Rigidbody2D kfRigidbody = GetComponent&lt;Rigidbody2D&gt;();</span><br><span class="line">        kfRigidbody.velocity = Vector2.down * kfFallSpeed; <span class="comment">// 设置下降速度</span></span><br><span class="line">        kfRigidbody.gravityScale = <span class="number">3</span>; <span class="comment">// 调整重力影响</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>   <code>KnifeForkController</code> 类负责控制整体刀叉障碍物的生成频率和运动模式，而 <code>KFController</code> 类则专注于单个刀叉障碍物的具体行为，如碰撞时的下降速度和重力设置。这两个类通过协同工作，为游戏增添挑战性和动态性。</p>
-<h3 id="排行榜和社交功能"><a href="#排行榜和社交功能" class="headerlink" title="排行榜和社交功能"></a>排行榜和社交功能</h3><h4 id="Ranking-类："><a href="#Ranking-类：" class="headerlink" title="Ranking 类："></a><code>Ranking</code> 类：</h4><p>   整合微信小程序的排行榜功能，允许玩家查看和分享他们的得分。</p>
-<h5 id="初始化和设置"><a href="#初始化和设置" class="headerlink" title="初始化和设置"></a>初始化和设置</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">    WX.InitSDK((code) =&gt; &#123; Init(); &#125;);</span><br><span class="line">    WX.UpdateShareMenu(<span class="keyword">new</span> UpdateShareMenuOption() &#123;</span><br><span class="line">        withShareTicket = <span class="literal">true</span>,</span><br><span class="line">        isPrivateMessage = <span class="literal">true</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   游戏启动时初始化微信SDK，并设置分享菜单选项，允许通过群分享获取排行榜数据。</p>
-<h5 id="展示排行榜"><a href="#展示排行榜" class="headerlink" title="展示排行榜"></a>展示排行榜</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShowOpenData</span>()</span> &#123;</span><br><span class="line">    RankMask.SetActive(<span class="literal">true</span>);</span><br><span class="line">    RankingBox.SetActive(<span class="literal">true</span>);</span><br><span class="line">    WX.ShowOpenData(RankBody.texture, <span class="comment">/* 确定排行榜的位置和尺寸 */</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span>()</span> &#123;</span><br><span class="line">    ShowButton1.onClick.AddListener(ShowRanking);</span><br><span class="line">    ShowButton2.onClick.AddListener(ShowRanking);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShowRanking</span>()</span> &#123;</span><br><span class="line">    ShowOpenData();</span><br><span class="line">    OpenDataMessage msgData = <span class="keyword">new</span> OpenDataMessage &#123; type = <span class="string">&quot;showFriendsRank&quot;</span> &#125;;</span><br><span class="line">    WX.GetOpenDataContext().PostMessage(JsonUtility.ToJson(msgData));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   提供了按钮监听器来展示排行榜，通过调用<code>WX.ShowOpenData</code>方法将排行榜数据渲染到指定的UI元素上。</p>
-<h5 id="排行榜的隐藏与分享"><a href="#排行榜的隐藏与分享" class="headerlink" title="排行榜的隐藏与分享"></a>排行榜的隐藏与分享</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line">RankMask.GetComponent&lt;Button&gt;().onClick.AddListener(() =&gt; &#123;</span><br><span class="line">    RankMask.SetActive(<span class="literal">false</span>);</span><br><span class="line">    RankingBox.SetActive(<span class="literal">false</span>);</span><br><span class="line">    WX.HideOpenData();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ShareButton.onClick.AddListener(() =&gt; &#123;</span><br><span class="line">    <span class="comment">// 分享最高分数</span></span><br><span class="line">    WX.ShareAppMessage(<span class="comment">/* 分享配置 */</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
-<p>   包含隐藏排行榜和分享玩家成绩的逻辑。玩家可以通过点击按钮来关闭排行榜视图，或者通过另一个按钮分享自己的最高得分。</p>
-<ul>
-<li>使用微信SDK进行社交互动和数据共享。</li>
-</ul>
-<h5 id="玩家数据和成就"><a href="#玩家数据和成就" class="headerlink" title="玩家数据和成就"></a>玩家数据和成就</h5><ul>
-<li>使用 <code>PlayerPrefs</code> 来保存和加载玩家的分数、皮肤状态、死亡次数等信息。</li>
-<li>提供复活机制，增加游戏的挑战性和可玩性。</li>
-</ul>
-<h5 id="皮肤系统和个性化"><a href="#皮肤系统和个性化" class="headerlink" title="皮肤系统和个性化"></a>皮肤系统和个性化</h5><h4 id="SkinManager-类："><a href="#SkinManager-类：" class="headerlink" title="SkinManager 类："></a><code>SkinManager</code> 类：</h4><p>   管理游戏中的皮肤系统，包括皮肤的解锁条件和状态。</p>
-<h5 id="皮肤定义"><a href="#皮肤定义" class="headerlink" title="皮肤定义"></a>皮肤定义</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line">[<span class="meta">System.Serializable</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Skin</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> name; <span class="comment">// 皮肤名称</span></span><br><span class="line">    <span class="keyword">public</span> Sprite image; <span class="comment">// 皮肤图片</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> description; <span class="comment">// 皮肤简介</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> unlockCondition; <span class="comment">// 解锁条件描述</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">bool</span> isUnlocked; <span class="comment">// 是否已解锁</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   定义了一个<code>Skin</code>类，包含皮肤的名称、图片、描述和解锁条件。<code>isUnlocked</code>字段用于追踪皮肤的解锁状态。</p>
-<h5 id="皮肤管理"><a href="#皮肤管理" class="headerlink" title="皮肤管理"></a>皮肤管理</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SkinManager</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;Skin&gt; skins; <span class="comment">// 皮肤集合</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取指定名称的皮肤</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Skin <span class="title">GetSkin</span>(<span class="params"><span class="built_in">string</span> skinName</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> skins.Find(skin =&gt; skin.name == skinName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>   <code>SkinManager</code>类包含一个皮肤集合，提供<code>GetSkin</code>方法以根据名称获取特定皮肤的详细信息。这使得游戏能够根据玩家的选择或游戏进度，显示或更换皮肤。</p>
-<ul>
-<li>提供多种皮肤供玩家解锁和选择，增加游戏的个性化和吸引力。</li>
-</ul>
-<h2 id="5-API的使用"><a href="#5-API的使用" class="headerlink" title="5. API的使用"></a>5. API的使用</h2><h3 id="系统信息和日志管理"><a href="#系统信息和日志管理" class="headerlink" title="系统信息和日志管理"></a>系统信息和日志管理</h3><ul>
-<li><code>wx.getUpdateManager()</code>：获取全局唯一的版本更新管理器，用于管理小程序的更新。</li>
-<li><code>wx.getSystemInfoSync()</code>：同步获取系统信息，如屏幕大小、设备型号等。</li>
-<li><code>wx.getRealtimeLogManager()</code>：获取实时日志管理器，用于记录和上报实时日志。</li>
-<li><code>wx.getLogManager()</code>：获取日志管理器，用于记录和上报日志。</li>
-</ul>
-<h3 id="错误处理和内存管理"><a href="#错误处理和内存管理" class="headerlink" title="错误处理和内存管理"></a>错误处理和内存管理</h3><ul>
-<li><code>wx.onError()</code>：监听小程序错误事件，用于错误处理。</li>
-<li><code>wx.triggerGC()</code>：触发JavaScript垃圾回收机制，可以帮助小程序管理内存使用。</li>
-</ul>
-<h3 id="用户界面和反馈"><a href="#用户界面和反馈" class="headerlink" title="用户界面和反馈"></a>用户界面和反馈</h3><ul>
-<li><code>wx.showModal()</code>：显示模态对话框，用于向用户显示信息或询问用户决策。</li>
-<li><code>wx.createFeedbackButton()</code>：创建一个游戏内的用户反馈按钮。</li>
-</ul>
-<h3 id="社交功能和消息传递"><a href="#社交功能和消息传递" class="headerlink" title="社交功能和消息传递"></a>社交功能和消息传递</h3><ul>
-<li><code>wx.shareMessageToFriend()</code>：分享消息给微信好友，增强游戏的社交互动性。</li>
-<li><code>wx.onMessage()</code>：监听主域向开放数据域发送的消息，常用于排行榜的实现。</li>
-</ul>
-<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><ul>
-<li><code>wx.getStorageSync()</code>、<code>wx.setStorage()</code>、<code>wx.removeStorage()</code>、<code>wx.clearStorage()</code>、<code>wx.getStorage()</code>：这些API用于本地数据的存取、删除和清除，方便游戏保存玩家的游戏进度、设置或成就。</li>
-</ul>
-<h2 id="6-UI和截图"><a href="#6-UI和截图" class="headerlink" title="6. UI和截图"></a>6. UI和截图</h2><p>   所有素材均为ChatGPT绘制+本人Photoshop制作，无商用素材盗用</p>
-<h3 id="游戏界面截图"><a href="#游戏界面截图" class="headerlink" title="游戏界面截图"></a>游戏界面截图</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/0.png"
-                      alt="0"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/1.png"
-                      alt="1"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/2.png"
-                      alt="2"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/5.png"
-                      alt="5"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/6.png"
-                      alt="6"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/10.png"
-                      alt="10"
-                ></p>
-<h3 id="角色和UI设计图（部分）"><a href="#角色和UI设计图（部分）" class="headerlink" title="角色和UI设计图（部分）"></a>角色和UI设计图（部分）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/eggy.png"
-                      alt="eggy"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/egg4.png"
-                      alt="egg4"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/egg6.png"
-                      alt="egg6"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/egg1.png"
-                      alt="egg1"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/egg2.png"
-                      alt="egg2"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/egg3.png"
-                      alt="egg3"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/bg.png"
-                      alt="bg"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/Button_UI.png"
-                      alt="Button_UI"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/fork.png"
-                      alt="fork"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/knife.png"
-                      alt="knife"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/pan.png"
-                      alt="pan"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/share.png"
-                      alt="share"
-                ></p>
-]]></content>
-      <categories>
-        <category>游戏开发</category>
-        <category>Unity</category>
-        <category>微信小游戏</category>
-      </categories>
-      <tags>
-        <tag>《让蛋仔飞》</tag>
-        <tag>Unity</tag>
-        <tag>微信小游戏</tag>
-        <tag>作品集</tag>
-        <tag>技术报告</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Blender建模/动画作品</title>
     <url>/2023/07/15/Blender%E5%BB%BA%E6%A8%A1-%E5%8A%A8%E7%94%BB%E4%BD%9C%E5%93%81/</url>
     <content><![CDATA[<h3 id="三兄弟建模（几何）"><a href="#三兄弟建模（几何）" class="headerlink" title="三兄弟建模（几何）"></a>三兄弟建模（几何）</h3><p><img  
@@ -1797,127 +1377,10 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
         <category>建模/动画</category>
       </categories>
       <tags>
-        <tag>作品集</tag>
         <tag>Blender</tag>
         <tag>建模</tag>
         <tag>动画</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>经典C++游戏《潜艇大战》改编练习</title>
-    <url>/2024/03/12/c/</url>
-    <content><![CDATA[<h2 id="原版效果："><a href="#原版效果：" class="headerlink" title="原版效果："></a>原版效果：</h2><h3 id="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："><a href="#依靠鼠标点击去炸毁潜艇得分，类似打地鼠：" class="headerlink" title="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："></a>依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif"
-                      alt="ShipDemo_old"
-                ></p>
-<h2 id="改编效果："><a href="#改编效果：" class="headerlink" title="改编效果："></a>改编效果：</h2><h3 id="靠船左右移动投炸弹炸毁潜艇得分："><a href="#靠船左右移动投炸弹炸毁潜艇得分：" class="headerlink" title="靠船左右移动投炸弹炸毁潜艇得分："></a>靠船左右移动投炸弹炸毁潜艇得分：</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_new.gif"
-                      alt="ShipDemo_new"
-                ></p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本报告详细分析了《潜艇大战》游戏从原版到改编版本中的关键代码变化。原版游戏的核心玩法是使用鼠标点击来炸毁潜艇并得分，类似于“打地鼠”的游戏模式。改编版本则通过控制船的左右移动并投掷炸弹来炸毁潜艇以得分。</p>
-<h2 id="1-核心视图类-CChildView-类分析"><a href="#1-核心视图类-CChildView-类分析" class="headerlink" title="1. 核心视图类 (CChildView) 类分析"></a>1. 核心视图类 (<code>CChildView</code>) 类分析</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p><code>CChildView</code> 类是《潜艇大战》游戏的核心视图类，负责管理游戏对象、处理用户输入、绘制游戏界面等。</p>
-<h3 id="OnTimer-方法分析"><a href="#OnTimer-方法分析" class="headerlink" title="OnTimer 方法分析"></a><code>OnTimer</code> 方法分析</h3><h4 id="创建和管理潜艇"><a href="#创建和管理潜艇" class="headerlink" title="创建和管理潜艇"></a>创建和管理潜艇</h4><p><strong>潜艇创建逻辑</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(nCreator==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    m_Objects.<span class="built_in">AddTail</span>(<span class="keyword">new</span> <span class="built_in">CSubmarine</span>(<span class="built_in">random</span>(<span class="number">2</span>)%<span class="number">2</span>?<span class="literal">true</span>:<span class="literal">false</span>, <span class="built_in">random</span>(GAME_HEIGHT-SHIP_VERT_POS-SHIP_HEIGHT*<span class="number">2</span><span class="number">-30</span>)+SHIP_VERT_POS+SHIP_HEIGHT+<span class="number">30</span>, <span class="built_in">random</span>(<span class="number">4</span>), <span class="built_in">random</span>(<span class="number">4</span>)+<span class="number">3</span>));</span><br><span class="line">    nCreator = <span class="built_in">random</span>(<span class="number">50</span>) + <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li><code>nCreator</code> 用于控制潜艇生成的时间间隔。当它变为 0，代码会创建一个新的 <code>CSubmarine</code> 对象并将其添加到游戏对象列表 <code>m_Objects</code>。</li>
-<li>每个潜艇的位置、类型和速度都是随机生成的，提供了游戏的可变性和挑战性。</li>
-</ul>
-<p><strong>潜艇管理逻辑</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">POSITION pos1, pos2;</span><br><span class="line"><span class="keyword">for</span>(pos1=m_Objects.<span class="built_in">GetHeadPosition</span>(); (pos2=pos1)!=<span class="literal">NULL</span>;)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(((CMyObject*)m_Objects.<span class="built_in">GetNext</span>(pos1))-&gt;<span class="built_in">Draw</span>(&amp;m_VirtualDC, m_bGamePause))</span><br><span class="line">    &#123;</span><br><span class="line">        pLastObj = m_Objects.<span class="built_in">GetAt</span>(pos2);</span><br><span class="line">        m_Objects.<span class="built_in">RemoveAt</span>(pos2);</span><br><span class="line">        <span class="keyword">delete</span> pLastObj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>这段代码遍历 <code>m_Objects</code> 中的所有游戏对象，并对它们调用 <code>Draw</code> 方法。</li>
-<li>如果 <code>Draw</code> 方法返回 <code>true</code>，表明对象（如潜艇）需要被移除。这通常在对象（如潜艇被击中或移动出屏幕）结束其生命周期时发生。</li>
-</ul>
-<h4 id="游戏画面渲染"><a href="#游戏画面渲染" class="headerlink" title="游戏画面渲染"></a>游戏画面渲染</h4><p><strong>背景绘制</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, SKY_COLOR);</span><br><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, GAME_WIDTH, GAME_HEIGHT, SEA_COLOR);</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>这里使用 <code>FillSolidRect</code> 在虚拟设备上下文 <code>m_VirtualDC</code> 上绘制天空和海洋背景。</li>
-<li><code>SKY_COLOR</code> 和 <code>SEA_COLOR</code> 定义了天空和海洋的颜色。</li>
-</ul>
-<p><strong>最终渲染到屏幕</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">dc.<span class="built_in">BitBlt</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, GAME_HEIGHT, &amp;m_VirtualDC, <span class="number">0</span>, <span class="number">0</span>, SRCCOPY);</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>使用 <code>BitBlt</code> 方法将虚拟设备上下文的内容传输到实际的屏幕上下文。</li>
-<li>这种方法可以避免闪烁并提高绘图效率。</li>
-</ul>
-<h4 id="其他重要逻辑"><a href="#其他重要逻辑" class="headerlink" title="其他重要逻辑"></a>其他重要逻辑</h4><p><strong>游戏暂停功能</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(m_bGamePause) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>控制游戏暂停。当 <code>m_bGamePause</code> 为 <code>true</code> 时，<code>OnTimer</code> 将提前返回，不执行任何游戏更新逻辑。</li>
-</ul>
-<p><strong>潜艇生成计数器更新</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">nCreator--;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li><code>nCreator</code> 每次 <code>OnTimer</code> 被调用时递减，控制潜艇的生成频率。</li>
-</ul>
-<p>总结来说，<code>OnTimer</code> 方法是游戏的心脏，负责潜艇的生成和管理、游戏画面的更新和渲染，以及控制游戏的暂停和继续。这个方法充分展示了游戏循环的典型结构，包括对象管理、状态更新和画面渲染。</p>
-<h2 id="2-潜艇类-CSubmarine-的变更"><a href="#2-潜艇类-CSubmarine-的变更" class="headerlink" title="2. 潜艇类 (CSubmarine) 的变更"></a>2. 潜艇类 (<code>CSubmarine</code>) 的变更</h2><h3 id="原版"><a href="#原版" class="headerlink" title="原版"></a>原版</h3><p>在原版中，<code>CSubmarine</code> 类主要负责潜艇的初始化、移动、绘图和销毁。这个类使用了 <code>CImageList</code> 来处理潜艇的图像。潜艇的移动是基于它们的方向 (<code>m_bDirect</code>) 和速度 (<code>m_nSpeed</code>)。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CSubmarine::<span class="built_in">CSubmarine</span>(<span class="type">bool</span> bDir, <span class="type">int</span> nVert, <span class="type">int</span> nType, <span class="type">int</span> nSpeed)</span><br><span class="line">&#123;</span><br><span class="line">    m_bDirect = bDir;</span><br><span class="line">    m_ptPos.x = m_bDirect ? GAME_WIDTH : -SUBMARINE_WIDTH;</span><br><span class="line">    m_ptPos.y = nVert;</span><br><span class="line">    <span class="comment">// ...[其他初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="改编版本"><a href="#改编版本" class="headerlink" title="改编版本"></a>改编版本</h3><p>在改版中，<code>CSubmarine</code> 类增加了 <code>GetRect()</code> 方法，用于获取潜艇的碰撞箱。这是为了适应游戏中的新机制，如导弹与潜艇的碰撞检测。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CSubmarine::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + SubmarineWidth, m_ptPos.y + SubmarineHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="3-新增导弹类-CMissile"><a href="#3-新增导弹类-CMissile" class="headerlink" title="3. 新增导弹类 (CMissile)"></a>3. 新增导弹类 (<code>CMissile</code>)</h2><p>在改编版本中，新增了导弹类 <code>CMissile</code>。这一变化扩展了游戏的交互性和复杂度。</p>
-<h3 id="原版-1"><a href="#原版-1" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中没有导弹类的概念。</p>
-<h3 id="改编版本-1"><a href="#改编版本-1" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中添加了 <code>CMissile</code> 类，并在主游戏循环中处理导弹的移动和碰撞检测。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">typeid</span>(*pObj) == <span class="built_in">typeid</span>(CMissile))</span><br><span class="line">&#123;</span><br><span class="line">    CMissile* pMissile = (CMissile*)pObj;</span><br><span class="line">    pMissile-&gt;<span class="built_in">Move</span>(); <span class="comment">// 移动导弹</span></span><br><span class="line">    <span class="comment">// ... [碰撞检测和处理代码] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li><p><strong>构造函数</strong>：初始化导弹的位置和生命周期。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CMissile::<span class="built_in">CMissile</span>(CPoint ptPos) : <span class="built_in">CMyObject</span>(ptPos)</span><br><span class="line">&#123;</span><br><span class="line">    m_nLifetime = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// ...[初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong><code>Move</code> 方法</strong>：控制导弹的移动。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMissile::Move</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_ptPos.y += <span class="number">20</span>;  <span class="comment">// ...[移动逻辑]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong><code>GetRect</code> 方法</strong>：为碰撞检测提供导弹的矩形区域。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CMissile::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + MissileWidth, m_ptPos.y + MissileHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong>导弹图像处理</strong>：使用 GDI+ 从资源加载 PNG 图片并创建图像列表。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">CMissile::LoadImage</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...[加载和处理 PNG 图片的代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<h2 id="4-控制机制的改变"><a href="#4-控制机制的改变" class="headerlink" title="4. 控制机制的改变"></a>4. 控制机制的改变</h2><h3 id="原版-2"><a href="#原版-2" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中，玩家通过鼠标点击潜艇位置来摧毁它们。这是通过 <code>OnLButtonDown</code> 函数实现的：</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnLButtonDown</span><span class="params">(UINT nFlags, CPoint point)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">if</span>(pSub-&gt;<span class="built_in">GetRect</span>().<span class="built_in">PtInRect</span>(point))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建爆炸和计分</span></span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">delete</span> pSub;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="改编版本-2"><a href="#改编版本-2" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本引入了键盘控制。通过 <code>OnKeyDown</code> 函数，玩家可以通过左右键移动船，并用空格键发射导弹。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnKeyDown</span><span class="params">(UINT nChar, UINT nRepCnt, UINT nFlags)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (nChar == VK_SPACE || nChar == VK_RETURN) <span class="comment">// 发射导弹</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">if</span> (!missileExists)</span><br><span class="line">        &#123;</span><br><span class="line">            CMissile* pMissile = <span class="keyword">new</span> <span class="built_in">CMissile</span>(<span class="built_in">CPoint</span>(shipPos.x, SHIP_VERT_POS));</span><br><span class="line">            m_Objects.<span class="built_in">AddTail</span>(pMissile);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="5-分数统计的变更"><a href="#5-分数统计的变更" class="headerlink" title="5. 分数统计的变更"></a>5. 分数统计的变更</h2><p>为了适应新的游戏玩法，分数统计方式也做了调整。</p>
-<h3 id="原版-3"><a href="#原版-3" class="headerlink" title="原版"></a>原版</h3><p>原版游戏仅在鼠标点击潜艇时计分。</p>
-<h3 id="改编版本-3"><a href="#改编版本-3" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中，分数统计不仅包括击毁潜艇的分数，还统计了击毁的潜艇数量。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">m_nTotalScore += pScore-&gt;<span class="built_in">GetScoreValue</span>(); <span class="comment">// 累加分数</span></span><br><span class="line">++m_nDestroyedSubmarines;  <span class="comment">// 增加被击毁的潜艇数量</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="6-界面信息显示的改进"><a href="#6-界面信息显示的改进" class="headerlink" title="6. 界面信息显示的改进"></a>6. 界面信息显示的改进</h2><p>改编版本在界面上添加了更多的信息显示，如总潜艇数、击毁潜艇数等，增强了游戏的可玩性和信息反馈。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CString destroyedString;</span><br><span class="line">destroyedString.<span class="built_in">Format</span>(<span class="string">&quot;击毁潜艇数: %d&quot;</span>, m_nDestroyedSubmarines);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(<span class="number">130</span>, <span class="number">10</span>, destroyedString); <span class="comment">// 显示击毁潜艇数</span></span><br><span class="line"></span><br><span class="line">CString scoreString;</span><br><span class="line">scoreString.<span class="built_in">Format</span>(<span class="string">&quot;总分: %d&quot;</span>, m_nTotalScore);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(GAME_WIDTH - <span class="number">100</span>, <span class="number">10</span>, scoreString); <span class="comment">// 显示总分</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参与《潜艇大战》游戏的改编过程，我在游戏开发方面获得了实质性的技能提升。通过这个项目，我学到了以下几个关键的技术点：</p>
-<ol>
-<li><strong>交互控制的实现</strong>：通过替换原有的鼠标点击控制为键盘控制，我学会了如何处理和响应键盘事件。这提高了我的能力，使我能够在未来的项目中灵活地设计和实现用户交互。</li>
-<li><strong>游戏逻辑的编写</strong>：在实现导弹发射和移动的逻辑时，我加深了对游戏循环和对象状态管理的理解。这对于理解如何构建游戏的动态元素和保持其连贯性非常有帮助。</li>
-<li><strong>碰撞检测的处理</strong>：实现导弹和潜艇之间的碰撞检测增强了我在游戏物理和交互方面的技术知识，这在很多游戏开发项目中都是一个核心技能。</li>
-<li><strong>图形和用户界面的更新</strong>：改进游戏的界面显示，例如增加得分和击毁潜艇数的显示，让我更加熟悉了图形界面的编程和数据可视化。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>游戏开发</category>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>项目报告</tag>
         <tag>作品集</tag>
-        <tag>《潜艇大战》</tag>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -2260,6 +1723,543 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
         <tag>课程项目</tag>
         <tag>作业报告</tag>
         <tag>软件性能工程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>经典C++游戏《潜艇大战》改编练习</title>
+    <url>/2024/03/12/c/</url>
+    <content><![CDATA[<h2 id="原版效果："><a href="#原版效果：" class="headerlink" title="原版效果："></a>原版效果：</h2><h3 id="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："><a href="#依靠鼠标点击去炸毁潜艇得分，类似打地鼠：" class="headerlink" title="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："></a>依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif"
+                      alt="ShipDemo_old"
+                ></p>
+<h2 id="改编效果："><a href="#改编效果：" class="headerlink" title="改编效果："></a>改编效果：</h2><h3 id="靠船左右移动投炸弹炸毁潜艇得分："><a href="#靠船左右移动投炸弹炸毁潜艇得分：" class="headerlink" title="靠船左右移动投炸弹炸毁潜艇得分："></a>靠船左右移动投炸弹炸毁潜艇得分：</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_new.gif"
+                      alt="ShipDemo_new"
+                ></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本报告详细分析了《潜艇大战》游戏从原版到改编版本中的关键代码变化。原版游戏的核心玩法是使用鼠标点击来炸毁潜艇并得分，类似于“打地鼠”的游戏模式。改编版本则通过控制船的左右移动并投掷炸弹来炸毁潜艇以得分。</p>
+<h2 id="1-核心视图类-CChildView-类分析"><a href="#1-核心视图类-CChildView-类分析" class="headerlink" title="1. 核心视图类 (CChildView) 类分析"></a>1. 核心视图类 (<code>CChildView</code>) 类分析</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p><code>CChildView</code> 类是《潜艇大战》游戏的核心视图类，负责管理游戏对象、处理用户输入、绘制游戏界面等。</p>
+<h3 id="OnTimer-方法分析"><a href="#OnTimer-方法分析" class="headerlink" title="OnTimer 方法分析"></a><code>OnTimer</code> 方法分析</h3><h4 id="创建和管理潜艇"><a href="#创建和管理潜艇" class="headerlink" title="创建和管理潜艇"></a>创建和管理潜艇</h4><p><strong>潜艇创建逻辑</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(nCreator==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    m_Objects.<span class="built_in">AddTail</span>(<span class="keyword">new</span> <span class="built_in">CSubmarine</span>(<span class="built_in">random</span>(<span class="number">2</span>)%<span class="number">2</span>?<span class="literal">true</span>:<span class="literal">false</span>, <span class="built_in">random</span>(GAME_HEIGHT-SHIP_VERT_POS-SHIP_HEIGHT*<span class="number">2</span><span class="number">-30</span>)+SHIP_VERT_POS+SHIP_HEIGHT+<span class="number">30</span>, <span class="built_in">random</span>(<span class="number">4</span>), <span class="built_in">random</span>(<span class="number">4</span>)+<span class="number">3</span>));</span><br><span class="line">    nCreator = <span class="built_in">random</span>(<span class="number">50</span>) + <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><code>nCreator</code> 用于控制潜艇生成的时间间隔。当它变为 0，代码会创建一个新的 <code>CSubmarine</code> 对象并将其添加到游戏对象列表 <code>m_Objects</code>。</li>
+<li>每个潜艇的位置、类型和速度都是随机生成的，提供了游戏的可变性和挑战性。</li>
+</ul>
+<p><strong>潜艇管理逻辑</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">POSITION pos1, pos2;</span><br><span class="line"><span class="keyword">for</span>(pos1=m_Objects.<span class="built_in">GetHeadPosition</span>(); (pos2=pos1)!=<span class="literal">NULL</span>;)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(((CMyObject*)m_Objects.<span class="built_in">GetNext</span>(pos1))-&gt;<span class="built_in">Draw</span>(&amp;m_VirtualDC, m_bGamePause))</span><br><span class="line">    &#123;</span><br><span class="line">        pLastObj = m_Objects.<span class="built_in">GetAt</span>(pos2);</span><br><span class="line">        m_Objects.<span class="built_in">RemoveAt</span>(pos2);</span><br><span class="line">        <span class="keyword">delete</span> pLastObj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>这段代码遍历 <code>m_Objects</code> 中的所有游戏对象，并对它们调用 <code>Draw</code> 方法。</li>
+<li>如果 <code>Draw</code> 方法返回 <code>true</code>，表明对象（如潜艇）需要被移除。这通常在对象（如潜艇被击中或移动出屏幕）结束其生命周期时发生。</li>
+</ul>
+<h4 id="游戏画面渲染"><a href="#游戏画面渲染" class="headerlink" title="游戏画面渲染"></a>游戏画面渲染</h4><p><strong>背景绘制</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, SKY_COLOR);</span><br><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, GAME_WIDTH, GAME_HEIGHT, SEA_COLOR);</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>这里使用 <code>FillSolidRect</code> 在虚拟设备上下文 <code>m_VirtualDC</code> 上绘制天空和海洋背景。</li>
+<li><code>SKY_COLOR</code> 和 <code>SEA_COLOR</code> 定义了天空和海洋的颜色。</li>
+</ul>
+<p><strong>最终渲染到屏幕</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">dc.<span class="built_in">BitBlt</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, GAME_HEIGHT, &amp;m_VirtualDC, <span class="number">0</span>, <span class="number">0</span>, SRCCOPY);</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>使用 <code>BitBlt</code> 方法将虚拟设备上下文的内容传输到实际的屏幕上下文。</li>
+<li>这种方法可以避免闪烁并提高绘图效率。</li>
+</ul>
+<h4 id="其他重要逻辑"><a href="#其他重要逻辑" class="headerlink" title="其他重要逻辑"></a>其他重要逻辑</h4><p><strong>游戏暂停功能</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(m_bGamePause) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>控制游戏暂停。当 <code>m_bGamePause</code> 为 <code>true</code> 时，<code>OnTimer</code> 将提前返回，不执行任何游戏更新逻辑。</li>
+</ul>
+<p><strong>潜艇生成计数器更新</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">nCreator--;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><code>nCreator</code> 每次 <code>OnTimer</code> 被调用时递减，控制潜艇的生成频率。</li>
+</ul>
+<p>总结来说，<code>OnTimer</code> 方法是游戏的心脏，负责潜艇的生成和管理、游戏画面的更新和渲染，以及控制游戏的暂停和继续。这个方法充分展示了游戏循环的典型结构，包括对象管理、状态更新和画面渲染。</p>
+<h2 id="2-潜艇类-CSubmarine-的变更"><a href="#2-潜艇类-CSubmarine-的变更" class="headerlink" title="2. 潜艇类 (CSubmarine) 的变更"></a>2. 潜艇类 (<code>CSubmarine</code>) 的变更</h2><h3 id="原版"><a href="#原版" class="headerlink" title="原版"></a>原版</h3><p>在原版中，<code>CSubmarine</code> 类主要负责潜艇的初始化、移动、绘图和销毁。这个类使用了 <code>CImageList</code> 来处理潜艇的图像。潜艇的移动是基于它们的方向 (<code>m_bDirect</code>) 和速度 (<code>m_nSpeed</code>)。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CSubmarine::<span class="built_in">CSubmarine</span>(<span class="type">bool</span> bDir, <span class="type">int</span> nVert, <span class="type">int</span> nType, <span class="type">int</span> nSpeed)</span><br><span class="line">&#123;</span><br><span class="line">    m_bDirect = bDir;</span><br><span class="line">    m_ptPos.x = m_bDirect ? GAME_WIDTH : -SUBMARINE_WIDTH;</span><br><span class="line">    m_ptPos.y = nVert;</span><br><span class="line">    <span class="comment">// ...[其他初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="改编版本"><a href="#改编版本" class="headerlink" title="改编版本"></a>改编版本</h3><p>在改版中，<code>CSubmarine</code> 类增加了 <code>GetRect()</code> 方法，用于获取潜艇的碰撞箱。这是为了适应游戏中的新机制，如导弹与潜艇的碰撞检测。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CSubmarine::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + SubmarineWidth, m_ptPos.y + SubmarineHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="3-新增导弹类-CMissile"><a href="#3-新增导弹类-CMissile" class="headerlink" title="3. 新增导弹类 (CMissile)"></a>3. 新增导弹类 (<code>CMissile</code>)</h2><p>在改编版本中，新增了导弹类 <code>CMissile</code>。这一变化扩展了游戏的交互性和复杂度。</p>
+<h3 id="原版-1"><a href="#原版-1" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中没有导弹类的概念。</p>
+<h3 id="改编版本-1"><a href="#改编版本-1" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中添加了 <code>CMissile</code> 类，并在主游戏循环中处理导弹的移动和碰撞检测。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">typeid</span>(*pObj) == <span class="built_in">typeid</span>(CMissile))</span><br><span class="line">&#123;</span><br><span class="line">    CMissile* pMissile = (CMissile*)pObj;</span><br><span class="line">    pMissile-&gt;<span class="built_in">Move</span>(); <span class="comment">// 移动导弹</span></span><br><span class="line">    <span class="comment">// ... [碰撞检测和处理代码] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><p><strong>构造函数</strong>：初始化导弹的位置和生命周期。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CMissile::<span class="built_in">CMissile</span>(CPoint ptPos) : <span class="built_in">CMyObject</span>(ptPos)</span><br><span class="line">&#123;</span><br><span class="line">    m_nLifetime = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// ...[初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong><code>Move</code> 方法</strong>：控制导弹的移动。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMissile::Move</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_ptPos.y += <span class="number">20</span>;  <span class="comment">// ...[移动逻辑]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong><code>GetRect</code> 方法</strong>：为碰撞检测提供导弹的矩形区域。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CMissile::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + MissileWidth, m_ptPos.y + MissileHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>导弹图像处理</strong>：使用 GDI+ 从资源加载 PNG 图片并创建图像列表。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">CMissile::LoadImage</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...[加载和处理 PNG 图片的代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h2 id="4-控制机制的改变"><a href="#4-控制机制的改变" class="headerlink" title="4. 控制机制的改变"></a>4. 控制机制的改变</h2><h3 id="原版-2"><a href="#原版-2" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中，玩家通过鼠标点击潜艇位置来摧毁它们。这是通过 <code>OnLButtonDown</code> 函数实现的：</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnLButtonDown</span><span class="params">(UINT nFlags, CPoint point)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">if</span>(pSub-&gt;<span class="built_in">GetRect</span>().<span class="built_in">PtInRect</span>(point))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建爆炸和计分</span></span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">delete</span> pSub;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="改编版本-2"><a href="#改编版本-2" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本引入了键盘控制。通过 <code>OnKeyDown</code> 函数，玩家可以通过左右键移动船，并用空格键发射导弹。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnKeyDown</span><span class="params">(UINT nChar, UINT nRepCnt, UINT nFlags)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (nChar == VK_SPACE || nChar == VK_RETURN) <span class="comment">// 发射导弹</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">if</span> (!missileExists)</span><br><span class="line">        &#123;</span><br><span class="line">            CMissile* pMissile = <span class="keyword">new</span> <span class="built_in">CMissile</span>(<span class="built_in">CPoint</span>(shipPos.x, SHIP_VERT_POS));</span><br><span class="line">            m_Objects.<span class="built_in">AddTail</span>(pMissile);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="5-分数统计的变更"><a href="#5-分数统计的变更" class="headerlink" title="5. 分数统计的变更"></a>5. 分数统计的变更</h2><p>为了适应新的游戏玩法，分数统计方式也做了调整。</p>
+<h3 id="原版-3"><a href="#原版-3" class="headerlink" title="原版"></a>原版</h3><p>原版游戏仅在鼠标点击潜艇时计分。</p>
+<h3 id="改编版本-3"><a href="#改编版本-3" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中，分数统计不仅包括击毁潜艇的分数，还统计了击毁的潜艇数量。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">m_nTotalScore += pScore-&gt;<span class="built_in">GetScoreValue</span>(); <span class="comment">// 累加分数</span></span><br><span class="line">++m_nDestroyedSubmarines;  <span class="comment">// 增加被击毁的潜艇数量</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="6-界面信息显示的改进"><a href="#6-界面信息显示的改进" class="headerlink" title="6. 界面信息显示的改进"></a>6. 界面信息显示的改进</h2><p>改编版本在界面上添加了更多的信息显示，如总潜艇数、击毁潜艇数等，增强了游戏的可玩性和信息反馈。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CString destroyedString;</span><br><span class="line">destroyedString.<span class="built_in">Format</span>(<span class="string">&quot;击毁潜艇数: %d&quot;</span>, m_nDestroyedSubmarines);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(<span class="number">130</span>, <span class="number">10</span>, destroyedString); <span class="comment">// 显示击毁潜艇数</span></span><br><span class="line"></span><br><span class="line">CString scoreString;</span><br><span class="line">scoreString.<span class="built_in">Format</span>(<span class="string">&quot;总分: %d&quot;</span>, m_nTotalScore);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(GAME_WIDTH - <span class="number">100</span>, <span class="number">10</span>, scoreString); <span class="comment">// 显示总分</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参与《潜艇大战》游戏的改编过程，我在游戏开发方面获得了实质性的技能提升。通过这个项目，我学到了以下几个关键的技术点：</p>
+<ol>
+<li><strong>交互控制的实现</strong>：通过替换原有的鼠标点击控制为键盘控制，我学会了如何处理和响应键盘事件。这提高了我的能力，使我能够在未来的项目中灵活地设计和实现用户交互。</li>
+<li><strong>游戏逻辑的编写</strong>：在实现导弹发射和移动的逻辑时，我加深了对游戏循环和对象状态管理的理解。这对于理解如何构建游戏的动态元素和保持其连贯性非常有帮助。</li>
+<li><strong>碰撞检测的处理</strong>：实现导弹和潜艇之间的碰撞检测增强了我在游戏物理和交互方面的技术知识，这在很多游戏开发项目中都是一个核心技能。</li>
+<li><strong>图形和用户界面的更新</strong>：改进游戏的界面显示，例如增加得分和击毁潜艇数的显示，让我更加熟悉了图形界面的编程和数据可视化。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>项目报告</tag>
+        <tag>作品集</tag>
+        <tag>《潜艇大战》</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/09/24/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>《让蛋仔飞》技术报告</title>
+    <url>/2024/01/08/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/</url>
+    <content><![CDATA[<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><ul>
+<li><p>项目名称：《让蛋仔飞》</p>
+</li>
+<li><p>开发者：普典衡</p>
+</li>
+<li><p>分工：</p>
+<p>普典衡：</p>
+<p>策划-玩法，数值</p>
+<p>程序-前端，后端</p>
+<p>美术-UI，动画</p>
+</li>
+</ul>
+<h2 id="2-游戏内容介绍"><a href="#2-游戏内容介绍" class="headerlink" title="2. 游戏内容介绍"></a>2. 游戏内容介绍</h2><ul>
+<li>游戏背景：一个简单而有趣的游戏环境，主要集中于轻松、快节奏的体验。</li>
+<li>角色道具：玩家扮演的是不同种类的卡通蛋角色，如荷包蛋、倒霉蛋等。卡通风格的刀和叉作为障碍物。</li>
+<li>场景：使用明亮、鲜艳的色调和简单的卡通风格，界面清晰展示游戏选项。</li>
+<li>主要情节：游戏集中于提供快节奏、直观易懂的体验，没有复杂的情节或故事线。</li>
+<li>玩法：操作主角蛋躲避障碍物，通过点击或触摸屏幕控制跳跃。</li>
+<li>功能（系统）：包括游戏控制系统、皮肤系统、排行榜系统等。</li>
+</ul>
+<h2 id="3-主要特点"><a href="#3-主要特点" class="headerlink" title="3. 主要特点"></a>3. 主要特点</h2><ul>
+<li>整体风格：简洁而有趣，易于上手。</li>
+<li>娱乐性与挑战性：结合逐渐增加的难度提供持续挑战。</li>
+<li>社交性：通过排行榜系统增加游戏的社交动力。</li>
+<li>个性化体验：通过皮肤系统允许玩家自定义角色外观。</li>
+</ul>
+<h2 id="4-算法说明"><a href="#4-算法说明" class="headerlink" title="4. 算法说明"></a>4. 算法说明</h2><p>   Unity（C#）代码部分：</p>
+<h3 id="游戏控制和角色行为"><a href="#游戏控制和角色行为" class="headerlink" title="游戏控制和角色行为"></a>游戏控制和角色行为</h3><h4 id="EggyController-类："><a href="#EggyController-类：" class="headerlink" title="EggyController 类："></a><code>EggyController</code> 类：</h4><p>   负责处理蛋角色的基本行为，包括跳跃、得分、游戏开始&#x2F;结束逻辑、无敌状态、碰撞处理以及游戏速度的调整。</p>
+<h5 id="游戏开始-结束逻辑"><a href="#游戏开始-结束逻辑" class="headerlink" title="游戏开始&#x2F;结束逻辑"></a>游戏开始&#x2F;结束逻辑</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (isControl &amp;&amp; !IsPointerOverUIObject()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetMouseButtonDown(<span class="number">0</span>) &amp;&amp; !gameStarted) &#123;</span><br><span class="line">            StartGame();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (gameStarted) &#123;</span><br><span class="line">            Jump();</span><br><span class="line">        &#125;</span><br><span class="line">        CheckPosition();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StartGame</span>()</span> &#123;</span><br><span class="line">    gameStarted = <span class="literal">true</span>;</span><br><span class="line">    Time.timeScale = <span class="number">1</span>; <span class="comment">// 恢复时间流逝</span></span><br><span class="line">    <span class="comment">// 其他游戏开始逻辑</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CheckPosition</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 检查蛋的位置，确定游戏是否结束</span></span><br><span class="line">    <span class="comment">// 如果蛋落出屏幕，则结束游戏</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>   此部分代码控制游戏的开始和结束。当玩家点击屏幕时，游戏开始，而当游戏角色掉出屏幕时，游戏结束。</p>
+<h5 id="跳跃逻辑"><a href="#跳跃逻辑" class="headerlink" title="跳跃逻辑"></a>跳跃逻辑</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Jump</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (Input.GetMouseButtonDown(<span class="number">0</span>)) &#123;</span><br><span class="line">        rb.velocity = Vector2.up * jumpForce;</span><br><span class="line">        StartCoroutine(BounceEffect());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">IEnumerator <span class="title">BounceEffect</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 实现蛋的跳跃动画效果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>   这段代码负责处理玩家角色的跳跃动作。玩家点击屏幕时，角色会向上跳跃。</p>
+<h5 id="得分逻辑"><a href="#得分逻辑" class="headerlink" title="得分逻辑"></a>得分逻辑</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OnTriggerEnter2D</span>(<span class="params">Collider2D other</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!isGameOver &amp;&amp; other.gameObject.tag == <span class="string">&quot;ScoreZone&quot;</span>) &#123;</span><br><span class="line">        score++;</span><br><span class="line">        UpdateScoreText();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">UpdateScoreText</span>()</span> &#123;</span><br><span class="line">    scoreText.text = score.ToString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>   当角色通过特定区域时，玩家得分。这通过检测角色是否触碰到标记为 “ScoreZone” 的触发器来实现。</p>
+<h5 id="无敌状态"><a href="#无敌状态" class="headerlink" title="无敌状态"></a>无敌状态</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function">IEnumerator <span class="title">InvincibilityTime</span>()</span> &#123;</span><br><span class="line">    isInvincible = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// 实现无敌状态效果，如闪烁等</span></span><br><span class="line">    <span class="function"><span class="keyword">yield</span> <span class="keyword">return</span> <span class="keyword">new</span> <span class="title">WaitForSeconds</span>(<span class="params"><span class="number">3</span></span>)</span>; <span class="comment">// 无敌时间</span></span><br><span class="line">    isInvincible = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>   在某些情况下，角色会进入无敌状态，这段时间内不会被障碍物伤害。</p>
+<h5 id="碰撞处理"><a href="#碰撞处理" class="headerlink" title="碰撞处理"></a>碰撞处理</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OnCollisionEnter2D</span>(<span class="params">Collision2D collision</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (collision.gameObject.tag == <span class="string">&quot;KF&quot;</span> &amp;&amp; !isGameOver &amp;&amp; !isInvincible) &#123;</span><br><span class="line">        iscollide = <span class="literal">true</span>;</span><br><span class="line">        StartCoroutine(HandleGameOver());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>   当角色与标记为 “KF” 的障碍物发生碰撞时，游戏结束逻辑被触发。</p>
+<h5 id="游戏速度调整"><a href="#游戏速度调整" class="headerlink" title="游戏速度调整"></a>游戏速度调整</h5>   <div class="highlight-container" data-rel="C#"><figure class="iseeu highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">UpdateGameSpeed</span>()</span> &#123;</span><br><span class="line">    Time.timeScale = Mathf.Min(<span class="number">1</span> + score * speedupspeed, maxTimeScale);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>   随着玩家得分的提高，游戏的时间流逝速度加快，从而增加游戏难度。</p>
+<h4 id="Background-类："><a href="#Background-类：" class="headerlink" title="Background 类："></a><code>Background</code> 类：</h4><p>   管理游戏背景的移动，以创建滚动效果，增加游戏的动态感。</p>
+<h5 id="初始化背景属性"><a href="#初始化背景属性" class="headerlink" title="初始化背景属性"></a>初始化背景属性</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">    backgroundWidth = GetComponent&lt;SpriteRenderer&gt;().bounds.size.x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   在游戏开始时，计算背景图像的宽度，以便于后续确定何时克隆新的背景。</p>
+<h5 id="背景移动逻辑"><a href="#背景移动逻辑" class="headerlink" title="背景移动逻辑"></a>背景移动逻辑</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!EggyController.isGameOver) &#123;</span><br><span class="line">        transform.Translate(-speed * Time.deltaTime, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   在每一帧中，如果游戏未结束，背景将以设定的速度向左移动，创建出持续滚动的效果。</p>
+<h5 id="背景克隆和销毁"><a href="#背景克隆和销毁" class="headerlink" title="背景克隆和销毁"></a>背景克隆和销毁</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (transform.position.x &lt; <span class="number">0</span> &amp;&amp; !hasCloned) &#123;</span><br><span class="line">    CloneBackground();</span><br><span class="line">    hasCloned = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (transform.position.x &lt; <span class="number">-18</span>) &#123;</span><br><span class="line">    Destroy(gameObject);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   当背景移动到屏幕中央时，克隆一个新的背景对象，以实现无缝连接的滚动效果。一旦背景移出屏幕一定范围，它将被销毁，以节省资源。</p>
+<h5 id="克隆背景方法"><a href="#克隆背景方法" class="headerlink" title="克隆背景方法"></a>克隆背景方法</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CloneBackground</span>()</span> &#123;</span><br><span class="line">    Instantiate(gameObject, <span class="keyword">new</span> Vector3(transform.position.x + backgroundWidth, transform.position.y, transform.position.z), Quaternion.identity);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   这个方法在原有背景的基础上创建一个新的背景实例，放置在当前背景的右侧，确保两个背景图像在水平方向上连续。</p>
+<h3 id="游戏界面和用户交互"><a href="#游戏界面和用户交互" class="headerlink" title="游戏界面和用户交互"></a>游戏界面和用户交互</h3><h4 id="MenuManager-类："><a href="#MenuManager-类：" class="headerlink" title="MenuManager 类："></a><code>MenuManager</code> 类：</h4><p>   管理游戏菜单的显示和皮肤选择，提供玩家选择不同皮肤的功能。</p>
+<h5 id="初始化和皮肤状态管理"><a href="#初始化和皮肤状态管理" class="headerlink" title="初始化和皮肤状态管理"></a>初始化和皮肤状态管理</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 确保主页UI初始时是显示的</span></span><br><span class="line">    gameElements.SetActive(<span class="literal">false</span>);</span><br><span class="line">    homePageUI.SetActive(<span class="literal">true</span>);</span><br><span class="line">    <span class="comment">// 获取并显示累计总得分</span></span><br><span class="line">    <span class="built_in">int</span> totalScore = PlayerPrefs.GetInt(<span class="string">&quot;TotalScore&quot;</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 获取并显示死亡次数</span></span><br><span class="line">    <span class="built_in">int</span> deathCount = PlayerPrefs.GetInt(<span class="string">&quot;DeathCount&quot;</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 获取并显示复活总数</span></span><br><span class="line">    <span class="built_in">int</span> resurrectionCount = PlayerPrefs.GetInt(<span class="string">&quot;ResurrectionCount&quot;</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在对应的Text组件中显示这些值</span></span><br><span class="line">    <span class="comment">// 这里假设你有三个Text组件分别用于显示总得分、死亡次数和复活总数</span></span><br><span class="line">    <span class="comment">// 如果你的Text组件命名不同，需要根据实际情况修改下面的代码</span></span><br><span class="line">    totalScoreText.text = <span class="string">&quot;总得分: &quot;</span> + totalScore.ToString();</span><br><span class="line">    deathCountText.text = <span class="string">&quot;失败数: &quot;</span> + deathCount.ToString();</span><br><span class="line">    resurrectionCountText.text = <span class="string">&quot;复活数: &quot;</span> + resurrectionCount.ToString();</span><br><span class="line"></span><br><span class="line">    Time.timeScale = <span class="number">1</span>;</span><br><span class="line">    gameElements.SetActive(<span class="literal">true</span>); <span class="comment">// 先激活</span></span><br><span class="line">    ApplySkinToEggy(skinManager.skins[PlayerPrefs.GetInt(<span class="string">&quot;eggy&quot;</span>, <span class="number">0</span>)].name); <span class="comment">// 应用皮肤</span></span><br><span class="line">    gameElements.SetActive(<span class="literal">false</span>); <span class="comment">// 再隐藏，如果需要的话</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化皮肤列表</span></span><br><span class="line">    InitializeSkinsUnlockState();</span><br><span class="line">    LoadCurrentSkin();</span><br><span class="line">    UpdateEggyDisplay(skinManager.skins[currentSkinIndex]);</span><br><span class="line"></span><br><span class="line">    unlockButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">    selectButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">InitializeSkinsUnlockState</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 默认皮肤已解锁</span></span><br><span class="line">    PlayerPrefs.SetInt(<span class="string">&quot;eggy0&quot;</span>, <span class="number">1</span>); <span class="comment">// 1表示解锁，0表示未解锁</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他皮肤的初始状态</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; skinManager.skins.Count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!PlayerPrefs.HasKey(<span class="string">&quot;eggy&quot;</span> + i))</span><br><span class="line">        &#123;</span><br><span class="line">            PlayerPrefs.SetInt(<span class="string">&quot;eggy&quot;</span> + i, <span class="number">0</span>); <span class="comment">// 初始化为未解锁</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!PlayerPrefs.HasKey(<span class="string">&quot;eggyUnlockable&quot;</span> + i))</span><br><span class="line">        &#123;</span><br><span class="line">            PlayerPrefs.SetInt(<span class="string">&quot;eggyUnlockable&quot;</span> + i, <span class="number">0</span>); <span class="comment">// 初始化为不能解锁</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">LoadCurrentSkin</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 读取当前皮肤</span></span><br><span class="line">    currentSkinIndex = PlayerPrefs.GetInt(<span class="string">&quot;eggy&quot;</span>, <span class="number">0</span>);</span><br><span class="line">            			           UpdateEggyDisplay(skinManager.skins[currentSkinIndex]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   这部分代码在游戏开始时初始化UI元素和皮肤状态，包括设置默认皮肤和加载已解锁的皮肤。</p>
+<h5 id="游戏开始和皮肤应用"><a href="#游戏开始和皮肤应用" class="headerlink" title="游戏开始和皮肤应用"></a>游戏开始和皮肤应用</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">StartGame</span>()</span> &#123;</span><br><span class="line">    Time.timeScale = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 激活游戏元素</span></span><br><span class="line">    gameElements.SetActive(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 隐藏主页UI</span></span><br><span class="line">    homePageUI.SetActive(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他开始游戏的设置...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ApplySkinToEggy</span>(<span class="params"><span class="built_in">string</span> skinName</span>)</span> &#123;</span><br><span class="line">    Skin skin = skinManager.GetSkin(skinName);</span><br><span class="line">    <span class="keyword">if</span> (skin != <span class="literal">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        EggyController eggyController = Object.FindObjectOfType&lt;EggyController&gt;();</span><br><span class="line">        <span class="keyword">if</span> (eggyController != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            eggyController.ChangeAppearance(skin.image);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            Debug.LogError(<span class="string">&quot;EggyController instance not found in the scene.&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   当玩家选择开始游戏时，这部分代码负责切换游戏的视图状态，并应用玩家选择的皮肤。</p>
+<h5 id="皮肤选择和解锁"><a href="#皮肤选择和解锁" class="headerlink" title="皮肤选择和解锁"></a>皮肤选择和解锁</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">NextSkin</span>()</span> &#123;</span><br><span class="line">    currentSkinIndex = (currentSkinIndex + <span class="number">1</span>) % skinManager.skins.Count;</span><br><span class="line">    UpdateEggyDisplay(skinManager.skins[currentSkinIndex]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PreviousSkin</span>()</span> &#123;</span><br><span class="line">    currentSkinIndex = (currentSkinIndex - <span class="number">1</span> + skinManager.skins.Count) % skinManager.skins.Count;</span><br><span class="line">    UpdateEggyDisplay(skinManager.skins[currentSkinIndex]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SelectSkin</span>()</span> &#123;</span><br><span class="line">    PlayerPrefs.SetInt(<span class="string">&quot;eggy&quot;</span>, currentSkinIndex); <span class="comment">// 保存当前选择的皮肤</span></span><br><span class="line">    gameElements.SetActive(<span class="literal">true</span>); <span class="comment">// 先激活</span></span><br><span class="line">    ApplySkinToEggy(skinManager.skins[currentSkinIndex].name);<span class="comment">//应用皮肤</span></span><br><span class="line">    gameElements.SetActive(<span class="literal">false</span>); <span class="comment">// 再隐藏，如果需要的话</span></span><br><span class="line">    selectButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">UnlockSkin</span>()</span> &#123;</span><br><span class="line">    <span class="built_in">bool</span> canUnlock = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (currentSkinIndex)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>: <span class="comment">// eggy1解锁条件 - 累计失败500次</span></span><br><span class="line">            <span class="built_in">int</span> deathCount = PlayerPrefs.GetInt(<span class="string">&quot;DeathCount&quot;</span>,<span class="number">0</span>);</span><br><span class="line">            canUnlock = deathCount &gt;= <span class="number">500</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>: <span class="comment">// eggy2解锁条件 - 累计达到10000分</span></span><br><span class="line">            <span class="built_in">int</span> totalScore = PlayerPrefs.GetInt(<span class="string">&quot;TotalScore&quot;</span>,<span class="number">0</span>);</span><br><span class="line">            canUnlock = totalScore &gt;= <span class="number">10000</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>: <span class="comment">// eggy3解锁条件 - 累计复活50次</span></span><br><span class="line">            <span class="built_in">int</span> resurrectionCount = PlayerPrefs.GetInt(<span class="string">&quot;ResurrectionCount&quot;</span>, <span class="number">0</span>);</span><br><span class="line">            canUnlock = resurrectionCount &gt;= <span class="number">50</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">            <span class="keyword">if</span> (PlayerPrefs.GetInt(<span class="string">&quot;eggyUnlockable&quot;</span> + currentSkinIndex, <span class="number">0</span>) == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                canUnlock = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="literal">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (canUnlock)</span><br><span class="line">    &#123;</span><br><span class="line">        PlayerPrefs.SetInt(<span class="string">&quot;eggy&quot;</span> + currentSkinIndex, <span class="number">1</span>); <span class="comment">// 解锁当前皮肤</span></span><br><span class="line">        skinManager.skins[currentSkinIndex].isUnlocked = <span class="literal">true</span>; <span class="comment">// 更新皮肤管理器中的状态</span></span><br><span class="line">        UpdateEggyDisplay(skinManager.skins[currentSkinIndex]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        StartCoroutine(ShowUnlockConditionFailed());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">UpdateEggyDisplay</span>(<span class="params">Skin skin</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 更新皮肤信息</span></span><br><span class="line">    NameText.text = skin.name;</span><br><span class="line">    IntroductionText.text = skin.description;</span><br><span class="line">    unlockConditionText.text = skin.unlockCondition;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 保存原始皮肤图像并重置Eggy</span></span><br><span class="line">    eggyDisplay.SetSkinImage(skin.image);</span><br><span class="line">    eggyDisplay.ResetEggy(); <span class="comment">// 重置Eggy的位置和状态</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取解锁和选中状态</span></span><br><span class="line">    <span class="built_in">bool</span> isUnlocked = PlayerPrefs.GetInt(<span class="string">&quot;eggy&quot;</span> + currentSkinIndex, <span class="number">0</span>) == <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">bool</span> isSelected = PlayerPrefs.GetInt(<span class="string">&quot;eggy&quot;</span>, <span class="number">0</span>) == currentSkinIndex;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根据解锁状态和选中状态控制按钮显示</span></span><br><span class="line">    <span class="keyword">if</span> (isUnlocked &amp;&amp; isSelected)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 当前皮肤已解锁且为当前选中皮肤</span></span><br><span class="line">        unlockButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">        selectButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (isUnlocked)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 当前皮肤已解锁但不是当前选中皮肤</span></span><br><span class="line">        unlockButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">        selectButton.gameObject.SetActive(<span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 当前皮肤未解锁</span></span><br><span class="line">        unlockButton.gameObject.SetActive(<span class="literal">true</span>);</span><br><span class="line">        selectButton.gameObject.SetActive(<span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    eggyDisplay.SetUnlocked(isUnlocked);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   这些方法允许玩家在不同皮肤之间选择和切换，并根据游戏进度解锁新的皮肤。</p>
+<h4 id="EggyDisplay-类：用于控制蛋角色在游戏中的显示，包括皮肤更换和解锁动画效果。"><a href="#EggyDisplay-类：用于控制蛋角色在游戏中的显示，包括皮肤更换和解锁动画效果。" class="headerlink" title="EggyDisplay 类：用于控制蛋角色在游戏中的显示，包括皮肤更换和解锁动画效果。"></a><code>EggyDisplay</code> 类：用于控制蛋角色在游戏中的显示，包括皮肤更换和解锁动画效果。</h4><h5 id="初始化和设置皮肤"><a href="#初始化和设置皮肤" class="headerlink" title="初始化和设置皮肤"></a>初始化和设置皮肤</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">    eggyRenderer = GetComponent&lt;SpriteRenderer&gt;();</span><br><span class="line">    originalSprite = eggyRenderer.sprite;</span><br><span class="line">    originalPosition = transform.position;</span><br><span class="line">    originalScale = transform.localScale;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetSkinImage</span>(<span class="params">Sprite skinImage</span>)</span> &#123;</span><br><span class="line">    originalSprite = skinImage;</span><br><span class="line">    eggyRenderer.sprite = skinImage;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   在游戏开始时，该类初始化蛋角色的渲染器，并保存其原始状态。<code>SetSkinImage</code> 方法用于更换角色的皮肤。</p>
+<h5 id="皮肤解锁动画"><a href="#皮肤解锁动画" class="headerlink" title="皮肤解锁动画"></a>皮肤解锁动画</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetUnlocked</span>(<span class="params"><span class="built_in">bool</span> unlocked</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (unlocked) &#123;</span><br><span class="line">        StartCoroutine(UnlockedAnimation());</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        eggyRenderer.sprite = ApplyBlackMask(eggyRenderer.sprite);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> IEnumerator <span class="title">UnlockedAnimation</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 动画效果，如呼吸效果和跳跃动画</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   通过 <code>SetUnlocked</code> 方法，可以控制是否展示皮肤解锁动画。如果皮肤已解锁，会播放一个特殊的动画效果，如呼吸和跳跃动作。</p>
+<h5 id="辅助方法：黑色遮罩和重置状态"><a href="#辅助方法：黑色遮罩和重置状态" class="headerlink" title="辅助方法：黑色遮罩和重置状态"></a>辅助方法：黑色遮罩和重置状态</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> Sprite <span class="title">ApplyBlackMask</span>(<span class="params">Sprite originalSprite</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 将黑色遮罩应用于未解锁的皮肤图像</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ResetEggy</span>()</span> &#123;</span><br><span class="line">    StopAllCoroutines();</span><br><span class="line">    transform.localScale = originalScale;</span><br><span class="line">    transform.position = originalPosition;</span><br><span class="line">    <span class="comment">// 重置其他状态</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   <code>ApplyBlackMask</code> 方法用于给未解锁的皮肤添加一个黑色遮罩，而 <code>ResetEggy</code> 方法则用于重置蛋角色的状态，包括位置和缩放。</p>
+<h3 id="游戏障碍物和挑战"><a href="#游戏障碍物和挑战" class="headerlink" title="游戏障碍物和挑战"></a>游戏障碍物和挑战</h3><h4 id="KnifeForkController-和-KFController-类："><a href="#KnifeForkController-和-KFController-类：" class="headerlink" title="KnifeForkController 和 KFController 类："></a><code>KnifeForkController</code> 和 <code>KFController</code> 类：</h4><p>   负责生成和管理刀叉障碍物，控制它们的出现频率、速度和运动。</p>
+<h4 id="KnifeForkController-类："><a href="#KnifeForkController-类：" class="headerlink" title="KnifeForkController 类："></a><code>KnifeForkController</code> 类：</h4><p>   负责刀叉障碍物的生成和管理</p>
+<h5 id="初始化和生成刀叉"><a href="#初始化和生成刀叉" class="headerlink" title="初始化和生成刀叉"></a>初始化和生成刀叉</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> GameObject knifeForkPrefab; <span class="comment">// 刀叉预制体</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> spawnRate = <span class="number">2f</span>; <span class="comment">// 生成间隔（秒）</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">    nextSpawnTime = Time.time + spawnRate; <span class="comment">// 设置下一次生成时间</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!isGameOver &amp;&amp; Time.time &gt;= nextSpawnTime)</span><br><span class="line">    &#123;</span><br><span class="line">        SpawnKnifeFork();</span><br><span class="line">        nextSpawnTime = Time.time + spawnRate;</span><br><span class="line">        forksCount++; <span class="comment">// 增加已生成的刀叉数量</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检查EggyController的游戏结束状态</span></span><br><span class="line">    <span class="keyword">if</span> (EggyController.isGameOver)</span><br><span class="line">    &#123;</span><br><span class="line">        isGameOver = <span class="literal">true</span>;</span><br><span class="line">        GameOver();</span><br><span class="line">    &#125;<span class="keyword">else</span> isGameOver = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SpawnKnifeFork</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">float</span> gapY = Random.Range(-gapSize, gapSize); <span class="comment">// 随机间隔</span></span><br><span class="line">    Quaternion rotation = Random.Range(<span class="number">0</span>, <span class="number">2</span>) == <span class="number">0</span> ? Quaternion.identity : Quaternion.Euler(<span class="number">0</span>, <span class="number">0</span>, <span class="number">180</span>); <span class="comment">// 随机旋转180度</span></span><br><span class="line">    Vector3 spawnPosition = <span class="keyword">new</span> Vector3(transform.position.x, gapY, transform.position.z);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根据旋转来设置初始速度方向</span></span><br><span class="line">    <span class="built_in">float</span> initialMoveDirection = (rotation == Quaternion.identity) ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    GameObject newKnifeFork = Instantiate(knifeForkPrefab, spawnPosition, rotation);</span><br><span class="line">    spawnedForks.Add(newKnifeFork); <span class="comment">// 将已生成的刀叉添加到列表</span></span><br><span class="line">    StartCoroutine(MoveAndDestroyKnifeFork(newKnifeFork, initialMoveDirection)); <span class="comment">// 设置移动速度并在移出屏幕后销毁</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="刀叉运动和销毁"><a href="#刀叉运动和销毁" class="headerlink" title="刀叉运动和销毁"></a>刀叉运动和销毁</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function">IEnumerator <span class="title">MoveAndDestroyKnifeFork</span>(<span class="params">GameObject knifeFork, <span class="built_in">float</span> initialMoveDirection</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 控制刀叉的移动和销毁</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StopKnifeFork</span>(<span class="params">GameObject knifeFork</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (knifeFork != <span class="literal">null</span>) <span class="comment">// 检查刀叉是否为null</span></span><br><span class="line">    &#123;</span><br><span class="line">        Rigidbody2D kfRigidbody = knifeFork.GetComponent&lt;Rigidbody2D&gt;();</span><br><span class="line">        kfRigidbody.velocity = Vector2.zero; <span class="comment">// 停止刀叉的速度</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="游戏结束和重置"><a href="#游戏结束和重置" class="headerlink" title="游戏结束和重置"></a>游戏结束和重置</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">GameOver</span>()</span> &#123;</span><br><span class="line">    isGameOver = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// 停止所有已生成的刀叉的移动</span></span><br><span class="line">    <span class="keyword">foreach</span> (GameObject fork <span class="keyword">in</span> spawnedForks)</span><br><span class="line">    &#123;</span><br><span class="line">        StopKnifeFork(fork);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ResetGame</span>()</span> &#123;</span><br><span class="line">    <span class="comment">// 重置刀叉控制器的状态</span></span><br><span class="line">    isGameOver = <span class="literal">false</span>;</span><br><span class="line">    forksCount = <span class="number">0</span>;</span><br><span class="line">    nextSpawnTime = Time.time + spawnRate;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 销毁所有已生成的刀叉</span></span><br><span class="line">    <span class="keyword">foreach</span> (GameObject fork <span class="keyword">in</span> spawnedForks)</span><br><span class="line">    &#123;</span><br><span class="line">        Destroy(fork);</span><br><span class="line">    &#125;</span><br><span class="line">    spawnedForks.Clear(); <span class="comment">// 清空列表</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="KFController-类："><a href="#KFController-类：" class="headerlink" title="KFController 类："></a><code>KFController</code> 类：</h4><p>   负责单个刀叉障碍物的行为</p>
+<h5 id="刀叉障碍物的物理行为"><a href="#刀叉障碍物的物理行为" class="headerlink" title="刀叉障碍物的物理行为"></a>刀叉障碍物的物理行为</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> kfFallSpeed = <span class="number">20f</span>; <span class="comment">// KF的下降速度</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">OnCollisionEnter2D</span>(<span class="params">Collision2D collision</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (collision.gameObject.CompareTag(<span class="string">&quot;eggy&quot;</span>)) &#123;</span><br><span class="line">        Rigidbody2D kfRigidbody = GetComponent&lt;Rigidbody2D&gt;();</span><br><span class="line">        kfRigidbody.velocity = Vector2.down * kfFallSpeed; <span class="comment">// 设置下降速度</span></span><br><span class="line">        kfRigidbody.gravityScale = <span class="number">3</span>; <span class="comment">// 调整重力影响</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>   <code>KnifeForkController</code> 类负责控制整体刀叉障碍物的生成频率和运动模式，而 <code>KFController</code> 类则专注于单个刀叉障碍物的具体行为，如碰撞时的下降速度和重力设置。这两个类通过协同工作，为游戏增添挑战性和动态性。</p>
+<h3 id="排行榜和社交功能"><a href="#排行榜和社交功能" class="headerlink" title="排行榜和社交功能"></a>排行榜和社交功能</h3><h4 id="Ranking-类："><a href="#Ranking-类：" class="headerlink" title="Ranking 类："></a><code>Ranking</code> 类：</h4><p>   整合微信小程序的排行榜功能，允许玩家查看和分享他们的得分。</p>
+<h5 id="初始化和设置"><a href="#初始化和设置" class="headerlink" title="初始化和设置"></a>初始化和设置</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">    WX.InitSDK((code) =&gt; &#123; Init(); &#125;);</span><br><span class="line">    WX.UpdateShareMenu(<span class="keyword">new</span> UpdateShareMenuOption() &#123;</span><br><span class="line">        withShareTicket = <span class="literal">true</span>,</span><br><span class="line">        isPrivateMessage = <span class="literal">true</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   游戏启动时初始化微信SDK，并设置分享菜单选项，允许通过群分享获取排行榜数据。</p>
+<h5 id="展示排行榜"><a href="#展示排行榜" class="headerlink" title="展示排行榜"></a>展示排行榜</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShowOpenData</span>()</span> &#123;</span><br><span class="line">    RankMask.SetActive(<span class="literal">true</span>);</span><br><span class="line">    RankingBox.SetActive(<span class="literal">true</span>);</span><br><span class="line">    WX.ShowOpenData(RankBody.texture, <span class="comment">/* 确定排行榜的位置和尺寸 */</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span>()</span> &#123;</span><br><span class="line">    ShowButton1.onClick.AddListener(ShowRanking);</span><br><span class="line">    ShowButton2.onClick.AddListener(ShowRanking);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShowRanking</span>()</span> &#123;</span><br><span class="line">    ShowOpenData();</span><br><span class="line">    OpenDataMessage msgData = <span class="keyword">new</span> OpenDataMessage &#123; type = <span class="string">&quot;showFriendsRank&quot;</span> &#125;;</span><br><span class="line">    WX.GetOpenDataContext().PostMessage(JsonUtility.ToJson(msgData));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   提供了按钮监听器来展示排行榜，通过调用<code>WX.ShowOpenData</code>方法将排行榜数据渲染到指定的UI元素上。</p>
+<h5 id="排行榜的隐藏与分享"><a href="#排行榜的隐藏与分享" class="headerlink" title="排行榜的隐藏与分享"></a>排行榜的隐藏与分享</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line">RankMask.GetComponent&lt;Button&gt;().onClick.AddListener(() =&gt; &#123;</span><br><span class="line">    RankMask.SetActive(<span class="literal">false</span>);</span><br><span class="line">    RankingBox.SetActive(<span class="literal">false</span>);</span><br><span class="line">    WX.HideOpenData();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ShareButton.onClick.AddListener(() =&gt; &#123;</span><br><span class="line">    <span class="comment">// 分享最高分数</span></span><br><span class="line">    WX.ShareAppMessage(<span class="comment">/* 分享配置 */</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+<p>   包含隐藏排行榜和分享玩家成绩的逻辑。玩家可以通过点击按钮来关闭排行榜视图，或者通过另一个按钮分享自己的最高得分。</p>
+<ul>
+<li>使用微信SDK进行社交互动和数据共享。</li>
+</ul>
+<h5 id="玩家数据和成就"><a href="#玩家数据和成就" class="headerlink" title="玩家数据和成就"></a>玩家数据和成就</h5><ul>
+<li>使用 <code>PlayerPrefs</code> 来保存和加载玩家的分数、皮肤状态、死亡次数等信息。</li>
+<li>提供复活机制，增加游戏的挑战性和可玩性。</li>
+</ul>
+<h5 id="皮肤系统和个性化"><a href="#皮肤系统和个性化" class="headerlink" title="皮肤系统和个性化"></a>皮肤系统和个性化</h5><h4 id="SkinManager-类："><a href="#SkinManager-类：" class="headerlink" title="SkinManager 类："></a><code>SkinManager</code> 类：</h4><p>   管理游戏中的皮肤系统，包括皮肤的解锁条件和状态。</p>
+<h5 id="皮肤定义"><a href="#皮肤定义" class="headerlink" title="皮肤定义"></a>皮肤定义</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line">[<span class="meta">System.Serializable</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Skin</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> name; <span class="comment">// 皮肤名称</span></span><br><span class="line">    <span class="keyword">public</span> Sprite image; <span class="comment">// 皮肤图片</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> description; <span class="comment">// 皮肤简介</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> unlockCondition; <span class="comment">// 解锁条件描述</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">bool</span> isUnlocked; <span class="comment">// 是否已解锁</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   定义了一个<code>Skin</code>类，包含皮肤的名称、图片、描述和解锁条件。<code>isUnlocked</code>字段用于追踪皮肤的解锁状态。</p>
+<h5 id="皮肤管理"><a href="#皮肤管理" class="headerlink" title="皮肤管理"></a>皮肤管理</h5>   <div class="highlight-container" data-rel="Csharp"><figure class="iseeu highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SkinManager</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;Skin&gt; skins; <span class="comment">// 皮肤集合</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取指定名称的皮肤</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Skin <span class="title">GetSkin</span>(<span class="params"><span class="built_in">string</span> skinName</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> skins.Find(skin =&gt; skin.name == skinName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>   <code>SkinManager</code>类包含一个皮肤集合，提供<code>GetSkin</code>方法以根据名称获取特定皮肤的详细信息。这使得游戏能够根据玩家的选择或游戏进度，显示或更换皮肤。</p>
+<ul>
+<li>提供多种皮肤供玩家解锁和选择，增加游戏的个性化和吸引力。</li>
+</ul>
+<h2 id="5-API的使用"><a href="#5-API的使用" class="headerlink" title="5. API的使用"></a>5. API的使用</h2><h3 id="系统信息和日志管理"><a href="#系统信息和日志管理" class="headerlink" title="系统信息和日志管理"></a>系统信息和日志管理</h3><ul>
+<li><code>wx.getUpdateManager()</code>：获取全局唯一的版本更新管理器，用于管理小程序的更新。</li>
+<li><code>wx.getSystemInfoSync()</code>：同步获取系统信息，如屏幕大小、设备型号等。</li>
+<li><code>wx.getRealtimeLogManager()</code>：获取实时日志管理器，用于记录和上报实时日志。</li>
+<li><code>wx.getLogManager()</code>：获取日志管理器，用于记录和上报日志。</li>
+</ul>
+<h3 id="错误处理和内存管理"><a href="#错误处理和内存管理" class="headerlink" title="错误处理和内存管理"></a>错误处理和内存管理</h3><ul>
+<li><code>wx.onError()</code>：监听小程序错误事件，用于错误处理。</li>
+<li><code>wx.triggerGC()</code>：触发JavaScript垃圾回收机制，可以帮助小程序管理内存使用。</li>
+</ul>
+<h3 id="用户界面和反馈"><a href="#用户界面和反馈" class="headerlink" title="用户界面和反馈"></a>用户界面和反馈</h3><ul>
+<li><code>wx.showModal()</code>：显示模态对话框，用于向用户显示信息或询问用户决策。</li>
+<li><code>wx.createFeedbackButton()</code>：创建一个游戏内的用户反馈按钮。</li>
+</ul>
+<h3 id="社交功能和消息传递"><a href="#社交功能和消息传递" class="headerlink" title="社交功能和消息传递"></a>社交功能和消息传递</h3><ul>
+<li><code>wx.shareMessageToFriend()</code>：分享消息给微信好友，增强游戏的社交互动性。</li>
+<li><code>wx.onMessage()</code>：监听主域向开放数据域发送的消息，常用于排行榜的实现。</li>
+</ul>
+<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><ul>
+<li><code>wx.getStorageSync()</code>、<code>wx.setStorage()</code>、<code>wx.removeStorage()</code>、<code>wx.clearStorage()</code>、<code>wx.getStorage()</code>：这些API用于本地数据的存取、删除和清除，方便游戏保存玩家的游戏进度、设置或成就。</li>
+</ul>
+<h2 id="6-UI和截图"><a href="#6-UI和截图" class="headerlink" title="6. UI和截图"></a>6. UI和截图</h2><p>   所有素材均为ChatGPT绘制+本人Photoshop制作，无商用素材盗用</p>
+<h3 id="游戏界面截图"><a href="#游戏界面截图" class="headerlink" title="游戏界面截图"></a>游戏界面截图</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/0.png"
+                      alt="0"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/1.png"
+                      alt="1"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/2.png"
+                      alt="2"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/5.png"
+                      alt="5"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/6.png"
+                      alt="6"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/10.png"
+                      alt="10"
+                ></p>
+<h3 id="角色和UI设计图（部分）"><a href="#角色和UI设计图（部分）" class="headerlink" title="角色和UI设计图（部分）"></a>角色和UI设计图（部分）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/eggy.png"
+                      alt="eggy"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/egg4.png"
+                      alt="egg4"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/egg6.png"
+                      alt="egg6"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/egg1.png"
+                      alt="egg1"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/egg2.png"
+                      alt="egg2"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/egg3.png"
+                      alt="egg3"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/bg.png"
+                      alt="bg"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/Button_UI.png"
+                      alt="Button_UI"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/fork.png"
+                      alt="fork"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/knife.png"
+                      alt="knife"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/pan.png"
+                      alt="pan"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/share.png"
+                      alt="share"
+                ></p>
+]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>Unity</category>
+        <category>微信小游戏</category>
+      </categories>
+      <tags>
+        <tag>作品集</tag>
+        <tag>《让蛋仔飞》</tag>
+        <tag>Unity</tag>
+        <tag>微信小游戏</tag>
+        <tag>技术报告</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《让蛋仔飞》项目报告</title>
+    <url>/2024/01/09/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</url>
+    <content><![CDATA[<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_01.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_01"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_02.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_02"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_03.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_03"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_04.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_04"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_05.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_05"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_06.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_06"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_07.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_07"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_08.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_08"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_09.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_09"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_10.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_10"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_11.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_11"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_12.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_12"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_13.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_13"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_14.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_14"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_15.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_15"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_16.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_16"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_17.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_17"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_18.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_18"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_19.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_19"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_20.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_20"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_21.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_21"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_22.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_22"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_23.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_23"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_24.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_24"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_25.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_25"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_26.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_26"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_27.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_27"
+                ></p>
+]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>Unity</category>
+        <category>微信小游戏</category>
+      </categories>
+      <tags>
+        <tag>项目报告</tag>
+        <tag>作品集</tag>
+        <tag>《让蛋仔飞》</tag>
+        <tag>Unity</tag>
+        <tag>微信小游戏</tag>
       </tags>
   </entry>
 </search>
