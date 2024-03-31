@@ -35,9 +35,12 @@ defaults:
 # 颜色配置
 colors:
   # 主要颜色
-  primary: "#A31F34"
+  # primary: "#A31F34"
+  primary: "#80B5FF"
   # 次要颜色（测试版）
-  secondary: 
+  secondary: "#004098" # 海大蓝
+  # 默认模式
+  # default_mode: dark # light, dark
 # COLORS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -109,8 +112,10 @@ home_banner:
   style: fixed # 静态或固定
   # 主页横幅图像
   image: 
-    light: /images/wallhaven-wqery6-light.webp # 亮色模式
-    dark: /images/wallhaven-wqery6-dark.webp # 暗色模式
+    # light: /images/wallhaven-wqery6-light.webp # 亮色默认
+    # dark: /images/wallhaven-wqery6-dark.webp # 暗色默认
+    light: /images/wall1.jpg # 亮色模式
+    dark: /images/wall_shenzhen.jpg # 暗色模式
   # 主页横幅标题
   title: Elecmark-Pu Dianheng
   # 主页横幅副标题
@@ -134,7 +139,7 @@ home_banner:
   # 主页横幅文本颜色
   text_color: 
     light: "#fff" # 亮色模式
-    dark: "#d1d1b6" # 暗色模式
+    dark: "#FFFFF5" # 暗色模式
   # 文本的特定样式
   text_style: 
     # 标题字体大小
@@ -385,10 +390,26 @@ plugins:
     enable: true # 是否启用
     type: fixed # fixed, mini
     audios:
-      - name: 纯音乐
+
+
+      - name: soundorbis - LIFE
+        artist: Kyle Xian
+        url: https://music.163.com/song/media/outer/url?id=516372224.mp3
+        cover: http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg
+
+      - name: Pokémon Sleep - Christmas
+        artist: Pokémon Sleep
+        url: https://music.163.com/song/media/outer/url?id=2130624871.mp3
+        cover: https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg
+
+      - name: Guitar
         artist: Guitar
         url: /music/校园吉他纯音乐.mp3
         cover: /music/covers/music.svg
+
+#网易url  https://music.163.com/song/media/outer/url?id=516372224.mp3      
+#QQurl   https:/ /tsmusic24.tc.QQ.com/音乐ID.mp3  
+
 #      - name: # 音频名称
 #        artist: # 音频艺术家
 #        url: # 音频URL
@@ -396,7 +417,7 @@ plugins:
       # .... 你可以在这里添加更多音频
   # Mermaid JS。需要hexo-filter-mermaid-diagrams（npm i hexo-filter-mermaid-diagrams）。参见 https://mermaid.js.org/
   mermaid:
-    enable: false # 是否启用
+    enable: true # 是否启用
     version: "9.3.0" # 默认v9.3.0
 # PLUGINS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 

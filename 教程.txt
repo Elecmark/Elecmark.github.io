@@ -16,6 +16,10 @@ hexo new "博客名"
 
 hexo g && hexo d && hexo s
 
+接入TianliGPT位置：
+D:\Blog\Elecmark\node_modules\hexo-theme-redefine\layout\article-content.ejs
+
+教程：https://github.com/zhheo/Post-Abstract-AI
 
 文章头格式：
 title: 《让蛋仔飞》技术报告
