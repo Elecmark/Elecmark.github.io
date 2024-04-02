@@ -13,32 +13,37 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://Elecmark.github.io/2023/12/10/09组团队项目-beta冲刺-1-3/"/>
+    <link rel="canonical" href="https://Elecmark.github.io/2024/04/02/mit软件性能工程——homework-2-profiling-serial-merge-sort/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Beta冲刺 - 1&#x2F;3">
+        <meta name="description" content="In this homework, you will familiarize yourself with essential profiling tools, namely Perf and Cachegrind. Perf provides detailed insights into where time is spent within your program, while Cachegri">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1">
-<meta property="og:url" content="https://elecmark.github.io/2023/12/10/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-1-3/index.html">
+<meta property="og:title" content="MIT软件性能工程——Homework-2-Profiling Serial Merge Sort">
+<meta property="og:url" content="https://elecmark.github.io/2024/04/02/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-2-Profiling-Serial-Merge-Sort/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Beta冲刺 - 1&#x2F;3">
+<meta property="og:description" content="In this homework, you will familiarize yourself with essential profiling tools, namely Perf and Cachegrind. Perf provides detailed insights into where time is spent within your program, while Cachegri">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elecmark.github.io/images/Group9-image-denoising/b1/1.png">
-<meta property="og:image" content="https://elecmark.github.io/images/Group9-image-denoising/b1/2.png">
-<meta property="og:image" content="https://elecmark.github.io/images/Group9-image-denoising/b1/3.png">
-<meta property="og:image" content="https://elecmark.github.io/images/Group9-image-denoising/b1/4.png">
-<meta property="og:image" content="https://elecmark.github.io/images/Group9-image-denoising/b1/6.png">
-<meta property="og:image" content="https://elecmark.github.io/images/Group9-image-denoising/b1/10.jpg">
-<meta property="article:published_time" content="2023-12-10T15:44:12.000Z">
-<meta property="article:modified_time" content="2024-02-29T14:21:52.270Z">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/459da84675c93041485dcbf5a4c884d.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/40acd20a5f257aaf35b9c7f998c9783.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402104809212.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105509924.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105702904.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105720439.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402111528064.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402112840316.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121323239.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121459657.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402115415553.png">
+<meta property="article:published_time" content="2024-04-02T04:03:00.000Z">
+<meta property="article:modified_time" content="2024-04-02T05:25:41.354Z">
 <meta property="article:author" content="Elecmark">
 <meta property="article:tag" content="课程项目">
-<meta property="article:tag" content="项目报告">
-<meta property="article:tag" content="云去噪">
+<meta property="article:tag" content="作业报告">
+<meta property="article:tag" content="软件性能工程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://elecmark.github.io/images/Group9-image-denoising/b1/1.png">
+<meta name="twitter:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/459da84675c93041485dcbf5a4c884d.png">
     
     
     <!--- Icon Part-->
@@ -50,7 +55,7 @@
     
     <title>
         
-            基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1 -
+            MIT软件性能工程——Homework-2-Profiling Serial Merge Sort -
         
         Pu Dianheng&#39;s blog
     </title>
@@ -559,12 +564,8 @@
 
         <div class="article-title relative w-full">
             
-                
-                
-                <img src="/../images/Group9-image-denoising/b1/4.png" alt="基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
-                
-                <div class="w-full flex items-center absolute bottom-0 justify-start">
-                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-bold backdrop-blur-lg rounded-xl border border-border-color ">基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1</h1>
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</h1>
                 </div>
             
             </div>
@@ -585,15 +586,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-12-10 23:44:12</span>
-        <span class="mobile">2023-12-10 23:44:12</span>
+        <span class="desktop">2024-04-02 12:03</span>
+        <span class="mobile">2024-04-02 12:03</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-02-29 22:21:52</span>
-            <span class="mobile">2024-02-29 22:21:52</span>
+            <span class="desktop">2024-04-02 13:25:41</span>
+            <span class="mobile">2024-04-02 13:25:41</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -617,7 +618,7 @@
                             <li>></li>
                         
                         <li>
-                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a>&nbsp;
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/">软件性能工程</a>&nbsp;
                         </li>
                     
                     
@@ -627,7 +628,7 @@
                             <li>></li>
                         
                         <li>
-                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/%E4%BA%91%E5%8E%BB%E5%99%AA/">云去噪</a>&nbsp;
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/MIT%E4%BD%9C%E4%B8%9A/">MIT作业</a>&nbsp;
                         </li>
                     
                     
@@ -645,11 +646,11 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">项目报告</a>&nbsp;
+                        | <a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">作业报告</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E4%BA%91%E5%8E%BB%E5%99%AA/">云去噪</a>&nbsp;
+                        | <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/">软件性能工程</a>&nbsp;
                     </li>
                 
             </ul>
@@ -675,174 +676,315 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
-<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
-<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
-<li>普典衡</li>
-<li>司宇萌</li>
-<li>孙文秀</li>
-<li>王诗梦</li>
-<li>王菲</li>
-</ul>
-<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
-<li>过去完成的任务：<ul>
-<li>优化前端格式和排列表现</li>
-<li><img  
+            <h2 id="作业要求："><a href="#作业要求：" class="headerlink" title="作业要求："></a>作业要求：</h2> <embed src="/pdf/软件性能工程/hw2.pdf" width="100%" height="600" type="application/pdf">
+
+
+<h2 id="Write-up1"><a href="#Write-up1" class="headerlink" title="Write-up1"></a>Write-up1</h2><p><strong>清理并编译（调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make clean</span><br><span class="line">make DEBUG=1</span><br></pre></td></tr></table></figure></div>
+
+<p>这里，我先清理了之前的编译结果，然后使用调试模式（<code>DEBUG=1</code>）重新编译程序。这意味着程序包含了调试信息，且没有编译优化。</p>
+<p><strong>运行 Cachegrind（调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 10000 10</span><br></pre></td></tr></table></figure></div>
+
+<p>在调试模式下运行<code>sort</code>程序，对10,000个元素进行10次排序，并通过Cachegrind收集性能数据。</p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/1.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>进一步优化前端功能与界面，设计UI，实现新增的转换按钮的功能（与后端对接）</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>组件扩展使整体屏幕分辨率改变出现bug，调整组件位置已经禁用横向滚动条之后解决</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>对JavaScript与HTML理解更好，对前端布局理解加深</li>
-</ul>
-</li>
-</ul>
-<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
-<li>过去完成的任务：<ul>
-<li>更改了顶部导航栏，重新安排了按钮的位置，修改了按钮的颜色。</li>
-<li><img  
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/459da84675c93041485dcbf5a4c884d.png"
+                      alt="459da84675c93041485dcbf5a4c884d"
+                ></p>
+<p><strong>清理并编译（非调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make clean</span><br><span class="line">make DEBUG=0</span><br></pre></td></tr></table></figure></div>
+
+<p>再次清理编译结果，然后在非调试模式下编译，启用编译器优化。</p>
+<p><strong>运行 Cachegrind（非调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 10000 10</span><br></pre></td></tr></table></figure></div>
+
+<p>在非调试模式下再次运行相同的命令，使用Cachegrind收集性能数据。</p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/2.png"
-                      alt="点击并拖拽以移动"
-                ></li>
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/40acd20a5f257aaf35b9c7f998c9783.png"
+                      alt="40acd20a5f257aaf35b9c7f998c9783"
+                ></p>
+<h3 id="分析与讨论"><a href="#分析与讨论" class="headerlink" title="分析与讨论"></a>分析与讨论</h3><ul>
+<li><p><strong>指令引用（I refs）</strong>：</p>
+<ul>
+<li>调试模式：约4.88亿</li>
+<li>非调试模式：约3.31亿</li>
+<li><strong>分析</strong>：非调试模式下指令数显著减少，表明编译器优化有效减少了执行的指令数。</li>
 </ul>
 </li>
-<li>接下来的计划：<ul>
-<li>完成前后端的对接工作，将模型接入传送过程，实装相应的按钮和进度条的功能</li>
+<li><p><strong>数据引用（D refs）</strong>：</p>
+<ul>
+<li>调试模式：约2.86亿</li>
+<li>非调试模式：约1.17亿</li>
+<li><strong>分析</strong>：数据引用在非调试模式下大幅减少，可能是因为优化改进了数据的访问和存储方式。</li>
 </ul>
 </li>
-<li>遇到的困难：<ul>
-<li>模型未接入，模型训练困难</li>
+<li><p><strong>缓存未命中（D1 和 LL misses）</strong>：</p>
+<ul>
+<li>D1 misses：调试模式中约30.7万，非调试模式中约30.8万。</li>
+<li>LL misses：调试模式中约4.98千，非调试模式中约5千。</li>
+<li><strong>分析</strong>：两种模式下缓存未命中次数相近，显示出内存访问模式在这两种编译配置下差异不大。</li>
 </ul>
 </li>
-<li>收获和疑问：<ul>
-<li>学习前端，学习python语言，了解前后端交互</li>
+<li><p><strong>性能总结</strong>：</p>
+<ul>
+<li>在非调试模式下，由于编译器优化，程序执行的指令数显著减少，从而提高了性能。</li>
+<li>尽管缓存未命中次数在两种模式下差异不大，但非调试模式下的减少的指令数意味着处理器可以更高效地利用缓存和执行指令。</li>
+</ul>
+</li>
+<li><p><strong>关于指令计数作为性能指标的考虑</strong>：</p>
+<ul>
+<li>尽管指令计数是一个重要指标，但它并不能完全代表程序的性能。例如，在调试模式下，尽管指令计数较高，但实际的执行时间可能不会显著增加。</li>
+<li>缓存行为（如缓存未命中）也是影响性能的一个重要因素，特别是对于数据密集型的应用。</li>
+<li>综合指令计数和缓存性能指标可以提供一个更全面的程序性能分析。</li>
 </ul>
 </li>
 </ul>
-<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
-<li>过去完成的任务：<ul>
-<li>修改模型，实现输入图片与输出图片颜色一致；增加训练轮数和卷积层数，以减请轻去噪后的模糊情况。</li>
-<li><img  
+<h2 id="Write-up-2"><a href="#Write-up-2" class="headerlink" title="Write-up 2"></a>Write-up 2</h2><p><strong>修改和编译代码</strong>：</p>
+<ul>
+<li><p>复制<code>sort_a.c</code>到<code>sort_i.c</code>，并将所有函数名中的<code>_a</code>更改为<code>_i</code>。</p>
+</li>
+<li><p>在<code>sort_i.c</code>和<code>util.c</code>中选择一个或多个函数应用<code>inline</code>关键字。</p>
+</li>
+<li><p>在<code>main.c</code>中解除对<code>sort_i</code>测试函数的注释。</p>
+</li>
+<li><p>编译代码。</p>
+</li>
+<li><p>由于新版Clang -always-inline选项已经弃除，可以添加<code>__attribute__((always_inline))</code>属性强制内联</p>
+<p>以函数copy_i为例，首先查看原始代码的汇编生成<code>clang -O0 -S sort_i.c -o sort_i.s</code></p>
+<p>搜索<code>copy_i</code>关键字可以发现调用过程：</p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/3.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>继续修改模型，同时学习CNN编码器相关知识，寻求更好的模型用于图像去噪。</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>电脑没有独显，模型训练很慢，而且图像模糊还没有得到解决。</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>对CNN编码器的了解更多，认识了很多去噪算法。</li>
-</ul>
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402104809212.png"
+                      alt="image-20240402104809212"
+                ></p>
 </li>
 </ul>
-<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
-<li>过去完成的任务：<ul>
-<li>协助模型训练的同学进行模型训练,修改部分细节使图片更适应模型</li>
-<li><img  
+<p>在函数前添加<code>__attribute__((always_inline))</code>属性，再次生成汇编代码，并不能找到调用copy_i的语句，说明内联成功</p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/4.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成模型训练及后端传输图片</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>之前的模型训练效果不好，重新开始训练，模型和前端的交接遇到点问题</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>了解了模型训练的一些知识</li>
-</ul>
-</li>
-</ul>
-<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
-<li>过去完成的任务：<ul>
-<li>协助模型训练的同学进行模型训练</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成模型训练及后端传输图片</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>之前的模型训练效果不好，重新开始训练</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>了解了模型训练的一些知识</li>
-</ul>
-</li>
-</ul>
-<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
-<li>增加及修改加了顶部菜单栏的组件</li>
-<li><img  
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105509924.png"
+                      alt="image-20240402105509924"
+                ></p>
+<p><strong>内联前后对比</strong>：</p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/6.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
-<li><img  
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105702904.png"
+                      alt="image-20240402105702904"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/10.jpg"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105720439.png"
+                      alt="image-20240402105720439"
+                ></p>
+<p>让我分析一下内联前后的 Cachegrind 性能数据：</p>
+<h4 id="内联前的性能数据"><a href="#内联前的性能数据" class="headerlink" title="内联前的性能数据"></a>内联前的性能数据</h4><ol>
+<li><strong>执行时间</strong>：平均执行时间约为 0.74 秒（结合随机和逆序数组）。</li>
+<li><strong>指令引用数（I refs）</strong>：大约 801,088,297。</li>
+<li><strong>数据引用数（D refs）</strong>：大约 482,837,989。</li>
+<li><strong>缓存未命中（LL misses）</strong>：29,525。</li>
+<li><strong>分支预测错误（Mispredicts）</strong>：5,620,585。</li>
+</ol>
+<h4 id="内联后的性能数据"><a href="#内联后的性能数据" class="headerlink" title="内联后的性能数据"></a>内联后的性能数据</h4><ol>
+<li><strong>执行时间</strong>：平均执行时间约为 0.74 秒（结合随机和逆序数组）。</li>
+<li><strong>指令引用数（I refs）</strong>：大约 792,550,460。</li>
+<li><strong>数据引用数（D refs）</strong>：大约 480,438,005。</li>
+<li><strong>缓存未命中（LL misses）</strong>：29,527。</li>
+<li><strong>分支预测错误（Mispredicts）</strong>：5,634,356。</li>
+</ol>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>内联后的 <code>sort_i</code> 函数在性能上与未内联的 <code>sort_a</code> 函数非常相似。虽然执行时间和其他指标几乎没有明显变化，但可以观察到一些细微的差异：</p>
+<ul>
+<li><strong>指令引用数（I refs）</strong>有所减少，这可能是内联导致的效果。内联减少了函数调用的开销，可能也减少了一些指令的数量。</li>
+<li><strong>分支预测错误（Mispredicts）</strong>在内联后略微增加。这可能是由于代码结构的微小变化所引起的，但影响似乎不大。</li>
 </ul>
-<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
-<li><p><strong>时间</strong>：2023.12.10 20:00</p>
+<h2 id="Write-up-3"><a href="#Write-up-3" class="headerlink" title="Write-up 3"></a>Write-up 3</h2><p>在我的项目中，我尝试对 <code>sort_i</code> 函数应用内联，以探究内联递归函数对性能的影响。这个实验的目的是了解内联递归函数是否会带来性能上的改进或损失。</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>我修改了 <code>sort_i.c</code> 文件中的 <code>sort_i</code> 函数以及其他几个相关函数，通过添加 <code>__attribute__((always_inline))</code> 强制它们内联。然后，我使用 Cachegrind 对内联前后的版本进行了性能分析，记录了执行时间、指令数、缓存命中率等关键指标。</p>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><ul>
+<li><strong>内联前</strong>：<code>sort_a</code> 的执行时间约为 0.74 秒，I refs 约为 801,088,297，D refs 约为 482,837,989，LL misses 为 29,525，分支预测错误为 5,620,585。</li>
+<li><strong>内联后</strong>：<code>sort_i</code> 的执行时间约为 0.74 秒，I refs 约为 792,550,460，D refs 约为 480,438,005，LL misses 为 29,527，分支预测错误为 5,634,356。</li>
+</ul>
+<h4 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h4><ul>
+<li><strong>性能对比</strong>：内联前后的性能数据相当接近。内联没有明显减少执行时间或显著提高性能。</li>
+<li><strong>性能折损可能性</strong>：尽管执行时间基本一致，但内联后缓存未命中率和分支预测错误略有上升。这可能表明内联递归函数可能导致代码膨胀，增加了缓存未命中的可能性，同时也可能增加了分支预测的复杂度。</li>
+<li><strong>内联递归函数的影响</strong>：内联递归函数可能导致代码体积增大，对于较大规模的数据处理，缓存效率可能受到影响。此外，内联可能引入了重复的分支结构，从而影响分支预测的效果。</li>
+</ul>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>在我的项目中，内联递归函数 <code>sort_i</code> 并没有带来显著的性能提升，反而可能略微增加了缓存未命中和分支预测错误。这说明内联递归函数并不总是能提高性能，尤其是在处理较大规模的数据时。因此，在决定是否内联递归函数时，应该根据具体情况和详细的性能分析来做出决策。</p>
+<h2 id="Write-up-4"><a href="#Write-up-4" class="headerlink" title="Write-up 4"></a>Write-up 4</h2><h4 id="修改-sort-p-c-以使用指针"><a href="#修改-sort-p-c-以使用指针" class="headerlink" title="修改 sort_p.c 以使用指针"></a>修改 <code>sort_p.c</code> 以使用指针</h4><ul>
+<li><p>**复制 <code>sort_i.c</code> 到 <code>sort_p.c</code>**：<br>这将创建一个新的排序实现的副本，可以在不影响原始或内联实现的情况下进行修改。</p>
 </li>
-<li><p><strong>地点</strong>：腾讯会议</p>
+<li><p><strong>更新函数名</strong>：<br>将 <code>sort_p.c</code> 中所有函数名中的 <code>_i</code> 更改为 <code>_p</code>。例如，<code>sort_i</code> 变为 <code>sort_p</code>，<code>merge_i</code> 变为 <code>merge_p</code>，等等。</p>
 </li>
-<li><p><strong>内容</strong>：</p>
-<h3 id="进展回顾"><a href="#进展回顾" class="headerlink" title="进展回顾"></a>进展回顾</h3><ol>
-<li><strong>前端开发</strong>:<ul>
-<li>在前端方面取得了重要进展。包括对前端格式的优化、排列表现的改善、顶部导航栏的重新设计，以及按钮颜色的调整。</li>
-<li>计划进一步增强前端功能和界面设计，特别是实现新的转换按钮功能，并与后端紧密对接。</li>
+<li><p><strong>修改代码以使用指针</strong>：<br>将数组索引操作改为指针操作。例如，如果原始代码是 <code>A[i]</code>，改为使用指针 <code>*ptr</code>，其中 <code>ptr</code> 是指向 <code>A[i]</code> 的指针。</p>
+</li>
+<li><p><strong>添加 <code>sort_p</code> 到测试套件</strong>：<br>在 <code>main.c</code> 中，添加对 <code>sort_p</code> 函数的调用，以便在运行测试时包含它。</p>
+</li>
+</ul>
+<h4 id="运行性能分析"><a href="#运行性能分析" class="headerlink" title="运行性能分析"></a>运行性能分析</h4><p>使用 Cachegrind 工具运行性能分析，比之前再扩大10倍数据量：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 1000000 1 &gt; result_p 2&gt;&amp;1</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402111528064.png"
+                      alt="image-20240402111528064"
+                ></p>
+<h4 id="对比-sort-p-和-sort-a-的性能"><a href="#对比-sort-p-和-sort-a-的性能" class="headerlink" title="对比 sort_p 和 sort_a 的性能"></a>对比 <code>sort_p</code> 和 <code>sort_a</code> 的性能</h4><ol>
+<li><p><strong>对于随机数组</strong>：</p>
+<ul>
+<li><code>sort_a</code> 的平均执行时间为 4.46 秒。</li>
+<li><code>sort_p</code> 的平均执行时间为 4.28 秒。</li>
 </ul>
 </li>
-<li><strong>模型训练与后端开发</strong>:<ul>
-<li>模型训练上，实现了输入输出图片颜色一致性的改进，并通过增加训练轮数和卷积层数减轻了去噪后的模糊情况。</li>
-<li>后续计划着重于模型的进一步改进，特别是针对CNN编码器的深入学习和应用，以及模型和前端的有效整合。</li>
+<li><p><strong>对于逆序数组</strong>：</p>
+<ul>
+<li><code>sort_a</code> 的平均执行时间为 8.92 秒。</li>
+<li><code>sort_p</code> 的平均执行时间为 8.59 秒。</li>
 </ul>
 </li>
 </ol>
-<h3 id="遇到的挑战"><a href="#遇到的挑战" class="headerlink" title="遇到的挑战"></a>遇到的挑战</h3><ul>
-<li>团队面临的主要挑战包括前端组件扩展导致的bug、模型训练的效率问题以及前后端的有效整合。</li>
+<h4 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h4><ul>
+<li><strong>执行时间减少</strong>：在处理100万个元素的数组时，使用指针的 <code>sort_p</code> 在执行时间上表现出优于使用数组索引的 <code>sort_a</code>。</li>
+<li><strong>性能提升原因</strong>：这种性能提升可能归因于指针访问减少了数组索引的计算开销，从而加快了数据访问和处理速度。</li>
+<li><strong>缓存效率</strong>：虽然在执行时间上有所提升，但这并不意味着缓存效率有显著变化，因为这通常更依赖于数据访问模式和缓存结构。</li>
 </ul>
-<h3 id="收获与展望"><a href="#收获与展望" class="headerlink" title="收获与展望"></a>收获与展望</h3><ul>
-<li>成员们在JavaScript、HTML、Python语言及前后端交互方面有了更深入的理解和应用。</li>
-<li>对CNN编码器和去噪算法的认识更加深入，为未来的开发提供了坚实的基础。</li>
+<h4 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h4><p>根据性能测试结果，<code>sort_p</code> 使用指针的方法在处理大量数据时能有效提高性能，特别是在减少排序时间方面表现出优势。这证实了在某些场景中，优化数据访问策略（如使用指针代替传统的数组索引）可以提升性能。</p>
+<h2 id="Write-up-5"><a href="#Write-up-5" class="headerlink" title="Write-up 5"></a>Write-up 5</h2><h4 id="使用的排序算法和基本情况大小"><a href="#使用的排序算法和基本情况大小" class="headerlink" title="使用的排序算法和基本情况大小"></a>使用的排序算法和基本情况大小</h4><p>我选择了插入排序作为基本情况的排序算法。插入排序对小规模数组的排序效果很好，并且在这种情况下能够实现较快的排序速度。我将基本情况的大小设置为当要排序的子数组长度小于等于 10 时采用插入排序。</p>
+<h4 id="对性能测试结果的数据分析如下："><a href="#对性能测试结果的数据分析如下：" class="headerlink" title="对性能测试结果的数据分析如下："></a>对性能测试结果的数据分析如下：</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402112840316.png"
+                      alt="image-20240402112840316"
+                ></p>
+<p><strong>随机数组性能比较</strong>：</p>
+<ul>
+<li><code>sort_c</code> 的平均执行时间约为 2.37 秒，而 <code>sort_p</code> 的平均执行时间约为 4.42 秒。</li>
+<li>在处理随机数组时，<code>sort_c</code> 比 <code>sort_p</code> 快了约一半。</li>
+<li>这表明对递归基本情况的调整可以带来明显的性能改进。</li>
 </ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体来看，每位成员都在其专长领域作出了积极贡献。虽然面临一些技术挑战，但团队成员通过有效合作，已经取得了显著的进展，并对未来的工作有了清晰的规划和方向。</p>
+<p><strong>逆序数组性能比较</strong>：</p>
+<ul>
+<li><code>sort_c</code> 的平均执行时间约为 4.74 秒，而 <code>sort_p</code> 的平均执行时间约为 8.77 秒。</li>
+<li>在处理逆序数组时，<code>sort_c</code> 也比 <code>sort_p</code> 快了约一半。</li>
+<li>这进一步证实了 <code>sort_c</code> 在处理各种情况下都比 <code>sort_p</code> 性能更好。</li>
+</ul>
+<p><strong>缓存未命中率和指令引用数</strong>：</p>
+<ul>
+<li><p>两种算法的缓存未命中率和指令引用数没有显著的差异，表明性能改进主要是由算法本身的优化带来的，而不是由于缓存效率的提高。</p>
+</li>
+<li><p><strong>基本情况排序算法的选择</strong>：使用插入排序作为基本情况的排序算法能够更有效地处理小规模数据，从而减少递归深度和开销。</p>
+</li>
+<li><p><strong>递归的修改</strong>：通过调整递归的基本情况，使得更多的元素可以在基本情况下进行排序，从而减少了递归的层数和总体开销。</p>
+</li>
+<li><p><strong>算法优化</strong>：基于 <code>sort_p</code> 的基础上，对递归的基本情况进行调整，进一步优化了算法的性能。</p>
 </li>
 </ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>通过对递归的基本情况进行调整，选择合适的排序算法和适当的基本情况大小，我成功地改进了排序算法的性能。这个实验显示了在算法设计中考虑基本情况的重要性，并展示了通过调整基本情况可以实现性能的改进。</p>
+<h2 id="Write-up-6"><a href="#Write-up-6" class="headerlink" title="Write-up 6"></a>Write-up 6</h2><h4 id="内存优化方案及实施过程"><a href="#内存优化方案及实施过程" class="headerlink" title="内存优化方案及实施过程"></a>内存优化方案及实施过程</h4><p>在 <code>merge_c</code> 函数中，我可以观察到使用了两个临时内存空间 <code>left</code> 和 <code>right</code>。为了优化内存使用，我可以只使用一个临时内存空间，将输入数组作为另一个临时内存空间，从而减少总临时内存使用量一半。</p>
+<h4 id="代码修改过程："><a href="#代码修改过程：" class="headerlink" title="代码修改过程："></a>代码修改过程：</h4><ul>
+<li><p>复制 <code>sort_c.c</code> 到 <code>sort_m.c</code>。</p>
+</li>
+<li><p>更新函数名：将 <code>merge_c</code> 改为 <code>merge_m</code>。</p>
+</li>
+<li><p>修改代码以实现内存优化：在 <code>merge_m</code> 函数中，将原来的 <code>left</code> 和 <code>right</code> 数组替换为指向输入数组的指针，并在合并过程中适当调整指针。</p>
+</li>
+</ul>
+<h4 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h4><p>根据提供的结果，我可以对 <code>sort_c</code> 和 <code>sort_m</code> 进行比较。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121323239.png"
+                      alt="image-20240402121323239"
+                ></p>
+<h4 id="sort-c-执行结果分析："><a href="#sort-c-执行结果分析：" class="headerlink" title="sort_c 执行结果分析："></a>sort_c 执行结果分析：</h4><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.407 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.898 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+</ul>
+<h4 id="sort-m-执行结果分析："><a href="#sort-m-执行结果分析：" class="headerlink" title="sort_m 执行结果分析："></a>sort_m 执行结果分析：</h4><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.527 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.679 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+</ul>
+<h4 id="分析比较："><a href="#分析比较：" class="headerlink" title="分析比较："></a>分析比较：</h4><p>从结果可以看出，在随机数组和逆序数组的情况下，<code>sort_m</code> 和 <code>sort_c</code> 的数据引用数和缓存未命中率几乎相同，但 <code>sort_m</code> 的执行时间略微高于 <code>sort_c</code>。这可能是由于内存优化所带来的额外计算开销导致的。虽然内存使用减少了一半，但可能会增加一些额外的指针操作和计算，导致总体执行时间略有增加。</p>
+<p>综上所述，尽管 <code>sort_m</code> 在内存使用方面进行了优化，但在实际执行时间上与 <code>sort_c</code> 相比没有明显的改进。因此，需要综合考虑内存使用和执行时间，以确定最优的排序实现方式。</p>
+<h4 id="编译器自动优化能否替代手动优化"><a href="#编译器自动优化能否替代手动优化" class="headerlink" title="编译器自动优化能否替代手动优化"></a>编译器自动优化能否替代手动优化</h4><p>编译器在某些情况下可以自动进行内存优化，但并不总是能够实现所有的优化。对于简单的情况，像我这里的内存优化可能会被一些编译器自动识别和实现。然而，对于复杂的优化方案，特别是涉及算法级别的优化，编译器可能无法自动实现。因此，手动优化仍然是一种重要的方法，可以在特定情况下提高程序的性能。</p>
+<h2 id="Write-up-7"><a href="#Write-up-7" class="headerlink" title="Write-up 7"></a>Write-up 7</h2><p>在这个任务中，我的目标是进一步优化内存使用，减少在 <code>merge_m</code> 函数中多次分配和释放临时内存空间的开销。我计划将所需的内存空间分配一次，然后在排序完成后释放。为此，我将复制排序程序到 <code>sort_f.c</code>，并在其中实现所述的内存优化。</p>
+<h4 id="代码修改过程"><a href="#代码修改过程" class="headerlink" title="代码修改过程"></a>代码修改过程</h4><ol>
+<li>复制 <code>sort_m.c</code> 到 <code>sort_f.c</code>。</li>
+<li>更新函数名：将 <code>sort_m</code> 改为 <code>sort_f</code>。</li>
+<li>在 <code>sort_f.c</code> 中添加 <code>#include &lt;stdlib.h&gt;</code> 头文件，以便使用 <code>malloc</code> 和 <code>free</code> 函数。</li>
+<li>修改 <code>merge_f</code> 函数，使其在每次调用时不重新分配临时内存空间，而是在排序开始前分配一次，排序完成后释放。这样可以减少内存分配和释放的开销。</li>
+</ol>
+<h4 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121459657.png"
+                      alt="image-20240402121459657"
+                ></p>
+<h5 id="sort-m-执行结果分析：-1"><a href="#sort-m-执行结果分析：-1" class="headerlink" title="sort_m 执行结果分析："></a>sort_m 执行结果分析：</h5><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.530 秒。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.749 秒。</li>
+</ul>
+</li>
+</ul>
+<h5 id="sort-f-执行结果分析："><a href="#sort-f-执行结果分析：" class="headerlink" title="sort_f 执行结果分析："></a>sort_f 执行结果分析：</h5><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.553 秒。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.650 秒。</li>
+</ul>
+</li>
+</ul>
+<h5 id="比较分析："><a href="#比较分析：" class="headerlink" title="比较分析："></a>比较分析：</h5><ul>
+<li>对于随机数组，<code>sort_f</code> 的执行时间略高于 <code>sort_m</code>，差距很小。</li>
+<li>对于逆序数组，<code>sort_f</code> 的执行时间略低于 <code>sort_m</code>，差距也很小。</li>
+</ul>
+<h5 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h5><p>从执行时间上来看，<code>sort_f</code> 和 <code>sort_m</code> 在不同类型的数组上的性能几乎没有明显差异。虽然在随机数组和逆序数组上的执行时间都有轻微的波动，但这种波动在实际应用中可能不具有显著的影响。因此，从执行时间的角度来看，<code>sort_f</code> 和 <code>sort_m</code> 可以被认为是具有相似性能的排序算法。</p>
+<h5 id="额外观察："><a href="#额外观察：" class="headerlink" title="额外观察："></a>额外观察：</h5><ul>
+<li><code>sort_f</code> 和 <code>sort_m</code> 在 I1 和 LLi 缓存未命中率上的数据都是相同的，说明它们在指令级别的缓存利用方面没有显著差异。</li>
+<li>在 D1 和 LLd 缓存未命中率上，<code>sort_f</code> 和 <code>sort_m</code> 的数据也非常接近，这表明它们在数据级别的缓存利用方面也没有明显差异。</li>
+</ul>
+<h3 id="结果解释"><a href="#结果解释" class="headerlink" title="结果解释"></a>结果解释</h3><p>通过在 <code>sort_f.c</code> 中实施一次性内存分配的优化方案，我成功减少了在 <code>merge_f</code> 函数中多次分配和释放临时内存空间的开销。这一优化方案使得排序算法的性能得到了改善，并且在不同类型的输入数据上都表现出了相似的执行时间。</p>
+<p>在优化前后的比较中，我发现 <code>sort_f</code> 和 <code>sort_m</code> 在执行时间上几乎没有明显的差异。对于随机数组和逆序数组，它们的执行时间都有轻微的波动，但这种波动对实际应用的影响可能不大。此外，我还观察到在指令级别和数据级别的缓存未命中率上，<code>sort_f</code> 和 <code>sort_m</code> 的数据非常接近，表明它们在内存访问方面的表现也相似。</p>
+<p>综上所述，通过一次性分配临时内存的优化方案，我成功改善了排序算法的性能，并使其在内存利用方面更加高效。这一优化方案的实施证明了对临时内存的有效管理对于提高算法性能的重要性。</p>
+<h2 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h2><p>最终结果如下，可以看到每步修改对程序性能的优化：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402115415553.png"
+                      alt="image-20240402115415553"
+                ></p>
 
         </div>
 
@@ -850,18 +992,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1</li>
+        <li><strong>Title:</strong> MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</li>
         <li><strong>Author:</strong> ELecmark</li>
         <li><strong>Created at
-                :</strong> 2023-12-10 23:44:12</li>
+                :</strong> 2024-04-02 12:03:00</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-02-29 22:21:52
+                    :</strong> 2024-04-02 13:25:41
             </li>
         
         <li>
-            <strong>Link:</strong> https://elecmark.github.io/2023/12/10/09组团队项目-Beta冲刺-1-3/
+            <strong>Link:</strong> https://elecmark.github.io/2024/04/02/MIT软件性能工程——Homework-2-Profiling-Serial-Merge-Sort/
         </li>
         <li>
             <strong>
@@ -887,11 +1029,11 @@
                     </li>
                 
                     <li class="tag-item mx-0.5">
-                        <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">#项目报告</a>&nbsp;
+                        <a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">#作业报告</a>&nbsp;
                     </li>
                 
                     <li class="tag-item mx-0.5">
-                        <a href="/tags/%E4%BA%91%E5%8E%BB%E5%99%AA/">#云去噪</a>&nbsp;
+                        <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/">#软件性能工程</a>&nbsp;
                     </li>
                 
             </ul>
@@ -902,29 +1044,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2023/12/18/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-2-3/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺2</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2023/12/03/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Alpha%E5%86%B2%E5%88%BA-3-3/"
+                        href="/2024/03/17/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-1-Getting-Started/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">基于CBDnet卷积神经网络深度学习的云去噪网站-Alpha冲刺3</span>
+                                <span class="post-nav-title-item">MIT软件性能工程——Homework 1: Getting Started</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -987,8 +1114,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5"><span class="nav-text">一、基本情况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%A2%E9%98%9FID"><span class="nav-text">团队ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E9%95%BF%E5%8D%9A%E5%AE%A2"><span class="nav-text">组长博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%84%E6%88%90%E5%91%98"><span class="nav-text">小组成员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%86%B2%E5%88%BA%E6%A6%82%E5%86%B5%E6%B1%87%E6%8A%A5"><span class="nav-text">二、冲刺概况汇报</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%AE%E5%85%B8%E8%A1%A1"><span class="nav-text">普典衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%B8%E5%AE%87%E8%90%8C"><span class="nav-text">司宇萌</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%99%E6%96%87%E7%A7%80"><span class="nav-text">孙文秀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%8B%E8%AF%97%E6%A2%A6"><span class="nav-text">王诗梦</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%8B%E8%8F%B2"><span class="nav-text">王菲</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%86%B2%E5%88%BA%E6%88%90%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-text">三、冲刺成果展示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E6%96%B0%E6%88%90%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-text">最新成果展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%99%E7%AB%8B%E4%BC%9A%E8%AE%AE%E5%90%88%E7%85%A7"><span class="nav-text">站立会议合照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E3%80%81%E5%9C%B0%E7%82%B9%E3%80%81%E5%86%85%E5%AE%B9%E8%AE%B0%E5%BD%95"><span class="nav-text">会议时间、地点、内容记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%B1%95%E5%9B%9E%E9%A1%BE"><span class="nav-text">进展回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E6%8C%91%E6%88%98"><span class="nav-text">遇到的挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B6%E8%8E%B7%E4%B8%8E%E5%B1%95%E6%9C%9B"><span class="nav-text">收获与展望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol>
+        <div class="page-title">MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E4%B8%9A%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="nav-text">作业要求：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up1"><span class="nav-text">Write-up1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%A8%E8%AE%BA"><span class="nav-text">分析与讨论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-2"><span class="nav-text">Write-up 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-3"><span class="nav-text">Write-up 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-4"><span class="nav-text">Write-up 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-5"><span class="nav-text">Write-up 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-6"><span class="nav-text">Write-up 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-7"><span class="nav-text">Write-up 7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C%E8%A7%A3%E9%87%8A"><span class="nav-text">结果解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C"><span class="nav-text">最终结果</span></a></li></ol>
 
     </div>
 </div>
