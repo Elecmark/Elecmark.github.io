@@ -2296,7 +2296,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
                      data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/40acd20a5f257aaf35b9c7f998c9783.png"
                       alt="40acd20a5f257aaf35b9c7f998c9783"
                 ></p>
-<h3 id="分析与讨论"><a href="#分析与讨论" class="headerlink" title="分析与讨论"></a>分析与讨论</h3><ul>
+<h4 id="分析与讨论"><a href="#分析与讨论" class="headerlink" title="分析与讨论"></a>分析与讨论</h4><ul>
 <li><p><strong>指令引用（I refs）</strong>：</p>
 <ul>
 <li>调试模式：约4.88亿</li>
@@ -2564,7 +2564,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
 <li><code>sort_f</code> 和 <code>sort_m</code> 在 I1 和 LLi 缓存未命中率上的数据都是相同的，说明它们在指令级别的缓存利用方面没有显著差异。</li>
 <li>在 D1 和 LLd 缓存未命中率上，<code>sort_f</code> 和 <code>sort_m</code> 的数据也非常接近，这表明它们在数据级别的缓存利用方面也没有明显差异。</li>
 </ul>
-<h3 id="结果解释"><a href="#结果解释" class="headerlink" title="结果解释"></a>结果解释</h3><p>通过在 <code>sort_f.c</code> 中实施一次性内存分配的优化方案，我成功减少了在 <code>merge_f</code> 函数中多次分配和释放临时内存空间的开销。这一优化方案使得排序算法的性能得到了改善，并且在不同类型的输入数据上都表现出了相似的执行时间。</p>
+<h4 id="结果解释"><a href="#结果解释" class="headerlink" title="结果解释"></a>结果解释</h4><p>通过在 <code>sort_f.c</code> 中实施一次性内存分配的优化方案，我成功减少了在 <code>merge_f</code> 函数中多次分配和释放临时内存空间的开销。这一优化方案使得排序算法的性能得到了改善，并且在不同类型的输入数据上都表现出了相似的执行时间。</p>
 <p>在优化前后的比较中，我发现 <code>sort_f</code> 和 <code>sort_m</code> 在执行时间上几乎没有明显的差异。对于随机数组和逆序数组，它们的执行时间都有轻微的波动，但这种波动对实际应用的影响可能不大。此外，我还观察到在指令级别和数据级别的缓存未命中率上，<code>sort_f</code> 和 <code>sort_m</code> 的数据非常接近，表明它们在内存访问方面的表现也相似。</p>
 <p>综上所述，通过一次性分配临时内存的优化方案，我成功改善了排序算法的性能，并使其在内存利用方面更加高效。这一优化方案的实施证明了对临时内存的有效管理对于提高算法性能的重要性。</p>
 <h2 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h2><p>最终结果如下，可以看到每步修改对程序性能的优化：</p>
