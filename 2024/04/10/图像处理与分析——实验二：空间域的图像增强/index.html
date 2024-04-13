@@ -25,7 +25,6 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://user-images.githubusercontent.com/68590232/226210369-05949a11-807d-4ca2-9d11-132dd1cf04ed.png">
 <meta property="og:image" content="https://elecmark.github.io/2024/04/10/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png">
 <meta property="og:image" content="https://elecmark.github.io/2024/04/10/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show02.png">
 <meta property="og:image" content="https://elecmark.github.io/2024/04/10/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show03.png">
@@ -47,13 +46,13 @@
 <meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show52.png">
 <meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show53.png">
 <meta property="article:published_time" content="2024-04-10T03:31:01.000Z">
-<meta property="article:modified_time" content="2024-04-13T17:51:35.008Z">
+<meta property="article:modified_time" content="2024-04-13T17:54:51.451Z">
 <meta property="article:author" content="Elecmark">
 <meta property="article:tag" content="课程项目">
 <meta property="article:tag" content="作业报告">
 <meta property="article:tag" content="图像处理与分析">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/68590232/226210369-05949a11-807d-4ca2-9d11-132dd1cf04ed.png">
+<meta name="twitter:image" content="https://elecmark.github.io/2024/04/10/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png">
     
     
     <!--- Icon Part-->
@@ -603,8 +602,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-14 01:51:35</span>
-            <span class="mobile">2024-04-14 01:51:35</span>
+            <span class="desktop">2024-04-14 01:54:51</span>
+            <span class="mobile">2024-04-14 01:54:51</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -743,18 +742,11 @@
 
 <p><strong>实验结果：</strong></p>
 <p> ①查看直方图 </p>
-<img  alt="Screenshot 2023-03-19 at 5 20 05 PM" width="50%" 
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://user-images.githubusercontent.com/68590232/226210369-05949a11-807d-4ca2-9d11-132dd1cf04ed.png"
-                     
-                >
-
-<img   width="50%" alt="实际输出"  
+<img    
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show01.png"
-                     
+                      alt="实际输出"  
                 >
 
 <p>②取反，再查看直方图 </p>
@@ -762,7 +754,7 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show02.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出"  
                 >
 
 <p>③使用直方图均衡，再查看直方图 </p>
@@ -770,7 +762,7 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show03.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出"  
                 >
 
 <p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
@@ -798,21 +790,21 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show10.png"
-                      alt="原始图片" width="50%" 
+                      alt="原始图片"  
                 >
 
 <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show11.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出"  
                 >
 
 <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show12.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出"  
                 >
 
 <p><strong>图1的分析</strong></p>
@@ -821,21 +813,21 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show20.png"
-                      alt="原始图片" width="50%" 
+                      alt="原始图片"  
                 >
 
 <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show21.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出"  
                 >
 
 <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show22.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出"  
                 >
 
 <p><strong>图2的分析</strong></p>
@@ -844,21 +836,21 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show30.png"
-                      alt="原始图片" width="50%" 
+                      alt="原始图片"  
                 >
 
 <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show31.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出"  
                 >
 
 <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show32.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出"  
                 >
 
 <p><strong>图3的分析</strong></p>
@@ -867,21 +859,21 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show40.png"
-                      alt="原始图片" width="50%" 
+                      alt="原始图片"  
                 >
 
 <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show41.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出"  
                 >
 
 <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show42.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出"  
                 >
 
 <p><strong>图4的分析</strong></p>
@@ -943,7 +935,7 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show50.png"
-                      alt="原始图片" width="50%" 
+                      alt="原始图片"  
                 >
 
 <p><img  
@@ -1006,7 +998,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-14 01:51:35
+                    :</strong> 2024-04-14 01:54:51
             </li>
         
         <li>
