@@ -2841,18 +2841,18 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
 
 <p><strong>实验结果：</strong></p>
 <p> ①查看直方图 </p>
-<img  width="512" alt="Screenshot 2023-03-19 at 5 20 05 PM" 
+<img  width="50%" alt="Screenshot 2023-03-19 at 5 20 05 PM" 
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://user-images.githubusercontent.com/68590232/226210369-05949a11-807d-4ca2-9d11-132dd1cf04ed.png"
                      
                 >
 
-<img  
+<img   width="512" 
                      lazyload
                      src="/images/loading.svg"
                      data-src="../images/图像处理与分析——实验二：空间域的图像增强/attachment_show01.png"
-                      alt="实际输出" width="50%" 
+                      alt="实际输出" 
                 >
 
 <p>②取反，再查看直方图 </p>
