@@ -13,30 +13,42 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://Elecmark.github.io/2024/03/12/c/"/>
+    <link rel="canonical" href="https://Elecmark.github.io/2024/04/10/图像处理与分析——实验二：空间域的图像增强/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="技术报告：从《潜艇大战》游戏原版到改编版本的代码变化分析">
+        <meta name="description" content="在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="经典C++游戏《潜艇大战》改编练习">
-<meta property="og:url" content="https://elecmark.github.io/2024/03/12/c/index.html">
+<meta property="og:title" content="图像处理与分析——实验二：空间域的图像增强">
+<meta property="og:url" content="https://elecmark.github.io/2024/04/10/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="技术报告：从《潜艇大战》游戏原版到改编版本的代码变化分析">
+<meta property="og:description" content="在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elecmark.github.io/images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif">
-<meta property="og:image" content="https://elecmark.github.io/images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_new.gif">
-<meta property="article:published_time" content="2024-03-12T14:59:01.000Z">
-<meta property="article:modified_time" content="2024-03-12T16:06:11.221Z">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show01.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show02.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show03.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show10.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show11.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show12.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show20.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show21.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show22.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show30.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show31.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show32.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show40.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show41.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show42.png">
+<meta property="og:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show50.png">
+<meta property="article:published_time" content="2024-04-10T03:31:01.000Z">
+<meta property="article:modified_time" content="2024-04-13T17:33:15.993Z">
 <meta property="article:author" content="Elecmark">
 <meta property="article:tag" content="课程项目">
-<meta property="article:tag" content="项目报告">
-<meta property="article:tag" content="作品集">
-<meta property="article:tag" content="《潜艇大战》">
-<meta property="article:tag" content="C++">
+<meta property="article:tag" content="作业报告">
+<meta property="article:tag" content="图像处理与分析">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://elecmark.github.io/images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif">
+<meta name="twitter:image" content="c:/Users/86180/Desktop/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/%E5%AE%9E%E9%AA%8C%E4%BA%8C%20%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/img/attachment_show01.png">
     
     
     <!--- Icon Part-->
@@ -48,7 +60,7 @@
     
     <title>
         
-            经典C++游戏《潜艇大战》改编练习 -
+            图像处理与分析——实验二：空间域的图像增强 -
         
         Pu Dianheng&#39;s blog
     </title>
@@ -557,12 +569,8 @@
 
         <div class="article-title relative w-full">
             
-                
-                
-                <img src="/../images/code.jpg" alt="经典C++游戏《潜艇大战》改编练习" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
-                
-                <div class="w-full flex items-center absolute bottom-0 justify-start">
-                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-bold backdrop-blur-lg rounded-xl border border-border-color ">经典C++游戏《潜艇大战》改编练习</h1>
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">图像处理与分析——实验二：空间域的图像增强</h1>
                 </div>
             
             </div>
@@ -583,15 +591,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-03-12 22:59:01</span>
-        <span class="mobile">2024-03-12 22:59:01</span>
+        <span class="desktop">2024-04-10 11:31:01</span>
+        <span class="mobile">2024-04-10 11:31:01</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-03-13 00:06:11</span>
-            <span class="mobile">2024-03-13 00:06:11</span>
+            <span class="desktop">2024-04-14 01:33:15</span>
+            <span class="mobile">2024-04-14 01:33:15</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -605,7 +613,7 @@
                     
                         
                         <li>
-                            <a href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a>&nbsp;
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/">本科项目</a>&nbsp;
                         </li>
                     
                     
@@ -615,7 +623,7 @@
                             <li>></li>
                         
                         <li>
-                            <a href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/C/">C++</a>&nbsp;
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">图像处理与分析</a>&nbsp;
                         </li>
                     
                     
@@ -633,19 +641,11 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">项目报告</a>&nbsp;
+                        | <a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">作业报告</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/">作品集</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B/">《潜艇大战》</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/C/">C++</a>&nbsp;
+                        | <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">图像处理与分析</a>&nbsp;
                     </li>
                 
             </ul>
@@ -671,107 +671,295 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h2 id="原版效果："><a href="#原版效果：" class="headerlink" title="原版效果："></a>原版效果：</h2><h3 id="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："><a href="#依靠鼠标点击去炸毁潜艇得分，类似打地鼠：" class="headerlink" title="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："></a>依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif"
-                      alt="ShipDemo_old"
-                ></p>
-<h2 id="改编效果："><a href="#改编效果：" class="headerlink" title="改编效果："></a>改编效果：</h2><h3 id="靠船左右移动投炸弹炸毁潜艇得分："><a href="#靠船左右移动投炸弹炸毁潜艇得分：" class="headerlink" title="靠船左右移动投炸弹炸毁潜艇得分："></a>靠船左右移动投炸弹炸毁潜艇得分：</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_new.gif"
-                      alt="ShipDemo_new"
-                ></p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本报告详细分析了《潜艇大战》游戏从原版到改编版本中的关键代码变化。原版游戏的核心玩法是使用鼠标点击来炸毁潜艇并得分，类似于“打地鼠”的游戏模式。改编版本则通过控制船的左右移动并投掷炸弹来炸毁潜艇以得分。</p>
-<h2 id="1-核心视图类-CChildView-类分析"><a href="#1-核心视图类-CChildView-类分析" class="headerlink" title="1. 核心视图类 (CChildView) 类分析"></a>1. 核心视图类 (<code>CChildView</code>) 类分析</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p><code>CChildView</code> 类是《潜艇大战》游戏的核心视图类，负责管理游戏对象、处理用户输入、绘制游戏界面等。</p>
-<h3 id="OnTimer-方法分析"><a href="#OnTimer-方法分析" class="headerlink" title="OnTimer 方法分析"></a><code>OnTimer</code> 方法分析</h3><h4 id="创建和管理潜艇"><a href="#创建和管理潜艇" class="headerlink" title="创建和管理潜艇"></a>创建和管理潜艇</h4><p><strong>潜艇创建逻辑</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(nCreator==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    m_Objects.<span class="built_in">AddTail</span>(<span class="keyword">new</span> <span class="built_in">CSubmarine</span>(<span class="built_in">random</span>(<span class="number">2</span>)%<span class="number">2</span>?<span class="literal">true</span>:<span class="literal">false</span>, <span class="built_in">random</span>(GAME_HEIGHT-SHIP_VERT_POS-SHIP_HEIGHT*<span class="number">2</span><span class="number">-30</span>)+SHIP_VERT_POS+SHIP_HEIGHT+<span class="number">30</span>, <span class="built_in">random</span>(<span class="number">4</span>), <span class="built_in">random</span>(<span class="number">4</span>)+<span class="number">3</span>));</span><br><span class="line">    nCreator = <span class="built_in">random</span>(<span class="number">50</span>) + <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+            <p><strong>实验目标：</strong></p>
+<p>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现： </p>
+<p>1. </p>
 <ul>
-<li><code>nCreator</code> 用于控制潜艇生成的时间间隔。当它变为 0，代码会创建一个新的 <code>CSubmarine</code> 对象并将其添加到游戏对象列表 <code>m_Objects</code>。</li>
-<li>每个潜艇的位置、类型和速度都是随机生成的，提供了游戏的可变性和挑战性。</li>
-</ul>
-<p><strong>潜艇管理逻辑</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">POSITION pos1, pos2;</span><br><span class="line"><span class="keyword">for</span>(pos1=m_Objects.<span class="built_in">GetHeadPosition</span>(); (pos2=pos1)!=<span class="literal">NULL</span>;)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(((CMyObject*)m_Objects.<span class="built_in">GetNext</span>(pos1))-&gt;<span class="built_in">Draw</span>(&amp;m_VirtualDC, m_bGamePause))</span><br><span class="line">    &#123;</span><br><span class="line">        pLastObj = m_Objects.<span class="built_in">GetAt</span>(pos2);</span><br><span class="line">        m_Objects.<span class="built_in">RemoveAt</span>(pos2);</span><br><span class="line">        <span class="keyword">delete</span> pLastObj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>这段代码遍历 <code>m_Objects</code> 中的所有游戏对象，并对它们调用 <code>Draw</code> 方法。</li>
-<li>如果 <code>Draw</code> 方法返回 <code>true</code>，表明对象（如潜艇）需要被移除。这通常在对象（如潜艇被击中或移动出屏幕）结束其生命周期时发生。</li>
-</ul>
-<h4 id="游戏画面渲染"><a href="#游戏画面渲染" class="headerlink" title="游戏画面渲染"></a>游戏画面渲染</h4><p><strong>背景绘制</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, SKY_COLOR);</span><br><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, GAME_WIDTH, GAME_HEIGHT, SEA_COLOR);</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>这里使用 <code>FillSolidRect</code> 在虚拟设备上下文 <code>m_VirtualDC</code> 上绘制天空和海洋背景。</li>
-<li><code>SKY_COLOR</code> 和 <code>SEA_COLOR</code> 定义了天空和海洋的颜色。</li>
-</ul>
-<p><strong>最终渲染到屏幕</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dc.<span class="built_in">BitBlt</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, GAME_HEIGHT, &amp;m_VirtualDC, <span class="number">0</span>, <span class="number">0</span>, SRCCOPY);</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>使用 <code>BitBlt</code> 方法将虚拟设备上下文的内容传输到实际的屏幕上下文。</li>
-<li>这种方法可以避免闪烁并提高绘图效率。</li>
-</ul>
-<h4 id="其他重要逻辑"><a href="#其他重要逻辑" class="headerlink" title="其他重要逻辑"></a>其他重要逻辑</h4><p><strong>游戏暂停功能</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(m_bGamePause) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>控制游戏暂停。当 <code>m_bGamePause</code> 为 <code>true</code> 时，<code>OnTimer</code> 将提前返回，不执行任何游戏更新逻辑。</li>
-</ul>
-<p><strong>潜艇生成计数器更新</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nCreator--;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li><code>nCreator</code> 每次 <code>OnTimer</code> 被调用时递减，控制潜艇的生成频率。</li>
-</ul>
-<p>总结来说，<code>OnTimer</code> 方法是游戏的心脏，负责潜艇的生成和管理、游戏画面的更新和渲染，以及控制游戏的暂停和继续。这个方法充分展示了游戏循环的典型结构，包括对象管理、状态更新和画面渲染。</p>
-<h2 id="2-潜艇类-CSubmarine-的变更"><a href="#2-潜艇类-CSubmarine-的变更" class="headerlink" title="2. 潜艇类 (CSubmarine) 的变更"></a>2. 潜艇类 (<code>CSubmarine</code>) 的变更</h2><h3 id="原版"><a href="#原版" class="headerlink" title="原版"></a>原版</h3><p>在原版中，<code>CSubmarine</code> 类主要负责潜艇的初始化、移动、绘图和销毁。这个类使用了 <code>CImageList</code> 来处理潜艇的图像。潜艇的移动是基于它们的方向 (<code>m_bDirect</code>) 和速度 (<code>m_nSpeed</code>)。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CSubmarine::<span class="built_in">CSubmarine</span>(<span class="type">bool</span> bDir, <span class="type">int</span> nVert, <span class="type">int</span> nType, <span class="type">int</span> nSpeed)</span><br><span class="line">&#123;</span><br><span class="line">    m_bDirect = bDir;</span><br><span class="line">    m_ptPos.x = m_bDirect ? GAME_WIDTH : -SUBMARINE_WIDTH;</span><br><span class="line">    m_ptPos.y = nVert;</span><br><span class="line">    <span class="comment">// ...[其他初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="改编版本"><a href="#改编版本" class="headerlink" title="改编版本"></a>改编版本</h3><p>在改版中，<code>CSubmarine</code> 类增加了 <code>GetRect()</code> 方法，用于获取潜艇的碰撞箱。这是为了适应游戏中的新机制，如导弹与潜艇的碰撞检测。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CSubmarine::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + SubmarineWidth, m_ptPos.y + SubmarineHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="3-新增导弹类-CMissile"><a href="#3-新增导弹类-CMissile" class="headerlink" title="3. 新增导弹类 (CMissile)"></a>3. 新增导弹类 (<code>CMissile</code>)</h2><p>在改编版本中，新增了导弹类 <code>CMissile</code>。这一变化扩展了游戏的交互性和复杂度。</p>
-<h3 id="原版-1"><a href="#原版-1" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中没有导弹类的概念。</p>
-<h3 id="改编版本-1"><a href="#改编版本-1" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中添加了 <code>CMissile</code> 类，并在主游戏循环中处理导弹的移动和碰撞检测。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">typeid</span>(*pObj) == <span class="built_in">typeid</span>(CMissile))</span><br><span class="line">&#123;</span><br><span class="line">    CMissile* pMissile = (CMissile*)pObj;</span><br><span class="line">    pMissile-&gt;<span class="built_in">Move</span>(); <span class="comment">// 移动导弹</span></span><br><span class="line">    <span class="comment">// ... [碰撞检测和处理代码] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li><p><strong>构造函数</strong>：初始化导弹的位置和生命周期。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CMissile::<span class="built_in">CMissile</span>(CPoint ptPos) : <span class="built_in">CMyObject</span>(ptPos)</span><br><span class="line">&#123;</span><br><span class="line">    m_nLifetime = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// ...[初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<li><p>①查看直方图 </p>
 </li>
-<li><p><strong><code>Move</code> 方法</strong>：控制导弹的移动。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMissile::Move</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_ptPos.y += <span class="number">20</span>;  <span class="comment">// ...[移动逻辑]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<li><p>②取反，再查看直方图 </p>
 </li>
-<li><p><strong><code>GetRect</code> 方法</strong>：为碰撞检测提供导弹的矩形区域。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CMissile::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + MissileWidth, m_ptPos.y + MissileHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<li><p>③使用直方图均衡，再查看直方图 </p>
 </li>
-<li><p><strong>导弹图像处理</strong>：使用 GDI+ 从资源加载 PNG 图片并创建图像列表。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">CMissile::LoadImage</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...[加载和处理 PNG 图片的代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+<li><p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+</li>
 </ul>
-<h2 id="4-控制机制的改变"><a href="#4-控制机制的改变" class="headerlink" title="4. 控制机制的改变"></a>4. 控制机制的改变</h2><h3 id="原版-2"><a href="#原版-2" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中，玩家通过鼠标点击潜艇位置来摧毁它们。这是通过 <code>OnLButtonDown</code> 函数实现的：</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnLButtonDown</span><span class="params">(UINT nFlags, CPoint point)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">if</span>(pSub-&gt;<span class="built_in">GetRect</span>().<span class="built_in">PtInRect</span>(point))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建爆炸和计分</span></span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">delete</span> pSub;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="改编版本-2"><a href="#改编版本-2" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本引入了键盘控制。通过 <code>OnKeyDown</code> 函数，玩家可以通过左右键移动船，并用空格键发射导弹。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnKeyDown</span><span class="params">(UINT nChar, UINT nRepCnt, UINT nFlags)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (nChar == VK_SPACE || nChar == VK_RETURN) <span class="comment">// 发射导弹</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">if</span> (!missileExists)</span><br><span class="line">        &#123;</span><br><span class="line">            CMissile* pMissile = <span class="keyword">new</span> <span class="built_in">CMissile</span>(<span class="built_in">CPoint</span>(shipPos.x, SHIP_VERT_POS));</span><br><span class="line">            m_Objects.<span class="built_in">AddTail</span>(pMissile);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="5-分数统计的变更"><a href="#5-分数统计的变更" class="headerlink" title="5. 分数统计的变更"></a>5. 分数统计的变更</h2><p>为了适应新的游戏玩法，分数统计方式也做了调整。</p>
-<h3 id="原版-3"><a href="#原版-3" class="headerlink" title="原版"></a>原版</h3><p>原版游戏仅在鼠标点击潜艇时计分。</p>
-<h3 id="改编版本-3"><a href="#改编版本-3" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中，分数统计不仅包括击毁潜艇的分数，还统计了击毁的潜艇数量。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m_nTotalScore += pScore-&gt;<span class="built_in">GetScoreValue</span>(); <span class="comment">// 累加分数</span></span><br><span class="line">++m_nDestroyedSubmarines;  <span class="comment">// 增加被击毁的潜艇数量</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="6-界面信息显示的改进"><a href="#6-界面信息显示的改进" class="headerlink" title="6. 界面信息显示的改进"></a>6. 界面信息显示的改进</h2><p>改编版本在界面上添加了更多的信息显示，如总潜艇数、击毁潜艇数等，增强了游戏的可玩性和信息反馈。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CString destroyedString;</span><br><span class="line">destroyedString.<span class="built_in">Format</span>(<span class="string">&quot;击毁潜艇数: %d&quot;</span>, m_nDestroyedSubmarines);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(<span class="number">130</span>, <span class="number">10</span>, destroyedString); <span class="comment">// 显示击毁潜艇数</span></span><br><span class="line"></span><br><span class="line">CString scoreString;</span><br><span class="line">scoreString.<span class="built_in">Format</span>(<span class="string">&quot;总分: %d&quot;</span>, m_nTotalScore);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(GAME_WIDTH - <span class="number">100</span>, <span class="number">10</span>, scoreString); <span class="comment">// 显示总分</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参与《潜艇大战》游戏的改编过程，我在游戏开发方面获得了实质性的技能提升。通过这个项目，我学到了以下几个关键的技术点：</p>
-<ol>
-<li><strong>交互控制的实现</strong>：通过替换原有的鼠标点击控制为键盘控制，我学会了如何处理和响应键盘事件。这提高了我的能力，使我能够在未来的项目中灵活地设计和实现用户交互。</li>
-<li><strong>游戏逻辑的编写</strong>：在实现导弹发射和移动的逻辑时，我加深了对游戏循环和对象状态管理的理解。这对于理解如何构建游戏的动态元素和保持其连贯性非常有帮助。</li>
-<li><strong>碰撞检测的处理</strong>：实现导弹和潜艇之间的碰撞检测增强了我在游戏物理和交互方面的技术知识，这在很多游戏开发项目中都是一个核心技能。</li>
-<li><strong>图形和用户界面的更新</strong>：改进游戏的界面显示，例如增加得分和击毁潜艇数的显示，让我更加熟悉了图形界面的编程和数据可视化。</li>
+<ol start="2">
+<li><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p>
+</li>
+<li><p>将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果，理解卷积操作与空间域滤波的关系。</p>
+</li>
 </ol>
+<h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2><p><strong>实验要求：</strong></p>
+<ol>
+<li>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现：</li>
+</ol>
+<p>①查看直方图 </p>
+<p>②取反，再查看直方图 </p>
+<p>③使用直方图均衡，再查看直方图 </p>
+<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+<p>实验图片路径为： imgs&#x2F;IMG_2546.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_1_i的格式，输出四个结果，比如①的结果保存为：outputs&#x2F;exp2_1_1.jpg</p>
+<p><strong>实验方案：</strong></p>
+<p><strong>步骤一：查看原图直方图</strong></p>
+<ul>
+<li>首先，加载图片并使用OpenCV库进行读取。</li>
+<li>使用Matplotlib绘制图像的直方图，这是通过计算每个颜色通道的像素强度分布来完成的。</li>
+<li>保存包含原图和直方图的组合图像为 <code>outputs/exp2_1_1.jpg</code>。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ①查看原图直方图</span></span><br><span class="line">save_image_and_histogram(img, <span class="string">&#x27;Original Image&#x27;</span>, <span class="string">&#x27;Original Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤二：取反图像并查看直方图</strong></p>
+<ul>
+<li>对原始图像进行取反操作，这意味着将每个像素的颜色值变为其补色。</li>
+<li>再次绘制取反后图像的直方图，并保存。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ②取反并查看直方图</span></span><br><span class="line">img_neg = cv2.bitwise_not(img)</span><br><span class="line">save_image_and_histogram(img_neg, <span class="string">&#x27;Negative Image&#x27;</span>, <span class="string">&#x27;Negative Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤三：直方图均衡化并查看直方图</strong></p>
+<ul>
+<li>将图像从BGR色彩空间转换为YUV色彩空间。</li>
+<li>对Y通道（亮度）进行直方图均衡化，这能改善图像的对比度。</li>
+<li>再次绘制直方图均衡化后图像的直方图，并保存。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ③直方图均衡化并查看直方图</span></span><br><span class="line">img_yuv = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)</span><br><span class="line">img_yuv[:,:,<span class="number">0</span>] = cv2.equalizeHist(img_yuv[:,:,<span class="number">0</span>])</span><br><span class="line">img_histeq = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)</span><br><span class="line">save_image_and_histogram(img_histeq, <span class="string">&#x27;Histogram Equalization&#x27;</span>, <span class="string">&#x27;Eq Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤四：精确提取文本区域</strong></p>
+<ul>
+<li>考虑到文本可能因拍摄角度而不完全水平，我应用了一个旋转变换，使文本尽可能地水平以便裁剪。</li>
+<li>设置旋转中心为图像中心，并指定旋转角度（在这里是-10度）。这个角度可能需要根据具体图片进行微调。</li>
+<li>应用旋转后，根据旋转后的图像内容，手动确定“爱丁堡花园”文本的精确位置并进行裁剪。</li>
+<li>最后，将旋转和裁剪后的区域保存为 <code>outputs/exp2_1_4.jpg</code>，这是仅包含目标文本区域的图片。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ④仅保留“爱丁堡花园”部分</span></span><br><span class="line"><span class="comment"># 获取图像尺寸用于计算旋转中心</span></span><br><span class="line">rows, cols, _ = img.shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置旋转矩阵，中心点为图像中心，旋转角度为-10度，缩放因子为1</span></span><br><span class="line">M = cv2.getRotationMatrix2D((cols / <span class="number">2</span>, rows / <span class="number">2</span>), -<span class="number">10</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 旋转图像</span></span><br><span class="line">rotated_img = cv2.warpAffine(img, M, (cols, rows))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在旋转后的图像中确定“爱丁堡花园”文字的大致位置</span></span><br><span class="line">img_crop = rotated_img[<span class="number">550</span>:<span class="number">630</span>, <span class="number">600</span>:<span class="number">910</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存剪裁后的图像</span></span><br><span class="line">cv2.imwrite(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>exp2_1_4.jpg&#x27;</span>, img_crop)</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><strong>实验结果：</strong></p>
+<p> ①查看直方图 </p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show01.png"
+                      alt="实际输出" style="zoom:50%;" 
+                >
+
+<p>②取反，再查看直方图 </p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show02.png"
+                      alt="实际输出" style="zoom:50%;" 
+                >
+
+<p>③使用直方图均衡，再查看直方图 </p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show03.png"
+                      alt="实际输出" style="zoom:50%;" 
+                >
+
+<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+<p>![实际输出](C:&#x2F;Users&#x2F;86180&#x2F;Desktop&#x2F;大三下&#x2F;图像处理与分析&#x2F;实验二 空间域的图像增强&#x2F;img&#x2F;attachment_show04.png)</p>
+<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><p><strong>实验要求：</strong></p>
+<p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p>
+<p>实验图片路径为： imgs&#x2F;1.jpg imgs&#x2F;2.jpg imgs&#x2F;3.jpg imgs&#x2F;4.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_2_i的格式，输出四个结果，比如结果保存为：outputs&#x2F;exp2_2_1.jpg</p>
+<p><strong>实验方案：</strong></p>
+<p>通过应用双边滤波器对给定的人脸图像进行磨皮处理，然后对比处理前后图像的直方图变化。双边滤波器是一种非线性的滤波方法，它可以在平滑图像噪声的同时保留边缘信息，因此特别适合于图像美化处理。在Python中，可以使用OpenCV库中的<code>bilateralFilter</code>函数来实现这一操作。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用双边滤波器进行磨皮</span></span><br><span class="line">smoothed = cv2.bilateralFilter(image, d=<span class="number">9</span>, sigmaColor=<span class="number">75</span>, sigmaSpace=<span class="number">75</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>其中，<code>d</code>表示滤波器的直径，<code>sigmaColor</code>表示颜色空间的标准差，<code>sigmaSpace</code>表示坐标空间的标准差。这些参数决定了滤波器平滑图像的程度。</p>
+<p>直方图的对比通过计算原图像和磨皮后图像的颜色直方图，并用不同颜色的线表示出来。这一过程可以直观地观察磨皮效果对图像色彩分布的影响。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算直方图并绘制</span></span><br><span class="line">hist_original = cv2.calcHist([original], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line">hist_smoothed = cv2.calcHist([smoothed], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>))</span><br><span class="line">plt.plot(hist_original, color=<span class="string">&#x27;blue&#x27;</span>, label=<span class="string">&#x27;Original&#x27;</span>)</span><br><span class="line">plt.plot(hist_smoothed, color=<span class="string">&#x27;red&#x27;</span>, label=<span class="string">&#x27;Smoothed&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>实验结果：</strong></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show10.png"
+                      alt="原始图片" style="zoom:25%;" 
+                >
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show11.png"
+                      alt="实际输出" style="zoom:25%;" 
+                >
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show12.png"
+                      alt="实际输出" style="zoom:50%;" 
+                >
+
+<p><strong>图1的分析</strong></p>
+<p>原始图像和经过双边滤波处理后的图像在直方图上差别不大。这表明图像的磨皮效果较为自然，没有过度平滑，同时保持了原图的色彩特征。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show20.png"
+                      alt="原始图片" style="zoom: 50%;" 
+                >
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show21.png"
+                      alt="实际输出" style="zoom: 50%;" 
+                >
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show22.png"
+                      alt="实际输出" style="zoom:50%;" 
+                >
+
+<p><strong>图2的分析</strong></p>
+<p>可以看到在某些颜色通道中，经过滤波处理后的直方图在峰值附近略微平滑，但整体色彩分布的变化不是特别显著。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show30.png"
+                      alt="原始图片" style="zoom: 50%;" 
+                >
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show31.png"
+                      alt="实际输出" style="zoom:50%;" 
+                >
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show32.png"
+                      alt="实际输出" style="zoom:50%;" 
+                >
+
+<p><strong>图3的分析</strong></p>
+<p>滤波后图像的直方图在低亮度区域有了平滑，说明磨皮处理降低了图像中的暗部噪声。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show40.png"
+                      alt="原始图片" style="zoom: 33%;" 
+                >
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show41.png"
+                      alt="实际输出" style="zoom:33%;" 
+                >
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show42.png"
+                      alt="实际输出" style="zoom:50%;" 
+                >
+
+<p><strong>图4的分析</strong></p>
+<p>图像的直方图曲线在整体上变得更加平滑，尤其是在亮度较高区域的变化更为明显。这可能意味着图像亮部的细节被稍微抑制，从而减少了噪声并增强了整体的视觉效果。</p>
+<h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2><p><strong>实验要求：</strong></p>
+<p> 将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果（水平梯度图像、垂直梯度图像和梯度幅值图像），理解卷积操作与空间域滤波的关系。</p>
+<p>实验图片路径为： imgs&#x2F;100_3228.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_3_i的格式，输出结果 比如结果保存为：outputs&#x2F;exp2_3_1.jpg</p>
+<p><strong>实验方案：</strong></p>
+<p><strong>步骤一：读取和预处理图像</strong></p>
+<ul>
+<li>读取图像<code>100_3228.jpg</code>。</li>
+<li>将图像转换为灰度格式以准备进行Sobel边缘检测。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">image = Image.<span class="built_in">open</span>(img_path)</span><br><span class="line">img = transform(image)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤二：定义Sobel卷积核</strong></p>
+<ul>
+<li>定义Sobel卷积核<code>sobel_x</code>和<code>sobel_y</code>以检测水平和垂直边缘。</li>
+<li>这些卷积核分别能够捕捉图像在水平和垂直方向上的梯度信息。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sobel_x = torch.Tensor([[-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>], [-<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>], [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line">sobel_y = torch.Tensor([[-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤三：配置卷积层并执行卷积</strong></p>
+<ul>
+<li>配置卷积层以使用Sobel算子。</li>
+<li>不使用偏置，因为在这种滤波操作中不需要。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conv_x = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_y = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_x.weight.data = sobel_x</span><br><span class="line">conv_y.weight.data = sobel_y</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>应用Sobel算子于图像以得到水平和垂直梯度。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img_x = conv_x(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br><span class="line">img_y = conv_y(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤四：计算梯度幅值</strong></p>
+<ul>
+<li>结合水平和垂直梯度以计算梯度幅值，这能够显示图像中边缘的整体强度。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img_magnitude = torch.sqrt(img_x**<span class="number">2</span> + img_y**<span class="number">2</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤五：执行阈值化处理</strong></p>
+<ul>
+<li>通过设置阈值，去除噪声并突出边缘。</li>
+<li>阈值化后的结果只保留较强的边缘。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">threshold = img_magnitude.mean() * <span class="number">0.5</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤六：可视化与保存结果</strong></p>
+<ul>
+<li>保存水平和垂直梯度图像，以及梯度幅值图像。</li>
+<li>使用<code>matplotlib</code>对图像进行可视化。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">visualize_and_save(img_x_thresholded, <span class="string">&#x27;Horizontal Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_1.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_y_thresholded, <span class="string">&#x27;Vertical Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_2.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_magnitude, <span class="string">&#x27;Gradient Magnitude&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>实验结果：</strong></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:/Users/86180/Desktop/大三下/图像处理与分析/实验二 空间域的图像增强/img/attachment_show50.png"
+                      alt="原始图片" style="zoom: 15%;" 
+                >
+
+<p>![实际输出](C:&#x2F;Users&#x2F;86180&#x2F;Desktop&#x2F;大三下&#x2F;图像处理与分析&#x2F;实验二 空间域的图像增强&#x2F;img&#x2F;attachment_show51.png)</p>
+<p>![实际输出](C:&#x2F;Users&#x2F;86180&#x2F;Desktop&#x2F;大三下&#x2F;图像处理与分析&#x2F;实验二 空间域的图像增强&#x2F;img&#x2F;attachment_show52.png)</p>
+<p>![实际输出](C:&#x2F;Users&#x2F;86180&#x2F;Desktop&#x2F;大三下&#x2F;图像处理与分析&#x2F;实验二 空间域的图像增强&#x2F;img&#x2F;attachment_show53.png)</p>
+<ol>
+<li><strong>水平梯度图像</strong>: 这张图像展示了原始图像中沿水平方向边缘的强度。在水平梯度图中，垂直边缘（如山和建筑物尖顶的轮廓）被突出显示。由于Sobel算子在水平方向上捕捉垂直边缘，所以图像中明显的垂直线条和特征在这里以较亮的像素显示出来，而水平边缘则不明显或显得较暗。</li>
+<li><strong>垂直梯度图像</strong>: 与水平梯度图相对，这张图显示了沿垂直方向的边缘强度。在垂直梯度图中，水平边缘（如屋顶的边缘，建筑物所在地平缓处等等）更为明显。Sobel算子在垂直方向上识别水平边缘，因此图像中水平线条和特征在这张图上以亮像素呈现。</li>
+<li><strong>梯度幅度图像</strong>: 此图像结合了水平和垂直梯度的信息，提供了边缘总体强度的视图。在梯度幅度图中，所有边缘，无论其方向如何，都以亮度的形式展现，其中亮度越强表示梯度幅度越大。这张图是通过计算水平梯度和垂直梯度在每个像素点的矢量和的幅度得到的。它提供了关于图像边缘强度最完整的视图，显示了所有明显边缘的位置。</li>
+</ol>
+<p><strong>实验总结：</strong></p>
+<p>在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。以下是本实验的关键发现和总结：</p>
+<p><strong>直方图分析和图像取反</strong></p>
+<ul>
+<li>我观察了原始图像的直方图，并通过图像取反来了解亮度分布的变化。取反操作将图像中的亮区域变暗，暗区域变亮，直方图也相应地发生反转。</li>
+</ul>
+<p><strong>直方图均衡化</strong></p>
+<ul>
+<li>通过将图像转换到YUV色彩空间并对Y通道应用直方图均衡化，我显著提高了图像的对比度。直方图均衡化后的结果使得亮度分布更加均匀，从而增强了图像中的细节。</li>
+</ul>
+<p><strong>图像旋转和裁剪</strong></p>
+<ul>
+<li>通过旋转和裁剪操作，我成功地提取了图像中“爱丁堡花园”部分。这个过程涉及到对图像的几何变换，展示了图像处理中的区域选择技术。</li>
+</ul>
+<p><strong>滤波和磨皮效果</strong></p>
+<ul>
+<li>我对人脸图像应用了双边滤波器，实现了类似美图秀秀的磨皮效果。磨皮处理后，图像的直方图在低亮度区域变得更加平滑，显示了噪声的减少和肤色的均匀性提升。</li>
+</ul>
+<p><strong>Sobel边缘检测</strong></p>
+<ul>
+<li>将Sobel算子编码进PyTorch卷积核中并对图像进行处理，我得到了水平和垂直梯度图像以及梯度幅值图。这一过程说明了卷积操作如何作为空间域滤波器来检测图像中的边缘，是图像处理中边缘检测技术的一个经典例子。</li>
+</ul>
+<p>通过以上实验步骤，我加深了对图像增强技术的理解，特别是在如何利用不同的空间域滤波技术来改善视觉效果方面。实验结果表明，这些技术不仅可以增强图像的视觉质量，还可以为后续的图像分析工作提供更好的基础。</p>
 
         </div>
 
@@ -779,18 +967,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 经典C++游戏《潜艇大战》改编练习</li>
+        <li><strong>Title:</strong> 图像处理与分析——实验二：空间域的图像增强</li>
         <li><strong>Author:</strong> ELecmark</li>
         <li><strong>Created at
-                :</strong> 2024-03-12 22:59:01</li>
+                :</strong> 2024-04-10 11:31:01</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-03-13 00:06:11
+                    :</strong> 2024-04-14 01:33:15
             </li>
         
         <li>
-            <strong>Link:</strong> https://elecmark.github.io/2024/03/12/c/
+            <strong>Link:</strong> https://elecmark.github.io/2024/04/10/图像处理与分析——实验二：空间域的图像增强/
         </li>
         <li>
             <strong>
@@ -816,19 +1004,11 @@
                     </li>
                 
                     <li class="tag-item mx-0.5">
-                        <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">#项目报告</a>&nbsp;
+                        <a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">#作业报告</a>&nbsp;
                     </li>
                 
                     <li class="tag-item mx-0.5">
-                        <a href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/">#作品集</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B/">#《潜艇大战》</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/C/">#C++</a>&nbsp;
+                        <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">#图像处理与分析</a>&nbsp;
                     </li>
                 
             </ul>
@@ -839,29 +1019,14 @@
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/03/17/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-1-Getting-Started/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">MIT软件性能工程——Homework 1: Getting Started</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/01/09/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/"
+                        href="/2024/04/02/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-2-Profiling-Serial-Merge-Sort/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">《让蛋仔飞》项目报告</span>
+                                <span class="post-nav-title-item">MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -924,8 +1089,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">经典C++游戏《潜艇大战》改编练习</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%89%88%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="nav-text">原版效果：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E9%9D%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E5%8E%BB%E7%82%B8%E6%AF%81%E6%BD%9C%E8%89%87%E5%BE%97%E5%88%86%EF%BC%8C%E7%B1%BB%E4%BC%BC%E6%89%93%E5%9C%B0%E9%BC%A0%EF%BC%9A"><span class="nav-text">依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="nav-text">改编效果：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A0%E8%88%B9%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8%E6%8A%95%E7%82%B8%E5%BC%B9%E7%82%B8%E6%AF%81%E6%BD%9C%E8%89%87%E5%BE%97%E5%88%86%EF%BC%9A"><span class="nav-text">靠船左右移动投炸弹炸毁潜艇得分：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%A0%B8%E5%BF%83%E8%A7%86%E5%9B%BE%E7%B1%BB-CChildView-%E7%B1%BB%E5%88%86%E6%9E%90"><span class="nav-text">1. 核心视图类 (CChildView) 类分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OnTimer-%E6%96%B9%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-text">OnTimer 方法分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%BD%9C%E8%89%87%E7%B1%BB-CSubmarine-%E7%9A%84%E5%8F%98%E6%9B%B4"><span class="nav-text">2. 潜艇类 (CSubmarine) 的变更</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%96%B0%E5%A2%9E%E5%AF%BC%E5%BC%B9%E7%B1%BB-CMissile"><span class="nav-text">3. 新增导弹类 (CMissile)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88-1"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC-1"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6%E7%9A%84%E6%94%B9%E5%8F%98"><span class="nav-text">4. 控制机制的改变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88-2"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC-2"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%88%86%E6%95%B0%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%8F%98%E6%9B%B4"><span class="nav-text">5. 分数统计的变更</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88-3"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC-3"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%95%8C%E9%9D%A2%E4%BF%A1%E6%81%AF%E6%98%BE%E7%A4%BA%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="nav-text">6. 界面信息显示的改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-text">结论</span></a></li></ol>
+        <div class="page-title">图像处理与分析——实验二：空间域的图像增强</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81"><span class="nav-text">一、</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81"><span class="nav-text">二、</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81"><span class="nav-text">三、</span></a></li></ol>
 
     </div>
 </div>
