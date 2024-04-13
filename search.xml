@@ -2648,6 +2648,8 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
 <center>图 1原始图像</center>
 
 
+
+
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">    resized_image = original_image.resize((<span class="number">640</span>, <span class="number">480</span>))</span><br><span class="line">    resized_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p><img  
@@ -2657,6 +2659,8 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
                       alt="img"
                 > </p>
 <center>图 2改变大小之后的图像</center>
+
+
 
 
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">    bw_image = resized_image.convert(<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
@@ -2670,6 +2674,8 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
 <center>图 3灰度化之后的图像</center>
 
 
+
+
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_4.gif&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p><img  
@@ -2679,6 +2685,8 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
                       alt="img"
                 > </p>
 <center>图 4将黑白图像存成gif格式</center>
+
+
 
  
 
@@ -2700,42 +2708,48 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
 <p>一旦马赛克图像创建完毕，使用<code>mosaic_image.save(output_path)</code>将其保存到指定路径。</p>
 <p>保存后的马赛克图像可以在指定的输出中查看。</p>
 <p>效果浏览：</p>
-<p>grid_size &#x3D; (5, 5)</p>
+<center>grid_size = (5, 5):</center>
+
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps6.jpg"
                       alt="img"
                 > </p>
-<p>grid_size &#x3D; (4, 4)</p>
+<center>grid_size = (4, 4):</center>
+
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps7.jpg"
                       alt="img"
                 > </p>
-<p>grid_size &#x3D; (3, 3)</p>
+<center>grid_size = (3, 3):</center>
+
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps8.jpg"
                       alt="img"
                 > </p>
-<p>grid_size &#x3D; (3, 2)</p>
+<center>grid_size = (3, 2):</center>
+
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps9.jpg"
                       alt="img"
                 > </p>
-<p>grid_size &#x3D; (3, 2)</p>
+<center>grid_size = (2, 3):</center>
+
 <p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps10.jpg"
                       alt="img"
                 > </p>
-<p>grid_size &#x3D; (1, 1)</p>
+<center>grid_size = (1, 1):</center>
+
 <p><img  
                      lazyload
                      src="/images/loading.svg"
