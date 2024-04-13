@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="ELecmark">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://Elecmark.github.io/2023/05/17/java-gui-音乐播放器/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="本项目是一个Java GUI音乐播放器，支持线上歌单的获取、保存和播放，同时也允许用户创建、编辑和删除本地歌单。播放器具备基本功能，如播放、暂停、歌曲切换和播放模式选择（循环、随机、顺序播放）。界面设计考虑用户体验，包括进度条和当前播放信息的显示。关键技术包括GUI设计、网络数据处理和音乐文件的播放控制，克服了多个技术挑战，提供了稳定流畅的音乐播放体验。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java GUI-音乐播放器">
+<meta property="og:url" content="https://elecmark.github.io/2023/05/17/Java-GUI-%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本项目是一个Java GUI音乐播放器，支持线上歌单的获取、保存和播放，同时也允许用户创建、编辑和删除本地歌单。播放器具备基本功能，如播放、暂停、歌曲切换和播放模式选择（循环、随机、顺序播放）。界面设计考虑用户体验，包括进度条和当前播放信息的显示。关键技术包括GUI设计、网络数据处理和音乐文件的播放控制，克服了多个技术挑战，提供了稳定流畅的音乐播放体验。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%BC%80%E5%A7%8B%E7%95%8C%E9%9D%A2.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8A%A0%E8%BD%BD%E6%AD%8C%E5%8D%95.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8A%A0%E8%BD%BD%E6%AD%8C%E5%8D%95%E8%BF%9B%E5%BA%A6%E6%9D%A1.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8A%A0%E8%BD%BD%E6%AD%8C%E5%8D%95%E6%8F%90%E7%A4%BA.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8A%A0%E8%BD%BD%E6%AD%8C%E5%8D%95%E5%AE%8C%E6%88%90.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E6%96%B0%E5%BB%BA%E6%AD%8C%E5%8D%95.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E6%96%B0%E5%BB%BA%E6%AD%8C%E5%8D%95.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E9%80%89%E6%8B%A9%E6%AD%8C%E5%8D%95%E5%B0%81%E9%9D%A2%E3%80%81%E9%9F%B3%E4%B9%90.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E9%80%89%E6%8B%A9%E6%AD%8C%E5%8D%95%E5%B0%81%E9%9D%A2%E3%80%81%E9%9F%B3%E4%B9%90%E5%AE%8C%E6%88%90.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E6%9C%AC%E5%9C%B0%E6%AD%8C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%AE%8C%E6%88%90.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/-%E6%8C%89%E9%92%AE.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8F%8C%E5%87%BB%E6%92%AD%E6%94%BE.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%81%9C%E6%AD%A2%E6%92%AD%E6%94%BE.png">
+<meta property="og:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8A%9F%E8%83%BD%E6%92%AD%E6%94%BE.png">
+<meta property="article:published_time" content="2023-05-17T03:59:56.000Z">
+<meta property="article:modified_time" content="2024-03-15T04:02:05.257Z">
+<meta property="article:author" content="Elecmark">
+<meta property="article:tag" content="课程项目">
+<meta property="article:tag" content="项目报告">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="GUI">
+<meta property="article:tag" content="音乐播放器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://elecmark.github.io/images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/pdh-logo.webp" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/pdh-logo.webp">
+    <meta name="theme-color" content="#80B5FF">
+    <link rel="shortcut icon" href="/images/pdh-logo.webp">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Java GUI-音乐播放器 -
+        
+        Pu Dianheng&#39;s blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        Pu Dianheng&#39;s blog
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+        <link href="" rel="stylesheet">
+    
+
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"elecmark.github.io","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["VIP"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#80B5FF","secondary":"#004098","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wall1.jpg","dark":"/images/wall_shenzhen.jpg"},"title":"Elecmark-Pu Dianheng","subtitle":{"text":["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn?c=c"},"typing_speed":50,"backing_speed":30,"starting_delay":100,"backing_delay":5000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#FFFFF5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/Elecmark","instagram":null,"zhihu":null,"twitter":null,"email":"944723112@qq.com","fa-solid fa-c fa-fw fa-lg":"https://blog.csdn.net/LanLinHui?type=blog","steam":"https://steamcommunity.com/profiles/76561198167581914/"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"soundorbis - LIFE","artist":"Kyle Xian","url":"https://music.163.com/song/media/outer/url?id=516372224.mp3","cover":"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg"},{"name":"Pokémon Sleep - Christmas","artist":"Pokémon Sleep","url":"https://music.163.com/song/media/outer/url?id=2130624871.mp3","cover":"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg"},{"name":"Guitar","artist":"Guitar","url":"/music/校园吉他纯音乐.mp3","cover":"/music/covers/music.svg"}]},"mermaid":{"enable":true,"version":"9.3.0"}},"version":"2.6.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":25},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"作品集Portfolio":{"path":"/tags/作品集/","icon":"fa-regular fa-archive"},"关于About":{"icon":"fa-regular fa-user","submenus":{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"时间轴Timeline":{"path":"/archives","icon":"fa-solid fa-timeline"},"标签Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"分类Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/24 19:02:20"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/em-logo.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Pu Dianheng&#39;s blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    作品集PORTFOLIO
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    我的信息ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/links">
+                                                    友链FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    时间轴TIMELINE
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/"
+                        >
+                            <span>
+                                作品集PORTFOLIO
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-关于About"
+                        >
+                            <span>
+                                关于ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-关于About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">我的信息ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/links">友链FRIENDS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">时间轴TIMELINE</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>时间轴Timeline</span>
+                            <i class="fa-solid fa-timeline fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>标签Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>分类Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">13</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                
+                
+                <img src="/../images/code.jpg" alt="Java GUI-音乐播放器" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-bold backdrop-blur-lg rounded-xl border border-border-color ">Java GUI-音乐播放器</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/pdh-logo.webp">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">ELecmark</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">VIP</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-05-17 11:59:56</span>
+        <span class="mobile">2023-05-17 11:59:56</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-03-15 12:02:05</span>
+            <span class="mobile">2024-03-15 12:02:05</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/">本科项目</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/Java/">Java</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/Java/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/">音乐播放器</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">课程项目</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">项目报告</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Java/">Java</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/GUI/">GUI</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/">音乐播放器</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="a-软件功能说明"><a href="#a-软件功能说明" class="headerlink" title="(a)软件功能说明"></a>(a)软件功能说明</h2><p>①线上歌单的获取和保存，加载进度条</p>
+<p>②本地歌单的创建和保存（包括歌单封面选择，音乐的添加和删除），本地歌单的修改（封面，重命名），删除歌单</p>
+<p>③播放器功能，双击选中歌曲播放（默认循环播放），停止，上一首，下一首，随机播放，顺序播放，单曲循环</p>
+<p>④音乐播放进度条，当前播放的显示</p>
+<h2 id="b-软件架构设计"><a href="#b-软件架构设计" class="headerlink" title="(b)软件架构设计"></a>(b)软件架构设计</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84.png"
+                      alt="软件架构"
+                ></p>
+<h2 id="c-软件模块设计与实现"><a href="#c-软件模块设计与实现" class="headerlink" title="(c)软件模块设计与实现"></a>(c)软件模块设计与实现</h2><h3 id="①面板GUI-gui包-："><a href="#①面板GUI-gui包-：" class="headerlink" title="①面板GUI(gui包)："></a>①面板GUI(gui包)：</h3><p>将五个小面板链接进主面板里，播放器的功能按钮链接进MusicPlayerBlock，互相需要调用的也作为对象传入了。</p>
+<h4 id="关键代码："><a href="#关键代码：" class="headerlink" title="关键代码："></a>关键代码：</h4><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">MusicPlayerBlock</span> <span class="variable">musicPlayerBlock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MusicPlayerBlock</span>(musicSheets);</span><br><span class="line"></span><br><span class="line"><span class="type">MusicSheetDisplayBlock</span> <span class="variable">musicSheetDisplayBlock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MusicSheetDisplayBlock</span>();</span><br><span class="line"></span><br><span class="line"><span class="type">SharedMusicSheetBlock</span> <span class="variable">sharedMusicSheetBlock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SharedMusicSheetBlock</span>(musicSheets, musicPlayerBlock, musicSheetDisplayBlock);</span><br><span class="line"></span><br><span class="line"><span class="type">LocalMusicSheetBlock</span> <span class="variable">localMusicSheetBlock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LocalMusicSheetBlock</span>(musicSheets, musicPlayerBlock, musicSheetDisplayBlock);</span><br><span class="line"></span><br><span class="line"><span class="type">MusicSheetManagementBlock</span> <span class="variable">musicSheetManagementBlock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MusicSheetManagementBlock</span>(localMusicSheetBlock, sharedMusicSheetBlock);</span><br></pre></td></tr></table></figure></div>
+
+<p>遇到的问题：这一块遇到的问题太多了，各个面板之间的互相作用，互相刷新显示，为此改了无数个版本，好在最后算是形成了相对满意的样子，各个面板直接也没有明显bug。关键代码太多在此只写了实例化的代码展现每个面板之间的联系</p>
+<h3 id="②网络-httpclient包"><a href="#②网络-httpclient包" class="headerlink" title="②网络(httpclient包)"></a>②网络(httpclient包)</h3><p>详细过程：主要参考老师的代码。</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">其中<span class="type">JSONObject</span> <span class="variable">mumObj</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JSONObject</span>(jms.get(<span class="string">&quot;musicItems&quot;</span>));</span><br><span class="line">改为了<span class="type">JSONObject</span> <span class="variable">mumObj</span> <span class="operator">=</span> (JSONObject) jms.get(<span class="string">&quot;musicItems&quot;</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>解决了musicItems从线上获取为空的情况</p>
+<h3 id="③-model包"><a href="#③-model包" class="headerlink" title="③(model包)"></a>③(model包)</h3><p>详细过程：Music类是music的信息的存储，包括时长，作者，歌名等信息及这些信息的获取函数。MusicSheet是歌单信息的存储及歌单信息的获取方法。主要都在NewMP3Playe里调用。</p>
+<h4 id="关键代码：-1"><a href="#关键代码：-1" class="headerlink" title="关键代码："></a>关键代码：</h4><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Music</span><span class="params">(String filePath, String fileName)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.filePath = filePath;</span><br><span class="line">    <span class="built_in">this</span>.fileName = fileName;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(filePath);</span><br><span class="line">        <span class="type">AudioFile</span> <span class="variable">audioFile</span> <span class="operator">=</span> AudioFileIO.read(file);</span><br><span class="line">        <span class="type">Tag</span> <span class="variable">tag</span> <span class="operator">=</span> audioFile.getTag();</span><br><span class="line">        title = tag.getFirst(FieldKey.TITLE);</span><br><span class="line">        <span class="keyword">if</span> (title == <span class="literal">null</span> || title.isEmpty()) &#123;</span><br><span class="line">            title = fileName.replaceAll(<span class="string">&quot;\\.mp3$&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        artist = tag.getFirst(FieldKey.ARTIST);</span><br><span class="line">        <span class="keyword">if</span> (artist == <span class="literal">null</span> || artist.isEmpty()) &#123;</span><br><span class="line">            artist = <span class="string">&quot;未知歌手&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        musicduration = Duration.seconds(audioFile.getAudioHeader().getTrackLength());</span><br><span class="line">        <span class="type">long</span> <span class="variable">minutes</span> <span class="operator">=</span> (<span class="type">long</span>) musicduration.toMinutes();</span><br><span class="line">        <span class="type">long</span> <span class="variable">seconds</span> <span class="operator">=</span> (<span class="type">long</span>) (musicduration.toSeconds() % <span class="number">60</span>);</span><br><span class="line">        duration = String.format(<span class="string">&quot;%02d:%02d&quot;</span>, minutes, seconds);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        System.out.println(fileName);</span><br><span class="line">        System.out.println(<span class="string">&quot;Error occurred while processing file: &quot;</span> + filePath);</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        <span class="comment">// 删除文件</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">fileToDelete</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(filePath);</span><br><span class="line">        fileToDelete.delete();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="④-soundmaker包"><a href="#④-soundmaker包" class="headerlink" title="④(soundmaker包)"></a>④(soundmaker包)</h3><p>详细过程：实际上只有NewMP3Player实装。NewMP3Player中用来实现播放器各项按钮的功能。NewMP3Player与MusicPlayerBlock互相联系。在MusicPlayerBlock里建立显示歌单内容的表格，并设置鼠标点击监听器，通过点击获取歌单和音乐的信息。</p>
+<p>NewMP3Player里有</p>
+<p>playButton（播放）</p>
+<p>stopButton（停止）</p>
+<p>prevButton（上一首）</p>
+<p>nextButton（下一首）</p>
+<p>sequenceButton（顺序播放）</p>
+<p>randomButton（随机播放）</p>
+<p>slider（进度条）</p>
+<p>loopButton（循环播放）</p>
+<p>为了实现代码复用，增添了stopPlayer和musicSequence的方法。</p>
+<p>双击选中歌曲，会启动播放按钮，调用playmusic方法，在playmusic里根据布尔变量来判断是否进行随机播放和单曲循环，否则默认单曲循环。在进度条里通过player.getPosition获取歌曲进度。</p>
+<p>遇到的问题：在写暂停的时候遇到了很多的问题，花费了很多的时间，用playThread和contralThread来实现，但是暂停时总是会出现线程冲突的问题。最后放弃了。</p>
+<p>由于播放器库没有setPosition之类的按钮，所以没有实现拖动进度条实现控制音乐进度。</p>
+<h4 id="关键代码：-2"><a href="#关键代码：-2" class="headerlink" title="关键代码："></a>关键代码：</h4><div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">playThread = <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">          <span class="meta">@Override</span></span><br><span class="line">          <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">              <span class="keyword">try</span> &#123;</span><br><span class="line">                  <span class="keyword">while</span> (!isStopped) &#123;</span><br><span class="line">                      <span class="keyword">if</span> (!isPaused &amp;&amp; player != <span class="literal">null</span>) &#123;</span><br><span class="line">                          player.play();</span><br><span class="line">                          <span class="keyword">if</span> (isLooping &amp;&amp; player.isComplete()) &#123;</span><br><span class="line">                              <span class="comment">// 当音乐播放完成且isLooping为true时，重新开始播放当前音乐</span></span><br><span class="line">                              <span class="keyword">if</span>(isLooping) &#123;</span><br><span class="line">                                  player.close();</span><br><span class="line">                                  <span class="type">BufferedInputStream</span> <span class="variable">buffer</span> <span class="operator">=</span> </span><br><span class="line">                                  <span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(filename));</span><br><span class="line">                                  player = <span class="keyword">new</span> <span class="title class_">Player</span>(buffer);</span><br><span class="line">                              &#125;</span><br><span class="line">                              <span class="keyword">else</span> &#123;</span><br><span class="line">                                  sequenceButton.doClick();</span><br><span class="line">                              &#125;</span><br><span class="line">                          &#125;</span><br><span class="line">                      &#125;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">              <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                  e.printStackTrace();</span><br><span class="line">              &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                  <span class="keyword">if</span> (player != <span class="literal">null</span>) &#123;</span><br><span class="line">                      player.close();</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      playThread.start();</span><br></pre></td></tr></table></figure></div>
+
+<p>实现每次播放音乐都创建一个新的音乐线程，不与主线程冲突。</p>
+<h2 id="d-软件界面及功能展示"><a href="#d-软件界面及功能展示" class="headerlink" title="(d)软件界面及功能展示"></a>(d)软件界面及功能展示</h2><h3 id="开启后的界面"><a href="#开启后的界面" class="headerlink" title="开启后的界面"></a><strong>开启后的界面</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%BC%80%E5%A7%8B%E7%95%8C%E9%9D%A2.png"
+                      alt="开启后的界面"
+                ></p>
+<h3 id="线上功能展示"><a href="#线上功能展示" class="headerlink" title="线上功能展示"></a><strong>线上功能展示</strong></h3><p>（如果服务器连接失败20秒后会进入本地模式（共享歌单无信息））<strong>：</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8A%A0%E8%BD%BD%E6%AD%8C%E5%8D%95.png"
+                      alt="加载歌单"
+                ></p>
+<p>单击共享歌单列表之后右侧歌曲列表面板会刷新，右侧歌单封面，歌单名字，创建者和创建时间都会显示下方会显示歌单加载进度条，歌曲会一首一首显示出来（只要显示就可以双击播放），如果有未下载完成的损坏MP3文件（如上次下载到一半关闭了程序导致）的会自检后删除损坏文件重新下载</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8A%A0%E8%BD%BD%E6%AD%8C%E5%8D%95%E8%BF%9B%E5%BA%A6%E6%9D%A1.png"
+                      alt="加载歌单进度条"
+                ></p>
+<p>加载进度条会随着歌曲一首首显示实时更新</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8A%A0%E8%BD%BD%E6%AD%8C%E5%8D%95%E6%8F%90%E7%A4%BA.png"
+                      alt="加载歌单提示"
+                ></p>
+<p>若在歌单加载过程中点击其他歌单或本地歌单添加按钮会弹出提示</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8A%A0%E8%BD%BD%E6%AD%8C%E5%8D%95%E5%AE%8C%E6%88%90.png"
+                      alt="加载歌单完成"
+                ></p>
+<p>歌单加载完成后会提示“双击歌曲开始播放”</p>
+<h3 id="线下功能展示"><a href="#线下功能展示" class="headerlink" title="线下功能展示"></a><strong>线下功能展示</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E6%96%B0%E5%BB%BA%E6%AD%8C%E5%8D%95.png"
+                      alt="新建歌单"
+                ></p>
+<p>为本地歌单提供两个互动按钮</p>
+<h4 id="“-”新建歌单"><a href="#“-”新建歌单" class="headerlink" title="“+”新建歌单"></a>“+”新建歌单</h4><p>点击后弹出创建歌单面板，输入歌单名后弹出下一个详细编辑面板</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E6%96%B0%E5%BB%BA%E6%AD%8C%E5%8D%95.png"
+                      alt="新建歌单"
+                ></p>
+<p>在此弹窗歌单依然可以修改名字，还可以选择歌单封面（若不选择则为默认的播放器logo），添加&#x2F;删除音乐</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E9%80%89%E6%8B%A9%E6%AD%8C%E5%8D%95%E5%B0%81%E9%9D%A2%E3%80%81%E9%9F%B3%E4%B9%90.png"
+                      alt="选择歌单封面、音乐"
+                ></p>
+<p>从电脑文件中选择封面和MP3类型的音乐</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E9%80%89%E6%8B%A9%E6%AD%8C%E5%8D%95%E5%B0%81%E9%9D%A2%E3%80%81%E9%9F%B3%E4%B9%90%E5%AE%8C%E6%88%90.png"
+                      alt="选择歌单封面、音乐完成"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E6%9C%AC%E5%9C%B0%E6%AD%8C%E5%8D%95%E6%B7%BB%E5%8A%A0%E5%AE%8C%E6%88%90.png"
+                      alt="本地歌单添加完成"
+                ></p>
+<p>点击保存后在本地歌单面板显示刚刚创建的面板，点击后效果与线上歌单一致</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/-%E6%8C%89%E9%92%AE.png"
+                      alt="-按钮"
+                ></p>
+<h4 id="“-”编辑歌单"><a href="#“-”编辑歌单" class="headerlink" title="“-”编辑歌单"></a>“-”编辑歌单</h4><p>选中本地歌单中的某歌单后会打开编辑面板，与创建面板功能相似，不过“取消”按钮变味了“删除”，点击删除按钮后歌单从test中删除</p>
+<h3 id="播放功能展示"><a href="#播放功能展示" class="headerlink" title="播放功能展示"></a><strong>播放功能展示</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8F%8C%E5%87%BB%E6%92%AD%E6%94%BE.png"
+                      alt="双击播放"
+                ></p>
+<p>双击歌曲开始播放，播放进度条会随着歌曲推进</p>
+<p>默认本歌单顺序列表循环播放</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%81%9C%E6%AD%A2%E6%92%AD%E6%94%BE.png"
+                      alt="停止播放"
+                ></p>
+<p>点击停止会终止当前歌曲播放，播放进度条归0，“停止”按钮也会变灰为不可用状态</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Java%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/%E5%8A%9F%E8%83%BD%E6%92%AD%E6%94%BE.png"
+                      alt="功能播放"
+                ></p>
+<p>“下一首”点击后会直接切换到目前播放状态（顺序or随机）的下一首歌（“上一首”同理），同时播放提示栏也会实时更新显示正在播放的歌曲</p>
+<p>“随机播放”参考了主流播放器的逻辑，点击后相当于给每一首歌随机赋一个id，在本次循环中都会保持这个顺序，比如歌曲1在歌曲5之后，播放到歌曲5时如果点击上一首依然是歌曲1</p>
+<p>“随机播放”“顺序播放”“单曲循环”可随时切换</p>
+<p>每次点击“随机播放”都会得到一个新的播放顺序</p>
+<p>每次点击“顺序播放”都会得到原歌单的播放顺序</p>
+<p>每次点击“单曲循环”都会让当前单曲循环播放</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Java GUI-音乐播放器</li>
+        <li><strong>Author:</strong> ELecmark</li>
+        <li><strong>Created at
+                :</strong> 2023-05-17 11:59:56</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-03-15 12:02:05
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://elecmark.github.io/2023/05/17/Java-GUI-音乐播放器/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">#课程项目</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">#项目报告</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/Java/">#Java</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/GUI/">#GUI</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/">#音乐播放器</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/07/15/Blender%E5%BB%BA%E6%A8%A1-%E5%8A%A8%E7%94%BB%E4%BD%9C%E5%93%81/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Blender建模/动画作品</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">Java GUI-音乐播放器</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#a-%E8%BD%AF%E4%BB%B6%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E"><span class="nav-text">(a)软件功能说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b-%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-text">(b)软件架构设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c-%E8%BD%AF%E4%BB%B6%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="nav-text">(c)软件模块设计与实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0%E9%9D%A2%E6%9D%BFGUI-gui%E5%8C%85-%EF%BC%9A"><span class="nav-text">①面板GUI(gui包)：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1%E7%BD%91%E7%BB%9C-httpclient%E5%8C%85"><span class="nav-text">②网络(httpclient包)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A2-model%E5%8C%85"><span class="nav-text">③(model包)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A3-soundmaker%E5%8C%85"><span class="nav-text">④(soundmaker包)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d-%E8%BD%AF%E4%BB%B6%E7%95%8C%E9%9D%A2%E5%8F%8A%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA"><span class="nav-text">(d)软件界面及功能展示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E5%90%8E%E7%9A%84%E7%95%8C%E9%9D%A2"><span class="nav-text">开启后的界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E4%B8%8A%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA"><span class="nav-text">线上功能展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E4%B8%8B%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA"><span class="nav-text">线下功能展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%92%AD%E6%94%BE%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA"><span class="nav-text">播放功能展示</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        14 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.1</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/libs/mermaid.min.js"></script>
+
+    
+<script src="/js/plugins/mermaid.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+    <div id="aplayer"></div>
+
+<script src="/js/libs/APlayer.min.js"></script>
+
+
+<script src="/js/plugins/aplayer.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="ELecmark">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://Elecmark.github.io/2024/04/02/mit软件性能工程——homework-2-profiling-serial-merge-sort/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="In this homework, you will familiarize yourself with essential profiling tools, namely Perf and Cachegrind. Perf provides detailed insights into where time is spent within your program, while Cachegri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT软件性能工程——Homework-2-Profiling Serial Merge Sort">
+<meta property="og:url" content="https://elecmark.github.io/2024/04/02/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-2-Profiling-Serial-Merge-Sort/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="In this homework, you will familiarize yourself with essential profiling tools, namely Perf and Cachegrind. Perf provides detailed insights into where time is spent within your program, while Cachegri">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/459da84675c93041485dcbf5a4c884d.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/40acd20a5f257aaf35b9c7f998c9783.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402104809212.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105509924.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105702904.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105720439.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402111528064.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402112840316.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121323239.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121459657.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402115415553.png">
+<meta property="article:published_time" content="2024-04-02T04:03:00.000Z">
+<meta property="article:modified_time" content="2024-04-02T05:27:44.926Z">
+<meta property="article:author" content="Elecmark">
+<meta property="article:tag" content="课程项目">
+<meta property="article:tag" content="作业报告">
+<meta property="article:tag" content="软件性能工程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://elecmark.github.io/images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/459da84675c93041485dcbf5a4c884d.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/pdh-logo.webp" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/pdh-logo.webp">
+    <meta name="theme-color" content="#80B5FF">
+    <link rel="shortcut icon" href="/images/pdh-logo.webp">
+    <!--- Page Info-->
+    
+    <title>
+        
+            MIT软件性能工程——Homework-2-Profiling Serial Merge Sort -
+        
+        Pu Dianheng&#39;s blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        Pu Dianheng&#39;s blog
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+        <link href="" rel="stylesheet">
+    
+
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"elecmark.github.io","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["VIP"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#80B5FF","secondary":"#004098","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wall1.jpg","dark":"/images/wall_shenzhen.jpg"},"title":"Elecmark-Pu Dianheng","subtitle":{"text":["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn?c=c"},"typing_speed":50,"backing_speed":30,"starting_delay":100,"backing_delay":5000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#FFFFF5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/Elecmark","instagram":null,"zhihu":null,"twitter":null,"email":"944723112@qq.com","fa-solid fa-c fa-fw fa-lg":"https://blog.csdn.net/LanLinHui?type=blog","steam":"https://steamcommunity.com/profiles/76561198167581914/"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"soundorbis - LIFE","artist":"Kyle Xian","url":"https://music.163.com/song/media/outer/url?id=516372224.mp3","cover":"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg"},{"name":"Pokémon Sleep - Christmas","artist":"Pokémon Sleep","url":"https://music.163.com/song/media/outer/url?id=2130624871.mp3","cover":"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg"},{"name":"Guitar","artist":"Guitar","url":"/music/校园吉他纯音乐.mp3","cover":"/music/covers/music.svg"}]},"mermaid":{"enable":true,"version":"9.3.0"}},"version":"2.6.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":25},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"作品集Portfolio":{"path":"/tags/作品集/","icon":"fa-regular fa-archive"},"关于About":{"icon":"fa-regular fa-user","submenus":{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"时间轴Timeline":{"path":"/archives","icon":"fa-solid fa-timeline"},"标签Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"分类Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/24 19:02:20"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/em-logo.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Pu Dianheng&#39;s blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    作品集PORTFOLIO
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    我的信息ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/links">
+                                                    友链FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    时间轴TIMELINE
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/"
+                        >
+                            <span>
+                                作品集PORTFOLIO
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-关于About"
+                        >
+                            <span>
+                                关于ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-关于About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">我的信息ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/links">友链FRIENDS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">时间轴TIMELINE</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>时间轴Timeline</span>
+                            <i class="fa-solid fa-timeline fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>标签Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>分类Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">13</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">14</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/pdh-logo.webp">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">ELecmark</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">VIP</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-02 12:03</span>
+        <span class="mobile">2024-04-02 12:03</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-04-02 13:27:44</span>
+            <span class="mobile">2024-04-02 13:27:44</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/">本科项目</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/">软件性能工程</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/MIT%E4%BD%9C%E4%B8%9A/">MIT作业</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">课程项目</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">作业报告</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/">软件性能工程</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="作业要求："><a href="#作业要求：" class="headerlink" title="作业要求："></a>作业要求：</h2> <embed src="/pdf/软件性能工程/hw2.pdf" width="100%" height="600" type="application/pdf">
+
+
+<h2 id="Write-up1"><a href="#Write-up1" class="headerlink" title="Write-up1"></a>Write-up1</h2><p><strong>清理并编译（调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make clean</span><br><span class="line">make DEBUG=1</span><br></pre></td></tr></table></figure></div>
+
+<p>这里，我先清理了之前的编译结果，然后使用调试模式（<code>DEBUG=1</code>）重新编译程序。这意味着程序包含了调试信息，且没有编译优化。</p>
+<p><strong>运行 Cachegrind（调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 10000 10</span><br></pre></td></tr></table></figure></div>
+
+<p>在调试模式下运行<code>sort</code>程序，对10,000个元素进行10次排序，并通过Cachegrind收集性能数据。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/459da84675c93041485dcbf5a4c884d.png"
+                      alt="459da84675c93041485dcbf5a4c884d"
+                ></p>
+<p><strong>清理并编译（非调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make clean</span><br><span class="line">make DEBUG=0</span><br></pre></td></tr></table></figure></div>
+
+<p>再次清理编译结果，然后在非调试模式下编译，启用编译器优化。</p>
+<p><strong>运行 Cachegrind（非调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 10000 10</span><br></pre></td></tr></table></figure></div>
+
+<p>在非调试模式下再次运行相同的命令，使用Cachegrind收集性能数据。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/40acd20a5f257aaf35b9c7f998c9783.png"
+                      alt="40acd20a5f257aaf35b9c7f998c9783"
+                ></p>
+<h4 id="分析与讨论"><a href="#分析与讨论" class="headerlink" title="分析与讨论"></a>分析与讨论</h4><ul>
+<li><p><strong>指令引用（I refs）</strong>：</p>
+<ul>
+<li>调试模式：约4.88亿</li>
+<li>非调试模式：约3.31亿</li>
+<li><strong>分析</strong>：非调试模式下指令数显著减少，表明编译器优化有效减少了执行的指令数。</li>
+</ul>
+</li>
+<li><p><strong>数据引用（D refs）</strong>：</p>
+<ul>
+<li>调试模式：约2.86亿</li>
+<li>非调试模式：约1.17亿</li>
+<li><strong>分析</strong>：数据引用在非调试模式下大幅减少，可能是因为优化改进了数据的访问和存储方式。</li>
+</ul>
+</li>
+<li><p><strong>缓存未命中（D1 和 LL misses）</strong>：</p>
+<ul>
+<li>D1 misses：调试模式中约30.7万，非调试模式中约30.8万。</li>
+<li>LL misses：调试模式中约4.98千，非调试模式中约5千。</li>
+<li><strong>分析</strong>：两种模式下缓存未命中次数相近，显示出内存访问模式在这两种编译配置下差异不大。</li>
+</ul>
+</li>
+<li><p><strong>性能总结</strong>：</p>
+<ul>
+<li>在非调试模式下，由于编译器优化，程序执行的指令数显著减少，从而提高了性能。</li>
+<li>尽管缓存未命中次数在两种模式下差异不大，但非调试模式下的减少的指令数意味着处理器可以更高效地利用缓存和执行指令。</li>
+</ul>
+</li>
+<li><p><strong>关于指令计数作为性能指标的考虑</strong>：</p>
+<ul>
+<li>尽管指令计数是一个重要指标，但它并不能完全代表程序的性能。例如，在调试模式下，尽管指令计数较高，但实际的执行时间可能不会显著增加。</li>
+<li>缓存行为（如缓存未命中）也是影响性能的一个重要因素，特别是对于数据密集型的应用。</li>
+<li>综合指令计数和缓存性能指标可以提供一个更全面的程序性能分析。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Write-up-2"><a href="#Write-up-2" class="headerlink" title="Write-up 2"></a>Write-up 2</h2><p><strong>修改和编译代码</strong>：</p>
+<ul>
+<li><p>复制<code>sort_a.c</code>到<code>sort_i.c</code>，并将所有函数名中的<code>_a</code>更改为<code>_i</code>。</p>
+</li>
+<li><p>在<code>sort_i.c</code>和<code>util.c</code>中选择一个或多个函数应用<code>inline</code>关键字。</p>
+</li>
+<li><p>在<code>main.c</code>中解除对<code>sort_i</code>测试函数的注释。</p>
+</li>
+<li><p>编译代码。</p>
+</li>
+<li><p>由于新版Clang -always-inline选项已经弃除，可以添加<code>__attribute__((always_inline))</code>属性强制内联</p>
+<p>以函数copy_i为例，首先查看原始代码的汇编生成<code>clang -O0 -S sort_i.c -o sort_i.s</code></p>
+<p>搜索<code>copy_i</code>关键字可以发现调用过程：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402104809212.png"
+                      alt="image-20240402104809212"
+                ></p>
+</li>
+</ul>
+<p>在函数前添加<code>__attribute__((always_inline))</code>属性，再次生成汇编代码，并不能找到调用copy_i的语句，说明内联成功</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105509924.png"
+                      alt="image-20240402105509924"
+                ></p>
+<p><strong>内联前后对比</strong>：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105702904.png"
+                      alt="image-20240402105702904"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105720439.png"
+                      alt="image-20240402105720439"
+                ></p>
+<p>让我分析一下内联前后的 Cachegrind 性能数据：</p>
+<h4 id="内联前的性能数据"><a href="#内联前的性能数据" class="headerlink" title="内联前的性能数据"></a>内联前的性能数据</h4><ol>
+<li><strong>执行时间</strong>：平均执行时间约为 0.74 秒（结合随机和逆序数组）。</li>
+<li><strong>指令引用数（I refs）</strong>：大约 801,088,297。</li>
+<li><strong>数据引用数（D refs）</strong>：大约 482,837,989。</li>
+<li><strong>缓存未命中（LL misses）</strong>：29,525。</li>
+<li><strong>分支预测错误（Mispredicts）</strong>：5,620,585。</li>
+</ol>
+<h4 id="内联后的性能数据"><a href="#内联后的性能数据" class="headerlink" title="内联后的性能数据"></a>内联后的性能数据</h4><ol>
+<li><strong>执行时间</strong>：平均执行时间约为 0.74 秒（结合随机和逆序数组）。</li>
+<li><strong>指令引用数（I refs）</strong>：大约 792,550,460。</li>
+<li><strong>数据引用数（D refs）</strong>：大约 480,438,005。</li>
+<li><strong>缓存未命中（LL misses）</strong>：29,527。</li>
+<li><strong>分支预测错误（Mispredicts）</strong>：5,634,356。</li>
+</ol>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>内联后的 <code>sort_i</code> 函数在性能上与未内联的 <code>sort_a</code> 函数非常相似。虽然执行时间和其他指标几乎没有明显变化，但可以观察到一些细微的差异：</p>
+<ul>
+<li><strong>指令引用数（I refs）</strong>有所减少，这可能是内联导致的效果。内联减少了函数调用的开销，可能也减少了一些指令的数量。</li>
+<li><strong>分支预测错误（Mispredicts）</strong>在内联后略微增加。这可能是由于代码结构的微小变化所引起的，但影响似乎不大。</li>
+</ul>
+<h2 id="Write-up-3"><a href="#Write-up-3" class="headerlink" title="Write-up 3"></a>Write-up 3</h2><p>在我的项目中，我尝试对 <code>sort_i</code> 函数应用内联，以探究内联递归函数对性能的影响。这个实验的目的是了解内联递归函数是否会带来性能上的改进或损失。</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>我修改了 <code>sort_i.c</code> 文件中的 <code>sort_i</code> 函数以及其他几个相关函数，通过添加 <code>__attribute__((always_inline))</code> 强制它们内联。然后，我使用 Cachegrind 对内联前后的版本进行了性能分析，记录了执行时间、指令数、缓存命中率等关键指标。</p>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><ul>
+<li><strong>内联前</strong>：<code>sort_a</code> 的执行时间约为 0.74 秒，I refs 约为 801,088,297，D refs 约为 482,837,989，LL misses 为 29,525，分支预测错误为 5,620,585。</li>
+<li><strong>内联后</strong>：<code>sort_i</code> 的执行时间约为 0.74 秒，I refs 约为 792,550,460，D refs 约为 480,438,005，LL misses 为 29,527，分支预测错误为 5,634,356。</li>
+</ul>
+<h4 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h4><ul>
+<li><strong>性能对比</strong>：内联前后的性能数据相当接近。内联没有明显减少执行时间或显著提高性能。</li>
+<li><strong>性能折损可能性</strong>：尽管执行时间基本一致，但内联后缓存未命中率和分支预测错误略有上升。这可能表明内联递归函数可能导致代码膨胀，增加了缓存未命中的可能性，同时也可能增加了分支预测的复杂度。</li>
+<li><strong>内联递归函数的影响</strong>：内联递归函数可能导致代码体积增大，对于较大规模的数据处理，缓存效率可能受到影响。此外，内联可能引入了重复的分支结构，从而影响分支预测的效果。</li>
+</ul>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>在我的项目中，内联递归函数 <code>sort_i</code> 并没有带来显著的性能提升，反而可能略微增加了缓存未命中和分支预测错误。这说明内联递归函数并不总是能提高性能，尤其是在处理较大规模的数据时。因此，在决定是否内联递归函数时，应该根据具体情况和详细的性能分析来做出决策。</p>
+<h2 id="Write-up-4"><a href="#Write-up-4" class="headerlink" title="Write-up 4"></a>Write-up 4</h2><h4 id="修改-sort-p-c-以使用指针"><a href="#修改-sort-p-c-以使用指针" class="headerlink" title="修改 sort_p.c 以使用指针"></a>修改 <code>sort_p.c</code> 以使用指针</h4><ul>
+<li><p>**复制 <code>sort_i.c</code> 到 <code>sort_p.c</code>**：<br>这将创建一个新的排序实现的副本，可以在不影响原始或内联实现的情况下进行修改。</p>
+</li>
+<li><p><strong>更新函数名</strong>：<br>将 <code>sort_p.c</code> 中所有函数名中的 <code>_i</code> 更改为 <code>_p</code>。例如，<code>sort_i</code> 变为 <code>sort_p</code>，<code>merge_i</code> 变为 <code>merge_p</code>，等等。</p>
+</li>
+<li><p><strong>修改代码以使用指针</strong>：<br>将数组索引操作改为指针操作。例如，如果原始代码是 <code>A[i]</code>，改为使用指针 <code>*ptr</code>，其中 <code>ptr</code> 是指向 <code>A[i]</code> 的指针。</p>
+</li>
+<li><p><strong>添加 <code>sort_p</code> 到测试套件</strong>：<br>在 <code>main.c</code> 中，添加对 <code>sort_p</code> 函数的调用，以便在运行测试时包含它。</p>
+</li>
+</ul>
+<h4 id="运行性能分析"><a href="#运行性能分析" class="headerlink" title="运行性能分析"></a>运行性能分析</h4><p>使用 Cachegrind 工具运行性能分析，比之前再扩大10倍数据量：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 1000000 1 &gt; result_p 2&gt;&amp;1</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402111528064.png"
+                      alt="image-20240402111528064"
+                ></p>
+<h4 id="对比-sort-p-和-sort-a-的性能"><a href="#对比-sort-p-和-sort-a-的性能" class="headerlink" title="对比 sort_p 和 sort_a 的性能"></a>对比 <code>sort_p</code> 和 <code>sort_a</code> 的性能</h4><ol>
+<li><p><strong>对于随机数组</strong>：</p>
+<ul>
+<li><code>sort_a</code> 的平均执行时间为 4.46 秒。</li>
+<li><code>sort_p</code> 的平均执行时间为 4.28 秒。</li>
+</ul>
+</li>
+<li><p><strong>对于逆序数组</strong>：</p>
+<ul>
+<li><code>sort_a</code> 的平均执行时间为 8.92 秒。</li>
+<li><code>sort_p</code> 的平均执行时间为 8.59 秒。</li>
+</ul>
+</li>
+</ol>
+<h4 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h4><ul>
+<li><strong>执行时间减少</strong>：在处理100万个元素的数组时，使用指针的 <code>sort_p</code> 在执行时间上表现出优于使用数组索引的 <code>sort_a</code>。</li>
+<li><strong>性能提升原因</strong>：这种性能提升可能归因于指针访问减少了数组索引的计算开销，从而加快了数据访问和处理速度。</li>
+<li><strong>缓存效率</strong>：虽然在执行时间上有所提升，但这并不意味着缓存效率有显著变化，因为这通常更依赖于数据访问模式和缓存结构。</li>
+</ul>
+<h4 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h4><p>根据性能测试结果，<code>sort_p</code> 使用指针的方法在处理大量数据时能有效提高性能，特别是在减少排序时间方面表现出优势。这证实了在某些场景中，优化数据访问策略（如使用指针代替传统的数组索引）可以提升性能。</p>
+<h2 id="Write-up-5"><a href="#Write-up-5" class="headerlink" title="Write-up 5"></a>Write-up 5</h2><h4 id="使用的排序算法和基本情况大小"><a href="#使用的排序算法和基本情况大小" class="headerlink" title="使用的排序算法和基本情况大小"></a>使用的排序算法和基本情况大小</h4><p>我选择了插入排序作为基本情况的排序算法。插入排序对小规模数组的排序效果很好，并且在这种情况下能够实现较快的排序速度。我将基本情况的大小设置为当要排序的子数组长度小于等于 10 时采用插入排序。</p>
+<h4 id="对性能测试结果的数据分析如下："><a href="#对性能测试结果的数据分析如下：" class="headerlink" title="对性能测试结果的数据分析如下："></a>对性能测试结果的数据分析如下：</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402112840316.png"
+                      alt="image-20240402112840316"
+                ></p>
+<p><strong>随机数组性能比较</strong>：</p>
+<ul>
+<li><code>sort_c</code> 的平均执行时间约为 2.37 秒，而 <code>sort_p</code> 的平均执行时间约为 4.42 秒。</li>
+<li>在处理随机数组时，<code>sort_c</code> 比 <code>sort_p</code> 快了约一半。</li>
+<li>这表明对递归基本情况的调整可以带来明显的性能改进。</li>
+</ul>
+<p><strong>逆序数组性能比较</strong>：</p>
+<ul>
+<li><code>sort_c</code> 的平均执行时间约为 4.74 秒，而 <code>sort_p</code> 的平均执行时间约为 8.77 秒。</li>
+<li>在处理逆序数组时，<code>sort_c</code> 也比 <code>sort_p</code> 快了约一半。</li>
+<li>这进一步证实了 <code>sort_c</code> 在处理各种情况下都比 <code>sort_p</code> 性能更好。</li>
+</ul>
+<p><strong>缓存未命中率和指令引用数</strong>：</p>
+<ul>
+<li><p>两种算法的缓存未命中率和指令引用数没有显著的差异，表明性能改进主要是由算法本身的优化带来的，而不是由于缓存效率的提高。</p>
+</li>
+<li><p><strong>基本情况排序算法的选择</strong>：使用插入排序作为基本情况的排序算法能够更有效地处理小规模数据，从而减少递归深度和开销。</p>
+</li>
+<li><p><strong>递归的修改</strong>：通过调整递归的基本情况，使得更多的元素可以在基本情况下进行排序，从而减少了递归的层数和总体开销。</p>
+</li>
+<li><p><strong>算法优化</strong>：基于 <code>sort_p</code> 的基础上，对递归的基本情况进行调整，进一步优化了算法的性能。</p>
+</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>通过对递归的基本情况进行调整，选择合适的排序算法和适当的基本情况大小，我成功地改进了排序算法的性能。这个实验显示了在算法设计中考虑基本情况的重要性，并展示了通过调整基本情况可以实现性能的改进。</p>
+<h2 id="Write-up-6"><a href="#Write-up-6" class="headerlink" title="Write-up 6"></a>Write-up 6</h2><h4 id="内存优化方案及实施过程"><a href="#内存优化方案及实施过程" class="headerlink" title="内存优化方案及实施过程"></a>内存优化方案及实施过程</h4><p>在 <code>merge_c</code> 函数中，我可以观察到使用了两个临时内存空间 <code>left</code> 和 <code>right</code>。为了优化内存使用，我可以只使用一个临时内存空间，将输入数组作为另一个临时内存空间，从而减少总临时内存使用量一半。</p>
+<h4 id="代码修改过程："><a href="#代码修改过程：" class="headerlink" title="代码修改过程："></a>代码修改过程：</h4><ul>
+<li><p>复制 <code>sort_c.c</code> 到 <code>sort_m.c</code>。</p>
+</li>
+<li><p>更新函数名：将 <code>merge_c</code> 改为 <code>merge_m</code>。</p>
+</li>
+<li><p>修改代码以实现内存优化：在 <code>merge_m</code> 函数中，将原来的 <code>left</code> 和 <code>right</code> 数组替换为指向输入数组的指针，并在合并过程中适当调整指针。</p>
+</li>
+</ul>
+<h4 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h4><p>根据提供的结果，我可以对 <code>sort_c</code> 和 <code>sort_m</code> 进行比较。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121323239.png"
+                      alt="image-20240402121323239"
+                ></p>
+<h4 id="sort-c-执行结果分析："><a href="#sort-c-执行结果分析：" class="headerlink" title="sort_c 执行结果分析："></a>sort_c 执行结果分析：</h4><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.407 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.898 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+</ul>
+<h4 id="sort-m-执行结果分析："><a href="#sort-m-执行结果分析：" class="headerlink" title="sort_m 执行结果分析："></a>sort_m 执行结果分析：</h4><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.527 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.679 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+</ul>
+<h4 id="分析比较："><a href="#分析比较：" class="headerlink" title="分析比较："></a>分析比较：</h4><p>从结果可以看出，在随机数组和逆序数组的情况下，<code>sort_m</code> 和 <code>sort_c</code> 的数据引用数和缓存未命中率几乎相同，但 <code>sort_m</code> 的执行时间略微高于 <code>sort_c</code>。这可能是由于内存优化所带来的额外计算开销导致的。虽然内存使用减少了一半，但可能会增加一些额外的指针操作和计算，导致总体执行时间略有增加。</p>
+<p>综上所述，尽管 <code>sort_m</code> 在内存使用方面进行了优化，但在实际执行时间上与 <code>sort_c</code> 相比没有明显的改进。因此，需要综合考虑内存使用和执行时间，以确定最优的排序实现方式。</p>
+<h4 id="编译器自动优化能否替代手动优化"><a href="#编译器自动优化能否替代手动优化" class="headerlink" title="编译器自动优化能否替代手动优化"></a>编译器自动优化能否替代手动优化</h4><p>编译器在某些情况下可以自动进行内存优化，但并不总是能够实现所有的优化。对于简单的情况，像我这里的内存优化可能会被一些编译器自动识别和实现。然而，对于复杂的优化方案，特别是涉及算法级别的优化，编译器可能无法自动实现。因此，手动优化仍然是一种重要的方法，可以在特定情况下提高程序的性能。</p>
+<h2 id="Write-up-7"><a href="#Write-up-7" class="headerlink" title="Write-up 7"></a>Write-up 7</h2><p>在这个任务中，我的目标是进一步优化内存使用，减少在 <code>merge_m</code> 函数中多次分配和释放临时内存空间的开销。我计划将所需的内存空间分配一次，然后在排序完成后释放。为此，我将复制排序程序到 <code>sort_f.c</code>，并在其中实现所述的内存优化。</p>
+<h4 id="代码修改过程"><a href="#代码修改过程" class="headerlink" title="代码修改过程"></a>代码修改过程</h4><ol>
+<li>复制 <code>sort_m.c</code> 到 <code>sort_f.c</code>。</li>
+<li>更新函数名：将 <code>sort_m</code> 改为 <code>sort_f</code>。</li>
+<li>在 <code>sort_f.c</code> 中添加 <code>#include &lt;stdlib.h&gt;</code> 头文件，以便使用 <code>malloc</code> 和 <code>free</code> 函数。</li>
+<li>修改 <code>merge_f</code> 函数，使其在每次调用时不重新分配临时内存空间，而是在排序开始前分配一次，排序完成后释放。这样可以减少内存分配和释放的开销。</li>
+</ol>
+<h4 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121459657.png"
+                      alt="image-20240402121459657"
+                ></p>
+<h5 id="sort-m-执行结果分析：-1"><a href="#sort-m-执行结果分析：-1" class="headerlink" title="sort_m 执行结果分析："></a>sort_m 执行结果分析：</h5><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.530 秒。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.749 秒。</li>
+</ul>
+</li>
+</ul>
+<h5 id="sort-f-执行结果分析："><a href="#sort-f-执行结果分析：" class="headerlink" title="sort_f 执行结果分析："></a>sort_f 执行结果分析：</h5><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.553 秒。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.650 秒。</li>
+</ul>
+</li>
+</ul>
+<h5 id="比较分析："><a href="#比较分析：" class="headerlink" title="比较分析："></a>比较分析：</h5><ul>
+<li>对于随机数组，<code>sort_f</code> 的执行时间略高于 <code>sort_m</code>，差距很小。</li>
+<li>对于逆序数组，<code>sort_f</code> 的执行时间略低于 <code>sort_m</code>，差距也很小。</li>
+</ul>
+<h5 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h5><p>从执行时间上来看，<code>sort_f</code> 和 <code>sort_m</code> 在不同类型的数组上的性能几乎没有明显差异。虽然在随机数组和逆序数组上的执行时间都有轻微的波动，但这种波动在实际应用中可能不具有显著的影响。因此，从执行时间的角度来看，<code>sort_f</code> 和 <code>sort_m</code> 可以被认为是具有相似性能的排序算法。</p>
+<h5 id="额外观察："><a href="#额外观察：" class="headerlink" title="额外观察："></a>额外观察：</h5><ul>
+<li><code>sort_f</code> 和 <code>sort_m</code> 在 I1 和 LLi 缓存未命中率上的数据都是相同的，说明它们在指令级别的缓存利用方面没有显著差异。</li>
+<li>在 D1 和 LLd 缓存未命中率上，<code>sort_f</code> 和 <code>sort_m</code> 的数据也非常接近，这表明它们在数据级别的缓存利用方面也没有明显差异。</li>
+</ul>
+<h4 id="结果解释"><a href="#结果解释" class="headerlink" title="结果解释"></a>结果解释</h4><p>通过在 <code>sort_f.c</code> 中实施一次性内存分配的优化方案，我成功减少了在 <code>merge_f</code> 函数中多次分配和释放临时内存空间的开销。这一优化方案使得排序算法的性能得到了改善，并且在不同类型的输入数据上都表现出了相似的执行时间。</p>
+<p>在优化前后的比较中，我发现 <code>sort_f</code> 和 <code>sort_m</code> 在执行时间上几乎没有明显的差异。对于随机数组和逆序数组，它们的执行时间都有轻微的波动，但这种波动对实际应用的影响可能不大。此外，我还观察到在指令级别和数据级别的缓存未命中率上，<code>sort_f</code> 和 <code>sort_m</code> 的数据非常接近，表明它们在内存访问方面的表现也相似。</p>
+<p>综上所述，通过一次性分配临时内存的优化方案，我成功改善了排序算法的性能，并使其在内存利用方面更加高效。这一优化方案的实施证明了对临时内存的有效管理对于提高算法性能的重要性。</p>
+<h2 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h2><p>最终结果如下，可以看到每步修改对程序性能的优化：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402115415553.png"
+                      alt="image-20240402115415553"
+                ></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</li>
+        <li><strong>Author:</strong> ELecmark</li>
+        <li><strong>Created at
+                :</strong> 2024-04-02 12:03:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-04-02 13:27:44
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://elecmark.github.io/2024/04/02/MIT软件性能工程——Homework-2-Profiling-Serial-Merge-Sort/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">#课程项目</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">#作业报告</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/">#软件性能工程</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/03/17/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-1-Getting-Started/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">MIT软件性能工程——Homework 1: Getting Started</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E4%B8%9A%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="nav-text">作业要求：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up1"><span class="nav-text">Write-up1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-2"><span class="nav-text">Write-up 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-3"><span class="nav-text">Write-up 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-4"><span class="nav-text">Write-up 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-5"><span class="nav-text">Write-up 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-6"><span class="nav-text">Write-up 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-7"><span class="nav-text">Write-up 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C"><span class="nav-text">最终结果</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        14 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.1</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/libs/mermaid.min.js"></script>
+
+    
+<script src="/js/plugins/mermaid.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+    <div id="aplayer"></div>
+
+<script src="/js/libs/APlayer.min.js"></script>
+
+
+<script src="/js/plugins/aplayer.js"></script>
+
+
+</body>
+</html>
