@@ -25,25 +25,25 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="使用Python及其第三方库Pillow进行基本的图像处理操作。处理和调整多个图像，以便将它们组合成一个单一的、具有视觉效果的图像">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps1.jpg">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps2.png">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps3.png">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps4.png">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps5.png">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps6.jpg">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps7.jpg">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps8.jpg">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps9.jpg">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps10.jpg">
-<meta property="og:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps11.jpg">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps1.jpg">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps2.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps3.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps4.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps5.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps6.jpg">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps7.jpg">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps8.jpg">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps9.jpg">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps10.jpg">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps11.jpg">
 <meta property="article:published_time" content="2024-04-13T17:02:49.000Z">
-<meta property="article:modified_time" content="2024-04-13T17:21:57.341Z">
+<meta property="article:modified_time" content="2024-04-13T17:26:40.813Z">
 <meta property="article:author" content="Elecmark">
 <meta property="article:tag" content="课程项目">
 <meta property="article:tag" content="作业报告">
 <meta property="article:tag" content="图像处理与分析">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://elecmark.github.io/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps1.jpg">
+<meta name="twitter:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps1.jpg">
     
     
     <!--- Icon Part-->
@@ -593,8 +593,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-14 01:21:57</span>
-            <span class="mobile">2024-04-14 01:21:57</span>
+            <span class="desktop">2024-04-14 01:26:40</span>
+            <span class="mobile">2024-04-14 01:26:40</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -680,7 +680,7 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps1.jpg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps1.jpg"
                       alt="img"
                 ></p>
 </li>
@@ -719,34 +719,40 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps2.png"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps2.png"
                       alt="img"
                 > </p>
-<p>图 1原始图像</p>
+<center>图 1原始图像</center>
+
+
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    resized_image = original_image.resize((<span class="number">640</span>, <span class="number">480</span>))</span><br><span class="line">    resized_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps3.png"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps3.png"
                       alt="img"
                 > </p>
-<p>图 2改变大小之后的图像</p>
+<center>图 2改变大小之后的图像</center>
+
+
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    bw_image = resized_image.convert(<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps4.png"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps4.png"
                       alt="img"
                 > </p>
-<p>图 3灰度化之后的图像</p>
+<center>图 3灰度化之后的图像</center>
+
+
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_4.gif&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
 
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps5.png"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps5.png"
                       alt="img"
                 > </p>
 <center>图 4将黑白图像存成gif格式</center>
@@ -757,60 +763,60 @@
 <li>马赛克图像合成</li>
 </ol>
 <p>准备实验环境和素材:</p>
-<p>确保安装了Python图像处理库Pillow和数学运算库NumPy。</p>
-<p>在代码中设置目标图像（target_image_path）和小图片集合（icon_folder）的路径。</p>
+<p>确保安装了Python图像处理库Pillow和数学运算库<code>NumPy</code>。</p>
+<p>在代码中设置目标图像<code>（target_image_path）</code>和小图片集合<code>（icon_folder）</code>的路径。</p>
 <p>处理小图片集:</p>
-<p>使用get_average_color(image)函数计算每个小图片的平均颜色。这个函数接收一个图像对象作为参数，计算其在RGB颜色空间中的平均颜色，并返回表示这种颜色的元组。</p>
-<p>resize_icons(icon_folder, icon_size)函数遍历小图片所在的文件夹，并将每张图片调整到指定的大小。这是为了使得小图片与马赛克图像的每个格子大小相匹配。</p>
+<p>使用<code>get_average_color(image)</code>函数计算每个小图片的平均颜色。这个函数接收一个图像对象作为参数，计算其在RGB颜色空间中的平均颜色，并返回表示这种颜色的元组。</p>
+<p><code>resize_icons(icon_folder, icon_size)</code>函数遍历小图片所在的文件夹，并将每张图片调整到指定的大小。这是为了使得小图片与马赛克图像的每个格子大小相匹配。</p>
 <p>实现马赛克图像合成:</p>
-<p>create_photo_mosaic(target_image_path, icons, grid_size)函数用于创建马赛克图像。</p>
+<p><code>create_photo_mosaic(target_image_path, icons, grid_size)</code>函数用于创建马赛克图像。</p>
 <p>首先，该函数调整目标图像的大小，使其与马赛克网格的大小匹配。</p>
 <p>接着，它将目标图像分割成与网格大小相匹配的小区域。</p>
 <p>对于每个区域，函数找到颜色最接近该区域平均颜色的小图片，并将其放置在相应的位置上。</p>
 <p>保存并测试结果:</p>
-<p>一旦马赛克图像创建完毕，使用mosaic_image.save(output_path)将其保存到指定路径。</p>
+<p>一旦马赛克图像创建完毕，使用<code>mosaic_image.save(output_path)</code>将其保存到指定路径。</p>
 <p>保存后的马赛克图像可以在指定的输出中查看。</p>
 <p>效果浏览：</p>
 <p>grid_size &#x3D; (5, 5)</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps6.jpg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps6.jpg"
                       alt="img"
                 > </p>
 <p>grid_size &#x3D; (4, 4)</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps7.jpg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps7.jpg"
                       alt="img"
                 > </p>
 <p>grid_size &#x3D; (3, 3)</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps8.jpg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps8.jpg"
                       alt="img"
                 > </p>
 <p>grid_size &#x3D; (3, 2)</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps9.jpg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps9.jpg"
                       alt="img"
                 > </p>
 <p>grid_size &#x3D; (3, 2)</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps10.jpg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps10.jpg"
                       alt="img"
                 > </p>
 <p>grid_size &#x3D; (1, 1)</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps11.jpg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps11.jpg"
                       alt="img"
                 > </p>
 <h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>通过实验第一部分，我学会了如何使用Python及其第三方库Pillow进行基本的图像处理操作。这个实验让我体会到了Python在图像处理方面的强大和灵活性。通过简单的代码，我能够打开图像，改变其大小，将其转换为黑白图像，甚至将其保存为不同的格式，如GIF。这些操作在数字图像处理中非常常见，而Python使这些操作变得易于实现和理解。</p>
@@ -831,7 +837,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-14 01:21:57
+                    :</strong> 2024-04-14 01:26:40
             </li>
         
         <li>
