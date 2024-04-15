@@ -511,185 +511,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Alpha冲刺3</title>
-    <url>/2023/12/03/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Alpha%E5%86%B2%E5%88%BA-3-3/</url>
-    <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
-<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
-<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
-<li>普典衡</li>
-<li>司宇萌</li>
-<li>孙文秀</li>
-<li>王诗梦</li>
-<li>王菲</li>
-</ul>
-<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
-<li>过去完成的任务：<ul>
-<li>成功连接前后端，前端上传按钮点击后可以选择图片上传，上传后在前端有显示，并且通过后端将上传图片存储在了images里</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/1.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>进一步优化前端功能与界面，实现新增的转换按钮的功能（与后端对接）</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>前后端连接错误，改正script中的方法后解决</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>对JavaScript与HTML理解更深入，对前端布局理解</li>
-</ul>
-</li>
-</ul>
-<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
-<li>过去完成的任务：<ul>
-<li>增加了一个开始去噪的按钮，配置了ui图像，调整页面，修改按钮的颜色。</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/2.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成前后端的对接工作，将模型接入传送过程，实装相应的按钮和进度条的功能</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>模型未接入</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习前端，学习python语言，了解前后端交互</li>
-</ul>
-</li>
-</ul>
-<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
-<li>过去完成的任务：<ul>
-<li>使用训练的模型对本地图片进行去噪，对模型多次修改以达到期望效果。</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>继续修改模型，实现输出图片颜色与输入图片相同。</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>刚开始的模型，输入输出图片颜色与原图像不一致，改过之后输入图片正确，但是输出图像不仅模糊，而且没有色彩，这个问题现在依旧没有解决。</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习CNN自动编码器，学习了python语法。</li>
-</ul>
-</li>
-</ul>
-<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
-<li>过去完成的任务：<ul>
-<li>尝试获取前端图片并将其传给模型进行训练，但只完成从前端获取图片存到本地文件夹</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/4.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成前后端对接工作，将模型接入传送过程</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>图片保存路径与预期不符，还无法连接到模型</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习到了一些后端相关知识，学习了python语言，了解前后端交互</li>
-</ul>
-</li>
-</ul>
-<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
-<li>过去完成的任务：<ul>
-<li>进行了前后端的部分对接，目前实现了从前端获取要修复的图片到本地</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/5.png"
-                      alt="5"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>继续完成前后端对接工作，实现将训练好的图片传回给前端</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>前后端对接时出现问题，前端上传的图片无法保存到本地制定文件夹</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习了相关的Python知识，了解前后端对接的基本工作</li>
-</ul>
-</li>
-</ul>
-<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
-<li>添加了转换按钮</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/6.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/10.jpg"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
-<li><p><strong>时间</strong>：2023.12.3 16:00</p>
-</li>
-<li><p><strong>地点</strong>：图书馆研讨室303</p>
-</li>
-<li><p><strong>内容</strong>：</p>
-<h4 id="1-项目进展概况"><a href="#1-项目进展概况" class="headerlink" title="1. 项目进展概况"></a>1. 项目进展概况</h4><ul>
-<li><strong>前后端连接</strong>：成功实现了前后端的基本连接，使前端可以上传图片，后端可以接收并存储这些图片。</li>
-<li><strong>界面优化</strong>：团队成员对用户界面进行了改进，增加了去噪按钮，并优化了界面的整体布局和视觉效果。</li>
-<li><strong>模型训练与应用</strong>：对去噪模型进行了训练和调整，以便更好地处理上传的图片。</li>
-</ul>
-<h4 id="2-技术难点和解决方案"><a href="#2-技术难点和解决方案" class="headerlink" title="2. 技术难点和解决方案"></a>2. 技术难点和解决方案</h4><ul>
-<li><strong>前后端对接问题</strong>：解决了前后端连接时出现的错误，主要通过调整代码和脚本实现。</li>
-<li><strong>模型集成问题</strong>：正在努力将去噪模型完全集成到前后端流程中，以便实现自动处理上传的图片。</li>
-<li><strong>图像处理问题</strong>：在图像去噪的模型训练中遇到了输出图像颜色和清晰度的问题，团队正在通过调整模型参数和算法来解决这些问题。</li>
-</ul>
-<h4 id="3-后续计划和任务分配"><a href="#3-后续计划和任务分配" class="headerlink" title="3. 后续计划和任务分配"></a>3. 后续计划和任务分配</h4><ul>
-<li><strong>前端功能优化</strong>：继续提升用户界面，包括增加新的功能按钮和改进现有布局。</li>
-<li><strong>模型优化与集成</strong>：继续调整和改进去噪模型，确保模型能够有效集成到整个系统中。</li>
-<li><strong>前后端进一步对接</strong>：加强前后端的协同工作，确保系统的流畅运行，特别是在图像上传和处理方面。</li>
-</ul>
-<p>团队将继续密切协作，确保按时完成项目目标，同时解决任何新出现的技术挑战。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>软件工程</category>
-        <category>云去噪</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>项目报告</tag>
-        <tag>云去噪</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1</title>
     <url>/2023/12/10/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-1-3/</url>
     <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
@@ -858,6 +679,185 @@
 <li>对CNN编码器和去噪算法的认识更加深入，为未来的开发提供了坚实的基础。</li>
 </ul>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体来看，每位成员都在其专长领域作出了积极贡献。虽然面临一些技术挑战，但团队成员通过有效合作，已经取得了显著的进展，并对未来的工作有了清晰的规划和方向。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>软件工程</category>
+        <category>云去噪</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>项目报告</tag>
+        <tag>云去噪</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Alpha冲刺3</title>
+    <url>/2023/12/03/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Alpha%E5%86%B2%E5%88%BA-3-3/</url>
+    <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
+<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
+<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
+<li>普典衡</li>
+<li>司宇萌</li>
+<li>孙文秀</li>
+<li>王诗梦</li>
+<li>王菲</li>
+</ul>
+<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
+<li>过去完成的任务：<ul>
+<li>成功连接前后端，前端上传按钮点击后可以选择图片上传，上传后在前端有显示，并且通过后端将上传图片存储在了images里</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/1.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>进一步优化前端功能与界面，实现新增的转换按钮的功能（与后端对接）</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>前后端连接错误，改正script中的方法后解决</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>对JavaScript与HTML理解更深入，对前端布局理解</li>
+</ul>
+</li>
+</ul>
+<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
+<li>过去完成的任务：<ul>
+<li>增加了一个开始去噪的按钮，配置了ui图像，调整页面，修改按钮的颜色。</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/2.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成前后端的对接工作，将模型接入传送过程，实装相应的按钮和进度条的功能</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>模型未接入</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习前端，学习python语言，了解前后端交互</li>
+</ul>
+</li>
+</ul>
+<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
+<li>过去完成的任务：<ul>
+<li>使用训练的模型对本地图片进行去噪，对模型多次修改以达到期望效果。</li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>继续修改模型，实现输出图片颜色与输入图片相同。</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>刚开始的模型，输入输出图片颜色与原图像不一致，改过之后输入图片正确，但是输出图像不仅模糊，而且没有色彩，这个问题现在依旧没有解决。</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习CNN自动编码器，学习了python语法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
+<li>过去完成的任务：<ul>
+<li>尝试获取前端图片并将其传给模型进行训练，但只完成从前端获取图片存到本地文件夹</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/4.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成前后端对接工作，将模型接入传送过程</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>图片保存路径与预期不符，还无法连接到模型</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习到了一些后端相关知识，学习了python语言，了解前后端交互</li>
+</ul>
+</li>
+</ul>
+<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
+<li>过去完成的任务：<ul>
+<li>进行了前后端的部分对接，目前实现了从前端获取要修复的图片到本地</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/5.png"
+                      alt="5"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>继续完成前后端对接工作，实现将训练好的图片传回给前端</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>前后端对接时出现问题，前端上传的图片无法保存到本地制定文件夹</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习了相关的Python知识，了解前后端对接的基本工作</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
+<li>添加了转换按钮</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/6.png"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/10.jpg"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
+<li><p><strong>时间</strong>：2023.12.3 16:00</p>
+</li>
+<li><p><strong>地点</strong>：图书馆研讨室303</p>
+</li>
+<li><p><strong>内容</strong>：</p>
+<h4 id="1-项目进展概况"><a href="#1-项目进展概况" class="headerlink" title="1. 项目进展概况"></a>1. 项目进展概况</h4><ul>
+<li><strong>前后端连接</strong>：成功实现了前后端的基本连接，使前端可以上传图片，后端可以接收并存储这些图片。</li>
+<li><strong>界面优化</strong>：团队成员对用户界面进行了改进，增加了去噪按钮，并优化了界面的整体布局和视觉效果。</li>
+<li><strong>模型训练与应用</strong>：对去噪模型进行了训练和调整，以便更好地处理上传的图片。</li>
+</ul>
+<h4 id="2-技术难点和解决方案"><a href="#2-技术难点和解决方案" class="headerlink" title="2. 技术难点和解决方案"></a>2. 技术难点和解决方案</h4><ul>
+<li><strong>前后端对接问题</strong>：解决了前后端连接时出现的错误，主要通过调整代码和脚本实现。</li>
+<li><strong>模型集成问题</strong>：正在努力将去噪模型完全集成到前后端流程中，以便实现自动处理上传的图片。</li>
+<li><strong>图像处理问题</strong>：在图像去噪的模型训练中遇到了输出图像颜色和清晰度的问题，团队正在通过调整模型参数和算法来解决这些问题。</li>
+</ul>
+<h4 id="3-后续计划和任务分配"><a href="#3-后续计划和任务分配" class="headerlink" title="3. 后续计划和任务分配"></a>3. 后续计划和任务分配</h4><ul>
+<li><strong>前端功能优化</strong>：继续提升用户界面，包括增加新的功能按钮和改进现有布局。</li>
+<li><strong>模型优化与集成</strong>：继续调整和改进去噪模型，确保模型能够有效集成到整个系统中。</li>
+<li><strong>前后端进一步对接</strong>：加强前后端的协同工作，确保系统的流畅运行，特别是在图像上传和处理方面。</li>
+</ul>
+<p>团队将继续密切协作，确保按时完成项目目标，同时解决任何新出现的技术挑战。</p>
 </li>
 </ul>
 ]]></content>
@@ -1280,114 +1280,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Blender建模/动画作品</title>
-    <url>/2023/07/15/Blender%E5%BB%BA%E6%A8%A1-%E5%8A%A8%E7%94%BB%E4%BD%9C%E5%93%81/</url>
-    <content><![CDATA[<h3 id="三兄弟建模（几何）"><a href="#三兄弟建模（几何）" class="headerlink" title="三兄弟建模（几何）"></a>三兄弟建模（几何）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/1_%E4%B8%89%E5%85%84%E5%BC%9F.png"
-                      alt="1_三兄弟"
-                ></p>
-<h3 id="积木建模-动画（动画）"><a href="#积木建模-动画（动画）" class="headerlink" title="积木建模&#x2F;动画（动画）"></a>积木建模&#x2F;动画（动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV15K421x7aj/?share_source=copy_web' title='【Blender积木】'><i class='fa-solid fa-play-circle'></i> 【Blender积木】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1701692717&bvid=BV15K421x7aj&cid=1463230031&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/2_%E7%A7%AF%E6%9C%A8.png"
-                      alt="2_积木"
-                ></p>
-<h3 id="金币基站建模（金属光泽材质）"><a href="#金币基站建模（金属光泽材质）" class="headerlink" title="金币基站建模（金属光泽材质）"></a>金币基站建模（金属光泽材质）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/3_%E9%87%91%E5%B8%81%E5%9F%BA%E7%AB%99.png"
-                      alt="3_金币基站"
-                ></p>
-<h3 id="跑车建模-动画（复杂图形建模与循环动画）"><a href="#跑车建模-动画（复杂图形建模与循环动画）" class="headerlink" title="跑车建模&#x2F;动画（复杂图形建模与循环动画）"></a>跑车建模&#x2F;动画（复杂图形建模与循环动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Mj421f71M/?share_source=copy_web' title='【Blender跑车】'><i class='fa-solid fa-play-circle'></i> 【Blender跑车】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1651706227&bvid=BV1Mj421f71M&cid=1463231676&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E8%BD%A6%E5%A4%B4.png"
-                      alt="跑车车头"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E7%89%B9%E5%86%992.png"
-                      alt="跑车特写2"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E4%BE%A7%E9%9D%A2.png"
-                      alt="跑车侧面"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E9%A1%B6%E9%83%A8.png"
-                      alt="跑车顶部"
-                ></p>
-<h3 id="荧光树桩建模（半透明材质）"><a href="#荧光树桩建模（半透明材质）" class="headerlink" title="荧光树桩建模（半透明材质）"></a>荧光树桩建模（半透明材质）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/5_%E8%8D%A7%E5%85%89%E6%A0%91%E6%A1%A9.png"
-                      alt="5_荧光树桩"
-                ></p>
-<h3 id="子弹时间建模-动画（物理效果模拟）"><a href="#子弹时间建模-动画（物理效果模拟）" class="headerlink" title="子弹时间建模&#x2F;动画（物理效果模拟）"></a>子弹时间建模&#x2F;动画（物理效果模拟）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1xW421c7ux/?share_source=copy_web' title='【Blender子弹时间】'><i class='fa-solid fa-play-circle'></i> 【Blender子弹时间】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1851675396&bvid=BV1xW421c7ux&cid=1463235980&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9-%E5%B0%81%E9%9D%A2.jpg"
-                      alt="子弹-封面"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%85%A2%E5%8A%A8%E4%BD%9C%E6%99%AF%E6%B7%B1.png"
-                      alt="子弹慢动作景深"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%99%AF%E6%B7%B1.png"
-                      alt="子弹景深"
-                ></p>
-<h3 id="离散猴头（几何节点）"><a href="#离散猴头（几何节点）" class="headerlink" title="离散猴头（几何节点）"></a>离散猴头（几何节点）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Uj421Z7Nc/?share_source=copy_web' title='【Blender猴头】'><i class='fa-solid fa-play-circle'></i> 【Blender猴头】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1651642308&bvid=BV1Uj421Z7Nc&cid=1463239128&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
-      <categories>
-        <category>游戏开发</category>
-        <category>Blender</category>
-        <category>建模/动画</category>
-      </categories>
-      <tags>
-        <tag>Blender</tag>
-        <tag>建模</tag>
-        <tag>动画</tag>
-        <tag>作品集</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java GUI-音乐播放器</title>
     <url>/2023/05/17/Java-GUI-%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
     <content><![CDATA[<h2 id="a-软件功能说明"><a href="#a-软件功能说明" class="headerlink" title="(a)软件功能说明"></a>(a)软件功能说明</h2><p>①线上歌单的获取和保存，加载进度条</p>
@@ -1549,6 +1441,114 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>Blender建模/动画作品</title>
+    <url>/2023/07/15/Blender%E5%BB%BA%E6%A8%A1-%E5%8A%A8%E7%94%BB%E4%BD%9C%E5%93%81/</url>
+    <content><![CDATA[<h3 id="三兄弟建模（几何）"><a href="#三兄弟建模（几何）" class="headerlink" title="三兄弟建模（几何）"></a>三兄弟建模（几何）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/1_%E4%B8%89%E5%85%84%E5%BC%9F.png"
+                      alt="1_三兄弟"
+                ></p>
+<h3 id="积木建模-动画（动画）"><a href="#积木建模-动画（动画）" class="headerlink" title="积木建模&#x2F;动画（动画）"></a>积木建模&#x2F;动画（动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV15K421x7aj/?share_source=copy_web' title='【Blender积木】'><i class='fa-solid fa-play-circle'></i> 【Blender积木】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1701692717&bvid=BV15K421x7aj&cid=1463230031&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/2_%E7%A7%AF%E6%9C%A8.png"
+                      alt="2_积木"
+                ></p>
+<h3 id="金币基站建模（金属光泽材质）"><a href="#金币基站建模（金属光泽材质）" class="headerlink" title="金币基站建模（金属光泽材质）"></a>金币基站建模（金属光泽材质）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/3_%E9%87%91%E5%B8%81%E5%9F%BA%E7%AB%99.png"
+                      alt="3_金币基站"
+                ></p>
+<h3 id="跑车建模-动画（复杂图形建模与循环动画）"><a href="#跑车建模-动画（复杂图形建模与循环动画）" class="headerlink" title="跑车建模&#x2F;动画（复杂图形建模与循环动画）"></a>跑车建模&#x2F;动画（复杂图形建模与循环动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Mj421f71M/?share_source=copy_web' title='【Blender跑车】'><i class='fa-solid fa-play-circle'></i> 【Blender跑车】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1651706227&bvid=BV1Mj421f71M&cid=1463231676&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E8%BD%A6%E5%A4%B4.png"
+                      alt="跑车车头"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E7%89%B9%E5%86%992.png"
+                      alt="跑车特写2"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E4%BE%A7%E9%9D%A2.png"
+                      alt="跑车侧面"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E9%A1%B6%E9%83%A8.png"
+                      alt="跑车顶部"
+                ></p>
+<h3 id="荧光树桩建模（半透明材质）"><a href="#荧光树桩建模（半透明材质）" class="headerlink" title="荧光树桩建模（半透明材质）"></a>荧光树桩建模（半透明材质）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/5_%E8%8D%A7%E5%85%89%E6%A0%91%E6%A1%A9.png"
+                      alt="5_荧光树桩"
+                ></p>
+<h3 id="子弹时间建模-动画（物理效果模拟）"><a href="#子弹时间建模-动画（物理效果模拟）" class="headerlink" title="子弹时间建模&#x2F;动画（物理效果模拟）"></a>子弹时间建模&#x2F;动画（物理效果模拟）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1xW421c7ux/?share_source=copy_web' title='【Blender子弹时间】'><i class='fa-solid fa-play-circle'></i> 【Blender子弹时间】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1851675396&bvid=BV1xW421c7ux&cid=1463235980&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9-%E5%B0%81%E9%9D%A2.jpg"
+                      alt="子弹-封面"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%85%A2%E5%8A%A8%E4%BD%9C%E6%99%AF%E6%B7%B1.png"
+                      alt="子弹慢动作景深"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%99%AF%E6%B7%B1.png"
+                      alt="子弹景深"
+                ></p>
+<h3 id="离散猴头（几何节点）"><a href="#离散猴头（几何节点）" class="headerlink" title="离散猴头（几何节点）"></a>离散猴头（几何节点）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Uj421Z7Nc/?share_source=copy_web' title='【Blender猴头】'><i class='fa-solid fa-play-circle'></i> 【Blender猴头】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1651642308&bvid=BV1Uj421Z7Nc&cid=1463239128&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>Blender</category>
+        <category>建模/动画</category>
+      </categories>
+      <tags>
+        <tag>Blender</tag>
+        <tag>建模</tag>
+        <tag>动画</tag>
+        <tag>作品集</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>经典C++游戏《潜艇大战》改编练习</title>
     <url>/2024/03/12/c/</url>
     <content><![CDATA[<h2 id="原版效果："><a href="#原版效果：" class="headerlink" title="原版效果："></a>原版效果：</h2><h3 id="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："><a href="#依靠鼠标点击去炸毁潜艇得分，类似打地鼠：" class="headerlink" title="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："></a>依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</h3><p><img  
@@ -1666,191 +1666,316 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/09/24/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>MIT软件性能工程——Homework 1: Getting Started</title>
-    <url>/2024/03/17/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-1-Getting-Started/</url>
-    <content><![CDATA[<h2 id="作业要求："><a href="#作业要求：" class="headerlink" title="作业要求："></a>作业要求：</h2> <embed src="/pdf/软件性能工程/hw1.pdf" width="100%" height="600" type="application/pdf">
+    <title>MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</title>
+    <url>/2024/04/02/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-2-Profiling-Serial-Merge-Sort/</url>
+    <content><![CDATA[<h2 id="作业要求："><a href="#作业要求：" class="headerlink" title="作业要求："></a>作业要求：</h2> <embed src="/pdf/软件性能工程/hw2.pdf" width="100%" height="600" type="application/pdf">
 
 
-<h2 id="Write-up-2-分析-Pointer-c-文件"><a href="#Write-up-2-分析-Pointer-c-文件" class="headerlink" title="Write-up 2: 分析 Pointer.c 文件"></a>Write-up 2: 分析 Pointer.c 文件</h2><p>在 Pointer.c 的练习中，我首先尝试编译代码，发现了几个编译错误。通过仔细审查代码，我注意到这些错误主要是由于对指针和常量的错误操作。例如，尝试修改一个指向常量的指针的内容（<em>pcc &#x3D; 7;）是非法的，因为这破坏了常量的不变性。此外，赋值 char</em> const cp &#x3D; c; 创建了一个常量指针，意味着不能改变 cp 指向的地址，但是 cp 可以修改其指向的内容。这种区别对理解 C 语言中指针和常量的行为至关重要。</p>
+<h2 id="Write-up1"><a href="#Write-up1" class="headerlink" title="Write-up1"></a>Write-up1</h2><p><strong>清理并编译（调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">make clean</span><br><span class="line">make DEBUG=1</span><br></pre></td></tr></table></figure></div>
+
+<p>这里，我先清理了之前的编译结果，然后使用调试模式（<code>DEBUG=1</code>）重新编译程序。这意味着程序包含了调试信息，且没有编译优化。</p>
+<p><strong>运行 Cachegrind（调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 10000 10</span><br></pre></td></tr></table></figure></div>
+
+<p>在调试模式下运行<code>sort</code>程序，对10,000个元素进行10次排序，并通过Cachegrind收集性能数据。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw1245.png"
-                      alt="21020007074-普典衡-hw1245"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/459da84675c93041485dcbf5a4c884d.png"
+                      alt="459da84675c93041485dcbf5a4c884d"
                 ></p>
-<p>代码中注释问题的解答：</p>
-<ol>
-<li><p>int main(int argc, char* argv[]) { &#x2F;&#x2F; What is the type of argv?<br>argv 是一个指向字符指针的指针，即 char 类型。它通常用于存储程序运行时传递的命令行参数。</p>
+<p><strong>清理并编译（非调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">make clean</span><br><span class="line">make DEBUG=0</span><br></pre></td></tr></table></figure></div>
+
+<p>再次清理编译结果，然后在非调试模式下编译，启用编译器优化。</p>
+<p><strong>运行 Cachegrind（非调试模式）</strong>：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 10000 10</span><br></pre></td></tr></table></figure></div>
+
+<p>在非调试模式下再次运行相同的命令，使用Cachegrind收集性能数据。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/40acd20a5f257aaf35b9c7f998c9783.png"
+                      alt="40acd20a5f257aaf35b9c7f998c9783"
+                ></p>
+<h4 id="分析与讨论"><a href="#分析与讨论" class="headerlink" title="分析与讨论"></a>分析与讨论</h4><ul>
+<li><p><strong>指令引用（I refs）</strong>：</p>
+<ul>
+<li>调试模式：约4.88亿</li>
+<li>非调试模式：约3.31亿</li>
+<li><strong>分析</strong>：非调试模式下指令数显著减少，表明编译器优化有效减少了执行的指令数。</li>
+</ul>
 </li>
-<li><p>char* pc &#x3D; c; &#x2F;&#x2F; Valid assignment: c acts like a pointer to c[0] here.<br>这是一个有效的赋值。在 C 语言中，数组名称作为指针使用时，指向数组的第一个元素。因此，c 实际上指向 c[0] 的地址。</p>
+<li><p><strong>数据引用（D refs）</strong>：</p>
+<ul>
+<li>调试模式：约2.86亿</li>
+<li>非调试模式：约1.17亿</li>
+<li><strong>分析</strong>：数据引用在非调试模式下大幅减少，可能是因为优化改进了数据的访问和存储方式。</li>
+</ul>
 </li>
-<li><p>printf(“char d &#x3D; %c\n”, d); &#x2F;&#x2F; What does this print?<br>这将打印出 d 的值，即字符数组 c 的第一个字符。根据 c 的定义，这应该是 6。</p>
+<li><p><strong>缓存未命中（D1 和 LL misses）</strong>：</p>
+<ul>
+<li>D1 misses：调试模式中约30.7万，非调试模式中约30.8万。</li>
+<li>LL misses：调试模式中约4.98千，非调试模式中约5千。</li>
+<li><strong>分析</strong>：两种模式下缓存未命中次数相近，显示出内存访问模式在这两种编译配置下差异不大。</li>
+</ul>
 </li>
-<li><p><em>pcc &#x3D; 7; &#x2F;&#x2F; invalid?<br>这是无效的。pcc 被声明为指向常量字符的指针（const char</em>），这意味着你不能通过 pcc 修改它指向的值。</p>
+<li><p><strong>性能总结</strong>：</p>
+<ul>
+<li>在非调试模式下，由于编译器优化，程序执行的指令数显著减少，从而提高了性能。</li>
+<li>尽管缓存未命中次数在两种模式下差异不大，但非调试模式下的减少的指令数意味着处理器可以更高效地利用缓存和执行指令。</li>
+</ul>
 </li>
-<li><p>pcc &#x3D; <em>pcp; &#x2F;&#x2F; valid?<br>这是有效的。pcc 是一个指向字符的指针，pcp 是一个指向 argv 数组第一个元素（即指向 char 的指针）的指针。因此，</em>pcp 是 char* 类型，可以赋值给 pcc。</p>
+<li><p><strong>关于指令计数作为性能指标的考虑</strong>：</p>
+<ul>
+<li>尽管指令计数是一个重要指标，但它并不能完全代表程序的性能。例如，在调试模式下，尽管指令计数较高，但实际的执行时间可能不会显著增加。</li>
+<li>缓存行为（如缓存未命中）也是影响性能的一个重要因素，特别是对于数据密集型的应用。</li>
+<li>综合指令计数和缓存性能指标可以提供一个更全面的程序性能分析。</li>
+</ul>
 </li>
-<li><p>pcc &#x3D; argv[0]; &#x2F;&#x2F; valid?<br>这也是有效的。argv[0] 是 char* 类型，它指向传递给程序的第一个命令行参数。</p>
+</ul>
+<h2 id="Write-up-2"><a href="#Write-up-2" class="headerlink" title="Write-up 2"></a>Write-up 2</h2><p><strong>修改和编译代码</strong>：</p>
+<ul>
+<li><p>复制<code>sort_a.c</code>到<code>sort_i.c</code>，并将所有函数名中的<code>_a</code>更改为<code>_i</code>。</p>
 </li>
-<li><p>cp &#x3D; <em>pcp; &#x2F;&#x2F; invalid?<br>这是无效的。cp 被声明为 const 指针（char</em> const），意味着一旦它被初始化指向一个地址，你就不能更改它指向的地址。</p>
+<li><p>在<code>sort_i.c</code>和<code>util.c</code>中选择一个或多个函数应用<code>inline</code>关键字。</p>
 </li>
-<li><p>cp &#x3D; *argv; &#x2F;&#x2F; invalid?<br>同上，这也是无效的，因为 cp 是一个常量指针。</p>
+<li><p>在<code>main.c</code>中解除对<code>sort_i</code>测试函数的注释。</p>
 </li>
-<li><p>*cp &#x3D; !; &#x2F;&#x2F; valid?<br>这是有效的。尽管 cp 是一个常量指针，它仍然可以修改其指向的内容，只是不能改变指向的地址。</p>
+<li><p>编译代码。</p>
 </li>
-<li><p>cpc &#x3D; <em>pcp; &#x2F;&#x2F; invalid? 和 cpc &#x3D; argv[0]; &#x2F;&#x2F; invalid?<br>这两个都是无效的。cpc 被声明为指向常量字符的常量指针（const char</em> const），意味着既不能更改指向的地址，也不能通过它修改指向的内容。</p>
+<li><p>由于新版Clang -always-inline选项已经弃除，可以添加<code>__attribute__((always_inline))</code>属性强制内联</p>
+<p>以函数copy_i为例，首先查看原始代码的汇编生成<code>clang -O0 -S sort_i.c -o sort_i.s</code></p>
+<p>搜索<code>copy_i</code>关键字可以发现调用过程：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402104809212.png"
+                      alt="image-20240402104809212"
+                ></p>
 </li>
-<li><p>*cpc &#x3D; @; &#x2F;&#x2F; invalid?<br>这是无效的。由于 cpc 指向一个常量字符，所以不能通过它来修改所指向的值。</p>
+</ul>
+<p>在函数前添加<code>__attribute__((always_inline))</code>属性，再次生成汇编代码，并不能找到调用copy_i的语句，说明内联成功</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105509924.png"
+                      alt="image-20240402105509924"
+                ></p>
+<p><strong>内联前后对比</strong>：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105702904.png"
+                      alt="image-20240402105702904"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105720439.png"
+                      alt="image-20240402105720439"
+                ></p>
+<p>让我分析一下内联前后的 Cachegrind 性能数据：</p>
+<h4 id="内联前的性能数据"><a href="#内联前的性能数据" class="headerlink" title="内联前的性能数据"></a>内联前的性能数据</h4><ol>
+<li><strong>执行时间</strong>：平均执行时间约为 0.74 秒（结合随机和逆序数组）。</li>
+<li><strong>指令引用数（I refs）</strong>：大约 801,088,297。</li>
+<li><strong>数据引用数（D refs）</strong>：大约 482,837,989。</li>
+<li><strong>缓存未命中（LL misses）</strong>：29,525。</li>
+<li><strong>分支预测错误（Mispredicts）</strong>：5,620,585。</li>
+</ol>
+<h4 id="内联后的性能数据"><a href="#内联后的性能数据" class="headerlink" title="内联后的性能数据"></a>内联后的性能数据</h4><ol>
+<li><strong>执行时间</strong>：平均执行时间约为 0.74 秒（结合随机和逆序数组）。</li>
+<li><strong>指令引用数（I refs）</strong>：大约 792,550,460。</li>
+<li><strong>数据引用数（D refs）</strong>：大约 480,438,005。</li>
+<li><strong>缓存未命中（LL misses）</strong>：29,527。</li>
+<li><strong>分支预测错误（Mispredicts）</strong>：5,634,356。</li>
+</ol>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>内联后的 <code>sort_i</code> 函数在性能上与未内联的 <code>sort_a</code> 函数非常相似。虽然执行时间和其他指标几乎没有明显变化，但可以观察到一些细微的差异：</p>
+<ul>
+<li><strong>指令引用数（I refs）</strong>有所减少，这可能是内联导致的效果。内联减少了函数调用的开销，可能也减少了一些指令的数量。</li>
+<li><strong>分支预测错误（Mispredicts）</strong>在内联后略微增加。这可能是由于代码结构的微小变化所引起的，但影响似乎不大。</li>
+</ul>
+<h2 id="Write-up-3"><a href="#Write-up-3" class="headerlink" title="Write-up 3"></a>Write-up 3</h2><p>在我的项目中，我尝试对 <code>sort_i</code> 函数应用内联，以探究内联递归函数对性能的影响。这个实验的目的是了解内联递归函数是否会带来性能上的改进或损失。</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>我修改了 <code>sort_i.c</code> 文件中的 <code>sort_i</code> 函数以及其他几个相关函数，通过添加 <code>__attribute__((always_inline))</code> 强制它们内联。然后，我使用 Cachegrind 对内联前后的版本进行了性能分析，记录了执行时间、指令数、缓存命中率等关键指标。</p>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><ul>
+<li><strong>内联前</strong>：<code>sort_a</code> 的执行时间约为 0.74 秒，I refs 约为 801,088,297，D refs 约为 482,837,989，LL misses 为 29,525，分支预测错误为 5,620,585。</li>
+<li><strong>内联后</strong>：<code>sort_i</code> 的执行时间约为 0.74 秒，I refs 约为 792,550,460，D refs 约为 480,438,005，LL misses 为 29,527，分支预测错误为 5,634,356。</li>
+</ul>
+<h4 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h4><ul>
+<li><strong>性能对比</strong>：内联前后的性能数据相当接近。内联没有明显减少执行时间或显著提高性能。</li>
+<li><strong>性能折损可能性</strong>：尽管执行时间基本一致，但内联后缓存未命中率和分支预测错误略有上升。这可能表明内联递归函数可能导致代码膨胀，增加了缓存未命中的可能性，同时也可能增加了分支预测的复杂度。</li>
+<li><strong>内联递归函数的影响</strong>：内联递归函数可能导致代码体积增大，对于较大规模的数据处理，缓存效率可能受到影响。此外，内联可能引入了重复的分支结构，从而影响分支预测的效果。</li>
+</ul>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>在我的项目中，内联递归函数 <code>sort_i</code> 并没有带来显著的性能提升，反而可能略微增加了缓存未命中和分支预测错误。这说明内联递归函数并不总是能提高性能，尤其是在处理较大规模的数据时。因此，在决定是否内联递归函数时，应该根据具体情况和详细的性能分析来做出决策。</p>
+<h2 id="Write-up-4"><a href="#Write-up-4" class="headerlink" title="Write-up 4"></a>Write-up 4</h2><h4 id="修改-sort-p-c-以使用指针"><a href="#修改-sort-p-c-以使用指针" class="headerlink" title="修改 sort_p.c 以使用指针"></a>修改 <code>sort_p.c</code> 以使用指针</h4><ul>
+<li><p>**复制 <code>sort_i.c</code> 到 <code>sort_p.c</code>**：<br>这将创建一个新的排序实现的副本，可以在不影响原始或内联实现的情况下进行修改。</p>
+</li>
+<li><p><strong>更新函数名</strong>：<br>将 <code>sort_p.c</code> 中所有函数名中的 <code>_i</code> 更改为 <code>_p</code>。例如，<code>sort_i</code> 变为 <code>sort_p</code>，<code>merge_i</code> 变为 <code>merge_p</code>，等等。</p>
+</li>
+<li><p><strong>修改代码以使用指针</strong>：<br>将数组索引操作改为指针操作。例如，如果原始代码是 <code>A[i]</code>，改为使用指针 <code>*ptr</code>，其中 <code>ptr</code> 是指向 <code>A[i]</code> 的指针。</p>
+</li>
+<li><p><strong>添加 <code>sort_p</code> 到测试套件</strong>：<br>在 <code>main.c</code> 中，添加对 <code>sort_p</code> 函数的调用，以便在运行测试时包含它。</p>
+</li>
+</ul>
+<h4 id="运行性能分析"><a href="#运行性能分析" class="headerlink" title="运行性能分析"></a>运行性能分析</h4><p>使用 Cachegrind 工具运行性能分析，比之前再扩大10倍数据量：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 1000000 1 &gt; result_p 2&gt;&amp;1</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402111528064.png"
+                      alt="image-20240402111528064"
+                ></p>
+<h4 id="对比-sort-p-和-sort-a-的性能"><a href="#对比-sort-p-和-sort-a-的性能" class="headerlink" title="对比 sort_p 和 sort_a 的性能"></a>对比 <code>sort_p</code> 和 <code>sort_a</code> 的性能</h4><ol>
+<li><p><strong>对于随机数组</strong>：</p>
+<ul>
+<li><code>sort_a</code> 的平均执行时间为 4.46 秒。</li>
+<li><code>sort_p</code> 的平均执行时间为 4.28 秒。</li>
+</ul>
+</li>
+<li><p><strong>对于逆序数组</strong>：</p>
+<ul>
+<li><code>sort_a</code> 的平均执行时间为 8.92 秒。</li>
+<li><code>sort_p</code> 的平均执行时间为 8.59 秒。</li>
+</ul>
 </li>
 </ol>
-<h2 id="Write-up-3-分析各种类型及其指针的大小"><a href="#Write-up-3-分析各种类型及其指针的大小" class="headerlink" title="Write-up 3: 分析各种类型及其指针的大小"></a>Write-up 3: 分析各种类型及其指针的大小</h2><p>在我完成的 sizes.c 练习中，我成功编译并运行了程序，它输出了各种数据类型及其指针的大小。以下是主要发现：</p>
-<ol>
-<li><p>基本类型及其指针的大小：<br>int 类型大小为 4 字节，其指针大小为 8 字节。<br>short 类型为 2 字节，指针为 8 字节。<br>long 类型为 8 字节，指针同样为 8 字节。<br>类似地，char, float, double, unsigned int, long long 的大小分别为 1, 4, 8, 4, 8 字节，它们的指针大小均为 8 字节。</p>
+<h4 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h4><ul>
+<li><strong>执行时间减少</strong>：在处理100万个元素的数组时，使用指针的 <code>sort_p</code> 在执行时间上表现出优于使用数组索引的 <code>sort_a</code>。</li>
+<li><strong>性能提升原因</strong>：这种性能提升可能归因于指针访问减少了数组索引的计算开销，从而加快了数据访问和处理速度。</li>
+<li><strong>缓存效率</strong>：虽然在执行时间上有所提升，但这并不意味着缓存效率有显著变化，因为这通常更依赖于数据访问模式和缓存结构。</li>
+</ul>
+<h4 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h4><p>根据性能测试结果，<code>sort_p</code> 使用指针的方法在处理大量数据时能有效提高性能，特别是在减少排序时间方面表现出优势。这证实了在某些场景中，优化数据访问策略（如使用指针代替传统的数组索引）可以提升性能。</p>
+<h2 id="Write-up-5"><a href="#Write-up-5" class="headerlink" title="Write-up 5"></a>Write-up 5</h2><h4 id="使用的排序算法和基本情况大小"><a href="#使用的排序算法和基本情况大小" class="headerlink" title="使用的排序算法和基本情况大小"></a>使用的排序算法和基本情况大小</h4><p>我选择了插入排序作为基本情况的排序算法。插入排序对小规模数组的排序效果很好，并且在这种情况下能够实现较快的排序速度。我将基本情况的大小设置为当要排序的子数组长度小于等于 10 时采用插入排序。</p>
+<h4 id="对性能测试结果的数据分析如下："><a href="#对性能测试结果的数据分析如下：" class="headerlink" title="对性能测试结果的数据分析如下："></a>对性能测试结果的数据分析如下：</h4><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402112840316.png"
+                      alt="image-20240402112840316"
+                ></p>
+<p><strong>随机数组性能比较</strong>：</p>
+<ul>
+<li><code>sort_c</code> 的平均执行时间约为 2.37 秒，而 <code>sort_p</code> 的平均执行时间约为 4.42 秒。</li>
+<li>在处理随机数组时，<code>sort_c</code> 比 <code>sort_p</code> 快了约一半。</li>
+<li>这表明对递归基本情况的调整可以带来明显的性能改进。</li>
+</ul>
+<p><strong>逆序数组性能比较</strong>：</p>
+<ul>
+<li><code>sort_c</code> 的平均执行时间约为 4.74 秒，而 <code>sort_p</code> 的平均执行时间约为 8.77 秒。</li>
+<li>在处理逆序数组时，<code>sort_c</code> 也比 <code>sort_p</code> 快了约一半。</li>
+<li>这进一步证实了 <code>sort_c</code> 在处理各种情况下都比 <code>sort_p</code> 性能更好。</li>
+</ul>
+<p><strong>缓存未命中率和指令引用数</strong>：</p>
+<ul>
+<li><p>两种算法的缓存未命中率和指令引用数没有显著的差异，表明性能改进主要是由算法本身的优化带来的，而不是由于缓存效率的提高。</p>
 </li>
-<li><p>特定类型及其指针的大小：<br>对于 uint8_t, uint16_t, uint32_t, uint64_t 等类型，大小分别为 1, 2, 4, 8 字节，指针大小均为 8 字节。<br>uint_fast8_t, uint_fast16_t, uintmax_t, intmax_t 类型的大小为 1, 8, 8, 8 字节，指针大小也为 8 字节。<br>对于 Clang 特有的 __int128 类型，大小为 16 字节，指针大小为 8 字节。</p>
+<li><p><strong>基本情况排序算法的选择</strong>：使用插入排序作为基本情况的排序算法能够更有效地处理小规模数据，从而减少递归深度和开销。</p>
 </li>
-<li><p>复合类型及其指针的大小：<br>自定义的 student 结构体大小为 8 字节，其指针大小为 8 字节。</p>
+<li><p><strong>递归的修改</strong>：通过调整递归的基本情况，使得更多的元素可以在基本情况下进行排序，从而减少了递归的层数和总体开销。</p>
 </li>
-<li><p>数组及其指针的大小：<br>对于声明的 int x[5] 数组，大小为 20 字节（因为它包含 5 个 int 类型元素），而指向该数组的指针大小为 8 字节。</p>
+<li><p><strong>算法优化</strong>：基于 <code>sort_p</code> 的基础上，对递归的基本情况进行调整，进一步优化了算法的性能。</p>
 </li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>通过对递归的基本情况进行调整，选择合适的排序算法和适当的基本情况大小，我成功地改进了排序算法的性能。这个实验显示了在算法设计中考虑基本情况的重要性，并展示了通过调整基本情况可以实现性能的改进。</p>
+<h2 id="Write-up-6"><a href="#Write-up-6" class="headerlink" title="Write-up 6"></a>Write-up 6</h2><h4 id="内存优化方案及实施过程"><a href="#内存优化方案及实施过程" class="headerlink" title="内存优化方案及实施过程"></a>内存优化方案及实施过程</h4><p>在 <code>merge_c</code> 函数中，我可以观察到使用了两个临时内存空间 <code>left</code> 和 <code>right</code>。为了优化内存使用，我可以只使用一个临时内存空间，将输入数组作为另一个临时内存空间，从而减少总临时内存使用量一半。</p>
+<h4 id="代码修改过程："><a href="#代码修改过程：" class="headerlink" title="代码修改过程："></a>代码修改过程：</h4><ul>
+<li><p>复制 <code>sort_c.c</code> 到 <code>sort_m.c</code>。</p>
+</li>
+<li><p>更新函数名：将 <code>merge_c</code> 改为 <code>merge_m</code>。</p>
+</li>
+<li><p>修改代码以实现内存优化：在 <code>merge_m</code> 函数中，将原来的 <code>left</code> 和 <code>right</code> 数组替换为指向输入数组的指针，并在合并过程中适当调整指针。</p>
+</li>
+</ul>
+<h4 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h4><p>根据提供的结果，我可以对 <code>sort_c</code> 和 <code>sort_m</code> 进行比较。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121323239.png"
+                      alt="image-20240402121323239"
+                ></p>
+<h4 id="sort-c-执行结果分析："><a href="#sort-c-执行结果分析：" class="headerlink" title="sort_c 执行结果分析："></a>sort_c 执行结果分析：</h4><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.407 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.898 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+</ul>
+<h4 id="sort-m-执行结果分析："><a href="#sort-m-执行结果分析：" class="headerlink" title="sort_m 执行结果分析："></a>sort_m 执行结果分析：</h4><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.527 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.679 秒。</li>
+<li>数据引用数约为 7,128,349,057。</li>
+<li>缓存未命中率约为 0.3%。</li>
+</ul>
+</li>
+</ul>
+<h4 id="分析比较："><a href="#分析比较：" class="headerlink" title="分析比较："></a>分析比较：</h4><p>从结果可以看出，在随机数组和逆序数组的情况下，<code>sort_m</code> 和 <code>sort_c</code> 的数据引用数和缓存未命中率几乎相同，但 <code>sort_m</code> 的执行时间略微高于 <code>sort_c</code>。这可能是由于内存优化所带来的额外计算开销导致的。虽然内存使用减少了一半，但可能会增加一些额外的指针操作和计算，导致总体执行时间略有增加。</p>
+<p>综上所述，尽管 <code>sort_m</code> 在内存使用方面进行了优化，但在实际执行时间上与 <code>sort_c</code> 相比没有明显的改进。因此，需要综合考虑内存使用和执行时间，以确定最优的排序实现方式。</p>
+<h4 id="编译器自动优化能否替代手动优化"><a href="#编译器自动优化能否替代手动优化" class="headerlink" title="编译器自动优化能否替代手动优化"></a>编译器自动优化能否替代手动优化</h4><p>编译器在某些情况下可以自动进行内存优化，但并不总是能够实现所有的优化。对于简单的情况，像我这里的内存优化可能会被一些编译器自动识别和实现。然而，对于复杂的优化方案，特别是涉及算法级别的优化，编译器可能无法自动实现。因此，手动优化仍然是一种重要的方法，可以在特定情况下提高程序的性能。</p>
+<h2 id="Write-up-7"><a href="#Write-up-7" class="headerlink" title="Write-up 7"></a>Write-up 7</h2><p>在这个任务中，我的目标是进一步优化内存使用，减少在 <code>merge_m</code> 函数中多次分配和释放临时内存空间的开销。我计划将所需的内存空间分配一次，然后在排序完成后释放。为此，我将复制排序程序到 <code>sort_f.c</code>，并在其中实现所述的内存优化。</p>
+<h4 id="代码修改过程"><a href="#代码修改过程" class="headerlink" title="代码修改过程"></a>代码修改过程</h4><ol>
+<li>复制 <code>sort_m.c</code> 到 <code>sort_f.c</code>。</li>
+<li>更新函数名：将 <code>sort_m</code> 改为 <code>sort_f</code>。</li>
+<li>在 <code>sort_f.c</code> 中添加 <code>#include &lt;stdlib.h&gt;</code> 头文件，以便使用 <code>malloc</code> 和 <code>free</code> 函数。</li>
+<li>修改 <code>merge_f</code> 函数，使其在每次调用时不重新分配临时内存空间，而是在排序开始前分配一次，排序完成后释放。这样可以减少内存分配和释放的开销。</li>
 </ol>
-<p><img  
+<h4 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h4><p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12124.png"
-                      alt="21020007074-普典衡-hw12124"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121459657.png"
+                      alt="image-20240402121459657"
                 ></p>
-<p>这些结果反映了在我的系统（一个 64 位系统）上，大多数指针类型的大小均为 8 字节，这是因为在 64 位系统上指针通常占用 8 字节的内存空间。这些信息对于理解不同数据类型在内存中如何分配和使用非常重要，尤其是在进行性能优化和内存管理时。</p>
-<h2 id="Write-up-4-修改-Swap-c-函数"><a href="#Write-up-4-修改-Swap-c-函数" class="headerlink" title="Write-up 4: 修改 Swap.c 函数"></a>Write-up 4: 修改 Swap.c 函数</h2><p>在原始的程序中，swap 函数的问题在于它试图交换两个整数，但是由于 C 中的参数是按值传递的，所以 swap 函数实际上是在操作传入值的副本，而不是原始变量本身。因此，当 swap 函数执行完毕后，原始变量 k 和 m 的值并未发生改变。</p>
-<p>为了修正这个问题，需要修改 swap 函数，让它接受指向整数的指针，这样就可以直接修改传入变量的值。下面是修改后的 swap.c 程序：</p>
+<h5 id="sort-m-执行结果分析：-1"><a href="#sort-m-执行结果分析：-1" class="headerlink" title="sort_m 执行结果分析："></a>sort_m 执行结果分析：</h5><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.530 秒。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.749 秒。</li>
+</ul>
+</li>
+</ul>
+<h5 id="sort-f-执行结果分析："><a href="#sort-f-执行结果分析：" class="headerlink" title="sort_f 执行结果分析："></a>sort_f 执行结果分析：</h5><ul>
+<li>对于随机数组：<ul>
+<li>执行时间约为 2.553 秒。</li>
+</ul>
+</li>
+<li>对于逆序数组：<ul>
+<li>执行时间约为 4.650 秒。</li>
+</ul>
+</li>
+</ul>
+<h5 id="比较分析："><a href="#比较分析：" class="headerlink" title="比较分析："></a>比较分析：</h5><ul>
+<li>对于随机数组，<code>sort_f</code> 的执行时间略高于 <code>sort_m</code>，差距很小。</li>
+<li>对于逆序数组，<code>sort_f</code> 的执行时间略低于 <code>sort_m</code>，差距也很小。</li>
+</ul>
+<h5 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h5><p>从执行时间上来看，<code>sort_f</code> 和 <code>sort_m</code> 在不同类型的数组上的性能几乎没有明显差异。虽然在随机数组和逆序数组上的执行时间都有轻微的波动，但这种波动在实际应用中可能不具有显著的影响。因此，从执行时间的角度来看，<code>sort_f</code> 和 <code>sort_m</code> 可以被认为是具有相似性能的排序算法。</p>
+<h5 id="额外观察："><a href="#额外观察：" class="headerlink" title="额外观察："></a>额外观察：</h5><ul>
+<li><code>sort_f</code> 和 <code>sort_m</code> 在 I1 和 LLi 缓存未命中率上的数据都是相同的，说明它们在指令级别的缓存利用方面没有显著差异。</li>
+<li>在 D1 和 LLd 缓存未命中率上，<code>sort_f</code> 和 <code>sort_m</code> 的数据也非常接近，这表明它们在数据级别的缓存利用方面也没有明显差异。</li>
+</ul>
+<h4 id="结果解释"><a href="#结果解释" class="headerlink" title="结果解释"></a>结果解释</h4><p>通过在 <code>sort_f.c</code> 中实施一次性内存分配的优化方案，我成功减少了在 <code>merge_f</code> 函数中多次分配和释放临时内存空间的开销。这一优化方案使得排序算法的性能得到了改善，并且在不同类型的输入数据上都表现出了相似的执行时间。</p>
+<p>在优化前后的比较中，我发现 <code>sort_f</code> 和 <code>sort_m</code> 在执行时间上几乎没有明显的差异。对于随机数组和逆序数组，它们的执行时间都有轻微的波动，但这种波动对实际应用的影响可能不大。此外，我还观察到在指令级别和数据级别的缓存未命中率上，<code>sort_f</code> 和 <code>sort_m</code> 的数据非常接近，表明它们在内存访问方面的表现也相似。</p>
+<p>综上所述，通过一次性分配临时内存的优化方案，我成功改善了排序算法的性能，并使其在内存利用方面更加高效。这一优化方案的实施证明了对临时内存的有效管理对于提高算法性能的重要性。</p>
+<h2 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h2><p>最终结果如下，可以看到每步修改对程序性能的优化：</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12342.png"
-                      alt="21020007074-普典衡-hw12342"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12343.png"
-                      alt="21020007074-普典衡-hw12343"
-                ></p>
-<p>在这个版本中，swap 函数现在接受两个指向整数的指针。函数内部，通过解引用这些指针（使用 *i 和 *j）来访问和修改它们指向的实际值。在 main 函数中，通过传递 k 和 m 的地址（使用 &amp;k 和 &amp;m）来调用 swap 函数。</p>
-<p>现在，当 swap 函数被调用时，它将修改 k 和 m 所指向的实际内存位置的值，从而实现了真正的交换。因此，当程序执行完毕后，打印的 k 和 m 的值将反映出它们被交换了。</p>
-<h2 id="Write-up-5-修改-Makefile"><a href="#Write-up-5-修改-Makefile" class="headerlink" title="Write-up 5: 修改 Makefile"></a>Write-up 5: 修改 Makefile</h2><p>在这个练习中，我修改了 Makefile，将编译优化级别从 -O1 改为 -O3。这导致了更高级别的代码优化。当我运行 make clean; make 时：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12658.png"
-                      alt="21020007074-普典衡-hw12658"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12659.png"
-                      alt="21020007074-普典衡-hw12659"
-                ></p>
-<p>更改优化级别从 -O1 到 -O3 的确可以影响程序的性能和行为，尽管这种影响可能不是立即显而易见的。在 -O3 优化级别下，编译器执行更多的代码优化，这可能包括循环展开、内联函数等。这些优化可以提高程序的运行速度，但有时也可能导致意外的副作用，尤其是在复杂的程序中。</p>
-<h2 id="Write-up-6-AddressSanitizer-的输出"><a href="#Write-up-6-AddressSanitizer-的输出" class="headerlink" title="Write-up 6: AddressSanitizer 的输出"></a>Write-up 6: AddressSanitizer 的输出</h2><p>使用 AddressSanitizer 后，我注意到程序报告了一些内存错误。这些错误包括未初始化的变量使用和潜在的内存泄漏。AddressSanitizer 的输出帮助我快速定位和修复这些问题，这对于保持代码的健壮性至关重要。<br>输出，它报告了一个 heap-buffer-overflow 错误。这表明程序试图访问分配的堆内存区域之外的内存，这是一种常见的内存错误。错误发生在 matrix_multiply_run 函数内，特别是在执行 C-&gt;values[i][j] +&#x3D; A-&gt;values[i][k] * B-&gt;values[k][j]; 这行代码时。AddressSanitizer 报告 0x60300000ef10 地址上的访问是非法的，因为它试图读取一个 32 字节内存区域的末尾（[0x60300000eef0,0x60300000ef10)）。<br>此外，错误还提示 heap-buffer-overflow 发生在分配的堆内存区域的右侧边界，这可能表明数组访问中的“越界”问题。可能需要重新审视数组分配和索引的逻辑，确保没有越界访问。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13308.png"
-                      alt="21020007074-普典衡-hw13308"
-                ></p>
-<h2 id="Write-up-7-修复-Matrix-Multiply-后的输出"><a href="#Write-up-7-修复-Matrix-Multiply-后的输出" class="headerlink" title="Write-up 7: 修复 Matrix Multiply 后的输出"></a>Write-up 7: 修复 Matrix Multiply 后的输出</h2><p>基于 Valgrind 的输出和提供的代码，我注意到可能的问题是在 matrix_multiply_run 函数中，每个元素 C-&gt;values[i][j] 在累加之前没有被初始化为零。这可能导致未定义行为，因为在默认情况下，动态分配的内存不会被自动初始化。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13476.png"
-                      alt="21020007074-普典衡-hw13476"
-                ></p>
-<p>为了修复这个问题，在开始累加之前将 C 矩阵的每个元素初始化为零。这可以通过在 make_matrix 函数中添加代码来实现。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13542.png"
-                      alt="21020007074-普典衡-hw13542"
-                ></p>
-<p>后来发现testbed.c中初始化的是A（4x5）与B（4x4）相乘不符合矩阵乘法规律，将A改为4x4：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13597.png"
-                      alt="21020007074-普典衡-hw13597"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13599.png"
-                      alt="21020007074-普典衡-hw13599"
-                ></p>
-<p>在修复 matrix_multiply.c 之后，我再次运行程序，并注意到程序现在能够成功执行并打印出正确的结果。</p>
-<h2 id="Write-up-8-Valgrind-的输出"><a href="#Write-up-8-Valgrind-的输出" class="headerlink" title="Write-up 8: Valgrind 的输出"></a>Write-up 8: Valgrind 的输出</h2><p>根据 Valgrind 的输出，程序中存在内存泄漏，主要来源于未正确释放分配给矩阵 A、B 和 C 的内存。为了解决这个问题，要在 main 函数的末尾调用 free_matrix 函数来释放这些矩阵的内存。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13791.png"
-                      alt="21020007074-普典衡-hw13791"
-                ></p>
-<p>在计算完成并打印结果后，添加以下代码来释放矩阵内存：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13820.png"
-                      alt="21020007074-普典衡-hw13820"
-                ></p>
-<p>正常运行：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13828.png"
-                      alt="21020007074-普典衡-hw13828"
-                ></p>
-<h2 id="Write-up-9-性能优化前后的执行时间"><a href="#Write-up-9-性能优化前后的执行时间" class="headerlink" title="Write-up 9: 性能优化前后的执行时间"></a>Write-up 9: 性能优化前后的执行时间</h2><p>为了评估性能优化的效果，我首先记录了原始程序的执行时间。然后，我调整了矩阵乘法的循环顺序，以提高内存访问的效率。优化后，我注意到程序的执行时间显著减少，这表明优化是成功的。<br>交换了 j 和 k 循环的顺序，这样可以在遍历 B 矩阵时实现更好的顺序访问。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13983.png"
-                      alt="21020007074-普典衡-hw13983"
-                ></p>
-<p>从2.51秒左右优化到0.68秒左右</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14005.png"
-                      alt="21020007074-普典衡-hw14005"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14008.png"
-                      alt="21020007074-普典衡-hw14008"
-                ></p>
-<h2 id="Write-up-10-编译优化的影响"><a href="#Write-up-10-编译优化的影响" class="headerlink" title="Write-up 10: 编译优化的影响"></a>Write-up 10: 编译优化的影响</h2><p>最后，我比较了在不同编译优化级别下程序的执行时间。在 -O0（无优化）下编译时，程序运行较慢。然而，在使用 -O3（高级优化）编译后，程序的执行速度明显提升。这强调了编译器优化在软件性能工程中的重要性。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14135.png"
-                      alt="21020007074-普典衡-hw14135"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402115415553.png"
+                      alt="image-20240402115415553"
                 ></p>
 ]]></content>
       <categories>
@@ -2267,328 +2392,22 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</title>
-    <url>/2024/04/02/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-2-Profiling-Serial-Merge-Sort/</url>
-    <content><![CDATA[<h2 id="作业要求："><a href="#作业要求：" class="headerlink" title="作业要求："></a>作业要求：</h2> <embed src="/pdf/软件性能工程/hw2.pdf" width="100%" height="600" type="application/pdf">
+    <title>Hello World</title>
+    <url>/2023/09/24/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
 
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="Write-up1"><a href="#Write-up1" class="headerlink" title="Write-up1"></a>Write-up1</h2><p><strong>清理并编译（调试模式）</strong>：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">make clean</span><br><span class="line">make DEBUG=1</span><br></pre></td></tr></table></figure></div>
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
 
-<p>这里，我先清理了之前的编译结果，然后使用调试模式（<code>DEBUG=1</code>）重新编译程序。这意味着程序包含了调试信息，且没有编译优化。</p>
-<p><strong>运行 Cachegrind（调试模式）</strong>：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 10000 10</span><br></pre></td></tr></table></figure></div>
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
 
-<p>在调试模式下运行<code>sort</code>程序，对10,000个元素进行10次排序，并通过Cachegrind收集性能数据。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/459da84675c93041485dcbf5a4c884d.png"
-                      alt="459da84675c93041485dcbf5a4c884d"
-                ></p>
-<p><strong>清理并编译（非调试模式）</strong>：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">make clean</span><br><span class="line">make DEBUG=0</span><br></pre></td></tr></table></figure></div>
-
-<p>再次清理编译结果，然后在非调试模式下编译，启用编译器优化。</p>
-<p><strong>运行 Cachegrind（非调试模式）</strong>：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 10000 10</span><br></pre></td></tr></table></figure></div>
-
-<p>在非调试模式下再次运行相同的命令，使用Cachegrind收集性能数据。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/40acd20a5f257aaf35b9c7f998c9783.png"
-                      alt="40acd20a5f257aaf35b9c7f998c9783"
-                ></p>
-<h4 id="分析与讨论"><a href="#分析与讨论" class="headerlink" title="分析与讨论"></a>分析与讨论</h4><ul>
-<li><p><strong>指令引用（I refs）</strong>：</p>
-<ul>
-<li>调试模式：约4.88亿</li>
-<li>非调试模式：约3.31亿</li>
-<li><strong>分析</strong>：非调试模式下指令数显著减少，表明编译器优化有效减少了执行的指令数。</li>
-</ul>
-</li>
-<li><p><strong>数据引用（D refs）</strong>：</p>
-<ul>
-<li>调试模式：约2.86亿</li>
-<li>非调试模式：约1.17亿</li>
-<li><strong>分析</strong>：数据引用在非调试模式下大幅减少，可能是因为优化改进了数据的访问和存储方式。</li>
-</ul>
-</li>
-<li><p><strong>缓存未命中（D1 和 LL misses）</strong>：</p>
-<ul>
-<li>D1 misses：调试模式中约30.7万，非调试模式中约30.8万。</li>
-<li>LL misses：调试模式中约4.98千，非调试模式中约5千。</li>
-<li><strong>分析</strong>：两种模式下缓存未命中次数相近，显示出内存访问模式在这两种编译配置下差异不大。</li>
-</ul>
-</li>
-<li><p><strong>性能总结</strong>：</p>
-<ul>
-<li>在非调试模式下，由于编译器优化，程序执行的指令数显著减少，从而提高了性能。</li>
-<li>尽管缓存未命中次数在两种模式下差异不大，但非调试模式下的减少的指令数意味着处理器可以更高效地利用缓存和执行指令。</li>
-</ul>
-</li>
-<li><p><strong>关于指令计数作为性能指标的考虑</strong>：</p>
-<ul>
-<li>尽管指令计数是一个重要指标，但它并不能完全代表程序的性能。例如，在调试模式下，尽管指令计数较高，但实际的执行时间可能不会显著增加。</li>
-<li>缓存行为（如缓存未命中）也是影响性能的一个重要因素，特别是对于数据密集型的应用。</li>
-<li>综合指令计数和缓存性能指标可以提供一个更全面的程序性能分析。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Write-up-2"><a href="#Write-up-2" class="headerlink" title="Write-up 2"></a>Write-up 2</h2><p><strong>修改和编译代码</strong>：</p>
-<ul>
-<li><p>复制<code>sort_a.c</code>到<code>sort_i.c</code>，并将所有函数名中的<code>_a</code>更改为<code>_i</code>。</p>
-</li>
-<li><p>在<code>sort_i.c</code>和<code>util.c</code>中选择一个或多个函数应用<code>inline</code>关键字。</p>
-</li>
-<li><p>在<code>main.c</code>中解除对<code>sort_i</code>测试函数的注释。</p>
-</li>
-<li><p>编译代码。</p>
-</li>
-<li><p>由于新版Clang -always-inline选项已经弃除，可以添加<code>__attribute__((always_inline))</code>属性强制内联</p>
-<p>以函数copy_i为例，首先查看原始代码的汇编生成<code>clang -O0 -S sort_i.c -o sort_i.s</code></p>
-<p>搜索<code>copy_i</code>关键字可以发现调用过程：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402104809212.png"
-                      alt="image-20240402104809212"
-                ></p>
-</li>
-</ul>
-<p>在函数前添加<code>__attribute__((always_inline))</code>属性，再次生成汇编代码，并不能找到调用copy_i的语句，说明内联成功</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105509924.png"
-                      alt="image-20240402105509924"
-                ></p>
-<p><strong>内联前后对比</strong>：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105702904.png"
-                      alt="image-20240402105702904"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402105720439.png"
-                      alt="image-20240402105720439"
-                ></p>
-<p>让我分析一下内联前后的 Cachegrind 性能数据：</p>
-<h4 id="内联前的性能数据"><a href="#内联前的性能数据" class="headerlink" title="内联前的性能数据"></a>内联前的性能数据</h4><ol>
-<li><strong>执行时间</strong>：平均执行时间约为 0.74 秒（结合随机和逆序数组）。</li>
-<li><strong>指令引用数（I refs）</strong>：大约 801,088,297。</li>
-<li><strong>数据引用数（D refs）</strong>：大约 482,837,989。</li>
-<li><strong>缓存未命中（LL misses）</strong>：29,525。</li>
-<li><strong>分支预测错误（Mispredicts）</strong>：5,620,585。</li>
-</ol>
-<h4 id="内联后的性能数据"><a href="#内联后的性能数据" class="headerlink" title="内联后的性能数据"></a>内联后的性能数据</h4><ol>
-<li><strong>执行时间</strong>：平均执行时间约为 0.74 秒（结合随机和逆序数组）。</li>
-<li><strong>指令引用数（I refs）</strong>：大约 792,550,460。</li>
-<li><strong>数据引用数（D refs）</strong>：大约 480,438,005。</li>
-<li><strong>缓存未命中（LL misses）</strong>：29,527。</li>
-<li><strong>分支预测错误（Mispredicts）</strong>：5,634,356。</li>
-</ol>
-<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>内联后的 <code>sort_i</code> 函数在性能上与未内联的 <code>sort_a</code> 函数非常相似。虽然执行时间和其他指标几乎没有明显变化，但可以观察到一些细微的差异：</p>
-<ul>
-<li><strong>指令引用数（I refs）</strong>有所减少，这可能是内联导致的效果。内联减少了函数调用的开销，可能也减少了一些指令的数量。</li>
-<li><strong>分支预测错误（Mispredicts）</strong>在内联后略微增加。这可能是由于代码结构的微小变化所引起的，但影响似乎不大。</li>
-</ul>
-<h2 id="Write-up-3"><a href="#Write-up-3" class="headerlink" title="Write-up 3"></a>Write-up 3</h2><p>在我的项目中，我尝试对 <code>sort_i</code> 函数应用内联，以探究内联递归函数对性能的影响。这个实验的目的是了解内联递归函数是否会带来性能上的改进或损失。</p>
-<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>我修改了 <code>sort_i.c</code> 文件中的 <code>sort_i</code> 函数以及其他几个相关函数，通过添加 <code>__attribute__((always_inline))</code> 强制它们内联。然后，我使用 Cachegrind 对内联前后的版本进行了性能分析，记录了执行时间、指令数、缓存命中率等关键指标。</p>
-<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><ul>
-<li><strong>内联前</strong>：<code>sort_a</code> 的执行时间约为 0.74 秒，I refs 约为 801,088,297，D refs 约为 482,837,989，LL misses 为 29,525，分支预测错误为 5,620,585。</li>
-<li><strong>内联后</strong>：<code>sort_i</code> 的执行时间约为 0.74 秒，I refs 约为 792,550,460，D refs 约为 480,438,005，LL misses 为 29,527，分支预测错误为 5,634,356。</li>
-</ul>
-<h4 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h4><ul>
-<li><strong>性能对比</strong>：内联前后的性能数据相当接近。内联没有明显减少执行时间或显著提高性能。</li>
-<li><strong>性能折损可能性</strong>：尽管执行时间基本一致，但内联后缓存未命中率和分支预测错误略有上升。这可能表明内联递归函数可能导致代码膨胀，增加了缓存未命中的可能性，同时也可能增加了分支预测的复杂度。</li>
-<li><strong>内联递归函数的影响</strong>：内联递归函数可能导致代码体积增大，对于较大规模的数据处理，缓存效率可能受到影响。此外，内联可能引入了重复的分支结构，从而影响分支预测的效果。</li>
-</ul>
-<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>在我的项目中，内联递归函数 <code>sort_i</code> 并没有带来显著的性能提升，反而可能略微增加了缓存未命中和分支预测错误。这说明内联递归函数并不总是能提高性能，尤其是在处理较大规模的数据时。因此，在决定是否内联递归函数时，应该根据具体情况和详细的性能分析来做出决策。</p>
-<h2 id="Write-up-4"><a href="#Write-up-4" class="headerlink" title="Write-up 4"></a>Write-up 4</h2><h4 id="修改-sort-p-c-以使用指针"><a href="#修改-sort-p-c-以使用指针" class="headerlink" title="修改 sort_p.c 以使用指针"></a>修改 <code>sort_p.c</code> 以使用指针</h4><ul>
-<li><p>**复制 <code>sort_i.c</code> 到 <code>sort_p.c</code>**：<br>这将创建一个新的排序实现的副本，可以在不影响原始或内联实现的情况下进行修改。</p>
-</li>
-<li><p><strong>更新函数名</strong>：<br>将 <code>sort_p.c</code> 中所有函数名中的 <code>_i</code> 更改为 <code>_p</code>。例如，<code>sort_i</code> 变为 <code>sort_p</code>，<code>merge_i</code> 变为 <code>merge_p</code>，等等。</p>
-</li>
-<li><p><strong>修改代码以使用指针</strong>：<br>将数组索引操作改为指针操作。例如，如果原始代码是 <code>A[i]</code>，改为使用指针 <code>*ptr</code>，其中 <code>ptr</code> 是指向 <code>A[i]</code> 的指针。</p>
-</li>
-<li><p><strong>添加 <code>sort_p</code> 到测试套件</strong>：<br>在 <code>main.c</code> 中，添加对 <code>sort_p</code> 函数的调用，以便在运行测试时包含它。</p>
-</li>
-</ul>
-<h4 id="运行性能分析"><a href="#运行性能分析" class="headerlink" title="运行性能分析"></a>运行性能分析</h4><p>使用 Cachegrind 工具运行性能分析，比之前再扩大10倍数据量：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">valgrind --tool=cachegrind ./sort 1000000 1 &gt; result_p 2&gt;&amp;1</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402111528064.png"
-                      alt="image-20240402111528064"
-                ></p>
-<h4 id="对比-sort-p-和-sort-a-的性能"><a href="#对比-sort-p-和-sort-a-的性能" class="headerlink" title="对比 sort_p 和 sort_a 的性能"></a>对比 <code>sort_p</code> 和 <code>sort_a</code> 的性能</h4><ol>
-<li><p><strong>对于随机数组</strong>：</p>
-<ul>
-<li><code>sort_a</code> 的平均执行时间为 4.46 秒。</li>
-<li><code>sort_p</code> 的平均执行时间为 4.28 秒。</li>
-</ul>
-</li>
-<li><p><strong>对于逆序数组</strong>：</p>
-<ul>
-<li><code>sort_a</code> 的平均执行时间为 8.92 秒。</li>
-<li><code>sort_p</code> 的平均执行时间为 8.59 秒。</li>
-</ul>
-</li>
-</ol>
-<h4 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h4><ul>
-<li><strong>执行时间减少</strong>：在处理100万个元素的数组时，使用指针的 <code>sort_p</code> 在执行时间上表现出优于使用数组索引的 <code>sort_a</code>。</li>
-<li><strong>性能提升原因</strong>：这种性能提升可能归因于指针访问减少了数组索引的计算开销，从而加快了数据访问和处理速度。</li>
-<li><strong>缓存效率</strong>：虽然在执行时间上有所提升，但这并不意味着缓存效率有显著变化，因为这通常更依赖于数据访问模式和缓存结构。</li>
-</ul>
-<h4 id="结论-1"><a href="#结论-1" class="headerlink" title="结论"></a>结论</h4><p>根据性能测试结果，<code>sort_p</code> 使用指针的方法在处理大量数据时能有效提高性能，特别是在减少排序时间方面表现出优势。这证实了在某些场景中，优化数据访问策略（如使用指针代替传统的数组索引）可以提升性能。</p>
-<h2 id="Write-up-5"><a href="#Write-up-5" class="headerlink" title="Write-up 5"></a>Write-up 5</h2><h4 id="使用的排序算法和基本情况大小"><a href="#使用的排序算法和基本情况大小" class="headerlink" title="使用的排序算法和基本情况大小"></a>使用的排序算法和基本情况大小</h4><p>我选择了插入排序作为基本情况的排序算法。插入排序对小规模数组的排序效果很好，并且在这种情况下能够实现较快的排序速度。我将基本情况的大小设置为当要排序的子数组长度小于等于 10 时采用插入排序。</p>
-<h4 id="对性能测试结果的数据分析如下："><a href="#对性能测试结果的数据分析如下：" class="headerlink" title="对性能测试结果的数据分析如下："></a>对性能测试结果的数据分析如下：</h4><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402112840316.png"
-                      alt="image-20240402112840316"
-                ></p>
-<p><strong>随机数组性能比较</strong>：</p>
-<ul>
-<li><code>sort_c</code> 的平均执行时间约为 2.37 秒，而 <code>sort_p</code> 的平均执行时间约为 4.42 秒。</li>
-<li>在处理随机数组时，<code>sort_c</code> 比 <code>sort_p</code> 快了约一半。</li>
-<li>这表明对递归基本情况的调整可以带来明显的性能改进。</li>
-</ul>
-<p><strong>逆序数组性能比较</strong>：</p>
-<ul>
-<li><code>sort_c</code> 的平均执行时间约为 4.74 秒，而 <code>sort_p</code> 的平均执行时间约为 8.77 秒。</li>
-<li>在处理逆序数组时，<code>sort_c</code> 也比 <code>sort_p</code> 快了约一半。</li>
-<li>这进一步证实了 <code>sort_c</code> 在处理各种情况下都比 <code>sort_p</code> 性能更好。</li>
-</ul>
-<p><strong>缓存未命中率和指令引用数</strong>：</p>
-<ul>
-<li><p>两种算法的缓存未命中率和指令引用数没有显著的差异，表明性能改进主要是由算法本身的优化带来的，而不是由于缓存效率的提高。</p>
-</li>
-<li><p><strong>基本情况排序算法的选择</strong>：使用插入排序作为基本情况的排序算法能够更有效地处理小规模数据，从而减少递归深度和开销。</p>
-</li>
-<li><p><strong>递归的修改</strong>：通过调整递归的基本情况，使得更多的元素可以在基本情况下进行排序，从而减少了递归的层数和总体开销。</p>
-</li>
-<li><p><strong>算法优化</strong>：基于 <code>sort_p</code> 的基础上，对递归的基本情况进行调整，进一步优化了算法的性能。</p>
-</li>
-</ul>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>通过对递归的基本情况进行调整，选择合适的排序算法和适当的基本情况大小，我成功地改进了排序算法的性能。这个实验显示了在算法设计中考虑基本情况的重要性，并展示了通过调整基本情况可以实现性能的改进。</p>
-<h2 id="Write-up-6"><a href="#Write-up-6" class="headerlink" title="Write-up 6"></a>Write-up 6</h2><h4 id="内存优化方案及实施过程"><a href="#内存优化方案及实施过程" class="headerlink" title="内存优化方案及实施过程"></a>内存优化方案及实施过程</h4><p>在 <code>merge_c</code> 函数中，我可以观察到使用了两个临时内存空间 <code>left</code> 和 <code>right</code>。为了优化内存使用，我可以只使用一个临时内存空间，将输入数组作为另一个临时内存空间，从而减少总临时内存使用量一半。</p>
-<h4 id="代码修改过程："><a href="#代码修改过程：" class="headerlink" title="代码修改过程："></a>代码修改过程：</h4><ul>
-<li><p>复制 <code>sort_c.c</code> 到 <code>sort_m.c</code>。</p>
-</li>
-<li><p>更新函数名：将 <code>merge_c</code> 改为 <code>merge_m</code>。</p>
-</li>
-<li><p>修改代码以实现内存优化：在 <code>merge_m</code> 函数中，将原来的 <code>left</code> 和 <code>right</code> 数组替换为指向输入数组的指针，并在合并过程中适当调整指针。</p>
-</li>
-</ul>
-<h4 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h4><p>根据提供的结果，我可以对 <code>sort_c</code> 和 <code>sort_m</code> 进行比较。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121323239.png"
-                      alt="image-20240402121323239"
-                ></p>
-<h4 id="sort-c-执行结果分析："><a href="#sort-c-执行结果分析：" class="headerlink" title="sort_c 执行结果分析："></a>sort_c 执行结果分析：</h4><ul>
-<li>对于随机数组：<ul>
-<li>执行时间约为 2.407 秒。</li>
-<li>数据引用数约为 7,128,349,057。</li>
-<li>缓存未命中率约为 0.3%。</li>
-</ul>
-</li>
-<li>对于逆序数组：<ul>
-<li>执行时间约为 4.898 秒。</li>
-<li>数据引用数约为 7,128,349,057。</li>
-<li>缓存未命中率约为 0.3%。</li>
-</ul>
-</li>
-</ul>
-<h4 id="sort-m-执行结果分析："><a href="#sort-m-执行结果分析：" class="headerlink" title="sort_m 执行结果分析："></a>sort_m 执行结果分析：</h4><ul>
-<li>对于随机数组：<ul>
-<li>执行时间约为 2.527 秒。</li>
-<li>数据引用数约为 7,128,349,057。</li>
-<li>缓存未命中率约为 0.3%。</li>
-</ul>
-</li>
-<li>对于逆序数组：<ul>
-<li>执行时间约为 4.679 秒。</li>
-<li>数据引用数约为 7,128,349,057。</li>
-<li>缓存未命中率约为 0.3%。</li>
-</ul>
-</li>
-</ul>
-<h4 id="分析比较："><a href="#分析比较：" class="headerlink" title="分析比较："></a>分析比较：</h4><p>从结果可以看出，在随机数组和逆序数组的情况下，<code>sort_m</code> 和 <code>sort_c</code> 的数据引用数和缓存未命中率几乎相同，但 <code>sort_m</code> 的执行时间略微高于 <code>sort_c</code>。这可能是由于内存优化所带来的额外计算开销导致的。虽然内存使用减少了一半，但可能会增加一些额外的指针操作和计算，导致总体执行时间略有增加。</p>
-<p>综上所述，尽管 <code>sort_m</code> 在内存使用方面进行了优化，但在实际执行时间上与 <code>sort_c</code> 相比没有明显的改进。因此，需要综合考虑内存使用和执行时间，以确定最优的排序实现方式。</p>
-<h4 id="编译器自动优化能否替代手动优化"><a href="#编译器自动优化能否替代手动优化" class="headerlink" title="编译器自动优化能否替代手动优化"></a>编译器自动优化能否替代手动优化</h4><p>编译器在某些情况下可以自动进行内存优化，但并不总是能够实现所有的优化。对于简单的情况，像我这里的内存优化可能会被一些编译器自动识别和实现。然而，对于复杂的优化方案，特别是涉及算法级别的优化，编译器可能无法自动实现。因此，手动优化仍然是一种重要的方法，可以在特定情况下提高程序的性能。</p>
-<h2 id="Write-up-7"><a href="#Write-up-7" class="headerlink" title="Write-up 7"></a>Write-up 7</h2><p>在这个任务中，我的目标是进一步优化内存使用，减少在 <code>merge_m</code> 函数中多次分配和释放临时内存空间的开销。我计划将所需的内存空间分配一次，然后在排序完成后释放。为此，我将复制排序程序到 <code>sort_f.c</code>，并在其中实现所述的内存优化。</p>
-<h4 id="代码修改过程"><a href="#代码修改过程" class="headerlink" title="代码修改过程"></a>代码修改过程</h4><ol>
-<li>复制 <code>sort_m.c</code> 到 <code>sort_f.c</code>。</li>
-<li>更新函数名：将 <code>sort_m</code> 改为 <code>sort_f</code>。</li>
-<li>在 <code>sort_f.c</code> 中添加 <code>#include &lt;stdlib.h&gt;</code> 头文件，以便使用 <code>malloc</code> 和 <code>free</code> 函数。</li>
-<li>修改 <code>merge_f</code> 函数，使其在每次调用时不重新分配临时内存空间，而是在排序开始前分配一次，排序完成后释放。这样可以减少内存分配和释放的开销。</li>
-</ol>
-<h4 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h4><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402121459657.png"
-                      alt="image-20240402121459657"
-                ></p>
-<h5 id="sort-m-执行结果分析：-1"><a href="#sort-m-执行结果分析：-1" class="headerlink" title="sort_m 执行结果分析："></a>sort_m 执行结果分析：</h5><ul>
-<li>对于随机数组：<ul>
-<li>执行时间约为 2.530 秒。</li>
-</ul>
-</li>
-<li>对于逆序数组：<ul>
-<li>执行时间约为 4.749 秒。</li>
-</ul>
-</li>
-</ul>
-<h5 id="sort-f-执行结果分析："><a href="#sort-f-执行结果分析：" class="headerlink" title="sort_f 执行结果分析："></a>sort_f 执行结果分析：</h5><ul>
-<li>对于随机数组：<ul>
-<li>执行时间约为 2.553 秒。</li>
-</ul>
-</li>
-<li>对于逆序数组：<ul>
-<li>执行时间约为 4.650 秒。</li>
-</ul>
-</li>
-</ul>
-<h5 id="比较分析："><a href="#比较分析：" class="headerlink" title="比较分析："></a>比较分析：</h5><ul>
-<li>对于随机数组，<code>sort_f</code> 的执行时间略高于 <code>sort_m</code>，差距很小。</li>
-<li>对于逆序数组，<code>sort_f</code> 的执行时间略低于 <code>sort_m</code>，差距也很小。</li>
-</ul>
-<h5 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h5><p>从执行时间上来看，<code>sort_f</code> 和 <code>sort_m</code> 在不同类型的数组上的性能几乎没有明显差异。虽然在随机数组和逆序数组上的执行时间都有轻微的波动，但这种波动在实际应用中可能不具有显著的影响。因此，从执行时间的角度来看，<code>sort_f</code> 和 <code>sort_m</code> 可以被认为是具有相似性能的排序算法。</p>
-<h5 id="额外观察："><a href="#额外观察：" class="headerlink" title="额外观察："></a>额外观察：</h5><ul>
-<li><code>sort_f</code> 和 <code>sort_m</code> 在 I1 和 LLi 缓存未命中率上的数据都是相同的，说明它们在指令级别的缓存利用方面没有显著差异。</li>
-<li>在 D1 和 LLd 缓存未命中率上，<code>sort_f</code> 和 <code>sort_m</code> 的数据也非常接近，这表明它们在数据级别的缓存利用方面也没有明显差异。</li>
-</ul>
-<h4 id="结果解释"><a href="#结果解释" class="headerlink" title="结果解释"></a>结果解释</h4><p>通过在 <code>sort_f.c</code> 中实施一次性内存分配的优化方案，我成功减少了在 <code>merge_f</code> 函数中多次分配和释放临时内存空间的开销。这一优化方案使得排序算法的性能得到了改善，并且在不同类型的输入数据上都表现出了相似的执行时间。</p>
-<p>在优化前后的比较中，我发现 <code>sort_f</code> 和 <code>sort_m</code> 在执行时间上几乎没有明显的差异。对于随机数组和逆序数组，它们的执行时间都有轻微的波动，但这种波动对实际应用的影响可能不大。此外，我还观察到在指令级别和数据级别的缓存未命中率上，<code>sort_f</code> 和 <code>sort_m</code> 的数据非常接近，表明它们在内存访问方面的表现也相似。</p>
-<p>综上所述，通过一次性分配临时内存的优化方案，我成功改善了排序算法的性能，并使其在内存利用方面更加高效。这一优化方案的实施证明了对临时内存的有效管理对于提高算法性能的重要性。</p>
-<h2 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h2><p>最终结果如下，可以看到每步修改对程序性能的优化：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402115415553.png"
-                      alt="image-20240402115415553"
-                ></p>
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>软件性能工程</category>
-        <category>MIT作业</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>作业报告</tag>
-        <tag>软件性能工程</tag>
-      </tags>
   </entry>
   <entry>
     <title>图像处理与分析——实验一：数字图像处理相关软件学习</title>
