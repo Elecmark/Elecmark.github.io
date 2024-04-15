@@ -1,222 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Alpha冲刺2</title>
-    <url>/2023/11/26/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Alpha%E5%86%B2%E5%88%BA-2-3/</url>
-    <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
-<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
-<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
-<li>普典衡</li>
-<li>司宇萌</li>
-<li>孙文秀</li>
-<li>王诗梦</li>
-<li>王菲</li>
-</ul>
-<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
-<li>过去完成的任务：<ul>
-<li>优化了前端显示，修复了不同屏幕分辨率下的显示错误bug</li>
-<li>将Java项目转为Python的flask项目</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a2/1.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>配合后端接口，加入类似锁的机制防止卡死</li>
-</ul>
-</li>
-<li>还剩下的任务：<ul>
-<li>添加更多便捷功能，提升用户体验，继续美化前端，思考更多前端功能</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>页面缩放引起的组件遮挡消失，滑动条显示问题</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>对前端的理解更深入，学会了pycharm转换更改项目所用的Python版本，对前后端对接还不太清楚</li>
-</ul>
-</li>
-</ul>
-<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
-<li>过去完成的任务：<ul>
-<li>学习了python，安装了pycharm，并配置了python。更新了前端网页，学习前后端交互相关知识。</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a2/2.png"
-                      alt="2"
-                >编辑</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>继续优化页面设计，配合后端交互。</li>
-</ul>
-</li>
-<li>还剩下的任务：<ul>
-<li>提升用户体验，继续美化页面，实现图片的流转。</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>pycharm打开不了网页，python安装失败。</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习了python，前后端等知识。疑问是现在的训练模型需要的是一个数据集，如何将单个图片放到文件夹中。</li>
-</ul>
-</li>
-</ul>
-<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
-<li>过去完成的任务：<ul>
-<li>决定使用pycharm完成项目，配置pycharm环境，完成加噪并去噪的CNN自动编码器。</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a2/3.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>尝试去掉加噪部分，对一张本身带噪声的图片进行去噪。</li>
-</ul>
-</li>
-<li>还剩下的任务：<ul>
-<li>完成模型训练并接入后端</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>python版本过新，导致TensorFlow模块不能安装，只能重新安装3.9版本。数据集下载失败，只能通过本地下载，再用路径读取。</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>对CNN模型有了更多认识，学会了pycharm的使用。</li>
-</ul>
-</li>
-</ul>
-<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
-<li>过去完成的任务：<ul>
-<li>配置pycharm环境，了解接口文档的写法，学习前后端交互知识</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a2/4.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>将模型接入后端，写接口文档，完成前后端交互</li>
-</ul>
-</li>
-<li>还剩下的任务：<ul>
-<li>前后端交互，与模型的数据对接</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>在pycharm中因为版本问题下载框架失败，已解决</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>大概了解了接口文档的写法,简单学习前后端交互 ，对图片的传输和对接过程还是不太清楚</li>
-</ul>
-</li>
-</ul>
-<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
-<li>过去完成的任务：<ul>
-<li>尝试用pycharm将模型接入后端，并用apifox写接口文档</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a2/5.png"
-                      alt="5"
-                >编辑</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>将模型接入后端并继续完成接口文档</li>
-</ul>
-</li>
-<li>还剩下的任务：<ul>
-<li>与前端对接</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>python版本问题，将模型接入后端时遇到了一些问题</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习了简单的后端知识</li>
-</ul>
-</li>
-</ul>
-<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
-<li>正常网页分辨率显示</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a2/6.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-<li>窄分辨率显示</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a2/7.png"
-                      alt="7"
-                >编辑</li>
-<li>数据集的模型训练</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a2/8.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a2/9.jpg"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
-<li><p><strong>时间</strong>：2023.11.26 16:00</p>
-</li>
-<li><p><strong>地点</strong>：图书馆研讨室304</p>
-</li>
-<li><p><strong>内容</strong>：</p>
-<h4 id="1-项目进展概况"><a href="#1-项目进展概况" class="headerlink" title="1. 项目进展概况"></a>1. 项目进展概况</h4><ul>
-<li>讨论了团队成员在项目中的整体进展情况，包括前端显示优化、项目从Java转换到Python Flask的进展，以及前后端交互的学习和实现。</li>
-<li>着重强调了对不同屏幕分辨率的适配问题，确保网页在不同设备上均能正常显示。</li>
-</ul>
-<h4 id="2-技术难点和解决方案"><a href="#2-技术难点和解决方案" class="headerlink" title="2. 技术难点和解决方案"></a>2. 技术难点和解决方案</h4><ul>
-<li>分析了在项目开发中遇到的技术难题，如页面缩放导致的组件遮挡和滑动条显示问题，以及Python版本兼容性问题。</li>
-<li>讨论了可能的解决方案，包括技术选型调整、版本兼容性检查，以及增强团队成员之间的技术交流。</li>
-</ul>
-<h4 id="3-后续计划和任务分配"><a href="#3-后续计划和任务分配" class="headerlink" title="3. 后续计划和任务分配"></a>3. 后续计划和任务分配</h4><ul>
-<li>计划了接下来的工作，包括继续优化前端页面设计，加强前后端的数据交互，以及将机器学习模型更好地集成到后端。</li>
-<li>对剩余任务进行了详细的分配，确保每位团队成员都清楚自己的责任和接下来的工作重点。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>软件工程</category>
-        <category>云去噪</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>项目报告</tag>
-        <tag>云去噪</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Alpha冲刺3</title>
     <url>/2023/12/03/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Alpha%E5%86%B2%E5%88%BA-3-3/</url>
     <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
@@ -381,6 +165,189 @@
 <li><strong>前后端进一步对接</strong>：加强前后端的协同工作，确保系统的流畅运行，特别是在图像上传和处理方面。</li>
 </ul>
 <p>团队将继续密切协作，确保按时完成项目目标，同时解决任何新出现的技术挑战。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>软件工程</category>
+        <category>云去噪</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>项目报告</tag>
+        <tag>云去噪</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1</title>
+    <url>/2023/12/10/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-1-3/</url>
+    <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
+<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
+<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
+<li>普典衡</li>
+<li>司宇萌</li>
+<li>孙文秀</li>
+<li>王诗梦</li>
+<li>王菲</li>
+</ul>
+<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
+<li>过去完成的任务：<ul>
+<li>优化前端格式和排列表现</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/1.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>进一步优化前端功能与界面，设计UI，实现新增的转换按钮的功能（与后端对接）</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>组件扩展使整体屏幕分辨率改变出现bug，调整组件位置已经禁用横向滚动条之后解决</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>对JavaScript与HTML理解更好，对前端布局理解加深</li>
+</ul>
+</li>
+</ul>
+<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
+<li>过去完成的任务：<ul>
+<li>更改了顶部导航栏，重新安排了按钮的位置，修改了按钮的颜色。</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/2.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成前后端的对接工作，将模型接入传送过程，实装相应的按钮和进度条的功能</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>模型未接入，模型训练困难</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习前端，学习python语言，了解前后端交互</li>
+</ul>
+</li>
+</ul>
+<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
+<li>过去完成的任务：<ul>
+<li>修改模型，实现输入图片与输出图片颜色一致；增加训练轮数和卷积层数，以减请轻去噪后的模糊情况。</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/3.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>继续修改模型，同时学习CNN编码器相关知识，寻求更好的模型用于图像去噪。</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>电脑没有独显，模型训练很慢，而且图像模糊还没有得到解决。</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>对CNN编码器的了解更多，认识了很多去噪算法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
+<li>过去完成的任务：<ul>
+<li>协助模型训练的同学进行模型训练,修改部分细节使图片更适应模型</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/4.png"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成模型训练及后端传输图片</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>之前的模型训练效果不好，重新开始训练，模型和前端的交接遇到点问题</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>了解了模型训练的一些知识</li>
+</ul>
+</li>
+</ul>
+<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
+<li>过去完成的任务：<ul>
+<li>协助模型训练的同学进行模型训练</li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成模型训练及后端传输图片</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>之前的模型训练效果不好，重新开始训练</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>了解了模型训练的一些知识</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
+<li>增加及修改加了顶部菜单栏的组件</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/6.png"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/10.jpg"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
+<li><p><strong>时间</strong>：2023.12.10 20:00</p>
+</li>
+<li><p><strong>地点</strong>：腾讯会议</p>
+</li>
+<li><p><strong>内容</strong>：</p>
+<h3 id="进展回顾"><a href="#进展回顾" class="headerlink" title="进展回顾"></a>进展回顾</h3><ol>
+<li><strong>前端开发</strong>:<ul>
+<li>在前端方面取得了重要进展。包括对前端格式的优化、排列表现的改善、顶部导航栏的重新设计，以及按钮颜色的调整。</li>
+<li>计划进一步增强前端功能和界面设计，特别是实现新的转换按钮功能，并与后端紧密对接。</li>
+</ul>
+</li>
+<li><strong>模型训练与后端开发</strong>:<ul>
+<li>模型训练上，实现了输入输出图片颜色一致性的改进，并通过增加训练轮数和卷积层数减轻了去噪后的模糊情况。</li>
+<li>后续计划着重于模型的进一步改进，特别是针对CNN编码器的深入学习和应用，以及模型和前端的有效整合。</li>
+</ul>
+</li>
+</ol>
+<h3 id="遇到的挑战"><a href="#遇到的挑战" class="headerlink" title="遇到的挑战"></a>遇到的挑战</h3><ul>
+<li>团队面临的主要挑战包括前端组件扩展导致的bug、模型训练的效率问题以及前后端的有效整合。</li>
+</ul>
+<h3 id="收获与展望"><a href="#收获与展望" class="headerlink" title="收获与展望"></a>收获与展望</h3><ul>
+<li>成员们在JavaScript、HTML、Python语言及前后端交互方面有了更深入的理解和应用。</li>
+<li>对CNN编码器和去噪算法的认识更加深入，为未来的开发提供了坚实的基础。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体来看，每位成员都在其专长领域作出了积极贡献。虽然面临一些技术挑战，但团队成员通过有效合作，已经取得了显著的进展，并对未来的工作有了清晰的规划和方向。</p>
 </li>
 </ul>
 ]]></content>
@@ -690,8 +657,8 @@
       </tags>
   </entry>
   <entry>
-    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1</title>
-    <url>/2023/12/10/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-1-3/</url>
+    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Alpha冲刺2</title>
+    <url>/2023/11/26/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Alpha%E5%86%B2%E5%88%BA-2-3/</url>
     <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
 <h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
 <h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
@@ -703,124 +670,165 @@
 </ul>
 <h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
 <li>过去完成的任务：<ul>
-<li>优化前端格式和排列表现</li>
+<li>优化了前端显示，修复了不同屏幕分辨率下的显示错误bug</li>
+<li>将Java项目转为Python的flask项目</li>
 <li><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/1.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>进一步优化前端功能与界面，设计UI，实现新增的转换按钮的功能（与后端对接）</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>组件扩展使整体屏幕分辨率改变出现bug，调整组件位置已经禁用横向滚动条之后解决</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>对JavaScript与HTML理解更好，对前端布局理解加深</li>
-</ul>
-</li>
-</ul>
-<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
-<li>过去完成的任务：<ul>
-<li>更改了顶部导航栏，重新安排了按钮的位置，修改了按钮的颜色。</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/2.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成前后端的对接工作，将模型接入传送过程，实装相应的按钮和进度条的功能</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>模型未接入，模型训练困难</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习前端，学习python语言，了解前后端交互</li>
-</ul>
-</li>
-</ul>
-<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
-<li>过去完成的任务：<ul>
-<li>修改模型，实现输入图片与输出图片颜色一致；增加训练轮数和卷积层数，以减请轻去噪后的模糊情况。</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/3.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>继续修改模型，同时学习CNN编码器相关知识，寻求更好的模型用于图像去噪。</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>电脑没有独显，模型训练很慢，而且图像模糊还没有得到解决。</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>对CNN编码器的了解更多，认识了很多去噪算法。</li>
-</ul>
-</li>
-</ul>
-<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
-<li>过去完成的任务：<ul>
-<li>协助模型训练的同学进行模型训练,修改部分细节使图片更适应模型</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/4.png"
+                     data-src="/../images/Group9-image-denoising/a2/1.png"
                       alt="点击并拖拽以移动"
                 >编辑</li>
 </ul>
 </li>
 <li>接下来的计划：<ul>
-<li>完成模型训练及后端传输图片</li>
+<li>配合后端接口，加入类似锁的机制防止卡死</li>
+</ul>
+</li>
+<li>还剩下的任务：<ul>
+<li>添加更多便捷功能，提升用户体验，继续美化前端，思考更多前端功能</li>
 </ul>
 </li>
 <li>遇到的困难：<ul>
-<li>之前的模型训练效果不好，重新开始训练，模型和前端的交接遇到点问题</li>
+<li>页面缩放引起的组件遮挡消失，滑动条显示问题</li>
 </ul>
 </li>
 <li>收获和疑问：<ul>
-<li>了解了模型训练的一些知识</li>
+<li>对前端的理解更深入，学会了pycharm转换更改项目所用的Python版本，对前后端对接还不太清楚</li>
+</ul>
+</li>
+</ul>
+<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
+<li>过去完成的任务：<ul>
+<li>学习了python，安装了pycharm，并配置了python。更新了前端网页，学习前后端交互相关知识。</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a2/2.png"
+                      alt="2"
+                >编辑</li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>继续优化页面设计，配合后端交互。</li>
+</ul>
+</li>
+<li>还剩下的任务：<ul>
+<li>提升用户体验，继续美化页面，实现图片的流转。</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>pycharm打开不了网页，python安装失败。</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习了python，前后端等知识。疑问是现在的训练模型需要的是一个数据集，如何将单个图片放到文件夹中。</li>
+</ul>
+</li>
+</ul>
+<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
+<li>过去完成的任务：<ul>
+<li>决定使用pycharm完成项目，配置pycharm环境，完成加噪并去噪的CNN自动编码器。</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a2/3.png"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>尝试去掉加噪部分，对一张本身带噪声的图片进行去噪。</li>
+</ul>
+</li>
+<li>还剩下的任务：<ul>
+<li>完成模型训练并接入后端</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>python版本过新，导致TensorFlow模块不能安装，只能重新安装3.9版本。数据集下载失败，只能通过本地下载，再用路径读取。</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>对CNN模型有了更多认识，学会了pycharm的使用。</li>
+</ul>
+</li>
+</ul>
+<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
+<li>过去完成的任务：<ul>
+<li>配置pycharm环境，了解接口文档的写法，学习前后端交互知识</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a2/4.png"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>将模型接入后端，写接口文档，完成前后端交互</li>
+</ul>
+</li>
+<li>还剩下的任务：<ul>
+<li>前后端交互，与模型的数据对接</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>在pycharm中因为版本问题下载框架失败，已解决</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>大概了解了接口文档的写法,简单学习前后端交互 ，对图片的传输和对接过程还是不太清楚</li>
 </ul>
 </li>
 </ul>
 <h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
 <li>过去完成的任务：<ul>
-<li>协助模型训练的同学进行模型训练</li>
+<li>尝试用pycharm将模型接入后端，并用apifox写接口文档</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a2/5.png"
+                      alt="5"
+                >编辑</li>
 </ul>
 </li>
 <li>接下来的计划：<ul>
-<li>完成模型训练及后端传输图片</li>
+<li>将模型接入后端并继续完成接口文档</li>
+</ul>
+</li>
+<li>还剩下的任务：<ul>
+<li>与前端对接</li>
 </ul>
 </li>
 <li>遇到的困难：<ul>
-<li>之前的模型训练效果不好，重新开始训练</li>
+<li>python版本问题，将模型接入后端时遇到了一些问题</li>
 </ul>
 </li>
 <li>收获和疑问：<ul>
-<li>了解了模型训练的一些知识</li>
+<li>学习了简单的后端知识</li>
 </ul>
 </li>
 </ul>
 <h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
-<li>增加及修改加了顶部菜单栏的组件</li>
+<li>正常网页分辨率显示</li>
 <li><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/6.png"
+                     data-src="/../images/Group9-image-denoising/a2/6.png"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+<li>窄分辨率显示</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a2/7.png"
+                      alt="7"
+                >编辑</li>
+<li>数据集的模型训练</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a2/8.png"
                       alt="点击并拖拽以移动"
                 >编辑</li>
 </ul>
@@ -828,36 +836,28 @@
 <li><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/10.jpg"
+                     data-src="/../images/Group9-image-denoising/a2/9.jpg"
                       alt="点击并拖拽以移动"
                 >编辑</li>
 </ul>
 <h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
-<li><p><strong>时间</strong>：2023.12.10 20:00</p>
+<li><p><strong>时间</strong>：2023.11.26 16:00</p>
 </li>
-<li><p><strong>地点</strong>：腾讯会议</p>
+<li><p><strong>地点</strong>：图书馆研讨室304</p>
 </li>
 <li><p><strong>内容</strong>：</p>
-<h3 id="进展回顾"><a href="#进展回顾" class="headerlink" title="进展回顾"></a>进展回顾</h3><ol>
-<li><strong>前端开发</strong>:<ul>
-<li>在前端方面取得了重要进展。包括对前端格式的优化、排列表现的改善、顶部导航栏的重新设计，以及按钮颜色的调整。</li>
-<li>计划进一步增强前端功能和界面设计，特别是实现新的转换按钮功能，并与后端紧密对接。</li>
+<h4 id="1-项目进展概况"><a href="#1-项目进展概况" class="headerlink" title="1. 项目进展概况"></a>1. 项目进展概况</h4><ul>
+<li>讨论了团队成员在项目中的整体进展情况，包括前端显示优化、项目从Java转换到Python Flask的进展，以及前后端交互的学习和实现。</li>
+<li>着重强调了对不同屏幕分辨率的适配问题，确保网页在不同设备上均能正常显示。</li>
 </ul>
-</li>
-<li><strong>模型训练与后端开发</strong>:<ul>
-<li>模型训练上，实现了输入输出图片颜色一致性的改进，并通过增加训练轮数和卷积层数减轻了去噪后的模糊情况。</li>
-<li>后续计划着重于模型的进一步改进，特别是针对CNN编码器的深入学习和应用，以及模型和前端的有效整合。</li>
+<h4 id="2-技术难点和解决方案"><a href="#2-技术难点和解决方案" class="headerlink" title="2. 技术难点和解决方案"></a>2. 技术难点和解决方案</h4><ul>
+<li>分析了在项目开发中遇到的技术难题，如页面缩放导致的组件遮挡和滑动条显示问题，以及Python版本兼容性问题。</li>
+<li>讨论了可能的解决方案，包括技术选型调整、版本兼容性检查，以及增强团队成员之间的技术交流。</li>
 </ul>
-</li>
-</ol>
-<h3 id="遇到的挑战"><a href="#遇到的挑战" class="headerlink" title="遇到的挑战"></a>遇到的挑战</h3><ul>
-<li>团队面临的主要挑战包括前端组件扩展导致的bug、模型训练的效率问题以及前后端的有效整合。</li>
+<h4 id="3-后续计划和任务分配"><a href="#3-后续计划和任务分配" class="headerlink" title="3. 后续计划和任务分配"></a>3. 后续计划和任务分配</h4><ul>
+<li>计划了接下来的工作，包括继续优化前端页面设计，加强前后端的数据交互，以及将机器学习模型更好地集成到后端。</li>
+<li>对剩余任务进行了详细的分配，确保每位团队成员都清楚自己的责任和接下来的工作重点。</li>
 </ul>
-<h3 id="收获与展望"><a href="#收获与展望" class="headerlink" title="收获与展望"></a>收获与展望</h3><ul>
-<li>成员们在JavaScript、HTML、Python语言及前后端交互方面有了更深入的理解和应用。</li>
-<li>对CNN编码器和去噪算法的认识更加深入，为未来的开发提供了坚实的基础。</li>
-</ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体来看，每位成员都在其专长领域作出了积极贡献。虽然面临一些技术挑战，但团队成员通过有效合作，已经取得了显著的进展，并对未来的工作有了清晰的规划和方向。</p>
 </li>
 </ul>
 ]]></content>
@@ -1280,114 +1280,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Blender——建模/动画作品</title>
-    <url>/2023/07/15/Blender%E5%BB%BA%E6%A8%A1-%E5%8A%A8%E7%94%BB%E4%BD%9C%E5%93%81/</url>
-    <content><![CDATA[<h3 id="三兄弟建模（几何）"><a href="#三兄弟建模（几何）" class="headerlink" title="三兄弟建模（几何）"></a>三兄弟建模（几何）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/1_%E4%B8%89%E5%85%84%E5%BC%9F.png"
-                      alt="1_三兄弟"
-                ></p>
-<h3 id="积木建模-动画（动画）"><a href="#积木建模-动画（动画）" class="headerlink" title="积木建模&#x2F;动画（动画）"></a>积木建模&#x2F;动画（动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV15K421x7aj/?share_source=copy_web' title='【Blender积木】'><i class='fa-solid fa-play-circle'></i> 【Blender积木】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1701692717&bvid=BV15K421x7aj&cid=1463230031&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/2_%E7%A7%AF%E6%9C%A8.png"
-                      alt="2_积木"
-                ></p>
-<h3 id="金币基站建模（金属光泽材质）"><a href="#金币基站建模（金属光泽材质）" class="headerlink" title="金币基站建模（金属光泽材质）"></a>金币基站建模（金属光泽材质）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/3_%E9%87%91%E5%B8%81%E5%9F%BA%E7%AB%99.png"
-                      alt="3_金币基站"
-                ></p>
-<h3 id="跑车建模-动画（复杂图形建模与循环动画）"><a href="#跑车建模-动画（复杂图形建模与循环动画）" class="headerlink" title="跑车建模&#x2F;动画（复杂图形建模与循环动画）"></a>跑车建模&#x2F;动画（复杂图形建模与循环动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Mj421f71M/?share_source=copy_web' title='【Blender跑车】'><i class='fa-solid fa-play-circle'></i> 【Blender跑车】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1651706227&bvid=BV1Mj421f71M&cid=1463231676&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E8%BD%A6%E5%A4%B4.png"
-                      alt="跑车车头"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E7%89%B9%E5%86%992.png"
-                      alt="跑车特写2"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E4%BE%A7%E9%9D%A2.png"
-                      alt="跑车侧面"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E9%A1%B6%E9%83%A8.png"
-                      alt="跑车顶部"
-                ></p>
-<h3 id="荧光树桩建模（半透明材质）"><a href="#荧光树桩建模（半透明材质）" class="headerlink" title="荧光树桩建模（半透明材质）"></a>荧光树桩建模（半透明材质）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/5_%E8%8D%A7%E5%85%89%E6%A0%91%E6%A1%A9.png"
-                      alt="5_荧光树桩"
-                ></p>
-<h3 id="子弹时间建模-动画（物理效果模拟）"><a href="#子弹时间建模-动画（物理效果模拟）" class="headerlink" title="子弹时间建模&#x2F;动画（物理效果模拟）"></a>子弹时间建模&#x2F;动画（物理效果模拟）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1xW421c7ux/?share_source=copy_web' title='【Blender子弹时间】'><i class='fa-solid fa-play-circle'></i> 【Blender子弹时间】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1851675396&bvid=BV1xW421c7ux&cid=1463235980&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9-%E5%B0%81%E9%9D%A2.jpg"
-                      alt="子弹-封面"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%85%A2%E5%8A%A8%E4%BD%9C%E6%99%AF%E6%B7%B1.png"
-                      alt="子弹慢动作景深"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%99%AF%E6%B7%B1.png"
-                      alt="子弹景深"
-                ></p>
-<h3 id="离散猴头（几何节点）"><a href="#离散猴头（几何节点）" class="headerlink" title="离散猴头（几何节点）"></a>离散猴头（几何节点）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Uj421Z7Nc/?share_source=copy_web' title='【Blender猴头】'><i class='fa-solid fa-play-circle'></i> 【Blender猴头】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1651642308&bvid=BV1Uj421Z7Nc&cid=1463239128&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
-      <categories>
-        <category>游戏开发</category>
-        <category>Blender</category>
-        <category>建模/动画</category>
-      </categories>
-      <tags>
-        <tag>Blender</tag>
-        <tag>建模</tag>
-        <tag>动画</tag>
-        <tag>作品集</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java GUI——音乐播放器</title>
     <url>/2023/05/17/Java-GUI-%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
     <content><![CDATA[<h2 id="a-软件功能说明"><a href="#a-软件功能说明" class="headerlink" title="(a)软件功能说明"></a>(a)软件功能说明</h2><p>①线上歌单的获取和保存，加载进度条</p>
@@ -1546,6 +1438,295 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
         <tag>Java</tag>
         <tag>GUI</tag>
         <tag>音乐播放器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Blender——建模/动画作品</title>
+    <url>/2023/07/15/Blender%E5%BB%BA%E6%A8%A1-%E5%8A%A8%E7%94%BB%E4%BD%9C%E5%93%81/</url>
+    <content><![CDATA[<h3 id="三兄弟建模（几何）"><a href="#三兄弟建模（几何）" class="headerlink" title="三兄弟建模（几何）"></a>三兄弟建模（几何）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/1_%E4%B8%89%E5%85%84%E5%BC%9F.png"
+                      alt="1_三兄弟"
+                ></p>
+<h3 id="积木建模-动画（动画）"><a href="#积木建模-动画（动画）" class="headerlink" title="积木建模&#x2F;动画（动画）"></a>积木建模&#x2F;动画（动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV15K421x7aj/?share_source=copy_web' title='【Blender积木】'><i class='fa-solid fa-play-circle'></i> 【Blender积木】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1701692717&bvid=BV15K421x7aj&cid=1463230031&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/2_%E7%A7%AF%E6%9C%A8.png"
+                      alt="2_积木"
+                ></p>
+<h3 id="金币基站建模（金属光泽材质）"><a href="#金币基站建模（金属光泽材质）" class="headerlink" title="金币基站建模（金属光泽材质）"></a>金币基站建模（金属光泽材质）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/3_%E9%87%91%E5%B8%81%E5%9F%BA%E7%AB%99.png"
+                      alt="3_金币基站"
+                ></p>
+<h3 id="跑车建模-动画（复杂图形建模与循环动画）"><a href="#跑车建模-动画（复杂图形建模与循环动画）" class="headerlink" title="跑车建模&#x2F;动画（复杂图形建模与循环动画）"></a>跑车建模&#x2F;动画（复杂图形建模与循环动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Mj421f71M/?share_source=copy_web' title='【Blender跑车】'><i class='fa-solid fa-play-circle'></i> 【Blender跑车】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1651706227&bvid=BV1Mj421f71M&cid=1463231676&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E8%BD%A6%E5%A4%B4.png"
+                      alt="跑车车头"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E7%89%B9%E5%86%992.png"
+                      alt="跑车特写2"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E4%BE%A7%E9%9D%A2.png"
+                      alt="跑车侧面"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E9%A1%B6%E9%83%A8.png"
+                      alt="跑车顶部"
+                ></p>
+<h3 id="荧光树桩建模（半透明材质）"><a href="#荧光树桩建模（半透明材质）" class="headerlink" title="荧光树桩建模（半透明材质）"></a>荧光树桩建模（半透明材质）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/5_%E8%8D%A7%E5%85%89%E6%A0%91%E6%A1%A9.png"
+                      alt="5_荧光树桩"
+                ></p>
+<h3 id="子弹时间建模-动画（物理效果模拟）"><a href="#子弹时间建模-动画（物理效果模拟）" class="headerlink" title="子弹时间建模&#x2F;动画（物理效果模拟）"></a>子弹时间建模&#x2F;动画（物理效果模拟）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1xW421c7ux/?share_source=copy_web' title='【Blender子弹时间】'><i class='fa-solid fa-play-circle'></i> 【Blender子弹时间】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1851675396&bvid=BV1xW421c7ux&cid=1463235980&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9-%E5%B0%81%E9%9D%A2.jpg"
+                      alt="子弹-封面"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%85%A2%E5%8A%A8%E4%BD%9C%E6%99%AF%E6%B7%B1.png"
+                      alt="子弹慢动作景深"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%99%AF%E6%B7%B1.png"
+                      alt="子弹景深"
+                ></p>
+<h3 id="离散猴头（几何节点）"><a href="#离散猴头（几何节点）" class="headerlink" title="离散猴头（几何节点）"></a>离散猴头（几何节点）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Uj421Z7Nc/?share_source=copy_web' title='【Blender猴头】'><i class='fa-solid fa-play-circle'></i> 【Blender猴头】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1651642308&bvid=BV1Uj421Z7Nc&cid=1463239128&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>Blender</category>
+        <category>建模/动画</category>
+      </categories>
+      <tags>
+        <tag>Blender</tag>
+        <tag>建模</tag>
+        <tag>动画</tag>
+        <tag>作品集</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MIT软件性能工程——Homework-1-Getting Started</title>
+    <url>/2024/03/17/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-1-Getting-Started/</url>
+    <content><![CDATA[<h2 id="作业要求："><a href="#作业要求：" class="headerlink" title="作业要求："></a>作业要求：</h2> <embed src="/pdf/软件性能工程/hw1.pdf" width="100%" height="600" type="application/pdf">
+
+
+<h2 id="Write-up-2-分析-Pointer-c-文件"><a href="#Write-up-2-分析-Pointer-c-文件" class="headerlink" title="Write-up 2: 分析 Pointer.c 文件"></a>Write-up 2: 分析 Pointer.c 文件</h2><p>在 Pointer.c 的练习中，我首先尝试编译代码，发现了几个编译错误。通过仔细审查代码，我注意到这些错误主要是由于对指针和常量的错误操作。例如，尝试修改一个指向常量的指针的内容（<em>pcc &#x3D; 7;）是非法的，因为这破坏了常量的不变性。此外，赋值 char</em> const cp &#x3D; c; 创建了一个常量指针，意味着不能改变 cp 指向的地址，但是 cp 可以修改其指向的内容。这种区别对理解 C 语言中指针和常量的行为至关重要。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw1245.png"
+                      alt="21020007074-普典衡-hw1245"
+                ></p>
+<p>代码中注释问题的解答：</p>
+<ol>
+<li><p>int main(int argc, char* argv[]) { &#x2F;&#x2F; What is the type of argv?<br>argv 是一个指向字符指针的指针，即 char 类型。它通常用于存储程序运行时传递的命令行参数。</p>
+</li>
+<li><p>char* pc &#x3D; c; &#x2F;&#x2F; Valid assignment: c acts like a pointer to c[0] here.<br>这是一个有效的赋值。在 C 语言中，数组名称作为指针使用时，指向数组的第一个元素。因此，c 实际上指向 c[0] 的地址。</p>
+</li>
+<li><p>printf(“char d &#x3D; %c\n”, d); &#x2F;&#x2F; What does this print?<br>这将打印出 d 的值，即字符数组 c 的第一个字符。根据 c 的定义，这应该是 6。</p>
+</li>
+<li><p><em>pcc &#x3D; 7; &#x2F;&#x2F; invalid?<br>这是无效的。pcc 被声明为指向常量字符的指针（const char</em>），这意味着你不能通过 pcc 修改它指向的值。</p>
+</li>
+<li><p>pcc &#x3D; <em>pcp; &#x2F;&#x2F; valid?<br>这是有效的。pcc 是一个指向字符的指针，pcp 是一个指向 argv 数组第一个元素（即指向 char 的指针）的指针。因此，</em>pcp 是 char* 类型，可以赋值给 pcc。</p>
+</li>
+<li><p>pcc &#x3D; argv[0]; &#x2F;&#x2F; valid?<br>这也是有效的。argv[0] 是 char* 类型，它指向传递给程序的第一个命令行参数。</p>
+</li>
+<li><p>cp &#x3D; <em>pcp; &#x2F;&#x2F; invalid?<br>这是无效的。cp 被声明为 const 指针（char</em> const），意味着一旦它被初始化指向一个地址，你就不能更改它指向的地址。</p>
+</li>
+<li><p>cp &#x3D; *argv; &#x2F;&#x2F; invalid?<br>同上，这也是无效的，因为 cp 是一个常量指针。</p>
+</li>
+<li><p>*cp &#x3D; !; &#x2F;&#x2F; valid?<br>这是有效的。尽管 cp 是一个常量指针，它仍然可以修改其指向的内容，只是不能改变指向的地址。</p>
+</li>
+<li><p>cpc &#x3D; <em>pcp; &#x2F;&#x2F; invalid? 和 cpc &#x3D; argv[0]; &#x2F;&#x2F; invalid?<br>这两个都是无效的。cpc 被声明为指向常量字符的常量指针（const char</em> const），意味着既不能更改指向的地址，也不能通过它修改指向的内容。</p>
+</li>
+<li><p>*cpc &#x3D; @; &#x2F;&#x2F; invalid?<br>这是无效的。由于 cpc 指向一个常量字符，所以不能通过它来修改所指向的值。</p>
+</li>
+</ol>
+<h2 id="Write-up-3-分析各种类型及其指针的大小"><a href="#Write-up-3-分析各种类型及其指针的大小" class="headerlink" title="Write-up 3: 分析各种类型及其指针的大小"></a>Write-up 3: 分析各种类型及其指针的大小</h2><p>在我完成的 sizes.c 练习中，我成功编译并运行了程序，它输出了各种数据类型及其指针的大小。以下是主要发现：</p>
+<ol>
+<li><p>基本类型及其指针的大小：<br>int 类型大小为 4 字节，其指针大小为 8 字节。<br>short 类型为 2 字节，指针为 8 字节。<br>long 类型为 8 字节，指针同样为 8 字节。<br>类似地，char, float, double, unsigned int, long long 的大小分别为 1, 4, 8, 4, 8 字节，它们的指针大小均为 8 字节。</p>
+</li>
+<li><p>特定类型及其指针的大小：<br>对于 uint8_t, uint16_t, uint32_t, uint64_t 等类型，大小分别为 1, 2, 4, 8 字节，指针大小均为 8 字节。<br>uint_fast8_t, uint_fast16_t, uintmax_t, intmax_t 类型的大小为 1, 8, 8, 8 字节，指针大小也为 8 字节。<br>对于 Clang 特有的 __int128 类型，大小为 16 字节，指针大小为 8 字节。</p>
+</li>
+<li><p>复合类型及其指针的大小：<br>自定义的 student 结构体大小为 8 字节，其指针大小为 8 字节。</p>
+</li>
+<li><p>数组及其指针的大小：<br>对于声明的 int x[5] 数组，大小为 20 字节（因为它包含 5 个 int 类型元素），而指向该数组的指针大小为 8 字节。</p>
+</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12124.png"
+                      alt="21020007074-普典衡-hw12124"
+                ></p>
+<p>这些结果反映了在我的系统（一个 64 位系统）上，大多数指针类型的大小均为 8 字节，这是因为在 64 位系统上指针通常占用 8 字节的内存空间。这些信息对于理解不同数据类型在内存中如何分配和使用非常重要，尤其是在进行性能优化和内存管理时。</p>
+<h2 id="Write-up-4-修改-Swap-c-函数"><a href="#Write-up-4-修改-Swap-c-函数" class="headerlink" title="Write-up 4: 修改 Swap.c 函数"></a>Write-up 4: 修改 Swap.c 函数</h2><p>在原始的程序中，swap 函数的问题在于它试图交换两个整数，但是由于 C 中的参数是按值传递的，所以 swap 函数实际上是在操作传入值的副本，而不是原始变量本身。因此，当 swap 函数执行完毕后，原始变量 k 和 m 的值并未发生改变。</p>
+<p>为了修正这个问题，需要修改 swap 函数，让它接受指向整数的指针，这样就可以直接修改传入变量的值。下面是修改后的 swap.c 程序：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12342.png"
+                      alt="21020007074-普典衡-hw12342"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12343.png"
+                      alt="21020007074-普典衡-hw12343"
+                ></p>
+<p>在这个版本中，swap 函数现在接受两个指向整数的指针。函数内部，通过解引用这些指针（使用 *i 和 *j）来访问和修改它们指向的实际值。在 main 函数中，通过传递 k 和 m 的地址（使用 &amp;k 和 &amp;m）来调用 swap 函数。</p>
+<p>现在，当 swap 函数被调用时，它将修改 k 和 m 所指向的实际内存位置的值，从而实现了真正的交换。因此，当程序执行完毕后，打印的 k 和 m 的值将反映出它们被交换了。</p>
+<h2 id="Write-up-5-修改-Makefile"><a href="#Write-up-5-修改-Makefile" class="headerlink" title="Write-up 5: 修改 Makefile"></a>Write-up 5: 修改 Makefile</h2><p>在这个练习中，我修改了 Makefile，将编译优化级别从 -O1 改为 -O3。这导致了更高级别的代码优化。当我运行 make clean; make 时：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12658.png"
+                      alt="21020007074-普典衡-hw12658"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12659.png"
+                      alt="21020007074-普典衡-hw12659"
+                ></p>
+<p>更改优化级别从 -O1 到 -O3 的确可以影响程序的性能和行为，尽管这种影响可能不是立即显而易见的。在 -O3 优化级别下，编译器执行更多的代码优化，这可能包括循环展开、内联函数等。这些优化可以提高程序的运行速度，但有时也可能导致意外的副作用，尤其是在复杂的程序中。</p>
+<h2 id="Write-up-6-AddressSanitizer-的输出"><a href="#Write-up-6-AddressSanitizer-的输出" class="headerlink" title="Write-up 6: AddressSanitizer 的输出"></a>Write-up 6: AddressSanitizer 的输出</h2><p>使用 AddressSanitizer 后，我注意到程序报告了一些内存错误。这些错误包括未初始化的变量使用和潜在的内存泄漏。AddressSanitizer 的输出帮助我快速定位和修复这些问题，这对于保持代码的健壮性至关重要。<br>输出，它报告了一个 heap-buffer-overflow 错误。这表明程序试图访问分配的堆内存区域之外的内存，这是一种常见的内存错误。错误发生在 matrix_multiply_run 函数内，特别是在执行 C-&gt;values[i][j] +&#x3D; A-&gt;values[i][k] * B-&gt;values[k][j]; 这行代码时。AddressSanitizer 报告 0x60300000ef10 地址上的访问是非法的，因为它试图读取一个 32 字节内存区域的末尾（[0x60300000eef0,0x60300000ef10)）。<br>此外，错误还提示 heap-buffer-overflow 发生在分配的堆内存区域的右侧边界，这可能表明数组访问中的“越界”问题。可能需要重新审视数组分配和索引的逻辑，确保没有越界访问。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13308.png"
+                      alt="21020007074-普典衡-hw13308"
+                ></p>
+<h2 id="Write-up-7-修复-Matrix-Multiply-后的输出"><a href="#Write-up-7-修复-Matrix-Multiply-后的输出" class="headerlink" title="Write-up 7: 修复 Matrix Multiply 后的输出"></a>Write-up 7: 修复 Matrix Multiply 后的输出</h2><p>基于 Valgrind 的输出和提供的代码，我注意到可能的问题是在 matrix_multiply_run 函数中，每个元素 C-&gt;values[i][j] 在累加之前没有被初始化为零。这可能导致未定义行为，因为在默认情况下，动态分配的内存不会被自动初始化。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13476.png"
+                      alt="21020007074-普典衡-hw13476"
+                ></p>
+<p>为了修复这个问题，在开始累加之前将 C 矩阵的每个元素初始化为零。这可以通过在 make_matrix 函数中添加代码来实现。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13542.png"
+                      alt="21020007074-普典衡-hw13542"
+                ></p>
+<p>后来发现testbed.c中初始化的是A（4x5）与B（4x4）相乘不符合矩阵乘法规律，将A改为4x4：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13597.png"
+                      alt="21020007074-普典衡-hw13597"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13599.png"
+                      alt="21020007074-普典衡-hw13599"
+                ></p>
+<p>在修复 matrix_multiply.c 之后，我再次运行程序，并注意到程序现在能够成功执行并打印出正确的结果。</p>
+<h2 id="Write-up-8-Valgrind-的输出"><a href="#Write-up-8-Valgrind-的输出" class="headerlink" title="Write-up 8: Valgrind 的输出"></a>Write-up 8: Valgrind 的输出</h2><p>根据 Valgrind 的输出，程序中存在内存泄漏，主要来源于未正确释放分配给矩阵 A、B 和 C 的内存。为了解决这个问题，要在 main 函数的末尾调用 free_matrix 函数来释放这些矩阵的内存。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13791.png"
+                      alt="21020007074-普典衡-hw13791"
+                ></p>
+<p>在计算完成并打印结果后，添加以下代码来释放矩阵内存：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13820.png"
+                      alt="21020007074-普典衡-hw13820"
+                ></p>
+<p>正常运行：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13828.png"
+                      alt="21020007074-普典衡-hw13828"
+                ></p>
+<h2 id="Write-up-9-性能优化前后的执行时间"><a href="#Write-up-9-性能优化前后的执行时间" class="headerlink" title="Write-up 9: 性能优化前后的执行时间"></a>Write-up 9: 性能优化前后的执行时间</h2><p>为了评估性能优化的效果，我首先记录了原始程序的执行时间。然后，我调整了矩阵乘法的循环顺序，以提高内存访问的效率。优化后，我注意到程序的执行时间显著减少，这表明优化是成功的。<br>交换了 j 和 k 循环的顺序，这样可以在遍历 B 矩阵时实现更好的顺序访问。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13983.png"
+                      alt="21020007074-普典衡-hw13983"
+                ></p>
+<p>从2.51秒左右优化到0.68秒左右</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14005.png"
+                      alt="21020007074-普典衡-hw14005"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14008.png"
+                      alt="21020007074-普典衡-hw14008"
+                ></p>
+<h2 id="Write-up-10-编译优化的影响"><a href="#Write-up-10-编译优化的影响" class="headerlink" title="Write-up 10: 编译优化的影响"></a>Write-up 10: 编译优化的影响</h2><p>最后，我比较了在不同编译优化级别下程序的执行时间。在 -O0（无优化）下编译时，程序运行较慢。然而，在使用 -O3（高级优化）编译后，程序的执行速度明显提升。这强调了编译器优化在软件性能工程中的重要性。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14135.png"
+                      alt="21020007074-普典衡-hw14135"
+                ></p>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>软件性能工程</category>
+        <category>MIT作业</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>作业报告</tag>
+        <tag>软件性能工程</tag>
       </tags>
   </entry>
   <entry>
@@ -1939,127 +2120,10 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
         <category>OpenGL</category>
       </categories>
       <tags>
+        <tag>课程项目</tag>
         <tag>作品集</tag>
         <tag>OpenGL</tag>
-        <tag>微信小游戏</tag>
         <tag>技术报告</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++——经典游戏《潜艇大战》改编练习</title>
-    <url>/2024/03/12/c/</url>
-    <content><![CDATA[<h2 id="原版效果："><a href="#原版效果：" class="headerlink" title="原版效果："></a>原版效果：</h2><h3 id="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："><a href="#依靠鼠标点击去炸毁潜艇得分，类似打地鼠：" class="headerlink" title="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："></a>依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif"
-                      alt="ShipDemo_old"
-                ></p>
-<h2 id="改编效果："><a href="#改编效果：" class="headerlink" title="改编效果："></a>改编效果：</h2><h3 id="靠船左右移动投炸弹炸毁潜艇得分："><a href="#靠船左右移动投炸弹炸毁潜艇得分：" class="headerlink" title="靠船左右移动投炸弹炸毁潜艇得分："></a>靠船左右移动投炸弹炸毁潜艇得分：</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_new.gif"
-                      alt="ShipDemo_new"
-                ></p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本报告详细分析了《潜艇大战》游戏从原版到改编版本中的关键代码变化。原版游戏的核心玩法是使用鼠标点击来炸毁潜艇并得分，类似于“打地鼠”的游戏模式。改编版本则通过控制船的左右移动并投掷炸弹来炸毁潜艇以得分。</p>
-<h2 id="1-核心视图类-CChildView-类分析"><a href="#1-核心视图类-CChildView-类分析" class="headerlink" title="1. 核心视图类 (CChildView) 类分析"></a>1. 核心视图类 (<code>CChildView</code>) 类分析</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p><code>CChildView</code> 类是《潜艇大战》游戏的核心视图类，负责管理游戏对象、处理用户输入、绘制游戏界面等。</p>
-<h3 id="OnTimer-方法分析"><a href="#OnTimer-方法分析" class="headerlink" title="OnTimer 方法分析"></a><code>OnTimer</code> 方法分析</h3><h4 id="创建和管理潜艇"><a href="#创建和管理潜艇" class="headerlink" title="创建和管理潜艇"></a>创建和管理潜艇</h4><p><strong>潜艇创建逻辑</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(nCreator==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    m_Objects.<span class="built_in">AddTail</span>(<span class="keyword">new</span> <span class="built_in">CSubmarine</span>(<span class="built_in">random</span>(<span class="number">2</span>)%<span class="number">2</span>?<span class="literal">true</span>:<span class="literal">false</span>, <span class="built_in">random</span>(GAME_HEIGHT-SHIP_VERT_POS-SHIP_HEIGHT*<span class="number">2</span><span class="number">-30</span>)+SHIP_VERT_POS+SHIP_HEIGHT+<span class="number">30</span>, <span class="built_in">random</span>(<span class="number">4</span>), <span class="built_in">random</span>(<span class="number">4</span>)+<span class="number">3</span>));</span><br><span class="line">    nCreator = <span class="built_in">random</span>(<span class="number">50</span>) + <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li><code>nCreator</code> 用于控制潜艇生成的时间间隔。当它变为 0，代码会创建一个新的 <code>CSubmarine</code> 对象并将其添加到游戏对象列表 <code>m_Objects</code>。</li>
-<li>每个潜艇的位置、类型和速度都是随机生成的，提供了游戏的可变性和挑战性。</li>
-</ul>
-<p><strong>潜艇管理逻辑</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">POSITION pos1, pos2;</span><br><span class="line"><span class="keyword">for</span>(pos1=m_Objects.<span class="built_in">GetHeadPosition</span>(); (pos2=pos1)!=<span class="literal">NULL</span>;)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(((CMyObject*)m_Objects.<span class="built_in">GetNext</span>(pos1))-&gt;<span class="built_in">Draw</span>(&amp;m_VirtualDC, m_bGamePause))</span><br><span class="line">    &#123;</span><br><span class="line">        pLastObj = m_Objects.<span class="built_in">GetAt</span>(pos2);</span><br><span class="line">        m_Objects.<span class="built_in">RemoveAt</span>(pos2);</span><br><span class="line">        <span class="keyword">delete</span> pLastObj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>这段代码遍历 <code>m_Objects</code> 中的所有游戏对象，并对它们调用 <code>Draw</code> 方法。</li>
-<li>如果 <code>Draw</code> 方法返回 <code>true</code>，表明对象（如潜艇）需要被移除。这通常在对象（如潜艇被击中或移动出屏幕）结束其生命周期时发生。</li>
-</ul>
-<h4 id="游戏画面渲染"><a href="#游戏画面渲染" class="headerlink" title="游戏画面渲染"></a>游戏画面渲染</h4><p><strong>背景绘制</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, SKY_COLOR);</span><br><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, GAME_WIDTH, GAME_HEIGHT, SEA_COLOR);</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>这里使用 <code>FillSolidRect</code> 在虚拟设备上下文 <code>m_VirtualDC</code> 上绘制天空和海洋背景。</li>
-<li><code>SKY_COLOR</code> 和 <code>SEA_COLOR</code> 定义了天空和海洋的颜色。</li>
-</ul>
-<p><strong>最终渲染到屏幕</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">dc.<span class="built_in">BitBlt</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, GAME_HEIGHT, &amp;m_VirtualDC, <span class="number">0</span>, <span class="number">0</span>, SRCCOPY);</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>使用 <code>BitBlt</code> 方法将虚拟设备上下文的内容传输到实际的屏幕上下文。</li>
-<li>这种方法可以避免闪烁并提高绘图效率。</li>
-</ul>
-<h4 id="其他重要逻辑"><a href="#其他重要逻辑" class="headerlink" title="其他重要逻辑"></a>其他重要逻辑</h4><p><strong>游戏暂停功能</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(m_bGamePause) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>控制游戏暂停。当 <code>m_bGamePause</code> 为 <code>true</code> 时，<code>OnTimer</code> 将提前返回，不执行任何游戏更新逻辑。</li>
-</ul>
-<p><strong>潜艇生成计数器更新</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">nCreator--;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li><code>nCreator</code> 每次 <code>OnTimer</code> 被调用时递减，控制潜艇的生成频率。</li>
-</ul>
-<p>总结来说，<code>OnTimer</code> 方法是游戏的心脏，负责潜艇的生成和管理、游戏画面的更新和渲染，以及控制游戏的暂停和继续。这个方法充分展示了游戏循环的典型结构，包括对象管理、状态更新和画面渲染。</p>
-<h2 id="2-潜艇类-CSubmarine-的变更"><a href="#2-潜艇类-CSubmarine-的变更" class="headerlink" title="2. 潜艇类 (CSubmarine) 的变更"></a>2. 潜艇类 (<code>CSubmarine</code>) 的变更</h2><h3 id="原版"><a href="#原版" class="headerlink" title="原版"></a>原版</h3><p>在原版中，<code>CSubmarine</code> 类主要负责潜艇的初始化、移动、绘图和销毁。这个类使用了 <code>CImageList</code> 来处理潜艇的图像。潜艇的移动是基于它们的方向 (<code>m_bDirect</code>) 和速度 (<code>m_nSpeed</code>)。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CSubmarine::<span class="built_in">CSubmarine</span>(<span class="type">bool</span> bDir, <span class="type">int</span> nVert, <span class="type">int</span> nType, <span class="type">int</span> nSpeed)</span><br><span class="line">&#123;</span><br><span class="line">    m_bDirect = bDir;</span><br><span class="line">    m_ptPos.x = m_bDirect ? GAME_WIDTH : -SUBMARINE_WIDTH;</span><br><span class="line">    m_ptPos.y = nVert;</span><br><span class="line">    <span class="comment">// ...[其他初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="改编版本"><a href="#改编版本" class="headerlink" title="改编版本"></a>改编版本</h3><p>在改版中，<code>CSubmarine</code> 类增加了 <code>GetRect()</code> 方法，用于获取潜艇的碰撞箱。这是为了适应游戏中的新机制，如导弹与潜艇的碰撞检测。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CSubmarine::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + SubmarineWidth, m_ptPos.y + SubmarineHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="3-新增导弹类-CMissile"><a href="#3-新增导弹类-CMissile" class="headerlink" title="3. 新增导弹类 (CMissile)"></a>3. 新增导弹类 (<code>CMissile</code>)</h2><p>在改编版本中，新增了导弹类 <code>CMissile</code>。这一变化扩展了游戏的交互性和复杂度。</p>
-<h3 id="原版-1"><a href="#原版-1" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中没有导弹类的概念。</p>
-<h3 id="改编版本-1"><a href="#改编版本-1" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中添加了 <code>CMissile</code> 类，并在主游戏循环中处理导弹的移动和碰撞检测。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">typeid</span>(*pObj) == <span class="built_in">typeid</span>(CMissile))</span><br><span class="line">&#123;</span><br><span class="line">    CMissile* pMissile = (CMissile*)pObj;</span><br><span class="line">    pMissile-&gt;<span class="built_in">Move</span>(); <span class="comment">// 移动导弹</span></span><br><span class="line">    <span class="comment">// ... [碰撞检测和处理代码] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li><p><strong>构造函数</strong>：初始化导弹的位置和生命周期。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CMissile::<span class="built_in">CMissile</span>(CPoint ptPos) : <span class="built_in">CMyObject</span>(ptPos)</span><br><span class="line">&#123;</span><br><span class="line">    m_nLifetime = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// ...[初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong><code>Move</code> 方法</strong>：控制导弹的移动。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMissile::Move</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_ptPos.y += <span class="number">20</span>;  <span class="comment">// ...[移动逻辑]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong><code>GetRect</code> 方法</strong>：为碰撞检测提供导弹的矩形区域。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CMissile::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + MissileWidth, m_ptPos.y + MissileHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong>导弹图像处理</strong>：使用 GDI+ 从资源加载 PNG 图片并创建图像列表。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">CMissile::LoadImage</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...[加载和处理 PNG 图片的代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
-</ul>
-<h2 id="4-控制机制的改变"><a href="#4-控制机制的改变" class="headerlink" title="4. 控制机制的改变"></a>4. 控制机制的改变</h2><h3 id="原版-2"><a href="#原版-2" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中，玩家通过鼠标点击潜艇位置来摧毁它们。这是通过 <code>OnLButtonDown</code> 函数实现的：</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnLButtonDown</span><span class="params">(UINT nFlags, CPoint point)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">if</span>(pSub-&gt;<span class="built_in">GetRect</span>().<span class="built_in">PtInRect</span>(point))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建爆炸和计分</span></span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">delete</span> pSub;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="改编版本-2"><a href="#改编版本-2" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本引入了键盘控制。通过 <code>OnKeyDown</code> 函数，玩家可以通过左右键移动船，并用空格键发射导弹。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnKeyDown</span><span class="params">(UINT nChar, UINT nRepCnt, UINT nFlags)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (nChar == VK_SPACE || nChar == VK_RETURN) <span class="comment">// 发射导弹</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">if</span> (!missileExists)</span><br><span class="line">        &#123;</span><br><span class="line">            CMissile* pMissile = <span class="keyword">new</span> <span class="built_in">CMissile</span>(<span class="built_in">CPoint</span>(shipPos.x, SHIP_VERT_POS));</span><br><span class="line">            m_Objects.<span class="built_in">AddTail</span>(pMissile);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="5-分数统计的变更"><a href="#5-分数统计的变更" class="headerlink" title="5. 分数统计的变更"></a>5. 分数统计的变更</h2><p>为了适应新的游戏玩法，分数统计方式也做了调整。</p>
-<h3 id="原版-3"><a href="#原版-3" class="headerlink" title="原版"></a>原版</h3><p>原版游戏仅在鼠标点击潜艇时计分。</p>
-<h3 id="改编版本-3"><a href="#改编版本-3" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中，分数统计不仅包括击毁潜艇的分数，还统计了击毁的潜艇数量。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">m_nTotalScore += pScore-&gt;<span class="built_in">GetScoreValue</span>(); <span class="comment">// 累加分数</span></span><br><span class="line">++m_nDestroyedSubmarines;  <span class="comment">// 增加被击毁的潜艇数量</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="6-界面信息显示的改进"><a href="#6-界面信息显示的改进" class="headerlink" title="6. 界面信息显示的改进"></a>6. 界面信息显示的改进</h2><p>改编版本在界面上添加了更多的信息显示，如总潜艇数、击毁潜艇数等，增强了游戏的可玩性和信息反馈。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CString destroyedString;</span><br><span class="line">destroyedString.<span class="built_in">Format</span>(<span class="string">&quot;击毁潜艇数: %d&quot;</span>, m_nDestroyedSubmarines);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(<span class="number">130</span>, <span class="number">10</span>, destroyedString); <span class="comment">// 显示击毁潜艇数</span></span><br><span class="line"></span><br><span class="line">CString scoreString;</span><br><span class="line">scoreString.<span class="built_in">Format</span>(<span class="string">&quot;总分: %d&quot;</span>, m_nTotalScore);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(GAME_WIDTH - <span class="number">100</span>, <span class="number">10</span>, scoreString); <span class="comment">// 显示总分</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参与《潜艇大战》游戏的改编过程，我在游戏开发方面获得了实质性的技能提升。通过这个项目，我学到了以下几个关键的技术点：</p>
-<ol>
-<li><strong>交互控制的实现</strong>：通过替换原有的鼠标点击控制为键盘控制，我学会了如何处理和响应键盘事件。这提高了我的能力，使我能够在未来的项目中灵活地设计和实现用户交互。</li>
-<li><strong>游戏逻辑的编写</strong>：在实现导弹发射和移动的逻辑时，我加深了对游戏循环和对象状态管理的理解。这对于理解如何构建游戏的动态元素和保持其连贯性非常有帮助。</li>
-<li><strong>碰撞检测的处理</strong>：实现导弹和潜艇之间的碰撞检测增强了我在游戏物理和交互方面的技术知识，这在很多游戏开发项目中都是一个核心技能。</li>
-<li><strong>图形和用户界面的更新</strong>：改进游戏的界面显示，例如增加得分和击毁潜艇数的显示，让我更加熟悉了图形界面的编程和数据可视化。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>游戏开发</category>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>项目报告</tag>
-        <tag>作品集</tag>
-        <tag>《潜艇大战》</tag>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -2323,10 +2387,10 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </categories>
       <tags>
         <tag>作品集</tag>
-        <tag>微信小游戏</tag>
         <tag>技术报告</tag>
         <tag>《让蛋仔飞》</tag>
         <tag>Unity</tag>
+        <tag>微信小游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -2477,13 +2541,13 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       <tags>
         <tag>项目报告</tag>
         <tag>作品集</tag>
-        <tag>微信小游戏</tag>
         <tag>《让蛋仔飞》</tag>
         <tag>Unity</tag>
+        <tag>微信小游戏</tag>
       </tags>
   </entry>
   <entry>
-    <title>图像处理与分析——实验一：数字图像处理相关软件学习</title>
+    <title>图像处理与分析——实验一-数字图像处理相关软件学习</title>
     <url>/2024/03/20/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>Python是干啥的？</p>
 <p>BMP图像的结构是什么样的？</p>
@@ -2668,7 +2732,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>图像处理与分析——实验二：空间域的图像增强</title>
+    <title>图像处理与分析——实验二-空间域的图像增强</title>
     <url>/2024/04/10/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/</url>
     <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现： </p>
 <p>1. </p>
@@ -2961,6 +3025,122 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
         <tag>课程项目</tag>
         <tag>作业报告</tag>
         <tag>图像处理与分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++——经典游戏《潜艇大战》改编练习</title>
+    <url>/2024/03/12/c/</url>
+    <content><![CDATA[<h2 id="原版效果："><a href="#原版效果：" class="headerlink" title="原版效果："></a>原版效果：</h2><h3 id="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："><a href="#依靠鼠标点击去炸毁潜艇得分，类似打地鼠：" class="headerlink" title="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："></a>依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif"
+                      alt="ShipDemo_old"
+                ></p>
+<h2 id="改编效果："><a href="#改编效果：" class="headerlink" title="改编效果："></a>改编效果：</h2><h3 id="靠船左右移动投炸弹炸毁潜艇得分："><a href="#靠船左右移动投炸弹炸毁潜艇得分：" class="headerlink" title="靠船左右移动投炸弹炸毁潜艇得分："></a>靠船左右移动投炸弹炸毁潜艇得分：</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_new.gif"
+                      alt="ShipDemo_new"
+                ></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本报告详细分析了《潜艇大战》游戏从原版到改编版本中的关键代码变化。原版游戏的核心玩法是使用鼠标点击来炸毁潜艇并得分，类似于“打地鼠”的游戏模式。改编版本则通过控制船的左右移动并投掷炸弹来炸毁潜艇以得分。</p>
+<h2 id="1-核心视图类-CChildView-类分析"><a href="#1-核心视图类-CChildView-类分析" class="headerlink" title="1. 核心视图类 (CChildView) 类分析"></a>1. 核心视图类 (<code>CChildView</code>) 类分析</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p><code>CChildView</code> 类是《潜艇大战》游戏的核心视图类，负责管理游戏对象、处理用户输入、绘制游戏界面等。</p>
+<h3 id="OnTimer-方法分析"><a href="#OnTimer-方法分析" class="headerlink" title="OnTimer 方法分析"></a><code>OnTimer</code> 方法分析</h3><h4 id="创建和管理潜艇"><a href="#创建和管理潜艇" class="headerlink" title="创建和管理潜艇"></a>创建和管理潜艇</h4><p><strong>潜艇创建逻辑</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(nCreator==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    m_Objects.<span class="built_in">AddTail</span>(<span class="keyword">new</span> <span class="built_in">CSubmarine</span>(<span class="built_in">random</span>(<span class="number">2</span>)%<span class="number">2</span>?<span class="literal">true</span>:<span class="literal">false</span>, <span class="built_in">random</span>(GAME_HEIGHT-SHIP_VERT_POS-SHIP_HEIGHT*<span class="number">2</span><span class="number">-30</span>)+SHIP_VERT_POS+SHIP_HEIGHT+<span class="number">30</span>, <span class="built_in">random</span>(<span class="number">4</span>), <span class="built_in">random</span>(<span class="number">4</span>)+<span class="number">3</span>));</span><br><span class="line">    nCreator = <span class="built_in">random</span>(<span class="number">50</span>) + <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><code>nCreator</code> 用于控制潜艇生成的时间间隔。当它变为 0，代码会创建一个新的 <code>CSubmarine</code> 对象并将其添加到游戏对象列表 <code>m_Objects</code>。</li>
+<li>每个潜艇的位置、类型和速度都是随机生成的，提供了游戏的可变性和挑战性。</li>
+</ul>
+<p><strong>潜艇管理逻辑</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">POSITION pos1, pos2;</span><br><span class="line"><span class="keyword">for</span>(pos1=m_Objects.<span class="built_in">GetHeadPosition</span>(); (pos2=pos1)!=<span class="literal">NULL</span>;)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(((CMyObject*)m_Objects.<span class="built_in">GetNext</span>(pos1))-&gt;<span class="built_in">Draw</span>(&amp;m_VirtualDC, m_bGamePause))</span><br><span class="line">    &#123;</span><br><span class="line">        pLastObj = m_Objects.<span class="built_in">GetAt</span>(pos2);</span><br><span class="line">        m_Objects.<span class="built_in">RemoveAt</span>(pos2);</span><br><span class="line">        <span class="keyword">delete</span> pLastObj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>这段代码遍历 <code>m_Objects</code> 中的所有游戏对象，并对它们调用 <code>Draw</code> 方法。</li>
+<li>如果 <code>Draw</code> 方法返回 <code>true</code>，表明对象（如潜艇）需要被移除。这通常在对象（如潜艇被击中或移动出屏幕）结束其生命周期时发生。</li>
+</ul>
+<h4 id="游戏画面渲染"><a href="#游戏画面渲染" class="headerlink" title="游戏画面渲染"></a>游戏画面渲染</h4><p><strong>背景绘制</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, SKY_COLOR);</span><br><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, GAME_WIDTH, GAME_HEIGHT, SEA_COLOR);</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>这里使用 <code>FillSolidRect</code> 在虚拟设备上下文 <code>m_VirtualDC</code> 上绘制天空和海洋背景。</li>
+<li><code>SKY_COLOR</code> 和 <code>SEA_COLOR</code> 定义了天空和海洋的颜色。</li>
+</ul>
+<p><strong>最终渲染到屏幕</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">dc.<span class="built_in">BitBlt</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, GAME_HEIGHT, &amp;m_VirtualDC, <span class="number">0</span>, <span class="number">0</span>, SRCCOPY);</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>使用 <code>BitBlt</code> 方法将虚拟设备上下文的内容传输到实际的屏幕上下文。</li>
+<li>这种方法可以避免闪烁并提高绘图效率。</li>
+</ul>
+<h4 id="其他重要逻辑"><a href="#其他重要逻辑" class="headerlink" title="其他重要逻辑"></a>其他重要逻辑</h4><p><strong>游戏暂停功能</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(m_bGamePause) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>控制游戏暂停。当 <code>m_bGamePause</code> 为 <code>true</code> 时，<code>OnTimer</code> 将提前返回，不执行任何游戏更新逻辑。</li>
+</ul>
+<p><strong>潜艇生成计数器更新</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">nCreator--;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><code>nCreator</code> 每次 <code>OnTimer</code> 被调用时递减，控制潜艇的生成频率。</li>
+</ul>
+<p>总结来说，<code>OnTimer</code> 方法是游戏的心脏，负责潜艇的生成和管理、游戏画面的更新和渲染，以及控制游戏的暂停和继续。这个方法充分展示了游戏循环的典型结构，包括对象管理、状态更新和画面渲染。</p>
+<h2 id="2-潜艇类-CSubmarine-的变更"><a href="#2-潜艇类-CSubmarine-的变更" class="headerlink" title="2. 潜艇类 (CSubmarine) 的变更"></a>2. 潜艇类 (<code>CSubmarine</code>) 的变更</h2><h3 id="原版"><a href="#原版" class="headerlink" title="原版"></a>原版</h3><p>在原版中，<code>CSubmarine</code> 类主要负责潜艇的初始化、移动、绘图和销毁。这个类使用了 <code>CImageList</code> 来处理潜艇的图像。潜艇的移动是基于它们的方向 (<code>m_bDirect</code>) 和速度 (<code>m_nSpeed</code>)。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CSubmarine::<span class="built_in">CSubmarine</span>(<span class="type">bool</span> bDir, <span class="type">int</span> nVert, <span class="type">int</span> nType, <span class="type">int</span> nSpeed)</span><br><span class="line">&#123;</span><br><span class="line">    m_bDirect = bDir;</span><br><span class="line">    m_ptPos.x = m_bDirect ? GAME_WIDTH : -SUBMARINE_WIDTH;</span><br><span class="line">    m_ptPos.y = nVert;</span><br><span class="line">    <span class="comment">// ...[其他初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="改编版本"><a href="#改编版本" class="headerlink" title="改编版本"></a>改编版本</h3><p>在改版中，<code>CSubmarine</code> 类增加了 <code>GetRect()</code> 方法，用于获取潜艇的碰撞箱。这是为了适应游戏中的新机制，如导弹与潜艇的碰撞检测。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CSubmarine::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + SubmarineWidth, m_ptPos.y + SubmarineHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="3-新增导弹类-CMissile"><a href="#3-新增导弹类-CMissile" class="headerlink" title="3. 新增导弹类 (CMissile)"></a>3. 新增导弹类 (<code>CMissile</code>)</h2><p>在改编版本中，新增了导弹类 <code>CMissile</code>。这一变化扩展了游戏的交互性和复杂度。</p>
+<h3 id="原版-1"><a href="#原版-1" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中没有导弹类的概念。</p>
+<h3 id="改编版本-1"><a href="#改编版本-1" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中添加了 <code>CMissile</code> 类，并在主游戏循环中处理导弹的移动和碰撞检测。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">typeid</span>(*pObj) == <span class="built_in">typeid</span>(CMissile))</span><br><span class="line">&#123;</span><br><span class="line">    CMissile* pMissile = (CMissile*)pObj;</span><br><span class="line">    pMissile-&gt;<span class="built_in">Move</span>(); <span class="comment">// 移动导弹</span></span><br><span class="line">    <span class="comment">// ... [碰撞检测和处理代码] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li><p><strong>构造函数</strong>：初始化导弹的位置和生命周期。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CMissile::<span class="built_in">CMissile</span>(CPoint ptPos) : <span class="built_in">CMyObject</span>(ptPos)</span><br><span class="line">&#123;</span><br><span class="line">    m_nLifetime = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// ...[初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong><code>Move</code> 方法</strong>：控制导弹的移动。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMissile::Move</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_ptPos.y += <span class="number">20</span>;  <span class="comment">// ...[移动逻辑]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong><code>GetRect</code> 方法</strong>：为碰撞检测提供导弹的矩形区域。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CMissile::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + MissileWidth, m_ptPos.y + MissileHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>导弹图像处理</strong>：使用 GDI+ 从资源加载 PNG 图片并创建图像列表。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">CMissile::LoadImage</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...[加载和处理 PNG 图片的代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h2 id="4-控制机制的改变"><a href="#4-控制机制的改变" class="headerlink" title="4. 控制机制的改变"></a>4. 控制机制的改变</h2><h3 id="原版-2"><a href="#原版-2" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中，玩家通过鼠标点击潜艇位置来摧毁它们。这是通过 <code>OnLButtonDown</code> 函数实现的：</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnLButtonDown</span><span class="params">(UINT nFlags, CPoint point)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">if</span>(pSub-&gt;<span class="built_in">GetRect</span>().<span class="built_in">PtInRect</span>(point))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建爆炸和计分</span></span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">delete</span> pSub;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="改编版本-2"><a href="#改编版本-2" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本引入了键盘控制。通过 <code>OnKeyDown</code> 函数，玩家可以通过左右键移动船，并用空格键发射导弹。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnKeyDown</span><span class="params">(UINT nChar, UINT nRepCnt, UINT nFlags)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (nChar == VK_SPACE || nChar == VK_RETURN) <span class="comment">// 发射导弹</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">if</span> (!missileExists)</span><br><span class="line">        &#123;</span><br><span class="line">            CMissile* pMissile = <span class="keyword">new</span> <span class="built_in">CMissile</span>(<span class="built_in">CPoint</span>(shipPos.x, SHIP_VERT_POS));</span><br><span class="line">            m_Objects.<span class="built_in">AddTail</span>(pMissile);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="5-分数统计的变更"><a href="#5-分数统计的变更" class="headerlink" title="5. 分数统计的变更"></a>5. 分数统计的变更</h2><p>为了适应新的游戏玩法，分数统计方式也做了调整。</p>
+<h3 id="原版-3"><a href="#原版-3" class="headerlink" title="原版"></a>原版</h3><p>原版游戏仅在鼠标点击潜艇时计分。</p>
+<h3 id="改编版本-3"><a href="#改编版本-3" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中，分数统计不仅包括击毁潜艇的分数，还统计了击毁的潜艇数量。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">m_nTotalScore += pScore-&gt;<span class="built_in">GetScoreValue</span>(); <span class="comment">// 累加分数</span></span><br><span class="line">++m_nDestroyedSubmarines;  <span class="comment">// 增加被击毁的潜艇数量</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="6-界面信息显示的改进"><a href="#6-界面信息显示的改进" class="headerlink" title="6. 界面信息显示的改进"></a>6. 界面信息显示的改进</h2><p>改编版本在界面上添加了更多的信息显示，如总潜艇数、击毁潜艇数等，增强了游戏的可玩性和信息反馈。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">CString destroyedString;</span><br><span class="line">destroyedString.<span class="built_in">Format</span>(<span class="string">&quot;击毁潜艇数: %d&quot;</span>, m_nDestroyedSubmarines);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(<span class="number">130</span>, <span class="number">10</span>, destroyedString); <span class="comment">// 显示击毁潜艇数</span></span><br><span class="line"></span><br><span class="line">CString scoreString;</span><br><span class="line">scoreString.<span class="built_in">Format</span>(<span class="string">&quot;总分: %d&quot;</span>, m_nTotalScore);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(GAME_WIDTH - <span class="number">100</span>, <span class="number">10</span>, scoreString); <span class="comment">// 显示总分</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参与《潜艇大战》游戏的改编过程，我在游戏开发方面获得了实质性的技能提升。通过这个项目，我学到了以下几个关键的技术点：</p>
+<ol>
+<li><strong>交互控制的实现</strong>：通过替换原有的鼠标点击控制为键盘控制，我学会了如何处理和响应键盘事件。这提高了我的能力，使我能够在未来的项目中灵活地设计和实现用户交互。</li>
+<li><strong>游戏逻辑的编写</strong>：在实现导弹发射和移动的逻辑时，我加深了对游戏循环和对象状态管理的理解。这对于理解如何构建游戏的动态元素和保持其连贯性非常有帮助。</li>
+<li><strong>碰撞检测的处理</strong>：实现导弹和潜艇之间的碰撞检测增强了我在游戏物理和交互方面的技术知识，这在很多游戏开发项目中都是一个核心技能。</li>
+<li><strong>图形和用户界面的更新</strong>：改进游戏的界面显示，例如增加得分和击毁潜艇数的显示，让我更加熟悉了图形界面的编程和数据可视化。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>作品集</tag>
+        <tag>技术报告</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
 </search>
