@@ -511,6 +511,185 @@
       </tags>
   </entry>
   <entry>
+    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Alpha冲刺3</title>
+    <url>/2023/12/03/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Alpha%E5%86%B2%E5%88%BA-3-3/</url>
+    <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
+<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
+<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
+<li>普典衡</li>
+<li>司宇萌</li>
+<li>孙文秀</li>
+<li>王诗梦</li>
+<li>王菲</li>
+</ul>
+<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
+<li>过去完成的任务：<ul>
+<li>成功连接前后端，前端上传按钮点击后可以选择图片上传，上传后在前端有显示，并且通过后端将上传图片存储在了images里</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/1.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>进一步优化前端功能与界面，实现新增的转换按钮的功能（与后端对接）</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>前后端连接错误，改正script中的方法后解决</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>对JavaScript与HTML理解更深入，对前端布局理解</li>
+</ul>
+</li>
+</ul>
+<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
+<li>过去完成的任务：<ul>
+<li>增加了一个开始去噪的按钮，配置了ui图像，调整页面，修改按钮的颜色。</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/2.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成前后端的对接工作，将模型接入传送过程，实装相应的按钮和进度条的功能</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>模型未接入</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习前端，学习python语言，了解前后端交互</li>
+</ul>
+</li>
+</ul>
+<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
+<li>过去完成的任务：<ul>
+<li>使用训练的模型对本地图片进行去噪，对模型多次修改以达到期望效果。</li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>继续修改模型，实现输出图片颜色与输入图片相同。</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>刚开始的模型，输入输出图片颜色与原图像不一致，改过之后输入图片正确，但是输出图像不仅模糊，而且没有色彩，这个问题现在依旧没有解决。</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习CNN自动编码器，学习了python语法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
+<li>过去完成的任务：<ul>
+<li>尝试获取前端图片并将其传给模型进行训练，但只完成从前端获取图片存到本地文件夹</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/4.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成前后端对接工作，将模型接入传送过程</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>图片保存路径与预期不符，还无法连接到模型</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习到了一些后端相关知识，学习了python语言，了解前后端交互</li>
+</ul>
+</li>
+</ul>
+<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
+<li>过去完成的任务：<ul>
+<li>进行了前后端的部分对接，目前实现了从前端获取要修复的图片到本地</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/5.png"
+                      alt="5"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>继续完成前后端对接工作，实现将训练好的图片传回给前端</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>前后端对接时出现问题，前端上传的图片无法保存到本地制定文件夹</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习了相关的Python知识，了解前后端对接的基本工作</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
+<li>添加了转换按钮</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/6.png"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/a3/10.jpg"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
+<li><p><strong>时间</strong>：2023.12.3 16:00</p>
+</li>
+<li><p><strong>地点</strong>：图书馆研讨室303</p>
+</li>
+<li><p><strong>内容</strong>：</p>
+<h4 id="1-项目进展概况"><a href="#1-项目进展概况" class="headerlink" title="1. 项目进展概况"></a>1. 项目进展概况</h4><ul>
+<li><strong>前后端连接</strong>：成功实现了前后端的基本连接，使前端可以上传图片，后端可以接收并存储这些图片。</li>
+<li><strong>界面优化</strong>：团队成员对用户界面进行了改进，增加了去噪按钮，并优化了界面的整体布局和视觉效果。</li>
+<li><strong>模型训练与应用</strong>：对去噪模型进行了训练和调整，以便更好地处理上传的图片。</li>
+</ul>
+<h4 id="2-技术难点和解决方案"><a href="#2-技术难点和解决方案" class="headerlink" title="2. 技术难点和解决方案"></a>2. 技术难点和解决方案</h4><ul>
+<li><strong>前后端对接问题</strong>：解决了前后端连接时出现的错误，主要通过调整代码和脚本实现。</li>
+<li><strong>模型集成问题</strong>：正在努力将去噪模型完全集成到前后端流程中，以便实现自动处理上传的图片。</li>
+<li><strong>图像处理问题</strong>：在图像去噪的模型训练中遇到了输出图像颜色和清晰度的问题，团队正在通过调整模型参数和算法来解决这些问题。</li>
+</ul>
+<h4 id="3-后续计划和任务分配"><a href="#3-后续计划和任务分配" class="headerlink" title="3. 后续计划和任务分配"></a>3. 后续计划和任务分配</h4><ul>
+<li><strong>前端功能优化</strong>：继续提升用户界面，包括增加新的功能按钮和改进现有布局。</li>
+<li><strong>模型优化与集成</strong>：继续调整和改进去噪模型，确保模型能够有效集成到整个系统中。</li>
+<li><strong>前后端进一步对接</strong>：加强前后端的协同工作，确保系统的流畅运行，特别是在图像上传和处理方面。</li>
+</ul>
+<p>团队将继续密切协作，确保按时完成项目目标，同时解决任何新出现的技术挑战。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>软件工程</category>
+        <category>云去噪</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>项目报告</tag>
+        <tag>云去噪</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1</title>
     <url>/2023/12/10/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-1-3/</url>
     <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
@@ -679,185 +858,6 @@
 <li>对CNN编码器和去噪算法的认识更加深入，为未来的开发提供了坚实的基础。</li>
 </ul>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体来看，每位成员都在其专长领域作出了积极贡献。虽然面临一些技术挑战，但团队成员通过有效合作，已经取得了显著的进展，并对未来的工作有了清晰的规划和方向。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>软件工程</category>
-        <category>云去噪</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>项目报告</tag>
-        <tag>云去噪</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Alpha冲刺3</title>
-    <url>/2023/12/03/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Alpha%E5%86%B2%E5%88%BA-3-3/</url>
-    <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
-<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
-<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
-<li>普典衡</li>
-<li>司宇萌</li>
-<li>孙文秀</li>
-<li>王诗梦</li>
-<li>王菲</li>
-</ul>
-<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
-<li>过去完成的任务：<ul>
-<li>成功连接前后端，前端上传按钮点击后可以选择图片上传，上传后在前端有显示，并且通过后端将上传图片存储在了images里</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/1.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>进一步优化前端功能与界面，实现新增的转换按钮的功能（与后端对接）</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>前后端连接错误，改正script中的方法后解决</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>对JavaScript与HTML理解更深入，对前端布局理解</li>
-</ul>
-</li>
-</ul>
-<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
-<li>过去完成的任务：<ul>
-<li>增加了一个开始去噪的按钮，配置了ui图像，调整页面，修改按钮的颜色。</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/2.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成前后端的对接工作，将模型接入传送过程，实装相应的按钮和进度条的功能</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>模型未接入</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习前端，学习python语言，了解前后端交互</li>
-</ul>
-</li>
-</ul>
-<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
-<li>过去完成的任务：<ul>
-<li>使用训练的模型对本地图片进行去噪，对模型多次修改以达到期望效果。</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>继续修改模型，实现输出图片颜色与输入图片相同。</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>刚开始的模型，输入输出图片颜色与原图像不一致，改过之后输入图片正确，但是输出图像不仅模糊，而且没有色彩，这个问题现在依旧没有解决。</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习CNN自动编码器，学习了python语法。</li>
-</ul>
-</li>
-</ul>
-<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
-<li>过去完成的任务：<ul>
-<li>尝试获取前端图片并将其传给模型进行训练，但只完成从前端获取图片存到本地文件夹</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/4.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成前后端对接工作，将模型接入传送过程</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>图片保存路径与预期不符，还无法连接到模型</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习到了一些后端相关知识，学习了python语言，了解前后端交互</li>
-</ul>
-</li>
-</ul>
-<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
-<li>过去完成的任务：<ul>
-<li>进行了前后端的部分对接，目前实现了从前端获取要修复的图片到本地</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/5.png"
-                      alt="5"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>继续完成前后端对接工作，实现将训练好的图片传回给前端</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>前后端对接时出现问题，前端上传的图片无法保存到本地制定文件夹</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习了相关的Python知识，了解前后端对接的基本工作</li>
-</ul>
-</li>
-</ul>
-<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
-<li>添加了转换按钮</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/6.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/a3/10.jpg"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
-<li><p><strong>时间</strong>：2023.12.3 16:00</p>
-</li>
-<li><p><strong>地点</strong>：图书馆研讨室303</p>
-</li>
-<li><p><strong>内容</strong>：</p>
-<h4 id="1-项目进展概况"><a href="#1-项目进展概况" class="headerlink" title="1. 项目进展概况"></a>1. 项目进展概况</h4><ul>
-<li><strong>前后端连接</strong>：成功实现了前后端的基本连接，使前端可以上传图片，后端可以接收并存储这些图片。</li>
-<li><strong>界面优化</strong>：团队成员对用户界面进行了改进，增加了去噪按钮，并优化了界面的整体布局和视觉效果。</li>
-<li><strong>模型训练与应用</strong>：对去噪模型进行了训练和调整，以便更好地处理上传的图片。</li>
-</ul>
-<h4 id="2-技术难点和解决方案"><a href="#2-技术难点和解决方案" class="headerlink" title="2. 技术难点和解决方案"></a>2. 技术难点和解决方案</h4><ul>
-<li><strong>前后端对接问题</strong>：解决了前后端连接时出现的错误，主要通过调整代码和脚本实现。</li>
-<li><strong>模型集成问题</strong>：正在努力将去噪模型完全集成到前后端流程中，以便实现自动处理上传的图片。</li>
-<li><strong>图像处理问题</strong>：在图像去噪的模型训练中遇到了输出图像颜色和清晰度的问题，团队正在通过调整模型参数和算法来解决这些问题。</li>
-</ul>
-<h4 id="3-后续计划和任务分配"><a href="#3-后续计划和任务分配" class="headerlink" title="3. 后续计划和任务分配"></a>3. 后续计划和任务分配</h4><ul>
-<li><strong>前端功能优化</strong>：继续提升用户界面，包括增加新的功能按钮和改进现有布局。</li>
-<li><strong>模型优化与集成</strong>：继续调整和改进去噪模型，确保模型能够有效集成到整个系统中。</li>
-<li><strong>前后端进一步对接</strong>：加强前后端的协同工作，确保系统的流畅运行，特别是在图像上传和处理方面。</li>
-</ul>
-<p>团队将继续密切协作，确保按时完成项目目标，同时解决任何新出现的技术挑战。</p>
 </li>
 </ul>
 ]]></content>
@@ -1280,6 +1280,114 @@
       </tags>
   </entry>
   <entry>
+    <title>Blender——建模/动画作品</title>
+    <url>/2023/07/15/Blender%E5%BB%BA%E6%A8%A1-%E5%8A%A8%E7%94%BB%E4%BD%9C%E5%93%81/</url>
+    <content><![CDATA[<h3 id="三兄弟建模（几何）"><a href="#三兄弟建模（几何）" class="headerlink" title="三兄弟建模（几何）"></a>三兄弟建模（几何）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/1_%E4%B8%89%E5%85%84%E5%BC%9F.png"
+                      alt="1_三兄弟"
+                ></p>
+<h3 id="积木建模-动画（动画）"><a href="#积木建模-动画（动画）" class="headerlink" title="积木建模&#x2F;动画（动画）"></a>积木建模&#x2F;动画（动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV15K421x7aj/?share_source=copy_web' title='【Blender积木】'><i class='fa-solid fa-play-circle'></i> 【Blender积木】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1701692717&bvid=BV15K421x7aj&cid=1463230031&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/2_%E7%A7%AF%E6%9C%A8.png"
+                      alt="2_积木"
+                ></p>
+<h3 id="金币基站建模（金属光泽材质）"><a href="#金币基站建模（金属光泽材质）" class="headerlink" title="金币基站建模（金属光泽材质）"></a>金币基站建模（金属光泽材质）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/3_%E9%87%91%E5%B8%81%E5%9F%BA%E7%AB%99.png"
+                      alt="3_金币基站"
+                ></p>
+<h3 id="跑车建模-动画（复杂图形建模与循环动画）"><a href="#跑车建模-动画（复杂图形建模与循环动画）" class="headerlink" title="跑车建模&#x2F;动画（复杂图形建模与循环动画）"></a>跑车建模&#x2F;动画（复杂图形建模与循环动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Mj421f71M/?share_source=copy_web' title='【Blender跑车】'><i class='fa-solid fa-play-circle'></i> 【Blender跑车】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1651706227&bvid=BV1Mj421f71M&cid=1463231676&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E8%BD%A6%E5%A4%B4.png"
+                      alt="跑车车头"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E7%89%B9%E5%86%992.png"
+                      alt="跑车特写2"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E4%BE%A7%E9%9D%A2.png"
+                      alt="跑车侧面"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E9%A1%B6%E9%83%A8.png"
+                      alt="跑车顶部"
+                ></p>
+<h3 id="荧光树桩建模（半透明材质）"><a href="#荧光树桩建模（半透明材质）" class="headerlink" title="荧光树桩建模（半透明材质）"></a>荧光树桩建模（半透明材质）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/5_%E8%8D%A7%E5%85%89%E6%A0%91%E6%A1%A9.png"
+                      alt="5_荧光树桩"
+                ></p>
+<h3 id="子弹时间建模-动画（物理效果模拟）"><a href="#子弹时间建模-动画（物理效果模拟）" class="headerlink" title="子弹时间建模&#x2F;动画（物理效果模拟）"></a>子弹时间建模&#x2F;动画（物理效果模拟）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1xW421c7ux/?share_source=copy_web' title='【Blender子弹时间】'><i class='fa-solid fa-play-circle'></i> 【Blender子弹时间】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1851675396&bvid=BV1xW421c7ux&cid=1463235980&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9-%E5%B0%81%E9%9D%A2.jpg"
+                      alt="子弹-封面"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%85%A2%E5%8A%A8%E4%BD%9C%E6%99%AF%E6%B7%B1.png"
+                      alt="子弹慢动作景深"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%99%AF%E6%B7%B1.png"
+                      alt="子弹景深"
+                ></p>
+<h3 id="离散猴头（几何节点）"><a href="#离散猴头（几何节点）" class="headerlink" title="离散猴头（几何节点）"></a>离散猴头（几何节点）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Uj421Z7Nc/?share_source=copy_web' title='【Blender猴头】'><i class='fa-solid fa-play-circle'></i> 【Blender猴头】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1651642308&bvid=BV1Uj421Z7Nc&cid=1463239128&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>Blender</category>
+        <category>建模/动画</category>
+      </categories>
+      <tags>
+        <tag>Blender</tag>
+        <tag>建模</tag>
+        <tag>动画</tag>
+        <tag>作品集</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java GUI——音乐播放器</title>
     <url>/2023/05/17/Java-GUI-%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
     <content><![CDATA[<h2 id="a-软件功能说明"><a href="#a-软件功能说明" class="headerlink" title="(a)软件功能说明"></a>(a)软件功能说明</h2><p>①线上歌单的获取和保存，加载进度条</p>
@@ -1441,111 +1549,184 @@
       </tags>
   </entry>
   <entry>
-    <title>Blender——建模/动画作品</title>
-    <url>/2023/07/15/Blender%E5%BB%BA%E6%A8%A1-%E5%8A%A8%E7%94%BB%E4%BD%9C%E5%93%81/</url>
-    <content><![CDATA[<h3 id="三兄弟建模（几何）"><a href="#三兄弟建模（几何）" class="headerlink" title="三兄弟建模（几何）"></a>三兄弟建模（几何）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/1_%E4%B8%89%E5%85%84%E5%BC%9F.png"
-                      alt="1_三兄弟"
-                ></p>
-<h3 id="积木建模-动画（动画）"><a href="#积木建模-动画（动画）" class="headerlink" title="积木建模&#x2F;动画（动画）"></a>积木建模&#x2F;动画（动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV15K421x7aj/?share_source=copy_web' title='【Blender积木】'><i class='fa-solid fa-play-circle'></i> 【Blender积木】</a>
+    <title>MIT软件性能工程——Homework-1-Getting Started</title>
+    <url>/2024/03/17/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-1-Getting-Started/</url>
+    <content><![CDATA[<h2 id="作业要求："><a href="#作业要求：" class="headerlink" title="作业要求："></a>作业要求：</h2> <embed src="/pdf/软件性能工程/hw1.pdf" width="100%" height="600" type="application/pdf">
 
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1701692717&bvid=BV15K421x7aj&cid=1463230031&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
 
+<h2 id="Write-up-2-分析-Pointer-c-文件"><a href="#Write-up-2-分析-Pointer-c-文件" class="headerlink" title="Write-up 2: 分析 Pointer.c 文件"></a>Write-up 2: 分析 Pointer.c 文件</h2><p>在 Pointer.c 的练习中，我首先尝试编译代码，发现了几个编译错误。通过仔细审查代码，我注意到这些错误主要是由于对指针和常量的错误操作。例如，尝试修改一个指向常量的指针的内容（<em>pcc &#x3D; 7;）是非法的，因为这破坏了常量的不变性。此外，赋值 char</em> const cp &#x3D; c; 创建了一个常量指针，意味着不能改变 cp 指向的地址，但是 cp 可以修改其指向的内容。这种区别对理解 C 语言中指针和常量的行为至关重要。</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/2_%E7%A7%AF%E6%9C%A8.png"
-                      alt="2_积木"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw1245.png"
+                      alt="21020007074-普典衡-hw1245"
                 ></p>
-<h3 id="金币基站建模（金属光泽材质）"><a href="#金币基站建模（金属光泽材质）" class="headerlink" title="金币基站建模（金属光泽材质）"></a>金币基站建模（金属光泽材质）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/3_%E9%87%91%E5%B8%81%E5%9F%BA%E7%AB%99.png"
-                      alt="3_金币基站"
-                ></p>
-<h3 id="跑车建模-动画（复杂图形建模与循环动画）"><a href="#跑车建模-动画（复杂图形建模与循环动画）" class="headerlink" title="跑车建模&#x2F;动画（复杂图形建模与循环动画）"></a>跑车建模&#x2F;动画（复杂图形建模与循环动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Mj421f71M/?share_source=copy_web' title='【Blender跑车】'><i class='fa-solid fa-play-circle'></i> 【Blender跑车】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1651706227&bvid=BV1Mj421f71M&cid=1463231676&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
+<p>代码中注释问题的解答：</p>
+<ol>
+<li><p>int main(int argc, char* argv[]) { &#x2F;&#x2F; What is the type of argv?<br>argv 是一个指向字符指针的指针，即 char 类型。它通常用于存储程序运行时传递的命令行参数。</p>
+</li>
+<li><p>char* pc &#x3D; c; &#x2F;&#x2F; Valid assignment: c acts like a pointer to c[0] here.<br>这是一个有效的赋值。在 C 语言中，数组名称作为指针使用时，指向数组的第一个元素。因此，c 实际上指向 c[0] 的地址。</p>
+</li>
+<li><p>printf(“char d &#x3D; %c\n”, d); &#x2F;&#x2F; What does this print?<br>这将打印出 d 的值，即字符数组 c 的第一个字符。根据 c 的定义，这应该是 6。</p>
+</li>
+<li><p><em>pcc &#x3D; 7; &#x2F;&#x2F; invalid?<br>这是无效的。pcc 被声明为指向常量字符的指针（const char</em>），这意味着你不能通过 pcc 修改它指向的值。</p>
+</li>
+<li><p>pcc &#x3D; <em>pcp; &#x2F;&#x2F; valid?<br>这是有效的。pcc 是一个指向字符的指针，pcp 是一个指向 argv 数组第一个元素（即指向 char 的指针）的指针。因此，</em>pcp 是 char* 类型，可以赋值给 pcc。</p>
+</li>
+<li><p>pcc &#x3D; argv[0]; &#x2F;&#x2F; valid?<br>这也是有效的。argv[0] 是 char* 类型，它指向传递给程序的第一个命令行参数。</p>
+</li>
+<li><p>cp &#x3D; <em>pcp; &#x2F;&#x2F; invalid?<br>这是无效的。cp 被声明为 const 指针（char</em> const），意味着一旦它被初始化指向一个地址，你就不能更改它指向的地址。</p>
+</li>
+<li><p>cp &#x3D; *argv; &#x2F;&#x2F; invalid?<br>同上，这也是无效的，因为 cp 是一个常量指针。</p>
+</li>
+<li><p>*cp &#x3D; !; &#x2F;&#x2F; valid?<br>这是有效的。尽管 cp 是一个常量指针，它仍然可以修改其指向的内容，只是不能改变指向的地址。</p>
+</li>
+<li><p>cpc &#x3D; <em>pcp; &#x2F;&#x2F; invalid? 和 cpc &#x3D; argv[0]; &#x2F;&#x2F; invalid?<br>这两个都是无效的。cpc 被声明为指向常量字符的常量指针（const char</em> const），意味着既不能更改指向的地址，也不能通过它修改指向的内容。</p>
+</li>
+<li><p>*cpc &#x3D; @; &#x2F;&#x2F; invalid?<br>这是无效的。由于 cpc 指向一个常量字符，所以不能通过它来修改所指向的值。</p>
+</li>
+</ol>
+<h2 id="Write-up-3-分析各种类型及其指针的大小"><a href="#Write-up-3-分析各种类型及其指针的大小" class="headerlink" title="Write-up 3: 分析各种类型及其指针的大小"></a>Write-up 3: 分析各种类型及其指针的大小</h2><p>在我完成的 sizes.c 练习中，我成功编译并运行了程序，它输出了各种数据类型及其指针的大小。以下是主要发现：</p>
+<ol>
+<li><p>基本类型及其指针的大小：<br>int 类型大小为 4 字节，其指针大小为 8 字节。<br>short 类型为 2 字节，指针为 8 字节。<br>long 类型为 8 字节，指针同样为 8 字节。<br>类似地，char, float, double, unsigned int, long long 的大小分别为 1, 4, 8, 4, 8 字节，它们的指针大小均为 8 字节。</p>
+</li>
+<li><p>特定类型及其指针的大小：<br>对于 uint8_t, uint16_t, uint32_t, uint64_t 等类型，大小分别为 1, 2, 4, 8 字节，指针大小均为 8 字节。<br>uint_fast8_t, uint_fast16_t, uintmax_t, intmax_t 类型的大小为 1, 8, 8, 8 字节，指针大小也为 8 字节。<br>对于 Clang 特有的 __int128 类型，大小为 16 字节，指针大小为 8 字节。</p>
+</li>
+<li><p>复合类型及其指针的大小：<br>自定义的 student 结构体大小为 8 字节，其指针大小为 8 字节。</p>
+</li>
+<li><p>数组及其指针的大小：<br>对于声明的 int x[5] 数组，大小为 20 字节（因为它包含 5 个 int 类型元素），而指向该数组的指针大小为 8 字节。</p>
+</li>
+</ol>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E8%BD%A6%E5%A4%B4.png"
-                      alt="跑车车头"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12124.png"
+                      alt="21020007074-普典衡-hw12124"
                 ></p>
+<p>这些结果反映了在我的系统（一个 64 位系统）上，大多数指针类型的大小均为 8 字节，这是因为在 64 位系统上指针通常占用 8 字节的内存空间。这些信息对于理解不同数据类型在内存中如何分配和使用非常重要，尤其是在进行性能优化和内存管理时。</p>
+<h2 id="Write-up-4-修改-Swap-c-函数"><a href="#Write-up-4-修改-Swap-c-函数" class="headerlink" title="Write-up 4: 修改 Swap.c 函数"></a>Write-up 4: 修改 Swap.c 函数</h2><p>在原始的程序中，swap 函数的问题在于它试图交换两个整数，但是由于 C 中的参数是按值传递的，所以 swap 函数实际上是在操作传入值的副本，而不是原始变量本身。因此，当 swap 函数执行完毕后，原始变量 k 和 m 的值并未发生改变。</p>
+<p>为了修正这个问题，需要修改 swap 函数，让它接受指向整数的指针，这样就可以直接修改传入变量的值。下面是修改后的 swap.c 程序：</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E7%89%B9%E5%86%992.png"
-                      alt="跑车特写2"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E4%BE%A7%E9%9D%A2.png"
-                      alt="跑车侧面"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E9%A1%B6%E9%83%A8.png"
-                      alt="跑车顶部"
-                ></p>
-<h3 id="荧光树桩建模（半透明材质）"><a href="#荧光树桩建模（半透明材质）" class="headerlink" title="荧光树桩建模（半透明材质）"></a>荧光树桩建模（半透明材质）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/5_%E8%8D%A7%E5%85%89%E6%A0%91%E6%A1%A9.png"
-                      alt="5_荧光树桩"
-                ></p>
-<h3 id="子弹时间建模-动画（物理效果模拟）"><a href="#子弹时间建模-动画（物理效果模拟）" class="headerlink" title="子弹时间建模&#x2F;动画（物理效果模拟）"></a>子弹时间建模&#x2F;动画（物理效果模拟）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1xW421c7ux/?share_source=copy_web' title='【Blender子弹时间】'><i class='fa-solid fa-play-circle'></i> 【Blender子弹时间】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1851675396&bvid=BV1xW421c7ux&cid=1463235980&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9-%E5%B0%81%E9%9D%A2.jpg"
-                      alt="子弹-封面"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12342.png"
+                      alt="21020007074-普典衡-hw12342"
                 ></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%85%A2%E5%8A%A8%E4%BD%9C%E6%99%AF%E6%B7%B1.png"
-                      alt="子弹慢动作景深"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12343.png"
+                      alt="21020007074-普典衡-hw12343"
+                ></p>
+<p>在这个版本中，swap 函数现在接受两个指向整数的指针。函数内部，通过解引用这些指针（使用 *i 和 *j）来访问和修改它们指向的实际值。在 main 函数中，通过传递 k 和 m 的地址（使用 &amp;k 和 &amp;m）来调用 swap 函数。</p>
+<p>现在，当 swap 函数被调用时，它将修改 k 和 m 所指向的实际内存位置的值，从而实现了真正的交换。因此，当程序执行完毕后，打印的 k 和 m 的值将反映出它们被交换了。</p>
+<h2 id="Write-up-5-修改-Makefile"><a href="#Write-up-5-修改-Makefile" class="headerlink" title="Write-up 5: 修改 Makefile"></a>Write-up 5: 修改 Makefile</h2><p>在这个练习中，我修改了 Makefile，将编译优化级别从 -O1 改为 -O3。这导致了更高级别的代码优化。当我运行 make clean; make 时：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12658.png"
+                      alt="21020007074-普典衡-hw12658"
                 ></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%99%AF%E6%B7%B1.png"
-                      alt="子弹景深"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12659.png"
+                      alt="21020007074-普典衡-hw12659"
                 ></p>
-<h3 id="离散猴头（几何节点）"><a href="#离散猴头（几何节点）" class="headerlink" title="离散猴头（几何节点）"></a>离散猴头（几何节点）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Uj421Z7Nc/?share_source=copy_web' title='【Blender猴头】'><i class='fa-solid fa-play-circle'></i> 【Blender猴头】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1651642308&bvid=BV1Uj421Z7Nc&cid=1463239128&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
+<p>更改优化级别从 -O1 到 -O3 的确可以影响程序的性能和行为，尽管这种影响可能不是立即显而易见的。在 -O3 优化级别下，编译器执行更多的代码优化，这可能包括循环展开、内联函数等。这些优化可以提高程序的运行速度，但有时也可能导致意外的副作用，尤其是在复杂的程序中。</p>
+<h2 id="Write-up-6-AddressSanitizer-的输出"><a href="#Write-up-6-AddressSanitizer-的输出" class="headerlink" title="Write-up 6: AddressSanitizer 的输出"></a>Write-up 6: AddressSanitizer 的输出</h2><p>使用 AddressSanitizer 后，我注意到程序报告了一些内存错误。这些错误包括未初始化的变量使用和潜在的内存泄漏。AddressSanitizer 的输出帮助我快速定位和修复这些问题，这对于保持代码的健壮性至关重要。<br>输出，它报告了一个 heap-buffer-overflow 错误。这表明程序试图访问分配的堆内存区域之外的内存，这是一种常见的内存错误。错误发生在 matrix_multiply_run 函数内，特别是在执行 C-&gt;values[i][j] +&#x3D; A-&gt;values[i][k] * B-&gt;values[k][j]; 这行代码时。AddressSanitizer 报告 0x60300000ef10 地址上的访问是非法的，因为它试图读取一个 32 字节内存区域的末尾（[0x60300000eef0,0x60300000ef10)）。<br>此外，错误还提示 heap-buffer-overflow 发生在分配的堆内存区域的右侧边界，这可能表明数组访问中的“越界”问题。可能需要重新审视数组分配和索引的逻辑，确保没有越界访问。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13308.png"
+                      alt="21020007074-普典衡-hw13308"
+                ></p>
+<h2 id="Write-up-7-修复-Matrix-Multiply-后的输出"><a href="#Write-up-7-修复-Matrix-Multiply-后的输出" class="headerlink" title="Write-up 7: 修复 Matrix Multiply 后的输出"></a>Write-up 7: 修复 Matrix Multiply 后的输出</h2><p>基于 Valgrind 的输出和提供的代码，我注意到可能的问题是在 matrix_multiply_run 函数中，每个元素 C-&gt;values[i][j] 在累加之前没有被初始化为零。这可能导致未定义行为，因为在默认情况下，动态分配的内存不会被自动初始化。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13476.png"
+                      alt="21020007074-普典衡-hw13476"
+                ></p>
+<p>为了修复这个问题，在开始累加之前将 C 矩阵的每个元素初始化为零。这可以通过在 make_matrix 函数中添加代码来实现。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13542.png"
+                      alt="21020007074-普典衡-hw13542"
+                ></p>
+<p>后来发现testbed.c中初始化的是A（4x5）与B（4x4）相乘不符合矩阵乘法规律，将A改为4x4：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13597.png"
+                      alt="21020007074-普典衡-hw13597"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13599.png"
+                      alt="21020007074-普典衡-hw13599"
+                ></p>
+<p>在修复 matrix_multiply.c 之后，我再次运行程序，并注意到程序现在能够成功执行并打印出正确的结果。</p>
+<h2 id="Write-up-8-Valgrind-的输出"><a href="#Write-up-8-Valgrind-的输出" class="headerlink" title="Write-up 8: Valgrind 的输出"></a>Write-up 8: Valgrind 的输出</h2><p>根据 Valgrind 的输出，程序中存在内存泄漏，主要来源于未正确释放分配给矩阵 A、B 和 C 的内存。为了解决这个问题，要在 main 函数的末尾调用 free_matrix 函数来释放这些矩阵的内存。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13791.png"
+                      alt="21020007074-普典衡-hw13791"
+                ></p>
+<p>在计算完成并打印结果后，添加以下代码来释放矩阵内存：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13820.png"
+                      alt="21020007074-普典衡-hw13820"
+                ></p>
+<p>正常运行：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13828.png"
+                      alt="21020007074-普典衡-hw13828"
+                ></p>
+<h2 id="Write-up-9-性能优化前后的执行时间"><a href="#Write-up-9-性能优化前后的执行时间" class="headerlink" title="Write-up 9: 性能优化前后的执行时间"></a>Write-up 9: 性能优化前后的执行时间</h2><p>为了评估性能优化的效果，我首先记录了原始程序的执行时间。然后，我调整了矩阵乘法的循环顺序，以提高内存访问的效率。优化后，我注意到程序的执行时间显著减少，这表明优化是成功的。<br>交换了 j 和 k 循环的顺序，这样可以在遍历 B 矩阵时实现更好的顺序访问。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13983.png"
+                      alt="21020007074-普典衡-hw13983"
+                ></p>
+<p>从2.51秒左右优化到0.68秒左右</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14005.png"
+                      alt="21020007074-普典衡-hw14005"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14008.png"
+                      alt="21020007074-普典衡-hw14008"
+                ></p>
+<h2 id="Write-up-10-编译优化的影响"><a href="#Write-up-10-编译优化的影响" class="headerlink" title="Write-up 10: 编译优化的影响"></a>Write-up 10: 编译优化的影响</h2><p>最后，我比较了在不同编译优化级别下程序的执行时间。在 -O0（无优化）下编译时，程序运行较慢。然而，在使用 -O3（高级优化）编译后，程序的执行速度明显提升。这强调了编译器优化在软件性能工程中的重要性。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14135.png"
+                      alt="21020007074-普典衡-hw14135"
+                ></p>
+]]></content>
       <categories>
-        <category>游戏开发</category>
-        <category>Blender</category>
-        <category>建模/动画</category>
+        <category>本科项目</category>
+        <category>软件性能工程</category>
+        <category>MIT作业</category>
       </categories>
       <tags>
-        <tag>Blender</tag>
-        <tag>建模</tag>
-        <tag>动画</tag>
-        <tag>作品集</tag>
+        <tag>课程项目</tag>
+        <tag>作业报告</tag>
+        <tag>软件性能工程</tag>
       </tags>
   </entry>
   <entry>
@@ -1859,187 +2040,6 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
                      src="/images/loading.svg"
                      data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw2/image-20240402115415553.png"
                       alt="image-20240402115415553"
-                ></p>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>软件性能工程</category>
-        <category>MIT作业</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>作业报告</tag>
-        <tag>软件性能工程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MIT软件性能工程——Homework-1-Getting Started</title>
-    <url>/2024/03/17/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-1-Getting-Started/</url>
-    <content><![CDATA[<h2 id="作业要求："><a href="#作业要求：" class="headerlink" title="作业要求："></a>作业要求：</h2> <embed src="/pdf/软件性能工程/hw1.pdf" width="100%" height="600" type="application/pdf">
-
-
-<h2 id="Write-up-2-分析-Pointer-c-文件"><a href="#Write-up-2-分析-Pointer-c-文件" class="headerlink" title="Write-up 2: 分析 Pointer.c 文件"></a>Write-up 2: 分析 Pointer.c 文件</h2><p>在 Pointer.c 的练习中，我首先尝试编译代码，发现了几个编译错误。通过仔细审查代码，我注意到这些错误主要是由于对指针和常量的错误操作。例如，尝试修改一个指向常量的指针的内容（<em>pcc &#x3D; 7;）是非法的，因为这破坏了常量的不变性。此外，赋值 char</em> const cp &#x3D; c; 创建了一个常量指针，意味着不能改变 cp 指向的地址，但是 cp 可以修改其指向的内容。这种区别对理解 C 语言中指针和常量的行为至关重要。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw1245.png"
-                      alt="21020007074-普典衡-hw1245"
-                ></p>
-<p>代码中注释问题的解答：</p>
-<ol>
-<li><p>int main(int argc, char* argv[]) { &#x2F;&#x2F; What is the type of argv?<br>argv 是一个指向字符指针的指针，即 char 类型。它通常用于存储程序运行时传递的命令行参数。</p>
-</li>
-<li><p>char* pc &#x3D; c; &#x2F;&#x2F; Valid assignment: c acts like a pointer to c[0] here.<br>这是一个有效的赋值。在 C 语言中，数组名称作为指针使用时，指向数组的第一个元素。因此，c 实际上指向 c[0] 的地址。</p>
-</li>
-<li><p>printf(“char d &#x3D; %c\n”, d); &#x2F;&#x2F; What does this print?<br>这将打印出 d 的值，即字符数组 c 的第一个字符。根据 c 的定义，这应该是 6。</p>
-</li>
-<li><p><em>pcc &#x3D; 7; &#x2F;&#x2F; invalid?<br>这是无效的。pcc 被声明为指向常量字符的指针（const char</em>），这意味着你不能通过 pcc 修改它指向的值。</p>
-</li>
-<li><p>pcc &#x3D; <em>pcp; &#x2F;&#x2F; valid?<br>这是有效的。pcc 是一个指向字符的指针，pcp 是一个指向 argv 数组第一个元素（即指向 char 的指针）的指针。因此，</em>pcp 是 char* 类型，可以赋值给 pcc。</p>
-</li>
-<li><p>pcc &#x3D; argv[0]; &#x2F;&#x2F; valid?<br>这也是有效的。argv[0] 是 char* 类型，它指向传递给程序的第一个命令行参数。</p>
-</li>
-<li><p>cp &#x3D; <em>pcp; &#x2F;&#x2F; invalid?<br>这是无效的。cp 被声明为 const 指针（char</em> const），意味着一旦它被初始化指向一个地址，你就不能更改它指向的地址。</p>
-</li>
-<li><p>cp &#x3D; *argv; &#x2F;&#x2F; invalid?<br>同上，这也是无效的，因为 cp 是一个常量指针。</p>
-</li>
-<li><p>*cp &#x3D; !; &#x2F;&#x2F; valid?<br>这是有效的。尽管 cp 是一个常量指针，它仍然可以修改其指向的内容，只是不能改变指向的地址。</p>
-</li>
-<li><p>cpc &#x3D; <em>pcp; &#x2F;&#x2F; invalid? 和 cpc &#x3D; argv[0]; &#x2F;&#x2F; invalid?<br>这两个都是无效的。cpc 被声明为指向常量字符的常量指针（const char</em> const），意味着既不能更改指向的地址，也不能通过它修改指向的内容。</p>
-</li>
-<li><p>*cpc &#x3D; @; &#x2F;&#x2F; invalid?<br>这是无效的。由于 cpc 指向一个常量字符，所以不能通过它来修改所指向的值。</p>
-</li>
-</ol>
-<h2 id="Write-up-3-分析各种类型及其指针的大小"><a href="#Write-up-3-分析各种类型及其指针的大小" class="headerlink" title="Write-up 3: 分析各种类型及其指针的大小"></a>Write-up 3: 分析各种类型及其指针的大小</h2><p>在我完成的 sizes.c 练习中，我成功编译并运行了程序，它输出了各种数据类型及其指针的大小。以下是主要发现：</p>
-<ol>
-<li><p>基本类型及其指针的大小：<br>int 类型大小为 4 字节，其指针大小为 8 字节。<br>short 类型为 2 字节，指针为 8 字节。<br>long 类型为 8 字节，指针同样为 8 字节。<br>类似地，char, float, double, unsigned int, long long 的大小分别为 1, 4, 8, 4, 8 字节，它们的指针大小均为 8 字节。</p>
-</li>
-<li><p>特定类型及其指针的大小：<br>对于 uint8_t, uint16_t, uint32_t, uint64_t 等类型，大小分别为 1, 2, 4, 8 字节，指针大小均为 8 字节。<br>uint_fast8_t, uint_fast16_t, uintmax_t, intmax_t 类型的大小为 1, 8, 8, 8 字节，指针大小也为 8 字节。<br>对于 Clang 特有的 __int128 类型，大小为 16 字节，指针大小为 8 字节。</p>
-</li>
-<li><p>复合类型及其指针的大小：<br>自定义的 student 结构体大小为 8 字节，其指针大小为 8 字节。</p>
-</li>
-<li><p>数组及其指针的大小：<br>对于声明的 int x[5] 数组，大小为 20 字节（因为它包含 5 个 int 类型元素），而指向该数组的指针大小为 8 字节。</p>
-</li>
-</ol>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12124.png"
-                      alt="21020007074-普典衡-hw12124"
-                ></p>
-<p>这些结果反映了在我的系统（一个 64 位系统）上，大多数指针类型的大小均为 8 字节，这是因为在 64 位系统上指针通常占用 8 字节的内存空间。这些信息对于理解不同数据类型在内存中如何分配和使用非常重要，尤其是在进行性能优化和内存管理时。</p>
-<h2 id="Write-up-4-修改-Swap-c-函数"><a href="#Write-up-4-修改-Swap-c-函数" class="headerlink" title="Write-up 4: 修改 Swap.c 函数"></a>Write-up 4: 修改 Swap.c 函数</h2><p>在原始的程序中，swap 函数的问题在于它试图交换两个整数，但是由于 C 中的参数是按值传递的，所以 swap 函数实际上是在操作传入值的副本，而不是原始变量本身。因此，当 swap 函数执行完毕后，原始变量 k 和 m 的值并未发生改变。</p>
-<p>为了修正这个问题，需要修改 swap 函数，让它接受指向整数的指针，这样就可以直接修改传入变量的值。下面是修改后的 swap.c 程序：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12342.png"
-                      alt="21020007074-普典衡-hw12342"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12343.png"
-                      alt="21020007074-普典衡-hw12343"
-                ></p>
-<p>在这个版本中，swap 函数现在接受两个指向整数的指针。函数内部，通过解引用这些指针（使用 *i 和 *j）来访问和修改它们指向的实际值。在 main 函数中，通过传递 k 和 m 的地址（使用 &amp;k 和 &amp;m）来调用 swap 函数。</p>
-<p>现在，当 swap 函数被调用时，它将修改 k 和 m 所指向的实际内存位置的值，从而实现了真正的交换。因此，当程序执行完毕后，打印的 k 和 m 的值将反映出它们被交换了。</p>
-<h2 id="Write-up-5-修改-Makefile"><a href="#Write-up-5-修改-Makefile" class="headerlink" title="Write-up 5: 修改 Makefile"></a>Write-up 5: 修改 Makefile</h2><p>在这个练习中，我修改了 Makefile，将编译优化级别从 -O1 改为 -O3。这导致了更高级别的代码优化。当我运行 make clean; make 时：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12658.png"
-                      alt="21020007074-普典衡-hw12658"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw12659.png"
-                      alt="21020007074-普典衡-hw12659"
-                ></p>
-<p>更改优化级别从 -O1 到 -O3 的确可以影响程序的性能和行为，尽管这种影响可能不是立即显而易见的。在 -O3 优化级别下，编译器执行更多的代码优化，这可能包括循环展开、内联函数等。这些优化可以提高程序的运行速度，但有时也可能导致意外的副作用，尤其是在复杂的程序中。</p>
-<h2 id="Write-up-6-AddressSanitizer-的输出"><a href="#Write-up-6-AddressSanitizer-的输出" class="headerlink" title="Write-up 6: AddressSanitizer 的输出"></a>Write-up 6: AddressSanitizer 的输出</h2><p>使用 AddressSanitizer 后，我注意到程序报告了一些内存错误。这些错误包括未初始化的变量使用和潜在的内存泄漏。AddressSanitizer 的输出帮助我快速定位和修复这些问题，这对于保持代码的健壮性至关重要。<br>输出，它报告了一个 heap-buffer-overflow 错误。这表明程序试图访问分配的堆内存区域之外的内存，这是一种常见的内存错误。错误发生在 matrix_multiply_run 函数内，特别是在执行 C-&gt;values[i][j] +&#x3D; A-&gt;values[i][k] * B-&gt;values[k][j]; 这行代码时。AddressSanitizer 报告 0x60300000ef10 地址上的访问是非法的，因为它试图读取一个 32 字节内存区域的末尾（[0x60300000eef0,0x60300000ef10)）。<br>此外，错误还提示 heap-buffer-overflow 发生在分配的堆内存区域的右侧边界，这可能表明数组访问中的“越界”问题。可能需要重新审视数组分配和索引的逻辑，确保没有越界访问。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13308.png"
-                      alt="21020007074-普典衡-hw13308"
-                ></p>
-<h2 id="Write-up-7-修复-Matrix-Multiply-后的输出"><a href="#Write-up-7-修复-Matrix-Multiply-后的输出" class="headerlink" title="Write-up 7: 修复 Matrix Multiply 后的输出"></a>Write-up 7: 修复 Matrix Multiply 后的输出</h2><p>基于 Valgrind 的输出和提供的代码，我注意到可能的问题是在 matrix_multiply_run 函数中，每个元素 C-&gt;values[i][j] 在累加之前没有被初始化为零。这可能导致未定义行为，因为在默认情况下，动态分配的内存不会被自动初始化。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13476.png"
-                      alt="21020007074-普典衡-hw13476"
-                ></p>
-<p>为了修复这个问题，在开始累加之前将 C 矩阵的每个元素初始化为零。这可以通过在 make_matrix 函数中添加代码来实现。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13542.png"
-                      alt="21020007074-普典衡-hw13542"
-                ></p>
-<p>后来发现testbed.c中初始化的是A（4x5）与B（4x4）相乘不符合矩阵乘法规律，将A改为4x4：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13597.png"
-                      alt="21020007074-普典衡-hw13597"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13599.png"
-                      alt="21020007074-普典衡-hw13599"
-                ></p>
-<p>在修复 matrix_multiply.c 之后，我再次运行程序，并注意到程序现在能够成功执行并打印出正确的结果。</p>
-<h2 id="Write-up-8-Valgrind-的输出"><a href="#Write-up-8-Valgrind-的输出" class="headerlink" title="Write-up 8: Valgrind 的输出"></a>Write-up 8: Valgrind 的输出</h2><p>根据 Valgrind 的输出，程序中存在内存泄漏，主要来源于未正确释放分配给矩阵 A、B 和 C 的内存。为了解决这个问题，要在 main 函数的末尾调用 free_matrix 函数来释放这些矩阵的内存。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13791.png"
-                      alt="21020007074-普典衡-hw13791"
-                ></p>
-<p>在计算完成并打印结果后，添加以下代码来释放矩阵内存：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13820.png"
-                      alt="21020007074-普典衡-hw13820"
-                ></p>
-<p>正常运行：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13828.png"
-                      alt="21020007074-普典衡-hw13828"
-                ></p>
-<h2 id="Write-up-9-性能优化前后的执行时间"><a href="#Write-up-9-性能优化前后的执行时间" class="headerlink" title="Write-up 9: 性能优化前后的执行时间"></a>Write-up 9: 性能优化前后的执行时间</h2><p>为了评估性能优化的效果，我首先记录了原始程序的执行时间。然后，我调整了矩阵乘法的循环顺序，以提高内存访问的效率。优化后，我注意到程序的执行时间显著减少，这表明优化是成功的。<br>交换了 j 和 k 循环的顺序，这样可以在遍历 B 矩阵时实现更好的顺序访问。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw13983.png"
-                      alt="21020007074-普典衡-hw13983"
-                ></p>
-<p>从2.51秒左右优化到0.68秒左右</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14005.png"
-                      alt="21020007074-普典衡-hw14005"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14008.png"
-                      alt="21020007074-普典衡-hw14008"
-                ></p>
-<h2 id="Write-up-10-编译优化的影响"><a href="#Write-up-10-编译优化的影响" class="headerlink" title="Write-up 10: 编译优化的影响"></a>Write-up 10: 编译优化的影响</h2><p>最后，我比较了在不同编译优化级别下程序的执行时间。在 -O0（无优化）下编译时，程序运行较慢。然而，在使用 -O3（高级优化）编译后，程序的执行速度明显提升。这强调了编译器优化在软件性能工程中的重要性。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B/hw1/21020007074-%E6%99%AE%E5%85%B8%E8%A1%A1-hw14135.png"
-                      alt="21020007074-普典衡-hw14135"
                 ></p>
 ]]></content>
       <categories>
@@ -2663,6 +2663,235 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>图像处理与分析——实验一-数字图像处理相关软件学习</title>
+    <url>/2024/03/20/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>Python是干啥的？</p>
+<p>BMP图像的结构是什么样的？</p>
+<p>用VC怎么写图像处理的程序？</p>
+<h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
+<li><p>写个简单的Python程序，完成以下操作：</p>
+<p>a)	打开一幅图片（如自己的照片）</p>
+<p>b)	将图片大小修改成640*480</p>
+<p>c)	将修改大小后的图像转成黑白图像</p>
+<p>d)	将图像存成gif格式</p>
+</li>
+<li><p>不知道大家还记不记得奥运开幕式中那一幅幅小的笑脸照片组成大大的笑脸环节，其实日常生活中也有很多这样类似的创意，用很多幅小的相关图片组成一副大的主题图片，如下面右图就是用很多表情笑脸图合成左图的效果。考虑一下如果自己写程序的话，怎么来实现。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps1.jpg"
+                      alt="img"
+                ></p>
+</li>
+</ol>
+<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><ol>
+<li>写个简单的Python程序，完成指定操作。</li>
+</ol>
+<p>(1) 首先安装Python的图像处理库Pillow</p>
+<p>(2) 导入库中的Image对象</p>
+<p>(3) 使用Image对象的open函数打开图像</p>
+<p>(4) 通过resize方法将图像大小设置为640x480</p>
+<p>(5) 通过convert方法将图像灰度化</p>
+<p>(6) 通过save方法将处理后的图像保存下来</p>
+<ol start="2">
+<li>马赛克图像合成。</li>
+</ol>
+<p>准备实验环境和素材。</p>
+<p>(1) 安装Python的图像处理库Pillow和数学运算库NumPy。</p>
+<p>(2) 准备一个大的目标图像和一组小图片素材。</p>
+<p>处理小图片集。</p>
+<p>(1) 定义函数以计算小图片的平均颜色。</p>
+<p>(2) 遍历图标文件夹，调整每个小图片的大小。</p>
+<p>实现马赛克图像合成。</p>
+<p>(1) 定义函数以创建马赛克图像。</p>
+<p>(2) 调整目标图像的大小以适应马赛克格子。</p>
+<p>(3) 分割目标图像并为每个格子选择颜色匹配的小图片。</p>
+<p>(4) 将小图片粘贴到对应的马赛克格子中。</p>
+<p>保存并测试结果。</p>
+<p>(1) 将生成的马赛克图像保存到指定路径。</p>
+<p>(2) 检查输出文件夹以确认图像是否正确生成。</p>
+<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><ol>
+<li>写个简单的Python程序，完成指定操作。</li>
+</ol>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">original_image = Image.<span class="built_in">open</span>(input_path)</span><br><span class="line">    original_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps2.png"
+                      alt="img"
+                > </p>
+<center>图 1原始图像</center>
+
+
+
+
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">    resized_image = original_image.resize((<span class="number">640</span>, <span class="number">480</span>))</span><br><span class="line">    resized_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps3.png"
+                      alt="img"
+                > </p>
+<center>图 2改变大小之后的图像</center>
+
+
+
+
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">    bw_image = resized_image.convert(<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps4.png"
+                      alt="img"
+                > </p>
+<center>图 3灰度化之后的图像</center>
+
+
+
+
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_4.gif&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps5.png"
+                      alt="img"
+                > </p>
+<center>图 4将黑白图像存成gif格式</center>
+
+
+
+ 
+
+<ol start="2">
+<li>马赛克图像合成</li>
+</ol>
+<p>准备实验环境和素材:</p>
+<p>确保安装了Python图像处理库Pillow和数学运算库<code>NumPy</code>。</p>
+<p>在代码中设置目标图像<code>（target_image_path）</code>和小图片集合<code>（icon_folder）</code>的路径。</p>
+<p>处理小图片集:</p>
+<p>使用<code>get_average_color(image)</code>函数计算每个小图片的平均颜色。这个函数接收一个图像对象作为参数，计算其在RGB颜色空间中的平均颜色，并返回表示这种颜色的元组。</p>
+<p><code>resize_icons(icon_folder, icon_size)</code>函数遍历小图片所在的文件夹，并将每张图片调整到指定的大小。这是为了使得小图片与马赛克图像的每个格子大小相匹配。</p>
+<p>实现马赛克图像合成:</p>
+<p><code>create_photo_mosaic(target_image_path, icons, grid_size)</code>函数用于创建马赛克图像。</p>
+<p>首先，该函数调整目标图像的大小，使其与马赛克网格的大小匹配。</p>
+<p>接着，它将目标图像分割成与网格大小相匹配的小区域。</p>
+<p>对于每个区域，函数找到颜色最接近该区域平均颜色的小图片，并将其放置在相应的位置上。</p>
+<p>保存并测试结果:</p>
+<p>一旦马赛克图像创建完毕，使用<code>mosaic_image.save(output_path)</code>将其保存到指定路径。</p>
+<p>保存后的马赛克图像可以在指定的输出中查看。</p>
+<p>效果浏览：</p>
+<center>grid_size = (5, 5):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps6.jpg"
+                      alt="img"
+                > </p>
+<center>grid_size = (4, 4):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps7.jpg"
+                      alt="img"
+                > </p>
+<center>grid_size = (3, 3):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps8.jpg"
+                      alt="img"
+                > </p>
+<center>grid_size = (3, 2):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps9.jpg"
+                      alt="img"
+                > </p>
+<center>grid_size = (2, 3):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps10.jpg"
+                      alt="img"
+                > </p>
+<center>grid_size = (1, 1):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps11.jpg"
+                      alt="img"
+                > </p>
+<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>通过实验第一部分，我学会了如何使用Python及其第三方库Pillow进行基本的图像处理操作。这个实验让我体会到了Python在图像处理方面的强大和灵活性。通过简单的代码，我能够打开图像，改变其大小，将其转换为黑白图像，甚至将其保存为不同的格式，如GIF。这些操作在数字图像处理中非常常见，而Python使这些操作变得易于实现和理解。</p>
+<p>实验中，我首先引入了Python的图像处理库Pillow，然后使用它提供的Image对象来进行各种图像操作。例如，我利用<code>open</code>函数打开了一幅图像，然后通过<code>resize</code>方法将图像的尺寸更改为640x480像素。接着，我使用了<code>convert</code>方法将图像转换为灰度（黑白）图像，最后通过<code>save</code>方法将处理后的图像保存下来。这个过程不仅加深了我对图像处理基础概念的理解，也提高了我使用编程语言来解决实际问题的能力。</p>
+<p>在实验第二部分中，我进行了更为复杂的图像处理操作，即马赛克图像合成。这个过程包括创建一个由许多小图像组合成的大图像。我学会了如何处理和调整多个图像，以便将它们组合成一个单一的、具有视觉效果的图像。依靠准备的目标图像和小图片素材，编写了函数来计算小图片的平均颜色并调整其大小。之后，我通过比较颜色相似性来选择最合适的小图片，并将它们粘贴到目标图像的相应位置上。这个实验不仅锻炼了我的编程技能，还增强了我在创意图像处理方面的能力。</p>
+<p>总的来说，这个实验不仅提高了我的Python编程能力，还让我对数字图像处理有了更深刻的理解。通过这些实验，我学会了如何使用编程工具来创造和操纵图像，这将对我的未来学习和职业发展大有裨益。</p>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>图像处理与分析</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>作业报告</tag>
+        <tag>图像处理与分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>竞赛——蓝桥杯大赛-元宇宙元镜杯国家级三等奖</title>
+    <url>/2023/12/24/%E7%AB%9E%E8%B5%9B%E2%80%94%E2%80%94%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%A7%E8%B5%9B-%E5%85%83%E5%AE%87%E5%AE%99%E5%85%83%E9%95%9C%E6%9D%AF%E5%9B%BD%E5%AE%B6%E7%BA%A7%E4%B8%89%E7%AD%89%E5%A5%96/</url>
+    <content><![CDATA[<p><strong>数字生活方向：</strong></p>
+<p>元卧室”完美融合了元宇宙技术。将卧室，这个私人空间，变为一个无与伦比的数字体验之境。这个卧室，或者更确切地说，这个数字化奇境，以元宇宙技术为基础，让您足不出户便可实现瞬间的全球穿越。卧室还备有名为”小元”的人工智能助手，通过对话地方式带您环游世界，让您享受一个更加互动和沉浸的数字生活。</p>
+<p>当您躺在舒适的床上，闭上双眼，突然之间便置身于大自然的怀抱。墙壁和天花板上的高精度全息半球形显示屏，以栩栩如生的方式呈现出各种自然景观，让您感受到真实世界的每一个细节。</p>
+<p>与此同时，地板巧妙地隐藏了全息环境声音系统，使您的听觉也被沉浸其中，仿佛置身于所选择的环境之中。无论是鸟鸣虫鸣还是海浪拍打声，都让您感受到身临其境的奇妙体验。</p>
+<p>足不出户就可以畅游世界，甚至模拟出一个您理想的景观，让忙碌的生活有短暂的停歇。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://megagame-work.oss-cn-shanghai.aliyuncs.com/user/415/%E5%85%83%E5%AE%87%E5%AE%993.png?OSSAccessKeyId=LTAI5tGVZpS3uTXqmEV4jPyC&Expires=1713259114&Signature=5Xx/zNyY2S3PIIiRVLuINOGqhaY="
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://megagame-work.oss-cn-shanghai.aliyuncs.com/user/415/%E5%85%83%E5%AE%87%E5%AE%991.png?OSSAccessKeyId=LTAI5tGVZpS3uTXqmEV4jPyC&Expires=1713259114&Signature=nUXi7QvVY2gRSfBUT2TxUhG1H/Y="
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://megagame-work.oss-cn-shanghai.aliyuncs.com/user/415/%E5%85%83%E5%AE%87%E5%AE%992.png?OSSAccessKeyId=LTAI5tGVZpS3uTXqmEV4jPyC&Expires=1713259114&Signature=7I2G+DF5djn151KB+PopA+7wpTU="
+                      alt="img"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E7%AB%9E%E8%B5%9B%E2%80%94%E2%80%94%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%A7%E8%B5%9B-%E5%85%83%E5%AE%87%E5%AE%99%E5%85%83%E9%95%9C%E6%9D%AF%E5%9B%BD%E5%AE%B6%E7%BA%A7%E4%B8%89%E7%AD%89%E5%A5%96/%E8%AF%81%E4%B9%A6.png"
+                      alt="证书"
+                ></p>
+]]></content>
+      <categories>
+        <category>竞赛</category>
+        <category>蓝桥杯</category>
+      </categories>
+      <tags>
+        <tag>Blender</tag>
+        <tag>竞赛</tag>
+        <tag>蓝桥杯</tag>
+        <tag>元宇宙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像处理与分析——实验二-空间域的图像增强</title>
     <url>/2024/04/10/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/</url>
     <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现： </p>
@@ -2947,191 +3176,6 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
 <li>将Sobel算子编码进PyTorch卷积核中并对图像进行处理，我得到了水平和垂直梯度图像以及梯度幅值图。这一过程说明了卷积操作如何作为空间域滤波器来检测图像中的边缘，是图像处理中边缘检测技术的一个经典例子。</li>
 </ul>
 <p>通过以上实验步骤，我加深了对图像增强技术的理解，特别是在如何利用不同的空间域滤波技术来改善视觉效果方面。实验结果表明，这些技术不仅可以增强图像的视觉质量，还可以为后续的图像分析工作提供更好的基础。</p>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>图像处理与分析</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>作业报告</tag>
-        <tag>图像处理与分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像处理与分析——实验一-数字图像处理相关软件学习</title>
-    <url>/2024/03/20/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>Python是干啥的？</p>
-<p>BMP图像的结构是什么样的？</p>
-<p>用VC怎么写图像处理的程序？</p>
-<h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
-<li><p>写个简单的Python程序，完成以下操作：</p>
-<p>a)	打开一幅图片（如自己的照片）</p>
-<p>b)	将图片大小修改成640*480</p>
-<p>c)	将修改大小后的图像转成黑白图像</p>
-<p>d)	将图像存成gif格式</p>
-</li>
-<li><p>不知道大家还记不记得奥运开幕式中那一幅幅小的笑脸照片组成大大的笑脸环节，其实日常生活中也有很多这样类似的创意，用很多幅小的相关图片组成一副大的主题图片，如下面右图就是用很多表情笑脸图合成左图的效果。考虑一下如果自己写程序的话，怎么来实现。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps1.jpg"
-                      alt="img"
-                ></p>
-</li>
-</ol>
-<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><ol>
-<li>写个简单的Python程序，完成指定操作。</li>
-</ol>
-<p>(1) 首先安装Python的图像处理库Pillow</p>
-<p>(2) 导入库中的Image对象</p>
-<p>(3) 使用Image对象的open函数打开图像</p>
-<p>(4) 通过resize方法将图像大小设置为640x480</p>
-<p>(5) 通过convert方法将图像灰度化</p>
-<p>(6) 通过save方法将处理后的图像保存下来</p>
-<ol start="2">
-<li>马赛克图像合成。</li>
-</ol>
-<p>准备实验环境和素材。</p>
-<p>(1) 安装Python的图像处理库Pillow和数学运算库NumPy。</p>
-<p>(2) 准备一个大的目标图像和一组小图片素材。</p>
-<p>处理小图片集。</p>
-<p>(1) 定义函数以计算小图片的平均颜色。</p>
-<p>(2) 遍历图标文件夹，调整每个小图片的大小。</p>
-<p>实现马赛克图像合成。</p>
-<p>(1) 定义函数以创建马赛克图像。</p>
-<p>(2) 调整目标图像的大小以适应马赛克格子。</p>
-<p>(3) 分割目标图像并为每个格子选择颜色匹配的小图片。</p>
-<p>(4) 将小图片粘贴到对应的马赛克格子中。</p>
-<p>保存并测试结果。</p>
-<p>(1) 将生成的马赛克图像保存到指定路径。</p>
-<p>(2) 检查输出文件夹以确认图像是否正确生成。</p>
-<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><ol>
-<li>写个简单的Python程序，完成指定操作。</li>
-</ol>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">original_image = Image.<span class="built_in">open</span>(input_path)</span><br><span class="line">    original_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps2.png"
-                      alt="img"
-                > </p>
-<center>图 1原始图像</center>
-
-
-
-
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">    resized_image = original_image.resize((<span class="number">640</span>, <span class="number">480</span>))</span><br><span class="line">    resized_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps3.png"
-                      alt="img"
-                > </p>
-<center>图 2改变大小之后的图像</center>
-
-
-
-
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">    bw_image = resized_image.convert(<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps4.png"
-                      alt="img"
-                > </p>
-<center>图 3灰度化之后的图像</center>
-
-
-
-
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_4.gif&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps5.png"
-                      alt="img"
-                > </p>
-<center>图 4将黑白图像存成gif格式</center>
-
-
-
- 
-
-<ol start="2">
-<li>马赛克图像合成</li>
-</ol>
-<p>准备实验环境和素材:</p>
-<p>确保安装了Python图像处理库Pillow和数学运算库<code>NumPy</code>。</p>
-<p>在代码中设置目标图像<code>（target_image_path）</code>和小图片集合<code>（icon_folder）</code>的路径。</p>
-<p>处理小图片集:</p>
-<p>使用<code>get_average_color(image)</code>函数计算每个小图片的平均颜色。这个函数接收一个图像对象作为参数，计算其在RGB颜色空间中的平均颜色，并返回表示这种颜色的元组。</p>
-<p><code>resize_icons(icon_folder, icon_size)</code>函数遍历小图片所在的文件夹，并将每张图片调整到指定的大小。这是为了使得小图片与马赛克图像的每个格子大小相匹配。</p>
-<p>实现马赛克图像合成:</p>
-<p><code>create_photo_mosaic(target_image_path, icons, grid_size)</code>函数用于创建马赛克图像。</p>
-<p>首先，该函数调整目标图像的大小，使其与马赛克网格的大小匹配。</p>
-<p>接着，它将目标图像分割成与网格大小相匹配的小区域。</p>
-<p>对于每个区域，函数找到颜色最接近该区域平均颜色的小图片，并将其放置在相应的位置上。</p>
-<p>保存并测试结果:</p>
-<p>一旦马赛克图像创建完毕，使用<code>mosaic_image.save(output_path)</code>将其保存到指定路径。</p>
-<p>保存后的马赛克图像可以在指定的输出中查看。</p>
-<p>效果浏览：</p>
-<center>grid_size = (5, 5):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps6.jpg"
-                      alt="img"
-                > </p>
-<center>grid_size = (4, 4):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps7.jpg"
-                      alt="img"
-                > </p>
-<center>grid_size = (3, 3):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps8.jpg"
-                      alt="img"
-                > </p>
-<center>grid_size = (3, 2):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps9.jpg"
-                      alt="img"
-                > </p>
-<center>grid_size = (2, 3):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps10.jpg"
-                      alt="img"
-                > </p>
-<center>grid_size = (1, 1):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps11.jpg"
-                      alt="img"
-                > </p>
-<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>通过实验第一部分，我学会了如何使用Python及其第三方库Pillow进行基本的图像处理操作。这个实验让我体会到了Python在图像处理方面的强大和灵活性。通过简单的代码，我能够打开图像，改变其大小，将其转换为黑白图像，甚至将其保存为不同的格式，如GIF。这些操作在数字图像处理中非常常见，而Python使这些操作变得易于实现和理解。</p>
-<p>实验中，我首先引入了Python的图像处理库Pillow，然后使用它提供的Image对象来进行各种图像操作。例如，我利用<code>open</code>函数打开了一幅图像，然后通过<code>resize</code>方法将图像的尺寸更改为640x480像素。接着，我使用了<code>convert</code>方法将图像转换为灰度（黑白）图像，最后通过<code>save</code>方法将处理后的图像保存下来。这个过程不仅加深了我对图像处理基础概念的理解，也提高了我使用编程语言来解决实际问题的能力。</p>
-<p>在实验第二部分中，我进行了更为复杂的图像处理操作，即马赛克图像合成。这个过程包括创建一个由许多小图像组合成的大图像。我学会了如何处理和调整多个图像，以便将它们组合成一个单一的、具有视觉效果的图像。依靠准备的目标图像和小图片素材，编写了函数来计算小图片的平均颜色并调整其大小。之后，我通过比较颜色相似性来选择最合适的小图片，并将它们粘贴到目标图像的相应位置上。这个实验不仅锻炼了我的编程技能，还增强了我在创意图像处理方面的能力。</p>
-<p>总的来说，这个实验不仅提高了我的Python编程能力，还让我对数字图像处理有了更深刻的理解。通过这些实验，我学会了如何使用编程工具来创造和操纵图像，这将对我的未来学习和职业发展大有裨益。</p>
 ]]></content>
       <categories>
         <category>本科项目</category>
