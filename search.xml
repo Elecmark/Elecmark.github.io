@@ -2663,191 +2663,6 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>图像处理与分析——实验一-数字图像处理相关软件学习</title>
-    <url>/2024/03/20/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>Python是干啥的？</p>
-<p>BMP图像的结构是什么样的？</p>
-<p>用VC怎么写图像处理的程序？</p>
-<h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
-<li><p>写个简单的Python程序，完成以下操作：</p>
-<p>a)	打开一幅图片（如自己的照片）</p>
-<p>b)	将图片大小修改成640*480</p>
-<p>c)	将修改大小后的图像转成黑白图像</p>
-<p>d)	将图像存成gif格式</p>
-</li>
-<li><p>不知道大家还记不记得奥运开幕式中那一幅幅小的笑脸照片组成大大的笑脸环节，其实日常生活中也有很多这样类似的创意，用很多幅小的相关图片组成一副大的主题图片，如下面右图就是用很多表情笑脸图合成左图的效果。考虑一下如果自己写程序的话，怎么来实现。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps1.jpg"
-                      alt="img"
-                ></p>
-</li>
-</ol>
-<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><ol>
-<li>写个简单的Python程序，完成指定操作。</li>
-</ol>
-<p>(1) 首先安装Python的图像处理库Pillow</p>
-<p>(2) 导入库中的Image对象</p>
-<p>(3) 使用Image对象的open函数打开图像</p>
-<p>(4) 通过resize方法将图像大小设置为640x480</p>
-<p>(5) 通过convert方法将图像灰度化</p>
-<p>(6) 通过save方法将处理后的图像保存下来</p>
-<ol start="2">
-<li>马赛克图像合成。</li>
-</ol>
-<p>准备实验环境和素材。</p>
-<p>(1) 安装Python的图像处理库Pillow和数学运算库NumPy。</p>
-<p>(2) 准备一个大的目标图像和一组小图片素材。</p>
-<p>处理小图片集。</p>
-<p>(1) 定义函数以计算小图片的平均颜色。</p>
-<p>(2) 遍历图标文件夹，调整每个小图片的大小。</p>
-<p>实现马赛克图像合成。</p>
-<p>(1) 定义函数以创建马赛克图像。</p>
-<p>(2) 调整目标图像的大小以适应马赛克格子。</p>
-<p>(3) 分割目标图像并为每个格子选择颜色匹配的小图片。</p>
-<p>(4) 将小图片粘贴到对应的马赛克格子中。</p>
-<p>保存并测试结果。</p>
-<p>(1) 将生成的马赛克图像保存到指定路径。</p>
-<p>(2) 检查输出文件夹以确认图像是否正确生成。</p>
-<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><ol>
-<li>写个简单的Python程序，完成指定操作。</li>
-</ol>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">original_image = Image.<span class="built_in">open</span>(input_path)</span><br><span class="line">    original_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps2.png"
-                      alt="img"
-                > </p>
-<center>图 1原始图像</center>
-
-
-
-
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">    resized_image = original_image.resize((<span class="number">640</span>, <span class="number">480</span>))</span><br><span class="line">    resized_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps3.png"
-                      alt="img"
-                > </p>
-<center>图 2改变大小之后的图像</center>
-
-
-
-
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">    bw_image = resized_image.convert(<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps4.png"
-                      alt="img"
-                > </p>
-<center>图 3灰度化之后的图像</center>
-
-
-
-
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_4.gif&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps5.png"
-                      alt="img"
-                > </p>
-<center>图 4将黑白图像存成gif格式</center>
-
-
-
- 
-
-<ol start="2">
-<li>马赛克图像合成</li>
-</ol>
-<p>准备实验环境和素材:</p>
-<p>确保安装了Python图像处理库Pillow和数学运算库<code>NumPy</code>。</p>
-<p>在代码中设置目标图像<code>（target_image_path）</code>和小图片集合<code>（icon_folder）</code>的路径。</p>
-<p>处理小图片集:</p>
-<p>使用<code>get_average_color(image)</code>函数计算每个小图片的平均颜色。这个函数接收一个图像对象作为参数，计算其在RGB颜色空间中的平均颜色，并返回表示这种颜色的元组。</p>
-<p><code>resize_icons(icon_folder, icon_size)</code>函数遍历小图片所在的文件夹，并将每张图片调整到指定的大小。这是为了使得小图片与马赛克图像的每个格子大小相匹配。</p>
-<p>实现马赛克图像合成:</p>
-<p><code>create_photo_mosaic(target_image_path, icons, grid_size)</code>函数用于创建马赛克图像。</p>
-<p>首先，该函数调整目标图像的大小，使其与马赛克网格的大小匹配。</p>
-<p>接着，它将目标图像分割成与网格大小相匹配的小区域。</p>
-<p>对于每个区域，函数找到颜色最接近该区域平均颜色的小图片，并将其放置在相应的位置上。</p>
-<p>保存并测试结果:</p>
-<p>一旦马赛克图像创建完毕，使用<code>mosaic_image.save(output_path)</code>将其保存到指定路径。</p>
-<p>保存后的马赛克图像可以在指定的输出中查看。</p>
-<p>效果浏览：</p>
-<center>grid_size = (5, 5):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps6.jpg"
-                      alt="img"
-                > </p>
-<center>grid_size = (4, 4):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps7.jpg"
-                      alt="img"
-                > </p>
-<center>grid_size = (3, 3):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps8.jpg"
-                      alt="img"
-                > </p>
-<center>grid_size = (3, 2):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps9.jpg"
-                      alt="img"
-                > </p>
-<center>grid_size = (2, 3):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps10.jpg"
-                      alt="img"
-                > </p>
-<center>grid_size = (1, 1):</center>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps11.jpg"
-                      alt="img"
-                > </p>
-<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>通过实验第一部分，我学会了如何使用Python及其第三方库Pillow进行基本的图像处理操作。这个实验让我体会到了Python在图像处理方面的强大和灵活性。通过简单的代码，我能够打开图像，改变其大小，将其转换为黑白图像，甚至将其保存为不同的格式，如GIF。这些操作在数字图像处理中非常常见，而Python使这些操作变得易于实现和理解。</p>
-<p>实验中，我首先引入了Python的图像处理库Pillow，然后使用它提供的Image对象来进行各种图像操作。例如，我利用<code>open</code>函数打开了一幅图像，然后通过<code>resize</code>方法将图像的尺寸更改为640x480像素。接着，我使用了<code>convert</code>方法将图像转换为灰度（黑白）图像，最后通过<code>save</code>方法将处理后的图像保存下来。这个过程不仅加深了我对图像处理基础概念的理解，也提高了我使用编程语言来解决实际问题的能力。</p>
-<p>在实验第二部分中，我进行了更为复杂的图像处理操作，即马赛克图像合成。这个过程包括创建一个由许多小图像组合成的大图像。我学会了如何处理和调整多个图像，以便将它们组合成一个单一的、具有视觉效果的图像。依靠准备的目标图像和小图片素材，编写了函数来计算小图片的平均颜色并调整其大小。之后，我通过比较颜色相似性来选择最合适的小图片，并将它们粘贴到目标图像的相应位置上。这个实验不仅锻炼了我的编程技能，还增强了我在创意图像处理方面的能力。</p>
-<p>总的来说，这个实验不仅提高了我的Python编程能力，还让我对数字图像处理有了更深刻的理解。通过这些实验，我学会了如何使用编程工具来创造和操纵图像，这将对我的未来学习和职业发展大有裨益。</p>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>图像处理与分析</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>作业报告</tag>
-        <tag>图像处理与分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>竞赛——蓝桥杯大赛-元宇宙元镜杯国家级三等奖</title>
     <url>/2023/12/24/%E7%AB%9E%E8%B5%9B%E2%80%94%E2%80%94%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%A7%E8%B5%9B-%E5%85%83%E5%AE%87%E5%AE%99%E5%85%83%E9%95%9C%E6%9D%AF%E5%9B%BD%E5%AE%B6%E7%BA%A7%E4%B8%89%E7%AD%89%E5%A5%96/</url>
     <content><![CDATA[<p><strong>数字生活方向：</strong></p>
@@ -2889,302 +2704,6 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
         <tag>竞赛</tag>
         <tag>蓝桥杯</tag>
         <tag>元宇宙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图像处理与分析——实验二-空间域的图像增强</title>
-    <url>/2024/04/10/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/</url>
-    <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现： </p>
-<p>1. </p>
-<ul>
-<li><p>①查看直方图 </p>
-</li>
-<li><p>②取反，再查看直方图 </p>
-</li>
-<li><p>③使用直方图均衡，再查看直方图 </p>
-</li>
-<li><p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
-</li>
-</ul>
-<ol start="2">
-<li><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p>
-</li>
-<li><p>将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果，理解卷积操作与空间域滤波的关系。</p>
-</li>
-</ol>
-<h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2><h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
-<li>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现：</li>
-</ol>
-<p>①查看直方图 </p>
-<p>②取反，再查看直方图 </p>
-<p>③使用直方图均衡，再查看直方图 </p>
-<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
-<p>实验图片路径为： imgs&#x2F;IMG_2546.jpg</p>
-<p>输出路径为：outputs&#x2F;</p>
-<p>请按照exp2_1_i的格式，输出四个结果，比如①的结果保存为：outputs&#x2F;exp2_1_1.jpg</p>
-<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：查看原图直方图</strong></p>
-<ul>
-<li>首先，加载图片并使用OpenCV库进行读取。</li>
-<li>使用Matplotlib绘制图像的直方图，这是通过计算每个颜色通道的像素强度分布来完成的。</li>
-<li>保存包含原图和直方图的组合图像为 <code>outputs/exp2_1_1.jpg</code>。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ①查看原图直方图</span></span><br><span class="line">save_image_and_histogram(img, <span class="string">&#x27;Original Image&#x27;</span>, <span class="string">&#x27;Original Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>步骤二：取反图像并查看直方图</strong></p>
-<ul>
-<li>对原始图像进行取反操作，这意味着将每个像素的颜色值变为其补色。</li>
-<li>再次绘制取反后图像的直方图，并保存。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ②取反并查看直方图</span></span><br><span class="line">img_neg = cv2.bitwise_not(img)</span><br><span class="line">save_image_and_histogram(img_neg, <span class="string">&#x27;Negative Image&#x27;</span>, <span class="string">&#x27;Negative Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>步骤三：直方图均衡化并查看直方图</strong></p>
-<ul>
-<li>将图像从BGR色彩空间转换为YUV色彩空间。</li>
-<li>对Y通道（亮度）进行直方图均衡化，这能改善图像的对比度。</li>
-<li>再次绘制直方图均衡化后图像的直方图，并保存。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ③直方图均衡化并查看直方图</span></span><br><span class="line">img_yuv = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)</span><br><span class="line">img_yuv[:,:,<span class="number">0</span>] = cv2.equalizeHist(img_yuv[:,:,<span class="number">0</span>])</span><br><span class="line">img_histeq = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)</span><br><span class="line">save_image_and_histogram(img_histeq, <span class="string">&#x27;Histogram Equalization&#x27;</span>, <span class="string">&#x27;Eq Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>步骤四：精确提取文本区域</strong></p>
-<ul>
-<li>考虑到文本可能因拍摄角度而不完全水平，我应用了一个旋转变换，使文本尽可能地水平以便裁剪。</li>
-<li>设置旋转中心为图像中心，并指定旋转角度（在这里是-10度）。这个角度可能需要根据具体图片进行微调。</li>
-<li>应用旋转后，根据旋转后的图像内容，手动确定“爱丁堡花园”文本的精确位置并进行裁剪。</li>
-<li>最后，将旋转和裁剪后的区域保存为 <code>outputs/exp2_1_4.jpg</code>，这是仅包含目标文本区域的图片。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ④仅保留“爱丁堡花园”部分</span></span><br><span class="line"><span class="comment"># 获取图像尺寸用于计算旋转中心</span></span><br><span class="line">rows, cols, _ = img.shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置旋转矩阵，中心点为图像中心，旋转角度为-10度，缩放因子为1</span></span><br><span class="line">M = cv2.getRotationMatrix2D((cols / <span class="number">2</span>, rows / <span class="number">2</span>), -<span class="number">10</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 旋转图像</span></span><br><span class="line">rotated_img = cv2.warpAffine(img, M, (cols, rows))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在旋转后的图像中确定“爱丁堡花园”文字的大致位置</span></span><br><span class="line">img_crop = rotated_img[<span class="number">550</span>:<span class="number">630</span>, <span class="number">600</span>:<span class="number">910</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存剪裁后的图像</span></span><br><span class="line">cv2.imwrite(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>exp2_1_4.jpg&#x27;</span>, img_crop)</span><br></pre></td></tr></table></figure></div>
-
-
-
-<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p>①查看直方图 </p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png"
-                      alt="实际输出"
-                ></p>
-<p>②取反，再查看直方图 </p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show02.png"
-                      alt="实际输出"
-                ></p>
-<p>③使用直方图均衡，再查看直方图 </p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show03.png"
-                      alt="实际输出"
-                ></p>
-<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show04.png"
-                      alt="实际输出"
-                ></p>
-<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><h3 id="实验要求：-1"><a href="#实验要求：-1" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p>
-<p>实验图片路径为： imgs&#x2F;1.jpg imgs&#x2F;2.jpg imgs&#x2F;3.jpg imgs&#x2F;4.jpg</p>
-<p>输出路径为：outputs&#x2F;</p>
-<p>请按照exp2_2_i的格式，输出四个结果，比如结果保存为：outputs&#x2F;exp2_2_1.jpg</p>
-<h3 id="实验方案：-1"><a href="#实验方案：-1" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>通过应用双边滤波器对给定的人脸图像进行磨皮处理，然后对比处理前后图像的直方图变化。双边滤波器是一种非线性的滤波方法，它可以在平滑图像噪声的同时保留边缘信息，因此特别适合于图像美化处理。在Python中，可以使用OpenCV库中的<code>bilateralFilter</code>函数来实现这一操作。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用双边滤波器进行磨皮</span></span><br><span class="line">smoothed = cv2.bilateralFilter(image, d=<span class="number">9</span>, sigmaColor=<span class="number">75</span>, sigmaSpace=<span class="number">75</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p>其中，<code>d</code>表示滤波器的直径，<code>sigmaColor</code>表示颜色空间的标准差，<code>sigmaSpace</code>表示坐标空间的标准差。这些参数决定了滤波器平滑图像的程度。</p>
-<p>直方图的对比通过计算原图像和磨皮后图像的颜色直方图，并用不同颜色的线表示出来。这一过程可以直观地观察磨皮效果对图像色彩分布的影响。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 计算直方图并绘制</span></span><br><span class="line">hist_original = cv2.calcHist([original], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line">hist_smoothed = cv2.calcHist([smoothed], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>))</span><br><span class="line">plt.plot(hist_original, color=<span class="string">&#x27;blue&#x27;</span>, label=<span class="string">&#x27;Original&#x27;</span>)</span><br><span class="line">plt.plot(hist_smoothed, color=<span class="string">&#x27;red&#x27;</span>, label=<span class="string">&#x27;Smoothed&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="实验结果：-1"><a href="#实验结果：-1" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show10.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show11.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show12.png"
-                      alt="实际输出"
-                ></p>
-<p><strong>图1的分析</strong></p>
-<p>原始图像和经过双边滤波处理后的图像在直方图上差别不大。这表明图像的磨皮效果较为自然，没有过度平滑，同时保持了原图的色彩特征。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show20.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show21.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show22.png"
-                      alt="实际输出"
-                ></p>
-<p><strong>图2的分析</strong></p>
-<p>可以看到在某些颜色通道中，经过滤波处理后的直方图在峰值附近略微平滑，但整体色彩分布的变化不是特别显著。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show30.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show31.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show32.png"
-                      alt="实际输出"
-                ></p>
-<p><strong>图3的分析</strong></p>
-<p>滤波后图像的直方图在低亮度区域有了平滑，说明磨皮处理降低了图像中的暗部噪声。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show40.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show41.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show42.png"
-                      alt="实际输出"
-                ></p>
-<p><strong>图4的分析</strong></p>
-<p>图像的直方图曲线在整体上变得更加平滑，尤其是在亮度较高区域的变化更为明显。这可能意味着图像亮部的细节被稍微抑制，从而减少了噪声并增强了整体的视觉效果。</p>
-<h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2><h3 id="实验要求：-2"><a href="#实验要求：-2" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p> 将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果（水平梯度图像、垂直梯度图像和梯度幅值图像），理解卷积操作与空间域滤波的关系。</p>
-<p>实验图片路径为： imgs&#x2F;100_3228.jpg</p>
-<p>输出路径为：outputs&#x2F;</p>
-<p>请按照exp2_3_i的格式，输出结果 比如结果保存为：outputs&#x2F;exp2_3_1.jpg</p>
-<h3 id="实验方案：-2"><a href="#实验方案：-2" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：读取和预处理图像</strong></p>
-<ul>
-<li>读取图像<code>100_3228.jpg</code>。</li>
-<li>将图像转换为灰度格式以准备进行Sobel边缘检测。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">image = Image.<span class="built_in">open</span>(img_path)</span><br><span class="line">img = transform(image)</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>步骤二：定义Sobel卷积核</strong></p>
-<ul>
-<li>定义Sobel卷积核<code>sobel_x</code>和<code>sobel_y</code>以检测水平和垂直边缘。</li>
-<li>这些卷积核分别能够捕捉图像在水平和垂直方向上的梯度信息。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">sobel_x = torch.Tensor([[-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>], [-<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>], [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line">sobel_y = torch.Tensor([[-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>步骤三：配置卷积层并执行卷积</strong></p>
-<ul>
-<li>配置卷积层以使用Sobel算子。</li>
-<li>不使用偏置，因为在这种滤波操作中不需要。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">conv_x = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_y = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_x.weight.data = sobel_x</span><br><span class="line">conv_y.weight.data = sobel_y</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>应用Sobel算子于图像以得到水平和垂直梯度。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">img_x = conv_x(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br><span class="line">img_y = conv_y(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>步骤四：计算梯度幅值</strong></p>
-<ul>
-<li>结合水平和垂直梯度以计算梯度幅值，这能够显示图像中边缘的整体强度。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">img_magnitude = torch.sqrt(img_x**<span class="number">2</span> + img_y**<span class="number">2</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>步骤五：执行阈值化处理</strong></p>
-<ul>
-<li>通过设置阈值，去除噪声并突出边缘。</li>
-<li>阈值化后的结果只保留较强的边缘。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">threshold = img_magnitude.mean() * <span class="number">0.5</span></span><br></pre></td></tr></table></figure></div>
-
-<p><strong>步骤六：可视化与保存结果</strong></p>
-<ul>
-<li>保存水平和垂直梯度图像，以及梯度幅值图像。</li>
-<li>使用<code>matplotlib</code>对图像进行可视化。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">visualize_and_save(img_x_thresholded, <span class="string">&#x27;Horizontal Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_1.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_y_thresholded, <span class="string">&#x27;Vertical Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_2.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_magnitude, <span class="string">&#x27;Gradient Magnitude&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="实验结果：-2"><a href="#实验结果：-2" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show50.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show51.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show52.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show53.png"
-                      alt="实际输出"
-                ></p>
-<ol>
-<li><strong>水平梯度图像</strong>: 这张图像展示了原始图像中沿水平方向边缘的强度。在水平梯度图中，垂直边缘（如山和建筑物尖顶的轮廓）被突出显示。由于Sobel算子在水平方向上捕捉垂直边缘，所以图像中明显的垂直线条和特征在这里以较亮的像素显示出来，而水平边缘则不明显或显得较暗。</li>
-<li><strong>垂直梯度图像</strong>: 与水平梯度图相对，这张图显示了沿垂直方向的边缘强度。在垂直梯度图中，水平边缘（如屋顶的边缘，建筑物所在地平缓处等等）更为明显。Sobel算子在垂直方向上识别水平边缘，因此图像中水平线条和特征在这张图上以亮像素呈现。</li>
-<li><strong>梯度幅度图像</strong>: 此图像结合了水平和垂直梯度的信息，提供了边缘总体强度的视图。在梯度幅度图中，所有边缘，无论其方向如何，都以亮度的形式展现，其中亮度越强表示梯度幅度越大。这张图是通过计算水平梯度和垂直梯度在每个像素点的矢量和的幅度得到的。它提供了关于图像边缘强度最完整的视图，显示了所有明显边缘的位置。</li>
-</ol>
-<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。以下是本实验的关键发现和总结：</p>
-<p><strong>直方图分析和图像取反</strong></p>
-<ul>
-<li>我观察了原始图像的直方图，并通过图像取反来了解亮度分布的变化。取反操作将图像中的亮区域变暗，暗区域变亮，直方图也相应地发生反转。</li>
-</ul>
-<p><strong>直方图均衡化</strong></p>
-<ul>
-<li>通过将图像转换到YUV色彩空间并对Y通道应用直方图均衡化，我显著提高了图像的对比度。直方图均衡化后的结果使得亮度分布更加均匀，从而增强了图像中的细节。</li>
-</ul>
-<p><strong>图像旋转和裁剪</strong></p>
-<ul>
-<li>通过旋转和裁剪操作，我成功地提取了图像中“爱丁堡花园”部分。这个过程涉及到对图像的几何变换，展示了图像处理中的区域选择技术。</li>
-</ul>
-<p><strong>滤波和磨皮效果</strong></p>
-<ul>
-<li>我对人脸图像应用了双边滤波器，实现了类似美图秀秀的磨皮效果。磨皮处理后，图像的直方图在低亮度区域变得更加平滑，显示了噪声的减少和肤色的均匀性提升。</li>
-</ul>
-<p><strong>Sobel边缘检测</strong></p>
-<ul>
-<li>将Sobel算子编码进PyTorch卷积核中并对图像进行处理，我得到了水平和垂直梯度图像以及梯度幅值图。这一过程说明了卷积操作如何作为空间域滤波器来检测图像中的边缘，是图像处理中边缘检测技术的一个经典例子。</li>
-</ul>
-<p>通过以上实验步骤，我加深了对图像增强技术的理解，特别是在如何利用不同的空间域滤波技术来改善视觉效果方面。实验结果表明，这些技术不仅可以增强图像的视觉质量，还可以为后续的图像分析工作提供更好的基础。</p>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>图像处理与分析</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>作业报告</tag>
-        <tag>图像处理与分析</tag>
       </tags>
   </entry>
   <entry>
@@ -3657,6 +3176,785 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
         <tag>课程项目</tag>
         <tag>作业报告</tag>
         <tag>软件性能工程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像处理与分析——实验一-数字图像处理相关软件学习</title>
+    <url>/2024/03/20/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80-%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>Python是干啥的？</p>
+<p>BMP图像的结构是什么样的？</p>
+<p>用VC怎么写图像处理的程序？</p>
+<h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
+<li><p>写个简单的Python程序，完成以下操作：</p>
+<p>a)	打开一幅图片（如自己的照片）</p>
+<p>b)	将图片大小修改成640*480</p>
+<p>c)	将修改大小后的图像转成黑白图像</p>
+<p>d)	将图像存成gif格式</p>
+</li>
+<li><p>不知道大家还记不记得奥运开幕式中那一幅幅小的笑脸照片组成大大的笑脸环节，其实日常生活中也有很多这样类似的创意，用很多幅小的相关图片组成一副大的主题图片，如下面右图就是用很多表情笑脸图合成左图的效果。考虑一下如果自己写程序的话，怎么来实现。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps1.jpg"
+                      alt="img"
+                ></p>
+</li>
+</ol>
+<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><ol>
+<li>写个简单的Python程序，完成指定操作。</li>
+</ol>
+<p>(1) 首先安装Python的图像处理库Pillow</p>
+<p>(2) 导入库中的Image对象</p>
+<p>(3) 使用Image对象的open函数打开图像</p>
+<p>(4) 通过resize方法将图像大小设置为640x480</p>
+<p>(5) 通过convert方法将图像灰度化</p>
+<p>(6) 通过save方法将处理后的图像保存下来</p>
+<ol start="2">
+<li>马赛克图像合成。</li>
+</ol>
+<p>准备实验环境和素材。</p>
+<p>(1) 安装Python的图像处理库Pillow和数学运算库NumPy。</p>
+<p>(2) 准备一个大的目标图像和一组小图片素材。</p>
+<p>处理小图片集。</p>
+<p>(1) 定义函数以计算小图片的平均颜色。</p>
+<p>(2) 遍历图标文件夹，调整每个小图片的大小。</p>
+<p>实现马赛克图像合成。</p>
+<p>(1) 定义函数以创建马赛克图像。</p>
+<p>(2) 调整目标图像的大小以适应马赛克格子。</p>
+<p>(3) 分割目标图像并为每个格子选择颜色匹配的小图片。</p>
+<p>(4) 将小图片粘贴到对应的马赛克格子中。</p>
+<p>保存并测试结果。</p>
+<p>(1) 将生成的马赛克图像保存到指定路径。</p>
+<p>(2) 检查输出文件夹以确认图像是否正确生成。</p>
+<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><ol>
+<li>写个简单的Python程序，完成指定操作。</li>
+</ol>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">original_image = Image.<span class="built_in">open</span>(input_path)</span><br><span class="line">    original_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps2.png"
+                      alt="img"
+                > </p>
+<center>图 1原始图像</center>
+
+
+
+
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">    resized_image = original_image.resize((<span class="number">640</span>, <span class="number">480</span>))</span><br><span class="line">    resized_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps3.png"
+                      alt="img"
+                > </p>
+<center>图 2改变大小之后的图像</center>
+
+
+
+
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">    bw_image = resized_image.convert(<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line">    bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps4.png"
+                      alt="img"
+                > </p>
+<center>图 3灰度化之后的图像</center>
+
+
+
+
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">bw_image.save(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>/exp1_1_4.gif&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps5.png"
+                      alt="img"
+                > </p>
+<center>图 4将黑白图像存成gif格式</center>
+
+
+
+ 
+
+<ol start="2">
+<li>马赛克图像合成</li>
+</ol>
+<p>准备实验环境和素材:</p>
+<p>确保安装了Python图像处理库Pillow和数学运算库<code>NumPy</code>。</p>
+<p>在代码中设置目标图像<code>（target_image_path）</code>和小图片集合<code>（icon_folder）</code>的路径。</p>
+<p>处理小图片集:</p>
+<p>使用<code>get_average_color(image)</code>函数计算每个小图片的平均颜色。这个函数接收一个图像对象作为参数，计算其在RGB颜色空间中的平均颜色，并返回表示这种颜色的元组。</p>
+<p><code>resize_icons(icon_folder, icon_size)</code>函数遍历小图片所在的文件夹，并将每张图片调整到指定的大小。这是为了使得小图片与马赛克图像的每个格子大小相匹配。</p>
+<p>实现马赛克图像合成:</p>
+<p><code>create_photo_mosaic(target_image_path, icons, grid_size)</code>函数用于创建马赛克图像。</p>
+<p>首先，该函数调整目标图像的大小，使其与马赛克网格的大小匹配。</p>
+<p>接着，它将目标图像分割成与网格大小相匹配的小区域。</p>
+<p>对于每个区域，函数找到颜色最接近该区域平均颜色的小图片，并将其放置在相应的位置上。</p>
+<p>保存并测试结果:</p>
+<p>一旦马赛克图像创建完毕，使用<code>mosaic_image.save(output_path)</code>将其保存到指定路径。</p>
+<p>保存后的马赛克图像可以在指定的输出中查看。</p>
+<p>效果浏览：</p>
+<center>grid_size = (5, 5):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps6.jpg"
+                      alt="img"
+                > </p>
+<center>grid_size = (4, 4):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps7.jpg"
+                      alt="img"
+                > </p>
+<center>grid_size = (3, 3):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps8.jpg"
+                      alt="img"
+                > </p>
+<center>grid_size = (3, 2):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps9.jpg"
+                      alt="img"
+                > </p>
+<center>grid_size = (2, 3):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps10.jpg"
+                      alt="img"
+                > </p>
+<center>grid_size = (1, 1):</center>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/wps11.jpg"
+                      alt="img"
+                > </p>
+<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>通过实验第一部分，我学会了如何使用Python及其第三方库Pillow进行基本的图像处理操作。这个实验让我体会到了Python在图像处理方面的强大和灵活性。通过简单的代码，我能够打开图像，改变其大小，将其转换为黑白图像，甚至将其保存为不同的格式，如GIF。这些操作在数字图像处理中非常常见，而Python使这些操作变得易于实现和理解。</p>
+<p>实验中，我首先引入了Python的图像处理库Pillow，然后使用它提供的Image对象来进行各种图像操作。例如，我利用<code>open</code>函数打开了一幅图像，然后通过<code>resize</code>方法将图像的尺寸更改为640x480像素。接着，我使用了<code>convert</code>方法将图像转换为灰度（黑白）图像，最后通过<code>save</code>方法将处理后的图像保存下来。这个过程不仅加深了我对图像处理基础概念的理解，也提高了我使用编程语言来解决实际问题的能力。</p>
+<p>在实验第二部分中，我进行了更为复杂的图像处理操作，即马赛克图像合成。这个过程包括创建一个由许多小图像组合成的大图像。我学会了如何处理和调整多个图像，以便将它们组合成一个单一的、具有视觉效果的图像。依靠准备的目标图像和小图片素材，编写了函数来计算小图片的平均颜色并调整其大小。之后，我通过比较颜色相似性来选择最合适的小图片，并将它们粘贴到目标图像的相应位置上。这个实验不仅锻炼了我的编程技能，还增强了我在创意图像处理方面的能力。</p>
+<p>总的来说，这个实验不仅提高了我的Python编程能力，还让我对数字图像处理有了更深刻的理解。通过这些实验，我学会了如何使用编程工具来创造和操纵图像，这将对我的未来学习和职业发展大有裨益。</p>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>图像处理与分析</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>作业报告</tag>
+        <tag>图像处理与分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像处理与分析——实验三-频率域图像增强</title>
+    <url>/2024/04/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/</url>
+    <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><ol>
+<li><p><strong>图像频域变换与滤波处理</strong>：</p>
+<ul>
+<li>对一系列图像（1.bmp，2.bmp，2.jpg，3.bmp，4.bmp）进行傅立叶变换和离散余弦变换（DCT）以分析其频域特征。</li>
+<li>使用空间域图像增强方法来增强变换后得到的频谱图。</li>
+<li>应用低通和高通滤波器对图像进行频率域滤波，并通过设置不同的阈值来观察滤波效果。</li>
+</ul>
+</li>
+<li><p><strong>频率域图像比较分析</strong>：</p>
+<ul>
+<li>比较指定图像对（5.bmp和10.bmp，6.bmp和9.bmp，10.bmp、11.bmp和12.bmp）的频率域特征，分析不同图像在频率域的差异性，并探讨其背后的原因。</li>
+</ul>
+</li>
+<li><p><strong>频谱图逆变换的优化学习实验</strong>：</p>
+<ul>
+<li>使用PyTorch实现离散傅里叶逆变换，并将频谱图的初始值设为高斯噪声的模型参数。</li>
+<li>通过将逆变换结果与原图之间的均方误差作为损失函数，对模型参数进行优化，验证是否能够通过优化学习到精确的频谱图。</li>
+</ul>
+</li>
+</ol>
+<h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2><h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
+<li>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现：</li>
+</ol>
+<p>①查看直方图 </p>
+<p>②取反，再查看直方图 </p>
+<p>③使用直方图均衡，再查看直方图 </p>
+<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+<p>实验图片路径为： imgs&#x2F;IMG_2546.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_1_i的格式，输出四个结果，比如①的结果保存为：outputs&#x2F;exp2_1_1.jpg</p>
+<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：查看原图直方图</strong></p>
+<ul>
+<li>首先，加载图片并使用OpenCV库进行读取。</li>
+<li>使用Matplotlib绘制图像的直方图，这是通过计算每个颜色通道的像素强度分布来完成的。</li>
+<li>保存包含原图和直方图的组合图像为 <code>outputs/exp2_1_1.jpg</code>。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ①查看原图直方图</span></span><br><span class="line">save_image_and_histogram(img, <span class="string">&#x27;Original Image&#x27;</span>, <span class="string">&#x27;Original Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤二：取反图像并查看直方图</strong></p>
+<ul>
+<li>对原始图像进行取反操作，这意味着将每个像素的颜色值变为其补色。</li>
+<li>再次绘制取反后图像的直方图，并保存。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ②取反并查看直方图</span></span><br><span class="line">img_neg = cv2.bitwise_not(img)</span><br><span class="line">save_image_and_histogram(img_neg, <span class="string">&#x27;Negative Image&#x27;</span>, <span class="string">&#x27;Negative Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤三：直方图均衡化并查看直方图</strong></p>
+<ul>
+<li>将图像从BGR色彩空间转换为YUV色彩空间。</li>
+<li>对Y通道（亮度）进行直方图均衡化，这能改善图像的对比度。</li>
+<li>再次绘制直方图均衡化后图像的直方图，并保存。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ③直方图均衡化并查看直方图</span></span><br><span class="line">img_yuv = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)</span><br><span class="line">img_yuv[:,:,<span class="number">0</span>] = cv2.equalizeHist(img_yuv[:,:,<span class="number">0</span>])</span><br><span class="line">img_histeq = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)</span><br><span class="line">save_image_and_histogram(img_histeq, <span class="string">&#x27;Histogram Equalization&#x27;</span>, <span class="string">&#x27;Eq Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤四：精确提取文本区域</strong></p>
+<ul>
+<li>考虑到文本可能因拍摄角度而不完全水平，我应用了一个旋转变换，使文本尽可能地水平以便裁剪。</li>
+<li>设置旋转中心为图像中心，并指定旋转角度（在这里是-10度）。这个角度可能需要根据具体图片进行微调。</li>
+<li>应用旋转后，根据旋转后的图像内容，手动确定“爱丁堡花园”文本的精确位置并进行裁剪。</li>
+<li>最后，将旋转和裁剪后的区域保存为 <code>outputs/exp2_1_4.jpg</code>，这是仅包含目标文本区域的图片。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ④仅保留“爱丁堡花园”部分</span></span><br><span class="line"><span class="comment"># 获取图像尺寸用于计算旋转中心</span></span><br><span class="line">rows, cols, _ = img.shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置旋转矩阵，中心点为图像中心，旋转角度为-10度，缩放因子为1</span></span><br><span class="line">M = cv2.getRotationMatrix2D((cols / <span class="number">2</span>, rows / <span class="number">2</span>), -<span class="number">10</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 旋转图像</span></span><br><span class="line">rotated_img = cv2.warpAffine(img, M, (cols, rows))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在旋转后的图像中确定“爱丁堡花园”文字的大致位置</span></span><br><span class="line">img_crop = rotated_img[<span class="number">550</span>:<span class="number">630</span>, <span class="number">600</span>:<span class="number">910</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存剪裁后的图像</span></span><br><span class="line">cv2.imwrite(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>exp2_1_4.jpg&#x27;</span>, img_crop)</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p>①查看直方图 </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png"
+                      alt="实际输出"
+                ></p>
+<p>②取反，再查看直方图 </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show02.png"
+                      alt="实际输出"
+                ></p>
+<p>③使用直方图均衡，再查看直方图 </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show03.png"
+                      alt="实际输出"
+                ></p>
+<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show04.png"
+                      alt="实际输出"
+                ></p>
+<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><h3 id="实验要求：-1"><a href="#实验要求：-1" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p>
+<p>实验图片路径为： imgs&#x2F;1.jpg imgs&#x2F;2.jpg imgs&#x2F;3.jpg imgs&#x2F;4.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_2_i的格式，输出四个结果，比如结果保存为：outputs&#x2F;exp2_2_1.jpg</p>
+<h3 id="实验方案：-1"><a href="#实验方案：-1" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>通过应用双边滤波器对给定的人脸图像进行磨皮处理，然后对比处理前后图像的直方图变化。双边滤波器是一种非线性的滤波方法，它可以在平滑图像噪声的同时保留边缘信息，因此特别适合于图像美化处理。在Python中，可以使用OpenCV库中的<code>bilateralFilter</code>函数来实现这一操作。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用双边滤波器进行磨皮</span></span><br><span class="line">smoothed = cv2.bilateralFilter(image, d=<span class="number">9</span>, sigmaColor=<span class="number">75</span>, sigmaSpace=<span class="number">75</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>其中，<code>d</code>表示滤波器的直径，<code>sigmaColor</code>表示颜色空间的标准差，<code>sigmaSpace</code>表示坐标空间的标准差。这些参数决定了滤波器平滑图像的程度。</p>
+<p>直方图的对比通过计算原图像和磨皮后图像的颜色直方图，并用不同颜色的线表示出来。这一过程可以直观地观察磨皮效果对图像色彩分布的影响。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 计算直方图并绘制</span></span><br><span class="line">hist_original = cv2.calcHist([original], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line">hist_smoothed = cv2.calcHist([smoothed], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>))</span><br><span class="line">plt.plot(hist_original, color=<span class="string">&#x27;blue&#x27;</span>, label=<span class="string">&#x27;Original&#x27;</span>)</span><br><span class="line">plt.plot(hist_smoothed, color=<span class="string">&#x27;red&#x27;</span>, label=<span class="string">&#x27;Smoothed&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="实验结果：-1"><a href="#实验结果：-1" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show10.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show11.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show12.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图1的分析</strong></p>
+<p>原始图像和经过双边滤波处理后的图像在直方图上差别不大。这表明图像的磨皮效果较为自然，没有过度平滑，同时保持了原图的色彩特征。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show20.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show21.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show22.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图2的分析</strong></p>
+<p>可以看到在某些颜色通道中，经过滤波处理后的直方图在峰值附近略微平滑，但整体色彩分布的变化不是特别显著。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show30.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show31.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show32.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图3的分析</strong></p>
+<p>滤波后图像的直方图在低亮度区域有了平滑，说明磨皮处理降低了图像中的暗部噪声。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show40.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show41.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show42.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图4的分析</strong></p>
+<p>图像的直方图曲线在整体上变得更加平滑，尤其是在亮度较高区域的变化更为明显。这可能意味着图像亮部的细节被稍微抑制，从而减少了噪声并增强了整体的视觉效果。</p>
+<h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2><h3 id="实验要求：-2"><a href="#实验要求：-2" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p> 将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果（水平梯度图像、垂直梯度图像和梯度幅值图像），理解卷积操作与空间域滤波的关系。</p>
+<p>实验图片路径为： imgs&#x2F;100_3228.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_3_i的格式，输出结果 比如结果保存为：outputs&#x2F;exp2_3_1.jpg</p>
+<h3 id="实验方案：-2"><a href="#实验方案：-2" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：读取和预处理图像</strong></p>
+<ul>
+<li>读取图像<code>100_3228.jpg</code>。</li>
+<li>将图像转换为灰度格式以准备进行Sobel边缘检测。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">image = Image.<span class="built_in">open</span>(img_path)</span><br><span class="line">img = transform(image)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤二：定义Sobel卷积核</strong></p>
+<ul>
+<li>定义Sobel卷积核<code>sobel_x</code>和<code>sobel_y</code>以检测水平和垂直边缘。</li>
+<li>这些卷积核分别能够捕捉图像在水平和垂直方向上的梯度信息。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">sobel_x = torch.Tensor([[-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>], [-<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>], [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line">sobel_y = torch.Tensor([[-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤三：配置卷积层并执行卷积</strong></p>
+<ul>
+<li>配置卷积层以使用Sobel算子。</li>
+<li>不使用偏置，因为在这种滤波操作中不需要。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">conv_x = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_y = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_x.weight.data = sobel_x</span><br><span class="line">conv_y.weight.data = sobel_y</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>应用Sobel算子于图像以得到水平和垂直梯度。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">img_x = conv_x(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br><span class="line">img_y = conv_y(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤四：计算梯度幅值</strong></p>
+<ul>
+<li>结合水平和垂直梯度以计算梯度幅值，这能够显示图像中边缘的整体强度。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">img_magnitude = torch.sqrt(img_x**<span class="number">2</span> + img_y**<span class="number">2</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤五：执行阈值化处理</strong></p>
+<ul>
+<li>通过设置阈值，去除噪声并突出边缘。</li>
+<li>阈值化后的结果只保留较强的边缘。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">threshold = img_magnitude.mean() * <span class="number">0.5</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤六：可视化与保存结果</strong></p>
+<ul>
+<li>保存水平和垂直梯度图像，以及梯度幅值图像。</li>
+<li>使用<code>matplotlib</code>对图像进行可视化。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">visualize_and_save(img_x_thresholded, <span class="string">&#x27;Horizontal Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_1.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_y_thresholded, <span class="string">&#x27;Vertical Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_2.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_magnitude, <span class="string">&#x27;Gradient Magnitude&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="实验结果：-2"><a href="#实验结果：-2" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show50.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show51.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show52.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show53.png"
+                      alt="实际输出"
+                ></p>
+<ol>
+<li><strong>水平梯度图像</strong>: 这张图像展示了原始图像中沿水平方向边缘的强度。在水平梯度图中，垂直边缘（如山和建筑物尖顶的轮廓）被突出显示。由于Sobel算子在水平方向上捕捉垂直边缘，所以图像中明显的垂直线条和特征在这里以较亮的像素显示出来，而水平边缘则不明显或显得较暗。</li>
+<li><strong>垂直梯度图像</strong>: 与水平梯度图相对，这张图显示了沿垂直方向的边缘强度。在垂直梯度图中，水平边缘（如屋顶的边缘，建筑物所在地平缓处等等）更为明显。Sobel算子在垂直方向上识别水平边缘，因此图像中水平线条和特征在这张图上以亮像素呈现。</li>
+<li><strong>梯度幅度图像</strong>: 此图像结合了水平和垂直梯度的信息，提供了边缘总体强度的视图。在梯度幅度图中，所有边缘，无论其方向如何，都以亮度的形式展现，其中亮度越强表示梯度幅度越大。这张图是通过计算水平梯度和垂直梯度在每个像素点的矢量和的幅度得到的。它提供了关于图像边缘强度最完整的视图，显示了所有明显边缘的位置。</li>
+</ol>
+<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。以下是本实验的关键发现和总结：</p>
+<p><strong>直方图分析和图像取反</strong></p>
+<ul>
+<li>我观察了原始图像的直方图，并通过图像取反来了解亮度分布的变化。取反操作将图像中的亮区域变暗，暗区域变亮，直方图也相应地发生反转。</li>
+</ul>
+<p><strong>直方图均衡化</strong></p>
+<ul>
+<li>通过将图像转换到YUV色彩空间并对Y通道应用直方图均衡化，我显著提高了图像的对比度。直方图均衡化后的结果使得亮度分布更加均匀，从而增强了图像中的细节。</li>
+</ul>
+<p><strong>图像旋转和裁剪</strong></p>
+<ul>
+<li>通过旋转和裁剪操作，我成功地提取了图像中“爱丁堡花园”部分。这个过程涉及到对图像的几何变换，展示了图像处理中的区域选择技术。</li>
+</ul>
+<p><strong>滤波和磨皮效果</strong></p>
+<ul>
+<li>我对人脸图像应用了双边滤波器，实现了类似美图秀秀的磨皮效果。磨皮处理后，图像的直方图在低亮度区域变得更加平滑，显示了噪声的减少和肤色的均匀性提升。</li>
+</ul>
+<p><strong>Sobel边缘检测</strong></p>
+<ul>
+<li>将Sobel算子编码进PyTorch卷积核中并对图像进行处理，我得到了水平和垂直梯度图像以及梯度幅值图。这一过程说明了卷积操作如何作为空间域滤波器来检测图像中的边缘，是图像处理中边缘检测技术的一个经典例子。</li>
+</ul>
+<p>通过以上实验步骤，我加深了对图像增强技术的理解，特别是在如何利用不同的空间域滤波技术来改善视觉效果方面。实验结果表明，这些技术不仅可以增强图像的视觉质量，还可以为后续的图像分析工作提供更好的基础。</p>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>图像处理与分析</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>作业报告</tag>
+        <tag>图像处理与分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像处理与分析——实验二-空间域的图像增强</title>
+    <url>/2024/04/10/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/</url>
+    <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现： </p>
+<p>1. </p>
+<ul>
+<li><p>①查看直方图 </p>
+</li>
+<li><p>②取反，再查看直方图 </p>
+</li>
+<li><p>③使用直方图均衡，再查看直方图 </p>
+</li>
+<li><p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p>
+</li>
+<li><p>将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果，理解卷积操作与空间域滤波的关系。</p>
+</li>
+</ol>
+<h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2><h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
+<li>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现：</li>
+</ol>
+<p>①查看直方图 </p>
+<p>②取反，再查看直方图 </p>
+<p>③使用直方图均衡，再查看直方图 </p>
+<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+<p>实验图片路径为： imgs&#x2F;IMG_2546.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_1_i的格式，输出四个结果，比如①的结果保存为：outputs&#x2F;exp2_1_1.jpg</p>
+<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：查看原图直方图</strong></p>
+<ul>
+<li>首先，加载图片并使用OpenCV库进行读取。</li>
+<li>使用Matplotlib绘制图像的直方图，这是通过计算每个颜色通道的像素强度分布来完成的。</li>
+<li>保存包含原图和直方图的组合图像为 <code>outputs/exp2_1_1.jpg</code>。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ①查看原图直方图</span></span><br><span class="line">save_image_and_histogram(img, <span class="string">&#x27;Original Image&#x27;</span>, <span class="string">&#x27;Original Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤二：取反图像并查看直方图</strong></p>
+<ul>
+<li>对原始图像进行取反操作，这意味着将每个像素的颜色值变为其补色。</li>
+<li>再次绘制取反后图像的直方图，并保存。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ②取反并查看直方图</span></span><br><span class="line">img_neg = cv2.bitwise_not(img)</span><br><span class="line">save_image_and_histogram(img_neg, <span class="string">&#x27;Negative Image&#x27;</span>, <span class="string">&#x27;Negative Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤三：直方图均衡化并查看直方图</strong></p>
+<ul>
+<li>将图像从BGR色彩空间转换为YUV色彩空间。</li>
+<li>对Y通道（亮度）进行直方图均衡化，这能改善图像的对比度。</li>
+<li>再次绘制直方图均衡化后图像的直方图，并保存。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ③直方图均衡化并查看直方图</span></span><br><span class="line">img_yuv = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)</span><br><span class="line">img_yuv[:,:,<span class="number">0</span>] = cv2.equalizeHist(img_yuv[:,:,<span class="number">0</span>])</span><br><span class="line">img_histeq = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)</span><br><span class="line">save_image_and_histogram(img_histeq, <span class="string">&#x27;Histogram Equalization&#x27;</span>, <span class="string">&#x27;Eq Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤四：精确提取文本区域</strong></p>
+<ul>
+<li>考虑到文本可能因拍摄角度而不完全水平，我应用了一个旋转变换，使文本尽可能地水平以便裁剪。</li>
+<li>设置旋转中心为图像中心，并指定旋转角度（在这里是-10度）。这个角度可能需要根据具体图片进行微调。</li>
+<li>应用旋转后，根据旋转后的图像内容，手动确定“爱丁堡花园”文本的精确位置并进行裁剪。</li>
+<li>最后，将旋转和裁剪后的区域保存为 <code>outputs/exp2_1_4.jpg</code>，这是仅包含目标文本区域的图片。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ④仅保留“爱丁堡花园”部分</span></span><br><span class="line"><span class="comment"># 获取图像尺寸用于计算旋转中心</span></span><br><span class="line">rows, cols, _ = img.shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置旋转矩阵，中心点为图像中心，旋转角度为-10度，缩放因子为1</span></span><br><span class="line">M = cv2.getRotationMatrix2D((cols / <span class="number">2</span>, rows / <span class="number">2</span>), -<span class="number">10</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 旋转图像</span></span><br><span class="line">rotated_img = cv2.warpAffine(img, M, (cols, rows))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在旋转后的图像中确定“爱丁堡花园”文字的大致位置</span></span><br><span class="line">img_crop = rotated_img[<span class="number">550</span>:<span class="number">630</span>, <span class="number">600</span>:<span class="number">910</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存剪裁后的图像</span></span><br><span class="line">cv2.imwrite(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>exp2_1_4.jpg&#x27;</span>, img_crop)</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p>①查看直方图 </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png"
+                      alt="实际输出"
+                ></p>
+<p>②取反，再查看直方图 </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show02.png"
+                      alt="实际输出"
+                ></p>
+<p>③使用直方图均衡，再查看直方图 </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show03.png"
+                      alt="实际输出"
+                ></p>
+<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show04.png"
+                      alt="实际输出"
+                ></p>
+<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><h3 id="实验要求：-1"><a href="#实验要求：-1" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p>
+<p>实验图片路径为： imgs&#x2F;1.jpg imgs&#x2F;2.jpg imgs&#x2F;3.jpg imgs&#x2F;4.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_2_i的格式，输出四个结果，比如结果保存为：outputs&#x2F;exp2_2_1.jpg</p>
+<h3 id="实验方案：-1"><a href="#实验方案：-1" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>通过应用双边滤波器对给定的人脸图像进行磨皮处理，然后对比处理前后图像的直方图变化。双边滤波器是一种非线性的滤波方法，它可以在平滑图像噪声的同时保留边缘信息，因此特别适合于图像美化处理。在Python中，可以使用OpenCV库中的<code>bilateralFilter</code>函数来实现这一操作。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用双边滤波器进行磨皮</span></span><br><span class="line">smoothed = cv2.bilateralFilter(image, d=<span class="number">9</span>, sigmaColor=<span class="number">75</span>, sigmaSpace=<span class="number">75</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>其中，<code>d</code>表示滤波器的直径，<code>sigmaColor</code>表示颜色空间的标准差，<code>sigmaSpace</code>表示坐标空间的标准差。这些参数决定了滤波器平滑图像的程度。</p>
+<p>直方图的对比通过计算原图像和磨皮后图像的颜色直方图，并用不同颜色的线表示出来。这一过程可以直观地观察磨皮效果对图像色彩分布的影响。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 计算直方图并绘制</span></span><br><span class="line">hist_original = cv2.calcHist([original], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line">hist_smoothed = cv2.calcHist([smoothed], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>))</span><br><span class="line">plt.plot(hist_original, color=<span class="string">&#x27;blue&#x27;</span>, label=<span class="string">&#x27;Original&#x27;</span>)</span><br><span class="line">plt.plot(hist_smoothed, color=<span class="string">&#x27;red&#x27;</span>, label=<span class="string">&#x27;Smoothed&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="实验结果：-1"><a href="#实验结果：-1" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show10.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show11.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show12.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图1的分析</strong></p>
+<p>原始图像和经过双边滤波处理后的图像在直方图上差别不大。这表明图像的磨皮效果较为自然，没有过度平滑，同时保持了原图的色彩特征。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show20.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show21.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show22.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图2的分析</strong></p>
+<p>可以看到在某些颜色通道中，经过滤波处理后的直方图在峰值附近略微平滑，但整体色彩分布的变化不是特别显著。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show30.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show31.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show32.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图3的分析</strong></p>
+<p>滤波后图像的直方图在低亮度区域有了平滑，说明磨皮处理降低了图像中的暗部噪声。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show40.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show41.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show42.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图4的分析</strong></p>
+<p>图像的直方图曲线在整体上变得更加平滑，尤其是在亮度较高区域的变化更为明显。这可能意味着图像亮部的细节被稍微抑制，从而减少了噪声并增强了整体的视觉效果。</p>
+<h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2><h3 id="实验要求：-2"><a href="#实验要求：-2" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p> 将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果（水平梯度图像、垂直梯度图像和梯度幅值图像），理解卷积操作与空间域滤波的关系。</p>
+<p>实验图片路径为： imgs&#x2F;100_3228.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_3_i的格式，输出结果 比如结果保存为：outputs&#x2F;exp2_3_1.jpg</p>
+<h3 id="实验方案：-2"><a href="#实验方案：-2" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：读取和预处理图像</strong></p>
+<ul>
+<li>读取图像<code>100_3228.jpg</code>。</li>
+<li>将图像转换为灰度格式以准备进行Sobel边缘检测。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">image = Image.<span class="built_in">open</span>(img_path)</span><br><span class="line">img = transform(image)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤二：定义Sobel卷积核</strong></p>
+<ul>
+<li>定义Sobel卷积核<code>sobel_x</code>和<code>sobel_y</code>以检测水平和垂直边缘。</li>
+<li>这些卷积核分别能够捕捉图像在水平和垂直方向上的梯度信息。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">sobel_x = torch.Tensor([[-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>], [-<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>], [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line">sobel_y = torch.Tensor([[-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤三：配置卷积层并执行卷积</strong></p>
+<ul>
+<li>配置卷积层以使用Sobel算子。</li>
+<li>不使用偏置，因为在这种滤波操作中不需要。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">conv_x = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_y = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_x.weight.data = sobel_x</span><br><span class="line">conv_y.weight.data = sobel_y</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>应用Sobel算子于图像以得到水平和垂直梯度。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">img_x = conv_x(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br><span class="line">img_y = conv_y(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤四：计算梯度幅值</strong></p>
+<ul>
+<li>结合水平和垂直梯度以计算梯度幅值，这能够显示图像中边缘的整体强度。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">img_magnitude = torch.sqrt(img_x**<span class="number">2</span> + img_y**<span class="number">2</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤五：执行阈值化处理</strong></p>
+<ul>
+<li>通过设置阈值，去除噪声并突出边缘。</li>
+<li>阈值化后的结果只保留较强的边缘。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">threshold = img_magnitude.mean() * <span class="number">0.5</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤六：可视化与保存结果</strong></p>
+<ul>
+<li>保存水平和垂直梯度图像，以及梯度幅值图像。</li>
+<li>使用<code>matplotlib</code>对图像进行可视化。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">visualize_and_save(img_x_thresholded, <span class="string">&#x27;Horizontal Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_1.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_y_thresholded, <span class="string">&#x27;Vertical Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_2.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_magnitude, <span class="string">&#x27;Gradient Magnitude&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="实验结果：-2"><a href="#实验结果：-2" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show50.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show51.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show52.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show53.png"
+                      alt="实际输出"
+                ></p>
+<ol>
+<li><strong>水平梯度图像</strong>: 这张图像展示了原始图像中沿水平方向边缘的强度。在水平梯度图中，垂直边缘（如山和建筑物尖顶的轮廓）被突出显示。由于Sobel算子在水平方向上捕捉垂直边缘，所以图像中明显的垂直线条和特征在这里以较亮的像素显示出来，而水平边缘则不明显或显得较暗。</li>
+<li><strong>垂直梯度图像</strong>: 与水平梯度图相对，这张图显示了沿垂直方向的边缘强度。在垂直梯度图中，水平边缘（如屋顶的边缘，建筑物所在地平缓处等等）更为明显。Sobel算子在垂直方向上识别水平边缘，因此图像中水平线条和特征在这张图上以亮像素呈现。</li>
+<li><strong>梯度幅度图像</strong>: 此图像结合了水平和垂直梯度的信息，提供了边缘总体强度的视图。在梯度幅度图中，所有边缘，无论其方向如何，都以亮度的形式展现，其中亮度越强表示梯度幅度越大。这张图是通过计算水平梯度和垂直梯度在每个像素点的矢量和的幅度得到的。它提供了关于图像边缘强度最完整的视图，显示了所有明显边缘的位置。</li>
+</ol>
+<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。以下是本实验的关键发现和总结：</p>
+<p><strong>直方图分析和图像取反</strong></p>
+<ul>
+<li>我观察了原始图像的直方图，并通过图像取反来了解亮度分布的变化。取反操作将图像中的亮区域变暗，暗区域变亮，直方图也相应地发生反转。</li>
+</ul>
+<p><strong>直方图均衡化</strong></p>
+<ul>
+<li>通过将图像转换到YUV色彩空间并对Y通道应用直方图均衡化，我显著提高了图像的对比度。直方图均衡化后的结果使得亮度分布更加均匀，从而增强了图像中的细节。</li>
+</ul>
+<p><strong>图像旋转和裁剪</strong></p>
+<ul>
+<li>通过旋转和裁剪操作，我成功地提取了图像中“爱丁堡花园”部分。这个过程涉及到对图像的几何变换，展示了图像处理中的区域选择技术。</li>
+</ul>
+<p><strong>滤波和磨皮效果</strong></p>
+<ul>
+<li>我对人脸图像应用了双边滤波器，实现了类似美图秀秀的磨皮效果。磨皮处理后，图像的直方图在低亮度区域变得更加平滑，显示了噪声的减少和肤色的均匀性提升。</li>
+</ul>
+<p><strong>Sobel边缘检测</strong></p>
+<ul>
+<li>将Sobel算子编码进PyTorch卷积核中并对图像进行处理，我得到了水平和垂直梯度图像以及梯度幅值图。这一过程说明了卷积操作如何作为空间域滤波器来检测图像中的边缘，是图像处理中边缘检测技术的一个经典例子。</li>
+</ul>
+<p>通过以上实验步骤，我加深了对图像增强技术的理解，特别是在如何利用不同的空间域滤波技术来改善视觉效果方面。实验结果表明，这些技术不仅可以增强图像的视觉质量，还可以为后续的图像分析工作提供更好的基础。</p>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>图像处理与分析</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>作业报告</tag>
+        <tag>图像处理与分析</tag>
       </tags>
   </entry>
 </search>
