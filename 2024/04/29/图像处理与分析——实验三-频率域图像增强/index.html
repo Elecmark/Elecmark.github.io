@@ -18,41 +18,31 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="实验目标： 图像频域变换与滤波处理：  对一系列图像（1.bmp，2.bmp，2.jpg，3.bmp，4.bmp）进行傅立叶变换和离散余弦变换（DCT）以分析其频域特征。 使用空间域图像增强方法来增强变换后得到的频谱图。 应用低通和高通滤波器对图像进行频率域滤波，并通过设置不同的阈值来观察滤波效果。   频率域图像比较分析：  比较指定图像对（5.bmp和10.bmp，6.bmp和9.bmp，10">
+        <meta name="description" content="在本次频率域图像处理实验中，我通过傅立叶变换、DCT变换和离散傅立叶逆变换等技术，深入研究了图像频域特性的分析与增强。通过比较不同图像对的频率域特征，以及利用优化学习重建图像的频谱图。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图像处理与分析——实验三-频率域图像增强">
 <meta property="og:url" content="https://elecmark.github.io/2024/04/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="实验目标： 图像频域变换与滤波处理：  对一系列图像（1.bmp，2.bmp，2.jpg，3.bmp，4.bmp）进行傅立叶变换和离散余弦变换（DCT）以分析其频域特征。 使用空间域图像增强方法来增强变换后得到的频谱图。 应用低通和高通滤波器对图像进行频率域滤波，并通过设置不同的阈值来观察滤波效果。   频率域图像比较分析：  比较指定图像对（5.bmp和10.bmp，6.bmp和9.bmp，10">
+<meta property="og:description" content="在本次频率域图像处理实验中，我通过傅立叶变换、DCT变换和离散傅立叶逆变换等技术，深入研究了图像频域特性的分析与增强。通过比较不同图像对的频率域特征，以及利用优化学习重建图像的频谱图。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show02.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show03.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show04.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show10.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show11.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show12.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show20.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show21.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show22.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show30.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show31.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show32.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show40.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show41.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show42.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show50.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show51.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show52.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show53.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_1_bmp.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_2_JPG.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_2_bmp.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_3_bmp.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_4_bmp.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_1.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_2.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_3.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_4.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_3_1.png">
 <meta property="article:published_time" content="2024-04-29T03:00:07.000Z">
-<meta property="article:modified_time" content="2024-04-29T03:09:08.642Z">
+<meta property="article:modified_time" content="2024-05-11T04:13:23.955Z">
 <meta property="article:author" content="Elecmark">
 <meta property="article:tag" content="课程项目">
 <meta property="article:tag" content="作业报告">
 <meta property="article:tag" content="图像处理与分析">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png">
+<meta name="twitter:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_1_bmp.png">
     
     
     <!--- Icon Part-->
@@ -548,7 +538,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">20</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">21</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -602,8 +592,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-29 11:09:08</span>
-            <span class="mobile">2024-04-29 11:09:08</span>
+            <span class="desktop">2024-05-11 12:13:23</span>
+            <span class="mobile">2024-05-11 12:13:23</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -695,270 +685,219 @@
 </ul>
 </li>
 </ol>
-<h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2><h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
-<li>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现：</li>
+<h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2><h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p>1.用Python写程序，对目录下的图像（1.bmp，2.bmp，2.jpg，3.bmp，4.bmp），实现： </p>
+<p>①查看不同图像的傅立叶变换的图像 </p>
+<p>②查看不同图像的DCT（离散余弦）变换 </p>
+<p>③对变换后得到的频谱图使用空间域图像增强的方法增强效果 </p>
+<p>④采用低通滤波器和高通滤波器对图像进行频率域滤波，设置不同的阈值，查看效果</p>
+<p>实验图片路径为： imgs&#x2F;1.bmp</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp3_1_i的格式，输出每个任务结果</p>
+<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>在实验一中，我探索了图像的频域特性，应用了傅立叶变换、离散余弦变换（DCT）、频谱图增强，以及低通和高通滤波器的技术。下面将详细解释每个步骤的关键代码及其功能：</p>
+<h4 id="图像加载与预处理"><a href="#图像加载与预处理" class="headerlink" title="图像加载与预处理"></a><strong>图像加载与预处理</strong></h4><p>首先，使用<code>load_images</code>函数从指定文件夹加载图像集。这个函数读取图像为灰度格式，便于后续的频域处理。每个图像文件名通过替换<code>.</code>为<code>_</code>生成一个唯一标识符，用于保存处理后的结果。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_images</span>(<span class="params">folder</span>):</span><br><span class="line">    filenames = [<span class="string">&#x27;1.bmp&#x27;</span>, <span class="string">&#x27;2.bmp&#x27;</span>, <span class="string">&#x27;2.JPG&#x27;</span>, <span class="string">&#x27;3.bmp&#x27;</span>, <span class="string">&#x27;4.bmp&#x27;</span>]</span><br><span class="line">    images = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">        img = cv2.imread(<span class="string">f&quot;<span class="subst">&#123;folder&#125;</span>/<span class="subst">&#123;filename&#125;</span>&quot;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line">        <span class="keyword">if</span> img <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            identifier = filename.replace(<span class="string">&#x27;.&#x27;</span>, <span class="string">&#x27;_&#x27;</span>)</span><br><span class="line">            images[filename] = (img, <span class="string">f&#x27;exp3_1_<span class="subst">&#123;identifier&#125;</span>&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> images</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="傅立叶变换"><a href="#傅立叶变换" class="headerlink" title="傅立叶变换"></a><strong>傅立叶变换</strong></h4><p>使用<code>apply_fourier_transform</code>函数对图像执行傅立叶变换，该函数通过<code>numpy.fft</code>库计算二维傅立叶变换，将频率为0的分量移到频谱中心，并通过对数变换增强结果的可视化。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_fourier_transform</span>(<span class="params">image</span>):</span><br><span class="line">    f = np.fft.fft2(image)</span><br><span class="line">    fshift = np.fft.fftshift(f)</span><br><span class="line">    magnitude_spectrum = <span class="number">20</span> * np.log(np.<span class="built_in">abs</span>(fshift) + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> magnitude_spectrum</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="离散余弦变换（DCT）"><a href="#离散余弦变换（DCT）" class="headerlink" title="离散余弦变换（DCT）"></a><strong>离散余弦变换（DCT）</strong></h4><p>在<code>apply_dct</code>函数中，图像首先被裁剪为偶数尺寸以适应DCT要求，然后应用DCT变换。结果被归一化和调整以便于显示。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_dct</span>(<span class="params">image</span>):</span><br><span class="line">    h, w = image.shape</span><br><span class="line">    image = image[:h - (h % <span class="number">2</span>), :w - (w % <span class="number">2</span>)]</span><br><span class="line">    dct = cv2.dct(np.float32(image) / <span class="number">255.0</span>)</span><br><span class="line">    <span class="keyword">return</span> dct</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="频谱图增强"><a href="#频谱图增强" class="headerlink" title="频谱图增强"></a><strong>频谱图增强</strong></h4><p><code>enhance_spectrum</code>函数通过对频谱图进行对数变换来增强其视觉表现，使得高频和低频成分的差异更加明显。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">enhance_spectrum</span>(<span class="params">spectrum</span>):</span><br><span class="line">    enhanced = np.log1p(np.<span class="built_in">abs</span>(spectrum))</span><br><span class="line">    <span class="keyword">return</span> enhanced</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="滤波器应用"><a href="#滤波器应用" class="headerlink" title="滤波器应用"></a><strong>滤波器应用</strong></h4><p><code>apply_filter</code>函数允许应用低通或高通滤波器。通过创建一个中心为1的二值掩模（对于低通滤波器）或其补集（对于高通滤波器），实现对频谱的选择性保留或剔除。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_filter</span>(<span class="params">image, low_pass=<span class="literal">True</span>, cutoff=<span class="number">30</span></span>):</span><br><span class="line">    rows, cols = image.shape</span><br><span class="line">    crow, ccol = rows // <span class="number">2</span>, cols // <span class="number">2</span></span><br><span class="line">    mask = np.zeros((rows, cols), np.uint8)</span><br><span class="line">    mask_area = (x - crow)**<span class="number">2</span> + (y - ccol)**<span class="number">2</span> &lt;= cutoff**<span class="number">2</span></span><br><span class="line">    mask[mask_area] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> low_pass:</span><br><span class="line">        mask = <span class="number">1</span> - mask</span><br><span class="line">    fshift *= mask</span><br><span class="line">    img_back = np.fft.ifft2(np.fft.ifftshift(fshift))</span><br><span class="line">    <span class="keyword">return</span> np.<span class="built_in">abs</span>(img_back)</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="图像处理与保存"><a href="#图像处理与保存" class="headerlink" title="图像处理与保存"></a><strong>图像处理与保存</strong></h4><p>在<code>process_and_save_image</code>函数中，我将上述所有处理步骤集成在一起，对每幅图像依次执行傅立叶变换、DCT变换、频谱增强、高通和低通滤波，然后将处理结果并排显示并保存。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">process_and_save_image</span>(<span class="params">img, title, filename</span>):</span><br><span class="line">    ft_image = apply_fourier_transform(img)</span><br><span class="line">    dct_image = apply_dct(img)</span><br><span class="line">    enhanced_ft = enhance_spectrum(ft_image)</span><br><span class="line">    high_pass_image = apply_filter(img, <span class="literal">False</span>, <span class="number">30</span>)</span><br><span class="line">    low</span><br><span class="line"></span><br><span class="line">_pass_image = apply_filter(img, <span class="literal">True</span>, <span class="number">30</span>)</span><br><span class="line">    fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">6</span>, figsize=(<span class="number">20</span>, <span class="number">5</span>))</span><br><span class="line">    <span class="keyword">for</span> ax, image, t <span class="keyword">in</span> <span class="built_in">zip</span>(axs, [img, ft_image, dct_image, enhanced_ft, high_pass_image, low_pass_image], [<span class="string">&#x27;Original&#x27;</span>, <span class="string">&#x27;Fourier Transform&#x27;</span>, <span class="string">&#x27;DCT&#x27;</span>, <span class="string">&#x27;Enhanced Spectrum&#x27;</span>, <span class="string">&#x27;High Pass Filter&#x27;</span>, <span class="string">&#x27;Low Pass Filter&#x27;</span>]):</span><br><span class="line">        ax.imshow(image, cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">        ax.set_title(t)</span><br><span class="line">        ax.axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">    plt.savefig(<span class="string">f&#x27;outputs/<span class="subst">&#123;filename&#125;</span>.png&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+
+
+
+
+<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_1_bmp.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_2_JPG.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_2_bmp.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_3_bmp.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_4_bmp.png"
+                      alt="实际输出"
+                ></p>
+<ol>
+<li><p>**傅立叶变换 (FT)**：</p>
+<ul>
+<li>傅立叶变换揭示了图像的频率成分。中心的亮点表明了低频成分的集中，这在结构简单且对称的图像中更为明显。在傅立叶图像中观察到的模式直接关联到原始图像的空间复杂度。</li>
+</ul>
+</li>
+<li><p>**离散余弦变换 (DCT)**：</p>
+<ul>
+<li>DCT主要用于图像压缩中，其转换结果通常不如傅立叶变换直观。DCT图像中暗部较多，因为它集中表示了图像中的能量，并且能量大部分集中在变换的左上角，对于自然图像和复杂图案来说尤其明显。</li>
+</ul>
+</li>
+<li><p><strong>增强频谱图</strong>：</p>
+<ul>
+<li>频谱图经过对数变换后，细节更加明显。这种增强有助于分析图像的频率成分，特别是在进行噪声分析和滤波设计时。</li>
+</ul>
+</li>
+<li><p><strong>高通滤波器</strong>：</p>
+<ul>
+<li>高通滤波器用于突出图像中的高频细节，如边缘和细微纹理。处理后的图像显示了边缘增强的效果，特别是在复杂图案和自然场景中，高频细节被强化，而低频背景信息则被抑制。</li>
+</ul>
+</li>
+<li><p><strong>低通滤波器</strong>：</p>
+<ul>
+<li>低通滤波器主要用于平滑图像，减少高频噪声。应用低通滤波后的图像显示出更平滑的外观，图像的粗糙边缘和高频噪点得到了有效抑制，适用于去噪和图像去细节化处理。</li>
+</ul>
+</li>
 </ol>
-<p>①查看直方图 </p>
-<p>②取反，再查看直方图 </p>
-<p>③使用直方图均衡，再查看直方图 </p>
-<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
-<p>实验图片路径为： imgs&#x2F;IMG_2546.jpg</p>
+<p>这些结果清晰地展示了各种频率域处理技术对图像特性的影响，每种处理方法针对不同的应用场景和需求有其独特的优势和局限。通过这些实验，我可以更深入地理解和利用这些技术来改善图像分析和处理的效果。</p>
+<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><h3 id="实验要求：-1"><a href="#实验要求：-1" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p>2.比较5.bmp和10.bmp，6.bmp和9.bmp，10.bmp、11.bmp和12.bmp 频率域图像的不同，说明原因</p>
+<p>实验图片路径为： imgs&#x2F;</p>
 <p>输出路径为：outputs&#x2F;</p>
-<p>请按照exp2_1_i的格式，输出四个结果，比如①的结果保存为：outputs&#x2F;exp2_1_1.jpg</p>
-<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：查看原图直方图</strong></p>
-<ul>
-<li>首先，加载图片并使用OpenCV库进行读取。</li>
-<li>使用Matplotlib绘制图像的直方图，这是通过计算每个颜色通道的像素强度分布来完成的。</li>
-<li>保存包含原图和直方图的组合图像为 <code>outputs/exp2_1_1.jpg</code>。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ①查看原图直方图</span></span><br><span class="line">save_image_and_histogram(img, <span class="string">&#x27;Original Image&#x27;</span>, <span class="string">&#x27;Original Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+<p>请按照exp3_2_i的格式，输出结果</p>
+<h3 id="实验方案：-1"><a href="#实验方案：-1" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>任务2主要集中在比较不同图像对的频率域特征。这里的目的是探讨不同图像在频率域的差异性，并尝试从中分析原因。这些分析有助于我理解图像内容与其频率成分之间的关系。下面是关键代码的解释和分析，以及如何用它来执行实验：</p>
+<h4 id="图像加载与预处理-1"><a href="#图像加载与预处理-1" class="headerlink" title="图像加载与预处理"></a><strong>图像加载与预处理</strong></h4><p>使用<code>load_image</code>函数从指定路径加载图像，并转换为灰度格式，这是进行频率域分析的基础。这一步骤确保了处理的统一性和准确性。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_image</span>(<span class="params">image_path</span>):</span><br><span class="line">    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)</span><br><span class="line">    <span class="keyword">if</span> image <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;无法加载图像：<span class="subst">&#123;image_path&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> image</span><br></pre></td></tr></table></figure></div>
 
-<p><strong>步骤二：取反图像并查看直方图</strong></p>
-<ul>
-<li>对原始图像进行取反操作，这意味着将每个像素的颜色值变为其补色。</li>
-<li>再次绘制取反后图像的直方图，并保存。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ②取反并查看直方图</span></span><br><span class="line">img_neg = cv2.bitwise_not(img)</span><br><span class="line">save_image_and_histogram(img_neg, <span class="string">&#x27;Negative Image&#x27;</span>, <span class="string">&#x27;Negative Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+<h4 id="傅立叶变换-1"><a href="#傅立叶变换-1" class="headerlink" title="傅立叶变换"></a><strong>傅立叶变换</strong></h4><p>通过<code>fourier_transform</code>函数对图像执行傅立叶变换，以获取其频率域表示。这个函数不仅应用了FFT来转换图像，还通过对数变换增加了频谱的对比度，使得高频和低频成分更易于区分。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fourier_transform</span>(<span class="params">image</span>):</span><br><span class="line">    f = np.fft.fft2(image)</span><br><span class="line">    fshift = np.fft.fftshift(f)</span><br><span class="line">    spectrum = <span class="number">20</span> * np.log(np.<span class="built_in">abs</span>(fshift) + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> spectrum</span><br></pre></td></tr></table></figure></div>
 
-<p><strong>步骤三：直方图均衡化并查看直方图</strong></p>
-<ul>
-<li>将图像从BGR色彩空间转换为YUV色彩空间。</li>
-<li>对Y通道（亮度）进行直方图均衡化，这能改善图像的对比度。</li>
-<li>再次绘制直方图均衡化后图像的直方图，并保存。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ③直方图均衡化并查看直方图</span></span><br><span class="line">img_yuv = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)</span><br><span class="line">img_yuv[:,:,<span class="number">0</span>] = cv2.equalizeHist(img_yuv[:,:,<span class="number">0</span>])</span><br><span class="line">img_histeq = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)</span><br><span class="line">save_image_and_histogram(img_histeq, <span class="string">&#x27;Histogram Equalization&#x27;</span>, <span class="string">&#x27;Eq Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>步骤四：精确提取文本区域</strong></p>
-<ul>
-<li>考虑到文本可能因拍摄角度而不完全水平，我应用了一个旋转变换，使文本尽可能地水平以便裁剪。</li>
-<li>设置旋转中心为图像中心，并指定旋转角度（在这里是-10度）。这个角度可能需要根据具体图片进行微调。</li>
-<li>应用旋转后，根据旋转后的图像内容，手动确定“爱丁堡花园”文本的精确位置并进行裁剪。</li>
-<li>最后，将旋转和裁剪后的区域保存为 <code>outputs/exp2_1_4.jpg</code>，这是仅包含目标文本区域的图片。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ④仅保留“爱丁堡花园”部分</span></span><br><span class="line"><span class="comment"># 获取图像尺寸用于计算旋转中心</span></span><br><span class="line">rows, cols, _ = img.shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置旋转矩阵，中心点为图像中心，旋转角度为-10度，缩放因子为1</span></span><br><span class="line">M = cv2.getRotationMatrix2D((cols / <span class="number">2</span>, rows / <span class="number">2</span>), -<span class="number">10</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 旋转图像</span></span><br><span class="line">rotated_img = cv2.warpAffine(img, M, (cols, rows))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在旋转后的图像中确定“爱丁堡花园”文字的大致位置</span></span><br><span class="line">img_crop = rotated_img[<span class="number">550</span>:<span class="number">630</span>, <span class="number">600</span>:<span class="number">910</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存剪裁后的图像</span></span><br><span class="line">cv2.imwrite(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>exp2_1_4.jpg&#x27;</span>, img_crop)</span><br></pre></td></tr></table></figure></div>
+<h4 id="频率域特征比较"><a href="#频率域特征比较" class="headerlink" title="频率域特征比较"></a><strong>频率域特征比较</strong></h4><p><code>compare_frequency_domain</code>函数用于比较两幅图像的频率域特征。函数首先对每幅图像应用傅立叶变换，然后在一个画布上并排显示每幅图像的原始和频率域图像。这种可视化有助于直观地比较两幅图像在频率成分上的异同。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">compare_frequency_domain</span>(<span class="params">image_path1, image_path2, output_filename</span>):</span><br><span class="line">    img1 = load_image(image_path1)</span><br><span class="line">    img2 = load_image(image_path2)</span><br><span class="line">    f1 = fourier_transform(img1)</span><br><span class="line">    f2 = fourier_transform(img2)</span><br><span class="line">    fig, axes = plt.subplots(<span class="number">2</span>, <span class="number">2</span>, figsize=(<span class="number">12</span>, <span class="number">6</span>))</span><br><span class="line">    axes[<span class="number">0</span>, <span class="number">0</span>].imshow(img1, cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">    axes[<span class="number">0</span>, <span class="number">1</span>].imshow(f1, cmap=<span class="string">&#x27;hot&#x27;</span>)</span><br><span class="line">    axes[<span class="number">1</span>, <span class="number">0</span>].imshow(img2, cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">    axes[<span class="number">1</span>, <span class="number">1</span>].imshow(f2, cmap=<span class="string">&#x27;hot&#x27;</span>)</span><br><span class="line">    plt.tight_layout()</span><br><span class="line">    plt.savefig(<span class="string">f&#x27;outputs/<span class="subst">&#123;output_filename&#125;</span>.png&#x27;</span>)</span><br><span class="line">    plt.close()</span><br></pre></td></tr></table></figure></div>
 
 
-
-<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p>①查看直方图 </p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png"
-                      alt="实际输出"
-                ></p>
-<p>②取反，再查看直方图 </p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show02.png"
-                      alt="实际输出"
-                ></p>
-<p>③使用直方图均衡，再查看直方图 </p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show03.png"
-                      alt="实际输出"
-                ></p>
-<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show04.png"
-                      alt="实际输出"
-                ></p>
-<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><h3 id="实验要求：-1"><a href="#实验要求：-1" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p>
-<p>实验图片路径为： imgs&#x2F;1.jpg imgs&#x2F;2.jpg imgs&#x2F;3.jpg imgs&#x2F;4.jpg</p>
-<p>输出路径为：outputs&#x2F;</p>
-<p>请按照exp2_2_i的格式，输出四个结果，比如结果保存为：outputs&#x2F;exp2_2_1.jpg</p>
-<h3 id="实验方案：-1"><a href="#实验方案：-1" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>通过应用双边滤波器对给定的人脸图像进行磨皮处理，然后对比处理前后图像的直方图变化。双边滤波器是一种非线性的滤波方法，它可以在平滑图像噪声的同时保留边缘信息，因此特别适合于图像美化处理。在Python中，可以使用OpenCV库中的<code>bilateralFilter</code>函数来实现这一操作。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用双边滤波器进行磨皮</span></span><br><span class="line">smoothed = cv2.bilateralFilter(image, d=<span class="number">9</span>, sigmaColor=<span class="number">75</span>, sigmaSpace=<span class="number">75</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p>其中，<code>d</code>表示滤波器的直径，<code>sigmaColor</code>表示颜色空间的标准差，<code>sigmaSpace</code>表示坐标空间的标准差。这些参数决定了滤波器平滑图像的程度。</p>
-<p>直方图的对比通过计算原图像和磨皮后图像的颜色直方图，并用不同颜色的线表示出来。这一过程可以直观地观察磨皮效果对图像色彩分布的影响。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算直方图并绘制</span></span><br><span class="line">hist_original = cv2.calcHist([original], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line">hist_smoothed = cv2.calcHist([smoothed], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>))</span><br><span class="line">plt.plot(hist_original, color=<span class="string">&#x27;blue&#x27;</span>, label=<span class="string">&#x27;Original&#x27;</span>)</span><br><span class="line">plt.plot(hist_smoothed, color=<span class="string">&#x27;red&#x27;</span>, label=<span class="string">&#x27;Smoothed&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="实验结果：-1"><a href="#实验结果：-1" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show10.png"
-                      alt="实际输出"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_1.png"
+                      alt="exp3_2_1"
                 ></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show11.png"
-                      alt="实际输出"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_2.png"
+                      alt="exp3_2_2"
                 ></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show12.png"
-                      alt="实际输出"
-                ></p>
-<p><strong>图1的分析</strong></p>
-<p>原始图像和经过双边滤波处理后的图像在直方图上差别不大。这表明图像的磨皮效果较为自然，没有过度平滑，同时保持了原图的色彩特征。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show20.png"
-                      alt="实际输出"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_3.png"
+                      alt="exp3_2_3"
                 ></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show21.png"
-                      alt="实际输出"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_4.png"
+                      alt="exp3_2_4"
                 ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show22.png"
-                      alt="实际输出"
-                ></p>
-<p><strong>图2的分析</strong></p>
-<p>可以看到在某些颜色通道中，经过滤波处理后的直方图在峰值附近略微平滑，但整体色彩分布的变化不是特别显著。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show30.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show31.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show32.png"
-                      alt="实际输出"
-                ></p>
-<p><strong>图3的分析</strong></p>
-<p>滤波后图像的直方图在低亮度区域有了平滑，说明磨皮处理降低了图像中的暗部噪声。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show40.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show41.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show42.png"
-                      alt="实际输出"
-                ></p>
-<p><strong>图4的分析</strong></p>
-<p>图像的直方图曲线在整体上变得更加平滑，尤其是在亮度较高区域的变化更为明显。这可能意味着图像亮部的细节被稍微抑制，从而减少了噪声并增强了整体的视觉效果。</p>
-<h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2><h3 id="实验要求：-2"><a href="#实验要求：-2" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p> 将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果（水平梯度图像、垂直梯度图像和梯度幅值图像），理解卷积操作与空间域滤波的关系。</p>
-<p>实验图片路径为： imgs&#x2F;100_3228.jpg</p>
+<ul>
+<li><p><strong>红色部分</strong>：这通常代表频谱图中的主要频率成分，即图像中最强烈的周期性结构。在具有清晰方向性条纹的图像中，如水平或垂直条纹，红色亮点或线通常沿着频谱中心线出现，指示了这些条纹的方向和间隔。红色亮点越明显，表示该方向上的周期性结构越规则和显著。</p>
+</li>
+<li><p><strong>黄色部分</strong>：黄色通常表示频谱中的次级频率成分，它们可能不如主要成分（红色）强烈，但仍然标志着图像中的重要周期性特征。在斜条纹或更复杂图案的图像中，黄色亮线或点可能呈现交叉或分布于不同的方向，表明图像具有多个主要的频率成分。</p>
+</li>
+<li><p><strong>黑色背景</strong>：黑色区域表示频谱中相对较低或没有能量的区域，这表明原图在这些频率上没有明显的结构或周期性信息。这些区域的存在帮助突出了更有结构性或周期性的图像特征。</p>
+</li>
+<li><p>这些频率域的图像清晰地展示了图像结构的方向性特征如何影响其频谱表示：</p>
+<ul>
+<li>水平或垂直条纹主要在垂直或水平方向上产生亮线。</li>
+<li>条纹的密集程度影响频率域中亮线的分散程度。</li>
+<li>斜向条纹导致频率域中多方向的亮线交叉，表明图像具有多个主要方向的频率成分。</li>
+</ul>
+<p>通过这些实验，可以更深入地理解图像内容与其频率特性之间的关系，为图像分析和处理提供了有力的视觉和定量工具。这种分析特别有助于在图像处理和机器视觉应用中设计更有效的滤波和图像识别算法。</p>
+</li>
+</ul>
+<h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2><h3 id="实验要求：-2"><a href="#实验要求：-2" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p>3.通过离散傅里叶变换我可以得到频谱图，通过离散傅里叶逆变换我可以将频谱图转换为原图，请使用pytorch实现离散傅里叶逆变换（可使用库函数或自定义函数），并将频谱图设置为初始值为高斯噪声的模型参数，利用逆变换的结果与原图之间的均方误差作为损失函数对模型参数进行优化，验证是否能够通过优化学习到频谱图。</p>
+<p>实验图片路径为：imgs&#x2F;2.JPG</p>
 <p>输出路径为：outputs&#x2F;</p>
-<p>请按照exp2_3_i的格式，输出结果 比如结果保存为：outputs&#x2F;exp2_3_1.jpg</p>
-<h3 id="实验方案：-2"><a href="#实验方案：-2" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：读取和预处理图像</strong></p>
-<ul>
-<li>读取图像<code>100_3228.jpg</code>。</li>
-<li>将图像转换为灰度格式以准备进行Sobel边缘检测。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">image = Image.<span class="built_in">open</span>(img_path)</span><br><span class="line">img = transform(image)</span><br></pre></td></tr></table></figure></div>
+<p>请按照exp3_3_i的格式，输出结果</p>
+<h3 id="实验方案：-2"><a href="#实验方案：-2" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>任务3的目的是通过离散傅里叶逆变换（IDFT）从频谱图重建图像，并使用机器学习技术优化重建过程。该任务利用PyTorch框架进行实现，以下是关键代码的逐步分析和对应的实验过程解释：</p>
+<h4 id="图像加载与预处理-2"><a href="#图像加载与预处理-2" class="headerlink" title="图像加载与预处理"></a><strong>图像加载与预处理</strong></h4><p>使用<code>load_image</code>函数加载图像并将其转换为灰度格式，这是进行频域操作的标准准备步骤。转换为灰度是因为颜色信息在此类任务中通常不是必需的，而且灰度化简化了数据处理。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_image</span>(<span class="params">image_path</span>):</span><br><span class="line">    <span class="keyword">with</span> Image.<span class="built_in">open</span>(image_path) <span class="keyword">as</span> img:</span><br><span class="line">        img = img.convert(<span class="string">&#x27;L&#x27;</span>)  <span class="comment"># 将图像转换为灰度格式</span></span><br><span class="line">    <span class="keyword">return</span> torch.tensor(np.array(img), dtype=torch.float32) / <span class="number">255.0</span></span><br></pre></td></tr></table></figure></div>
 
-<p><strong>步骤二：定义Sobel卷积核</strong></p>
-<ul>
-<li>定义Sobel卷积核<code>sobel_x</code>和<code>sobel_y</code>以检测水平和垂直边缘。</li>
-<li>这些卷积核分别能够捕捉图像在水平和垂直方向上的梯度信息。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sobel_x = torch.Tensor([[-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>], [-<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>], [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line">sobel_y = torch.Tensor([[-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></div>
+<h4 id="频谱参数初始化"><a href="#频谱参数初始化" class="headerlink" title="频谱参数初始化"></a><strong>频谱参数初始化</strong></h4><p><code>init_params</code>函数初始化频谱的实部和虚部参数，这些参数将被视为需要优化的模型参数。使用标准正态分布进行初始化是一种常见的做法，可以帮助加速优化过程。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">init_params</span>(<span class="params">shape</span>):</span><br><span class="line">    real = torch.randn(shape, requires_grad=<span class="literal">True</span>)  <span class="comment"># 初始化实部参数</span></span><br><span class="line">    imag = torch.randn(shape, requires_grad=<span class="literal">True</span>)  <span class="comment"># 初始化虚部参数</span></span><br><span class="line">    <span class="keyword">return</span> real, imag</span><br></pre></td></tr></table></figure></div>
 
-<p><strong>步骤三：配置卷积层并执行卷积</strong></p>
-<ul>
-<li>配置卷积层以使用Sobel算子。</li>
-<li>不使用偏置，因为在这种滤波操作中不需要。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conv_x = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_y = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_x.weight.data = sobel_x</span><br><span class="line">conv_y.weight.data = sobel_y</span><br></pre></td></tr></table></figure></div>
+<h4 id="离散傅里叶逆变换"><a href="#离散傅里叶逆变换" class="headerlink" title="离散傅里叶逆变换"></a><strong>离散傅里叶逆变换</strong></h4><p><code>inverse_fft</code>函数将初始化的频谱参数（实部和虚部）合成复数，并执行逆傅立叶变换。这个逆变换的目的是从频谱图重建出原始图像。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">inverse_fft</span>(<span class="params">real, imag</span>):</span><br><span class="line">    complex_img = torch.<span class="built_in">complex</span>(real, imag)  <span class="comment"># 合成复数</span></span><br><span class="line">    <span class="keyword">return</span> ifft2(complex_img).<span class="built_in">abs</span>()  <span class="comment"># 执行逆变换并取模</span></span><br></pre></td></tr></table></figure></div>
 
-<ul>
-<li>应用Sobel算子于图像以得到水平和垂直梯度。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img_x = conv_x(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br><span class="line">img_y = conv_y(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br></pre></td></tr></table></figure></div>
+<h4 id="优化与训练过程"><a href="#优化与训练过程" class="headerlink" title="优化与训练过程"></a><strong>优化与训练过程</strong></h4><p>在<code>main</code>函数中，设置了模型训练的各个阶段，包括损失函数的定义、优化器的配置以及学习率调度器的设置。损失函数使用均方误差（MSE），优化器使用Adam，这两者都是处理此类问题的常见选择。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    img = load_image(<span class="string">&#x27;imgs/2.png&#x27;</span>)</span><br><span class="line">    params_real, params_imag = init_params(img.shape)</span><br><span class="line">    optimizer = Adam([params_real, params_imag], lr=<span class="number">0.01</span>, weight_decay=<span class="number">1e-5</span>)</span><br><span class="line">    scheduler = StepLR(optimizer, step_size=<span class="number">1000</span>, gamma=<span class="number">0.5</span>)</span><br><span class="line">    loss_fn = torch.nn.MSELoss()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        reconstructed_img = inverse_fft(params_real, params_imag)</span><br><span class="line">        loss = loss_fn(reconstructed_img, img)</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">        scheduler.step()</span><br></pre></td></tr></table></figure></div>
 
-<p><strong>步骤四：计算梯度幅值</strong></p>
-<ul>
-<li>结合水平和垂直梯度以计算梯度幅值，这能够显示图像中边缘的整体强度。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img_magnitude = torch.sqrt(img_x**<span class="number">2</span> + img_y**<span class="number">2</span>)</span><br></pre></td></tr></table></figure></div>
+<p>在这个过程中，每500次迭代记录一次重建的图像状态，以便可视化和评估模型的性能。这种定期记录的方法有助于监控重建过程的进展和效果。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> epoch % <span class="number">500</span> == <span class="number">0</span>:</span><br><span class="line">    process_images.append(reconstructed_img.detach().clone())</span><br></pre></td></tr></table></figure></div>
 
-<p><strong>步骤五：执行阈值化处理</strong></p>
-<ul>
-<li>通过设置阈值，去除噪声并突出边缘。</li>
-<li>阈值化后的结果只保留较强的边缘。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">threshold = img_magnitude.mean() * <span class="number">0.5</span></span><br></pre></td></tr></table></figure></div>
+<h4 id="结果可视化与保存"><a href="#结果可视化与保存" class="headerlink" title="结果可视化与保存"></a><strong>结果可视化与保存</strong></h4><p>最后，通过matplotlib绘制原始图像、中间过程图和最终重建图像，展示了从初始化的高斯噪声到接近原始图像的逐步重建过程。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">titles = [<span class="string">&#x27;Original&#x27;</span>, <span class="string">&#x27;Intermediate&#x27;</span>, <span class="string">&#x27;Final Reconstruction&#x27;</span>]</span><br><span class="line">fig, axes = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">18</span>, <span class="number">6</span>))</span><br><span class="line"><span class="keyword">for</span> ax, image, title <span class="keyword">in</span> <span class="built_in">zip</span>(axes, [img] + process_images[-<span class="number">2</span>:], titles):</span><br><span class="line">    ax.imshow(image.numpy(), cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">    ax.set_title(title)</span><br><span class="line">    ax.axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&#x27;outputs/exp3_3_i.png&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></div>
 
-<p><strong>步骤六：可视化与保存结果</strong></p>
-<ul>
-<li>保存水平和垂直梯度图像，以及梯度幅值图像。</li>
-<li>使用<code>matplotlib</code>对图像进行可视化。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">visualize_and_save(img_x_thresholded, <span class="string">&#x27;Horizontal Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_1.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_y_thresholded, <span class="string">&#x27;Vertical Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_2.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_magnitude, <span class="string">&#x27;Gradient Magnitude&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
 
 <h3 id="实验结果：-2"><a href="#实验结果：-2" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show50.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show51.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show52.png"
-                      alt="实际输出"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show53.png"
-                      alt="实际输出"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_3_1.png"
+                      alt="image-20240430200732832"
                 ></p>
 <ol>
-<li><strong>水平梯度图像</strong>: 这张图像展示了原始图像中沿水平方向边缘的强度。在水平梯度图中，垂直边缘（如山和建筑物尖顶的轮廓）被突出显示。由于Sobel算子在水平方向上捕捉垂直边缘，所以图像中明显的垂直线条和特征在这里以较亮的像素显示出来，而水平边缘则不明显或显得较暗。</li>
-<li><strong>垂直梯度图像</strong>: 与水平梯度图相对，这张图显示了沿垂直方向的边缘强度。在垂直梯度图中，水平边缘（如屋顶的边缘，建筑物所在地平缓处等等）更为明显。Sobel算子在垂直方向上识别水平边缘，因此图像中水平线条和特征在这张图上以亮像素呈现。</li>
-<li><strong>梯度幅度图像</strong>: 此图像结合了水平和垂直梯度的信息，提供了边缘总体强度的视图。在梯度幅度图中，所有边缘，无论其方向如何，都以亮度的形式展现，其中亮度越强表示梯度幅度越大。这张图是通过计算水平梯度和垂直梯度在每个像素点的矢量和的幅度得到的。它提供了关于图像边缘强度最完整的视图，显示了所有明显边缘的位置。</li>
+<li><strong>原始图像</strong>：<ul>
+<li>这是重建任务的基准图像，用作损失函数计算的参考。</li>
+</ul>
+</li>
+<li><strong>中间重建（1500次迭代）</strong>：<ul>
+<li>在1500次迭代后的图像显示了重建过程的中间阶段。此时的图像还包含大量的噪声和不清晰的细节，说明重建过程尚未完成，但重建的主体结构开始变得可辨认。</li>
+</ul>
+</li>
+<li><strong>最终重建（2000次迭代）</strong>：<ul>
+<li>经过2000次迭代，图像的重建质量显著提高。比较中间和最终重建图像，可以看到细节更加清晰，噪声大幅减少。这表明优化过程有效地调整了频谱参数，逐渐接近原始图像的质量。</li>
+</ul>
+</li>
 </ol>
-<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。以下是本实验的关键发现和总结：</p>
-<p><strong>直方图分析和图像取反</strong></p>
-<ul>
-<li>我观察了原始图像的直方图，并通过图像取反来了解亮度分布的变化。取反操作将图像中的亮区域变暗，暗区域变亮，直方图也相应地发生反转。</li>
+<h4 id="技术细节与优化过程"><a href="#技术细节与优化过程" class="headerlink" title="技术细节与优化过程"></a>技术细节与优化过程</h4><ul>
+<li><strong>损失函数</strong>：使用均方误差（MSE）来量化重建图像与原始图像之间的差异。MSE提供了一个量化的衡量标准，用于评估图像质量和指导参数的优化。</li>
+<li><strong>优化器与学习率调度</strong>：使用Adam优化器因其适应性高，能够自动调整每个参数的学习率。配合学习率调度器，系统能够在训练过程中调整学习速率，帮助优化过程在初期快速收敛，在后期稳定细化。</li>
+<li><strong>实部与虚部参数</strong>：初始设定为正态分布的随机数，这种随机初始化方法有助于破坏初始的结构偏见，允许算法在重建过程中自由探索空间，寻找最佳解。</li>
 </ul>
-<p><strong>直方图均衡化</strong></p>
+<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>在本次实验中，我深入探讨了图像处理中的频率域技术。实验目标是通过对图像进行频域变换和滤波处理，以及通过优化技术重新学习图像的频谱图，来增强图像质量和理解图像内容。</p>
+<p><strong>实验一的关键发现：</strong></p>
 <ul>
-<li>通过将图像转换到YUV色彩空间并对Y通道应用直方图均衡化，我显著提高了图像的对比度。直方图均衡化后的结果使得亮度分布更加均匀，从而增强了图像中的细节。</li>
+<li><strong>傅立叶变换</strong>和<strong>DCT变换</strong>有效地揭示了图像的频率成分，其中傅立叶变换提供了全面的频率信息，而DCT更适用于压缩和编码应用。</li>
+<li>通过增强处理的频谱图在视觉上更易于分析，尤其是对于识别图像中的主要频率成分。</li>
+<li>低通和高通滤波器的应用展示了如何通过频率域处理来平滑图像或增强图像边缘。</li>
 </ul>
-<p><strong>图像旋转和裁剪</strong></p>
+<p><strong>实验二的关键发现：</strong></p>
 <ul>
-<li>通过旋转和裁剪操作，我成功地提取了图像中“爱丁堡花园”部分。这个过程涉及到对图像的几何变换，展示了图像处理中的区域选择技术。</li>
+<li>不同图像对的频率域特征比较揭示了图像间的明显差异，这些差异通常与图像的细节和纹理复杂度相关。</li>
+<li>高频成分的分布与图像内容的复杂性和边缘信息密切相关，而低频成分则与图像的整体形状和结构特征相关。</li>
 </ul>
-<p><strong>滤波和磨皮效果</strong></p>
+<p><strong>实验三的关键发现：</strong></p>
 <ul>
-<li>我对人脸图像应用了双边滤波器，实现了类似美图秀秀的磨皮效果。磨皮处理后，图像的直方图在低亮度区域变得更加平滑，显示了噪声的减少和肤色的均匀性提升。</li>
+<li>离散傅里叶逆变换实验显示，通过优化可以从初始化的高斯噪声中学习到精确的频谱图，从而重建与原图非常接近的图像。</li>
+<li>该过程验证了频谱图中包含的丰富信息和通过逆变换重建图像的可行性。</li>
 </ul>
-<p><strong>Sobel边缘检测</strong></p>
-<ul>
-<li>将Sobel算子编码进PyTorch卷积核中并对图像进行处理，我得到了水平和垂直梯度图像以及梯度幅值图。这一过程说明了卷积操作如何作为空间域滤波器来检测图像中的边缘，是图像处理中边缘检测技术的一个经典例子。</li>
-</ul>
-<p>通过以上实验步骤，我加深了对图像增强技术的理解，特别是在如何利用不同的空间域滤波技术来改善视觉效果方面。实验结果表明，这些技术不仅可以增强图像的视觉质量，还可以为后续的图像分析工作提供更好的基础。</p>
+<p>总之，这一系列实验不仅增强了我的图像处理技能，特别是在频率域分析和处理方面，还加深了我对图像结构和内容如何影响其频率特性的理解。</p>
 
         </div>
 
@@ -973,7 +912,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-04-29 11:09:08
+                    :</strong> 2024-05-11 12:13:23
             </li>
         
         <li>
@@ -1017,6 +956,21 @@
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/05/11/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E5%9B%9B-%E5%9B%BE%E5%83%8F%E6%81%A2%E5%A4%8D%E5%92%8C%E6%BB%A4%E6%B3%A2%E5%A4%84%E7%90%86/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">图像处理与分析——实验四-图像恢复和滤波处理</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -1122,7 +1076,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        20 posts in total
+                        21 posts in total
                     </span>
                     
                 </p>
