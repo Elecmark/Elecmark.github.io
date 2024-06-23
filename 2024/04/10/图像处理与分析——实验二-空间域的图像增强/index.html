@@ -1,4 +1,158 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="author" content="ELecmark"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="https://Elecmark.github.io/2024/04/10/图像处理与分析——实验二-空间域的图像增强/"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。"><meta property="og:type" content="article"><meta property="og:title" content="图像处理与分析——实验二-空间域的图像增强"><meta property="og:url" content="https://elecmark.github.io/2024/04/10/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/index.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show02.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show03.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show04.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show10.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show11.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show12.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show20.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show21.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show22.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show30.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show31.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show32.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show40.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show41.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show42.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show50.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show51.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show52.png"><meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show53.png"><meta property="article:published_time" content="2024-04-10T03:31:01.000Z"><meta property="article:modified_time" content="2024-04-29T11:29:08.586Z"><meta property="article:author" content="Elecmark"><meta property="article:tag" content="课程项目"><meta property="article:tag" content="作业报告"><meta property="article:tag" content="图像处理与分析"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png"><link rel="icon" type="image/png" href="/images/pdh-logo.webp" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/pdh-logo.webp"><meta name="theme-color" content="#80B5FF"><link rel="shortcut icon" href="/images/pdh-logo.webp"><title>图像处理与分析——实验二-空间域的图像增强 - Pu Dianheng&#39;s blog</title><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><style>:root{--preloader-background-color:#fff;--preloader-text-color:#000}@media (prefers-color-scheme:dark){:root{--preloader-background-color:#202124;--preloader-text-color:#fff}}@media (prefers-color-scheme:light){:root{--preloader-background-color:#fff;--preloader-text-color:#000}}@media (max-width:600px){.ml13{font-size:2.6rem!important}}.preloader{display:flex;flex-direction:column;gap:1rem;align-items:center;justify-content:center;position:fixed;padding:12px;top:0;right:0;bottom:0;left:0;width:100vw;height:100vh;background-color:var(--preloader-background-color);z-index:1100;transition:opacity .2s ease-in-out}.ml13{font-size:3.2rem;color:var(--preloader-text-color);letter-spacing:-1px;font-weight:500;font-family:Chillax-Variable,sans-serif;text-align:center}.ml13 .word{display:inline-flex;flex-wrap:wrap;white-space:nowrap}.ml13 .letter{display:inline-block;line-height:1em}</style><div class="preloader"><script src="/js/libs/anime.min.js"></script><h1 class="ml13">Pu Dianheng&#39;s blog</h1><script>var textWrapper = document.querySelector('.ml13');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="ELecmark">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://Elecmark.github.io/2024/04/10/图像处理与分析——实验二-空间域的图像增强/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图像处理与分析——实验二-空间域的图像增强">
+<meta property="og:url" content="https://elecmark.github.io/2024/04/10/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show02.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show03.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show04.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show10.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show11.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show12.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show20.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show21.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show22.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show30.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show31.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show32.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show40.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show41.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show42.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show50.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show51.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show52.png">
+<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show53.png">
+<meta property="article:published_time" content="2024-04-10T03:31:01.000Z">
+<meta property="article:modified_time" content="2024-04-29T11:29:08.586Z">
+<meta property="article:author" content="Elecmark">
+<meta property="article:tag" content="课程项目">
+<meta property="article:tag" content="作业报告">
+<meta property="article:tag" content="图像处理与分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/pdh-logo.webp" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/pdh-logo.webp">
+    <meta name="theme-color" content="#80B5FF">
+    <link rel="shortcut icon" href="/images/pdh-logo.webp">
+    <!--- Page Info-->
+    
+    <title>
+        
+            图像处理与分析——实验二-空间域的图像增强 -
+        
+        Pu Dianheng&#39;s blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        Pu Dianheng&#39;s blog
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
         // Split text into words
         var words = textWrapper.textContent.trim().split(' ');
 
@@ -68,4 +222,1204 @@
                     preloader.style.display = 'none';
                 }, 200);
             }, delay);
-        }</script></div><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/assets/build/styles.css"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/fonts/Satoshi/satoshi.css"><link href="" rel="stylesheet"><link href="" rel="stylesheet"><script id="hexo-configurations">window.config={hostname:"elecmark.github.io",root:"/",language:"en",path:"search.xml"},window.theme={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0,title_alignment:"left",headings_top_spacing:{h1:"5rem",h2:"4rem",h3:"2.8rem",h4:"2.5rem",h5:"2.2rem",h6:"2rem"}},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!1,list:["VIP"]},code_block:{copy:!0,style:"mac",font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!1,expand:!0,init_open:!0},copyright:!0,lazyload:!0,recommendation:{enable:!1,title:"推荐阅读",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#80B5FF",secondary:"#004098",default_mode:"light"},global:{fonts:{chinese:{enable:!0,family:null,url:null},english:{enable:!0,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!1},scroll_progress:{bar:!0,percentage:!0},website_counter:{url:"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,preloader:!0,open_graph:!0,google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/wall1.jpg",dark:"/images/wall_shenzhen.jpg"},title:"Elecmark-Pu Dianheng",subtitle:{text:["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],hitokoto:{enable:!1,api:"https://v1.hitokoto.cn?c=c"},typing_speed:50,backing_speed:30,starting_delay:100,backing_delay:5e3,loop:!0,smart_backspace:!0},text_color:{light:"#fff",dark:"#FFFFF5"},text_style:{title_size:"2.8rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!1,family:null,url:null},social_links:{enable:!0,style:"default",links:{github:"https://github.com/Elecmark",instagram:null,zhihu:null,twitter:null,email:"944723112@qq.com","fa-solid fa-c fa-fw fa-lg":"https://blog.csdn.net/LanLinHui?type=blog",steam:"https://steamcommunity.com/profiles/76561198167581914/"},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!0,type:"fixed",audios:[{name:"soundorbis - LIFE",artist:"Kyle Xian",url:"https://music.163.com/song/media/outer/url?id=516372224.mp3",cover:"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg",lrc:null},{name:"Pokémon Sleep - Christmas",artist:"Pokémon Sleep",url:"https://music.163.com/song/media/outer/url?id=2130624871.mp3",cover:"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg"},{name:"Guitar",artist:"Guitar",url:"/music/校园吉他纯音乐.mp3",cover:"/music/covers/music.svg"}]},mermaid:{enable:!0,version:"9.3.0"},all_minifier:!0},version:"2.6.2",navbar:{auto_hide:!1,color:{left:"#f78736",right:"#367df7",transparency:25},width:{home:"1200px",pages:"1000px"},links:{Home:{path:"/",icon:"fa-regular fa-house"},"作品集Portfolio":{path:"/tags/作品集/",icon:"fa-regular fa-archive"},"关于About":{icon:"fa-regular fa-user",submenus:{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},search:{enable:!0,preload:!0}},page_templates:{friends_column:2,tags_style:"blur"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:null,show_on_mobile:!0,links:{"时间轴Timeline":{path:"/archives",icon:"fa-solid fa-timeline"},"标签Tags":{path:"/tags",icon:"fa-regular fa-tags"},"分类Categories":{path:"/categories",icon:"fa-regular fa-folder"}}},article_date_format:"auto",categories:{enable:!0,limit:5},tags:{enable:!0,limit:3}},footerStart:"2023/9/24 19:02:20"},window.lang_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"},window.data={masonry:!1}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span></div><main class="page-container" id="swup"><div class="main-content-container"><div class="main-content-header"><header class="navbar-container px-6 md:px-12"><div class="navbar-content"><div class="left"><a class="logo-image" href="/"><img src="/images/pdh-logo.webp"> </a><a class="logo-title" href="/">Pu Dianheng&#39;s blog</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house fa-fw"></i> HOME</a></li><li class="navbar-item"><a href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/"><i class="fa-regular fa-archive fa-fw"></i> 作品集PORTFOLIO</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="&#34;return" false;&#34;><i class="fa-regular fa-user fa-fw"></i> 关于ABOUT <i class="fa-solid fa-chevron-down fa-fw"></i></a><ul class="sub-menu"><li><a href="/about">我的信息ME</a></li><li><a href="/links">友链FRIENDS</a></li><li><a href="/archives">时间轴TIMELINE</a></li></ul></li><li class="navbar-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></li></ul></div><div class="mobile"><div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between"><ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start"><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" href="/"><span>HOME </span><i class="fa-regular fa-house fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/"><span>作品集PORTFOLIO </span><i class="fa-regular fa-archive fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full"><div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full" navbar-data-toggle="submenu-关于About"><span>关于ABOUT </span><i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i></div><div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-关于About"><div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="text-third-text-color text-xl" href="/about">我的信息ME</a></div><div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="text-third-text-color text-xl" href="/links">友链FRIENDS</a></div><div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="text-third-text-color text-xl" href="/archives">时间轴TIMELINE</a></div></div></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active" href="/archives"><span>时间轴Timeline</span> <i class="fa-solid fa-timeline fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active" href="/tags"><span>标签Tags</span> <i class="fa-regular fa-tags fa-sm fa-fw"></i></a></li><li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full"><a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active" href="/categories"><span>分类Categories</span> <i class="fa-regular fa-folder fa-sm fa-fw"></i></a></li></ul><div class="statistics flex justify-around my-2.5"><a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags"><div class="number text-2xl sm:text-xl text-second-text-color font-semibold">24</div><div class="label text-third-text-color text-sm">Tags</div></a><a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories"><div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div><div class="label text-third-text-color text-sm">Categories</div></a><a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives"><div class="number text-2xl sm:text-xl text-second-text-color font-semibold">26</div><div class="label text-third-text-color text-sm">Posts</div></a></div></div><div class="window-mask"></div></header></div><div class="main-content-body"><div class="main-content"><div class="post-page-container flex relative justify-between box-border w-full h-full"><div class="article-content-container"><div class="article-title relative w-full"><div class="w-full flex items-center pt-6 justify-start"><h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">图像处理与分析——实验二-空间域的图像增强</h1></div></div><div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8"><div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]"><img src="/images/em-logo.png"></div><div class="info flex flex-col justify-between"><div class="author flex items-center"><span class="name text-default-text-color text-lg font-semibold">ELecmark</span> <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">VIP</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2024-04-10 11:31:01</span> <span class="mobile">2024-04-10 11:31:01</span> <span class="hover-info">Created</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2024-04-29 19:29:08</span> <span class="mobile">2024-04-29 19:29:08</span> <span class="hover-info">Updated</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/">本科项目</a>&nbsp;</li><li>></li><li><a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">图像处理与分析</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">课程项目</a>&nbsp;</li><li>| <a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">作业报告</a>&nbsp;</li><li>| <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">图像处理与分析</a>&nbsp;</li></ul></span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8"><h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现：</p><p>1.</p><ul><li><p>①查看直方图</p></li><li><p>②取反，再查看直方图</p></li><li><p>③使用直方图均衡，再查看直方图</p></li><li><p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p></li></ul><ol start="2"><li><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p></li><li><p>将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果，理解卷积操作与空间域滤波的关系。</p></li></ol><h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2><h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol><li>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现：</li></ol><p>①查看直方图</p><p>②取反，再查看直方图</p><p>③使用直方图均衡，再查看直方图</p><p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p><p>实验图片路径为： imgs&#x2F;IMG_2546.jpg</p><p>输出路径为：outputs&#x2F;</p><p>请按照exp2_1_i的格式，输出四个结果，比如①的结果保存为：outputs&#x2F;exp2_1_1.jpg</p><h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：查看原图直方图</strong></p><ul><li>首先，加载图片并使用OpenCV库进行读取。</li><li>使用Matplotlib绘制图像的直方图，这是通过计算每个颜色通道的像素强度分布来完成的。</li><li>保存包含原图和直方图的组合图像为 <code>outputs/exp2_1_1.jpg</code>。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ①查看原图直方图</span></span><br><span class="line">save_image_and_histogram(img, <span class="string">&#x27;Original Image&#x27;</span>, <span class="string">&#x27;Original Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div><p><strong>步骤二：取反图像并查看直方图</strong></p><ul><li>对原始图像进行取反操作，这意味着将每个像素的颜色值变为其补色。</li><li>再次绘制取反后图像的直方图，并保存。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ②取反并查看直方图</span></span><br><span class="line">img_neg = cv2.bitwise_not(img)</span><br><span class="line">save_image_and_histogram(img_neg, <span class="string">&#x27;Negative Image&#x27;</span>, <span class="string">&#x27;Negative Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div><p><strong>步骤三：直方图均衡化并查看直方图</strong></p><ul><li>将图像从BGR色彩空间转换为YUV色彩空间。</li><li>对Y通道（亮度）进行直方图均衡化，这能改善图像的对比度。</li><li>再次绘制直方图均衡化后图像的直方图，并保存。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ③直方图均衡化并查看直方图</span></span><br><span class="line">img_yuv = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)</span><br><span class="line">img_yuv[:,:,<span class="number">0</span>] = cv2.equalizeHist(img_yuv[:,:,<span class="number">0</span>])</span><br><span class="line">img_histeq = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)</span><br><span class="line">save_image_and_histogram(img_histeq, <span class="string">&#x27;Histogram Equalization&#x27;</span>, <span class="string">&#x27;Eq Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div><p><strong>步骤四：精确提取文本区域</strong></p><ul><li>考虑到文本可能因拍摄角度而不完全水平，我应用了一个旋转变换，使文本尽可能地水平以便裁剪。</li><li>设置旋转中心为图像中心，并指定旋转角度（在这里是-10度）。这个角度可能需要根据具体图片进行微调。</li><li>应用旋转后，根据旋转后的图像内容，手动确定“爱丁堡花园”文本的精确位置并进行裁剪。</li><li>最后，将旋转和裁剪后的区域保存为 <code>outputs/exp2_1_4.jpg</code>，这是仅包含目标文本区域的图片。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ④仅保留“爱丁堡花园”部分</span></span><br><span class="line"><span class="comment"># 获取图像尺寸用于计算旋转中心</span></span><br><span class="line">rows, cols, _ = img.shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置旋转矩阵，中心点为图像中心，旋转角度为-10度，缩放因子为1</span></span><br><span class="line">M = cv2.getRotationMatrix2D((cols / <span class="number">2</span>, rows / <span class="number">2</span>), -<span class="number">10</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 旋转图像</span></span><br><span class="line">rotated_img = cv2.warpAffine(img, M, (cols, rows))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在旋转后的图像中确定“爱丁堡花园”文字的大致位置</span></span><br><span class="line">img_crop = rotated_img[<span class="number">550</span>:<span class="number">630</span>, <span class="number">600</span>:<span class="number">910</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存剪裁后的图像</span></span><br><span class="line">cv2.imwrite(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>exp2_1_4.jpg&#x27;</span>, img_crop)</span><br></pre></td></tr></table></figure></div><h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p>①查看直方图</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png" alt="实际输出"></p><p>②取反，再查看直方图</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show02.png" alt="实际输出"></p><p>③使用直方图均衡，再查看直方图</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show03.png" alt="实际输出"></p><p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show04.png" alt="实际输出"></p><h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><h3 id="实验要求：-1"><a href="#实验要求：-1" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p><p>实验图片路径为： imgs&#x2F;1.jpg imgs&#x2F;2.jpg imgs&#x2F;3.jpg imgs&#x2F;4.jpg</p><p>输出路径为：outputs&#x2F;</p><p>请按照exp2_2_i的格式，输出四个结果，比如结果保存为：outputs&#x2F;exp2_2_1.jpg</p><h3 id="实验方案：-1"><a href="#实验方案：-1" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>通过应用双边滤波器对给定的人脸图像进行磨皮处理，然后对比处理前后图像的直方图变化。双边滤波器是一种非线性的滤波方法，它可以在平滑图像噪声的同时保留边缘信息，因此特别适合于图像美化处理。在Python中，可以使用OpenCV库中的<code>bilateralFilter</code>函数来实现这一操作。</p><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用双边滤波器进行磨皮</span></span><br><span class="line">smoothed = cv2.bilateralFilter(image, d=<span class="number">9</span>, sigmaColor=<span class="number">75</span>, sigmaSpace=<span class="number">75</span>)</span><br></pre></td></tr></table></figure></div><p>其中，<code>d</code>表示滤波器的直径，<code>sigmaColor</code>表示颜色空间的标准差，<code>sigmaSpace</code>表示坐标空间的标准差。这些参数决定了滤波器平滑图像的程度。</p><p>直方图的对比通过计算原图像和磨皮后图像的颜色直方图，并用不同颜色的线表示出来。这一过程可以直观地观察磨皮效果对图像色彩分布的影响。</p><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算直方图并绘制</span></span><br><span class="line">hist_original = cv2.calcHist([original], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line">hist_smoothed = cv2.calcHist([smoothed], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>))</span><br><span class="line">plt.plot(hist_original, color=<span class="string">&#x27;blue&#x27;</span>, label=<span class="string">&#x27;Original&#x27;</span>)</span><br><span class="line">plt.plot(hist_smoothed, color=<span class="string">&#x27;red&#x27;</span>, label=<span class="string">&#x27;Smoothed&#x27;</span>)</span><br></pre></td></tr></table></figure></div><h3 id="实验结果：-1"><a href="#实验结果：-1" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show10.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show11.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show12.png" alt="实际输出"></p><p><strong>图1的分析</strong></p><p>原始图像和经过双边滤波处理后的图像在直方图上差别不大。这表明图像的磨皮效果较为自然，没有过度平滑，同时保持了原图的色彩特征。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show20.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show21.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show22.png" alt="实际输出"></p><p><strong>图2的分析</strong></p><p>可以看到在某些颜色通道中，经过滤波处理后的直方图在峰值附近略微平滑，但整体色彩分布的变化不是特别显著。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show30.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show31.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show32.png" alt="实际输出"></p><p><strong>图3的分析</strong></p><p>滤波后图像的直方图在低亮度区域有了平滑，说明磨皮处理降低了图像中的暗部噪声。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show40.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show41.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show42.png" alt="实际输出"></p><p><strong>图4的分析</strong></p><p>图像的直方图曲线在整体上变得更加平滑，尤其是在亮度较高区域的变化更为明显。这可能意味着图像亮部的细节被稍微抑制，从而减少了噪声并增强了整体的视觉效果。</p><h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2><h3 id="实验要求：-2"><a href="#实验要求：-2" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p>将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果（水平梯度图像、垂直梯度图像和梯度幅值图像），理解卷积操作与空间域滤波的关系。</p><p>实验图片路径为： imgs&#x2F;100_3228.jpg</p><p>输出路径为：outputs&#x2F;</p><p>请按照exp2_3_i的格式，输出结果 比如结果保存为：outputs&#x2F;exp2_3_1.jpg</p><h3 id="实验方案：-2"><a href="#实验方案：-2" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：读取和预处理图像</strong></p><ul><li>读取图像<code>100_3228.jpg</code>。</li><li>将图像转换为灰度格式以准备进行Sobel边缘检测。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">image = Image.<span class="built_in">open</span>(img_path)</span><br><span class="line">img = transform(image)</span><br></pre></td></tr></table></figure></div><p><strong>步骤二：定义Sobel卷积核</strong></p><ul><li>定义Sobel卷积核<code>sobel_x</code>和<code>sobel_y</code>以检测水平和垂直边缘。</li><li>这些卷积核分别能够捕捉图像在水平和垂直方向上的梯度信息。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sobel_x = torch.Tensor([[-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>], [-<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>], [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line">sobel_y = torch.Tensor([[-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></div><p><strong>步骤三：配置卷积层并执行卷积</strong></p><ul><li>配置卷积层以使用Sobel算子。</li><li>不使用偏置，因为在这种滤波操作中不需要。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conv_x = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_y = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_x.weight.data = sobel_x</span><br><span class="line">conv_y.weight.data = sobel_y</span><br></pre></td></tr></table></figure></div><ul><li>应用Sobel算子于图像以得到水平和垂直梯度。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img_x = conv_x(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br><span class="line">img_y = conv_y(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br></pre></td></tr></table></figure></div><p><strong>步骤四：计算梯度幅值</strong></p><ul><li>结合水平和垂直梯度以计算梯度幅值，这能够显示图像中边缘的整体强度。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img_magnitude = torch.sqrt(img_x**<span class="number">2</span> + img_y**<span class="number">2</span>)</span><br></pre></td></tr></table></figure></div><p><strong>步骤五：执行阈值化处理</strong></p><ul><li>通过设置阈值，去除噪声并突出边缘。</li><li>阈值化后的结果只保留较强的边缘。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">threshold = img_magnitude.mean() * <span class="number">0.5</span></span><br></pre></td></tr></table></figure></div><p><strong>步骤六：可视化与保存结果</strong></p><ul><li>保存水平和垂直梯度图像，以及梯度幅值图像。</li><li>使用<code>matplotlib</code>对图像进行可视化。</li></ul><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">visualize_and_save(img_x_thresholded, <span class="string">&#x27;Horizontal Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_1.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_y_thresholded, <span class="string">&#x27;Vertical Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_2.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_magnitude, <span class="string">&#x27;Gradient Magnitude&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div><h3 id="实验结果：-2"><a href="#实验结果：-2" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show50.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show51.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show52.png" alt="实际输出"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show53.png" alt="实际输出"></p><ol><li><strong>水平梯度图像</strong>: 这张图像展示了原始图像中沿水平方向边缘的强度。在水平梯度图中，垂直边缘（如山和建筑物尖顶的轮廓）被突出显示。由于Sobel算子在水平方向上捕捉垂直边缘，所以图像中明显的垂直线条和特征在这里以较亮的像素显示出来，而水平边缘则不明显或显得较暗。</li><li><strong>垂直梯度图像</strong>: 与水平梯度图相对，这张图显示了沿垂直方向的边缘强度。在垂直梯度图中，水平边缘（如屋顶的边缘，建筑物所在地平缓处等等）更为明显。Sobel算子在垂直方向上识别水平边缘，因此图像中水平线条和特征在这张图上以亮像素呈现。</li><li><strong>梯度幅度图像</strong>: 此图像结合了水平和垂直梯度的信息，提供了边缘总体强度的视图。在梯度幅度图中，所有边缘，无论其方向如何，都以亮度的形式展现，其中亮度越强表示梯度幅度越大。这张图是通过计算水平梯度和垂直梯度在每个像素点的矢量和的幅度得到的。它提供了关于图像边缘强度最完整的视图，显示了所有明显边缘的位置。</li></ol><h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。以下是本实验的关键发现和总结：</p><p><strong>直方图分析和图像取反</strong></p><ul><li>我观察了原始图像的直方图，并通过图像取反来了解亮度分布的变化。取反操作将图像中的亮区域变暗，暗区域变亮，直方图也相应地发生反转。</li></ul><p><strong>直方图均衡化</strong></p><ul><li>通过将图像转换到YUV色彩空间并对Y通道应用直方图均衡化，我显著提高了图像的对比度。直方图均衡化后的结果使得亮度分布更加均匀，从而增强了图像中的细节。</li></ul><p><strong>图像旋转和裁剪</strong></p><ul><li>通过旋转和裁剪操作，我成功地提取了图像中“爱丁堡花园”部分。这个过程涉及到对图像的几何变换，展示了图像处理中的区域选择技术。</li></ul><p><strong>滤波和磨皮效果</strong></p><ul><li>我对人脸图像应用了双边滤波器，实现了类似美图秀秀的磨皮效果。磨皮处理后，图像的直方图在低亮度区域变得更加平滑，显示了噪声的减少和肤色的均匀性提升。</li></ul><p><strong>Sobel边缘检测</strong></p><ul><li>将Sobel算子编码进PyTorch卷积核中并对图像进行处理，我得到了水平和垂直梯度图像以及梯度幅值图。这一过程说明了卷积操作如何作为空间域滤波器来检测图像中的边缘，是图像处理中边缘检测技术的一个经典例子。</li></ul><p>通过以上实验步骤，我加深了对图像增强技术的理解，特别是在如何利用不同的空间域滤波技术来改善视觉效果方面。实验结果表明，这些技术不仅可以增强图像的视觉质量，还可以为后续的图像分析工作提供更好的基础。</p></div><div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8"><div class="article-copyright-info-container"><ul><li><strong>Title:</strong> 图像处理与分析——实验二-空间域的图像增强</li><li><strong>Author:</strong> ELecmark</li><li><strong>Created at :</strong> 2024-04-10 11:31:01</li><li><strong>Updated at :</strong> 2024-04-29 19:29:08</li><li><strong>Link:</strong> https://elecmark.github.io/2024/04/10/图像处理与分析——实验二-空间域的图像增强/</li><li><strong>License: </strong>This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.</li></ul></div></div><ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden"><li class="tag-item mx-0.5"><a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">#课程项目</a>&nbsp;</li><li class="tag-item mx-0.5"><a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">#作业报告</a>&nbsp;</li><li class="tag-item mx-0.5"><a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">#图像处理与分析</a>&nbsp;</li></ul><div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8"><div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2"><a class="prev" rel="prev" href="/2024/04/15/OpenGL%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%9C%B0%E6%9C%88%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/"><span class="left arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-left"></i> </span><span class="title flex justify-center items-center"><span class="post-nav-title-item">OpenGL——模拟地月系技术报告</span> <span class="post-nav-item">Prev posts</span></span></a></div><div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2"><a class="next" rel="next" href="/2024/04/02/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-2-Profiling-Serial-Merge-Sort/"><span class="title flex justify-center items-center"><span class="post-nav-title-item">MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container px-2 sm:px-6 md:px-8 pb-8"><div class="comments-container mt-10 w-full"><div id="comment-anchor" class="w-full h-2.5"></div><div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">Comments</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"/js/libs/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://example.example.com",lang:"zh-CN",dark:'body[class~="dark-mode"]',requiredMeta:["nick","mail"],emoji:[],recaptchaV3Key:"wasd"})}"undefined"!=typeof swup?loadWaline():window.addEventListener("DOMContentLoaded",loadWaline)</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">On this page</div><div class="page-title">图像处理与分析——实验二-空间域的图像增强</div><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E6%A0%87%EF%BC%9A"><span class="nav-text">实验目标：</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81"><span class="nav-text">一、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-text">实验结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81"><span class="nav-text">二、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A-1"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A-1"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-1"><span class="nav-text">实验结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81"><span class="nav-text">三、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A-2"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A-2"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-2"><span class="nav-text">实验结果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-text">实验总结：</span></a></li></ol></li></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color"><div class="info-container py-3 text-center"><div class="text-center">&copy; <span>2023</span> - 2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a><p class="post-count space-x-0.5"><span>26 posts in total</span></p></div><script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right"><span id="busuanzi_container_site_uv" class="lg:!block"><span class="text-sm">VISITOR COUNT</span> <span id="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="lg:!block"><span class="text-sm">TOTAL PAGE VIEWS</span> <span id="busuanzi_value_site_pv"></span></span></div><div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left"><span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span> <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.2</a></span></div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex justify-center items-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-input-field-pre"><i class="fa-solid fa-keyboard"></i></span><div class="search-input-container"><input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close"><i class="fa-solid fa-times"></i></span></div><div id="search-result"><div id="no-result"><i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i></div></div></div></div></main><script src="/js/libs/Swup.min.js"></script><script src="/js/libs/SwupSlideTheme.min.js"></script><script src="/js/libs/SwupScriptsPlugin.min.js"></script><script src="/js/libs/SwupProgressPlugin.min.js"></script><script src="/js/libs/SwupScrollPlugin.min.js"></script><script src="/js/libs/SwupPreloadPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"}),new SwupPreloadPlugin],containers:["#swup"]})</script><script src="/js/tools/imageViewer.js" type="module"></script><script src="/js/utils.js" type="module"></script><script src="/js/main.js" type="module"></script><script src="/js/layouts/navbarShrink.js" type="module"></script><script src="/js/tools/scrollTopBottom.js" type="module"></script><script src="/js/tools/lightDarkSwitch.js" type="module"></script><script src="/js/layouts/categoryList.js" type="module"></script><script src="/js/tools/localSearch.js" type="module"></script><script src="/js/tools/codeBlock.js" type="module"></script><script src="/js/layouts/lazyload.js" type="module"></script><script src="/js/tools/runtime.js"></script><script src="/js/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/libs/Typed.min.js"></script><script src="/js/plugins/typed.js" type="module"></script><script src="/js/libs/mermaid.min.js"></script><script src="/js/plugins/mermaid.js"></script><div class="post-scripts" data-swup-reload-script><script src="/js/tools/tocToggle.js" type="module"></script><script src="/js/layouts/toc.js" type="module"></script><script src="/js/plugins/tabs.js" type="module"></script></div><div id="aplayer"></div><script src="/js/libs/APlayer.min.js"></script><script src="/js/plugins/aplayer.js"></script></body></html>
+        }
+    </script>
+</div>
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+        <link href="" rel="stylesheet">
+    
+
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"elecmark.github.io","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"5rem","h2":"4rem","h3":"2.8rem","h4":"2.5rem","h5":"2.2rem","h6":"2rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["VIP"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#80B5FF","secondary":"#004098","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wall1.jpg","dark":"/images/wall_shenzhen.jpg"},"title":"Elecmark-Pu Dianheng","subtitle":{"text":["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn?c=c"},"typing_speed":50,"backing_speed":30,"starting_delay":100,"backing_delay":5000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#FFFFF5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/Elecmark","instagram":null,"zhihu":null,"twitter":null,"email":"944723112@qq.com","fa-solid fa-c fa-fw fa-lg":"https://blog.csdn.net/LanLinHui?type=blog","steam":"https://steamcommunity.com/profiles/76561198167581914/"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"soundorbis - LIFE","artist":"Kyle Xian","url":"https://music.163.com/song/media/outer/url?id=516372224.mp3","cover":"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg","lrc":null},{"name":"Pokémon Sleep - Christmas","artist":"Pokémon Sleep","url":"https://music.163.com/song/media/outer/url?id=2130624871.mp3","cover":"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg"},{"name":"Guitar","artist":"Guitar","url":"/music/校园吉他纯音乐.mp3","cover":"/music/covers/music.svg"}]},"mermaid":{"enable":true,"version":"9.3.0"},"all_minifier":false},"version":"2.6.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":25},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"作品集Portfolio":{"path":"/tags/作品集/","icon":"fa-regular fa-archive"},"关于About":{"icon":"fa-regular fa-user","submenus":{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"时间轴Timeline":{"path":"/archives","icon":"fa-solid fa-timeline"},"标签Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"分类Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/24 19:02:20"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/pdh-logo.webp">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Pu Dianheng&#39;s blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    作品集PORTFOLIO
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    我的信息ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/links">
+                                                    友链FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    时间轴TIMELINE
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/"
+                        >
+                            <span>
+                                作品集PORTFOLIO
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-关于About"
+                        >
+                            <span>
+                                关于ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-关于About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">我的信息ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/links">友链FRIENDS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">时间轴TIMELINE</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>时间轴Timeline</span>
+                            <i class="fa-solid fa-timeline fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>标签Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>分类Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">24</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">26</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">图像处理与分析——实验二-空间域的图像增强</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/em-logo.png">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">ELecmark</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">VIP</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-10 11:31:01</span>
+        <span class="mobile">2024-04-10 11:31:01</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-04-29 19:29:08</span>
+            <span class="mobile">2024-04-29 19:29:08</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/">本科项目</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E6%9C%AC%E7%A7%91%E9%A1%B9%E7%9B%AE/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">图像处理与分析</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">课程项目</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">作业报告</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">图像处理与分析</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现： </p>
+<p>1. </p>
+<ul>
+<li><p>①查看直方图 </p>
+</li>
+<li><p>②取反，再查看直方图 </p>
+</li>
+<li><p>③使用直方图均衡，再查看直方图 </p>
+</li>
+<li><p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p>
+</li>
+<li><p>将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果，理解卷积操作与空间域滤波的关系。</p>
+</li>
+</ol>
+<h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2><h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
+<li>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现：</li>
+</ol>
+<p>①查看直方图 </p>
+<p>②取反，再查看直方图 </p>
+<p>③使用直方图均衡，再查看直方图 </p>
+<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+<p>实验图片路径为： imgs&#x2F;IMG_2546.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_1_i的格式，输出四个结果，比如①的结果保存为：outputs&#x2F;exp2_1_1.jpg</p>
+<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：查看原图直方图</strong></p>
+<ul>
+<li>首先，加载图片并使用OpenCV库进行读取。</li>
+<li>使用Matplotlib绘制图像的直方图，这是通过计算每个颜色通道的像素强度分布来完成的。</li>
+<li>保存包含原图和直方图的组合图像为 <code>outputs/exp2_1_1.jpg</code>。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ①查看原图直方图</span></span><br><span class="line">save_image_and_histogram(img, <span class="string">&#x27;Original Image&#x27;</span>, <span class="string">&#x27;Original Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_1.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤二：取反图像并查看直方图</strong></p>
+<ul>
+<li>对原始图像进行取反操作，这意味着将每个像素的颜色值变为其补色。</li>
+<li>再次绘制取反后图像的直方图，并保存。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ②取反并查看直方图</span></span><br><span class="line">img_neg = cv2.bitwise_not(img)</span><br><span class="line">save_image_and_histogram(img_neg, <span class="string">&#x27;Negative Image&#x27;</span>, <span class="string">&#x27;Negative Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_2.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤三：直方图均衡化并查看直方图</strong></p>
+<ul>
+<li>将图像从BGR色彩空间转换为YUV色彩空间。</li>
+<li>对Y通道（亮度）进行直方图均衡化，这能改善图像的对比度。</li>
+<li>再次绘制直方图均衡化后图像的直方图，并保存。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ③直方图均衡化并查看直方图</span></span><br><span class="line">img_yuv = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)</span><br><span class="line">img_yuv[:,:,<span class="number">0</span>] = cv2.equalizeHist(img_yuv[:,:,<span class="number">0</span>])</span><br><span class="line">img_histeq = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)</span><br><span class="line">save_image_and_histogram(img_histeq, <span class="string">&#x27;Histogram Equalization&#x27;</span>, <span class="string">&#x27;Eq Histogram&#x27;</span>, <span class="string">&#x27;exp2_1_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤四：精确提取文本区域</strong></p>
+<ul>
+<li>考虑到文本可能因拍摄角度而不完全水平，我应用了一个旋转变换，使文本尽可能地水平以便裁剪。</li>
+<li>设置旋转中心为图像中心，并指定旋转角度（在这里是-10度）。这个角度可能需要根据具体图片进行微调。</li>
+<li>应用旋转后，根据旋转后的图像内容，手动确定“爱丁堡花园”文本的精确位置并进行裁剪。</li>
+<li>最后，将旋转和裁剪后的区域保存为 <code>outputs/exp2_1_4.jpg</code>，这是仅包含目标文本区域的图片。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ④仅保留“爱丁堡花园”部分</span></span><br><span class="line"><span class="comment"># 获取图像尺寸用于计算旋转中心</span></span><br><span class="line">rows, cols, _ = img.shape</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置旋转矩阵，中心点为图像中心，旋转角度为-10度，缩放因子为1</span></span><br><span class="line">M = cv2.getRotationMatrix2D((cols / <span class="number">2</span>, rows / <span class="number">2</span>), -<span class="number">10</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 旋转图像</span></span><br><span class="line">rotated_img = cv2.warpAffine(img, M, (cols, rows))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在旋转后的图像中确定“爱丁堡花园”文字的大致位置</span></span><br><span class="line">img_crop = rotated_img[<span class="number">550</span>:<span class="number">630</span>, <span class="number">600</span>:<span class="number">910</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存剪裁后的图像</span></span><br><span class="line">cv2.imwrite(<span class="string">f&#x27;<span class="subst">&#123;output_dir&#125;</span>exp2_1_4.jpg&#x27;</span>, img_crop)</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p>①查看直方图 </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show01.png"
+                      alt="实际输出"
+                ></p>
+<p>②取反，再查看直方图 </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show02.png"
+                      alt="实际输出"
+                ></p>
+<p>③使用直方图均衡，再查看直方图 </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show03.png"
+                      alt="实际输出"
+                ></p>
+<p>④通过旋转、切割，仅保留“爱丁堡花园”部分</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show04.png"
+                      alt="实际输出"
+                ></p>
+<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><h3 id="实验要求：-1"><a href="#实验要求：-1" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p>人脸1.jpg、2.jpg、3.jpg、4.jpg进行滤波等操作实现类似美图秀秀磨皮功能，并对比磨皮前后直方图变化。</p>
+<p>实验图片路径为： imgs&#x2F;1.jpg imgs&#x2F;2.jpg imgs&#x2F;3.jpg imgs&#x2F;4.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_2_i的格式，输出四个结果，比如结果保存为：outputs&#x2F;exp2_2_1.jpg</p>
+<h3 id="实验方案：-1"><a href="#实验方案：-1" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>通过应用双边滤波器对给定的人脸图像进行磨皮处理，然后对比处理前后图像的直方图变化。双边滤波器是一种非线性的滤波方法，它可以在平滑图像噪声的同时保留边缘信息，因此特别适合于图像美化处理。在Python中，可以使用OpenCV库中的<code>bilateralFilter</code>函数来实现这一操作。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用双边滤波器进行磨皮</span></span><br><span class="line">smoothed = cv2.bilateralFilter(image, d=<span class="number">9</span>, sigmaColor=<span class="number">75</span>, sigmaSpace=<span class="number">75</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p>其中，<code>d</code>表示滤波器的直径，<code>sigmaColor</code>表示颜色空间的标准差，<code>sigmaSpace</code>表示坐标空间的标准差。这些参数决定了滤波器平滑图像的程度。</p>
+<p>直方图的对比通过计算原图像和磨皮后图像的颜色直方图，并用不同颜色的线表示出来。这一过程可以直观地观察磨皮效果对图像色彩分布的影响。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算直方图并绘制</span></span><br><span class="line">hist_original = cv2.calcHist([original], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line">hist_smoothed = cv2.calcHist([smoothed], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">256</span>], [<span class="number">0</span>, <span class="number">256</span>])</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>))</span><br><span class="line">plt.plot(hist_original, color=<span class="string">&#x27;blue&#x27;</span>, label=<span class="string">&#x27;Original&#x27;</span>)</span><br><span class="line">plt.plot(hist_smoothed, color=<span class="string">&#x27;red&#x27;</span>, label=<span class="string">&#x27;Smoothed&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="实验结果：-1"><a href="#实验结果：-1" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show10.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show11.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show12.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图1的分析</strong></p>
+<p>原始图像和经过双边滤波处理后的图像在直方图上差别不大。这表明图像的磨皮效果较为自然，没有过度平滑，同时保持了原图的色彩特征。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show20.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show21.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show22.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图2的分析</strong></p>
+<p>可以看到在某些颜色通道中，经过滤波处理后的直方图在峰值附近略微平滑，但整体色彩分布的变化不是特别显著。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show30.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show31.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show32.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图3的分析</strong></p>
+<p>滤波后图像的直方图在低亮度区域有了平滑，说明磨皮处理降低了图像中的暗部噪声。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show40.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show41.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show42.png"
+                      alt="实际输出"
+                ></p>
+<p><strong>图4的分析</strong></p>
+<p>图像的直方图曲线在整体上变得更加平滑，尤其是在亮度较高区域的变化更为明显。这可能意味着图像亮部的细节被稍微抑制，从而减少了噪声并增强了整体的视觉效果。</p>
+<h2 id="三、"><a href="#三、" class="headerlink" title="三、"></a>三、</h2><h3 id="实验要求：-2"><a href="#实验要求：-2" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><p> 将Sobel算子编码到pytorch卷积核中，并用编码的卷积核对图像100_3228.jpg执行卷积操作，输出结果（水平梯度图像、垂直梯度图像和梯度幅值图像），理解卷积操作与空间域滤波的关系。</p>
+<p>实验图片路径为： imgs&#x2F;100_3228.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp2_3_i的格式，输出结果 比如结果保存为：outputs&#x2F;exp2_3_1.jpg</p>
+<h3 id="实验方案：-2"><a href="#实验方案：-2" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p><strong>步骤一：读取和预处理图像</strong></p>
+<ul>
+<li>读取图像<code>100_3228.jpg</code>。</li>
+<li>将图像转换为灰度格式以准备进行Sobel边缘检测。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">image = Image.<span class="built_in">open</span>(img_path)</span><br><span class="line">img = transform(image)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤二：定义Sobel卷积核</strong></p>
+<ul>
+<li>定义Sobel卷积核<code>sobel_x</code>和<code>sobel_y</code>以检测水平和垂直边缘。</li>
+<li>这些卷积核分别能够捕捉图像在水平和垂直方向上的梯度信息。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sobel_x = torch.Tensor([[-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>], [-<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>], [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br><span class="line">sobel_y = torch.Tensor([[-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>]]).unsqueeze(<span class="number">0</span>).unsqueeze(<span class="number">0</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤三：配置卷积层并执行卷积</strong></p>
+<ul>
+<li>配置卷积层以使用Sobel算子。</li>
+<li>不使用偏置，因为在这种滤波操作中不需要。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conv_x = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_y = nn.Conv2d(<span class="number">1</span>, <span class="number">1</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">conv_x.weight.data = sobel_x</span><br><span class="line">conv_y.weight.data = sobel_y</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>应用Sobel算子于图像以得到水平和垂直梯度。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img_x = conv_x(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br><span class="line">img_y = conv_y(Variable(img.unsqueeze(<span class="number">0</span>)))</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤四：计算梯度幅值</strong></p>
+<ul>
+<li>结合水平和垂直梯度以计算梯度幅值，这能够显示图像中边缘的整体强度。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img_magnitude = torch.sqrt(img_x**<span class="number">2</span> + img_y**<span class="number">2</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤五：执行阈值化处理</strong></p>
+<ul>
+<li>通过设置阈值，去除噪声并突出边缘。</li>
+<li>阈值化后的结果只保留较强的边缘。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">threshold = img_magnitude.mean() * <span class="number">0.5</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>步骤六：可视化与保存结果</strong></p>
+<ul>
+<li>保存水平和垂直梯度图像，以及梯度幅值图像。</li>
+<li>使用<code>matplotlib</code>对图像进行可视化。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">visualize_and_save(img_x_thresholded, <span class="string">&#x27;Horizontal Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_1.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_y_thresholded, <span class="string">&#x27;Vertical Gradient&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_2.jpg&#x27;</span>)</span><br><span class="line">visualize_and_save(img_magnitude, <span class="string">&#x27;Gradient Magnitude&#x27;</span>, <span class="string">&#x27;outputs/exp2_3_3.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="实验结果：-2"><a href="#实验结果：-2" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show50.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show51.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show52.png"
+                      alt="实际输出"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/attachment_show53.png"
+                      alt="实际输出"
+                ></p>
+<ol>
+<li><strong>水平梯度图像</strong>: 这张图像展示了原始图像中沿水平方向边缘的强度。在水平梯度图中，垂直边缘（如山和建筑物尖顶的轮廓）被突出显示。由于Sobel算子在水平方向上捕捉垂直边缘，所以图像中明显的垂直线条和特征在这里以较亮的像素显示出来，而水平边缘则不明显或显得较暗。</li>
+<li><strong>垂直梯度图像</strong>: 与水平梯度图相对，这张图显示了沿垂直方向的边缘强度。在垂直梯度图中，水平边缘（如屋顶的边缘，建筑物所在地平缓处等等）更为明显。Sobel算子在垂直方向上识别水平边缘，因此图像中水平线条和特征在这张图上以亮像素呈现。</li>
+<li><strong>梯度幅度图像</strong>: 此图像结合了水平和垂直梯度的信息，提供了边缘总体强度的视图。在梯度幅度图中，所有边缘，无论其方向如何，都以亮度的形式展现，其中亮度越强表示梯度幅度越大。这张图是通过计算水平梯度和垂直梯度在每个像素点的矢量和的幅度得到的。它提供了关于图像边缘强度最完整的视图，显示了所有明显边缘的位置。</li>
+</ol>
+<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>在本次实验中，我利用Python探索了图像处理中的空间域增强技术。实验的目标是通过对特定图像进行处理，以理解和应用直方图分析、图像取反、直方图均衡化以及卷积操作在图像增强和边缘检测中的作用。以下是本实验的关键发现和总结：</p>
+<p><strong>直方图分析和图像取反</strong></p>
+<ul>
+<li>我观察了原始图像的直方图，并通过图像取反来了解亮度分布的变化。取反操作将图像中的亮区域变暗，暗区域变亮，直方图也相应地发生反转。</li>
+</ul>
+<p><strong>直方图均衡化</strong></p>
+<ul>
+<li>通过将图像转换到YUV色彩空间并对Y通道应用直方图均衡化，我显著提高了图像的对比度。直方图均衡化后的结果使得亮度分布更加均匀，从而增强了图像中的细节。</li>
+</ul>
+<p><strong>图像旋转和裁剪</strong></p>
+<ul>
+<li>通过旋转和裁剪操作，我成功地提取了图像中“爱丁堡花园”部分。这个过程涉及到对图像的几何变换，展示了图像处理中的区域选择技术。</li>
+</ul>
+<p><strong>滤波和磨皮效果</strong></p>
+<ul>
+<li>我对人脸图像应用了双边滤波器，实现了类似美图秀秀的磨皮效果。磨皮处理后，图像的直方图在低亮度区域变得更加平滑，显示了噪声的减少和肤色的均匀性提升。</li>
+</ul>
+<p><strong>Sobel边缘检测</strong></p>
+<ul>
+<li>将Sobel算子编码进PyTorch卷积核中并对图像进行处理，我得到了水平和垂直梯度图像以及梯度幅值图。这一过程说明了卷积操作如何作为空间域滤波器来检测图像中的边缘，是图像处理中边缘检测技术的一个经典例子。</li>
+</ul>
+<p>通过以上实验步骤，我加深了对图像增强技术的理解，特别是在如何利用不同的空间域滤波技术来改善视觉效果方面。实验结果表明，这些技术不仅可以增强图像的视觉质量，还可以为后续的图像分析工作提供更好的基础。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 图像处理与分析——实验二-空间域的图像增强</li>
+        <li><strong>Author:</strong> ELecmark</li>
+        <li><strong>Created at
+                :</strong> 2024-04-10 11:31:01</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-04-29 19:29:08
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://elecmark.github.io/2024/04/10/图像处理与分析——实验二-空间域的图像增强/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">#课程项目</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">#作业报告</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">#图像处理与分析</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/04/15/OpenGL%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%9C%B0%E6%9C%88%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">OpenGL——模拟地月系技术报告</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/04/02/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-2-Profiling-Serial-Merge-Sort/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">MIT软件性能工程——Homework-2-Profiling Serial Merge Sort</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">图像处理与分析——实验二-空间域的图像增强</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E6%A0%87%EF%BC%9A"><span class="nav-text">实验目标：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81"><span class="nav-text">一、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-text">实验结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81"><span class="nav-text">二、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A-1"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A-1"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-1"><span class="nav-text">实验结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81"><span class="nav-text">三、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A-2"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A-2"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-2"><span class="nav-text">实验结果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-text">实验总结：</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        26 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/libs/mermaid.min.js"></script>
+
+    
+<script src="/js/plugins/mermaid.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+    <div id="aplayer"></div>
+
+<script src="/js/libs/APlayer.min.js"></script>
+
+
+<script src="/js/plugins/aplayer.js"></script>
+
+
+</body>
+</html>
