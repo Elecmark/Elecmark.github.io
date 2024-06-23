@@ -690,6 +690,189 @@
       </tags>
   </entry>
   <entry>
+    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1</title>
+    <url>/2023/12/10/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-1-3/</url>
+    <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
+<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
+<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
+<li>普典衡</li>
+<li>司宇萌</li>
+<li>孙文秀</li>
+<li>王诗梦</li>
+<li>王菲</li>
+</ul>
+<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
+<li>过去完成的任务：<ul>
+<li>优化前端格式和排列表现</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/1.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>进一步优化前端功能与界面，设计UI，实现新增的转换按钮的功能（与后端对接）</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>组件扩展使整体屏幕分辨率改变出现bug，调整组件位置已经禁用横向滚动条之后解决</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>对JavaScript与HTML理解更好，对前端布局理解加深</li>
+</ul>
+</li>
+</ul>
+<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
+<li>过去完成的任务：<ul>
+<li>更改了顶部导航栏，重新安排了按钮的位置，修改了按钮的颜色。</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/2.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成前后端的对接工作，将模型接入传送过程，实装相应的按钮和进度条的功能</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>模型未接入，模型训练困难</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>学习前端，学习python语言，了解前后端交互</li>
+</ul>
+</li>
+</ul>
+<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
+<li>过去完成的任务：<ul>
+<li>修改模型，实现输入图片与输出图片颜色一致；增加训练轮数和卷积层数，以减请轻去噪后的模糊情况。</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/3.png"
+                      alt="点击并拖拽以移动"
+                ></li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>继续修改模型，同时学习CNN编码器相关知识，寻求更好的模型用于图像去噪。</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>电脑没有独显，模型训练很慢，而且图像模糊还没有得到解决。</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>对CNN编码器的了解更多，认识了很多去噪算法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
+<li>过去完成的任务：<ul>
+<li>协助模型训练的同学进行模型训练,修改部分细节使图片更适应模型</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/4.png"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成模型训练及后端传输图片</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>之前的模型训练效果不好，重新开始训练，模型和前端的交接遇到点问题</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>了解了模型训练的一些知识</li>
+</ul>
+</li>
+</ul>
+<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
+<li>过去完成的任务：<ul>
+<li>协助模型训练的同学进行模型训练</li>
+</ul>
+</li>
+<li>接下来的计划：<ul>
+<li>完成模型训练及后端传输图片</li>
+</ul>
+</li>
+<li>遇到的困难：<ul>
+<li>之前的模型训练效果不好，重新开始训练</li>
+</ul>
+</li>
+<li>收获和疑问：<ul>
+<li>了解了模型训练的一些知识</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
+<li>增加及修改加了顶部菜单栏的组件</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/6.png"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Group9-image-denoising/b1/10.jpg"
+                      alt="点击并拖拽以移动"
+                >编辑</li>
+</ul>
+<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
+<li><p><strong>时间</strong>：2023.12.10 20:00</p>
+</li>
+<li><p><strong>地点</strong>：腾讯会议</p>
+</li>
+<li><p><strong>内容</strong>：</p>
+<h3 id="进展回顾"><a href="#进展回顾" class="headerlink" title="进展回顾"></a>进展回顾</h3><ol>
+<li><strong>前端开发</strong>:<ul>
+<li>在前端方面取得了重要进展。包括对前端格式的优化、排列表现的改善、顶部导航栏的重新设计，以及按钮颜色的调整。</li>
+<li>计划进一步增强前端功能和界面设计，特别是实现新的转换按钮功能，并与后端紧密对接。</li>
+</ul>
+</li>
+<li><strong>模型训练与后端开发</strong>:<ul>
+<li>模型训练上，实现了输入输出图片颜色一致性的改进，并通过增加训练轮数和卷积层数减轻了去噪后的模糊情况。</li>
+<li>后续计划着重于模型的进一步改进，特别是针对CNN编码器的深入学习和应用，以及模型和前端的有效整合。</li>
+</ul>
+</li>
+</ol>
+<h3 id="遇到的挑战"><a href="#遇到的挑战" class="headerlink" title="遇到的挑战"></a>遇到的挑战</h3><ul>
+<li>团队面临的主要挑战包括前端组件扩展导致的bug、模型训练的效率问题以及前后端的有效整合。</li>
+</ul>
+<h3 id="收获与展望"><a href="#收获与展望" class="headerlink" title="收获与展望"></a>收获与展望</h3><ul>
+<li>成员们在JavaScript、HTML、Python语言及前后端交互方面有了更深入的理解和应用。</li>
+<li>对CNN编码器和去噪算法的认识更加深入，为未来的开发提供了坚实的基础。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体来看，每位成员都在其专长领域作出了积极贡献。虽然面临一些技术挑战，但团队成员通过有效合作，已经取得了显著的进展，并对未来的工作有了清晰的规划和方向。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>软件工程</category>
+        <category>云去噪</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>项目报告</tag>
+        <tag>云去噪</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺2</title>
     <url>/2023/12/18/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-2-3/</url>
     <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
@@ -876,189 +1059,6 @@
 <h4 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h4><ul>
 <li>本次Beta冲刺阶段，团队成员共同努力，取得了显著的进步。尽管面临诸多挑战，但团队通过有效的沟通和协作，不断优化项目，朝着最终目标稳步前进。未来，团队将继续致力于解决剩余的技术难题，并期待在项目最终阶段呈现出更加完善的成果。</li>
 </ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>软件工程</category>
-        <category>云去噪</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>项目报告</tag>
-        <tag>云去噪</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于CBDnet卷积神经网络深度学习的云去噪网站-Beta冲刺1</title>
-    <url>/2023/12/10/09%E7%BB%84%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE-Beta%E5%86%B2%E5%88%BA-1-3/</url>
-    <content><![CDATA[<h2 id="一、基本情况"><a href="#一、基本情况" class="headerlink" title="一、基本情况"></a>一、基本情况</h2><h3 id="团队ID"><a href="#团队ID" class="headerlink" title="团队ID"></a>团队ID</h3><p>09</p>
-<h3 id="组长博客"><a href="#组长博客" class="headerlink" title="组长博客"></a>组长博客</h3><p>链接：[<a href="https://elecmark.github.io/">Elecmark_博客</a>]</p>
-<h3 id="小组成员"><a href="#小组成员" class="headerlink" title="小组成员"></a>小组成员</h3><ul>
-<li>普典衡</li>
-<li>司宇萌</li>
-<li>孙文秀</li>
-<li>王诗梦</li>
-<li>王菲</li>
-</ul>
-<h2 id="二、冲刺概况汇报"><a href="#二、冲刺概况汇报" class="headerlink" title="二、冲刺概况汇报"></a>二、冲刺概况汇报</h2><h3 id="普典衡"><a href="#普典衡" class="headerlink" title="普典衡"></a>普典衡</h3><ul>
-<li>过去完成的任务：<ul>
-<li>优化前端格式和排列表现</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/1.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>进一步优化前端功能与界面，设计UI，实现新增的转换按钮的功能（与后端对接）</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>组件扩展使整体屏幕分辨率改变出现bug，调整组件位置已经禁用横向滚动条之后解决</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>对JavaScript与HTML理解更好，对前端布局理解加深</li>
-</ul>
-</li>
-</ul>
-<h3 id="司宇萌"><a href="#司宇萌" class="headerlink" title="司宇萌"></a>司宇萌</h3><ul>
-<li>过去完成的任务：<ul>
-<li>更改了顶部导航栏，重新安排了按钮的位置，修改了按钮的颜色。</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/2.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成前后端的对接工作，将模型接入传送过程，实装相应的按钮和进度条的功能</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>模型未接入，模型训练困难</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>学习前端，学习python语言，了解前后端交互</li>
-</ul>
-</li>
-</ul>
-<h3 id="孙文秀"><a href="#孙文秀" class="headerlink" title="孙文秀"></a>孙文秀</h3><ul>
-<li>过去完成的任务：<ul>
-<li>修改模型，实现输入图片与输出图片颜色一致；增加训练轮数和卷积层数，以减请轻去噪后的模糊情况。</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/3.png"
-                      alt="点击并拖拽以移动"
-                ></li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>继续修改模型，同时学习CNN编码器相关知识，寻求更好的模型用于图像去噪。</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>电脑没有独显，模型训练很慢，而且图像模糊还没有得到解决。</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>对CNN编码器的了解更多，认识了很多去噪算法。</li>
-</ul>
-</li>
-</ul>
-<h3 id="王诗梦"><a href="#王诗梦" class="headerlink" title="王诗梦"></a>王诗梦</h3><ul>
-<li>过去完成的任务：<ul>
-<li>协助模型训练的同学进行模型训练,修改部分细节使图片更适应模型</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/4.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成模型训练及后端传输图片</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>之前的模型训练效果不好，重新开始训练，模型和前端的交接遇到点问题</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>了解了模型训练的一些知识</li>
-</ul>
-</li>
-</ul>
-<h3 id="王菲"><a href="#王菲" class="headerlink" title="王菲"></a>王菲</h3><ul>
-<li>过去完成的任务：<ul>
-<li>协助模型训练的同学进行模型训练</li>
-</ul>
-</li>
-<li>接下来的计划：<ul>
-<li>完成模型训练及后端传输图片</li>
-</ul>
-</li>
-<li>遇到的困难：<ul>
-<li>之前的模型训练效果不好，重新开始训练</li>
-</ul>
-</li>
-<li>收获和疑问：<ul>
-<li>了解了模型训练的一些知识</li>
-</ul>
-</li>
-</ul>
-<h2 id="三、冲刺成果展示"><a href="#三、冲刺成果展示" class="headerlink" title="三、冲刺成果展示"></a>三、冲刺成果展示</h2><h3 id="最新成果展示"><a href="#最新成果展示" class="headerlink" title="最新成果展示"></a>最新成果展示</h3><ul>
-<li>增加及修改加了顶部菜单栏的组件</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/6.png"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-<h3 id="站立会议合照"><a href="#站立会议合照" class="headerlink" title="站立会议合照"></a>站立会议合照</h3><ul>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Group9-image-denoising/b1/10.jpg"
-                      alt="点击并拖拽以移动"
-                >编辑</li>
-</ul>
-<h3 id="会议时间、地点、内容记录"><a href="#会议时间、地点、内容记录" class="headerlink" title="会议时间、地点、内容记录"></a>会议时间、地点、内容记录</h3><ul>
-<li><p><strong>时间</strong>：2023.12.10 20:00</p>
-</li>
-<li><p><strong>地点</strong>：腾讯会议</p>
-</li>
-<li><p><strong>内容</strong>：</p>
-<h3 id="进展回顾"><a href="#进展回顾" class="headerlink" title="进展回顾"></a>进展回顾</h3><ol>
-<li><strong>前端开发</strong>:<ul>
-<li>在前端方面取得了重要进展。包括对前端格式的优化、排列表现的改善、顶部导航栏的重新设计，以及按钮颜色的调整。</li>
-<li>计划进一步增强前端功能和界面设计，特别是实现新的转换按钮功能，并与后端紧密对接。</li>
-</ul>
-</li>
-<li><strong>模型训练与后端开发</strong>:<ul>
-<li>模型训练上，实现了输入输出图片颜色一致性的改进，并通过增加训练轮数和卷积层数减轻了去噪后的模糊情况。</li>
-<li>后续计划着重于模型的进一步改进，特别是针对CNN编码器的深入学习和应用，以及模型和前端的有效整合。</li>
-</ul>
-</li>
-</ol>
-<h3 id="遇到的挑战"><a href="#遇到的挑战" class="headerlink" title="遇到的挑战"></a>遇到的挑战</h3><ul>
-<li>团队面临的主要挑战包括前端组件扩展导致的bug、模型训练的效率问题以及前后端的有效整合。</li>
-</ul>
-<h3 id="收获与展望"><a href="#收获与展望" class="headerlink" title="收获与展望"></a>收获与展望</h3><ul>
-<li>成员们在JavaScript、HTML、Python语言及前后端交互方面有了更深入的理解和应用。</li>
-<li>对CNN编码器和去噪算法的认识更加深入，为未来的开发提供了坚实的基础。</li>
-</ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>总体来看，每位成员都在其专长领域作出了积极贡献。虽然面临一些技术挑战，但团队成员通过有效合作，已经取得了显著的进展，并对未来的工作有了清晰的规划和方向。</p>
 </li>
 </ul>
 ]]></content>
@@ -1280,6 +1280,114 @@
       </tags>
   </entry>
   <entry>
+    <title>Blender——建模/动画作品</title>
+    <url>/2023/07/15/Blender%E5%BB%BA%E6%A8%A1-%E5%8A%A8%E7%94%BB%E4%BD%9C%E5%93%81/</url>
+    <content><![CDATA[<h3 id="三兄弟建模（几何）"><a href="#三兄弟建模（几何）" class="headerlink" title="三兄弟建模（几何）"></a>三兄弟建模（几何）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/1_%E4%B8%89%E5%85%84%E5%BC%9F.png"
+                      alt="1_三兄弟"
+                ></p>
+<h3 id="积木建模-动画（动画）"><a href="#积木建模-动画（动画）" class="headerlink" title="积木建模&#x2F;动画（动画）"></a>积木建模&#x2F;动画（动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV15K421x7aj/?share_source=copy_web' title='【Blender积木】'><i class='fa-solid fa-play-circle'></i> 【Blender积木】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1701692717&bvid=BV15K421x7aj&cid=1463230031&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/2_%E7%A7%AF%E6%9C%A8.png"
+                      alt="2_积木"
+                ></p>
+<h3 id="金币基站建模（金属光泽材质）"><a href="#金币基站建模（金属光泽材质）" class="headerlink" title="金币基站建模（金属光泽材质）"></a>金币基站建模（金属光泽材质）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/3_%E9%87%91%E5%B8%81%E5%9F%BA%E7%AB%99.png"
+                      alt="3_金币基站"
+                ></p>
+<h3 id="跑车建模-动画（复杂图形建模与循环动画）"><a href="#跑车建模-动画（复杂图形建模与循环动画）" class="headerlink" title="跑车建模&#x2F;动画（复杂图形建模与循环动画）"></a>跑车建模&#x2F;动画（复杂图形建模与循环动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Mj421f71M/?share_source=copy_web' title='【Blender跑车】'><i class='fa-solid fa-play-circle'></i> 【Blender跑车】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1651706227&bvid=BV1Mj421f71M&cid=1463231676&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E8%BD%A6%E5%A4%B4.png"
+                      alt="跑车车头"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E7%89%B9%E5%86%992.png"
+                      alt="跑车特写2"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E4%BE%A7%E9%9D%A2.png"
+                      alt="跑车侧面"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E9%A1%B6%E9%83%A8.png"
+                      alt="跑车顶部"
+                ></p>
+<h3 id="荧光树桩建模（半透明材质）"><a href="#荧光树桩建模（半透明材质）" class="headerlink" title="荧光树桩建模（半透明材质）"></a>荧光树桩建模（半透明材质）</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/5_%E8%8D%A7%E5%85%89%E6%A0%91%E6%A1%A9.png"
+                      alt="5_荧光树桩"
+                ></p>
+<h3 id="子弹时间建模-动画（物理效果模拟）"><a href="#子弹时间建模-动画（物理效果模拟）" class="headerlink" title="子弹时间建模&#x2F;动画（物理效果模拟）"></a>子弹时间建模&#x2F;动画（物理效果模拟）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1xW421c7ux/?share_source=copy_web' title='【Blender子弹时间】'><i class='fa-solid fa-play-circle'></i> 【Blender子弹时间】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1851675396&bvid=BV1xW421c7ux&cid=1463235980&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>
+
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9-%E5%B0%81%E9%9D%A2.jpg"
+                      alt="子弹-封面"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%85%A2%E5%8A%A8%E4%BD%9C%E6%99%AF%E6%B7%B1.png"
+                      alt="子弹慢动作景深"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%99%AF%E6%B7%B1.png"
+                      alt="子弹景深"
+                ></p>
+<h3 id="离散猴头（几何节点）"><a href="#离散猴头（几何节点）" class="headerlink" title="离散猴头（几何节点）"></a>离散猴头（几何节点）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Uj421Z7Nc/?share_source=copy_web' title='【Blender猴头】'><i class='fa-solid fa-play-circle'></i> 【Blender猴头】</a>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
+src="//player.bilibili.com/player.html?aid=1651642308&bvid=BV1Uj421Z7Nc&cid=1463239128&p=1" scrolling="no" border="0" 
+frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
+height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>Blender</category>
+        <category>建模/动画</category>
+      </categories>
+      <tags>
+        <tag>Blender</tag>
+        <tag>建模</tag>
+        <tag>动画</tag>
+        <tag>作品集</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java GUI——音乐播放器</title>
     <url>/2023/05/17/Java-GUI-%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
     <content><![CDATA[<h2 id="a-软件功能说明"><a href="#a-软件功能说明" class="headerlink" title="(a)软件功能说明"></a>(a)软件功能说明</h2><p>①线上歌单的获取和保存，加载进度条</p>
@@ -1438,114 +1546,6 @@
         <tag>Java</tag>
         <tag>GUI</tag>
         <tag>音乐播放器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Blender——建模/动画作品</title>
-    <url>/2023/07/15/Blender%E5%BB%BA%E6%A8%A1-%E5%8A%A8%E7%94%BB%E4%BD%9C%E5%93%81/</url>
-    <content><![CDATA[<h3 id="三兄弟建模（几何）"><a href="#三兄弟建模（几何）" class="headerlink" title="三兄弟建模（几何）"></a>三兄弟建模（几何）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/1_%E4%B8%89%E5%85%84%E5%BC%9F.png"
-                      alt="1_三兄弟"
-                ></p>
-<h3 id="积木建模-动画（动画）"><a href="#积木建模-动画（动画）" class="headerlink" title="积木建模&#x2F;动画（动画）"></a>积木建模&#x2F;动画（动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV15K421x7aj/?share_source=copy_web' title='【Blender积木】'><i class='fa-solid fa-play-circle'></i> 【Blender积木】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1701692717&bvid=BV15K421x7aj&cid=1463230031&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/2_%E7%A7%AF%E6%9C%A8.png"
-                      alt="2_积木"
-                ></p>
-<h3 id="金币基站建模（金属光泽材质）"><a href="#金币基站建模（金属光泽材质）" class="headerlink" title="金币基站建模（金属光泽材质）"></a>金币基站建模（金属光泽材质）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/3_%E9%87%91%E5%B8%81%E5%9F%BA%E7%AB%99.png"
-                      alt="3_金币基站"
-                ></p>
-<h3 id="跑车建模-动画（复杂图形建模与循环动画）"><a href="#跑车建模-动画（复杂图形建模与循环动画）" class="headerlink" title="跑车建模&#x2F;动画（复杂图形建模与循环动画）"></a>跑车建模&#x2F;动画（复杂图形建模与循环动画）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Mj421f71M/?share_source=copy_web' title='【Blender跑车】'><i class='fa-solid fa-play-circle'></i> 【Blender跑车】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1651706227&bvid=BV1Mj421f71M&cid=1463231676&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E8%BD%A6%E5%A4%B4.png"
-                      alt="跑车车头"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E7%89%B9%E5%86%992.png"
-                      alt="跑车特写2"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E4%BE%A7%E9%9D%A2.png"
-                      alt="跑车侧面"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E8%B7%91%E8%BD%A6%E9%A1%B6%E9%83%A8.png"
-                      alt="跑车顶部"
-                ></p>
-<h3 id="荧光树桩建模（半透明材质）"><a href="#荧光树桩建模（半透明材质）" class="headerlink" title="荧光树桩建模（半透明材质）"></a>荧光树桩建模（半透明材质）</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/5_%E8%8D%A7%E5%85%89%E6%A0%91%E6%A1%A9.png"
-                      alt="5_荧光树桩"
-                ></p>
-<h3 id="子弹时间建模-动画（物理效果模拟）"><a href="#子弹时间建模-动画（物理效果模拟）" class="headerlink" title="子弹时间建模&#x2F;动画（物理效果模拟）"></a>子弹时间建模&#x2F;动画（物理效果模拟）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1xW421c7ux/?share_source=copy_web' title='【Blender子弹时间】'><i class='fa-solid fa-play-circle'></i> 【Blender子弹时间】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1851675396&bvid=BV1xW421c7ux&cid=1463235980&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9-%E5%B0%81%E9%9D%A2.jpg"
-                      alt="子弹-封面"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%85%A2%E5%8A%A8%E4%BD%9C%E6%99%AF%E6%B7%B1.png"
-                      alt="子弹慢动作景深"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/Blender%E4%BD%9C%E5%93%81/others/%E5%AD%90%E5%BC%B9%E6%99%AF%E6%B7%B1.png"
-                      alt="子弹景深"
-                ></p>
-<h3 id="离散猴头（几何节点）"><a href="#离散猴头（几何节点）" class="headerlink" title="离散猴头（几何节点）"></a>离散猴头（几何节点）</h3><a class="button  center large" href='https://www.bilibili.com/video/BV1Uj421Z7Nc/?share_source=copy_web' title='【Blender猴头】'><i class='fa-solid fa-play-circle'></i> 【Blender猴头】</a>
-
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="//player.bilibili.com/player.html?aid=1651642308&bvid=BV1Uj421Z7Nc&cid=1463239128&p=1" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
-      <categories>
-        <category>游戏开发</category>
-        <category>Blender</category>
-        <category>建模/动画</category>
-      </categories>
-      <tags>
-        <tag>Blender</tag>
-        <tag>建模</tag>
-        <tag>动画</tag>
-        <tag>作品集</tag>
       </tags>
   </entry>
   <entry>
@@ -2526,79 +2526,6 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>OpenGL——模拟地月系技术报告</title>
-    <url>/2024/04/15/OpenGL%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%9C%B0%E6%9C%88%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/</url>
-    <content><![CDATA[<h3 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h3><p>本项目是一个基于OpenGL的地月系动态模拟。通过OpenGL和GLUT库，实现了地球和月球的三维视觉效果，包括地球的自转和月球的公转，同时加入了相机控制以增强交互性。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/OpenGL%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%9C%B0%E6%9C%88%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/em0.gif"
-                      alt="GIF 2024-4-15 16-00-08"
-                ></p>
-<h3 id="2-环境配置和依赖库"><a href="#2-环境配置和依赖库" class="headerlink" title="2. 环境配置和依赖库"></a>2. 环境配置和依赖库</h3><p>本项目使用了以下主要库和技术：</p>
-<ul>
-<li><p><strong>OpenGL Utility Toolkit (GLUT)</strong>: 用于创建和管理窗口，处理用户输入（如键盘和鼠标事件），以及其他与窗口系统交互的基本任务。GLUT简化了OpenGL程序的窗口管理代码，使开发者能够专注于核心的图形渲染。</p>
-</li>
-<li><p><strong>stb_image.h</strong>: 这是一个非常流行的单头文件图像加载库，用于加载各种格式的图像文件。在本项目中，<code>stb_image.h</code> 被用来加载地球的纹理图像，这是纹理映射中的关键步骤。</p>
-</li>
-<li><p><strong>C++ 标准库</strong>: 包括iostream用于输入输出操作，cmath用于执行数学运算。cmath库特别重要，因为它提供了基本的数学函数如sin、cos等，这些都是在计算相机移动和控制动画时不可或缺的。</p>
-</li>
-</ul>
-<h3 id="3-主要功能与技术点"><a href="#3-主要功能与技术点" class="headerlink" title="3. 主要功能与技术点"></a>3. 主要功能与技术点</h3><h4 id="3-1-纹理映射"><a href="#3-1-纹理映射" class="headerlink" title="3.1 纹理映射"></a>3.1 纹理映射</h4><p>纹理映射是三维图形中用于增加物体表面细节的技术。在本项目中，使用纹理映射来模拟地球表面的复杂纹理。</p>
-<p><strong>关键代码及其解释</strong>:</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">GLuint <span class="title">loadTexture</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* path)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> width, height, nrChannels;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span>* data = <span class="built_in">stbi_load</span>(path, &amp;width, &amp;height, &amp;nrChannels, <span class="number">0</span>);</span><br><span class="line">    GLuint textureID;</span><br><span class="line">    <span class="keyword">if</span> (data) &#123;</span><br><span class="line">        <span class="built_in">glGenTextures</span>(<span class="number">1</span>, &amp;textureID);</span><br><span class="line">        <span class="built_in">glBindTexture</span>(GL_TEXTURE_2D, textureID);</span><br><span class="line">        <span class="built_in">glTexParameteri</span>(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);</span><br><span class="line">        <span class="built_in">glTexParameteri</span>(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);</span><br><span class="line">        <span class="built_in">glTexImage2D</span>(GL_TEXTURE_2D, <span class="number">0</span>, GL_RGB, width, height, <span class="number">0</span>, GL_RGB, GL_UNSIGNED_BYTE, data);</span><br><span class="line">        <span class="built_in">stbi_image_free</span>(data);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> textureID;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>此函数<code>loadTexture</code>负责加载图像文件作为纹理。使用<code>stbi_load</code>从指定路径加载图像，之后创建一个OpenGL纹理对象，并将图像数据绑定到此纹理对象。此操作确保了图形界面能够以高质量显示地球表面。</p>
-<h4 id="3-2-相机控制"><a href="#3-2-相机控制" class="headerlink" title="3.2 相机控制"></a>3.2 相机控制</h4><p>相机控制允许用户通过键盘和鼠标改变观察视角，增加了应用的交互性和灵活性。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/OpenGL%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%9C%B0%E6%9C%88%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/em1.gif"
-                      alt="GIF 2024-4-15 16-26-33"
-                ></p>
-<p><strong>键盘控制代码及其解释</strong>:</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">updateCameraPosition</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">float</span> radianHorizontal = cameraAngleHorizontal * M_PI / <span class="number">180.0f</span>;</span><br><span class="line">    <span class="keyword">if</span> (keyStates[<span class="string">&#x27;w&#x27;</span>]) &#123;</span><br><span class="line">        cameraX += <span class="built_in">sin</span>(radianHorizontal) * <span class="number">0.01f</span>;</span><br><span class="line">        cameraZ -= <span class="built_in">cos</span>(radianHorizontal) * <span class="number">0.01f</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 同样处理&#x27;s&#x27;, &#x27;a&#x27;, &#x27;d&#x27;按键</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>在此函数中，根据键盘输入更新相机位置。<code>w</code>键使相机向前移动，通过计算角度的正弦和余弦值来更新<code>cameraX</code>和<code>cameraZ</code>，模拟前进的效果。类似地，<code>s</code>、<code>a</code>、<code>d</code>键分别用于后退和左右移动。</p>
-<p><strong>鼠标控制代码及其解释</strong>:</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">mouseMove</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> deltaX = lastX - x;</span><br><span class="line">    <span class="type">int</span> deltaY = y - lastY;</span><br><span class="line">    cameraAngleHorizontal += deltaX * sensitivity;</span><br><span class="line">    cameraAngleVertical += deltaY * sensitivity;</span><br><span class="line">    cameraAngleVertical = std::<span class="built_in">max</span>(std::<span class="built_in">min</span>(cameraAngleVertical, <span class="number">89.0f</span>), <span class="number">-89.0f</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>此函数处理鼠标移动事件，通过计算鼠标位置的变化（<code>deltaX</code>, <code>deltaY</code>），动态调整相机的水平和垂直角度，实现视角的上下左右旋转。限制垂直角度在-89到89度之间防止视角翻转。</p>
-<h4 id="3-3-动态交互"><a href="#3-3-动态交互" class="headerlink" title="3.3 动态交互"></a>3.3 动态交互</h4><p>动态交互功能允许用户实时调整模拟的速度，增强了用户体验。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/OpenGL%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%9C%B0%E6%9C%88%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/em2.gif"
-                      alt="GIF 2024-4-15 16-33-07"
-                ></p>
-<p><strong>速度调整代码及其解释</strong>:</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">myAnimate</span><span class="params">(<span class="type">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (keyStates[<span class="string">&#x27;p&#x27;</span>]) &#123; speed += <span class="number">0.01</span>; &#125;</span><br><span class="line">    <span class="keyword">if</span> (keyStates[<span class="string">&#x27;o&#x27;</span>] &amp;&amp; speed &gt; <span class="number">0</span>) &#123; speed -= <span class="number">0.01</span>; &#125;</span><br><span class="line">    Y += <span class="number">0.5</span> * speed;</span><br><span class="line">    moonY += <span class="number">0.2</span> * speed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>在<code>myAnimate</code>函数中，根据按键状态增加或减少动画速度。<code>p</code>键提高速度，<code>o</code>键降低速度。随后更新地球和月球的旋转角度，以模拟自转和公转。这个简单的交互使用户能够控制动画的快慢，增加了应用的可玩性和教育意义。</p>
-<h4 id="3-4-三维投影与模型变换"><a href="#3-4-三维投影与模型变换" class="headerlink" title="3.4 三维投影与模型变换"></a>3.4 三维投影与模型变换</h4><p>三维投影和模型变换是实现准确和动态视觉效果的关键。这些技术允许我们以逼真的方式渲染三维场景，模拟真实世界中的视觉体验。</p>
-<p><strong>透视投影设置代码及其解释</strong>:</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">reshape</span><span class="params">(<span class="type">int</span> w, <span class="type">int</span> h)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">glViewport</span>(<span class="number">0</span>, <span class="number">0</span>, w, h);</span><br><span class="line">    <span class="built_in">glMatrixMode</span>(GL_PROJECTION);</span><br><span class="line">    <span class="built_in">glLoadIdentity</span>();</span><br><span class="line">    <span class="built_in">gluPerspective</span>(<span class="number">60.0</span>, (GLfloat)w / (GLfloat)h, <span class="number">0.1</span>, <span class="number">100.0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p><code>reshape</code>函数在窗口尺寸改变时调用，用于更新视口（<code>glViewport</code>）和投影矩阵。<code>gluPerspective</code>定义了一个视角为60度的透视投影，这个设置影响了场景中对象的视觉深度和透视效果。</p>
-<p><strong>模型变换示例（地球自转）代码及其解释</strong>:</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">glPushMatrix</span>();</span><br><span class="line"><span class="built_in">glRotatef</span>(Y, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>);</span><br><span class="line"><span class="built_in">gluSphere</span>(quad, <span class="number">0.2</span>, <span class="number">40</span>, <span class="number">40</span>);</span><br><span class="line"><span class="built_in">glPopMatrix</span>();</span><br></pre></td></tr></table></figure></div>
-<p>此处使用<code>glPushMatrix</code>和<code>glPopMatrix</code>保持当前的模型矩阵，<code>glRotatef</code>根据变量<code>Y</code>（代表地球自转的角度）绕y轴旋转地球。这种方式使得地球可以连续自转，而不影响其他对象的位置。</p>
-<h4 id="3-5-场景渲染"><a href="#3-5-场景渲染" class="headerlink" title="3.5 场景渲染"></a>3.5 场景渲染</h4><p>场景的正确渲染对于任何图形应用都是基础，本项目中通过OpenGL进行精确控制。</p>
-<p><strong>场景渲染代码及其解释</strong>:</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">myDisplay</span><span class="params">(<span class="type">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">glClear</span>(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</span><br><span class="line">    <span class="built_in">glMatrixMode</span>(GL_MODELVIEW);</span><br><span class="line">    <span class="built_in">glLoadIdentity</span>();</span><br><span class="line">    <span class="built_in">gluLookAt</span>(cameraX, cameraY, cameraZ, lookX, lookY, lookZ, <span class="number">0.0f</span>, <span class="number">1.0f</span>, <span class="number">0.0f</span>);</span><br><span class="line">    <span class="comment">// 更多渲染代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>在<code>myDisplay</code>函数中，首先使用<code>glClear</code>清除颜色和深度缓冲，以准备新的绘制。<code>glMatrixMode</code>设置当前矩阵模式为模型视图，以便更新相机视角或对象位置。<code>gluLookAt</code>定义了相机的位置和朝向，这是观察三维场景的视点。随后的代码负责渲染地球、月球等对象。</p>
-<h3 id="4-性能优化"><a href="#4-性能优化" class="headerlink" title="4. 性能优化"></a>4. 性能优化</h3><p>为保证模拟的流畅性，项目中采用了双缓冲机制 (<code>GLUT_DOUBLE</code>) 减少画面闪烁，并启用深度测试 (<code>GL_DEPTH_TEST</code>) 确保三维场景的正确渲染顺序。这些技术的使用对于创建高质量的实时渲染应用是至关重要的。</p>
-<h3 id="5-结语"><a href="#5-结语" class="headerlink" title="5. 结语"></a>5. 结语</h3><p>通过本项目的开发和撰写技术报告，我对OpenGL及其应用在实时三维图形渲染中的机制有了更深入的理解。此次地月系模拟项目不仅巩固了我在纹理映射、相机控制、动态交互及三维投影和模型变换等核心OpenGL技术的应用能力，也提升了我在编写高效且互动性强的图形应用方面的技能。</p>
-<p>作为一名希望进入游戏开发行业的软件开发者，我认为通过这样的项目，我能够更好地展示自己的技术能力和解决问题的方法。虽然我在这一领域还有很多需要学习的地方，但我相信这些经验将对我的职业生涯发展有所帮助。</p>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>游戏设计与开发</category>
-        <category>OpenGL</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>作品集</tag>
-        <tag>OpenGL</tag>
-        <tag>技术报告</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++——经典游戏《潜艇大战》改编练习</title>
     <url>/2024/03/12/c/</url>
     <content><![CDATA[<h2 id="原版效果："><a href="#原版效果：" class="headerlink" title="原版效果："></a>原版效果：</h2><h3 id="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："><a href="#依靠鼠标点击去炸毁潜艇得分，类似打地鼠：" class="headerlink" title="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："></a>依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</h3><p><img  
@@ -2710,8 +2637,81 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       <tags>
         <tag>课程项目</tag>
         <tag>作品集</tag>
-        <tag>技术报告</tag>
         <tag>C++</tag>
+        <tag>技术报告</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenGL——模拟地月系技术报告</title>
+    <url>/2024/04/15/OpenGL%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%9C%B0%E6%9C%88%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/</url>
+    <content><![CDATA[<h3 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h3><p>本项目是一个基于OpenGL的地月系动态模拟。通过OpenGL和GLUT库，实现了地球和月球的三维视觉效果，包括地球的自转和月球的公转，同时加入了相机控制以增强交互性。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/OpenGL%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%9C%B0%E6%9C%88%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/em0.gif"
+                      alt="GIF 2024-4-15 16-00-08"
+                ></p>
+<h3 id="2-环境配置和依赖库"><a href="#2-环境配置和依赖库" class="headerlink" title="2. 环境配置和依赖库"></a>2. 环境配置和依赖库</h3><p>本项目使用了以下主要库和技术：</p>
+<ul>
+<li><p><strong>OpenGL Utility Toolkit (GLUT)</strong>: 用于创建和管理窗口，处理用户输入（如键盘和鼠标事件），以及其他与窗口系统交互的基本任务。GLUT简化了OpenGL程序的窗口管理代码，使开发者能够专注于核心的图形渲染。</p>
+</li>
+<li><p><strong>stb_image.h</strong>: 这是一个非常流行的单头文件图像加载库，用于加载各种格式的图像文件。在本项目中，<code>stb_image.h</code> 被用来加载地球的纹理图像，这是纹理映射中的关键步骤。</p>
+</li>
+<li><p><strong>C++ 标准库</strong>: 包括iostream用于输入输出操作，cmath用于执行数学运算。cmath库特别重要，因为它提供了基本的数学函数如sin、cos等，这些都是在计算相机移动和控制动画时不可或缺的。</p>
+</li>
+</ul>
+<h3 id="3-主要功能与技术点"><a href="#3-主要功能与技术点" class="headerlink" title="3. 主要功能与技术点"></a>3. 主要功能与技术点</h3><h4 id="3-1-纹理映射"><a href="#3-1-纹理映射" class="headerlink" title="3.1 纹理映射"></a>3.1 纹理映射</h4><p>纹理映射是三维图形中用于增加物体表面细节的技术。在本项目中，使用纹理映射来模拟地球表面的复杂纹理。</p>
+<p><strong>关键代码及其解释</strong>:</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">GLuint <span class="title">loadTexture</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* path)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> width, height, nrChannels;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span>* data = <span class="built_in">stbi_load</span>(path, &amp;width, &amp;height, &amp;nrChannels, <span class="number">0</span>);</span><br><span class="line">    GLuint textureID;</span><br><span class="line">    <span class="keyword">if</span> (data) &#123;</span><br><span class="line">        <span class="built_in">glGenTextures</span>(<span class="number">1</span>, &amp;textureID);</span><br><span class="line">        <span class="built_in">glBindTexture</span>(GL_TEXTURE_2D, textureID);</span><br><span class="line">        <span class="built_in">glTexParameteri</span>(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);</span><br><span class="line">        <span class="built_in">glTexParameteri</span>(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);</span><br><span class="line">        <span class="built_in">glTexImage2D</span>(GL_TEXTURE_2D, <span class="number">0</span>, GL_RGB, width, height, <span class="number">0</span>, GL_RGB, GL_UNSIGNED_BYTE, data);</span><br><span class="line">        <span class="built_in">stbi_image_free</span>(data);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> textureID;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>此函数<code>loadTexture</code>负责加载图像文件作为纹理。使用<code>stbi_load</code>从指定路径加载图像，之后创建一个OpenGL纹理对象，并将图像数据绑定到此纹理对象。此操作确保了图形界面能够以高质量显示地球表面。</p>
+<h4 id="3-2-相机控制"><a href="#3-2-相机控制" class="headerlink" title="3.2 相机控制"></a>3.2 相机控制</h4><p>相机控制允许用户通过键盘和鼠标改变观察视角，增加了应用的交互性和灵活性。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/OpenGL%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%9C%B0%E6%9C%88%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/em1.gif"
+                      alt="GIF 2024-4-15 16-26-33"
+                ></p>
+<p><strong>键盘控制代码及其解释</strong>:</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">updateCameraPosition</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">float</span> radianHorizontal = cameraAngleHorizontal * M_PI / <span class="number">180.0f</span>;</span><br><span class="line">    <span class="keyword">if</span> (keyStates[<span class="string">&#x27;w&#x27;</span>]) &#123;</span><br><span class="line">        cameraX += <span class="built_in">sin</span>(radianHorizontal) * <span class="number">0.01f</span>;</span><br><span class="line">        cameraZ -= <span class="built_in">cos</span>(radianHorizontal) * <span class="number">0.01f</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 同样处理&#x27;s&#x27;, &#x27;a&#x27;, &#x27;d&#x27;按键</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>在此函数中，根据键盘输入更新相机位置。<code>w</code>键使相机向前移动，通过计算角度的正弦和余弦值来更新<code>cameraX</code>和<code>cameraZ</code>，模拟前进的效果。类似地，<code>s</code>、<code>a</code>、<code>d</code>键分别用于后退和左右移动。</p>
+<p><strong>鼠标控制代码及其解释</strong>:</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">mouseMove</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> deltaX = lastX - x;</span><br><span class="line">    <span class="type">int</span> deltaY = y - lastY;</span><br><span class="line">    cameraAngleHorizontal += deltaX * sensitivity;</span><br><span class="line">    cameraAngleVertical += deltaY * sensitivity;</span><br><span class="line">    cameraAngleVertical = std::<span class="built_in">max</span>(std::<span class="built_in">min</span>(cameraAngleVertical, <span class="number">89.0f</span>), <span class="number">-89.0f</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>此函数处理鼠标移动事件，通过计算鼠标位置的变化（<code>deltaX</code>, <code>deltaY</code>），动态调整相机的水平和垂直角度，实现视角的上下左右旋转。限制垂直角度在-89到89度之间防止视角翻转。</p>
+<h4 id="3-3-动态交互"><a href="#3-3-动态交互" class="headerlink" title="3.3 动态交互"></a>3.3 动态交互</h4><p>动态交互功能允许用户实时调整模拟的速度，增强了用户体验。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/OpenGL%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9F%E5%9C%B0%E6%9C%88%E7%B3%BB%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/em2.gif"
+                      alt="GIF 2024-4-15 16-33-07"
+                ></p>
+<p><strong>速度调整代码及其解释</strong>:</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">myAnimate</span><span class="params">(<span class="type">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (keyStates[<span class="string">&#x27;p&#x27;</span>]) &#123; speed += <span class="number">0.01</span>; &#125;</span><br><span class="line">    <span class="keyword">if</span> (keyStates[<span class="string">&#x27;o&#x27;</span>] &amp;&amp; speed &gt; <span class="number">0</span>) &#123; speed -= <span class="number">0.01</span>; &#125;</span><br><span class="line">    Y += <span class="number">0.5</span> * speed;</span><br><span class="line">    moonY += <span class="number">0.2</span> * speed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>在<code>myAnimate</code>函数中，根据按键状态增加或减少动画速度。<code>p</code>键提高速度，<code>o</code>键降低速度。随后更新地球和月球的旋转角度，以模拟自转和公转。这个简单的交互使用户能够控制动画的快慢，增加了应用的可玩性和教育意义。</p>
+<h4 id="3-4-三维投影与模型变换"><a href="#3-4-三维投影与模型变换" class="headerlink" title="3.4 三维投影与模型变换"></a>3.4 三维投影与模型变换</h4><p>三维投影和模型变换是实现准确和动态视觉效果的关键。这些技术允许我们以逼真的方式渲染三维场景，模拟真实世界中的视觉体验。</p>
+<p><strong>透视投影设置代码及其解释</strong>:</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">reshape</span><span class="params">(<span class="type">int</span> w, <span class="type">int</span> h)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">glViewport</span>(<span class="number">0</span>, <span class="number">0</span>, w, h);</span><br><span class="line">    <span class="built_in">glMatrixMode</span>(GL_PROJECTION);</span><br><span class="line">    <span class="built_in">glLoadIdentity</span>();</span><br><span class="line">    <span class="built_in">gluPerspective</span>(<span class="number">60.0</span>, (GLfloat)w / (GLfloat)h, <span class="number">0.1</span>, <span class="number">100.0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><code>reshape</code>函数在窗口尺寸改变时调用，用于更新视口（<code>glViewport</code>）和投影矩阵。<code>gluPerspective</code>定义了一个视角为60度的透视投影，这个设置影响了场景中对象的视觉深度和透视效果。</p>
+<p><strong>模型变换示例（地球自转）代码及其解释</strong>:</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">glPushMatrix</span>();</span><br><span class="line"><span class="built_in">glRotatef</span>(Y, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">0.0</span>);</span><br><span class="line"><span class="built_in">gluSphere</span>(quad, <span class="number">0.2</span>, <span class="number">40</span>, <span class="number">40</span>);</span><br><span class="line"><span class="built_in">glPopMatrix</span>();</span><br></pre></td></tr></table></figure></div>
+<p>此处使用<code>glPushMatrix</code>和<code>glPopMatrix</code>保持当前的模型矩阵，<code>glRotatef</code>根据变量<code>Y</code>（代表地球自转的角度）绕y轴旋转地球。这种方式使得地球可以连续自转，而不影响其他对象的位置。</p>
+<h4 id="3-5-场景渲染"><a href="#3-5-场景渲染" class="headerlink" title="3.5 场景渲染"></a>3.5 场景渲染</h4><p>场景的正确渲染对于任何图形应用都是基础，本项目中通过OpenGL进行精确控制。</p>
+<p><strong>场景渲染代码及其解释</strong>:</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">myDisplay</span><span class="params">(<span class="type">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">glClear</span>(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</span><br><span class="line">    <span class="built_in">glMatrixMode</span>(GL_MODELVIEW);</span><br><span class="line">    <span class="built_in">glLoadIdentity</span>();</span><br><span class="line">    <span class="built_in">gluLookAt</span>(cameraX, cameraY, cameraZ, lookX, lookY, lookZ, <span class="number">0.0f</span>, <span class="number">1.0f</span>, <span class="number">0.0f</span>);</span><br><span class="line">    <span class="comment">// 更多渲染代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>在<code>myDisplay</code>函数中，首先使用<code>glClear</code>清除颜色和深度缓冲，以准备新的绘制。<code>glMatrixMode</code>设置当前矩阵模式为模型视图，以便更新相机视角或对象位置。<code>gluLookAt</code>定义了相机的位置和朝向，这是观察三维场景的视点。随后的代码负责渲染地球、月球等对象。</p>
+<h3 id="4-性能优化"><a href="#4-性能优化" class="headerlink" title="4. 性能优化"></a>4. 性能优化</h3><p>为保证模拟的流畅性，项目中采用了双缓冲机制 (<code>GLUT_DOUBLE</code>) 减少画面闪烁，并启用深度测试 (<code>GL_DEPTH_TEST</code>) 确保三维场景的正确渲染顺序。这些技术的使用对于创建高质量的实时渲染应用是至关重要的。</p>
+<h3 id="5-结语"><a href="#5-结语" class="headerlink" title="5. 结语"></a>5. 结语</h3><p>通过本项目的开发和撰写技术报告，我对OpenGL及其应用在实时三维图形渲染中的机制有了更深入的理解。此次地月系模拟项目不仅巩固了我在纹理映射、相机控制、动态交互及三维投影和模型变换等核心OpenGL技术的应用能力，也提升了我在编写高效且互动性强的图形应用方面的技能。</p>
+<p>作为一名希望进入游戏开发行业的软件开发者，我认为通过这样的项目，我能够更好地展示自己的技术能力和解决问题的方法。虽然我在这一领域还有很多需要学习的地方，但我相信这些经验将对我的职业生涯发展有所帮助。</p>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>游戏设计与开发</category>
+        <category>OpenGL</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>作品集</tag>
+        <tag>技术报告</tag>
+        <tag>OpenGL</tag>
       </tags>
   </entry>
   <entry>
@@ -2921,156 +2921,361 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>Unity——《让蛋仔飞》项目报告</title>
-    <url>/2024/01/09/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</url>
+    <title>OpenGL——《游戏设计与开发》课程项目报告</title>
+    <url>/2024/06/23/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</url>
     <content><![CDATA[<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_01.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_01"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_01.png"
+                      alt="游戏设计与开发课程项目报告_01"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_02.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_02"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_02.png"
+                      alt="游戏设计与开发课程项目报告_02"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_03.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_03"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_03.png"
+                      alt="游戏设计与开发课程项目报告_03"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_04.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_04"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_04.png"
+                      alt="游戏设计与开发课程项目报告_04"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_05.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_05"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_05.png"
+                      alt="游戏设计与开发课程项目报告_05"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_06.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_06"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_06.png"
+                      alt="游戏设计与开发课程项目报告_06"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_07.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_07"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_07.png"
+                      alt="游戏设计与开发课程项目报告_07"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_08.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_08"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_08.png"
+                      alt="游戏设计与开发课程项目报告_08"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_09.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_09"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_09.png"
+                      alt="游戏设计与开发课程项目报告_09"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_10.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_10"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_10.png"
+                      alt="游戏设计与开发课程项目报告_10"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_11.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_11"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_11.png"
+                      alt="游戏设计与开发课程项目报告_11"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_12.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_12"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_12.png"
+                      alt="游戏设计与开发课程项目报告_12"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_13.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_13"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_13.png"
+                      alt="游戏设计与开发课程项目报告_13"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_14.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_14"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_14.png"
+                      alt="游戏设计与开发课程项目报告_14"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_15.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_15"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_15.png"
+                      alt="游戏设计与开发课程项目报告_15"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_16.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_16"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_16.png"
+                      alt="游戏设计与开发课程项目报告_16"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_17.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_17"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_17.png"
+                      alt="游戏设计与开发课程项目报告_17"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_18.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_18"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_18.png"
+                      alt="游戏设计与开发课程项目报告_18"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_19.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_19"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_19.png"
+                      alt="游戏设计与开发课程项目报告_19"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_20.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_20"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_20.png"
+                      alt="游戏设计与开发课程项目报告_20"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_21.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_21"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_21.png"
+                      alt="游戏设计与开发课程项目报告_21"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_22.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_22"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_22.png"
+                      alt="游戏设计与开发课程项目报告_22"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_23.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_23"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_23.png"
+                      alt="游戏设计与开发课程项目报告_23"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_24.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_24"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_24.png"
+                      alt="游戏设计与开发课程项目报告_24"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_25.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_25"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_25.png"
+                      alt="游戏设计与开发课程项目报告_25"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_26.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_26"
-                ><br><img  
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_26.png"
+                      alt="游戏设计与开发课程项目报告_26"
+                ></p>
+<p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_27.png"
-                      alt="《让蛋仔飞FlappyEggy》-普典衡_27"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_27.png"
+                      alt="游戏设计与开发课程项目报告_27"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_28.png"
+                      alt="游戏设计与开发课程项目报告_28"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_29.png"
+                      alt="游戏设计与开发课程项目报告_29"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_30.png"
+                      alt="游戏设计与开发课程项目报告_30"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_31.png"
+                      alt="游戏设计与开发课程项目报告_31"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_32.png"
+                      alt="游戏设计与开发课程项目报告_32"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_33.png"
+                      alt="游戏设计与开发课程项目报告_33"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_34.png"
+                      alt="游戏设计与开发课程项目报告_34"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_35.png"
+                      alt="游戏设计与开发课程项目报告_35"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_36.png"
+                      alt="游戏设计与开发课程项目报告_36"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_37.png"
+                      alt="游戏设计与开发课程项目报告_37"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_38.png"
+                      alt="游戏设计与开发课程项目报告_38"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_39.png"
+                      alt="游戏设计与开发课程项目报告_39"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_40.png"
+                      alt="游戏设计与开发课程项目报告_40"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_41.png"
+                      alt="游戏设计与开发课程项目报告_41"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_42.png"
+                      alt="游戏设计与开发课程项目报告_42"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_43.png"
+                      alt="游戏设计与开发课程项目报告_43"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_44.png"
+                      alt="游戏设计与开发课程项目报告_44"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_45.png"
+                      alt="游戏设计与开发课程项目报告_45"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_46.png"
+                      alt="游戏设计与开发课程项目报告_46"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_47.png"
+                      alt="游戏设计与开发课程项目报告_47"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_48.png"
+                      alt="游戏设计与开发课程项目报告_48"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_49.png"
+                      alt="游戏设计与开发课程项目报告_49"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_50.png"
+                      alt="游戏设计与开发课程项目报告_50"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_51.png"
+                      alt="游戏设计与开发课程项目报告_51"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_52.png"
+                      alt="游戏设计与开发课程项目报告_52"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_53.png"
+                      alt="游戏设计与开发课程项目报告_53"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_54.png"
+                      alt="游戏设计与开发课程项目报告_54"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_55.png"
+                      alt="游戏设计与开发课程项目报告_55"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_56.png"
+                      alt="游戏设计与开发课程项目报告_56"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_57.png"
+                      alt="游戏设计与开发课程项目报告_57"
                 ></p>
 ]]></content>
       <categories>
-        <category>游戏开发</category>
-        <category>Unity</category>
-        <category>微信小游戏</category>
+        <category>本科项目</category>
+        <category>游戏设计与开发</category>
+        <category>OpenGL</category>
       </categories>
       <tags>
-        <tag>项目报告</tag>
+        <tag>课程项目</tag>
         <tag>作品集</tag>
-        <tag>Unity</tag>
-        <tag>《让蛋仔飞》</tag>
-        <tag>微信小游戏</tag>
+        <tag>技术报告</tag>
+        <tag>OpenGL</tag>
       </tags>
   </entry>
   <entry>
@@ -3493,6 +3698,159 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
         <tag>课程项目</tag>
         <tag>作业报告</tag>
         <tag>图像处理与分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Unity——《让蛋仔飞》项目报告</title>
+    <url>/2024/01/09/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</url>
+    <content><![CDATA[<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_01.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_01"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_02.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_02"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_03.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_03"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_04.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_04"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_05.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_05"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_06.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_06"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_07.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_07"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_08.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_08"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_09.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_09"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_10.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_10"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_11.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_11"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_12.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_12"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_13.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_13"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_14.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_14"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_15.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_15"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_16.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_16"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_17.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_17"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_18.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_18"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_19.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_19"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_20.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_20"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_21.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_21"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_22.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_22"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_23.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_23"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_24.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_24"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_25.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_25"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_26.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_26"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9EFlappyEggy%E3%80%8B-%E6%99%AE%E5%85%B8%E8%A1%A1_27.png"
+                      alt="《让蛋仔飞FlappyEggy》-普典衡_27"
+                ></p>
+]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>Unity</category>
+        <category>微信小游戏</category>
+      </categories>
+      <tags>
+        <tag>项目报告</tag>
+        <tag>作品集</tag>
+        <tag>Unity</tag>
+        <tag>《让蛋仔飞》</tag>
+        <tag>微信小游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -3928,6 +4286,142 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>图像处理与分析——实验五-小波变换及多分辨率处理</title>
+    <url>/2024/05/24/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%94-%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E5%8F%8A%E5%A4%9A%E5%88%86%E8%BE%A8%E7%8E%87%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><ul>
+<li>掌握小波变换的基本方法和技术。</li>
+<li>使用小波变换实现图像降噪和图像融合。</li>
+<li>探索小波变换在图像处理中的实际应用。</li>
+</ul>
+<h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2><h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
+<li>imgs目录下有图像laoshan.jpg，用Python写程序，将其作4阶haar小波变换，仅保留第四阶变换的系数，反变换，查看图像的结果。（Matlab代码已经给出，仅作参考）</li>
+</ol>
+<p>实验图片路径为：imgs&#x2F;laoshan.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp5_1_i的格式，输出每个任务结果</p>
+<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><ol>
+<li><p><strong>图像读取与预处理</strong>：</p>
+<ul>
+<li>使用 <code>cv2.imread</code> 从指定路径读取图像，并转换为灰度图像。</li>
+<li>将图像数据转换为浮点数类型以便进行进一步处理。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pywt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">img_path = <span class="string">&quot;imgs/laoshan.jpg&quot;</span></span><br><span class="line">img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换为浮点数类型</span></span><br><span class="line">img_float = np.float32(img)</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>4阶Haar小波变换</strong>：</p>
+<ul>
+<li>对图像进行4阶Haar小波变换，使用 <code>pywt.dwt2</code> 计算二维小波变换。</li>
+<li>提取第四阶小波变换的系数。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">coeffs = pywt.dwt2(img_float, <span class="string">&#x27;haar&#x27;</span>)</span><br><span class="line">LL4, (LH4, HL4, HH4) = coeffs</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>保留第四阶变换的系数</strong>：</p>
+<ul>
+<li>仅保留第四阶变换的系数，其余系数置零。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">LL4[:] = <span class="number">0</span></span><br><span class="line">LH4[:] = <span class="number">0</span></span><br><span class="line">HL4[:] = <span class="number">0</span></span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>小波逆变换与图像恢复</strong>：</p>
+<ul>
+<li>对修改后的小波系数进行逆变换，使用 <code>pywt.idwt2</code> 恢复图像。</li>
+<li>将结果转换为整型，并保存。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">coeffs = LL4, (LH4, HL4, HH4)</span><br><span class="line">reconstructed_img = pywt.idwt2(coeffs, <span class="string">&#x27;haar&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换回整型</span></span><br><span class="line">reconstructed_img = np.uint8(reconstructed_img)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存结果图像</span></span><br><span class="line">output_path = <span class="string">&quot;outputs/exp5_1_1.png&quot;</span></span><br><span class="line">cv2.imwrite(output_path, reconstructed_img)</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%94-%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E5%8F%8A%E5%A4%9A%E5%88%86%E8%BE%A8%E7%8E%87%E5%A4%84%E7%90%86/1.png"
+                      alt="1"
+                ></p>
+<p><strong>原图与处理后的对比</strong>：</p>
+<ol>
+<li><strong>原图特点</strong>：<ul>
+<li>原图显示了崂山风景图像，图像中的细节丰富，包含大量的纹理信息。</li>
+</ul>
+</li>
+<li><strong>处理后的图像</strong>：<ul>
+<li>处理后的图像中只保留了第四阶小波变换的系数，图像的细节和纹理信息被显著简化，呈现出较为平滑的效果。</li>
+</ul>
+</li>
+</ol>
+<p><strong>分析</strong>：</p>
+<ul>
+<li>使用Haar小波变换对图像进行多分辨率分析，可以有效地分离图像中的高频和低频信息。</li>
+<li>通过仅保留第四阶小波变换的系数，图像的高频细节被抑制，表现为图像的平滑化效果。</li>
+</ul>
+<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><h3 id="实验要求：-1"><a href="#实验要求：-1" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol start="2">
+<li>imgs目录下有图像1.jpg和2.jpg，用Python写程序，使用基于小波变换的方法将2.jpg中的人物融合到1.jpg中，提升融合效果。</li>
+</ol>
+<p>实验图片路径为：imgs&#x2F;1.jpg imgs&#x2F;2.jpg</p>
+<p>输出路径为：outputs&#x2F;</p>
+<p>请按照exp5_2_i的格式，输出每个任务结果</p>
+<h3 id="实验方案：-1"><a href="#实验方案：-1" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><ol>
+<li><p><strong>图像读取与预处理</strong>：</p>
+<ul>
+<li>使用 <code>cv2.imread</code> 读取两张图像，并转换为灰度图像。</li>
+<li>将图像数据转换为浮点数类型以便进行进一步处理。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pywt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">img1_path = <span class="string">&quot;imgs/1.jpg&quot;</span></span><br><span class="line">img2_path = <span class="string">&quot;imgs/2.jpg&quot;</span></span><br><span class="line">img1 = cv2.imread(img1_path, cv2.IMREAD_GRAYSCALE)</span><br><span class="line">img2 = cv2.imread(img2_path, cv2.IMREAD_GRAYSCALE)</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>小波变换</strong>：</p>
+<ul>
+<li>对两张图像进行Haar小波变换，使用 <code>pywt.dwt2</code> 计算二维小波变换。</li>
+<li>提取两张图像的小波系数。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">coeffs1 = pywt.dwt2(img1, <span class="string">&#x27;haar&#x27;</span>)</span><br><span class="line">LL1, (LH1, HL1, HH1) = coeffs1</span><br><span class="line"></span><br><span class="line">coeffs2 = pywt.dwt2(img2, <span class="string">&#x27;haar&#x27;</span>)</span><br><span class="line">LL2, (LH2, HL2, HH2) = coeffs2</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>图像融合</strong>：</p>
+<ul>
+<li>将第二张图像的LL系数融合到第一张图像的LL系数中，使用加权平均方法进行融合。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">alpha = <span class="number">0.5</span></span><br><span class="line">merged_LL = alpha * LL1 + (<span class="number">1</span> - alpha) * LL2</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p><strong>小波逆变换与图像恢复</strong>：</p>
+<ul>
+<li>对融合后的小波系数进行逆变换，使用 <code>pywt.idwt2</code> 恢复图像。</li>
+<li>将结果转换为整型，并保存。</li>
+</ul>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">coeffs_merged = merged_LL, (LH1, HL1, HH1)</span><br><span class="line">merged_img = pywt.idwt2(coeffs_merged, <span class="string">&#x27;haar&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存结果图像</span></span><br><span class="line">output_path = <span class="string">&quot;outputs/exp5_2_1.png&quot;</span></span><br><span class="line">cv2.imwrite(output_path, merged_img)</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<h3 id="实验结果：-1"><a href="#实验结果：-1" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%94-%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E5%8F%8A%E5%A4%9A%E5%88%86%E8%BE%A8%E7%8E%87%E5%A4%84%E7%90%86/2.png"
+                      alt="2"
+                ></p>
+<ol>
+<li><p><strong>原图特点</strong>：</p>
+<ul>
+<li>第一张图像是一幅风景图像，背景复杂，包含大量细节和纹理信息。</li>
+<li>第二张图像是一幅人物图像，人物占据大部分画面，细节丰富。</li>
+</ul>
+</li>
+<li><p><strong>处理后的图像</strong>：</p>
+<ul>
+<li>处理后的图像中融合了第二张图像中的人物，背景的复杂性有所降低，人物与背景的融合效果较好。</li>
+<li>通过小波变换，将两张图像在多分辨率层次上进行融合，提升了融合效果。</li>
+</ul>
+</li>
+</ol>
+<p><strong>分析</strong>：</p>
+<ul>
+<li>小波变换提供了多分辨率分析和处理的能力，可以有效地融合不同图像的细节和结构信息。</li>
+<li>通过在小波域进行图像融合，可以在保持细节的同时，平滑地过渡不同图像的边界，提高了图像融合的质量。</li>
+</ul>
+<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>本次实验主要探索了小波变换及多分辨率处理技术在图像处理中的应用。在第一项任务中，通过对图像进行4阶Haar小波变换并保留第四阶系数，成功地简化了图像的高频细节，展示了小波变换在图像平滑化处理中的效果。在第二项任务中，通过小波变换实现了两张图像的融合，增强了图像的融合效果，展示了小波变换在图像融合处理中的应用价值。</p>
+<p>通过本次实验，我进一步理解了小波变换的原理和应用方法，掌握了如何利用小波变换进行图像的多分辨率分析和处理。这些技术在实际的图像处理应用中具有重要的意义，为解决更加复杂的图像处理问题提供了有力的工具和方法。</p>
+]]></content>
+      <categories>
+        <category>本科项目</category>
+        <category>图像处理与分析</category>
+      </categories>
+      <tags>
+        <tag>课程项目</tag>
+        <tag>作业报告</tag>
+        <tag>图像处理与分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像处理与分析——实验二-空间域的图像增强</title>
     <url>/2024/04/10/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/</url>
     <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><p>用Python写一段程序，针对提供的图片IMG_2546.jpg，实现： </p>
@@ -4349,142 +4843,6 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>图像处理与分析——实验五-小波变换及多分辨率处理</title>
-    <url>/2024/05/24/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%94-%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E5%8F%8A%E5%A4%9A%E5%88%86%E8%BE%A8%E7%8E%87%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><ul>
-<li>掌握小波变换的基本方法和技术。</li>
-<li>使用小波变换实现图像降噪和图像融合。</li>
-<li>探索小波变换在图像处理中的实际应用。</li>
-</ul>
-<h2 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h2><h3 id="实验要求："><a href="#实验要求：" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol>
-<li>imgs目录下有图像laoshan.jpg，用Python写程序，将其作4阶haar小波变换，仅保留第四阶变换的系数，反变换，查看图像的结果。（Matlab代码已经给出，仅作参考）</li>
-</ol>
-<p>实验图片路径为：imgs&#x2F;laoshan.jpg</p>
-<p>输出路径为：outputs&#x2F;</p>
-<p>请按照exp5_1_i的格式，输出每个任务结果</p>
-<h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><ol>
-<li><p><strong>图像读取与预处理</strong>：</p>
-<ul>
-<li>使用 <code>cv2.imread</code> 从指定路径读取图像，并转换为灰度图像。</li>
-<li>将图像数据转换为浮点数类型以便进行进一步处理。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pywt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">img_path = <span class="string">&quot;imgs/laoshan.jpg&quot;</span></span><br><span class="line">img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换为浮点数类型</span></span><br><span class="line">img_float = np.float32(img)</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong>4阶Haar小波变换</strong>：</p>
-<ul>
-<li>对图像进行4阶Haar小波变换，使用 <code>pywt.dwt2</code> 计算二维小波变换。</li>
-<li>提取第四阶小波变换的系数。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">coeffs = pywt.dwt2(img_float, <span class="string">&#x27;haar&#x27;</span>)</span><br><span class="line">LL4, (LH4, HL4, HH4) = coeffs</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong>保留第四阶变换的系数</strong>：</p>
-<ul>
-<li>仅保留第四阶变换的系数，其余系数置零。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">LL4[:] = <span class="number">0</span></span><br><span class="line">LH4[:] = <span class="number">0</span></span><br><span class="line">HL4[:] = <span class="number">0</span></span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong>小波逆变换与图像恢复</strong>：</p>
-<ul>
-<li>对修改后的小波系数进行逆变换，使用 <code>pywt.idwt2</code> 恢复图像。</li>
-<li>将结果转换为整型，并保存。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">coeffs = LL4, (LH4, HL4, HH4)</span><br><span class="line">reconstructed_img = pywt.idwt2(coeffs, <span class="string">&#x27;haar&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换回整型</span></span><br><span class="line">reconstructed_img = np.uint8(reconstructed_img)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存结果图像</span></span><br><span class="line">output_path = <span class="string">&quot;outputs/exp5_1_1.png&quot;</span></span><br><span class="line">cv2.imwrite(output_path, reconstructed_img)</span><br></pre></td></tr></table></figure></div></li>
-</ol>
-<h3 id="实验结果："><a href="#实验结果：" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%94-%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E5%8F%8A%E5%A4%9A%E5%88%86%E8%BE%A8%E7%8E%87%E5%A4%84%E7%90%86/1.png"
-                      alt="1"
-                ></p>
-<p><strong>原图与处理后的对比</strong>：</p>
-<ol>
-<li><strong>原图特点</strong>：<ul>
-<li>原图显示了崂山风景图像，图像中的细节丰富，包含大量的纹理信息。</li>
-</ul>
-</li>
-<li><strong>处理后的图像</strong>：<ul>
-<li>处理后的图像中只保留了第四阶小波变换的系数，图像的细节和纹理信息被显著简化，呈现出较为平滑的效果。</li>
-</ul>
-</li>
-</ol>
-<p><strong>分析</strong>：</p>
-<ul>
-<li>使用Haar小波变换对图像进行多分辨率分析，可以有效地分离图像中的高频和低频信息。</li>
-<li>通过仅保留第四阶小波变换的系数，图像的高频细节被抑制，表现为图像的平滑化效果。</li>
-</ul>
-<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2><h3 id="实验要求：-1"><a href="#实验要求：-1" class="headerlink" title="实验要求："></a><strong>实验要求：</strong></h3><ol start="2">
-<li>imgs目录下有图像1.jpg和2.jpg，用Python写程序，使用基于小波变换的方法将2.jpg中的人物融合到1.jpg中，提升融合效果。</li>
-</ol>
-<p>实验图片路径为：imgs&#x2F;1.jpg imgs&#x2F;2.jpg</p>
-<p>输出路径为：outputs&#x2F;</p>
-<p>请按照exp5_2_i的格式，输出每个任务结果</p>
-<h3 id="实验方案：-1"><a href="#实验方案：-1" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><ol>
-<li><p><strong>图像读取与预处理</strong>：</p>
-<ul>
-<li>使用 <code>cv2.imread</code> 读取两张图像，并转换为灰度图像。</li>
-<li>将图像数据转换为浮点数类型以便进行进一步处理。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pywt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">img1_path = <span class="string">&quot;imgs/1.jpg&quot;</span></span><br><span class="line">img2_path = <span class="string">&quot;imgs/2.jpg&quot;</span></span><br><span class="line">img1 = cv2.imread(img1_path, cv2.IMREAD_GRAYSCALE)</span><br><span class="line">img2 = cv2.imread(img2_path, cv2.IMREAD_GRAYSCALE)</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong>小波变换</strong>：</p>
-<ul>
-<li>对两张图像进行Haar小波变换，使用 <code>pywt.dwt2</code> 计算二维小波变换。</li>
-<li>提取两张图像的小波系数。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">coeffs1 = pywt.dwt2(img1, <span class="string">&#x27;haar&#x27;</span>)</span><br><span class="line">LL1, (LH1, HL1, HH1) = coeffs1</span><br><span class="line"></span><br><span class="line">coeffs2 = pywt.dwt2(img2, <span class="string">&#x27;haar&#x27;</span>)</span><br><span class="line">LL2, (LH2, HL2, HH2) = coeffs2</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong>图像融合</strong>：</p>
-<ul>
-<li>将第二张图像的LL系数融合到第一张图像的LL系数中，使用加权平均方法进行融合。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">alpha = <span class="number">0.5</span></span><br><span class="line">merged_LL = alpha * LL1 + (<span class="number">1</span> - alpha) * LL2</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p><strong>小波逆变换与图像恢复</strong>：</p>
-<ul>
-<li>对融合后的小波系数进行逆变换，使用 <code>pywt.idwt2</code> 恢复图像。</li>
-<li>将结果转换为整型，并保存。</li>
-</ul>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line">coeffs_merged = merged_LL, (LH1, HL1, HH1)</span><br><span class="line">merged_img = pywt.idwt2(coeffs_merged, <span class="string">&#x27;haar&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存结果图像</span></span><br><span class="line">output_path = <span class="string">&quot;outputs/exp5_2_1.png&quot;</span></span><br><span class="line">cv2.imwrite(output_path, merged_img)</span><br></pre></td></tr></table></figure></div></li>
-</ol>
-<h3 id="实验结果：-1"><a href="#实验结果：-1" class="headerlink" title="实验结果："></a><strong>实验结果：</strong></h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%BA%94-%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E5%8F%8A%E5%A4%9A%E5%88%86%E8%BE%A8%E7%8E%87%E5%A4%84%E7%90%86/2.png"
-                      alt="2"
-                ></p>
-<ol>
-<li><p><strong>原图特点</strong>：</p>
-<ul>
-<li>第一张图像是一幅风景图像，背景复杂，包含大量细节和纹理信息。</li>
-<li>第二张图像是一幅人物图像，人物占据大部分画面，细节丰富。</li>
-</ul>
-</li>
-<li><p><strong>处理后的图像</strong>：</p>
-<ul>
-<li>处理后的图像中融合了第二张图像中的人物，背景的复杂性有所降低，人物与背景的融合效果较好。</li>
-<li>通过小波变换，将两张图像在多分辨率层次上进行融合，提升了融合效果。</li>
-</ul>
-</li>
-</ol>
-<p><strong>分析</strong>：</p>
-<ul>
-<li>小波变换提供了多分辨率分析和处理的能力，可以有效地融合不同图像的细节和结构信息。</li>
-<li>通过在小波域进行图像融合，可以在保持细节的同时，平滑地过渡不同图像的边界，提高了图像融合的质量。</li>
-</ul>
-<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a><strong>实验总结：</strong></h3><p>本次实验主要探索了小波变换及多分辨率处理技术在图像处理中的应用。在第一项任务中，通过对图像进行4阶Haar小波变换并保留第四阶系数，成功地简化了图像的高频细节，展示了小波变换在图像平滑化处理中的效果。在第二项任务中，通过小波变换实现了两张图像的融合，增强了图像的融合效果，展示了小波变换在图像融合处理中的应用价值。</p>
-<p>通过本次实验，我进一步理解了小波变换的原理和应用方法，掌握了如何利用小波变换进行图像的多分辨率分析和处理。这些技术在实际的图像处理应用中具有重要的意义，为解决更加复杂的图像处理问题提供了有力的工具和方法。</p>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>图像处理与分析</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>作业报告</tag>
-        <tag>图像处理与分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图像处理与分析——实验六-数学形态及图像压缩</title>
     <url>/2024/05/30/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E5%85%AD-%E6%95%B0%E5%AD%A6%E5%BD%A2%E6%80%81%E5%8F%8A%E5%9B%BE%E5%83%8F%E5%8E%8B%E7%BC%A9/</url>
     <content><![CDATA[<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><ul>
@@ -4655,364 +5013,6 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
         <tag>竞赛</tag>
         <tag>蓝桥杯</tag>
         <tag>元宇宙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenGL——《游戏设计与开发》课程项目报告</title>
-    <url>/2024/06/23/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/</url>
-    <content><![CDATA[<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_01.png"
-                      alt="游戏设计与开发课程项目报告_01"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_02.png"
-                      alt="游戏设计与开发课程项目报告_02"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_03.png"
-                      alt="游戏设计与开发课程项目报告_03"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_04.png"
-                      alt="游戏设计与开发课程项目报告_04"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_05.png"
-                      alt="游戏设计与开发课程项目报告_05"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_06.png"
-                      alt="游戏设计与开发课程项目报告_06"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_07.png"
-                      alt="游戏设计与开发课程项目报告_07"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_08.png"
-                      alt="游戏设计与开发课程项目报告_08"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_09.png"
-                      alt="游戏设计与开发课程项目报告_09"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_10.png"
-                      alt="游戏设计与开发课程项目报告_10"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_11.png"
-                      alt="游戏设计与开发课程项目报告_11"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_12.png"
-                      alt="游戏设计与开发课程项目报告_12"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_13.png"
-                      alt="游戏设计与开发课程项目报告_13"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_14.png"
-                      alt="游戏设计与开发课程项目报告_14"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_15.png"
-                      alt="游戏设计与开发课程项目报告_15"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_16.png"
-                      alt="游戏设计与开发课程项目报告_16"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_17.png"
-                      alt="游戏设计与开发课程项目报告_17"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_18.png"
-                      alt="游戏设计与开发课程项目报告_18"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_19.png"
-                      alt="游戏设计与开发课程项目报告_19"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_20.png"
-                      alt="游戏设计与开发课程项目报告_20"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_21.png"
-                      alt="游戏设计与开发课程项目报告_21"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_22.png"
-                      alt="游戏设计与开发课程项目报告_22"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_23.png"
-                      alt="游戏设计与开发课程项目报告_23"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_24.png"
-                      alt="游戏设计与开发课程项目报告_24"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_25.png"
-                      alt="游戏设计与开发课程项目报告_25"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_26.png"
-                      alt="游戏设计与开发课程项目报告_26"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_27.png"
-                      alt="游戏设计与开发课程项目报告_27"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_28.png"
-                      alt="游戏设计与开发课程项目报告_28"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_29.png"
-                      alt="游戏设计与开发课程项目报告_29"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_30.png"
-                      alt="游戏设计与开发课程项目报告_30"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_31.png"
-                      alt="游戏设计与开发课程项目报告_31"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_32.png"
-                      alt="游戏设计与开发课程项目报告_32"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_33.png"
-                      alt="游戏设计与开发课程项目报告_33"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_34.png"
-                      alt="游戏设计与开发课程项目报告_34"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_35.png"
-                      alt="游戏设计与开发课程项目报告_35"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_36.png"
-                      alt="游戏设计与开发课程项目报告_36"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_37.png"
-                      alt="游戏设计与开发课程项目报告_37"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_38.png"
-                      alt="游戏设计与开发课程项目报告_38"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_39.png"
-                      alt="游戏设计与开发课程项目报告_39"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_40.png"
-                      alt="游戏设计与开发课程项目报告_40"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_41.png"
-                      alt="游戏设计与开发课程项目报告_41"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_42.png"
-                      alt="游戏设计与开发课程项目报告_42"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_43.png"
-                      alt="游戏设计与开发课程项目报告_43"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_44.png"
-                      alt="游戏设计与开发课程项目报告_44"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_45.png"
-                      alt="游戏设计与开发课程项目报告_45"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_46.png"
-                      alt="游戏设计与开发课程项目报告_46"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_47.png"
-                      alt="游戏设计与开发课程项目报告_47"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_48.png"
-                      alt="游戏设计与开发课程项目报告_48"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_49.png"
-                      alt="游戏设计与开发课程项目报告_49"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_50.png"
-                      alt="游戏设计与开发课程项目报告_50"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_51.png"
-                      alt="游戏设计与开发课程项目报告_51"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_52.png"
-                      alt="游戏设计与开发课程项目报告_52"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_53.png"
-                      alt="游戏设计与开发课程项目报告_53"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_54.png"
-                      alt="游戏设计与开发课程项目报告_54"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_55.png"
-                      alt="游戏设计与开发课程项目报告_55"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_56.png"
-                      alt="游戏设计与开发课程项目报告_56"
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../images/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A_57.png"
-                      alt="游戏设计与开发课程项目报告_57"
-                ></p>
-]]></content>
-      <categories>
-        <category>本科项目</category>
-        <category>游戏设计与开发</category>
-        <category>OpenGL</category>
-      </categories>
-      <tags>
-        <tag>课程项目</tag>
-        <tag>作品集</tag>
-        <tag>OpenGL</tag>
-        <tag>技术报告</tag>
       </tags>
   </entry>
 </search>
