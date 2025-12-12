@@ -133,14 +133,14 @@
         
         <meta name="description" content="Hexo Theme Redefine.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《RTS_PCG》技术报告">
+<meta property="og:title" content="Unreal Engine——《RTS_PCG》技术报告">
 <meta property="og:url" content="https://elecmark.github.io/2025/12/01/%E3%80%8ARTS-PCG%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Hexo Theme Redefine.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://elecmark.github.io/images/pdh-logo.webp">
 <meta property="article:published_time" content="2025-12-01T06:58:06.000Z">
-<meta property="article:modified_time" content="2025-12-12T07:15:32.990Z">
+<meta property="article:modified_time" content="2025-12-12T07:22:51.558Z">
 <meta property="article:author" content="Elecmark">
 <meta property="article:tag" content="作品集">
 <meta property="article:tag" content="技术报告">
@@ -160,7 +160,7 @@
     
     <title>
         
-            《RTS_PCG》技术报告 | Pu Dianheng&#39;s blog
+            Unreal Engine——《RTS_PCG》技术报告 | Pu Dianheng&#39;s blog
         
     </title>
 
@@ -514,10 +514,10 @@
 			
 			
 			
-			<img src="/../images/code.jpg" alt="《RTS_PCG》技术报告" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			<img src="/../images/code.jpg" alt="Unreal Engine——《RTS_PCG》技术报告" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
 			
 			<div class="w-full flex items-center absolute bottom-0 justify-start">
-				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">《RTS_PCG》技术报告</h1>
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">Unreal Engine——《RTS_PCG》技术报告</h1>
 			</div>
 			
 		</div>
@@ -545,8 +545,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-12-12 15:15:32</span>
-            <span class="mobile">2025-12-12 15:15:32</span>
+            <span class="desktop">2025-12-12 15:22:51</span>
+            <span class="mobile">2025-12-12 15:22:51</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -630,187 +630,196 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="/..%5Cimages%5C%E3%80%8ARTS-PCG%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A%5CRTS_PCG-%E5%B0%81%E9%9D%A2.jpg"
-                      alt="RTS_PCG-Cover"
+                      alt="RTS_PCG-封面"
                 ></p>
 <hr>
-<h1 id="RTS-PCG-Game-Strategy-Game-Development-Report-Based-on-Procedural-Content-Generation"><a href="#RTS-PCG-Game-Strategy-Game-Development-Report-Based-on-Procedural-Content-Generation" class="headerlink" title="RTS_PCG Game: Strategy Game Development Report Based on Procedural Content Generation"></a><strong>RTS_PCG Game: Strategy Game Development Report Based on Procedural Content Generation</strong></h1><p>Student Name: Pu Dianheng</p>
-<p>Student ID: 25114122G</p>
-<hr>
-<h2 id="1-Project-Overview"><a href="#1-Project-Overview" class="headerlink" title="1. Project Overview"></a><strong>1. Project Overview</strong></h2><p><strong>RTS_PCG</strong> is a strategy simulation game that integrates <strong>Procedural Content Generation (PCG)</strong> technology. Players begin on a dynamically generated, resource-rich island, tasked with establishing their village from the ground up. The core mechanics center on <strong>resource gathering</strong> and <strong>villager management</strong>. Players direct their villagers to resource points by using a <strong>mouse drag-and-drop mechanism</strong>, allowing for the efficient collection of vital resources like food, wood, and stone. The long-term objective is to strategically expand the settlement and ultimately build a prosperous civilization.</p>
-<h2 id="2-Design-and-Iteration"><a href="#2-Design-and-Iteration" class="headerlink" title="2. Design and Iteration"></a><strong>2. Design and Iteration</strong></h2><h3 id="2-1-Initial-Inspiration"><a href="#2-1-Initial-Inspiration" class="headerlink" title="2.1 Initial Inspiration"></a><strong>2.1 Initial Inspiration</strong></h3><p>The creative inspiration for this project is primarily drawn from classic RTS (Real-Time Strategy) titles such as <em>Foundation</em> and <em>Age of Empires</em>. The core appeal of these games lies in resource management, base planning, and unit scheduling. Building upon this deep strategic gameplay, I utilized the new Procedural Content Generation (PCG) framework in Unreal Engine 5.6 (UE5.6) to break the limitations of static maps, creating a <strong>unique dynamic game world for every session</strong>.</p>
-<h3 id="2-2-Core-Objectives"><a href="#2-2-Core-Objectives" class="headerlink" title="2.2 Core Objectives"></a><strong>2.2 Core Objectives</strong></h3><p>My development work centered around the following core objectives:</p>
+<h1 id="PCG-RTS游戏：基于程序化内容生成的策略游戏开发报告"><a href="#PCG-RTS游戏：基于程序化内容生成的策略游戏开发报告" class="headerlink" title="PCG_RTS游戏：基于程序化内容生成的策略游戏开发报告"></a><strong>PCG_RTS游戏：基于程序化内容生成的策略游戏开发报告</strong></h1><h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a><strong>1. 项目概述</strong></h2><p><strong>RTS_PCG</strong> 是一款融合了程序化内容生成技术的策略模拟游戏。玩家在一个由PCG随机生成的可采集物覆盖的岛屿上，从零开始建立自己的村庄。核心玩法包括<strong>资源采集</strong>与<strong>村民管理</strong>。玩家需要使用鼠标按住并拖动不同的村民去资源点，高效地收集食物、木材、石料等资源，并扩张和发展你的定居点，最终建立起一个繁荣的文明。</p>
+<h2 id="2-设计与迭代"><a href="#2-设计与迭代" class="headerlink" title="2. 设计与迭代"></a><strong>2. 设计与迭代</strong></h2><h3 id="2-1-初始灵感"><a href="#2-1-初始灵感" class="headerlink" title="2.1 初始灵感"></a><strong>2.1 初始灵感</strong></h3><p>  本项目的创作灵感主要汲取自《Foundation》、《帝国时代》等经典RTS（即时战略）游戏。这些游戏的核心乐趣在于资源管理、基地规划与单位调度。我希望在继承这种深度策略玩法的基础上，利用虚幻引擎5.6（UE5.6）全新的程序化内容生成（PCG）框架，突破传统静态地图的限制，为玩家创造一个<strong>每次开局都独一无二</strong>的动态游戏世界。</p>
+<h3 id="2-2-核心目标"><a href="#2-2-核心目标" class="headerlink" title="2.2 核心目标"></a><strong>2.2 核心目标</strong></h3><p>我的开发工作围绕以下几个核心目标展开：</p>
 <ol>
-<li><strong>Cornerstone of a Dynamic World:</strong> The PCG system is not merely a map generator but the “operating system” of the game world. The generated terrain, resource distribution, and key locations serve as underlying data that directly drive the AI behavior tree, navigation system, and game logic, realizing a truly “interactive” dynamic environment.</li>
-<li><strong>Technology Seamlessly Serving Gameplay:</strong> I strictly adhered to the <strong>“Gameplay First”</strong> design principle. PCG technology is a powerful yet invisible tool intended to enhance rather than dominate the experience. The goal is for players to immerse themselves in the strategic fun of exploration, decision-making, and development, perceiving a natural, credible world rather than a cold technical demo. PCG acts as a silent director, meticulously setting the stage for each session, while the drama on stage—the core gameplay—remains led by the player.</li>
-<li><strong>Achieving Infinite Replayability:</strong> By ensuring both the randomness and rationality of map generation through PCG algorithms, the game is infused with lasting vitality, encouraging players to constantly attempt new strategies and layouts to cope with unknown environmental challenges.</li>
+<li><strong>打造动态世界的基石</strong>：PCG系统不仅是地图生成器，更是游戏世界的“操作系统”。它生成的地形、资源分布与关键点位将作为底层数据，直接驱动AI行为树、导航系统以及游戏逻辑，实现一个真正“可交互”的动态环境。</li>
+<li><strong>技术无缝服务于玩法</strong>：我始终坚持 <strong>“玩法至上”</strong> 的设计原则。PCG技术是强大而隐形的工具，其目的是增强而非主导游戏体验。我的目标是让玩家沉浸于探索、决策与发展的策略乐趣中，感受到的是一个自然、可信的世界，而非一个冰冷的技术 demo。PCG 应该像一位无声的导演，为每一局游戏精心布置舞台，而舞台上的戏剧——即核心玩法——始终由玩家主导。</li>
+<li><strong>实现无限的可重玩性</strong>：通过PCG算法保证每次地图生成的随机性与合理性，为游戏注入持久的生命力，鼓励玩家不断尝试新的策略与布局来应对未知的环境挑战。</li>
 </ol>
-<h3 id="2-4-Asset-Sources"><a href="#2-4-Asset-Sources" class="headerlink" title="2.4 Asset Sources"></a><strong>2.4 Asset Sources</strong></h3><p>This project’s art style and core mechanics significantly reference and benefit from the <strong>Cropout</strong> sample project released by Epic Games.</p>
+<h3 id="2-4-素材来源"><a href="#2-4-素材来源" class="headerlink" title="2.4 素材来源"></a><strong>2.4 素材来源</strong></h3><p>本项目的美术风格与核心游戏机制极大地参考和受益于Epic官方发布的示例项目 <strong>《Cropout》</strong>。</p>
 <div align="center"> <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="..\images\《RTS-PCG》技术报告\Cropout Sample Project.png"
                       alt="Cropout Sample Project" style="zoom:150%;" 
-                ><br><em>(Source: Epic Games Marketplace - Cropout Sample Project)</em> </div>
+                > <br> <em>（图片来源：Epic Games Marketplace - Cropout Sample Project）</em> </div>
 
 <ul>
-<li><strong>Art Style Definition:</strong> <em>Cropout</em> provided a complete set of low-poly assets for buildings, characters, vegetation, and resources, establishing a clear, bright, and efficient visual direction for this project.</li>
-<li><strong>Core Logic Reference:</strong> I deeply analyzed and adapted its mature villager AI, resource collection chains, and construction logic, providing a solid and verified foundation for my system architecture.</li>
-<li><strong>Deep Secondary Development &amp; Innovative Adaptation:</strong> Building on the solid foundation of <em>Cropout</em>, this project underwent deep customization and functional expansion. The <strong>core contribution lies in completely refactoring the static map using UE5.6’s PCG framework</strong>, upgrading the fixed scene into infinite dynamic possibilities, successfully merging classic RTS gameplay with high replayability enabled by PCG technology.</li>
+<li><strong>美术风格定调</strong>：《Cropout》项目提供了整套低多边形风格的建筑、角色、植被和资源资产，为本项目确立了清晰、明快且高效的视觉方向。</li>
+<li><strong>核心逻辑借鉴</strong>：我深入分析并借鉴了其成熟的村民AI、资源收集链、建筑建造逻辑等核心游戏循环的蓝图实现，这为我的系统架构提供了坚实且经过验证的基础。</li>
+<li><strong>深度二次开发与创新适配</strong>：在《Cropout》的坚实基础上，本项目进行了深度的定制化开发与功能拓展。其中，<strong>最核心的贡献在于使用UE5.6的PCG框架彻底重构了静态地图</strong>，将原有的固定场景升格为动态生成的无限可能，成功地将经典RTS玩法与PCG技术带来的高可重玩性深度融合。</li>
 </ul>
-<h2 id="3-PCG-System-Architecture-Implementation"><a href="#3-PCG-System-Architecture-Implementation" class="headerlink" title="3. PCG System Architecture &amp; Implementation"></a><strong>3. PCG System Architecture &amp; Implementation</strong></h2><p>This section details the technical implementation of the Procedural Content Generation (PCG) system, focusing on how the foundational structure of the game world is generated from scratch.</p>
-<h3 id="3-1-Overall-PCG-Workflow-Architecture"><a href="#3-1-Overall-PCG-Workflow-Architecture" class="headerlink" title="3.1 Overall PCG Workflow Architecture"></a><strong>3.1 Overall PCG Workflow Architecture</strong></h3><p>The project constructs the complete game environment through the collaborative work of two core PCG graph files.</p>
-<div align="center"><img  
+<h2 id="3-PCG系统架构与实现"><a href="#3-PCG系统架构与实现" class="headerlink" title="3. PCG系统架构与实现"></a><strong>3. PCG系统架构与实现</strong></h2><p>本章节详细阐述程序化内容生成（PCG）系统的技术实现，重点关注如何从零开始生成游戏世界的基础结构。</p>
+<h3 id="3-1-整体PCG工作流架构"><a href="#3-1-整体PCG工作流架构" class="headerlink" title="3.1 整体PCG工作流架构"></a><strong>3.1 整体PCG工作流架构</strong></h3><p>项目通过两个核心的PCG图表文件协同工作，构建出完整的游戏环境。</p>
+<div align="center">
+  <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="..\images\《RTS-PCG》技术报告\Land.png"
-                      alt="Land PCG Graph" style="zoom:100%;" 
-                ><br><em>(Blueprint/PCG/Land.uasset: Responsible for generating harvestable resources (trees, shrubs, rocks) and grass vegetation on the continent.)</em></div>
+                      alt="Cropout Sample Project" style="zoom:100%;" 
+                >
+  <br>
+  <em>（Blueprint/PCG/Land.uasset`： 负责生成大陆上的可采集资源（树木, 灌木, 石头）和小草植被。）</em>
+</div>
 
-<div align="center"><img  
+
+<div align="center">
+  <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="..\images\《RTS-PCG》技术报告\Ocean.png"
-                      alt="Ocean PCG Graph" style="zoom:100%;" 
-                ><br><em>(Blueprint/PCG/Ocean.uasset: Responsible for generating underwater rocks and seagrass surrounding the continent.)</em></div>
+                      alt="Cropout Sample Project" style="zoom:100%;" 
+                >
+  <br>
+  <em>（`Blueprint/PCG/Ocean.uasset`： 负责生成环绕大陆的海底岩石和海草。）</em>
+</div>
 
-
-
-<h3 id="3-2-Detailed-Analysis-of-Key-PCG-Modules"><a href="#3-2-Detailed-Analysis-of-Key-PCG-Modules" class="headerlink" title="3.2 Detailed Analysis of Key PCG Modules"></a><strong>3.2 Detailed Analysis of Key PCG Modules</strong></h3><p><strong>Logic Flow:</strong></p>
-<p>Taking shrub generation as an example, the PCG node processing flow is as follows:</p>
-<p><strong>Node Logic Flow and Analysis:</strong></p>
+<h3 id="3-2-关键PCG模块详解"><a href="#3-2-关键PCG模块详解" class="headerlink" title="3.2 关键PCG模块详解"></a><strong>3.2 关键PCG模块详解</strong></h3><p><strong>逻辑流程：</strong></p>
+<p>以灌木生成为例，其PCG节点处理流程如下：</p>
+<p><strong>节点逻辑流程与分析：</strong></p>
 <ol>
-<li><strong>Surface Sampler</strong><ul>
-<li><strong>Function:</strong> This is the starting point of generation. It retrieves basic data from the game landscape and outputs an initial point cloud covering the surface. These points represent all possible generation locations for shrubs.</li>
-<li><strong>Design Intent:</strong> Ensures that shrubs are generated only on the terrain surface, forming the basis for all subsequent processing.</li>
+<li><strong>表面采样器</strong><ul>
+<li><strong>功能</strong>：这是生成的起点。它从游戏中的地形景观获取基础数据，输出一个覆盖地表的初始点云。这些点代表了灌木所有可能的生成位置。</li>
+<li><strong>设计意图</strong>：确保灌木只在地形表面上生成，这是所有后续处理的基础。</li>
 </ul>
 </li>
-<li><strong>Transform Points</strong><ul>
-<li><strong>Function:</strong> Receives the point cloud from the Surface Sampler and applies basic transformation operations. It is typically used to apply a random <strong>rotation</strong> (around the Z-axis) and a <strong>slight position offset</strong> to each point.</li>
-<li><strong>Design Intent:</strong> Breaks the uniform grid pattern produced by the Surface Sampler, making the orientation and position of shrubs more random and natural, avoiding artificial alignment artifacts.</li>
+<li><strong>变换点</strong><ul>
+<li><strong>功能</strong>：接收表面采样器输出的点云，并对其应用基本的变换操作。通常用于给每个点施加一个随机的<strong>旋转</strong>（绕Z轴）和<strong>轻微的位置偏移</strong>。</li>
+<li><strong>设计意图</strong>：打破表面采样器带来的规整点阵，使灌木的朝向和位置更加随机、自然，避免出现人工排列的痕迹。</li>
 </ul>
 </li>
-<li><strong>Auto Adjust (Projection)</strong><ul>
-<li><strong>Function:</strong> This is a crucial node for optimization and realism. It automatically adjusts the tilt of the shrub based on the <strong>surface normal</strong> at the point’s location and may filter points based on slope attributes.</li>
-<li><strong>Design Intent:</strong> Ensures that shrubs “adhere” to slopes rather than hanging vertically or clipping into the ground, significantly enhancing the naturalness of the scene.</li>
+<li><strong>自动调整</strong><ul>
+<li><strong>功能</strong>：这是一个关键的优化与真实性节点。它会根据点所在位置的<strong>表面法线</strong>自动调整灌木的倾斜度，并可能根据坡度等属性进行筛选。</li>
+<li><strong>设计意图</strong>：确保灌木能够“贴合”在斜坡上，而不是垂直地悬空或插入地面，极大地增强了场景的自然度。</li>
 </ul>
 </li>
-<li><strong>Difference</strong><ul>
-<li><strong>Function:</strong> This node performs a <strong>Boolean operation</strong>. Its function is to subtract the area occupied by <strong>Input B</strong> (point clouds of already placed trees, rocks, or other objects) from <strong>Input A</strong> (the shrub point cloud currently being processed).</li>
-<li><strong>Design Intent:</strong> <strong>Resolves model clipping issues.</strong> Through this operation, the system ensures that shrubs do not generate directly beneath tree trunks or crowns, resulting in a distinctly layered resource distribution without interference, improving both rationality and visual quality.</li>
+<li><strong>差异</strong><ul>
+<li><strong>功能</strong>：此节点用于执行<strong>布尔运算</strong>。它的作用是让 <strong>A输入</strong>（即当前处理中的灌木点云）减去 <strong>B输入</strong>（已放置的树木、岩石或其他物体的点云）所占据的区域。</li>
+<li><strong>设计意图</strong>：<strong>解决模型穿模问题</strong>。通过这个操作，系统能确保灌木不会生成在树木的树干或树冠正下方，使得资源分布层次分明，互不干扰，提升了场景的合理性与视觉效果。</li>
 </ul>
 </li>
-<li><strong>Spawn Actor</strong><ul>
-<li><strong>Function:</strong> This is the final generation node. It receives the point cloud that has undergone all filtering and processing and spawns actual interactive Actor instances in the scene based on the specified Blueprint class (e.g., <code>BP_Shrub</code>) or Static Mesh.</li>
-<li><strong>Design Intent:</strong> Transforms processed data into real objects in the game world. Unlike a simple <code>Static Mesh Spawner</code>, using <code>Spawn Actor</code> allows for the generation of Blueprint objects with custom collisions and game logic (such as harvestable health points).</li>
+<li><strong>生成Actor</strong><ul>
+<li><strong>功能</strong>：这是最终的生成节点。它接收经过所有筛选和处理的点云，并根据指定的蓝图类（如<code>BP_Shrub</code>）或静态网格体，在场景中实际生成（Spawn）可交互的Actor实例。</li>
+<li><strong>设计意图</strong>：将处理好的数据转化为游戏世界中真实的物体。与简单的<code>Static Mesh Spawner</code>不同，使用<code>生成Actor</code>可以生成带有自定义碰撞、游戏逻辑（如采集生命值）的蓝图对象。</li>
 </ul>
 </li>
 </ol>
-<p>Logic Summary:</p>
-<p>Shrub generation is a process of progressively refined conditional processing. Starting from basic position determination, it undergoes key steps such as naturalized distribution, terrain adaptation, and conflict resolution, ultimately producing realistic vegetation that is both randomly distributed and physically logical. This complete chain fully demonstrates the powerful advantages of PCG technology in ensuring the rationality of resource distribution.</p>
-<h2 id="4-Interactive-Actor-Blueprint-System"><a href="#4-Interactive-Actor-Blueprint-System" class="headerlink" title="4. Interactive Actor Blueprint System"></a><strong>4. Interactive Actor Blueprint System</strong></h2><p>This section focuses on how the PCG-generated world gains “life” through a complex Blueprint system, enabling deep interaction with players and AI.</p>
-<h3 id="4-1-Core-Game-Framework"><a href="#4-1-Core-Game-Framework" class="headerlink" title="4.1 Core Game Framework"></a><strong>4.1 Core Game Framework</strong></h3><ul>
-<li><strong><code>BP_GM.uasset</code> (Game Mode):</strong> Defines game rules, states, and flow; serves as the central commander connecting the PCG world with game logic.</li>
-<li><strong><code>BP_PC.uasset</code> &#x2F; <code>BP_Player.uasset</code> (Player Controller &#x2F; Character):</strong> Handles player input commands and translates them into interactive behaviors within the PCG-generated world.</li>
+<p><strong>逻辑说明：</strong><br>灌木生成是一个逐步精细化的条件处理流程。从基础位置确定开始，经历自然化分布、地形适配、冲突解决等关键步骤，最终产出既随机分布又符合物理逻辑的逼真植被分布。这一完整链条充分展现了PCG技术在资源分布合理性方面的强大优势。</p>
+<h2 id="4-可交互Actor蓝图系统"><a href="#4-可交互Actor蓝图系统" class="headerlink" title="4. 可交互Actor蓝图系统"></a><strong>4. 可交互Actor蓝图系统</strong></h2><p>本章节重点介绍PCG生成的世界如何通过复杂的蓝图系统获得“生命”，实现与玩家和AI的深度交互。</p>
+<h3 id="4-1-游戏核心框架"><a href="#4-1-游戏核心框架" class="headerlink" title="4.1 游戏核心框架"></a><strong>4.1 游戏核心框架</strong></h3><ul>
+<li>**<code>BP_GM.uasset</code> (游戏模式)**： 定义了游戏的规则、状态和流程，是连接PCG世界与游戏逻辑的总指挥。</li>
+<li>**<code>BP_PC.uasset</code> &#x2F; <code>BP_Player.uasset</code> (玩家控制器&#x2F;角色)**： 处理玩家的输入指令，并将这些指令转化为对PCG生成世界的交互行为。</li>
 </ul>
-<h3 id="4-2-Resource-Collection-System"><a href="#4-2-Resource-Collection-System" class="headerlink" title="4.2 Resource Collection System"></a><strong>4.2 Resource Collection System</strong></h3><p>I created fully functional interactive Actor Blueprints for every resource type generated by the PCG system.</p>
+<h3 id="4-2-资源采集系统"><a href="#4-2-资源采集系统" class="headerlink" title="4.2 资源采集系统"></a><strong>4.2 资源采集系统</strong></h3><p>我为PCG生成的每一种资源都创建了功能完整的可交互Actor蓝图。</p>
 <ul>
-<li><strong>Universal Interface: <code>BPI_Resource.uasset</code></strong><ul>
-<li><strong>Function:</strong> Defines methods that all interactive resources must implement, such as <code>Interact</code>, establishing a unified interaction contract for both players and AI.</li>
+<li><strong>通用接口：<code>BPI_Resource.uasset</code></strong><ul>
+<li><strong>功能</strong>：定义了所有可交互资源必须实现的方法，如 <code>Interact</code>，为玩家和AI提供了统一的交互契约。</li>
 </ul>
 </li>
-<li><strong>Resource Base Class: <code>BP_Resource.uasset</code></strong><ul>
-<li><strong>Core Logic:</strong><ul>
-<li><strong>Automated Tag Management (Auto-Tagging):</strong> By reading the <code>Resource Type</code> (Enumerator variable), the script automatically converts it to a string and adds it to the Actor’s Tags list. This ensures all resources in the scene automatically obtain the correct type tags based on their attributes, facilitating batch retrieval or management via <code>Get All Actors with Tag</code>.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Concrete Resource Implementations:</strong><ul>
-<li><strong><code>BP_Tree.uasset</code>:</strong> Responds to the “Axe” tool, drops “Wood,” and triggers villager chopping animations.</li>
-<li><strong><code>BP_Rock.uasset</code>:</strong> Responds to the “Pickaxe” tool, drops “Stone,” and triggers villager mining animations.</li>
-<li><strong><code>BP_Shrub.uasset</code>:</strong> Responds to “Unarmed” gathering, drops “Food,” and triggers villager gathering animations.</li>
+<li><strong>资源基类：<code>BP_Resource.uasset</code></strong><ul>
+<li><strong>核心逻辑</strong>：<ul>
+<li>**自动化标签管理 (Auto-Tagging)**： 通过读取 <code>Resource Type</code>（枚举变量），将其自动转换为字符串并添加到 Actor 的 Tags 列表中。确保了场景中的所有资源都会根据其属性自动获得正确的类型标签，便于后续通过 <code>Get All Actors with Tag</code> 进行批量检索或管理。</li>
 </ul>
 </li>
 </ul>
-<h3 id="4-3-Dynamic-Interaction-between-AI-and-the-PCG-World"><a href="#4-3-Dynamic-Interaction-between-AI-and-the-PCG-World" class="headerlink" title="4.3 Dynamic Interaction between AI and the PCG World"></a><strong>4.3 Dynamic Interaction between AI and the PCG World</strong></h3><p>The AI system utilizes the following components to understand and manipulate the dynamic world generated by PCG.</p>
+</li>
+<li><strong>具体资源实现：</strong><ul>
+<li>**<code>BP_Tree.uasset</code>**： 响应“斧头”工具，掉落“木材”，可触发村民砍伐动画。</li>
+<li>**<code>BP_Rock.uasset</code>**： 响应“镐”工具，掉落“石料”，可触发村民挖矿动画。</li>
+<li>**<code>BP_Shrub.uasset</code>**： 响应“徒手”采集，掉落“食物”，可触发村民采集动画。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-3-AI与PCG世界的动态交互"><a href="#4-3-AI与PCG世界的动态交互" class="headerlink" title="4.3 AI与PCG世界的动态交互"></a><strong>4.3 AI与PCG世界的动态交互</strong></h3><p>AI系统通过以下组件，理解和操作由PCG生成的动态世界。</p>
 <ul>
-<li><strong>Environment Query System (EQS)</strong><ul>
-<li><strong><code>EQC_CollectionTarget.uasset</code>:</strong> Defines the query context, e.g., “Find all Actors of type <code>BP_Tree</code>.”</li>
-<li><strong><code>EQ_CollectionTarget.uasset</code>:</strong> Executes the query to find the nearest and most suitable harvesting target for the AI.</li>
+<li><strong>环境查询系统</strong><ul>
+<li>**<code>EQC_CollectionTarget.uasset</code>**： 定义查询的上下文，例如“寻找所有类型为 <code>BP_Tree</code> 的Actor”。</li>
+<li>**<code>EQ_CollectionTarget.uasset</code>**： 执行查询，为AI找到最近、最合适的采集目标。</li>
 </ul>
 </li>
-<li><strong>Behavior Tree &amp; Blackboard</strong><ul>
-<li><strong><code>BB_CollectResource.uasset</code> (Blackboard):</strong> Acts as the AI’s “memory,” storing information such as the current target (e.g., that specific tree) and carried resources.</li>
-<li><strong><code>BT_CollectResource.uasset</code> (Behavior Tree):</strong> Defines the AI’s collection logic sequence: Find target via EQS -&gt; Move to target -&gt; Execute harvest animation -&gt; Decrease target health -&gt; Return with resources.</li>
+<li><strong>行为树与黑板</strong><ul>
+<li>**<code>BB_CollectResource.uasset</code> (黑板)**： 作为AI的“记忆”，存储当前目标（如那棵特定的树）、携带的资源等信息。</li>
+<li>**<code>BT_CollectResource.uasset</code> (行为树)**： 定义AI的采集逻辑序列：通过EQS找到目标 -&gt; 移动到目标 -&gt; 执行采集动画 -&gt; 减少目标生命值 -&gt; 携带资源返回。</li>
 </ul>
 </li>
 </ul>
-<p><strong>System Linkage:</strong> The PCG system generates instances of <code>BP_Tree</code> at runtime. The AI’s EQS system queries these instances in real-time, while the Behavior Tree drives villager characters to interact with them. When a tree is felled (<code>BP_Tree</code> triggers <code>OnResourceDepleted</code>), the Game Mode listens for this event and notifies the PCG system to respawn a new tree elsewhere in the future, forming a complete, dynamic “Generate-Harvest-Regenerate” game loop.</p>
-<h2 id="5-Challenges-and-Solutions"><a href="#5-Challenges-and-Solutions" class="headerlink" title="5. Challenges and Solutions"></a><strong>5. Challenges and Solutions</strong></h2><h3 id="5-1-Performance-Optimization-Challenges"><a href="#5-1-Performance-Optimization-Challenges" class="headerlink" title="5.1 Performance Optimization Challenges"></a><strong>5.1 Performance Optimization Challenges</strong></h3><ul>
-<li><strong>Challenge:</strong> Game frame rate dropped significantly when PCG generated thousands of instances.</li>
-<li><strong>Solution:</strong><ol>
-<li><strong>LOD Optimization:</strong> Set reasonable Levels of Detail (LOD) for all static meshes.</li>
-<li><strong>PCG Culling:</strong> Utilized distance and frustum culling within PCG graphs to ensure instances are only generated and rendered near the player.</li>
-<li><strong>Material Optimization:</strong> Merged material textures and used Material Instances to reduce Draw Calls.</li>
+<p><strong>系统联动</strong>：PCG系统在运行时生成了 <code>BP_Tree</code> 的实例。AI的EQS系统会实时查询这些实例，行为树则驱动村民角色与这些实例进行交互。当一棵树被砍伐（<code>BP_Tree</code> 触发 <code>OnResourceDepleted</code>），游戏模式可以监听此事件，并通知PCG系统在未来于某处重新生成一棵新的树，从而形成一个完整的、动态的“生成-采集-再生”游戏循环。</p>
+<h2 id="5-挑战与问题解决"><a href="#5-挑战与问题解决" class="headerlink" title="5. 挑战与问题解决"></a><strong>5. 挑战与问题解决</strong></h2><h3 id="5-1-性能优化挑战"><a href="#5-1-性能优化挑战" class="headerlink" title="5.1 性能优化挑战"></a><strong>5.1 性能优化挑战</strong></h3><ul>
+<li><strong>挑战：</strong> 当PCG生成数千个实例时，游戏帧率显著下降。</li>
+<li><strong>解决方案：</strong><ol>
+<li><strong>LOD优化：</strong> 为所有静态网格体设置了合理的细节层次。</li>
+<li><strong>PCG Culling：</strong> 在PCG图表中使用了距离和视锥体剔除，确保只在玩家附近生成和显示实例。</li>
+<li><strong>材质优化：</strong> 合并材质纹理，使用材质实例来减少绘制调用。</li>
 </ol>
 </li>
 </ul>
-<h3 id="5-2-Compatibility-between-AI-Navigation-and-Dynamic-Environments"><a href="#5-2-Compatibility-between-AI-Navigation-and-Dynamic-Environments" class="headerlink" title="5.2 Compatibility between AI Navigation and Dynamic Environments"></a><strong>5.2 Compatibility between AI Navigation and Dynamic Environments</strong></h3><ul>
-<li><strong>Challenge:</strong> Since PCG generates the world at runtime, the AI navigation mesh needs to update correctly to include newly generated buildings and obstacles.</li>
-<li><strong>Solution:</strong><ol>
-<li>Used Dynamic NavMesh Bounds Volumes to force a local rebuild of the navigation mesh after building placement.</li>
-<li>Fully leveraged the <code>EQS</code> system, allowing AI to dynamically perceive PCG-generated objects during pathfinding rather than relying on predefined waypoints.</li>
+<h3 id="5-2-AI导航与动态环境的兼容性"><a href="#5-2-AI导航与动态环境的兼容性" class="headerlink" title="5.2 AI导航与动态环境的兼容性"></a><strong>5.2 AI导航与动态环境的兼容性</strong></h3><ul>
+<li><strong>挑战：</strong> PCG在运行时生成世界，AI导航网格需要正确更新以包含新生成的建筑和障碍物。</li>
+<li><strong>解决方案：</strong><ol>
+<li>使用动态导航网格体边界体积，在建筑放置后强制重建局部导航网格。</li>
+<li>充分利用 <code>EQS</code> 系统，让AI在寻路时能够动态感知PCG生成的对象，而不是依赖于预定义的路径点。</li>
 </ol>
 </li>
 </ul>
-<h3 id="5-3-Data-Communication-between-Blueprints-and-PCG"><a href="#5-3-Data-Communication-between-Blueprints-and-PCG" class="headerlink" title="5.3 Data Communication between Blueprints and PCG"></a><strong>5.3 Data Communication between Blueprints and PCG</strong></h3><ul>
-<li><strong>Challenge:</strong> How to ensure PCG-generated objects are correctly recognized and interacted with by the Blueprint system.</li>
-<li><strong>Solution:</strong><ol>
-<li>Used the <code>Blueprint Spawner</code> node within PCG graphs to directly spawn Blueprint Actors containing game logic.</li>
-<li>Used Tags or Interfaces to mark PCG-generated object types, facilitating filtering and interaction for AI and player systems.</li>
+<h3 id="5-3-蓝图与PCG的数据通信"><a href="#5-3-蓝图与PCG的数据通信" class="headerlink" title="5.3 蓝图与PCG的数据通信"></a><strong>5.3 蓝图与PCG的数据通信</strong></h3><ul>
+<li><strong>挑战：</strong> 如何让PCG生成的对象能够被蓝图系统正确识别和交互。</li>
+<li><strong>解决方案：</strong><ol>
+<li>在PCG图中使用 <code>Blueprint Spawner</code> 节点，直接生成带有游戏逻辑的蓝图Actor。</li>
+<li>通过标签或接口来标记PCG生成的对象类型，方便AI和玩家交互系统进行筛选和交互。</li>
 </ol>
 </li>
 </ul>
-<h2 id="6-Outcome-Showcase"><a href="#6-Outcome-Showcase" class="headerlink" title="6. Outcome Showcase"></a><strong>6. Outcome Showcase</strong></h2><div align="center"> <img  
+<h2 id="6-成果展示"><a href="#6-成果展示" class="headerlink" title="6. 成果展示"></a><strong>6. 成果展示</strong></h2><div align="center"> <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="..\images\《RTS-PCG》技术报告\RTS_PCG-封面.jpg"
-                      alt="Outcome Showcase 1" style="zoom:150%;" 
-                > <em>(A complete island panorama generated by PCG, featuring forests, stones, shrubs, and a central building.)</em> </div>
+                      alt="Cropout Sample Project" style="zoom:150%;" 
+                > <br> <em>（一个由PCG生成的完整岛屿全景，包含森林、石头、灌木和中心建筑。）</em> </div>
 
 <div align="center"> <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="..\images\《RTS-PCG》技术报告\2.png"
-                      alt="Outcome Showcase 2" style="zoom:70%;" 
-                ><br><em>(Villagers chopping PCG-generated trees according to AI instructions)</em> </div>
+                      alt="Cropout Sample Project" style="zoom:70%;" 
+                > <br> <em>（村民正在按照AI指令砍伐PCG生成的树木）</em> </div>
+
+
 
 <div align="center"> <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="..\images\《RTS-PCG》技术报告\3.png"
-                      alt="Outcome Showcase 3" style="zoom:150%;" 
-                > <br><em>(Villagers mining PCG-generated stones according to AI instructions)</em> </div>
+                      alt="Cropout Sample Project" style="zoom:150%;" 
+                > <br> <em>（村民正在按照AI指令挖掘PCG生成的石头）</em> </div>
+
+
 
 <div align="center"> <img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="..\images\《RTS-PCG》技术报告\4.png"
-                      alt="Outcome Showcase 4" style="zoom:170%;" 
-                > <br><em>(Villagers gathering PCG-generated shrubs according to AI instructions)</em> </div>
+                      alt="Cropout Sample Project" style="zoom:170%;" 
+                > <br> <em>（村民正在按照AI指令采集PCG生成的灌木木）</em> </div>
 
 
 
-<h2 id="7-Minimum-System-Requirements"><a href="#7-Minimum-System-Requirements" class="headerlink" title="7. Minimum System Requirements"></a><strong>7. Minimum System Requirements</strong></h2><ul>
-<li><strong>OS:</strong> Windows 10 64-bit</li>
-<li><strong>Processor:</strong> Intel Core i5-7400 or AMD Ryzen 3 1200</li>
-<li><strong>Memory:</strong> 8 GB RAM</li>
-<li><strong>Graphics:</strong> NVIDIA GeForce GTX 1050 Ti or AMD Radeon RX 560</li>
-<li><strong>Storage:</strong> 5 GB available space</li>
+
+
+<h2 id="7-最低配置要求"><a href="#7-最低配置要求" class="headerlink" title="7. 最低配置要求"></a><strong>7. 最低配置要求</strong></h2><ul>
+<li><strong>操作系统：</strong> Windows 10 64-bit</li>
+<li><strong>处理器：</strong> Intel Core i5-7400 或 AMD Ryzen 3 1200</li>
+<li><strong>内存：</strong> 8 GB RAM</li>
+<li><strong>显卡：</strong> NVIDIA GeForce GTX 1050 Ti 或 AMD Radeon RX 560</li>
+<li><strong>存储空间：</strong> 需要 5 GB 可用空间</li>
 </ul>
-<h2 id="8-Project-and-Build-Links"><a href="#8-Project-and-Build-Links" class="headerlink" title="8. Project and Build Links"></a><strong>8. Project and Build Links</strong></h2><ul>
-<li><strong>Project Files Link:</strong> [<a class="link"   target="_blank" rel="noopener" href="https://github.com/Elecmark/RTS_PCG.git]" >https://github.com/Elecmark/RTS_PCG.git]<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
-<li><strong>Game Build Link:</strong> [<a class="link"   target="_blank" rel="noopener" href="https://github.com/Elecmark/RTS_PCG/tree/master/Windows/RTS_PCG.exe]" >https://github.com/Elecmark/RTS_PCG/tree/master/Windows/RTS_PCG.exe]<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<h2 id="8-项目与构建链接"><a href="#8-项目与构建链接" class="headerlink" title="8. 项目与构建链接"></a><strong>8. 项目与构建链接</strong></h2><ul>
+<li><strong>项目文件链接：</strong> [<a class="link"   target="_blank" rel="noopener" href="https://github.com/Elecmark/RTS_PCG.git]" >https://github.com/Elecmark/RTS_PCG.git]<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><strong>游戏构建链接：</strong> [<a class="link"   target="_blank" rel="noopener" href="https://github.com/Elecmark/RTS_PCG/tree/master/Windows/RTS_PCG.exe]" >https://github.com/Elecmark/RTS_PCG/tree/master/Windows/RTS_PCG.exe]<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
 </ul>
 
 		</div>
@@ -819,14 +828,14 @@
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 《RTS_PCG》技术报告</li>
+        <li><strong>Title:</strong> Unreal Engine——《RTS_PCG》技术报告</li>
         <li><strong>Author:</strong> ELecmark</li>
         <li><strong>Created at
                 :</strong> 2025-12-01 14:58:06</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-12-12 15:15:32
+                    :</strong> 2025-12-12 15:22:51
             </li>
         
         <li>
@@ -945,8 +954,8 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
-		<div class="page-title">《RTS_PCG》技术报告</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RTS-PCG-Game-Strategy-Game-Development-Report-Based-on-Procedural-Content-Generation"><span class="nav-text">RTS_PCG Game: Strategy Game Development Report Based on Procedural Content Generation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Project-Overview"><span class="nav-text">1. Project Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Design-and-Iteration"><span class="nav-text">2. Design and Iteration</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Initial-Inspiration"><span class="nav-text">2.1 Initial Inspiration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Core-Objectives"><span class="nav-text">2.2 Core Objectives</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-Asset-Sources"><span class="nav-text">2.4 Asset Sources</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-PCG-System-Architecture-Implementation"><span class="nav-text">3. PCG System Architecture &amp; Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-Overall-PCG-Workflow-Architecture"><span class="nav-text">3.1 Overall PCG Workflow Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Detailed-Analysis-of-Key-PCG-Modules"><span class="nav-text">3.2 Detailed Analysis of Key PCG Modules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Interactive-Actor-Blueprint-System"><span class="nav-text">4. Interactive Actor Blueprint System</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Core-Game-Framework"><span class="nav-text">4.1 Core Game Framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Resource-Collection-System"><span class="nav-text">4.2 Resource Collection System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Dynamic-Interaction-between-AI-and-the-PCG-World"><span class="nav-text">4.3 Dynamic Interaction between AI and the PCG World</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Challenges-and-Solutions"><span class="nav-text">5. Challenges and Solutions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-Performance-Optimization-Challenges"><span class="nav-text">5.1 Performance Optimization Challenges</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-Compatibility-between-AI-Navigation-and-Dynamic-Environments"><span class="nav-text">5.2 Compatibility between AI Navigation and Dynamic Environments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-Data-Communication-between-Blueprints-and-PCG"><span class="nav-text">5.3 Data Communication between Blueprints and PCG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Outcome-Showcase"><span class="nav-text">6. Outcome Showcase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Minimum-System-Requirements"><span class="nav-text">7. Minimum System Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Project-and-Build-Links"><span class="nav-text">8. Project and Build Links</span></a></li></ol></li></ol>
+		<div class="page-title">Unreal Engine——《RTS_PCG》技术报告</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PCG-RTS%E6%B8%B8%E6%88%8F%EF%BC%9A%E5%9F%BA%E4%BA%8E%E7%A8%8B%E5%BA%8F%E5%8C%96%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90%E7%9A%84%E7%AD%96%E7%95%A5%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%8A%A5%E5%91%8A"><span class="nav-text">PCG_RTS游戏：基于程序化内容生成的策略游戏开发报告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0"><span class="nav-text">1. 项目概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E8%BF%AD%E4%BB%A3"><span class="nav-text">2. 设计与迭代</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%88%9D%E5%A7%8B%E7%81%B5%E6%84%9F"><span class="nav-text">2.1 初始灵感</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%A0%B8%E5%BF%83%E7%9B%AE%E6%A0%87"><span class="nav-text">2.2 核心目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E7%B4%A0%E6%9D%90%E6%9D%A5%E6%BA%90"><span class="nav-text">2.4 素材来源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-PCG%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="nav-text">3. PCG系统架构与实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%95%B4%E4%BD%93PCG%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%9E%B6%E6%9E%84"><span class="nav-text">3.1 整体PCG工作流架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%85%B3%E9%94%AEPCG%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3"><span class="nav-text">3.2 关键PCG模块详解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%8F%AF%E4%BA%A4%E4%BA%92Actor%E8%93%9D%E5%9B%BE%E7%B3%BB%E7%BB%9F"><span class="nav-text">4. 可交互Actor蓝图系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E6%B8%B8%E6%88%8F%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6"><span class="nav-text">4.1 游戏核心框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E8%B5%84%E6%BA%90%E9%87%87%E9%9B%86%E7%B3%BB%E7%BB%9F"><span class="nav-text">4.2 资源采集系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-AI%E4%B8%8EPCG%E4%B8%96%E7%95%8C%E7%9A%84%E5%8A%A8%E6%80%81%E4%BA%A4%E4%BA%92"><span class="nav-text">4.3 AI与PCG世界的动态交互</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%8C%91%E6%88%98%E4%B8%8E%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="nav-text">5. 挑战与问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%8C%91%E6%88%98"><span class="nav-text">5.1 性能优化挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-AI%E5%AF%BC%E8%88%AA%E4%B8%8E%E5%8A%A8%E6%80%81%E7%8E%AF%E5%A2%83%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="nav-text">5.2 AI导航与动态环境的兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E8%93%9D%E5%9B%BE%E4%B8%8EPCG%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1"><span class="nav-text">5.3 蓝图与PCG的数据通信</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%88%90%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="nav-text">6. 成果展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%9C%80%E4%BD%8E%E9%85%8D%E7%BD%AE%E8%A6%81%E6%B1%82"><span class="nav-text">7. 最低配置要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E9%A1%B9%E7%9B%AE%E4%B8%8E%E6%9E%84%E5%BB%BA%E9%93%BE%E6%8E%A5"><span class="nav-text">8. 项目与构建链接</span></a></li></ol></li></ol>
 
 	</div>
 </div>
