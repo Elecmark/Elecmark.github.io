@@ -6,6 +6,116 @@
     <meta name="keywords" content="Hexo Theme Redefine">
     
     <meta name="author" content="ELecmark">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set data attribute for CSS variables
+                root.setAttribute("data-theme", theme);
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes once DOM is ready
+            if (document.readyState !== "loading") {
+                document.body.classList.add(theme + "-mode");
+            } else {
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.body.classList.add(theme + "-mode");
+                    document.body.classList.remove((theme === DARK ? LIGHT : DARK) + "-mode");
+                });
+            }
+        })();
+    </script>
+    
+    <!-- Critical CSS to prevent flash -->
+    <style>
+        :root[data-theme="dark"] {
+            --background-color: #202124;
+            --background-color-transparent: rgba(32, 33, 36, 0.6);
+            --second-background-color: #2d2e32;
+            --third-background-color: #34353a;
+            --third-background-color-transparent: rgba(32, 33, 36, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #ffffff;
+            --second-text-color: #eeeeee;
+            --third-text-color: #bebec6;
+            --fourth-text-color: #999999;
+            --default-text-color: #bebec6;
+            --invert-text-color: #373D3F;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(255, 255, 255, 0.08);
+            --shadow-color-2: rgba(255, 255, 255, 0.05);
+        }
+        
+        :root[data-theme="light"] {
+            --background-color: #fff;
+            --background-color-transparent: rgba(255, 255, 255, 0.6);
+            --second-background-color: #f8f8f8;
+            --third-background-color: #f2f2f2;
+            --third-background-color-transparent: rgba(241, 241, 241, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #16171a;
+            --second-text-color: #2f3037;
+            --third-text-color: #5e5e5e;
+            --fourth-text-color: #eeeeee;
+            --default-text-color: #373D3F;
+            --invert-text-color: #bebec6;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(0, 0, 0, 0.08);
+            --shadow-color-2: rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+        
+        /* Apply body classes as soon as DOM is ready */
+        :root[data-theme="dark"] body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+    </style>
+    
     <!-- preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,23 +128,17 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="在本次频率域图像处理实验中，我通过傅立叶变换、DCT变换和离散傅立叶逆变换等技术，深入研究了图像频域特性的分析与增强。通过比较不同图像对的频率域特征，以及利用优化学习重建图像的频谱图。">
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图像处理与分析——实验三-频率域图像增强">
 <meta property="og:url" content="https://elecmark.github.io/2024/04/29/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在本次频率域图像处理实验中，我通过傅立叶变换、DCT变换和离散傅立叶逆变换等技术，深入研究了图像频域特性的分析与增强。通过比较不同图像对的频率域特征，以及利用优化学习重建图像的频谱图。">
+<meta property="og:description" content="Hexo Theme Redefine.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_1_bmp.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_2_JPG.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_2_bmp.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_3_bmp.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_4_bmp.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_1.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_2.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_3.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_2_4.png">
-<meta property="og:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_3_1.png">
+<meta property="og:image" content="https://elecmark.github.io/images/pdh-logo.webp">
 <meta property="article:published_time" content="2024-04-29T03:00:07.000Z">
 <meta property="article:modified_time" content="2024-05-11T04:13:23.955Z">
 <meta property="article:author" content="Elecmark">
@@ -42,7 +146,7 @@
 <meta property="article:tag" content="作业报告">
 <meta property="article:tag" content="图像处理与分析">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://elecmark.github.io/images/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E4%B8%89-%E9%A2%91%E7%8E%87%E5%9F%9F%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/exp3_1_1_bmp.png">
+<meta name="twitter:image" content="https://elecmark.github.io/images/pdh-logo.webp">
     
     
     <!--- Icon Part-->
@@ -54,9 +158,8 @@
     
     <title>
         
-            图像处理与分析——实验三-频率域图像增强 -
+            图像处理与分析——实验三-频率域图像增强 | Pu Dianheng&#39;s blog
         
-        Pu Dianheng&#39;s blog
     </title>
 
     
@@ -72,7 +175,7 @@
 
     
         
-<link rel="stylesheet" href="/assets/build/styles.css">
+<link rel="stylesheet" href="/css/build/tailwind.css">
 
     
 
@@ -91,16 +194,12 @@
     
         <link href="" rel="stylesheet">
     
-
     
-        
-<script src="/js/libs/anime.min.js"></script>
-
     
 
     <script id="hexo-configurations">
     window.config = {"hostname":"elecmark.github.io","root":"/","language":"en","path":"search.xml"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["VIP"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#80B5FF","secondary":"#004098","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wall1.jpg","dark":"/images/wall_shenzhen.jpg"},"title":"Elecmark-Pu Dianheng","subtitle":{"text":["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn?c=c"},"typing_speed":50,"backing_speed":30,"starting_delay":100,"backing_delay":5000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#FFFFF5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/Elecmark","instagram":null,"zhihu":null,"twitter":null,"email":"944723112@qq.com","fa-solid fa-c fa-fw fa-lg":"https://blog.csdn.net/LanLinHui?type=blog","steam":"https://steamcommunity.com/profiles/76561198167581914/"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"soundorbis - LIFE","artist":"Kyle Xian","url":"https://music.163.com/song/media/outer/url?id=516372224.mp3","cover":"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg","lrc":null},{"name":"Pokémon Sleep - Christmas","artist":"Pokémon Sleep","url":"https://music.163.com/song/media/outer/url?id=2130624871.mp3","cover":"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg"},{"name":"Guitar","artist":"Guitar","url":"/music/校园吉他纯音乐.mp3","cover":"/music/covers/music.svg"}]},"mermaid":{"enable":true,"version":"9.3.0"},"all_minifier":false},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":25},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"作品集Portfolio":{"path":"/tags/作品集/","icon":"fa-regular fa-archive"},"关于About":{"icon":"fa-regular fa-user","submenus":{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"时间轴Timeline":{"path":"/archives","icon":"fa-solid fa-timeline"},"标签Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"分类Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/24 19:02:20"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["VIP"]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#80B5FF","secondary":"#004098","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/pdh-logo.webp","description":"Hexo Theme Redefine."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wall1.jpg","dark":"/images/wall_shenzhen.jpg"},"title":"Elecmark-Pu Dianheng","subtitle":{"text":["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn?c=c"},"typing_speed":50,"backing_speed":30,"starting_delay":100,"backing_delay":5000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#FFFFF5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/Elecmark","instagram":null,"zhihu":null,"twitter":null,"email":"944723112@qq.com","fa-solid fa-c fa-fw fa-lg":"https://blog.csdn.net/LanLinHui?type=blog","steam":"https://steamcommunity.com/profiles/76561198167581914/"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"soundorbis - LIFE","artist":"Kyle Xian","url":"https://music.163.com/song/media/outer/url?id=516372224.mp3","cover":"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg","lrc":null},{"name":"Pokémon Sleep - Christmas","artist":"Pokémon Sleep","url":"https://music.163.com/song/media/outer/url?id=2130624871.mp3","cover":"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg","lrc":null},{"name":"Guitar","artist":"Guitar","url":"/music/校园吉他纯音乐.mp3","cover":"/music/covers/music.svg","lrc":null}]},"mermaid":{"enable":true,"version":"11.4.1"}},"version":"2.8.5","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":25},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"作品集Portfolio":{"path":"/tags/作品集/","icon":"fa-regular fa-archive"},"关于About":{"icon":"fa-regular fa-user","submenus":{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"时间轴Timeline":{"path":"/archives","icon":"fa-solid fa-timeline"},"标签Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"分类Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/24 19:02:20"};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     window.data = {"masonry":false};
   </script>
@@ -125,182 +224,33 @@
 <meta name="generator" content="Hexo 7.2.0"></head>
 
 
+
 <body>
-<div class="progress-bar-container">
-    
-        <span class="scroll-progress-bar"></span>
-    
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
 
-    
-        <span class="pjax-progress-bar"></span>
-<!--        <span class="swup-progress-icon">-->
-<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
-<!--        </span>-->
-    
-</div>
-
-
-
-    <style>
-    :root {
-        --preloader-background-color: #fff;
-        --preloader-text-color: #000;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --preloader-background-color: #202124;
-            --preloader-text-color: #fff;
-        }
-    }
-
-    @media (prefers-color-scheme: light) {
-        :root {
-            --preloader-background-color: #fff;
-            --preloader-text-color: #000;
-        }
-    }
-
-    @media (max-width: 600px) {
-        .ml13 {
-            font-size: 2.6rem !important; /* Adjust this value as needed */
-        }
-    }
-
-    .preloader {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        padding: 12px;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh; /* 'h-screen' is 100% of the viewport height */
-        background-color: var(--preloader-background-color);
-        z-index: 1100; /* 'z-[1100]' sets the z-index */
-        transition: opacity 0.2s ease-in-out;
-    }
-
-    .ml13 {
-        font-size: 3.2rem;
-        /* text-transform: uppercase; */
-        color: var(--preloader-text-color);
-        letter-spacing: -1px;
-        font-weight: 500;
-        font-family: 'Chillax-Variable', sans-serif;
-        text-align: center;
-    }
-
-    .ml13 .word {
-        display: inline-flex;
-        flex-wrap: wrap;
-        white-space: nowrap;
-    }
-
-    .ml13 .letter {
-        display: inline-block;
-        line-height: 1em;
-    }
-</style>
-
-<div class="preloader">
-    <h2 class="ml13">
-        Pu Dianheng&#39;s blog
-    </h2>
-    <script>
-        var textWrapper = document.querySelector('.ml13');
-        // Split text into words
-        var words = textWrapper.textContent.trim().split(' ');
-
-        // Clear the existing content
-        textWrapper.innerHTML = '';
-
-        // Wrap each word and its letters in spans
-        words.forEach(function(word) {
-            var wordSpan = document.createElement('span');
-            wordSpan.classList.add('word');
-            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
-            textWrapper.appendChild(wordSpan);
-            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
-        });
-
-        var animation = anime.timeline({loop: true})
-            .add({
-                targets: '.ml13 .letter',
-                translateY: [40,0],
-                translateZ: 0,
-                opacity: [0,1],
-                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
-                easing: "easeOutExpo",
-                duration: 1400,
-                delay: (el, i) => 300 + 30 * i,
-            }).add({
-                targets: '.ml13 .letter',
-                translateY: [0,-40],
-                opacity: [1,0],
-                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
-                easing: "easeInExpo",
-                duration: 1200,
-                delay: (el, i) => 100 + 30 * i,
-                complete: function() {
-                    hidePreloader(); // Call hidePreloader after the animation completes
-                }
-            });
-
-        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
-
-        // If the theme status is not found in local storage, check the preferred color scheme
-        if (themeStatus === undefined || themeStatus === null) {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                themeStatus = 'dark';
-            } else {
-                themeStatus = 'light';
-            }
-        }
-
-        // Now you can use the themeStatus variable in your code
-        if (themeStatus) {
-            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
-            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
-        } else {
-            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
-            document.documentElement.style.setProperty('--preloader-text-color', '#000');
-        }
-
-        window.addEventListener('load', function () {
-            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
-        });
-
-        function hidePreloader() {
-            var preloader = document.querySelector('.preloader');
-            preloader.style.opacity = '0';
-            setTimeout(function () {
-                preloader.style.display = 'none';
-            }, 200);
-        }
-    </script>
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
 </div>
 
 <main class="page-container" id="swup">
 
-    
+	
 
-    <div class="main-content-container">
-
-
-        <div class="main-content-header">
-            <header class="navbar-container px-6 md:px-12">
-
-    <div class="navbar-content ">
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
         <div class="left">
             
-                <a class="logo-image" href="/">
-                    <img src="/images/pdh-logo.webp">
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/pdh-logo.webp" class="w-full h-full rounded-xs">
                 </a>
             
             <a class="logo-title" href="/">
@@ -409,7 +359,7 @@
     </div>
 
     <!-- Mobile sheet -->
-    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
         <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
             
                 
@@ -530,15 +480,15 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">24</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">26</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -549,40 +499,37 @@
 </header>
 
 
-        </div>
+		</div>
 
-        <div class="main-content-body">
+		<div class="main-content-body transition-fade-up">
+			
 
-            
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
 
-            <div class="main-content">
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">图像处理与分析——实验三-频率域图像增强</h1>
+			</div>
+			
+		</div>
 
-                
-                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
-    <div class="article-content-container">
-
-        <div class="article-title relative w-full">
-            
-                <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">图像处理与分析——实验三-频率域图像增强</h1>
-                </div>
-            
-            </div>
-
-        
-            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
-                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
-                    <img src="/images/em-logo.png">
-                </div>
-                <div class="info flex flex-col justify-between">
-                    <div class="author flex items-center">
-                        <span class="name text-default-text-color text-lg font-semibold">ELecmark</span>
-                        
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">VIP</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/em-logo.png">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">ELecmark</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">VIP</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2024-04-29 11:07</span>
@@ -656,16 +603,16 @@
     
 </div>
 
-                    </div>
-                </div>
-            </div>
-        
+				</div>
+			</div>
+		</div>
+		
 
-        
+		
 
 
-        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><ol>
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h3 id="实验目标："><a href="#实验目标：" class="headerlink" title="实验目标："></a><strong>实验目标：</strong></h3><ol>
 <li><p><strong>图像频域变换与滤波处理</strong>：</p>
 <ul>
 <li>对一系列图像（1.bmp，2.bmp，2.jpg，3.bmp，4.bmp）进行傅立叶变换和离散余弦变换（DCT）以分析其频域特征。</li>
@@ -695,22 +642,22 @@
 <p>请按照exp3_1_i的格式，输出每个任务结果</p>
 <h3 id="实验方案："><a href="#实验方案：" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>在实验一中，我探索了图像的频域特性，应用了傅立叶变换、离散余弦变换（DCT）、频谱图增强，以及低通和高通滤波器的技术。下面将详细解释每个步骤的关键代码及其功能：</p>
 <h4 id="图像加载与预处理"><a href="#图像加载与预处理" class="headerlink" title="图像加载与预处理"></a><strong>图像加载与预处理</strong></h4><p>首先，使用<code>load_images</code>函数从指定文件夹加载图像集。这个函数读取图像为灰度格式，便于后续的频域处理。每个图像文件名通过替换<code>.</code>为<code>_</code>生成一个唯一标识符，用于保存处理后的结果。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_images</span>(<span class="params">folder</span>):</span><br><span class="line">    filenames = [<span class="string">&#x27;1.bmp&#x27;</span>, <span class="string">&#x27;2.bmp&#x27;</span>, <span class="string">&#x27;2.JPG&#x27;</span>, <span class="string">&#x27;3.bmp&#x27;</span>, <span class="string">&#x27;4.bmp&#x27;</span>]</span><br><span class="line">    images = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">        img = cv2.imread(<span class="string">f&quot;<span class="subst">&#123;folder&#125;</span>/<span class="subst">&#123;filename&#125;</span>&quot;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line">        <span class="keyword">if</span> img <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            identifier = filename.replace(<span class="string">&#x27;.&#x27;</span>, <span class="string">&#x27;_&#x27;</span>)</span><br><span class="line">            images[filename] = (img, <span class="string">f&#x27;exp3_1_<span class="subst">&#123;identifier&#125;</span>&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> images</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_images</span>(<span class="params">folder</span>):</span><br><span class="line">    filenames = [<span class="string">&#x27;1.bmp&#x27;</span>, <span class="string">&#x27;2.bmp&#x27;</span>, <span class="string">&#x27;2.JPG&#x27;</span>, <span class="string">&#x27;3.bmp&#x27;</span>, <span class="string">&#x27;4.bmp&#x27;</span>]</span><br><span class="line">    images = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">        img = cv2.imread(<span class="string">f&quot;<span class="subst">&#123;folder&#125;</span>/<span class="subst">&#123;filename&#125;</span>&quot;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line">        <span class="keyword">if</span> img <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            identifier = filename.replace(<span class="string">&#x27;.&#x27;</span>, <span class="string">&#x27;_&#x27;</span>)</span><br><span class="line">            images[filename] = (img, <span class="string">f&#x27;exp3_1_<span class="subst">&#123;identifier&#125;</span>&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> images</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="傅立叶变换"><a href="#傅立叶变换" class="headerlink" title="傅立叶变换"></a><strong>傅立叶变换</strong></h4><p>使用<code>apply_fourier_transform</code>函数对图像执行傅立叶变换，该函数通过<code>numpy.fft</code>库计算二维傅立叶变换，将频率为0的分量移到频谱中心，并通过对数变换增强结果的可视化。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_fourier_transform</span>(<span class="params">image</span>):</span><br><span class="line">    f = np.fft.fft2(image)</span><br><span class="line">    fshift = np.fft.fftshift(f)</span><br><span class="line">    magnitude_spectrum = <span class="number">20</span> * np.log(np.<span class="built_in">abs</span>(fshift) + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> magnitude_spectrum</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_fourier_transform</span>(<span class="params">image</span>):</span><br><span class="line">    f = np.fft.fft2(image)</span><br><span class="line">    fshift = np.fft.fftshift(f)</span><br><span class="line">    magnitude_spectrum = <span class="number">20</span> * np.log(np.<span class="built_in">abs</span>(fshift) + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> magnitude_spectrum</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="离散余弦变换（DCT）"><a href="#离散余弦变换（DCT）" class="headerlink" title="离散余弦变换（DCT）"></a><strong>离散余弦变换（DCT）</strong></h4><p>在<code>apply_dct</code>函数中，图像首先被裁剪为偶数尺寸以适应DCT要求，然后应用DCT变换。结果被归一化和调整以便于显示。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_dct</span>(<span class="params">image</span>):</span><br><span class="line">    h, w = image.shape</span><br><span class="line">    image = image[:h - (h % <span class="number">2</span>), :w - (w % <span class="number">2</span>)]</span><br><span class="line">    dct = cv2.dct(np.float32(image) / <span class="number">255.0</span>)</span><br><span class="line">    <span class="keyword">return</span> dct</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_dct</span>(<span class="params">image</span>):</span><br><span class="line">    h, w = image.shape</span><br><span class="line">    image = image[:h - (h % <span class="number">2</span>), :w - (w % <span class="number">2</span>)]</span><br><span class="line">    dct = cv2.dct(np.float32(image) / <span class="number">255.0</span>)</span><br><span class="line">    <span class="keyword">return</span> dct</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="频谱图增强"><a href="#频谱图增强" class="headerlink" title="频谱图增强"></a><strong>频谱图增强</strong></h4><p><code>enhance_spectrum</code>函数通过对频谱图进行对数变换来增强其视觉表现，使得高频和低频成分的差异更加明显。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">enhance_spectrum</span>(<span class="params">spectrum</span>):</span><br><span class="line">    enhanced = np.log1p(np.<span class="built_in">abs</span>(spectrum))</span><br><span class="line">    <span class="keyword">return</span> enhanced</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">enhance_spectrum</span>(<span class="params">spectrum</span>):</span><br><span class="line">    enhanced = np.log1p(np.<span class="built_in">abs</span>(spectrum))</span><br><span class="line">    <span class="keyword">return</span> enhanced</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="滤波器应用"><a href="#滤波器应用" class="headerlink" title="滤波器应用"></a><strong>滤波器应用</strong></h4><p><code>apply_filter</code>函数允许应用低通或高通滤波器。通过创建一个中心为1的二值掩模（对于低通滤波器）或其补集（对于高通滤波器），实现对频谱的选择性保留或剔除。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_filter</span>(<span class="params">image, low_pass=<span class="literal">True</span>, cutoff=<span class="number">30</span></span>):</span><br><span class="line">    rows, cols = image.shape</span><br><span class="line">    crow, ccol = rows // <span class="number">2</span>, cols // <span class="number">2</span></span><br><span class="line">    mask = np.zeros((rows, cols), np.uint8)</span><br><span class="line">    mask_area = (x - crow)**<span class="number">2</span> + (y - ccol)**<span class="number">2</span> &lt;= cutoff**<span class="number">2</span></span><br><span class="line">    mask[mask_area] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> low_pass:</span><br><span class="line">        mask = <span class="number">1</span> - mask</span><br><span class="line">    fshift *= mask</span><br><span class="line">    img_back = np.fft.ifft2(np.fft.ifftshift(fshift))</span><br><span class="line">    <span class="keyword">return</span> np.<span class="built_in">abs</span>(img_back)</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">apply_filter</span>(<span class="params">image, low_pass=<span class="literal">True</span>, cutoff=<span class="number">30</span></span>):</span><br><span class="line">    rows, cols = image.shape</span><br><span class="line">    crow, ccol = rows // <span class="number">2</span>, cols // <span class="number">2</span></span><br><span class="line">    mask = np.zeros((rows, cols), np.uint8)</span><br><span class="line">    mask_area = (x - crow)**<span class="number">2</span> + (y - ccol)**<span class="number">2</span> &lt;= cutoff**<span class="number">2</span></span><br><span class="line">    mask[mask_area] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> low_pass:</span><br><span class="line">        mask = <span class="number">1</span> - mask</span><br><span class="line">    fshift *= mask</span><br><span class="line">    img_back = np.fft.ifft2(np.fft.ifftshift(fshift))</span><br><span class="line">    <span class="keyword">return</span> np.<span class="built_in">abs</span>(img_back)</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="图像处理与保存"><a href="#图像处理与保存" class="headerlink" title="图像处理与保存"></a><strong>图像处理与保存</strong></h4><p>在<code>process_and_save_image</code>函数中，我将上述所有处理步骤集成在一起，对每幅图像依次执行傅立叶变换、DCT变换、频谱增强、高通和低通滤波，然后将处理结果并排显示并保存。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">process_and_save_image</span>(<span class="params">img, title, filename</span>):</span><br><span class="line">    ft_image = apply_fourier_transform(img)</span><br><span class="line">    dct_image = apply_dct(img)</span><br><span class="line">    enhanced_ft = enhance_spectrum(ft_image)</span><br><span class="line">    high_pass_image = apply_filter(img, <span class="literal">False</span>, <span class="number">30</span>)</span><br><span class="line">    low</span><br><span class="line"></span><br><span class="line">_pass_image = apply_filter(img, <span class="literal">True</span>, <span class="number">30</span>)</span><br><span class="line">    fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">6</span>, figsize=(<span class="number">20</span>, <span class="number">5</span>))</span><br><span class="line">    <span class="keyword">for</span> ax, image, t <span class="keyword">in</span> <span class="built_in">zip</span>(axs, [img, ft_image, dct_image, enhanced_ft, high_pass_image, low_pass_image], [<span class="string">&#x27;Original&#x27;</span>, <span class="string">&#x27;Fourier Transform&#x27;</span>, <span class="string">&#x27;DCT&#x27;</span>, <span class="string">&#x27;Enhanced Spectrum&#x27;</span>, <span class="string">&#x27;High Pass Filter&#x27;</span>, <span class="string">&#x27;Low Pass Filter&#x27;</span>]):</span><br><span class="line">        ax.imshow(image, cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">        ax.set_title(t)</span><br><span class="line">        ax.axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">    plt.savefig(<span class="string">f&#x27;outputs/<span class="subst">&#123;filename&#125;</span>.png&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">process_and_save_image</span>(<span class="params">img, title, filename</span>):</span><br><span class="line">    ft_image = apply_fourier_transform(img)</span><br><span class="line">    dct_image = apply_dct(img)</span><br><span class="line">    enhanced_ft = enhance_spectrum(ft_image)</span><br><span class="line">    high_pass_image = apply_filter(img, <span class="literal">False</span>, <span class="number">30</span>)</span><br><span class="line">    low</span><br><span class="line"></span><br><span class="line">_pass_image = apply_filter(img, <span class="literal">True</span>, <span class="number">30</span>)</span><br><span class="line">    fig, axs = plt.subplots(<span class="number">1</span>, <span class="number">6</span>, figsize=(<span class="number">20</span>, <span class="number">5</span>))</span><br><span class="line">    <span class="keyword">for</span> ax, image, t <span class="keyword">in</span> <span class="built_in">zip</span>(axs, [img, ft_image, dct_image, enhanced_ft, high_pass_image, low_pass_image], [<span class="string">&#x27;Original&#x27;</span>, <span class="string">&#x27;Fourier Transform&#x27;</span>, <span class="string">&#x27;DCT&#x27;</span>, <span class="string">&#x27;Enhanced Spectrum&#x27;</span>, <span class="string">&#x27;High Pass Filter&#x27;</span>, <span class="string">&#x27;Low Pass Filter&#x27;</span>]):</span><br><span class="line">        ax.imshow(image, cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">        ax.set_title(t)</span><br><span class="line">        ax.axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">    plt.savefig(<span class="string">f&#x27;outputs/<span class="subst">&#123;filename&#125;</span>.png&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
 
 
 
@@ -780,13 +727,13 @@
 <p>请按照exp3_2_i的格式，输出结果</p>
 <h3 id="实验方案：-1"><a href="#实验方案：-1" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>任务2主要集中在比较不同图像对的频率域特征。这里的目的是探讨不同图像在频率域的差异性，并尝试从中分析原因。这些分析有助于我理解图像内容与其频率成分之间的关系。下面是关键代码的解释和分析，以及如何用它来执行实验：</p>
 <h4 id="图像加载与预处理-1"><a href="#图像加载与预处理-1" class="headerlink" title="图像加载与预处理"></a><strong>图像加载与预处理</strong></h4><p>使用<code>load_image</code>函数从指定路径加载图像，并转换为灰度格式，这是进行频率域分析的基础。这一步骤确保了处理的统一性和准确性。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_image</span>(<span class="params">image_path</span>):</span><br><span class="line">    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)</span><br><span class="line">    <span class="keyword">if</span> image <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;无法加载图像：<span class="subst">&#123;image_path&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> image</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_image</span>(<span class="params">image_path</span>):</span><br><span class="line">    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)</span><br><span class="line">    <span class="keyword">if</span> image <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;无法加载图像：<span class="subst">&#123;image_path&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> image</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="傅立叶变换-1"><a href="#傅立叶变换-1" class="headerlink" title="傅立叶变换"></a><strong>傅立叶变换</strong></h4><p>通过<code>fourier_transform</code>函数对图像执行傅立叶变换，以获取其频率域表示。这个函数不仅应用了FFT来转换图像，还通过对数变换增加了频谱的对比度，使得高频和低频成分更易于区分。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fourier_transform</span>(<span class="params">image</span>):</span><br><span class="line">    f = np.fft.fft2(image)</span><br><span class="line">    fshift = np.fft.fftshift(f)</span><br><span class="line">    spectrum = <span class="number">20</span> * np.log(np.<span class="built_in">abs</span>(fshift) + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> spectrum</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fourier_transform</span>(<span class="params">image</span>):</span><br><span class="line">    f = np.fft.fft2(image)</span><br><span class="line">    fshift = np.fft.fftshift(f)</span><br><span class="line">    spectrum = <span class="number">20</span> * np.log(np.<span class="built_in">abs</span>(fshift) + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> spectrum</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="频率域特征比较"><a href="#频率域特征比较" class="headerlink" title="频率域特征比较"></a><strong>频率域特征比较</strong></h4><p><code>compare_frequency_domain</code>函数用于比较两幅图像的频率域特征。函数首先对每幅图像应用傅立叶变换，然后在一个画布上并排显示每幅图像的原始和频率域图像。这种可视化有助于直观地比较两幅图像在频率成分上的异同。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">compare_frequency_domain</span>(<span class="params">image_path1, image_path2, output_filename</span>):</span><br><span class="line">    img1 = load_image(image_path1)</span><br><span class="line">    img2 = load_image(image_path2)</span><br><span class="line">    f1 = fourier_transform(img1)</span><br><span class="line">    f2 = fourier_transform(img2)</span><br><span class="line">    fig, axes = plt.subplots(<span class="number">2</span>, <span class="number">2</span>, figsize=(<span class="number">12</span>, <span class="number">6</span>))</span><br><span class="line">    axes[<span class="number">0</span>, <span class="number">0</span>].imshow(img1, cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">    axes[<span class="number">0</span>, <span class="number">1</span>].imshow(f1, cmap=<span class="string">&#x27;hot&#x27;</span>)</span><br><span class="line">    axes[<span class="number">1</span>, <span class="number">0</span>].imshow(img2, cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">    axes[<span class="number">1</span>, <span class="number">1</span>].imshow(f2, cmap=<span class="string">&#x27;hot&#x27;</span>)</span><br><span class="line">    plt.tight_layout()</span><br><span class="line">    plt.savefig(<span class="string">f&#x27;outputs/<span class="subst">&#123;output_filename&#125;</span>.png&#x27;</span>)</span><br><span class="line">    plt.close()</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">compare_frequency_domain</span>(<span class="params">image_path1, image_path2, output_filename</span>):</span><br><span class="line">    img1 = load_image(image_path1)</span><br><span class="line">    img2 = load_image(image_path2)</span><br><span class="line">    f1 = fourier_transform(img1)</span><br><span class="line">    f2 = fourier_transform(img2)</span><br><span class="line">    fig, axes = plt.subplots(<span class="number">2</span>, <span class="number">2</span>, figsize=(<span class="number">12</span>, <span class="number">6</span>))</span><br><span class="line">    axes[<span class="number">0</span>, <span class="number">0</span>].imshow(img1, cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">    axes[<span class="number">0</span>, <span class="number">1</span>].imshow(f1, cmap=<span class="string">&#x27;hot&#x27;</span>)</span><br><span class="line">    axes[<span class="number">1</span>, <span class="number">0</span>].imshow(img2, cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">    axes[<span class="number">1</span>, <span class="number">1</span>].imshow(f2, cmap=<span class="string">&#x27;hot&#x27;</span>)</span><br><span class="line">    plt.tight_layout()</span><br><span class="line">    plt.savefig(<span class="string">f&#x27;outputs/<span class="subst">&#123;output_filename&#125;</span>.png&#x27;</span>)</span><br><span class="line">    plt.close()</span><br></pre></td></tr></table></figure></div>
 
 
 
@@ -836,22 +783,22 @@
 <p>请按照exp3_3_i的格式，输出结果</p>
 <h3 id="实验方案：-2"><a href="#实验方案：-2" class="headerlink" title="实验方案："></a><strong>实验方案：</strong></h3><p>任务3的目的是通过离散傅里叶逆变换（IDFT）从频谱图重建图像，并使用机器学习技术优化重建过程。该任务利用PyTorch框架进行实现，以下是关键代码的逐步分析和对应的实验过程解释：</p>
 <h4 id="图像加载与预处理-2"><a href="#图像加载与预处理-2" class="headerlink" title="图像加载与预处理"></a><strong>图像加载与预处理</strong></h4><p>使用<code>load_image</code>函数加载图像并将其转换为灰度格式，这是进行频域操作的标准准备步骤。转换为灰度是因为颜色信息在此类任务中通常不是必需的，而且灰度化简化了数据处理。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_image</span>(<span class="params">image_path</span>):</span><br><span class="line">    <span class="keyword">with</span> Image.<span class="built_in">open</span>(image_path) <span class="keyword">as</span> img:</span><br><span class="line">        img = img.convert(<span class="string">&#x27;L&#x27;</span>)  <span class="comment"># 将图像转换为灰度格式</span></span><br><span class="line">    <span class="keyword">return</span> torch.tensor(np.array(img), dtype=torch.float32) / <span class="number">255.0</span></span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_image</span>(<span class="params">image_path</span>):</span><br><span class="line">    <span class="keyword">with</span> Image.<span class="built_in">open</span>(image_path) <span class="keyword">as</span> img:</span><br><span class="line">        img = img.convert(<span class="string">&#x27;L&#x27;</span>)  <span class="comment"># 将图像转换为灰度格式</span></span><br><span class="line">    <span class="keyword">return</span> torch.tensor(np.array(img), dtype=torch.float32) / <span class="number">255.0</span></span><br></pre></td></tr></table></figure></div>
 
 <h4 id="频谱参数初始化"><a href="#频谱参数初始化" class="headerlink" title="频谱参数初始化"></a><strong>频谱参数初始化</strong></h4><p><code>init_params</code>函数初始化频谱的实部和虚部参数，这些参数将被视为需要优化的模型参数。使用标准正态分布进行初始化是一种常见的做法，可以帮助加速优化过程。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">init_params</span>(<span class="params">shape</span>):</span><br><span class="line">    real = torch.randn(shape, requires_grad=<span class="literal">True</span>)  <span class="comment"># 初始化实部参数</span></span><br><span class="line">    imag = torch.randn(shape, requires_grad=<span class="literal">True</span>)  <span class="comment"># 初始化虚部参数</span></span><br><span class="line">    <span class="keyword">return</span> real, imag</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">init_params</span>(<span class="params">shape</span>):</span><br><span class="line">    real = torch.randn(shape, requires_grad=<span class="literal">True</span>)  <span class="comment"># 初始化实部参数</span></span><br><span class="line">    imag = torch.randn(shape, requires_grad=<span class="literal">True</span>)  <span class="comment"># 初始化虚部参数</span></span><br><span class="line">    <span class="keyword">return</span> real, imag</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="离散傅里叶逆变换"><a href="#离散傅里叶逆变换" class="headerlink" title="离散傅里叶逆变换"></a><strong>离散傅里叶逆变换</strong></h4><p><code>inverse_fft</code>函数将初始化的频谱参数（实部和虚部）合成复数，并执行逆傅立叶变换。这个逆变换的目的是从频谱图重建出原始图像。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">inverse_fft</span>(<span class="params">real, imag</span>):</span><br><span class="line">    complex_img = torch.<span class="built_in">complex</span>(real, imag)  <span class="comment"># 合成复数</span></span><br><span class="line">    <span class="keyword">return</span> ifft2(complex_img).<span class="built_in">abs</span>()  <span class="comment"># 执行逆变换并取模</span></span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">inverse_fft</span>(<span class="params">real, imag</span>):</span><br><span class="line">    complex_img = torch.<span class="built_in">complex</span>(real, imag)  <span class="comment"># 合成复数</span></span><br><span class="line">    <span class="keyword">return</span> ifft2(complex_img).<span class="built_in">abs</span>()  <span class="comment"># 执行逆变换并取模</span></span><br></pre></td></tr></table></figure></div>
 
 <h4 id="优化与训练过程"><a href="#优化与训练过程" class="headerlink" title="优化与训练过程"></a><strong>优化与训练过程</strong></h4><p>在<code>main</code>函数中，设置了模型训练的各个阶段，包括损失函数的定义、优化器的配置以及学习率调度器的设置。损失函数使用均方误差（MSE），优化器使用Adam，这两者都是处理此类问题的常见选择。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    img = load_image(<span class="string">&#x27;imgs/2.png&#x27;</span>)</span><br><span class="line">    params_real, params_imag = init_params(img.shape)</span><br><span class="line">    optimizer = Adam([params_real, params_imag], lr=<span class="number">0.01</span>, weight_decay=<span class="number">1e-5</span>)</span><br><span class="line">    scheduler = StepLR(optimizer, step_size=<span class="number">1000</span>, gamma=<span class="number">0.5</span>)</span><br><span class="line">    loss_fn = torch.nn.MSELoss()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        reconstructed_img = inverse_fft(params_real, params_imag)</span><br><span class="line">        loss = loss_fn(reconstructed_img, img)</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">        scheduler.step()</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    img = load_image(<span class="string">&#x27;imgs/2.png&#x27;</span>)</span><br><span class="line">    params_real, params_imag = init_params(img.shape)</span><br><span class="line">    optimizer = Adam([params_real, params_imag], lr=<span class="number">0.01</span>, weight_decay=<span class="number">1e-5</span>)</span><br><span class="line">    scheduler = StepLR(optimizer, step_size=<span class="number">1000</span>, gamma=<span class="number">0.5</span>)</span><br><span class="line">    loss_fn = torch.nn.MSELoss()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        reconstructed_img = inverse_fft(params_real, params_imag)</span><br><span class="line">        loss = loss_fn(reconstructed_img, img)</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">        scheduler.step()</span><br></pre></td></tr></table></figure></div>
 
 <p>在这个过程中，每500次迭代记录一次重建的图像状态，以便可视化和评估模型的性能。这种定期记录的方法有助于监控重建过程的进展和效果。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> epoch % <span class="number">500</span> == <span class="number">0</span>:</span><br><span class="line">    process_images.append(reconstructed_img.detach().clone())</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> epoch % <span class="number">500</span> == <span class="number">0</span>:</span><br><span class="line">    process_images.append(reconstructed_img.detach().clone())</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="结果可视化与保存"><a href="#结果可视化与保存" class="headerlink" title="结果可视化与保存"></a><strong>结果可视化与保存</strong></h4><p>最后，通过matplotlib绘制原始图像、中间过程图和最终重建图像，展示了从初始化的高斯噪声到接近原始图像的逐步重建过程。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">titles = [<span class="string">&#x27;Original&#x27;</span>, <span class="string">&#x27;Intermediate&#x27;</span>, <span class="string">&#x27;Final Reconstruction&#x27;</span>]</span><br><span class="line">fig, axes = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">18</span>, <span class="number">6</span>))</span><br><span class="line"><span class="keyword">for</span> ax, image, title <span class="keyword">in</span> <span class="built_in">zip</span>(axes, [img] + process_images[-<span class="number">2</span>:], titles):</span><br><span class="line">    ax.imshow(image.numpy(), cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">    ax.set_title(title)</span><br><span class="line">    ax.axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&#x27;outputs/exp3_3_i.png&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">titles = [<span class="string">&#x27;Original&#x27;</span>, <span class="string">&#x27;Intermediate&#x27;</span>, <span class="string">&#x27;Final Reconstruction&#x27;</span>]</span><br><span class="line">fig, axes = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">18</span>, <span class="number">6</span>))</span><br><span class="line"><span class="keyword">for</span> ax, image, title <span class="keyword">in</span> <span class="built_in">zip</span>(axes, [img] + process_images[-<span class="number">2</span>:], titles):</span><br><span class="line">    ax.imshow(image.numpy(), cmap=<span class="string">&#x27;gray&#x27;</span>)</span><br><span class="line">    ax.set_title(title)</span><br><span class="line">    ax.axis(<span class="string">&#x27;off&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&#x27;outputs/exp3_3_i.png&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></div>
 
 
 
@@ -899,11 +846,11 @@
 </ul>
 <p>总之，这一系列实验不仅增强了我的图像处理技能，特别是在频率域分析和处理方面，还加深了我对图像结构和内容如何影响其频率特性的理解。</p>
 
-        </div>
+		</div>
 
-        
-            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
-                <div class="article-copyright-info-container">
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
     <ul>
         <li><strong>Title:</strong> 图像处理与分析——实验三-频率域图像增强</li>
         <li><strong>Author:</strong> ELecmark</li>
@@ -931,70 +878,64 @@
     </ul>
 </div>
 
-            </div>
-        
+		</div>
+		
 
-        
-            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">#课程项目</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">#作业报告</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">#图像处理与分析</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">#课程项目</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E4%BD%9C%E4%B8%9A%E6%8A%A5%E5%91%8A/">#作业报告</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90/">#图像处理与分析</a>&nbsp;
+			</li>
+			
+		</ul>
+		
 
-        
+		
 
-        
-            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
-                
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/05/11/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E5%9B%9B-%E5%9B%BE%E5%83%8F%E6%81%A2%E5%A4%8D%E5%92%8C%E6%BB%A4%E6%B3%A2%E5%A4%84%E7%90%86/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">图像处理与分析——实验四-图像恢复和滤波处理</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="next"
-                        rel="next"
-                        href="/2024/04/22/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-3-Vectorization/"
-                        >
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">MIT软件性能工程——Homework-3-Vectorization</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2024/05/11/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%AE%9E%E9%AA%8C%E5%9B%9B-%E5%9B%BE%E5%83%8F%E6%81%A2%E5%A4%8D%E5%92%8C%E6%BB%A4%E6%B3%A2%E5%A4%84%E7%90%86/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">图像处理与分析——实验四-图像恢复和滤波处理</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/04/22/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-3-Vectorization/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">MIT软件性能工程——Homework-3-Vectorization</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
 
 
-        
-            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
-                <div class="comments-container mt-10 w-full ">
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
         Comments
@@ -1011,13 +952,11 @@
         init({
           el: '#waline',
           serverURL: 'https://example.example.com',
-          lang: 'zh-CN',
           dark: 'body[class~="dark-mode"]',
           reaction: false,
           requiredMeta: ['nick', 'mail'],
           emoji: [],
-          recaptchaV3Key: "wasd",
-          
+                    lang: 'zh-CN',
         });
       }
 
@@ -1034,36 +973,30 @@
     
 </div>
 
-            </div>
-        
-    </div>
+		</div>
+		
+	</div>
 
-    
-        <div class="toc-content-container">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <div class="toc-title">On this page</div>
-        <div class="page-title">图像处理与分析——实验三-频率域图像增强</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E6%A0%87%EF%BC%9A"><span class="nav-text">实验目标：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81"><span class="nav-text">一、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-text">实验结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81"><span class="nav-text">二、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A-1"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A-1"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-1"><span class="nav-text">实验结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81"><span class="nav-text">三、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A-2"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A-2"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-2"><span class="nav-text">实验结果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-text">实验总结：</span></a></li></ol>
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">图像处理与分析——实验三-频率域图像增强</div>
+		<ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E6%A0%87%EF%BC%9A"><span class="nav-text">实验目标：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81"><span class="nav-text">一、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-text">实验结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81"><span class="nav-text">二、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A-1"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A-1"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-1"><span class="nav-text">实验结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81"><span class="nav-text">三、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82%EF%BC%9A-2"><span class="nav-text">实验要求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%EF%BC%9A-2"><span class="nav-text">实验方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-2"><span class="nav-text">实验结果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-text">实验总结：</span></a></li></ol>
 
-    </div>
+	</div>
 </div>
-        </div>
-    
+	</div>
+	
 </div>
+			</div>
 
+			
+		</div>
 
-
-                
-
-            </div>
-
-            
-
-        </div>
-
-        <div class="main-content-footer">
-            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
     <div class="info-container py-3 text-center">
         
         <div class="text-center">
@@ -1072,12 +1005,12 @@
               <span>2023</span>
               -
             
-            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a>
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a>
             
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        26 posts in total
+                        27 posts in total
                     </span>
                     
                 </p>
@@ -1102,7 +1035,7 @@
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
             <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.5</a></span>
         </div>
         
         
@@ -1131,124 +1064,113 @@
         
     </div>  
 </footer>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="article-tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="right-bottom-tools page-aside-toggle">
-                <i class="fa-regular fa-outdent"></i>
-            </li>
-        
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
 
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fa-regular fa-comments"></i>
-            </li>
-        
-    </ul>
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
 </div>
 
-        </div>
-    
-
-    <div class="right-side-tools-container">
-        <div class="side-tools-container">
-    <ul class="hidden-tools-list">
-        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-plus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-minus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
-            <i class="fa-regular fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        
-
-        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
-            <i class="fa-regular fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="visible-tools-list">
-        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
-            <i class="fa-regular fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-        
-    </ul>
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
 </div>
-
-    </div>
-
-    <div class="image-viewer-container">
-    <img src="">
-</div>
-
-
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fa-solid fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="Search..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="popup-btn-close">
-                <i class="fa-solid fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
+	
 
 </main>
 
 
-    
-<script src="/js/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupSlideTheme.min.js"></script>
+<script src="/js/build/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
 
-<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
 
-<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
 
-<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
 
 <script>
     const swup = new Swup({
@@ -1272,48 +1194,46 @@
 
 
 
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
 
+<script src="/js/build/utils.js" type="module"></script>
 
+<script src="/js/build/main.js" type="module"></script>
 
-<script src="/js/tools/imageViewer.js" type="module"></script>
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
 
-<script src="/js/utils.js" type="module"></script>
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
 
-<script src="/js/main.js" type="module"></script>
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
 
-<script src="/js/layouts/navbarShrink.js" type="module"></script>
-
-<script src="/js/tools/scrollTopBottom.js" type="module"></script>
-
-<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
-
-<script src="/js/layouts/categoryList.js" type="module"></script>
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
 
 
 
     
-<script src="/js/tools/localSearch.js" type="module"></script>
+<script src="/js/build/tools/localSearch.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/codeBlock.js" type="module"></script>
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
 
 
 
 
     
-<script src="/js/layouts/lazyload.js" type="module"></script>
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/runtime.js"></script>
+<script src="/js/build/tools/runtime.js"></script>
 
     
-<script src="/js/libs/odometer.min.js"></script>
+<script src="/js/build/libs/odometer.min.js"></script>
 
     
 <link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
@@ -1322,46 +1242,63 @@
 
 
   
-<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/build/libs/Typed.min.js"></script>
 
   
-<script src="/js/plugins/typed.js" type="module"></script>
+<script src="/js/build/plugins/typed.js" type="module"></script>
 
 
 
 
-    
-<script src="/js/libs/mermaid.min.js"></script>
-
-    
-<script src="/js/plugins/mermaid.js"></script>
-
-
-
-
-
-
-
-<div class="post-scripts" data-swup-reload-script>
     
         
-<script src="/js/tools/tocToggle.js" type="module"></script>
-
-<script src="/js/layouts/toc.js" type="module"></script>
-
-<script src="/js/plugins/tabs.js" type="module"></script>
+<script src="/js/build/libs/mermaid.min.js"></script>
 
     
-</div>
+    
+<script src="/js/build/plugins/mermaid.js"></script>
 
 
-    <div id="aplayer"></div>
-
-<script src="/js/libs/APlayer.min.js"></script>
 
 
-<script src="/js/plugins/aplayer.js"></script>
 
 
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+	<div id="aplayer"></div>
+
+<script src="/js/build/libs/APlayer.min.js"></script>
+
+
+<script src="/js/build/plugins/aplayer.js"></script>
+
+
+	
 </body>
+
 </html>

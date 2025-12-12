@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="ELecmark">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set data attribute for CSS variables
+                root.setAttribute("data-theme", theme);
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes once DOM is ready
+            if (document.readyState !== "loading") {
+                document.body.classList.add(theme + "-mode");
+            } else {
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.body.classList.add(theme + "-mode");
+                    document.body.classList.remove((theme === DARK ? LIGHT : DARK) + "-mode");
+                });
+            }
+        })();
+    </script>
+    
+    <!-- Critical CSS to prevent flash -->
+    <style>
+        :root[data-theme="dark"] {
+            --background-color: #202124;
+            --background-color-transparent: rgba(32, 33, 36, 0.6);
+            --second-background-color: #2d2e32;
+            --third-background-color: #34353a;
+            --third-background-color-transparent: rgba(32, 33, 36, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #ffffff;
+            --second-text-color: #eeeeee;
+            --third-text-color: #bebec6;
+            --fourth-text-color: #999999;
+            --default-text-color: #bebec6;
+            --invert-text-color: #373D3F;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(255, 255, 255, 0.08);
+            --shadow-color-2: rgba(255, 255, 255, 0.05);
+        }
+        
+        :root[data-theme="light"] {
+            --background-color: #fff;
+            --background-color-transparent: rgba(255, 255, 255, 0.6);
+            --second-background-color: #f8f8f8;
+            --third-background-color: #f2f2f2;
+            --third-background-color-transparent: rgba(241, 241, 241, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #16171a;
+            --second-text-color: #2f3037;
+            --third-text-color: #5e5e5e;
+            --fourth-text-color: #eeeeee;
+            --default-text-color: #373D3F;
+            --invert-text-color: #bebec6;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(0, 0, 0, 0.08);
+            --shadow-color-2: rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+        
+        /* Apply body classes as soon as DOM is ready */
+        :root[data-theme="dark"] body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+    </style>
+    
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://Elecmark.github.io/2025/12/01/《rts-pcg》技术报告/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《RTS_PCG》技术报告">
+<meta property="og:url" content="https://elecmark.github.io/2025/12/01/%E3%80%8ARTS-PCG%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo Theme Redefine.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://elecmark.github.io/images/pdh-logo.webp">
+<meta property="article:published_time" content="2025-12-01T06:58:06.000Z">
+<meta property="article:modified_time" content="2025-12-12T07:15:32.990Z">
+<meta property="article:author" content="Elecmark">
+<meta property="article:tag" content="作品集">
+<meta property="article:tag" content="技术报告">
+<meta property="article:tag" content="Unreal Engine">
+<meta property="article:tag" content="RTS">
+<meta property="article:tag" content="PCG">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://elecmark.github.io/images/pdh-logo.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/pdh-logo.webp" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/pdh-logo.webp">
+    <meta name="theme-color" content="#80B5FF">
+    <link rel="shortcut icon" href="/images/pdh-logo.webp">
+    <!--- Page Info-->
+    
+    <title>
+        
+            《RTS_PCG》技术报告 | Pu Dianheng&#39;s blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"elecmark.github.io","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["VIP"]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#80B5FF","secondary":"#004098","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/pdh-logo.webp","description":"Hexo Theme Redefine."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wall1.jpg","dark":"/images/wall_shenzhen.jpg"},"title":"Elecmark-Pu Dianheng","subtitle":{"text":["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn?c=c"},"typing_speed":50,"backing_speed":30,"starting_delay":100,"backing_delay":5000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#FFFFF5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/Elecmark","instagram":null,"zhihu":null,"twitter":null,"email":"944723112@qq.com","fa-solid fa-c fa-fw fa-lg":"https://blog.csdn.net/LanLinHui?type=blog","steam":"https://steamcommunity.com/profiles/76561198167581914/"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"soundorbis - LIFE","artist":"Kyle Xian","url":"https://music.163.com/song/media/outer/url?id=516372224.mp3","cover":"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg","lrc":null},{"name":"Pokémon Sleep - Christmas","artist":"Pokémon Sleep","url":"https://music.163.com/song/media/outer/url?id=2130624871.mp3","cover":"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg","lrc":null},{"name":"Guitar","artist":"Guitar","url":"/music/校园吉他纯音乐.mp3","cover":"/music/covers/music.svg","lrc":null}]},"mermaid":{"enable":true,"version":"11.4.1"}},"version":"2.8.5","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":25},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"作品集Portfolio":{"path":"/tags/作品集/","icon":"fa-regular fa-archive"},"关于About":{"icon":"fa-regular fa-user","submenus":{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"时间轴Timeline":{"path":"/archives","icon":"fa-solid fa-timeline"},"标签Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"分类Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/24 19:02:20"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/pdh-logo.webp" class="w-full h-full rounded-xs">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Pu Dianheng&#39;s blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    作品集PORTFOLIO
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    我的信息ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/links">
+                                                    友链FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    时间轴TIMELINE
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/"
+                        >
+                            <span>
+                                作品集PORTFOLIO
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-关于About"
+                        >
+                            <span>
+                                关于ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-关于About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">我的信息ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/links">友链FRIENDS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">时间轴TIMELINE</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>时间轴Timeline</span>
+                            <i class="fa-solid fa-timeline fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>标签Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>分类Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/../images/code.jpg" alt="《RTS_PCG》技术报告" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">《RTS_PCG》技术报告</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/em-logo.png">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">ELecmark</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">VIP</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-12-01 14:58:06</span>
+        <span class="mobile">2025-12-01 14:58:06</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-12-12 15:15:32</span>
+            <span class="mobile">2025-12-12 15:15:32</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/Unreal-Engine/">Unreal Engine</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/">作品集</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/">技术报告</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Unreal-Engine/">Unreal Engine</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/RTS/">RTS</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/PCG/">PCG</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/..%5Cimages%5C%E3%80%8ARTS-PCG%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A%5CRTS_PCG-%E5%B0%81%E9%9D%A2.jpg"
+                      alt="RTS_PCG-Cover"
+                ></p>
+<hr>
+<h1 id="RTS-PCG-Game-Strategy-Game-Development-Report-Based-on-Procedural-Content-Generation"><a href="#RTS-PCG-Game-Strategy-Game-Development-Report-Based-on-Procedural-Content-Generation" class="headerlink" title="RTS_PCG Game: Strategy Game Development Report Based on Procedural Content Generation"></a><strong>RTS_PCG Game: Strategy Game Development Report Based on Procedural Content Generation</strong></h1><p>Student Name: Pu Dianheng</p>
+<p>Student ID: 25114122G</p>
+<hr>
+<h2 id="1-Project-Overview"><a href="#1-Project-Overview" class="headerlink" title="1. Project Overview"></a><strong>1. Project Overview</strong></h2><p><strong>RTS_PCG</strong> is a strategy simulation game that integrates <strong>Procedural Content Generation (PCG)</strong> technology. Players begin on a dynamically generated, resource-rich island, tasked with establishing their village from the ground up. The core mechanics center on <strong>resource gathering</strong> and <strong>villager management</strong>. Players direct their villagers to resource points by using a <strong>mouse drag-and-drop mechanism</strong>, allowing for the efficient collection of vital resources like food, wood, and stone. The long-term objective is to strategically expand the settlement and ultimately build a prosperous civilization.</p>
+<h2 id="2-Design-and-Iteration"><a href="#2-Design-and-Iteration" class="headerlink" title="2. Design and Iteration"></a><strong>2. Design and Iteration</strong></h2><h3 id="2-1-Initial-Inspiration"><a href="#2-1-Initial-Inspiration" class="headerlink" title="2.1 Initial Inspiration"></a><strong>2.1 Initial Inspiration</strong></h3><p>The creative inspiration for this project is primarily drawn from classic RTS (Real-Time Strategy) titles such as <em>Foundation</em> and <em>Age of Empires</em>. The core appeal of these games lies in resource management, base planning, and unit scheduling. Building upon this deep strategic gameplay, I utilized the new Procedural Content Generation (PCG) framework in Unreal Engine 5.6 (UE5.6) to break the limitations of static maps, creating a <strong>unique dynamic game world for every session</strong>.</p>
+<h3 id="2-2-Core-Objectives"><a href="#2-2-Core-Objectives" class="headerlink" title="2.2 Core Objectives"></a><strong>2.2 Core Objectives</strong></h3><p>My development work centered around the following core objectives:</p>
+<ol>
+<li><strong>Cornerstone of a Dynamic World:</strong> The PCG system is not merely a map generator but the “operating system” of the game world. The generated terrain, resource distribution, and key locations serve as underlying data that directly drive the AI behavior tree, navigation system, and game logic, realizing a truly “interactive” dynamic environment.</li>
+<li><strong>Technology Seamlessly Serving Gameplay:</strong> I strictly adhered to the <strong>“Gameplay First”</strong> design principle. PCG technology is a powerful yet invisible tool intended to enhance rather than dominate the experience. The goal is for players to immerse themselves in the strategic fun of exploration, decision-making, and development, perceiving a natural, credible world rather than a cold technical demo. PCG acts as a silent director, meticulously setting the stage for each session, while the drama on stage—the core gameplay—remains led by the player.</li>
+<li><strong>Achieving Infinite Replayability:</strong> By ensuring both the randomness and rationality of map generation through PCG algorithms, the game is infused with lasting vitality, encouraging players to constantly attempt new strategies and layouts to cope with unknown environmental challenges.</li>
+</ol>
+<h3 id="2-4-Asset-Sources"><a href="#2-4-Asset-Sources" class="headerlink" title="2.4 Asset Sources"></a><strong>2.4 Asset Sources</strong></h3><p>This project’s art style and core mechanics significantly reference and benefit from the <strong>Cropout</strong> sample project released by Epic Games.</p>
+<div align="center"> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="..\images\《RTS-PCG》技术报告\Cropout Sample Project.png"
+                      alt="Cropout Sample Project" style="zoom:150%;" 
+                ><br><em>(Source: Epic Games Marketplace - Cropout Sample Project)</em> </div>
+
+<ul>
+<li><strong>Art Style Definition:</strong> <em>Cropout</em> provided a complete set of low-poly assets for buildings, characters, vegetation, and resources, establishing a clear, bright, and efficient visual direction for this project.</li>
+<li><strong>Core Logic Reference:</strong> I deeply analyzed and adapted its mature villager AI, resource collection chains, and construction logic, providing a solid and verified foundation for my system architecture.</li>
+<li><strong>Deep Secondary Development &amp; Innovative Adaptation:</strong> Building on the solid foundation of <em>Cropout</em>, this project underwent deep customization and functional expansion. The <strong>core contribution lies in completely refactoring the static map using UE5.6’s PCG framework</strong>, upgrading the fixed scene into infinite dynamic possibilities, successfully merging classic RTS gameplay with high replayability enabled by PCG technology.</li>
+</ul>
+<h2 id="3-PCG-System-Architecture-Implementation"><a href="#3-PCG-System-Architecture-Implementation" class="headerlink" title="3. PCG System Architecture &amp; Implementation"></a><strong>3. PCG System Architecture &amp; Implementation</strong></h2><p>This section details the technical implementation of the Procedural Content Generation (PCG) system, focusing on how the foundational structure of the game world is generated from scratch.</p>
+<h3 id="3-1-Overall-PCG-Workflow-Architecture"><a href="#3-1-Overall-PCG-Workflow-Architecture" class="headerlink" title="3.1 Overall PCG Workflow Architecture"></a><strong>3.1 Overall PCG Workflow Architecture</strong></h3><p>The project constructs the complete game environment through the collaborative work of two core PCG graph files.</p>
+<div align="center"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="..\images\《RTS-PCG》技术报告\Land.png"
+                      alt="Land PCG Graph" style="zoom:100%;" 
+                ><br><em>(Blueprint/PCG/Land.uasset: Responsible for generating harvestable resources (trees, shrubs, rocks) and grass vegetation on the continent.)</em></div>
+
+<div align="center"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="..\images\《RTS-PCG》技术报告\Ocean.png"
+                      alt="Ocean PCG Graph" style="zoom:100%;" 
+                ><br><em>(Blueprint/PCG/Ocean.uasset: Responsible for generating underwater rocks and seagrass surrounding the continent.)</em></div>
+
+
+
+<h3 id="3-2-Detailed-Analysis-of-Key-PCG-Modules"><a href="#3-2-Detailed-Analysis-of-Key-PCG-Modules" class="headerlink" title="3.2 Detailed Analysis of Key PCG Modules"></a><strong>3.2 Detailed Analysis of Key PCG Modules</strong></h3><p><strong>Logic Flow:</strong></p>
+<p>Taking shrub generation as an example, the PCG node processing flow is as follows:</p>
+<p><strong>Node Logic Flow and Analysis:</strong></p>
+<ol>
+<li><strong>Surface Sampler</strong><ul>
+<li><strong>Function:</strong> This is the starting point of generation. It retrieves basic data from the game landscape and outputs an initial point cloud covering the surface. These points represent all possible generation locations for shrubs.</li>
+<li><strong>Design Intent:</strong> Ensures that shrubs are generated only on the terrain surface, forming the basis for all subsequent processing.</li>
+</ul>
+</li>
+<li><strong>Transform Points</strong><ul>
+<li><strong>Function:</strong> Receives the point cloud from the Surface Sampler and applies basic transformation operations. It is typically used to apply a random <strong>rotation</strong> (around the Z-axis) and a <strong>slight position offset</strong> to each point.</li>
+<li><strong>Design Intent:</strong> Breaks the uniform grid pattern produced by the Surface Sampler, making the orientation and position of shrubs more random and natural, avoiding artificial alignment artifacts.</li>
+</ul>
+</li>
+<li><strong>Auto Adjust (Projection)</strong><ul>
+<li><strong>Function:</strong> This is a crucial node for optimization and realism. It automatically adjusts the tilt of the shrub based on the <strong>surface normal</strong> at the point’s location and may filter points based on slope attributes.</li>
+<li><strong>Design Intent:</strong> Ensures that shrubs “adhere” to slopes rather than hanging vertically or clipping into the ground, significantly enhancing the naturalness of the scene.</li>
+</ul>
+</li>
+<li><strong>Difference</strong><ul>
+<li><strong>Function:</strong> This node performs a <strong>Boolean operation</strong>. Its function is to subtract the area occupied by <strong>Input B</strong> (point clouds of already placed trees, rocks, or other objects) from <strong>Input A</strong> (the shrub point cloud currently being processed).</li>
+<li><strong>Design Intent:</strong> <strong>Resolves model clipping issues.</strong> Through this operation, the system ensures that shrubs do not generate directly beneath tree trunks or crowns, resulting in a distinctly layered resource distribution without interference, improving both rationality and visual quality.</li>
+</ul>
+</li>
+<li><strong>Spawn Actor</strong><ul>
+<li><strong>Function:</strong> This is the final generation node. It receives the point cloud that has undergone all filtering and processing and spawns actual interactive Actor instances in the scene based on the specified Blueprint class (e.g., <code>BP_Shrub</code>) or Static Mesh.</li>
+<li><strong>Design Intent:</strong> Transforms processed data into real objects in the game world. Unlike a simple <code>Static Mesh Spawner</code>, using <code>Spawn Actor</code> allows for the generation of Blueprint objects with custom collisions and game logic (such as harvestable health points).</li>
+</ul>
+</li>
+</ol>
+<p>Logic Summary:</p>
+<p>Shrub generation is a process of progressively refined conditional processing. Starting from basic position determination, it undergoes key steps such as naturalized distribution, terrain adaptation, and conflict resolution, ultimately producing realistic vegetation that is both randomly distributed and physically logical. This complete chain fully demonstrates the powerful advantages of PCG technology in ensuring the rationality of resource distribution.</p>
+<h2 id="4-Interactive-Actor-Blueprint-System"><a href="#4-Interactive-Actor-Blueprint-System" class="headerlink" title="4. Interactive Actor Blueprint System"></a><strong>4. Interactive Actor Blueprint System</strong></h2><p>This section focuses on how the PCG-generated world gains “life” through a complex Blueprint system, enabling deep interaction with players and AI.</p>
+<h3 id="4-1-Core-Game-Framework"><a href="#4-1-Core-Game-Framework" class="headerlink" title="4.1 Core Game Framework"></a><strong>4.1 Core Game Framework</strong></h3><ul>
+<li><strong><code>BP_GM.uasset</code> (Game Mode):</strong> Defines game rules, states, and flow; serves as the central commander connecting the PCG world with game logic.</li>
+<li><strong><code>BP_PC.uasset</code> &#x2F; <code>BP_Player.uasset</code> (Player Controller &#x2F; Character):</strong> Handles player input commands and translates them into interactive behaviors within the PCG-generated world.</li>
+</ul>
+<h3 id="4-2-Resource-Collection-System"><a href="#4-2-Resource-Collection-System" class="headerlink" title="4.2 Resource Collection System"></a><strong>4.2 Resource Collection System</strong></h3><p>I created fully functional interactive Actor Blueprints for every resource type generated by the PCG system.</p>
+<ul>
+<li><strong>Universal Interface: <code>BPI_Resource.uasset</code></strong><ul>
+<li><strong>Function:</strong> Defines methods that all interactive resources must implement, such as <code>Interact</code>, establishing a unified interaction contract for both players and AI.</li>
+</ul>
+</li>
+<li><strong>Resource Base Class: <code>BP_Resource.uasset</code></strong><ul>
+<li><strong>Core Logic:</strong><ul>
+<li><strong>Automated Tag Management (Auto-Tagging):</strong> By reading the <code>Resource Type</code> (Enumerator variable), the script automatically converts it to a string and adds it to the Actor’s Tags list. This ensures all resources in the scene automatically obtain the correct type tags based on their attributes, facilitating batch retrieval or management via <code>Get All Actors with Tag</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Concrete Resource Implementations:</strong><ul>
+<li><strong><code>BP_Tree.uasset</code>:</strong> Responds to the “Axe” tool, drops “Wood,” and triggers villager chopping animations.</li>
+<li><strong><code>BP_Rock.uasset</code>:</strong> Responds to the “Pickaxe” tool, drops “Stone,” and triggers villager mining animations.</li>
+<li><strong><code>BP_Shrub.uasset</code>:</strong> Responds to “Unarmed” gathering, drops “Food,” and triggers villager gathering animations.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-3-Dynamic-Interaction-between-AI-and-the-PCG-World"><a href="#4-3-Dynamic-Interaction-between-AI-and-the-PCG-World" class="headerlink" title="4.3 Dynamic Interaction between AI and the PCG World"></a><strong>4.3 Dynamic Interaction between AI and the PCG World</strong></h3><p>The AI system utilizes the following components to understand and manipulate the dynamic world generated by PCG.</p>
+<ul>
+<li><strong>Environment Query System (EQS)</strong><ul>
+<li><strong><code>EQC_CollectionTarget.uasset</code>:</strong> Defines the query context, e.g., “Find all Actors of type <code>BP_Tree</code>.”</li>
+<li><strong><code>EQ_CollectionTarget.uasset</code>:</strong> Executes the query to find the nearest and most suitable harvesting target for the AI.</li>
+</ul>
+</li>
+<li><strong>Behavior Tree &amp; Blackboard</strong><ul>
+<li><strong><code>BB_CollectResource.uasset</code> (Blackboard):</strong> Acts as the AI’s “memory,” storing information such as the current target (e.g., that specific tree) and carried resources.</li>
+<li><strong><code>BT_CollectResource.uasset</code> (Behavior Tree):</strong> Defines the AI’s collection logic sequence: Find target via EQS -&gt; Move to target -&gt; Execute harvest animation -&gt; Decrease target health -&gt; Return with resources.</li>
+</ul>
+</li>
+</ul>
+<p><strong>System Linkage:</strong> The PCG system generates instances of <code>BP_Tree</code> at runtime. The AI’s EQS system queries these instances in real-time, while the Behavior Tree drives villager characters to interact with them. When a tree is felled (<code>BP_Tree</code> triggers <code>OnResourceDepleted</code>), the Game Mode listens for this event and notifies the PCG system to respawn a new tree elsewhere in the future, forming a complete, dynamic “Generate-Harvest-Regenerate” game loop.</p>
+<h2 id="5-Challenges-and-Solutions"><a href="#5-Challenges-and-Solutions" class="headerlink" title="5. Challenges and Solutions"></a><strong>5. Challenges and Solutions</strong></h2><h3 id="5-1-Performance-Optimization-Challenges"><a href="#5-1-Performance-Optimization-Challenges" class="headerlink" title="5.1 Performance Optimization Challenges"></a><strong>5.1 Performance Optimization Challenges</strong></h3><ul>
+<li><strong>Challenge:</strong> Game frame rate dropped significantly when PCG generated thousands of instances.</li>
+<li><strong>Solution:</strong><ol>
+<li><strong>LOD Optimization:</strong> Set reasonable Levels of Detail (LOD) for all static meshes.</li>
+<li><strong>PCG Culling:</strong> Utilized distance and frustum culling within PCG graphs to ensure instances are only generated and rendered near the player.</li>
+<li><strong>Material Optimization:</strong> Merged material textures and used Material Instances to reduce Draw Calls.</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-2-Compatibility-between-AI-Navigation-and-Dynamic-Environments"><a href="#5-2-Compatibility-between-AI-Navigation-and-Dynamic-Environments" class="headerlink" title="5.2 Compatibility between AI Navigation and Dynamic Environments"></a><strong>5.2 Compatibility between AI Navigation and Dynamic Environments</strong></h3><ul>
+<li><strong>Challenge:</strong> Since PCG generates the world at runtime, the AI navigation mesh needs to update correctly to include newly generated buildings and obstacles.</li>
+<li><strong>Solution:</strong><ol>
+<li>Used Dynamic NavMesh Bounds Volumes to force a local rebuild of the navigation mesh after building placement.</li>
+<li>Fully leveraged the <code>EQS</code> system, allowing AI to dynamically perceive PCG-generated objects during pathfinding rather than relying on predefined waypoints.</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-3-Data-Communication-between-Blueprints-and-PCG"><a href="#5-3-Data-Communication-between-Blueprints-and-PCG" class="headerlink" title="5.3 Data Communication between Blueprints and PCG"></a><strong>5.3 Data Communication between Blueprints and PCG</strong></h3><ul>
+<li><strong>Challenge:</strong> How to ensure PCG-generated objects are correctly recognized and interacted with by the Blueprint system.</li>
+<li><strong>Solution:</strong><ol>
+<li>Used the <code>Blueprint Spawner</code> node within PCG graphs to directly spawn Blueprint Actors containing game logic.</li>
+<li>Used Tags or Interfaces to mark PCG-generated object types, facilitating filtering and interaction for AI and player systems.</li>
+</ol>
+</li>
+</ul>
+<h2 id="6-Outcome-Showcase"><a href="#6-Outcome-Showcase" class="headerlink" title="6. Outcome Showcase"></a><strong>6. Outcome Showcase</strong></h2><div align="center"> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="..\images\《RTS-PCG》技术报告\RTS_PCG-封面.jpg"
+                      alt="Outcome Showcase 1" style="zoom:150%;" 
+                > <em>(A complete island panorama generated by PCG, featuring forests, stones, shrubs, and a central building.)</em> </div>
+
+<div align="center"> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="..\images\《RTS-PCG》技术报告\2.png"
+                      alt="Outcome Showcase 2" style="zoom:70%;" 
+                ><br><em>(Villagers chopping PCG-generated trees according to AI instructions)</em> </div>
+
+<div align="center"> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="..\images\《RTS-PCG》技术报告\3.png"
+                      alt="Outcome Showcase 3" style="zoom:150%;" 
+                > <br><em>(Villagers mining PCG-generated stones according to AI instructions)</em> </div>
+
+<div align="center"> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="..\images\《RTS-PCG》技术报告\4.png"
+                      alt="Outcome Showcase 4" style="zoom:170%;" 
+                > <br><em>(Villagers gathering PCG-generated shrubs according to AI instructions)</em> </div>
+
+
+
+<h2 id="7-Minimum-System-Requirements"><a href="#7-Minimum-System-Requirements" class="headerlink" title="7. Minimum System Requirements"></a><strong>7. Minimum System Requirements</strong></h2><ul>
+<li><strong>OS:</strong> Windows 10 64-bit</li>
+<li><strong>Processor:</strong> Intel Core i5-7400 or AMD Ryzen 3 1200</li>
+<li><strong>Memory:</strong> 8 GB RAM</li>
+<li><strong>Graphics:</strong> NVIDIA GeForce GTX 1050 Ti or AMD Radeon RX 560</li>
+<li><strong>Storage:</strong> 5 GB available space</li>
+</ul>
+<h2 id="8-Project-and-Build-Links"><a href="#8-Project-and-Build-Links" class="headerlink" title="8. Project and Build Links"></a><strong>8. Project and Build Links</strong></h2><ul>
+<li><strong>Project Files Link:</strong> [<a class="link"   target="_blank" rel="noopener" href="https://github.com/Elecmark/RTS_PCG.git]" >https://github.com/Elecmark/RTS_PCG.git]<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><strong>Game Build Link:</strong> [<a class="link"   target="_blank" rel="noopener" href="https://github.com/Elecmark/RTS_PCG/tree/master/Windows/RTS_PCG.exe]" >https://github.com/Elecmark/RTS_PCG/tree/master/Windows/RTS_PCG.exe]<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ul>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 《RTS_PCG》技术报告</li>
+        <li><strong>Author:</strong> ELecmark</li>
+        <li><strong>Created at
+                :</strong> 2025-12-01 14:58:06</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-12-12 15:15:32
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://elecmark.github.io/2025/12/01/《RTS-PCG》技术报告/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/">#作品集</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/">#技术报告</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Unreal-Engine/">#Unreal Engine</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/RTS/">#RTS</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/PCG/">#PCG</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/06/23/%E3%80%8A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E3%80%8B%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">OpenGL——《游戏设计与开发》课程项目报告</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+                    lang: 'zh-CN',
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">《RTS_PCG》技术报告</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RTS-PCG-Game-Strategy-Game-Development-Report-Based-on-Procedural-Content-Generation"><span class="nav-text">RTS_PCG Game: Strategy Game Development Report Based on Procedural Content Generation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Project-Overview"><span class="nav-text">1. Project Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Design-and-Iteration"><span class="nav-text">2. Design and Iteration</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Initial-Inspiration"><span class="nav-text">2.1 Initial Inspiration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Core-Objectives"><span class="nav-text">2.2 Core Objectives</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-Asset-Sources"><span class="nav-text">2.4 Asset Sources</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-PCG-System-Architecture-Implementation"><span class="nav-text">3. PCG System Architecture &amp; Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-Overall-PCG-Workflow-Architecture"><span class="nav-text">3.1 Overall PCG Workflow Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Detailed-Analysis-of-Key-PCG-Modules"><span class="nav-text">3.2 Detailed Analysis of Key PCG Modules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Interactive-Actor-Blueprint-System"><span class="nav-text">4. Interactive Actor Blueprint System</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Core-Game-Framework"><span class="nav-text">4.1 Core Game Framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Resource-Collection-System"><span class="nav-text">4.2 Resource Collection System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Dynamic-Interaction-between-AI-and-the-PCG-World"><span class="nav-text">4.3 Dynamic Interaction between AI and the PCG World</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Challenges-and-Solutions"><span class="nav-text">5. Challenges and Solutions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-Performance-Optimization-Challenges"><span class="nav-text">5.1 Performance Optimization Challenges</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-Compatibility-between-AI-Navigation-and-Dynamic-Environments"><span class="nav-text">5.2 Compatibility between AI Navigation and Dynamic Environments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-Data-Communication-between-Blueprints-and-PCG"><span class="nav-text">5.3 Data Communication between Blueprints and PCG</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Outcome-Showcase"><span class="nav-text">6. Outcome Showcase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Minimum-System-Requirements"><span class="nav-text">7. Minimum System Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Project-and-Build-Links"><span class="nav-text">8. Project and Build Links</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        27 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.5</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+    
+        
+<script src="/js/build/libs/mermaid.min.js"></script>
+
+    
+    
+<script src="/js/build/plugins/mermaid.js"></script>
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+	<div id="aplayer"></div>
+
+<script src="/js/build/libs/APlayer.min.js"></script>
+
+
+<script src="/js/build/plugins/aplayer.js"></script>
+
+
+	
+</body>
+
+</html>

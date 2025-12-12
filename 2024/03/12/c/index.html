@@ -6,6 +6,116 @@
     <meta name="keywords" content="Hexo Theme Redefine">
     
     <meta name="author" content="ELecmark">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set data attribute for CSS variables
+                root.setAttribute("data-theme", theme);
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes once DOM is ready
+            if (document.readyState !== "loading") {
+                document.body.classList.add(theme + "-mode");
+            } else {
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.body.classList.add(theme + "-mode");
+                    document.body.classList.remove((theme === DARK ? LIGHT : DARK) + "-mode");
+                });
+            }
+        })();
+    </script>
+    
+    <!-- Critical CSS to prevent flash -->
+    <style>
+        :root[data-theme="dark"] {
+            --background-color: #202124;
+            --background-color-transparent: rgba(32, 33, 36, 0.6);
+            --second-background-color: #2d2e32;
+            --third-background-color: #34353a;
+            --third-background-color-transparent: rgba(32, 33, 36, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #ffffff;
+            --second-text-color: #eeeeee;
+            --third-text-color: #bebec6;
+            --fourth-text-color: #999999;
+            --default-text-color: #bebec6;
+            --invert-text-color: #373D3F;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(255, 255, 255, 0.08);
+            --shadow-color-2: rgba(255, 255, 255, 0.05);
+        }
+        
+        :root[data-theme="light"] {
+            --background-color: #fff;
+            --background-color-transparent: rgba(255, 255, 255, 0.6);
+            --second-background-color: #f8f8f8;
+            --third-background-color: #f2f2f2;
+            --third-background-color-transparent: rgba(241, 241, 241, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #16171a;
+            --second-text-color: #2f3037;
+            --third-text-color: #5e5e5e;
+            --fourth-text-color: #eeeeee;
+            --default-text-color: #373D3F;
+            --invert-text-color: #bebec6;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(0, 0, 0, 0.08);
+            --shadow-color-2: rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+        
+        /* Apply body classes as soon as DOM is ready */
+        :root[data-theme="dark"] body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+    </style>
+    
     <!-- preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,24 +128,26 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="技术报告：从《潜艇大战》游戏原版到改编版本的代码变化分析">
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++——经典游戏《潜艇大战》改编练习">
 <meta property="og:url" content="https://elecmark.github.io/2024/03/12/c/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="技术报告：从《潜艇大战》游戏原版到改编版本的代码变化分析">
+<meta property="og:description" content="Hexo Theme Redefine.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://elecmark.github.io/images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif">
-<meta property="og:image" content="https://elecmark.github.io/images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_new.gif">
+<meta property="og:image" content="https://elecmark.github.io/images/pdh-logo.webp">
 <meta property="article:published_time" content="2024-03-12T14:59:01.000Z">
 <meta property="article:modified_time" content="2024-04-15T08:44:22.896Z">
 <meta property="article:author" content="Elecmark">
 <meta property="article:tag" content="课程项目">
 <meta property="article:tag" content="作品集">
-<meta property="article:tag" content="C++">
 <meta property="article:tag" content="技术报告">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://elecmark.github.io/images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif">
+<meta name="twitter:image" content="https://elecmark.github.io/images/pdh-logo.webp">
     
     
     <!--- Icon Part-->
@@ -47,9 +159,8 @@
     
     <title>
         
-            C++——经典游戏《潜艇大战》改编练习 -
+            C++——经典游戏《潜艇大战》改编练习 | Pu Dianheng&#39;s blog
         
-        Pu Dianheng&#39;s blog
     </title>
 
     
@@ -65,7 +176,7 @@
 
     
         
-<link rel="stylesheet" href="/assets/build/styles.css">
+<link rel="stylesheet" href="/css/build/tailwind.css">
 
     
 
@@ -84,16 +195,12 @@
     
         <link href="" rel="stylesheet">
     
-
     
-        
-<script src="/js/libs/anime.min.js"></script>
-
     
 
     <script id="hexo-configurations">
     window.config = {"hostname":"elecmark.github.io","root":"/","language":"en","path":"search.xml"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["VIP"]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#80B5FF","secondary":"#004098","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wall1.jpg","dark":"/images/wall_shenzhen.jpg"},"title":"Elecmark-Pu Dianheng","subtitle":{"text":["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn?c=c"},"typing_speed":50,"backing_speed":30,"starting_delay":100,"backing_delay":5000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#FFFFF5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/Elecmark","instagram":null,"zhihu":null,"twitter":null,"email":"944723112@qq.com","fa-solid fa-c fa-fw fa-lg":"https://blog.csdn.net/LanLinHui?type=blog","steam":"https://steamcommunity.com/profiles/76561198167581914/"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"soundorbis - LIFE","artist":"Kyle Xian","url":"https://music.163.com/song/media/outer/url?id=516372224.mp3","cover":"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg","lrc":null},{"name":"Pokémon Sleep - Christmas","artist":"Pokémon Sleep","url":"https://music.163.com/song/media/outer/url?id=2130624871.mp3","cover":"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg"},{"name":"Guitar","artist":"Guitar","url":"/music/校园吉他纯音乐.mp3","cover":"/music/covers/music.svg"}]},"mermaid":{"enable":true,"version":"9.3.0"},"all_minifier":false},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":25},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"作品集Portfolio":{"path":"/tags/作品集/","icon":"fa-regular fa-archive"},"关于About":{"icon":"fa-regular fa-user","submenus":{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"时间轴Timeline":{"path":"/archives","icon":"fa-solid fa-timeline"},"标签Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"分类Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/24 19:02:20"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["VIP"]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#80B5FF","secondary":"#004098","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/pdh-logo.webp","description":"Hexo Theme Redefine."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wall1.jpg","dark":"/images/wall_shenzhen.jpg"},"title":"Elecmark-Pu Dianheng","subtitle":{"text":["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn?c=c"},"typing_speed":50,"backing_speed":30,"starting_delay":100,"backing_delay":5000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#FFFFF5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/Elecmark","instagram":null,"zhihu":null,"twitter":null,"email":"944723112@qq.com","fa-solid fa-c fa-fw fa-lg":"https://blog.csdn.net/LanLinHui?type=blog","steam":"https://steamcommunity.com/profiles/76561198167581914/"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"soundorbis - LIFE","artist":"Kyle Xian","url":"https://music.163.com/song/media/outer/url?id=516372224.mp3","cover":"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg","lrc":null},{"name":"Pokémon Sleep - Christmas","artist":"Pokémon Sleep","url":"https://music.163.com/song/media/outer/url?id=2130624871.mp3","cover":"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg","lrc":null},{"name":"Guitar","artist":"Guitar","url":"/music/校园吉他纯音乐.mp3","cover":"/music/covers/music.svg","lrc":null}]},"mermaid":{"enable":true,"version":"11.4.1"}},"version":"2.8.5","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":25},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"作品集Portfolio":{"path":"/tags/作品集/","icon":"fa-regular fa-archive"},"关于About":{"icon":"fa-regular fa-user","submenus":{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"时间轴Timeline":{"path":"/archives","icon":"fa-solid fa-timeline"},"标签Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"分类Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/24 19:02:20"};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     window.data = {"masonry":false};
   </script>
@@ -118,182 +225,33 @@
 <meta name="generator" content="Hexo 7.2.0"></head>
 
 
+
 <body>
-<div class="progress-bar-container">
-    
-        <span class="scroll-progress-bar"></span>
-    
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
 
-    
-        <span class="pjax-progress-bar"></span>
-<!--        <span class="swup-progress-icon">-->
-<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
-<!--        </span>-->
-    
-</div>
-
-
-
-    <style>
-    :root {
-        --preloader-background-color: #fff;
-        --preloader-text-color: #000;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --preloader-background-color: #202124;
-            --preloader-text-color: #fff;
-        }
-    }
-
-    @media (prefers-color-scheme: light) {
-        :root {
-            --preloader-background-color: #fff;
-            --preloader-text-color: #000;
-        }
-    }
-
-    @media (max-width: 600px) {
-        .ml13 {
-            font-size: 2.6rem !important; /* Adjust this value as needed */
-        }
-    }
-
-    .preloader {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        padding: 12px;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh; /* 'h-screen' is 100% of the viewport height */
-        background-color: var(--preloader-background-color);
-        z-index: 1100; /* 'z-[1100]' sets the z-index */
-        transition: opacity 0.2s ease-in-out;
-    }
-
-    .ml13 {
-        font-size: 3.2rem;
-        /* text-transform: uppercase; */
-        color: var(--preloader-text-color);
-        letter-spacing: -1px;
-        font-weight: 500;
-        font-family: 'Chillax-Variable', sans-serif;
-        text-align: center;
-    }
-
-    .ml13 .word {
-        display: inline-flex;
-        flex-wrap: wrap;
-        white-space: nowrap;
-    }
-
-    .ml13 .letter {
-        display: inline-block;
-        line-height: 1em;
-    }
-</style>
-
-<div class="preloader">
-    <h2 class="ml13">
-        Pu Dianheng&#39;s blog
-    </h2>
-    <script>
-        var textWrapper = document.querySelector('.ml13');
-        // Split text into words
-        var words = textWrapper.textContent.trim().split(' ');
-
-        // Clear the existing content
-        textWrapper.innerHTML = '';
-
-        // Wrap each word and its letters in spans
-        words.forEach(function(word) {
-            var wordSpan = document.createElement('span');
-            wordSpan.classList.add('word');
-            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
-            textWrapper.appendChild(wordSpan);
-            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
-        });
-
-        var animation = anime.timeline({loop: true})
-            .add({
-                targets: '.ml13 .letter',
-                translateY: [40,0],
-                translateZ: 0,
-                opacity: [0,1],
-                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
-                easing: "easeOutExpo",
-                duration: 1400,
-                delay: (el, i) => 300 + 30 * i,
-            }).add({
-                targets: '.ml13 .letter',
-                translateY: [0,-40],
-                opacity: [1,0],
-                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
-                easing: "easeInExpo",
-                duration: 1200,
-                delay: (el, i) => 100 + 30 * i,
-                complete: function() {
-                    hidePreloader(); // Call hidePreloader after the animation completes
-                }
-            });
-
-        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
-
-        // If the theme status is not found in local storage, check the preferred color scheme
-        if (themeStatus === undefined || themeStatus === null) {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                themeStatus = 'dark';
-            } else {
-                themeStatus = 'light';
-            }
-        }
-
-        // Now you can use the themeStatus variable in your code
-        if (themeStatus) {
-            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
-            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
-        } else {
-            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
-            document.documentElement.style.setProperty('--preloader-text-color', '#000');
-        }
-
-        window.addEventListener('load', function () {
-            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
-        });
-
-        function hidePreloader() {
-            var preloader = document.querySelector('.preloader');
-            preloader.style.opacity = '0';
-            setTimeout(function () {
-                preloader.style.display = 'none';
-            }, 200);
-        }
-    </script>
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
 </div>
 
 <main class="page-container" id="swup">
 
-    
+	
 
-    <div class="main-content-container">
-
-
-        <div class="main-content-header">
-            <header class="navbar-container px-6 md:px-12">
-
-    <div class="navbar-content ">
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
         <div class="left">
             
-                <a class="logo-image" href="/">
-                    <img src="/images/pdh-logo.webp">
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/pdh-logo.webp" class="w-full h-full rounded-xs">
                 </a>
             
             <a class="logo-title" href="/">
@@ -402,7 +360,7 @@
     </div>
 
     <!-- Mobile sheet -->
-    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
         <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
             
                 
@@ -523,15 +481,15 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">24</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">18</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">26</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -542,44 +500,41 @@
 </header>
 
 
-        </div>
+		</div>
 
-        <div class="main-content-body">
+		<div class="main-content-body transition-fade-up">
+			
 
-            
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
 
-            <div class="main-content">
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/../images/code.jpg" alt="C++——经典游戏《潜艇大战》改编练习" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">C++——经典游戏《潜艇大战》改编练习</h1>
+			</div>
+			
+		</div>
 
-                
-                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
-    <div class="article-content-container">
-
-        <div class="article-title relative w-full">
-            
-                
-                
-                <img src="/../images/code.jpg" alt="C++——经典游戏《潜艇大战》改编练习" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
-                
-                <div class="w-full flex items-center absolute bottom-0 justify-start">
-                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">C++——经典游戏《潜艇大战》改编练习</h1>
-                </div>
-            
-            </div>
-
-        
-            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
-                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
-                    <img src="/images/em-logo.png">
-                </div>
-                <div class="info flex flex-col justify-between">
-                    <div class="author flex items-center">
-                        <span class="name text-default-text-color text-lg font-semibold">ELecmark</span>
-                        
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">VIP</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/em-logo.png">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">ELecmark</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">VIP</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2024-03-12 22:59:01</span>
@@ -636,11 +591,11 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/C/">C++</a>&nbsp;
+                        | <a href="/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/">技术报告</a>&nbsp;
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/">技术报告</a>&nbsp;
+                        | <a href="/tags/C/">C++</a>&nbsp;
                     </li>
                 
             </ul>
@@ -657,16 +612,16 @@
     
 </div>
 
-                    </div>
-                </div>
-            </div>
-        
+				</div>
+			</div>
+		</div>
+		
 
-        
+		
 
 
-        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h2 id="原版效果："><a href="#原版效果：" class="headerlink" title="原版效果："></a>原版效果：</h2><h3 id="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："><a href="#依靠鼠标点击去炸毁潜艇得分，类似打地鼠：" class="headerlink" title="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："></a>依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</h3><p><img  
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="原版效果："><a href="#原版效果：" class="headerlink" title="原版效果："></a>原版效果：</h2><h3 id="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："><a href="#依靠鼠标点击去炸毁潜艇得分，类似打地鼠：" class="headerlink" title="依靠鼠标点击去炸毁潜艇得分，类似打地鼠："></a>依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</h3><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/../images/%E7%BB%8F%E5%85%B8C++%E6%B8%B8%E6%88%8F%E3%80%8A%E6%BD%9C%E8%89%87%E5%A4%A7%E6%88%98%E3%80%8B%E6%94%B9%E7%BC%96%E7%BB%83%E4%B9%A0/ShipDemo_old.gif"
@@ -681,82 +636,82 @@
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本报告详细分析了《潜艇大战》游戏从原版到改编版本中的关键代码变化。原版游戏的核心玩法是使用鼠标点击来炸毁潜艇并得分，类似于“打地鼠”的游戏模式。改编版本则通过控制船的左右移动并投掷炸弹来炸毁潜艇以得分。</p>
 <h2 id="1-核心视图类-CChildView-类分析"><a href="#1-核心视图类-CChildView-类分析" class="headerlink" title="1. 核心视图类 (CChildView) 类分析"></a>1. 核心视图类 (<code>CChildView</code>) 类分析</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p><code>CChildView</code> 类是《潜艇大战》游戏的核心视图类，负责管理游戏对象、处理用户输入、绘制游戏界面等。</p>
 <h3 id="OnTimer-方法分析"><a href="#OnTimer-方法分析" class="headerlink" title="OnTimer 方法分析"></a><code>OnTimer</code> 方法分析</h3><h4 id="创建和管理潜艇"><a href="#创建和管理潜艇" class="headerlink" title="创建和管理潜艇"></a>创建和管理潜艇</h4><p><strong>潜艇创建逻辑</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(nCreator==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    m_Objects.<span class="built_in">AddTail</span>(<span class="keyword">new</span> <span class="built_in">CSubmarine</span>(<span class="built_in">random</span>(<span class="number">2</span>)%<span class="number">2</span>?<span class="literal">true</span>:<span class="literal">false</span>, <span class="built_in">random</span>(GAME_HEIGHT-SHIP_VERT_POS-SHIP_HEIGHT*<span class="number">2</span><span class="number">-30</span>)+SHIP_VERT_POS+SHIP_HEIGHT+<span class="number">30</span>, <span class="built_in">random</span>(<span class="number">4</span>), <span class="built_in">random</span>(<span class="number">4</span>)+<span class="number">3</span>));</span><br><span class="line">    nCreator = <span class="built_in">random</span>(<span class="number">50</span>) + <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(nCreator==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    m_Objects.<span class="built_in">AddTail</span>(<span class="keyword">new</span> <span class="built_in">CSubmarine</span>(<span class="built_in">random</span>(<span class="number">2</span>)%<span class="number">2</span>?<span class="literal">true</span>:<span class="literal">false</span>, <span class="built_in">random</span>(GAME_HEIGHT-SHIP_VERT_POS-SHIP_HEIGHT*<span class="number">2</span><span class="number">-30</span>)+SHIP_VERT_POS+SHIP_HEIGHT+<span class="number">30</span>, <span class="built_in">random</span>(<span class="number">4</span>), <span class="built_in">random</span>(<span class="number">4</span>)+<span class="number">3</span>));</span><br><span class="line">    nCreator = <span class="built_in">random</span>(<span class="number">50</span>) + <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li><code>nCreator</code> 用于控制潜艇生成的时间间隔。当它变为 0，代码会创建一个新的 <code>CSubmarine</code> 对象并将其添加到游戏对象列表 <code>m_Objects</code>。</li>
 <li>每个潜艇的位置、类型和速度都是随机生成的，提供了游戏的可变性和挑战性。</li>
 </ul>
 <p><strong>潜艇管理逻辑</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">POSITION pos1, pos2;</span><br><span class="line"><span class="keyword">for</span>(pos1=m_Objects.<span class="built_in">GetHeadPosition</span>(); (pos2=pos1)!=<span class="literal">NULL</span>;)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(((CMyObject*)m_Objects.<span class="built_in">GetNext</span>(pos1))-&gt;<span class="built_in">Draw</span>(&amp;m_VirtualDC, m_bGamePause))</span><br><span class="line">    &#123;</span><br><span class="line">        pLastObj = m_Objects.<span class="built_in">GetAt</span>(pos2);</span><br><span class="line">        m_Objects.<span class="built_in">RemoveAt</span>(pos2);</span><br><span class="line">        <span class="keyword">delete</span> pLastObj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">POSITION pos1, pos2;</span><br><span class="line"><span class="keyword">for</span>(pos1=m_Objects.<span class="built_in">GetHeadPosition</span>(); (pos2=pos1)!=<span class="literal">NULL</span>;)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(((CMyObject*)m_Objects.<span class="built_in">GetNext</span>(pos1))-&gt;<span class="built_in">Draw</span>(&amp;m_VirtualDC, m_bGamePause))</span><br><span class="line">    &#123;</span><br><span class="line">        pLastObj = m_Objects.<span class="built_in">GetAt</span>(pos2);</span><br><span class="line">        m_Objects.<span class="built_in">RemoveAt</span>(pos2);</span><br><span class="line">        <span class="keyword">delete</span> pLastObj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li>这段代码遍历 <code>m_Objects</code> 中的所有游戏对象，并对它们调用 <code>Draw</code> 方法。</li>
 <li>如果 <code>Draw</code> 方法返回 <code>true</code>，表明对象（如潜艇）需要被移除。这通常在对象（如潜艇被击中或移动出屏幕）结束其生命周期时发生。</li>
 </ul>
 <h4 id="游戏画面渲染"><a href="#游戏画面渲染" class="headerlink" title="游戏画面渲染"></a>游戏画面渲染</h4><p><strong>背景绘制</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, SKY_COLOR);</span><br><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, GAME_WIDTH, GAME_HEIGHT, SEA_COLOR);</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, SKY_COLOR);</span><br><span class="line">m_VirtualDC.<span class="built_in">FillSolidRect</span>(<span class="number">0</span>, SHIP_VERT_POS+SHIP_HEIGHT<span class="number">-5</span>, GAME_WIDTH, GAME_HEIGHT, SEA_COLOR);</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li>这里使用 <code>FillSolidRect</code> 在虚拟设备上下文 <code>m_VirtualDC</code> 上绘制天空和海洋背景。</li>
 <li><code>SKY_COLOR</code> 和 <code>SEA_COLOR</code> 定义了天空和海洋的颜色。</li>
 </ul>
 <p><strong>最终渲染到屏幕</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dc.<span class="built_in">BitBlt</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, GAME_HEIGHT, &amp;m_VirtualDC, <span class="number">0</span>, <span class="number">0</span>, SRCCOPY);</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dc.<span class="built_in">BitBlt</span>(<span class="number">0</span>, <span class="number">0</span>, GAME_WIDTH, GAME_HEIGHT, &amp;m_VirtualDC, <span class="number">0</span>, <span class="number">0</span>, SRCCOPY);</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li>使用 <code>BitBlt</code> 方法将虚拟设备上下文的内容传输到实际的屏幕上下文。</li>
 <li>这种方法可以避免闪烁并提高绘图效率。</li>
 </ul>
 <h4 id="其他重要逻辑"><a href="#其他重要逻辑" class="headerlink" title="其他重要逻辑"></a>其他重要逻辑</h4><p><strong>游戏暂停功能</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(m_bGamePause) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(m_bGamePause) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li>控制游戏暂停。当 <code>m_bGamePause</code> 为 <code>true</code> 时，<code>OnTimer</code> 将提前返回，不执行任何游戏更新逻辑。</li>
 </ul>
 <p><strong>潜艇生成计数器更新</strong></p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nCreator--;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nCreator--;</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li><code>nCreator</code> 每次 <code>OnTimer</code> 被调用时递减，控制潜艇的生成频率。</li>
 </ul>
 <p>总结来说，<code>OnTimer</code> 方法是游戏的心脏，负责潜艇的生成和管理、游戏画面的更新和渲染，以及控制游戏的暂停和继续。这个方法充分展示了游戏循环的典型结构，包括对象管理、状态更新和画面渲染。</p>
 <h2 id="2-潜艇类-CSubmarine-的变更"><a href="#2-潜艇类-CSubmarine-的变更" class="headerlink" title="2. 潜艇类 (CSubmarine) 的变更"></a>2. 潜艇类 (<code>CSubmarine</code>) 的变更</h2><h3 id="原版"><a href="#原版" class="headerlink" title="原版"></a>原版</h3><p>在原版中，<code>CSubmarine</code> 类主要负责潜艇的初始化、移动、绘图和销毁。这个类使用了 <code>CImageList</code> 来处理潜艇的图像。潜艇的移动是基于它们的方向 (<code>m_bDirect</code>) 和速度 (<code>m_nSpeed</code>)。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CSubmarine::<span class="built_in">CSubmarine</span>(<span class="type">bool</span> bDir, <span class="type">int</span> nVert, <span class="type">int</span> nType, <span class="type">int</span> nSpeed)</span><br><span class="line">&#123;</span><br><span class="line">    m_bDirect = bDir;</span><br><span class="line">    m_ptPos.x = m_bDirect ? GAME_WIDTH : -SUBMARINE_WIDTH;</span><br><span class="line">    m_ptPos.y = nVert;</span><br><span class="line">    <span class="comment">// ...[其他初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CSubmarine::<span class="built_in">CSubmarine</span>(<span class="type">bool</span> bDir, <span class="type">int</span> nVert, <span class="type">int</span> nType, <span class="type">int</span> nSpeed)</span><br><span class="line">&#123;</span><br><span class="line">    m_bDirect = bDir;</span><br><span class="line">    m_ptPos.x = m_bDirect ? GAME_WIDTH : -SUBMARINE_WIDTH;</span><br><span class="line">    m_ptPos.y = nVert;</span><br><span class="line">    <span class="comment">// ...[其他初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="改编版本"><a href="#改编版本" class="headerlink" title="改编版本"></a>改编版本</h3><p>在改版中，<code>CSubmarine</code> 类增加了 <code>GetRect()</code> 方法，用于获取潜艇的碰撞箱。这是为了适应游戏中的新机制，如导弹与潜艇的碰撞检测。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CSubmarine::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + SubmarineWidth, m_ptPos.y + SubmarineHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CSubmarine::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + SubmarineWidth, m_ptPos.y + SubmarineHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 
 
 <h2 id="3-新增导弹类-CMissile"><a href="#3-新增导弹类-CMissile" class="headerlink" title="3. 新增导弹类 (CMissile)"></a>3. 新增导弹类 (<code>CMissile</code>)</h2><p>在改编版本中，新增了导弹类 <code>CMissile</code>。这一变化扩展了游戏的交互性和复杂度。</p>
 <h3 id="原版-1"><a href="#原版-1" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中没有导弹类的概念。</p>
 <h3 id="改编版本-1"><a href="#改编版本-1" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中添加了 <code>CMissile</code> 类，并在主游戏循环中处理导弹的移动和碰撞检测。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">typeid</span>(*pObj) == <span class="built_in">typeid</span>(CMissile))</span><br><span class="line">&#123;</span><br><span class="line">    CMissile* pMissile = (CMissile*)pObj;</span><br><span class="line">    pMissile-&gt;<span class="built_in">Move</span>(); <span class="comment">// 移动导弹</span></span><br><span class="line">    <span class="comment">// ... [碰撞检测和处理代码] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">typeid</span>(*pObj) == <span class="built_in">typeid</span>(CMissile))</span><br><span class="line">&#123;</span><br><span class="line">    CMissile* pMissile = (CMissile*)pObj;</span><br><span class="line">    pMissile-&gt;<span class="built_in">Move</span>(); <span class="comment">// 移动导弹</span></span><br><span class="line">    <span class="comment">// ... [碰撞检测和处理代码] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li><p><strong>构造函数</strong>：初始化导弹的位置和生命周期。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CMissile::<span class="built_in">CMissile</span>(CPoint ptPos) : <span class="built_in">CMyObject</span>(ptPos)</span><br><span class="line">&#123;</span><br><span class="line">    m_nLifetime = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// ...[初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CMissile::<span class="built_in">CMissile</span>(CPoint ptPos) : <span class="built_in">CMyObject</span>(ptPos)</span><br><span class="line">&#123;</span><br><span class="line">    m_nLifetime = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// ...[初始化代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 </li>
 <li><p><strong><code>Move</code> 方法</strong>：控制导弹的移动。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMissile::Move</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_ptPos.y += <span class="number">20</span>;  <span class="comment">// ...[移动逻辑]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CMissile::Move</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_ptPos.y += <span class="number">20</span>;  <span class="comment">// ...[移动逻辑]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 </li>
 <li><p><strong><code>GetRect</code> 方法</strong>：为碰撞检测提供导弹的矩形区域。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CMissile::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + MissileWidth, m_ptPos.y + MissileHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CRect <span class="title">CMissile::GetRect</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...[定义矩形尺寸]...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CRect</span>(m_ptPos.x, m_ptPos.y, m_ptPos.x + MissileWidth, m_ptPos.y + MissileHeight);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 </li>
 <li><p><strong>导弹图像处理</strong>：使用 GDI+ 从资源加载 PNG 图片并创建图像列表。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">CMissile::LoadImage</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...[加载和处理 PNG 图片的代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">CMissile::LoadImage</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...[加载和处理 PNG 图片的代码]...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
 </ul>
 <h2 id="4-控制机制的改变"><a href="#4-控制机制的改变" class="headerlink" title="4. 控制机制的改变"></a>4. 控制机制的改变</h2><h3 id="原版-2"><a href="#原版-2" class="headerlink" title="原版"></a>原版</h3><p>原版游戏中，玩家通过鼠标点击潜艇位置来摧毁它们。这是通过 <code>OnLButtonDown</code> 函数实现的：</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnLButtonDown</span><span class="params">(UINT nFlags, CPoint point)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">if</span>(pSub-&gt;<span class="built_in">GetRect</span>().<span class="built_in">PtInRect</span>(point))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建爆炸和计分</span></span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">delete</span> pSub;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnLButtonDown</span><span class="params">(UINT nFlags, CPoint point)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">if</span>(pSub-&gt;<span class="built_in">GetRect</span>().<span class="built_in">PtInRect</span>(point))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建爆炸和计分</span></span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">delete</span> pSub;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="改编版本-2"><a href="#改编版本-2" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本引入了键盘控制。通过 <code>OnKeyDown</code> 函数，玩家可以通过左右键移动船，并用空格键发射导弹。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnKeyDown</span><span class="params">(UINT nChar, UINT nRepCnt, UINT nFlags)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (nChar == VK_SPACE || nChar == VK_RETURN) <span class="comment">// 发射导弹</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">if</span> (!missileExists)</span><br><span class="line">        &#123;</span><br><span class="line">            CMissile* pMissile = <span class="keyword">new</span> <span class="built_in">CMissile</span>(<span class="built_in">CPoint</span>(shipPos.x, SHIP_VERT_POS));</span><br><span class="line">            m_Objects.<span class="built_in">AddTail</span>(pMissile);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CChildView::OnKeyDown</span><span class="params">(UINT nChar, UINT nRepCnt, UINT nFlags)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (nChar == VK_SPACE || nChar == VK_RETURN) <span class="comment">// 发射导弹</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">        <span class="keyword">if</span> (!missileExists)</span><br><span class="line">        &#123;</span><br><span class="line">            CMissile* pMissile = <span class="keyword">new</span> <span class="built_in">CMissile</span>(<span class="built_in">CPoint</span>(shipPos.x, SHIP_VERT_POS));</span><br><span class="line">            m_Objects.<span class="built_in">AddTail</span>(pMissile);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ... [代码省略] ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 
 
 <h2 id="5-分数统计的变更"><a href="#5-分数统计的变更" class="headerlink" title="5. 分数统计的变更"></a>5. 分数统计的变更</h2><p>为了适应新的游戏玩法，分数统计方式也做了调整。</p>
 <h3 id="原版-3"><a href="#原版-3" class="headerlink" title="原版"></a>原版</h3><p>原版游戏仅在鼠标点击潜艇时计分。</p>
 <h3 id="改编版本-3"><a href="#改编版本-3" class="headerlink" title="改编版本"></a>改编版本</h3><p>改编版本中，分数统计不仅包括击毁潜艇的分数，还统计了击毁的潜艇数量。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m_nTotalScore += pScore-&gt;<span class="built_in">GetScoreValue</span>(); <span class="comment">// 累加分数</span></span><br><span class="line">++m_nDestroyedSubmarines;  <span class="comment">// 增加被击毁的潜艇数量</span></span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m_nTotalScore += pScore-&gt;<span class="built_in">GetScoreValue</span>(); <span class="comment">// 累加分数</span></span><br><span class="line">++m_nDestroyedSubmarines;  <span class="comment">// 增加被击毁的潜艇数量</span></span><br></pre></td></tr></table></figure></div>
 
 
 
 <h2 id="6-界面信息显示的改进"><a href="#6-界面信息显示的改进" class="headerlink" title="6. 界面信息显示的改进"></a>6. 界面信息显示的改进</h2><p>改编版本在界面上添加了更多的信息显示，如总潜艇数、击毁潜艇数等，增强了游戏的可玩性和信息反馈。</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CString destroyedString;</span><br><span class="line">destroyedString.<span class="built_in">Format</span>(<span class="string">&quot;击毁潜艇数: %d&quot;</span>, m_nDestroyedSubmarines);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(<span class="number">130</span>, <span class="number">10</span>, destroyedString); <span class="comment">// 显示击毁潜艇数</span></span><br><span class="line"></span><br><span class="line">CString scoreString;</span><br><span class="line">scoreString.<span class="built_in">Format</span>(<span class="string">&quot;总分: %d&quot;</span>, m_nTotalScore);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(GAME_WIDTH - <span class="number">100</span>, <span class="number">10</span>, scoreString); <span class="comment">// 显示总分</span></span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CString destroyedString;</span><br><span class="line">destroyedString.<span class="built_in">Format</span>(<span class="string">&quot;击毁潜艇数: %d&quot;</span>, m_nDestroyedSubmarines);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(<span class="number">130</span>, <span class="number">10</span>, destroyedString); <span class="comment">// 显示击毁潜艇数</span></span><br><span class="line"></span><br><span class="line">CString scoreString;</span><br><span class="line">scoreString.<span class="built_in">Format</span>(<span class="string">&quot;总分: %d&quot;</span>, m_nTotalScore);</span><br><span class="line">m_VirtualDC.<span class="built_in">TextOut</span>(GAME_WIDTH - <span class="number">100</span>, <span class="number">10</span>, scoreString); <span class="comment">// 显示总分</span></span><br></pre></td></tr></table></figure></div>
 
 
 
@@ -768,11 +723,11 @@
 <li><strong>图形和用户界面的更新</strong>：改进游戏的界面显示，例如增加得分和击毁潜艇数的显示，让我更加熟悉了图形界面的编程和数据可视化。</li>
 </ol>
 
-        </div>
+		</div>
 
-        
-            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
-                <div class="article-copyright-info-container">
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
     <ul>
         <li><strong>Title:</strong> C++——经典游戏《潜艇大战》改编练习</li>
         <li><strong>Author:</strong> ELecmark</li>
@@ -800,74 +755,68 @@
     </ul>
 </div>
 
-            </div>
-        
+		</div>
+		
 
-        
-            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">#课程项目</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/">#作品集</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/C/">#C++</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item mx-0.5">
-                        <a href="/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/">#技术报告</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E8%AF%BE%E7%A8%8B%E9%A1%B9%E7%9B%AE/">#课程项目</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86/">#作品集</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/">#技术报告</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/C/">#C++</a>&nbsp;
+			</li>
+			
+		</ul>
+		
 
-        
+		
 
-        
-            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
-                
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/03/17/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-1-Getting-Started/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">MIT软件性能工程——Homework-1-Getting Started</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="next"
-                        rel="next"
-                        href="/2024/01/09/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/"
-                        >
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">Unity——《让蛋仔飞》项目报告</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2024/03/17/MIT%E8%BD%AF%E4%BB%B6%E6%80%A7%E8%83%BD%E5%B7%A5%E7%A8%8B%E2%80%94%E2%80%94Homework-1-Getting-Started/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">MIT软件性能工程——Homework-1-Getting Started</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/01/09/%E3%80%8A%E8%AE%A9%E8%9B%8B%E4%BB%94%E9%A3%9E%E3%80%8B%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">Unity——《让蛋仔飞》项目报告</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
 
 
-        
-            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
-                <div class="comments-container mt-10 w-full ">
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
         Comments
@@ -884,13 +833,11 @@
         init({
           el: '#waline',
           serverURL: 'https://example.example.com',
-          lang: 'zh-CN',
           dark: 'body[class~="dark-mode"]',
           reaction: false,
           requiredMeta: ['nick', 'mail'],
           emoji: [],
-          recaptchaV3Key: "wasd",
-          
+                    lang: 'zh-CN',
         });
       }
 
@@ -907,36 +854,30 @@
     
 </div>
 
-            </div>
-        
-    </div>
+		</div>
+		
+	</div>
 
-    
-        <div class="toc-content-container">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <div class="toc-title">On this page</div>
-        <div class="page-title">C++——经典游戏《潜艇大战》改编练习</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%89%88%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="nav-text">原版效果：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E9%9D%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E5%8E%BB%E7%82%B8%E6%AF%81%E6%BD%9C%E8%89%87%E5%BE%97%E5%88%86%EF%BC%8C%E7%B1%BB%E4%BC%BC%E6%89%93%E5%9C%B0%E9%BC%A0%EF%BC%9A"><span class="nav-text">依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="nav-text">改编效果：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A0%E8%88%B9%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8%E6%8A%95%E7%82%B8%E5%BC%B9%E7%82%B8%E6%AF%81%E6%BD%9C%E8%89%87%E5%BE%97%E5%88%86%EF%BC%9A"><span class="nav-text">靠船左右移动投炸弹炸毁潜艇得分：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%A0%B8%E5%BF%83%E8%A7%86%E5%9B%BE%E7%B1%BB-CChildView-%E7%B1%BB%E5%88%86%E6%9E%90"><span class="nav-text">1. 核心视图类 (CChildView) 类分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OnTimer-%E6%96%B9%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-text">OnTimer 方法分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%BD%9C%E8%89%87%E7%B1%BB-CSubmarine-%E7%9A%84%E5%8F%98%E6%9B%B4"><span class="nav-text">2. 潜艇类 (CSubmarine) 的变更</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%96%B0%E5%A2%9E%E5%AF%BC%E5%BC%B9%E7%B1%BB-CMissile"><span class="nav-text">3. 新增导弹类 (CMissile)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88-1"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC-1"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6%E7%9A%84%E6%94%B9%E5%8F%98"><span class="nav-text">4. 控制机制的改变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88-2"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC-2"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%88%86%E6%95%B0%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%8F%98%E6%9B%B4"><span class="nav-text">5. 分数统计的变更</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88-3"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC-3"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%95%8C%E9%9D%A2%E4%BF%A1%E6%81%AF%E6%98%BE%E7%A4%BA%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="nav-text">6. 界面信息显示的改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-text">结论</span></a></li></ol>
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">C++——经典游戏《潜艇大战》改编练习</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%89%88%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="nav-text">原版效果：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E9%9D%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E5%8E%BB%E7%82%B8%E6%AF%81%E6%BD%9C%E8%89%87%E5%BE%97%E5%88%86%EF%BC%8C%E7%B1%BB%E4%BC%BC%E6%89%93%E5%9C%B0%E9%BC%A0%EF%BC%9A"><span class="nav-text">依靠鼠标点击去炸毁潜艇得分，类似打地鼠：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="nav-text">改编效果：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A0%E8%88%B9%E5%B7%A6%E5%8F%B3%E7%A7%BB%E5%8A%A8%E6%8A%95%E7%82%B8%E5%BC%B9%E7%82%B8%E6%AF%81%E6%BD%9C%E8%89%87%E5%BE%97%E5%88%86%EF%BC%9A"><span class="nav-text">靠船左右移动投炸弹炸毁潜艇得分：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%A0%B8%E5%BF%83%E8%A7%86%E5%9B%BE%E7%B1%BB-CChildView-%E7%B1%BB%E5%88%86%E6%9E%90"><span class="nav-text">1. 核心视图类 (CChildView) 类分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OnTimer-%E6%96%B9%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-text">OnTimer 方法分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%BD%9C%E8%89%87%E7%B1%BB-CSubmarine-%E7%9A%84%E5%8F%98%E6%9B%B4"><span class="nav-text">2. 潜艇类 (CSubmarine) 的变更</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%96%B0%E5%A2%9E%E5%AF%BC%E5%BC%B9%E7%B1%BB-CMissile"><span class="nav-text">3. 新增导弹类 (CMissile)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88-1"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC-1"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%8E%A7%E5%88%B6%E6%9C%BA%E5%88%B6%E7%9A%84%E6%94%B9%E5%8F%98"><span class="nav-text">4. 控制机制的改变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88-2"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC-2"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%88%86%E6%95%B0%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%8F%98%E6%9B%B4"><span class="nav-text">5. 分数统计的变更</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E7%89%88-3"><span class="nav-text">原版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E7%BC%96%E7%89%88%E6%9C%AC-3"><span class="nav-text">改编版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%95%8C%E9%9D%A2%E4%BF%A1%E6%81%AF%E6%98%BE%E7%A4%BA%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="nav-text">6. 界面信息显示的改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-text">结论</span></a></li></ol>
 
-    </div>
+	</div>
 </div>
-        </div>
-    
+	</div>
+	
 </div>
+			</div>
 
+			
+		</div>
 
-
-                
-
-            </div>
-
-            
-
-        </div>
-
-        <div class="main-content-footer">
-            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
     <div class="info-container py-3 text-center">
         
         <div class="text-center">
@@ -945,12 +886,12 @@
               <span>2023</span>
               -
             
-            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a>
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a>
             
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        26 posts in total
+                        27 posts in total
                     </span>
                     
                 </p>
@@ -975,7 +916,7 @@
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
             <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.5</a></span>
         </div>
         
         
@@ -1004,124 +945,113 @@
         
     </div>  
 </footer>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="article-tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="right-bottom-tools page-aside-toggle">
-                <i class="fa-regular fa-outdent"></i>
-            </li>
-        
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
 
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fa-regular fa-comments"></i>
-            </li>
-        
-    </ul>
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
 </div>
 
-        </div>
-    
-
-    <div class="right-side-tools-container">
-        <div class="side-tools-container">
-    <ul class="hidden-tools-list">
-        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-plus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-minus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
-            <i class="fa-regular fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        
-
-        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
-            <i class="fa-regular fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="visible-tools-list">
-        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
-            <i class="fa-regular fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-        
-    </ul>
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
 </div>
-
-    </div>
-
-    <div class="image-viewer-container">
-    <img src="">
-</div>
-
-
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fa-solid fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="Search..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="popup-btn-close">
-                <i class="fa-solid fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
+	
 
 </main>
 
 
-    
-<script src="/js/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupSlideTheme.min.js"></script>
+<script src="/js/build/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
 
-<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
 
-<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
 
-<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
 
 <script>
     const swup = new Swup({
@@ -1145,48 +1075,46 @@
 
 
 
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
 
+<script src="/js/build/utils.js" type="module"></script>
 
+<script src="/js/build/main.js" type="module"></script>
 
-<script src="/js/tools/imageViewer.js" type="module"></script>
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
 
-<script src="/js/utils.js" type="module"></script>
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
 
-<script src="/js/main.js" type="module"></script>
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
 
-<script src="/js/layouts/navbarShrink.js" type="module"></script>
-
-<script src="/js/tools/scrollTopBottom.js" type="module"></script>
-
-<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
-
-<script src="/js/layouts/categoryList.js" type="module"></script>
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
 
 
 
     
-<script src="/js/tools/localSearch.js" type="module"></script>
+<script src="/js/build/tools/localSearch.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/codeBlock.js" type="module"></script>
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
 
 
 
 
     
-<script src="/js/layouts/lazyload.js" type="module"></script>
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/runtime.js"></script>
+<script src="/js/build/tools/runtime.js"></script>
 
     
-<script src="/js/libs/odometer.min.js"></script>
+<script src="/js/build/libs/odometer.min.js"></script>
 
     
 <link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
@@ -1195,46 +1123,63 @@
 
 
   
-<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/build/libs/Typed.min.js"></script>
 
   
-<script src="/js/plugins/typed.js" type="module"></script>
+<script src="/js/build/plugins/typed.js" type="module"></script>
 
 
 
 
-    
-<script src="/js/libs/mermaid.min.js"></script>
-
-    
-<script src="/js/plugins/mermaid.js"></script>
-
-
-
-
-
-
-
-<div class="post-scripts" data-swup-reload-script>
     
         
-<script src="/js/tools/tocToggle.js" type="module"></script>
-
-<script src="/js/layouts/toc.js" type="module"></script>
-
-<script src="/js/plugins/tabs.js" type="module"></script>
+<script src="/js/build/libs/mermaid.min.js"></script>
 
     
-</div>
+    
+<script src="/js/build/plugins/mermaid.js"></script>
 
 
-    <div id="aplayer"></div>
-
-<script src="/js/libs/APlayer.min.js"></script>
 
 
-<script src="/js/plugins/aplayer.js"></script>
 
 
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+	<div id="aplayer"></div>
+
+<script src="/js/build/libs/APlayer.min.js"></script>
+
+
+<script src="/js/build/plugins/aplayer.js"></script>
+
+
+	
 </body>
+
 </html>
