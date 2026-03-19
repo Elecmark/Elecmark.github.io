@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Hexo Theme Redefine">
     
+    
     <meta name="author" content="ELecmark">
     
     <!-- Completely eliminate flash of wrong theme -->
@@ -31,9 +32,6 @@
                 const isDark = theme === DARK;
                 const root = document.documentElement;
                 
-                // Set data attribute for CSS variables
-                root.setAttribute("data-theme", theme);
-                
                 // Set classes for compatibility
                 root.classList.add(theme);
                 root.classList.remove(isDark ? LIGHT : DARK);
@@ -52,69 +50,26 @@
                 }
             });
             
-            // Set body classes once DOM is ready
-            if (document.readyState !== "loading") {
-                document.body.classList.add(theme + "-mode");
-            } else {
-                document.addEventListener("DOMContentLoaded", () => {
-                    document.body.classList.add(theme + "-mode");
-                    document.body.classList.remove((theme === DARK ? LIGHT : DARK) + "-mode");
+            // Set body classes ASAP (before DOMContentLoaded)
+            (function() {
+                const addBodyClass = () => {
+                    const b = document.body;
+                    if (!b) return false;
+                    b.classList.add(theme + "-mode");
+                    return true;
+                };
+
+                // Try immediately
+                if (addBodyClass()) return;
+
+                // Observe until body exists
+                const mo = new MutationObserver(() => {
+                    if (addBodyClass()) mo.disconnect();
                 });
-            }
+                mo.observe(document.documentElement, { childList: true, subtree: true });
+            })();
         })();
     </script>
-    
-    <!-- Critical CSS to prevent flash -->
-    <style>
-        :root[data-theme="dark"] {
-            --background-color: #202124;
-            --background-color-transparent: rgba(32, 33, 36, 0.6);
-            --second-background-color: #2d2e32;
-            --third-background-color: #34353a;
-            --third-background-color-transparent: rgba(32, 33, 36, 0.6);
-            --primary-color: #0066CC;
-            --first-text-color: #ffffff;
-            --second-text-color: #eeeeee;
-            --third-text-color: #bebec6;
-            --fourth-text-color: #999999;
-            --default-text-color: #bebec6;
-            --invert-text-color: #373D3F;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --selection-color: #0066CC;
-            --shadow-color-1: rgba(255, 255, 255, 0.08);
-            --shadow-color-2: rgba(255, 255, 255, 0.05);
-        }
-        
-        :root[data-theme="light"] {
-            --background-color: #fff;
-            --background-color-transparent: rgba(255, 255, 255, 0.6);
-            --second-background-color: #f8f8f8;
-            --third-background-color: #f2f2f2;
-            --third-background-color-transparent: rgba(241, 241, 241, 0.6);
-            --primary-color: #0066CC;
-            --first-text-color: #16171a;
-            --second-text-color: #2f3037;
-            --third-text-color: #5e5e5e;
-            --fourth-text-color: #eeeeee;
-            --default-text-color: #373D3F;
-            --invert-text-color: #bebec6;
-            --border-color: rgba(0, 0, 0, 0.08);
-            --selection-color: #0066CC;
-            --shadow-color-1: rgba(0, 0, 0, 0.08);
-            --shadow-color-2: rgba(0, 0, 0, 0.05);
-        }
-        
-        body {
-            background-color: var(--background-color);
-            color: var(--default-text-color);
-        }
-        
-        /* Apply body classes as soon as DOM is ready */
-        :root[data-theme="dark"] body {
-            background-color: var(--background-color);
-            color: var(--default-text-color);
-        }
-    </style>
     
     <!-- preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -129,7 +84,6 @@
     <meta name="revisit-after" content="1 days">
     
     
-    
         
         <meta name="description" content="Hexo Theme Redefine.">
 <meta property="og:type" content="article">
@@ -140,7 +94,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://elecmark.github.io/images/pdh-logo.webp">
 <meta property="article:published_time" content="2025-12-09T06:48:06.000Z">
-<meta property="article:modified_time" content="2025-12-17T17:53:05.887Z">
+<meta property="article:modified_time" content="2025-12-18T08:28:47.448Z">
 <meta property="article:author" content="Elecmark">
 <meta property="article:tag" content="作品集">
 <meta property="article:tag" content="C++">
@@ -201,8 +155,9 @@
 
     <script id="hexo-configurations">
     window.config = {"hostname":"elecmark.github.io","root":"/","language":"en","path":"search.xml"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["VIP"]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#80B5FF","secondary":"#004098","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/pdh-logo.webp","description":"Hexo Theme Redefine."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wall.jpg","dark":"/images/wall_shenzhen.jpg"},"title":"Elecmark-Pu Dianheng","subtitle":{"text":["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn?c=c"},"typing_speed":50,"backing_speed":30,"starting_delay":100,"backing_delay":5000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#FFFFF5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/Elecmark","instagram":null,"zhihu":null,"twitter":null,"email":"944723112@qq.com","fa-solid fa-c fa-fw fa-lg":"https://blog.csdn.net/LanLinHui?type=blog","steam":"https://steamcommunity.com/profiles/76561198167581914/"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"soundorbis - LIFE","artist":"Kyle Xian","url":"https://music.163.com/song/media/outer/url?id=516372224.mp3","cover":"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg","lrc":null},{"name":"Pokémon Sleep - Christmas","artist":"Pokémon Sleep","url":"https://music.163.com/song/media/outer/url?id=2130624871.mp3","cover":"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg","lrc":null},{"name":"Guitar","artist":"Guitar","url":"/music/校园吉他纯音乐.mp3","cover":"/music/covers/music.svg","lrc":null}]},"mermaid":{"enable":true,"version":"11.4.1"}},"version":"2.8.5","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":25},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"作品集Portfolio":{"path":"/tags/作品集/","icon":"fa-regular fa-archive"},"关于About":{"icon":"fa-regular fa-user","submenus":{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"时间轴Timeline":{"path":"/archives","icon":"fa-solid fa-timeline"},"标签Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"分类Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":3}},"footerStart":"2023/9/24 19:02:20"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":["VIP"]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#80B5FF","secondary":"#004098","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":true,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/pdh-logo.webp","description":"Hexo Theme Redefine."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wall.jpg","dark":"/images/wall_shenzhen.jpg"},"title":"Elecmark-Pu Dianheng","subtitle":{"text":["“Life is a bug, and you are the programmer.”","“Nothing is true, everything is permitted.” ——「刺客信条」","“Life endures, birth continue.” ——「艾尔登法环」","“Open your eyes.” —— 「塞尔达传说：荒野之息」","“直面天命。” —— 「黑神话：悟空」"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn?c=c"},"typing_speed":50,"backing_speed":30,"starting_delay":100,"backing_delay":5000,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#FFFFF5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":[{"icon":"fa-brands fa-github","url":"https://github.com/Elecmark"},{"icon":"fa-solid fa-at","url":"944723112@qq.com"},{"icon":"fa-solid fa-c fa-fw fa-lg","url":"https://blog.csdn.net/LanLinHui?type=blog"},{"icon":"fa-brands fa-steam","url":"https://steamcommunity.com/profiles/76561198167581914/"}],"qrs":[]}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"soundorbis - LIFE","artist":"Kyle Xian","url":"https://music.163.com/song/media/outer/url?id=516372224.mp3","cover":"http://p1.music.126.net/raSRxUrm3X7hhWiQV_HcJA==/109951163053574552.jpg","lrc":null},{"name":"Pokémon Sleep - Christmas","artist":"Pokémon Sleep","url":"https://music.163.com/song/media/outer/url?id=2130624871.mp3","cover":"https://p1.music.126.net/OtaKibk9x3UAg_tZMTfwtQ==/109951169173263539.jpg","lrc":null},{"name":"Guitar","artist":"Guitar","url":"/music/校园吉他纯音乐.mp3","cover":"/music/covers/music.svg","lrc":null}]},"mermaid":{"enable":true,"version":"11.4.1","theme":{"light":"default","dark":"dark"}}},"version":"2.9.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":25},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"作品集Portfolio":{"path":"/tags/作品集/","icon":"fa-regular fa-archive"},"关于About":{"icon":"fa-regular fa-user","submenus":{"我的信息Me":"/about","友链Friends":"/links","时间轴Timeline":"/archives"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur","masonry":{"batch_size":12,"initial_batch_size":24}},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"时间轴Timeline":{"path":"/archives","icon":"fa-solid fa-timeline"},"标签Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"分类Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":5},"tags":{"enable":true,"limit":3}},"footer":{"runtime":true,"icon":"<i class=\"fa-solid fa-heart fa-beat\" style=\"--fa-animation-duration: 0.5s; color: #f54545\"></i>","start":"2023/9/24 19:02:20","statistics":true,"customize":null,"icp":{"enable":false,"number":null,"url":null}},"footerStart":"2023/9/24 19:02:20","mermaid":{"style":{"light":"default","dark":"dark"}}};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.i18n = {"search":"Search...","toc":"On this page","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"POWERED BY %s","theme":"THEME","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","post":"Post","posts":"Posts","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","top":"TOP","sticky":"Sticky","go-back-home":"Go Back Home","masonry_loading":"Loading photos...","image_viewer":"Image viewer","close":"Close","exif":{"title":"EXIF","cards":{"camera":"Camera","lens":"Lens","exposure":"Exposure","other":"Other"},"fields":{"make":"Brand","model":"Model","date_taken":"Date taken","lens_model":"Lens","focal_length":"Focal length","focus_mode":"Focus mode","shutter":"Shutter","aperture":"Aperture","iso":"ISO","exposure_program":"Exposure program","exposure_compensation":"Exposure compensation","metering_mode":"Metering mode","flash":"Flash","white_balance":"White balance","latitude":"Latitude","longitude":"Longitude","altitude":"Altitude"},"status":{"loading":"Loading...","no_exif":"No EXIF available","library_missing":"EXIF library not loaded","image_source_missing":"Image source unavailable","unavailable":"EXIF unavailable (blocked by CORS or missing metadata)","flag_unavailable":"EXIF unavailable"}},"about":"About","changelog":"Changelog","links":"Links","link":"Link","friends":"Friends","friend":"Friend","timeline":"Timeline","shuoshuo":"Shuoshuo","bookmarks":"Bookmarks","site_uv":"VISITOR COUNT","site_pv":"TOTAL PAGE VIEWS","read_more":"Read more","wordcount":"Words","min2read":"Mins","status":"Status","runtime":"Blog up for","days":"days","hours":"hrs","minutes":"Min","seconds":"Sec","optimized_by":"and Optimized by Evan","rights":"All Rights Reserved","site_posts":"%s posts in total","site_wordcount":"%s words in total","copyright":{"author":"Author","title":"Title","link":"Link","create_time":"Created at","update_time":"Updated at","license_title":"License","license_content":"This work is licensed under %s.","all_rights_reserved":"All Rights Reserved &#169; %s","public_domain":"This work is in the public domain."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"},"create_time":"Created","update_time":"Updated","expired":"This post is written %s days ago, and the content may not be up to date."};
     window.data = {"masonry":false};
   </script>
     
@@ -224,7 +179,6 @@
     
     
 <meta name="generator" content="Hexo 7.2.0"></head>
-
 
 
 <body>
@@ -490,7 +444,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">30</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -524,7 +478,7 @@
 
 		
 		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
-			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+			<div class="avatar w-[46px] h-[46px] shrink-0 rounded-medium border border-border-color p-px">
 				<img src="/images/em-logo.png">
 			</div>
 			<div class="info flex flex-col justify-between">
@@ -545,8 +499,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-12-18 01:53:05</span>
-            <span class="mobile">2025-12-18 01:53:05</span>
+            <span class="desktop">2025-12-18 16:28:47</span>
+            <span class="mobile">2025-12-18 16:28:47</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -2820,34 +2774,71 @@
 <li><p>Initialize Attributes with Gameplay Effects</p>
 <p>15:52</p>
 </li>
-<li><p>Attribute Based Modifiers</p>
-<p>09:09</p>
-</li>
-<li><p>Modifier Order of Operations</p>
-<p>11:08</p>
-</li>
-<li><p>Modifier Coefficients</p>
-<p>06:54</p>
-</li>
-<li><p>Secondary Attributes</p>
-<p>13:47</p>
-</li>
-<li><p>Derived Attributes</p>
-<p>31:39</p>
-</li>
-<li><p>Custom Calculations</p>
-<p>06:14</p>
-</li>
-<li><p>Player Level and Combat Interface</p>
-<p>13:07</p>
-</li>
-<li><p>Modifier Magnitude Calculations</p>
-<p>37:27</p>
-</li>
-<li><p>Initializing Vital Attributes</p>
-<p>07:47</p>
-</li>
 </ul>
+<h3 id="🎮-使用GameplayEffect初始化属性"><a href="#🎮-使用GameplayEffect初始化属性" class="headerlink" title="🎮 使用GameplayEffect初始化属性"></a>🎮 <strong>使用GameplayEffect初始化属性</strong></h3><h4 id="1-新增DefaultPrimaryAttributes属性"><a href="#1-新增DefaultPrimaryAttributes属性" class="headerlink" title="1. 新增DefaultPrimaryAttributes属性"></a><strong>1. 新增DefaultPrimaryAttributes属性</strong></h4>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在AuraCharacterBase类中</span></span><br><span class="line"><span class="built_in">UPROPERTY</span>(BlueprintReadOnly, EditAnywhere, Category = <span class="string">&quot;Attributes&quot;</span>)</span><br><span class="line">TSubclassOf&lt;UGameplayEffect&gt; DefaultPrimaryAttributes;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="属性说明-2"><a href="#属性说明-2" class="headerlink" title="属性说明"></a><strong>属性说明</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BlueprintReadOnly:    <span class="comment">// 蓝图可以读取</span></span><br><span class="line">EditAnywhere:         <span class="comment">// 在任何地方都可编辑（实例和默认值）</span></span><br><span class="line">Category = <span class="string">&quot;Attributes&quot;</span>: <span class="comment">// 在编辑器&quot;Attributes&quot;分类下</span></span><br><span class="line">TSubclassOf&lt;UGameplayEffect&gt;: <span class="comment">// 必须是UGameplayEffect或其子类</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="2-InitializePrimaryAttributes函数"><a href="#2-InitializePrimaryAttributes函数" class="headerlink" title="2. InitializePrimaryAttributes函数"></a><strong>2. InitializePrimaryAttributes函数</strong></h4>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化主属性函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">AAuraCharacterBase::InitializePrimaryAttributes</span><span class="params">()</span> <span class="type">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 1. 检查ASC是否有效</span></span><br><span class="line">    <span class="built_in">check</span>(<span class="built_in">IsValid</span>(<span class="built_in">GetAbilitySystemComponent</span>()));</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2. 检查DefaultPrimaryAttributes是否有效</span></span><br><span class="line">    <span class="built_in">check</span>(DefaultPrimaryAttributes);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3. 创建效果上下文</span></span><br><span class="line">    <span class="type">const</span> FGameplayEffectContextHandle ContextHandle = </span><br><span class="line">        <span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">MakeEffectContext</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 4. 创建效果规格</span></span><br><span class="line">    <span class="type">const</span> FGameplayEffectSpecHandle SpecHandle = </span><br><span class="line">        <span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">MakeOutgoingSpec</span>(</span><br><span class="line">            DefaultPrimaryAttributes,  <span class="comment">// 效果类</span></span><br><span class="line">            <span class="number">1.f</span>,                       <span class="comment">// 等级</span></span><br><span class="line">            ContextHandle              <span class="comment">// 上下文</span></span><br><span class="line">        );</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 5. 应用效果到自身</span></span><br><span class="line">    <span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">ApplyGameplayEffectSpecToTarget</span>(</span><br><span class="line">        *SpecHandle.Data.<span class="built_in">Get</span>(),           <span class="comment">// 效果规格数据</span></span><br><span class="line">        <span class="built_in">GetAbilitySystemComponent</span>()       <span class="comment">// 目标ASC（自身）</span></span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="3-InitAbilityActorInfo函数扩展"><a href="#3-InitAbilityActorInfo函数扩展" class="headerlink" title="3. InitAbilityActorInfo函数扩展"></a><strong>3. InitAbilityActorInfo函数扩展</strong></h4>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在AuraCharacter::InitAbilityActorInfo末尾添加</span></span><br><span class="line"><span class="built_in">InitializePrimaryAttributes</span>();</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a><strong>执行顺序</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 完整的初始化流程：</span></span><br><span class="line"><span class="number">1.</span> 获取PlayerState和ASC</span><br><span class="line"><span class="number">2.</span> 初始化ASC的AbilityActorInfo</span><br><span class="line"><span class="number">3.</span> 设置AbilityActorInfo（绑定委托）</span><br><span class="line"><span class="number">4.</span> 保存ASC和AttributeSet引用</span><br><span class="line"><span class="number">5.</span> 初始化UI覆盖层</span><br><span class="line"><span class="number">6.</span> 初始化主属性 ← 新增步骤</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="4-check宏的使用"><a href="#4-check宏的使用" class="headerlink" title="4. check宏的使用"></a><strong>4. check宏的使用</strong></h4>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检查ASC是否有效</span></span><br><span class="line"><span class="built_in">check</span>(<span class="built_in">IsValid</span>(<span class="built_in">GetAbilitySystemComponent</span>()));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查DefaultPrimaryAttributes是否设置</span></span><br><span class="line"><span class="built_in">check</span>(DefaultPrimaryAttributes);</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="check宏的作用"><a href="#check宏的作用" class="headerlink" title="check宏的作用"></a><strong>check宏的作用</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开发时断言检查</span></span><br><span class="line"><span class="comment">// 如果条件为false，程序崩溃并显示错误信息</span></span><br><span class="line"><span class="comment">// 发布版本中自动移除，不影响性能</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="5-GameplayEffect创建流程"><a href="#5-GameplayEffect创建流程" class="headerlink" title="5. GameplayEffect创建流程"></a><strong>5. GameplayEffect创建流程</strong></h4><h5 id="MakeEffectContext-1"><a href="#MakeEffectContext-1" class="headerlink" title="MakeEffectContext"></a><strong>MakeEffectContext</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">MakeEffectContext</span>()</span><br><span class="line"><span class="comment">// 创建空的GameplayEffect上下文</span></span><br><span class="line"><span class="comment">// 可以添加来源、目标等信息</span></span><br></pre></td></tr></table></figure></div>
+
+<h5 id="MakeOutgoingSpec-1"><a href="#MakeOutgoingSpec-1" class="headerlink" title="MakeOutgoingSpec"></a><strong>MakeOutgoingSpec</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">MakeOutgoingSpec</span>(</span><br><span class="line">    DefaultPrimaryAttributes,  <span class="comment">// 参数1：GameplayEffect类</span></span><br><span class="line">    <span class="number">1.f</span>,                       <span class="comment">// 参数2：效果等级</span></span><br><span class="line">    ContextHandle              <span class="comment">// 参数3：效果上下文</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="ApplyGameplayEffectSpecToTarget"><a href="#ApplyGameplayEffectSpecToTarget" class="headerlink" title="ApplyGameplayEffectSpecToTarget"></a><strong>ApplyGameplayEffectSpecToTarget</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">ApplyGameplayEffectSpecToTarget</span>(</span><br><span class="line">    *SpecHandle.Data.<span class="built_in">Get</span>(),      <span class="comment">// 参数1：效果规格数据</span></span><br><span class="line">    <span class="built_in">GetAbilitySystemComponent</span>()  <span class="comment">// 参数2：目标ASC（自身）</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="6-为什么使用GameplayEffect初始化属性"><a href="#6-为什么使用GameplayEffect初始化属性" class="headerlink" title="6. 为什么使用GameplayEffect初始化属性"></a><strong>6. 为什么使用GameplayEffect初始化属性</strong></h4><h5 id="与传统方式的对比"><a href="#与传统方式的对比" class="headerlink" title="与传统方式的对比"></a><strong>与传统方式的对比</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统方式（直接设置）：</span></span><br><span class="line">AttributeSet-&gt;<span class="built_in">SetStrength</span>(<span class="number">10.f</span>);</span><br><span class="line">AttributeSet-&gt;<span class="built_in">SetIntelligence</span>(<span class="number">8.f</span>);</span><br><span class="line"><span class="comment">// 缺点：硬编码，无法配置，不触发GAS事件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// GameplayEffect方式：</span></span><br><span class="line"><span class="number">1.</span> 创建GameplayEffect蓝图</span><br><span class="line"><span class="number">2.</span> 配置属性修改</span><br><span class="line"><span class="number">3.</span> 通过ASC应用</span><br><span class="line"><span class="comment">// 优点：可配置，触发GAS事件，支持网络复制</span></span><br></pre></td></tr></table></figure></div>
+
+<h5 id="配置驱动的优势"><a href="#配置驱动的优势" class="headerlink" title="配置驱动的优势"></a><strong>配置驱动的优势</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在GameplayEffect蓝图中配置：</span></span><br><span class="line"><span class="number">1.</span> 力量：<span class="number">10</span></span><br><span class="line"><span class="number">2.</span> 智力：<span class="number">8</span>  </span><br><span class="line"><span class="number">3.</span> 敏捷：<span class="number">12</span></span><br><span class="line"><span class="number">4.</span> 体质：<span class="number">14</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不同角色可以使用不同的GameplayEffect</span></span><br><span class="line"><span class="comment">// 非程序员可以轻松调整数值</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="7-预期的GameplayEffect配置"><a href="#7-预期的GameplayEffect配置" class="headerlink" title="7. 预期的GameplayEffect配置"></a><strong>7. 预期的GameplayEffect配置</strong></h4><h5 id="DefaultPrimaryAttributes-GameplayEffect"><a href="#DefaultPrimaryAttributes-GameplayEffect" class="headerlink" title="DefaultPrimaryAttributes GameplayEffect"></a><strong>DefaultPrimaryAttributes GameplayEffect</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 效果类型：Instant（即时）</span></span><br><span class="line"><span class="comment">// 属性修改：</span></span><br><span class="line"><span class="number">1.</span> Strength: +<span class="number">10</span> (Additive)</span><br><span class="line"><span class="number">2.</span> Intelligence: +<span class="number">8</span> (Additive)</span><br><span class="line"><span class="number">3.</span> Dexterity: +<span class="number">12</span> (Additive)  </span><br><span class="line"><span class="number">4.</span> Vitality: +<span class="number">14</span> (Additive)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 作用：设置角色的基础属性值</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="8-当前代码的问题"><a href="#8-当前代码的问题" class="headerlink" title="8. 当前代码的问题"></a><strong>8. 当前代码的问题</strong></h4><h5 id="网络复制考虑"><a href="#网络复制考虑" class="headerlink" title="网络复制考虑"></a><strong>网络复制考虑</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果角色是网络复制的</span></span><br><span class="line"><span class="comment">// 需要在服务器端初始化属性</span></span><br><span class="line"><span class="comment">// 客户端会通过复制获得属性值</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="9-设计模式：模板方法模式"><a href="#9-设计模式：模板方法模式" class="headerlink" title="9. 设计模式：模板方法模式"></a><strong>9. 设计模式：模板方法模式</strong></h4><h5 id="基类提供框架"><a href="#基类提供框架" class="headerlink" title="基类提供框架"></a><strong>基类提供框架</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// AAuraCharacterBase（基类）：</span></span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">InitAbilityActorInfo</span><span class="params">()</span></span>;  <span class="comment">// 框架方法</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitializePrimaryAttributes</span><span class="params">()</span></span>;   <span class="comment">// 具体步骤（新增）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// AAuraCharacter（派生类）：</span></span><br><span class="line">重写InitAbilityActorInfo，调用基类实现</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="执行流程模板"><a href="#执行流程模板" class="headerlink" title="执行流程模板"></a><strong>执行流程模板</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模板方法模式：</span></span><br><span class="line"><span class="number">1.</span> 初始化ASC基础信息（基类）</span><br><span class="line"><span class="number">2.</span> 设置AbilityActorInfo（派生类）</span><br><span class="line"><span class="number">3.</span> 初始化UI（派生类）</span><br><span class="line"><span class="number">4.</span> 初始化属性（基类）← 新增</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="10-与现有系统的集成"><a href="#10-与现有系统的集成" class="headerlink" title="10. 与现有系统的集成"></a><strong>10. 与现有系统的集成</strong></h4><h5 id="与AttributeSet的配合"><a href="#与AttributeSet的配合" class="headerlink" title="与AttributeSet的配合"></a><strong>与AttributeSet的配合</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// AttributeSet中定义了属性：</span></span><br><span class="line">Strength, Intelligence, Dexterity, Vitality</span><br><span class="line"></span><br><span class="line"><span class="comment">// GameplayEffect修改这些属性</span></span><br><span class="line"><span class="comment">// 触发AttributeSet中的：</span></span><br><span class="line"><span class="number">1.</span> PreAttributeChange（验证）</span><br><span class="line"><span class="number">2.</span> PostGameplayEffectExecute（后处理）</span><br><span class="line"><span class="number">3.</span> OnRep函数（网络复制）</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="与UI系统的集成"><a href="#与UI系统的集成" class="headerlink" title="与UI系统的集成"></a><strong>与UI系统的集成</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 属性初始化后：</span></span><br><span class="line"><span class="number">1.</span> AttributeSet属性值更新</span><br><span class="line"><span class="number">2.</span> 触发属性变化委托</span><br><span class="line"><span class="number">3.</span> WidgetController收到通知</span><br><span class="line"><span class="number">4.</span> UI更新显示</span><br></pre></td></tr></table></figure></div>
+
+<p>  <strong>总结</strong>：这个系统使用GameplayEffect来初始化角色的主属性，实现了配置驱动的属性设置。通过GameplayEffect系统，属性初始化可以触发完整的GAS事件流程，支持网络复制，并且可以在蓝图中灵活配置。</p>
+<p>- </p>
+<p>  Attribute Based Modifiers</p>
+<p>  09:09</p>
+<p>- </p>
+<p>  Modifier Order of Operations</p>
+<p>  11:08</p>
+<p>- </p>
+<p>  Modifier Coefficients</p>
+<p>  06:54</p>
+<p>- </p>
+<p>  Secondary Attributes</p>
+<p>  13:47</p>
+<p>- </p>
+<p>  Derived Attributes</p>
+<p>  31:39</p>
+<p>- </p>
+<p>  Custom Calculations</p>
+<p>  06:14</p>
+<p>- </p>
+<p>  Player Level and Combat Interface</p>
+<p>  13:07</p>
+<p>- </p>
+<p>  Modifier Magnitude Calculations</p>
+<p>  37:27</p>
+<p>- </p>
+<p>  Initializing Vital Attributes</p>
+<p>  07:47</p>
 <h2 id="8-Attribute-Menu-属性菜单"><a href="#8-Attribute-Menu-属性菜单" class="headerlink" title="8.Attribute Menu &#x2F; 属性菜单"></a>8.Attribute Menu &#x2F; 属性菜单</h2><ul>
 <li><p>21个讲座·4 小时 42 分钟 &#x2F; 21 Lectures · 4 Hours 42 Minutes</p>
 </li>
@@ -4021,7 +4012,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-12-18 01:53:05
+                    :</strong> 2025-12-18 16:28:47
             </li>
         
         <li>
@@ -4116,25 +4107,46 @@
             
     <div id="waline"></div>
     <script type="module" data-swup-reload-script>
-      import { init } from '/js/libs/waline.mjs';
+      import { init } from '/js/libs/waline.js';
 
-      function loadWaline() {
-        init({
-          el: '#waline',
-          serverURL: 'https://example.example.com',
-          dark: 'body[class~="dark-mode"]',
-          reaction: false,
-          requiredMeta: ['nick', 'mail'],
-          emoji: [],
-                    lang: 'zh-CN',
-        });
-      }
+      (function() {
+        const startPath = location.pathname;
+        const startTime = Date.now();
+        const retryDelay = 200;
+        const retryLimit = 5000;
 
-      if (typeof swup !== 'undefined') {
-        loadWaline();
-      } else {
-        window.addEventListener('DOMContentLoaded', loadWaline);
-      }
+        const runWaline = () => {
+          if (location.pathname !== startPath) {
+            return;
+          }
+
+          const container = document.getElementById('waline');
+          if (!container) {
+            if (Date.now() - startTime < retryLimit) {
+              setTimeout(runWaline, retryDelay);
+            }
+            return;
+          }
+
+          if (window.redefineWalineInstance?.destroy) {
+            window.redefineWalineInstance.destroy();
+          }
+
+          container.innerHTML = '';
+          window.redefineWalineInstance = init({
+            el: '#waline',
+            serverURL: 'https://example.example.com',
+            path: location.pathname,
+            dark: 'body[class~="dark-mode"]',
+            reaction: false,
+            requiredMeta: ['nick', 'mail'],
+            emoji: [],
+                      lang: 'zh-CN',
+          });
+        };
+
+        runWaline();
+      })();
     </script>
 
 
@@ -4153,13 +4165,14 @@
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">Unreal Engine——《Aura》Gameplay Ability System学习报告</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E5-%E6%B8%B8%E6%88%8F%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F-GAS-%E4%BF%AF%E8%A7%86%E8%A7%92RPG"><span class="nav-text">虚幻引擎5 - 游戏技能系统(GAS) - 俯视角RPG</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-Introduction-%E4%BB%8B%E7%BB%8D"><span class="nav-text">0.Introduction &#x2F; 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Project-Creation-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA"><span class="nav-text">1.Project Creation &#x2F; 项目创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%A7%99%E2%80%8D%E2%99%80%EF%B8%8F-AuraCharacterBase-%E5%9F%BA%E7%B1%BB%E5%88%86%E6%9E%90"><span class="nav-text">🧙‍♀️ AuraCharacterBase 基类分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-AuraPlayerController-%E5%88%86%E6%9E%90"><span class="nav-text">🎮 AuraPlayerController 分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%84-AuraPlayerController-%E8%BE%93%E5%85%A5%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7"><span class="nav-text">🔄 AuraPlayerController 输入系统升级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%A4%BA-AuraCharacter-%E7%8E%A9%E5%AE%B6%E8%A7%92%E8%89%B2%E9%85%8D%E7%BD%AE"><span class="nav-text">🤺 AuraCharacter 玩家角色配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AF-Unreal-Engine-%E6%8E%A5%E5%8F%A3%E7%B3%BB%E7%BB%9F%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90"><span class="nav-text">🎯 Unreal Engine 接口系统深入解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AF-%E9%BC%A0%E6%A0%87%E5%85%89%E6%A0%87%E8%BF%BD%E8%B8%AA%E4%B8%8E%E6%95%8C%E4%BA%BA%E9%AB%98%E4%BA%AE%E7%B3%BB%E7%BB%9F"><span class="nav-text">🎯 鼠标光标追踪与敌人高亮系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%91%BE-AuraEnemy-%E6%95%8C%E4%BA%BA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="nav-text">👾 AuraEnemy 敌人实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第一章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Intro-to-the-Gameplay-Ability-System-%E6%B8%B8%E6%88%8F%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D"><span class="nav-text">2.Intro to the Gameplay Ability System &#x2F; 游戏技能系统介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-AuraPlayerState-%E7%8E%A9%E5%AE%B6%E7%8A%B6%E6%80%81%E7%B1%BB"><span class="nav-text">🎮 AuraPlayerState 玩家状态类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8F%97%EF%B8%8F-GAS-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%EF%BC%9A%E5%88%86%E7%A6%BB%E5%BC%8F%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD"><span class="nav-text">🏗️ GAS 架构设计：分离式组件挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8C%90-GAS-%E7%BD%91%E7%BB%9C%E5%A4%8D%E5%88%B6%E6%A8%A1%E5%BC%8F%E9%85%8D%E7%BD%AE"><span class="nav-text">🌐 GAS 网络复制模式配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-GAS-%E5%88%9D%E5%A7%8B%E5%8C%96%E7%B3%BB%E7%BB%9F"><span class="nav-text">🎮 GAS 初始化系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第二章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Attributes-%E5%B1%9E%E6%80%A7"><span class="nav-text">3.Attributes &#x2F; 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8F%A5-AuraAttributeSet-%E5%B1%9E%E6%80%A7%E9%9B%86%E5%AE%9E%E7%8E%B0"><span class="nav-text">🏥 AuraAttributeSet 属性集实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%9A%80-AuraAttributeSet-%E5%B1%9E%E6%80%A7%E9%9B%86%E5%8D%87%E7%BA%A7"><span class="nav-text">🚀 AuraAttributeSet 属性集升级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9A%A0%EF%B8%8F-AuraEffectActor-%E4%B8%B4%E6%97%B6%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0%E4%B8%8Econst-cast%E9%97%AE%E9%A2%98"><span class="nav-text">⚠️ AuraEffectActor 临时效果实现与const_cast问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E4%B8%89%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第三章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-RPG-Game-UI-RPG%E6%B8%B8%E6%88%8F%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2"><span class="nav-text">4.RPG Game UI &#x2F; RPG游戏用户界面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-Aura-UI-%E7%B3%BB%E7%BB%9F%E7%9A%84-MVC-%E6%9E%B6%E6%9E%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">🎮 Aura UI 系统的 MVC 架构实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%96%A5%EF%B8%8F-AuraHUD%EF%BC%9AUI%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-text">🖥️ AuraHUD：UI管理系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-Aura-UI-%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="nav-text">🎮 Aura UI 系统的初始化流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A2-%E5%B9%BF%E6%92%AD%E5%88%9D%E5%A7%8B%E5%80%BC%E7%B3%BB%E7%BB%9F"><span class="nav-text">📢 广播初始值系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A1-%E5%B1%9E%E6%80%A7%E5%8F%98%E5%8C%96%E7%9B%91%E5%90%AC%E7%B3%BB%E7%BB%9F"><span class="nav-text">📡 属性变化监听系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%84-%E6%89%A9%E5%B1%95Mana%E5%B1%9E%E6%80%A7%E7%9B%91%E5%90%AC"><span class="nav-text">🔄 扩展Mana属性监听</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第四章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Gameplay-Effects-%E6%B8%B8%E6%88%8F%E6%95%88%E6%9E%9C"><span class="nav-text">5.Gameplay Effects &#x2F; 游戏效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AF-AuraEffectActor-%E6%94%B9%E8%BF%9B%EF%BC%9A%E4%BD%BF%E7%94%A8GameplayEffect%E7%B3%BB%E7%BB%9F"><span class="nav-text">🎯 AuraEffectActor 改进：使用GameplayEffect系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%9B%EF%B8%8F-AuraEffectActor-%E5%A2%9E%E5%BC%BA%EF%BC%9A%E5%A4%9A%E7%B1%BB%E5%9E%8B%E6%95%88%E6%9E%9C%E7%B3%BB%E7%BB%9F"><span class="nav-text">🎛️ AuraEffectActor 增强：多类型效果系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%8F%B0-AuraEffectActor%EF%BC%9A%E5%8D%B3%E6%97%B6%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%95%88%E6%9E%9C%E5%BA%94%E7%94%A8%E7%AD%96%E7%95%A5"><span class="nav-text">⏰ AuraEffectActor：即时与持续效果应用策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%99%BE%EF%B8%8F-AuraEffectActor%EF%BC%9A%E6%97%A0%E9%99%90%E6%95%88%E6%9E%9C%E5%BA%94%E7%94%A8%E4%B8%8E%E7%A7%BB%E9%99%A4%E7%B3%BB%E7%BB%9F"><span class="nav-text">♾️ AuraEffectActor：无限效果应用与移除系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%A7-AuraAttributeSet%EF%BC%9A%E5%B1%9E%E6%80%A7%E5%89%8D%E5%8F%98%E6%9B%B4%E5%9B%9E%E8%B0%83"><span class="nav-text">🔧 AuraAttributeSet：属性前变更回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%84-AuraAttributeSet%EF%BC%9A%E6%95%88%E6%9E%9C%E5%90%8E%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-text">🔄 AuraAttributeSet：效果后处理系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E4%BA%94%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第五章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Gameplay-Tags-%E6%B8%B8%E6%88%8F%E6%A0%87%E7%AD%BE"><span class="nav-text">6.Gameplay Tags &#x2F; 游戏标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A1-GameplayEffect%E5%A7%94%E6%89%98%E7%B3%BB%E7%BB%9F"><span class="nav-text">📡 GameplayEffect委托系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8F%B7%EF%B8%8F-%E8%8E%B7%E5%8F%96GameplayEffect%E7%9A%84%E6%89%80%E6%9C%89Asset-Tags"><span class="nav-text">🏷️ 获取GameplayEffect的所有Asset Tags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A2-%E5%B9%BF%E6%92%AD%E6%95%88%E6%9E%9C%E8%B5%84%E4%BA%A7%E6%A0%87%E7%AD%BE%E7%B3%BB%E7%BB%9F"><span class="nav-text">📢 广播效果资产标签系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%8A-UI%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%B3%BB%E7%BB%9F%EF%BC%9AFUIWidgetRow-%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-text">📊 UI数据表系统：FUIWidgetRow 结构体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%A7-%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0%EF%BC%9AGetDataTableRowByTag"><span class="nav-text">🔧 模板函数：GetDataTableRowByTag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A4-%E5%B9%BF%E6%92%AD%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%A1%8C%EF%BC%9AMessageWidgetRowDelegate"><span class="nav-text">📤 广播数据表行：MessageWidgetRowDelegate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%84-%E4%BD%BF%E7%94%A8Lambda%E6%9B%BF%E6%8D%A2%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-text">🔄 使用Lambda替换回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%92-%E5%B1%9E%E6%80%A7%E5%8F%8C%E9%87%8D%E9%92%B3%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="nav-text">🔒 属性双重钳制系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E5%85%AD%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第六章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-RPG-Attributes-RPG%E5%B1%9E%E6%80%A7"><span class="nav-text">7.RPG Attributes &#x2F; RPG属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Attribute-Menu-%E5%B1%9E%E6%80%A7%E8%8F%9C%E5%8D%95"><span class="nav-text">8.Attribute Menu &#x2F; 属性菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Gameplay-Abilities-%E6%B8%B8%E6%88%8F%E6%8A%80%E8%83%BD"><span class="nav-text">9.Gameplay Abilities &#x2F; 游戏技能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Ability-Tasks-%E6%8A%80%E8%83%BD%E4%BB%BB%E5%8A%A1"><span class="nav-text">10.Ability Tasks &#x2F; 技能任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-RPG-Character-Classes-RPG%E8%A7%92%E8%89%B2%E8%81%8C%E4%B8%9A"><span class="nav-text">11.RPG Character Classes &#x2F; RPG角色职业</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-Damage-%E4%BC%A4%E5%AE%B3"><span class="nav-text">12.Damage &#x2F; 伤害</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-Advanced-Damage-Techniques-%E9%AB%98%E7%BA%A7%E4%BC%A4%E5%AE%B3%E6%8A%80%E6%9C%AF"><span class="nav-text">13.Advanced Damage Techniques &#x2F; 高级伤害技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-Enemy-AI-%E6%95%8C%E4%BA%BAAI"><span class="nav-text">14.Enemy AI &#x2F; 敌人AI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Enemy-Melee-Attacks-%E6%95%8C%E4%BA%BA%E8%BF%91%E6%88%98%E6%94%BB%E5%87%BB"><span class="nav-text">15.Enemy Melee Attacks &#x2F; 敌人近战攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-Enemy-Ranged-Attacks-%E6%95%8C%E4%BA%BA%E8%BF%9C%E7%A8%8B%E6%94%BB%E5%87%BB"><span class="nav-text">16.Enemy Ranged Attacks &#x2F; 敌人远程攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-Enemy-Spell-Attacks-%E6%95%8C%E4%BA%BA%E6%B3%95%E6%9C%AF%E6%94%BB%E5%87%BB"><span class="nav-text">17.Enemy Spell Attacks &#x2F; 敌人法术攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-Enemy-Finishing-Touches-%E6%95%8C%E4%BA%BA%E6%9C%80%E7%BB%88%E5%AE%8C%E5%96%84"><span class="nav-text">18.Enemy Finishing Touches &#x2F; 敌人最终完善</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-Level-Tweaks-%E5%85%B3%E5%8D%A1%E8%B0%83%E6%95%B4"><span class="nav-text">19.Level Tweaks &#x2F; 关卡调整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-Cost-and-Cooldown-%E6%B6%88%E8%80%97%E4%B8%8E%E5%86%B7%E5%8D%B4"><span class="nav-text">20.Cost and Cooldown &#x2F; 消耗与冷却</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-Experience-and-Leveling-Up-%E7%BB%8F%E9%AA%8C%E4%B8%8E%E5%8D%87%E7%BA%A7"><span class="nav-text">21.Experience and Leveling Up &#x2F; 经验与升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22-Attribute-Points-%E5%B1%9E%E6%80%A7%E7%82%B9"><span class="nav-text">22.Attribute Points &#x2F; 属性点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23-Spell-Menu-%E6%B3%95%E6%9C%AF%E8%8F%9C%E5%8D%95"><span class="nav-text">23.Spell Menu &#x2F; 法术菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#24-Combat-Tricks-%E6%88%98%E6%96%97%E6%8A%80%E5%B7%A7"><span class="nav-text">24.Combat Tricks &#x2F; 战斗技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#25-What-a-Shock-%E9%9C%87%E6%83%8A%E6%B3%95%E6%9C%AF%EF%BC%88%E7%A4%BA%E4%BE%8B%EF%BC%89"><span class="nav-text">25.What a Shock &#x2F; 震惊法术（示例）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#26-Passive-Spells-%E8%A2%AB%E5%8A%A8%E6%B3%95%E6%9C%AF"><span class="nav-text">26.Passive Spells &#x2F; 被动法术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#27-Arcane-Shards-%E5%A5%A5%E6%9C%AF%E7%A2%8E%E7%89%87"><span class="nav-text">27.Arcane Shards &#x2F; 奥术碎片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#28-Fire-Blast-%E7%81%AB%E7%84%B0%E5%86%B2%E5%87%BB"><span class="nav-text">28.Fire Blast &#x2F; 火焰冲击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#29-Saving-Progress-%E4%BF%9D%E5%AD%98%E8%BF%9B%E5%BA%A6"><span class="nav-text">29.Saving Progress &#x2F; 保存进度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#30-Checkpoints-%E6%A3%80%E6%9F%A5%E7%82%B9"><span class="nav-text">30.Checkpoints &#x2F; 检查点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-Map-Entrance-%E5%9C%B0%E5%9B%BE%E5%85%A5%E5%8F%A3"><span class="nav-text">31.Map Entrance &#x2F; 地图入口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#32-Course-Conclusion-%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93"><span class="nav-text">32.Course Conclusion &#x2F; 课程总结</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E5-%E6%B8%B8%E6%88%8F%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F-GAS-%E4%BF%AF%E8%A7%86%E8%A7%92RPG"><span class="nav-text">虚幻引擎5 - 游戏技能系统(GAS) - 俯视角RPG</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-Introduction-%E4%BB%8B%E7%BB%8D"><span class="nav-text">0.Introduction &#x2F; 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Project-Creation-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA"><span class="nav-text">1.Project Creation &#x2F; 项目创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%A7%99%E2%80%8D%E2%99%80%EF%B8%8F-AuraCharacterBase-%E5%9F%BA%E7%B1%BB%E5%88%86%E6%9E%90"><span class="nav-text">🧙‍♀️ AuraCharacterBase 基类分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-AuraPlayerController-%E5%88%86%E6%9E%90"><span class="nav-text">🎮 AuraPlayerController 分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%84-AuraPlayerController-%E8%BE%93%E5%85%A5%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7"><span class="nav-text">🔄 AuraPlayerController 输入系统升级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%A4%BA-AuraCharacter-%E7%8E%A9%E5%AE%B6%E8%A7%92%E8%89%B2%E9%85%8D%E7%BD%AE"><span class="nav-text">🤺 AuraCharacter 玩家角色配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AF-Unreal-Engine-%E6%8E%A5%E5%8F%A3%E7%B3%BB%E7%BB%9F%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90"><span class="nav-text">🎯 Unreal Engine 接口系统深入解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AF-%E9%BC%A0%E6%A0%87%E5%85%89%E6%A0%87%E8%BF%BD%E8%B8%AA%E4%B8%8E%E6%95%8C%E4%BA%BA%E9%AB%98%E4%BA%AE%E7%B3%BB%E7%BB%9F"><span class="nav-text">🎯 鼠标光标追踪与敌人高亮系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%91%BE-AuraEnemy-%E6%95%8C%E4%BA%BA%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="nav-text">👾 AuraEnemy 敌人实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第一章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Intro-to-the-Gameplay-Ability-System-%E6%B8%B8%E6%88%8F%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D"><span class="nav-text">2.Intro to the Gameplay Ability System &#x2F; 游戏技能系统介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-AuraPlayerState-%E7%8E%A9%E5%AE%B6%E7%8A%B6%E6%80%81%E7%B1%BB"><span class="nav-text">🎮 AuraPlayerState 玩家状态类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8F%97%EF%B8%8F-GAS-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%EF%BC%9A%E5%88%86%E7%A6%BB%E5%BC%8F%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD"><span class="nav-text">🏗️ GAS 架构设计：分离式组件挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8C%90-GAS-%E7%BD%91%E7%BB%9C%E5%A4%8D%E5%88%B6%E6%A8%A1%E5%BC%8F%E9%85%8D%E7%BD%AE"><span class="nav-text">🌐 GAS 网络复制模式配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-GAS-%E5%88%9D%E5%A7%8B%E5%8C%96%E7%B3%BB%E7%BB%9F"><span class="nav-text">🎮 GAS 初始化系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第二章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Attributes-%E5%B1%9E%E6%80%A7"><span class="nav-text">3.Attributes &#x2F; 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8F%A5-AuraAttributeSet-%E5%B1%9E%E6%80%A7%E9%9B%86%E5%AE%9E%E7%8E%B0"><span class="nav-text">🏥 AuraAttributeSet 属性集实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%9A%80-AuraAttributeSet-%E5%B1%9E%E6%80%A7%E9%9B%86%E5%8D%87%E7%BA%A7"><span class="nav-text">🚀 AuraAttributeSet 属性集升级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9A%A0%EF%B8%8F-AuraEffectActor-%E4%B8%B4%E6%97%B6%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0%E4%B8%8Econst-cast%E9%97%AE%E9%A2%98"><span class="nav-text">⚠️ AuraEffectActor 临时效果实现与const_cast问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E4%B8%89%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第三章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-RPG-Game-UI-RPG%E6%B8%B8%E6%88%8F%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2"><span class="nav-text">4.RPG Game UI &#x2F; RPG游戏用户界面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-Aura-UI-%E7%B3%BB%E7%BB%9F%E7%9A%84-MVC-%E6%9E%B6%E6%9E%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">🎮 Aura UI 系统的 MVC 架构实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%96%A5%EF%B8%8F-AuraHUD%EF%BC%9AUI%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-text">🖥️ AuraHUD：UI管理系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-Aura-UI-%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="nav-text">🎮 Aura UI 系统的初始化流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A2-%E5%B9%BF%E6%92%AD%E5%88%9D%E5%A7%8B%E5%80%BC%E7%B3%BB%E7%BB%9F"><span class="nav-text">📢 广播初始值系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A1-%E5%B1%9E%E6%80%A7%E5%8F%98%E5%8C%96%E7%9B%91%E5%90%AC%E7%B3%BB%E7%BB%9F"><span class="nav-text">📡 属性变化监听系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%84-%E6%89%A9%E5%B1%95Mana%E5%B1%9E%E6%80%A7%E7%9B%91%E5%90%AC"><span class="nav-text">🔄 扩展Mana属性监听</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第四章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Gameplay-Effects-%E6%B8%B8%E6%88%8F%E6%95%88%E6%9E%9C"><span class="nav-text">5.Gameplay Effects &#x2F; 游戏效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AF-AuraEffectActor-%E6%94%B9%E8%BF%9B%EF%BC%9A%E4%BD%BF%E7%94%A8GameplayEffect%E7%B3%BB%E7%BB%9F"><span class="nav-text">🎯 AuraEffectActor 改进：使用GameplayEffect系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%9B%EF%B8%8F-AuraEffectActor-%E5%A2%9E%E5%BC%BA%EF%BC%9A%E5%A4%9A%E7%B1%BB%E5%9E%8B%E6%95%88%E6%9E%9C%E7%B3%BB%E7%BB%9F"><span class="nav-text">🎛️ AuraEffectActor 增强：多类型效果系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%8F%B0-AuraEffectActor%EF%BC%9A%E5%8D%B3%E6%97%B6%E4%B8%8E%E6%8C%81%E7%BB%AD%E6%95%88%E6%9E%9C%E5%BA%94%E7%94%A8%E7%AD%96%E7%95%A5"><span class="nav-text">⏰ AuraEffectActor：即时与持续效果应用策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%99%BE%EF%B8%8F-AuraEffectActor%EF%BC%9A%E6%97%A0%E9%99%90%E6%95%88%E6%9E%9C%E5%BA%94%E7%94%A8%E4%B8%8E%E7%A7%BB%E9%99%A4%E7%B3%BB%E7%BB%9F"><span class="nav-text">♾️ AuraEffectActor：无限效果应用与移除系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%A7-AuraAttributeSet%EF%BC%9A%E5%B1%9E%E6%80%A7%E5%89%8D%E5%8F%98%E6%9B%B4%E5%9B%9E%E8%B0%83"><span class="nav-text">🔧 AuraAttributeSet：属性前变更回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%84-AuraAttributeSet%EF%BC%9A%E6%95%88%E6%9E%9C%E5%90%8E%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-text">🔄 AuraAttributeSet：效果后处理系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E4%BA%94%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第五章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Gameplay-Tags-%E6%B8%B8%E6%88%8F%E6%A0%87%E7%AD%BE"><span class="nav-text">6.Gameplay Tags &#x2F; 游戏标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A1-GameplayEffect%E5%A7%94%E6%89%98%E7%B3%BB%E7%BB%9F"><span class="nav-text">📡 GameplayEffect委托系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8F%B7%EF%B8%8F-%E8%8E%B7%E5%8F%96GameplayEffect%E7%9A%84%E6%89%80%E6%9C%89Asset-Tags"><span class="nav-text">🏷️ 获取GameplayEffect的所有Asset Tags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A2-%E5%B9%BF%E6%92%AD%E6%95%88%E6%9E%9C%E8%B5%84%E4%BA%A7%E6%A0%87%E7%AD%BE%E7%B3%BB%E7%BB%9F"><span class="nav-text">📢 广播效果资产标签系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%8A-UI%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%B3%BB%E7%BB%9F%EF%BC%9AFUIWidgetRow-%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-text">📊 UI数据表系统：FUIWidgetRow 结构体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%A7-%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0%EF%BC%9AGetDataTableRowByTag"><span class="nav-text">🔧 模板函数：GetDataTableRowByTag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A4-%E5%B9%BF%E6%92%AD%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%A1%8C%EF%BC%9AMessageWidgetRowDelegate"><span class="nav-text">📤 广播数据表行：MessageWidgetRowDelegate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%84-%E4%BD%BF%E7%94%A8Lambda%E6%9B%BF%E6%8D%A2%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-text">🔄 使用Lambda替换回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%94%92-%E5%B1%9E%E6%80%A7%E5%8F%8C%E9%87%8D%E9%92%B3%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="nav-text">🔒 属性双重钳制系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%9A-%E7%AC%AC%E5%85%AD%E7%AB%A0%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-text">📚 第六章关键方法总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-RPG-Attributes-RPG%E5%B1%9E%E6%80%A7"><span class="nav-text">7.RPG Attributes &#x2F; RPG属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%8E%AE-%E4%BD%BF%E7%94%A8GameplayEffect%E5%88%9D%E5%A7%8B%E5%8C%96%E5%B1%9E%E6%80%A7"><span class="nav-text">🎮 使用GameplayEffect初始化属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Attribute-Menu-%E5%B1%9E%E6%80%A7%E8%8F%9C%E5%8D%95"><span class="nav-text">8.Attribute Menu &#x2F; 属性菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Gameplay-Abilities-%E6%B8%B8%E6%88%8F%E6%8A%80%E8%83%BD"><span class="nav-text">9.Gameplay Abilities &#x2F; 游戏技能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Ability-Tasks-%E6%8A%80%E8%83%BD%E4%BB%BB%E5%8A%A1"><span class="nav-text">10.Ability Tasks &#x2F; 技能任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-RPG-Character-Classes-RPG%E8%A7%92%E8%89%B2%E8%81%8C%E4%B8%9A"><span class="nav-text">11.RPG Character Classes &#x2F; RPG角色职业</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-Damage-%E4%BC%A4%E5%AE%B3"><span class="nav-text">12.Damage &#x2F; 伤害</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-Advanced-Damage-Techniques-%E9%AB%98%E7%BA%A7%E4%BC%A4%E5%AE%B3%E6%8A%80%E6%9C%AF"><span class="nav-text">13.Advanced Damage Techniques &#x2F; 高级伤害技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-Enemy-AI-%E6%95%8C%E4%BA%BAAI"><span class="nav-text">14.Enemy AI &#x2F; 敌人AI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Enemy-Melee-Attacks-%E6%95%8C%E4%BA%BA%E8%BF%91%E6%88%98%E6%94%BB%E5%87%BB"><span class="nav-text">15.Enemy Melee Attacks &#x2F; 敌人近战攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-Enemy-Ranged-Attacks-%E6%95%8C%E4%BA%BA%E8%BF%9C%E7%A8%8B%E6%94%BB%E5%87%BB"><span class="nav-text">16.Enemy Ranged Attacks &#x2F; 敌人远程攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-Enemy-Spell-Attacks-%E6%95%8C%E4%BA%BA%E6%B3%95%E6%9C%AF%E6%94%BB%E5%87%BB"><span class="nav-text">17.Enemy Spell Attacks &#x2F; 敌人法术攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-Enemy-Finishing-Touches-%E6%95%8C%E4%BA%BA%E6%9C%80%E7%BB%88%E5%AE%8C%E5%96%84"><span class="nav-text">18.Enemy Finishing Touches &#x2F; 敌人最终完善</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-Level-Tweaks-%E5%85%B3%E5%8D%A1%E8%B0%83%E6%95%B4"><span class="nav-text">19.Level Tweaks &#x2F; 关卡调整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-Cost-and-Cooldown-%E6%B6%88%E8%80%97%E4%B8%8E%E5%86%B7%E5%8D%B4"><span class="nav-text">20.Cost and Cooldown &#x2F; 消耗与冷却</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-Experience-and-Leveling-Up-%E7%BB%8F%E9%AA%8C%E4%B8%8E%E5%8D%87%E7%BA%A7"><span class="nav-text">21.Experience and Leveling Up &#x2F; 经验与升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22-Attribute-Points-%E5%B1%9E%E6%80%A7%E7%82%B9"><span class="nav-text">22.Attribute Points &#x2F; 属性点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23-Spell-Menu-%E6%B3%95%E6%9C%AF%E8%8F%9C%E5%8D%95"><span class="nav-text">23.Spell Menu &#x2F; 法术菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#24-Combat-Tricks-%E6%88%98%E6%96%97%E6%8A%80%E5%B7%A7"><span class="nav-text">24.Combat Tricks &#x2F; 战斗技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#25-What-a-Shock-%E9%9C%87%E6%83%8A%E6%B3%95%E6%9C%AF%EF%BC%88%E7%A4%BA%E4%BE%8B%EF%BC%89"><span class="nav-text">25.What a Shock &#x2F; 震惊法术（示例）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#26-Passive-Spells-%E8%A2%AB%E5%8A%A8%E6%B3%95%E6%9C%AF"><span class="nav-text">26.Passive Spells &#x2F; 被动法术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#27-Arcane-Shards-%E5%A5%A5%E6%9C%AF%E7%A2%8E%E7%89%87"><span class="nav-text">27.Arcane Shards &#x2F; 奥术碎片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#28-Fire-Blast-%E7%81%AB%E7%84%B0%E5%86%B2%E5%87%BB"><span class="nav-text">28.Fire Blast &#x2F; 火焰冲击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#29-Saving-Progress-%E4%BF%9D%E5%AD%98%E8%BF%9B%E5%BA%A6"><span class="nav-text">29.Saving Progress &#x2F; 保存进度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#30-Checkpoints-%E6%A3%80%E6%9F%A5%E7%82%B9"><span class="nav-text">30.Checkpoints &#x2F; 检查点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-Map-Entrance-%E5%9C%B0%E5%9B%BE%E5%85%A5%E5%8F%A3"><span class="nav-text">31.Map Entrance &#x2F; 地图入口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#32-Course-Conclusion-%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93"><span class="nav-text">32.Course Conclusion &#x2F; 课程总结</span></a></li></ol></li></ol>
 
 	</div>
 </div>
 	</div>
 	
 </div>
+
 			</div>
 
 			
@@ -4175,12 +4188,12 @@
               <span>2023</span>
               -
             
-            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a>
+            2026&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">ELecmark</a>
             
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        30 posts in total
+                        31 posts in total
                     </span>
                     
                 </p>
@@ -4205,7 +4218,7 @@
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
             <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.5</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.9.0</a></span>
         </div>
         
         
@@ -4299,9 +4312,43 @@
 </div>
 	</div>
 
-	<div class="image-viewer-container">
-	<img src="">
+	<div class="image-viewer-container" role="dialog" aria-modal="true" aria-label="Image viewer">
+	<button class="image-viewer-close" type="button" aria-label="Close">
+		<i class="fa-solid fa-xmark"></i>
+	</button>
+	<button class="image-viewer-prev" type="button" aria-label="Prev">
+		<i class="fa-solid fa-chevron-left"></i>
+	</button>
+	<div class="image-viewer-frame">
+		<img src="" alt="">
+	</div>
+	<div class="image-viewer-exif-panel hidden absolute left-1/2 bottom-20 -translate-x-1/2 w-[min(92vw,420px)] max-h-[60vh] overflow-hidden rounded-2xl bg-background-color-transparent-80 p-4 text-left shadow-redefine-flat backdrop-blur-md" role="dialog" aria-label="EXIF" aria-hidden="true">
+		<div class="flex items-center justify-between mb-3">
+			<span class="text-sm font-semibold text-first-text-color">EXIF</span>
+			<button class="image-viewer-exif-close flex h-8 w-8 items-center justify-center rounded-full bg-background-color-transparent-80 text-first-text-color transition hover:bg-background-color-transparent-40" type="button" aria-label="Close">
+				<i class="fa-solid fa-xmark text-[0.65rem]"></i>
+			</button>
+		</div>
+		<div class="image-viewer-exif-cards grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto pr-1 scrollbar-hide"></div>
+		<template class="image-viewer-exif-card-template">
+			<div class="rounded-lg bg-background-color-transparent-40 px-3 py-2">
+				<div class="image-viewer-exif-card-header flex items-center gap-2 mb-1">
+					<i class="image-viewer-exif-card-icon fa-solid fa-circle-info text-xs text-third-text-color"></i>
+					<div class="image-viewer-exif-card-title text-xs font-semibold text-first-text-color"></div>
+				</div>
+				<div class="image-viewer-exif-card-items flex flex-col gap-1"></div>
+			</div>
+		</template>
+	</div>
+	<button class="image-viewer-exif-toggle flex items-center gap-2 hidden absolute left-1/2 bottom-6 -translate-x-1/2 rounded-full border border-border-color bg-background-color-transparent-80 px-4 py-2 text-first-text-color backdrop-blur-md transition hover:bg-background-color-transparent-40" type="button" aria-label="EXIF" aria-expanded="false">
+		<i class="fa-solid fa-circle-info text-xs"></i>
+		<span class="text-xs font-semibold uppercase tracking-wider">EXIF</span>
+	</button>
+	<button class="image-viewer-next" type="button" aria-label="Next">
+		<i class="fa-solid fa-chevron-right"></i>
+	</button>
 </div>
+
 
 	
 	<div class="search-pop-overlay">
@@ -4343,7 +4390,7 @@
 <script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
 
 <script>
-    const swup = new Swup({
+    window.swup = new Swup({
         plugins: [
             new SwupScriptsPlugin({
                 optin: true,
@@ -4359,48 +4406,23 @@
         ],
         containers: ["#swup"],
     });
+
+    window.dispatchEvent(
+        new CustomEvent("redefine:swup:ready", {
+            detail: {
+                swup: window.swup,
+            },
+        }),
+    );
 </script>
 
 
 
 
 	
-<script src="/js/build/tools/imageViewer.js" type="module"></script>
-
-<script src="/js/build/utils.js" type="module"></script>
-
 <script src="/js/build/main.js" type="module"></script>
 
-<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
 
-<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
-
-<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
-
-<script src="/js/build/layouts/categoryList.js" type="module"></script>
-
-
-
-    
-<script src="/js/build/tools/localSearch.js" type="module"></script>
-
-
-
-
-    
-<script src="/js/build/tools/codeBlock.js" type="module"></script>
-
-
-
-
-    
-<script src="/js/build/layouts/lazyload.js" type="module"></script>
-
-
-
-
-    
-<script src="/js/build/tools/runtime.js"></script>
 
     
 <script src="/js/build/libs/odometer.min.js"></script>
@@ -4411,11 +4433,11 @@
 
 
 
-  
-<script src="/js/build/libs/Typed.min.js"></script>
+
+
 
   
-<script src="/js/build/plugins/typed.js" type="module"></script>
+<script src="/js/build/libs/Typed.min.js"></script>
 
 
 
@@ -4425,37 +4447,14 @@
 <script src="/js/build/libs/mermaid.min.js"></script>
 
     
-    
-<script src="/js/build/plugins/mermaid.js"></script>
 
 
 
-
-
-
-    
-<script src="/js/build/libs/anime.min.js"></script>
-
-
-
-
-
-    
-<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
-
-<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
-
-<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
 
 
 
 
 <script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
-
-
-<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
-
-
 
 
 

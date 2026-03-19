@@ -7443,34 +7443,71 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
 <li><p>Initialize Attributes with Gameplay Effects</p>
 <p>15:52</p>
 </li>
-<li><p>Attribute Based Modifiers</p>
-<p>09:09</p>
-</li>
-<li><p>Modifier Order of Operations</p>
-<p>11:08</p>
-</li>
-<li><p>Modifier Coefficients</p>
-<p>06:54</p>
-</li>
-<li><p>Secondary Attributes</p>
-<p>13:47</p>
-</li>
-<li><p>Derived Attributes</p>
-<p>31:39</p>
-</li>
-<li><p>Custom Calculations</p>
-<p>06:14</p>
-</li>
-<li><p>Player Level and Combat Interface</p>
-<p>13:07</p>
-</li>
-<li><p>Modifier Magnitude Calculations</p>
-<p>37:27</p>
-</li>
-<li><p>Initializing Vital Attributes</p>
-<p>07:47</p>
-</li>
 </ul>
+<h3 id="🎮-使用GameplayEffect初始化属性"><a href="#🎮-使用GameplayEffect初始化属性" class="headerlink" title="🎮 使用GameplayEffect初始化属性"></a>🎮 <strong>使用GameplayEffect初始化属性</strong></h3><h4 id="1-新增DefaultPrimaryAttributes属性"><a href="#1-新增DefaultPrimaryAttributes属性" class="headerlink" title="1. 新增DefaultPrimaryAttributes属性"></a><strong>1. 新增DefaultPrimaryAttributes属性</strong></h4>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在AuraCharacterBase类中</span></span><br><span class="line"><span class="built_in">UPROPERTY</span>(BlueprintReadOnly, EditAnywhere, Category = <span class="string">&quot;Attributes&quot;</span>)</span><br><span class="line">TSubclassOf&lt;UGameplayEffect&gt; DefaultPrimaryAttributes;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="属性说明-2"><a href="#属性说明-2" class="headerlink" title="属性说明"></a><strong>属性说明</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">BlueprintReadOnly:    <span class="comment">// 蓝图可以读取</span></span><br><span class="line">EditAnywhere:         <span class="comment">// 在任何地方都可编辑（实例和默认值）</span></span><br><span class="line">Category = <span class="string">&quot;Attributes&quot;</span>: <span class="comment">// 在编辑器&quot;Attributes&quot;分类下</span></span><br><span class="line">TSubclassOf&lt;UGameplayEffect&gt;: <span class="comment">// 必须是UGameplayEffect或其子类</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="2-InitializePrimaryAttributes函数"><a href="#2-InitializePrimaryAttributes函数" class="headerlink" title="2. InitializePrimaryAttributes函数"></a><strong>2. InitializePrimaryAttributes函数</strong></h4>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 初始化主属性函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">AAuraCharacterBase::InitializePrimaryAttributes</span><span class="params">()</span> <span class="type">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 1. 检查ASC是否有效</span></span><br><span class="line">    <span class="built_in">check</span>(<span class="built_in">IsValid</span>(<span class="built_in">GetAbilitySystemComponent</span>()));</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2. 检查DefaultPrimaryAttributes是否有效</span></span><br><span class="line">    <span class="built_in">check</span>(DefaultPrimaryAttributes);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3. 创建效果上下文</span></span><br><span class="line">    <span class="type">const</span> FGameplayEffectContextHandle ContextHandle = </span><br><span class="line">        <span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">MakeEffectContext</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 4. 创建效果规格</span></span><br><span class="line">    <span class="type">const</span> FGameplayEffectSpecHandle SpecHandle = </span><br><span class="line">        <span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">MakeOutgoingSpec</span>(</span><br><span class="line">            DefaultPrimaryAttributes,  <span class="comment">// 效果类</span></span><br><span class="line">            <span class="number">1.f</span>,                       <span class="comment">// 等级</span></span><br><span class="line">            ContextHandle              <span class="comment">// 上下文</span></span><br><span class="line">        );</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 5. 应用效果到自身</span></span><br><span class="line">    <span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">ApplyGameplayEffectSpecToTarget</span>(</span><br><span class="line">        *SpecHandle.Data.<span class="built_in">Get</span>(),           <span class="comment">// 效果规格数据</span></span><br><span class="line">        <span class="built_in">GetAbilitySystemComponent</span>()       <span class="comment">// 目标ASC（自身）</span></span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="3-InitAbilityActorInfo函数扩展"><a href="#3-InitAbilityActorInfo函数扩展" class="headerlink" title="3. InitAbilityActorInfo函数扩展"></a><strong>3. InitAbilityActorInfo函数扩展</strong></h4>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在AuraCharacter::InitAbilityActorInfo末尾添加</span></span><br><span class="line"><span class="built_in">InitializePrimaryAttributes</span>();</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a><strong>执行顺序</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 完整的初始化流程：</span></span><br><span class="line"><span class="number">1.</span> 获取PlayerState和ASC</span><br><span class="line"><span class="number">2.</span> 初始化ASC的AbilityActorInfo</span><br><span class="line"><span class="number">3.</span> 设置AbilityActorInfo（绑定委托）</span><br><span class="line"><span class="number">4.</span> 保存ASC和AttributeSet引用</span><br><span class="line"><span class="number">5.</span> 初始化UI覆盖层</span><br><span class="line"><span class="number">6.</span> 初始化主属性 ← 新增步骤</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="4-check宏的使用"><a href="#4-check宏的使用" class="headerlink" title="4. check宏的使用"></a><strong>4. check宏的使用</strong></h4>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 检查ASC是否有效</span></span><br><span class="line"><span class="built_in">check</span>(<span class="built_in">IsValid</span>(<span class="built_in">GetAbilitySystemComponent</span>()));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查DefaultPrimaryAttributes是否设置</span></span><br><span class="line"><span class="built_in">check</span>(DefaultPrimaryAttributes);</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="check宏的作用"><a href="#check宏的作用" class="headerlink" title="check宏的作用"></a><strong>check宏的作用</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 开发时断言检查</span></span><br><span class="line"><span class="comment">// 如果条件为false，程序崩溃并显示错误信息</span></span><br><span class="line"><span class="comment">// 发布版本中自动移除，不影响性能</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="5-GameplayEffect创建流程"><a href="#5-GameplayEffect创建流程" class="headerlink" title="5. GameplayEffect创建流程"></a><strong>5. GameplayEffect创建流程</strong></h4><h5 id="MakeEffectContext-1"><a href="#MakeEffectContext-1" class="headerlink" title="MakeEffectContext"></a><strong>MakeEffectContext</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">MakeEffectContext</span>()</span><br><span class="line"><span class="comment">// 创建空的GameplayEffect上下文</span></span><br><span class="line"><span class="comment">// 可以添加来源、目标等信息</span></span><br></pre></td></tr></table></figure></div>
+
+<h5 id="MakeOutgoingSpec-1"><a href="#MakeOutgoingSpec-1" class="headerlink" title="MakeOutgoingSpec"></a><strong>MakeOutgoingSpec</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">MakeOutgoingSpec</span>(</span><br><span class="line">    DefaultPrimaryAttributes,  <span class="comment">// 参数1：GameplayEffect类</span></span><br><span class="line">    <span class="number">1.f</span>,                       <span class="comment">// 参数2：效果等级</span></span><br><span class="line">    ContextHandle              <span class="comment">// 参数3：效果上下文</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="ApplyGameplayEffectSpecToTarget"><a href="#ApplyGameplayEffectSpecToTarget" class="headerlink" title="ApplyGameplayEffectSpecToTarget"></a><strong>ApplyGameplayEffectSpecToTarget</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">GetAbilitySystemComponent</span>()-&gt;<span class="built_in">ApplyGameplayEffectSpecToTarget</span>(</span><br><span class="line">    *SpecHandle.Data.<span class="built_in">Get</span>(),      <span class="comment">// 参数1：效果规格数据</span></span><br><span class="line">    <span class="built_in">GetAbilitySystemComponent</span>()  <span class="comment">// 参数2：目标ASC（自身）</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="6-为什么使用GameplayEffect初始化属性"><a href="#6-为什么使用GameplayEffect初始化属性" class="headerlink" title="6. 为什么使用GameplayEffect初始化属性"></a><strong>6. 为什么使用GameplayEffect初始化属性</strong></h4><h5 id="与传统方式的对比"><a href="#与传统方式的对比" class="headerlink" title="与传统方式的对比"></a><strong>与传统方式的对比</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 传统方式（直接设置）：</span></span><br><span class="line">AttributeSet-&gt;<span class="built_in">SetStrength</span>(<span class="number">10.f</span>);</span><br><span class="line">AttributeSet-&gt;<span class="built_in">SetIntelligence</span>(<span class="number">8.f</span>);</span><br><span class="line"><span class="comment">// 缺点：硬编码，无法配置，不触发GAS事件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// GameplayEffect方式：</span></span><br><span class="line"><span class="number">1.</span> 创建GameplayEffect蓝图</span><br><span class="line"><span class="number">2.</span> 配置属性修改</span><br><span class="line"><span class="number">3.</span> 通过ASC应用</span><br><span class="line"><span class="comment">// 优点：可配置，触发GAS事件，支持网络复制</span></span><br></pre></td></tr></table></figure></div>
+
+<h5 id="配置驱动的优势"><a href="#配置驱动的优势" class="headerlink" title="配置驱动的优势"></a><strong>配置驱动的优势</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在GameplayEffect蓝图中配置：</span></span><br><span class="line"><span class="number">1.</span> 力量：<span class="number">10</span></span><br><span class="line"><span class="number">2.</span> 智力：<span class="number">8</span>  </span><br><span class="line"><span class="number">3.</span> 敏捷：<span class="number">12</span></span><br><span class="line"><span class="number">4.</span> 体质：<span class="number">14</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 不同角色可以使用不同的GameplayEffect</span></span><br><span class="line"><span class="comment">// 非程序员可以轻松调整数值</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="7-预期的GameplayEffect配置"><a href="#7-预期的GameplayEffect配置" class="headerlink" title="7. 预期的GameplayEffect配置"></a><strong>7. 预期的GameplayEffect配置</strong></h4><h5 id="DefaultPrimaryAttributes-GameplayEffect"><a href="#DefaultPrimaryAttributes-GameplayEffect" class="headerlink" title="DefaultPrimaryAttributes GameplayEffect"></a><strong>DefaultPrimaryAttributes GameplayEffect</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 效果类型：Instant（即时）</span></span><br><span class="line"><span class="comment">// 属性修改：</span></span><br><span class="line"><span class="number">1.</span> Strength: +<span class="number">10</span> (Additive)</span><br><span class="line"><span class="number">2.</span> Intelligence: +<span class="number">8</span> (Additive)</span><br><span class="line"><span class="number">3.</span> Dexterity: +<span class="number">12</span> (Additive)  </span><br><span class="line"><span class="number">4.</span> Vitality: +<span class="number">14</span> (Additive)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 作用：设置角色的基础属性值</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="8-当前代码的问题"><a href="#8-当前代码的问题" class="headerlink" title="8. 当前代码的问题"></a><strong>8. 当前代码的问题</strong></h4><h5 id="网络复制考虑"><a href="#网络复制考虑" class="headerlink" title="网络复制考虑"></a><strong>网络复制考虑</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如果角色是网络复制的</span></span><br><span class="line"><span class="comment">// 需要在服务器端初始化属性</span></span><br><span class="line"><span class="comment">// 客户端会通过复制获得属性值</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="9-设计模式：模板方法模式"><a href="#9-设计模式：模板方法模式" class="headerlink" title="9. 设计模式：模板方法模式"></a><strong>9. 设计模式：模板方法模式</strong></h4><h5 id="基类提供框架"><a href="#基类提供框架" class="headerlink" title="基类提供框架"></a><strong>基类提供框架</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// AAuraCharacterBase（基类）：</span></span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">InitAbilityActorInfo</span><span class="params">()</span></span>;  <span class="comment">// 框架方法</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitializePrimaryAttributes</span><span class="params">()</span></span>;   <span class="comment">// 具体步骤（新增）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// AAuraCharacter（派生类）：</span></span><br><span class="line">重写InitAbilityActorInfo，调用基类实现</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="执行流程模板"><a href="#执行流程模板" class="headerlink" title="执行流程模板"></a><strong>执行流程模板</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 模板方法模式：</span></span><br><span class="line"><span class="number">1.</span> 初始化ASC基础信息（基类）</span><br><span class="line"><span class="number">2.</span> 设置AbilityActorInfo（派生类）</span><br><span class="line"><span class="number">3.</span> 初始化UI（派生类）</span><br><span class="line"><span class="number">4.</span> 初始化属性（基类）← 新增</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="10-与现有系统的集成"><a href="#10-与现有系统的集成" class="headerlink" title="10. 与现有系统的集成"></a><strong>10. 与现有系统的集成</strong></h4><h5 id="与AttributeSet的配合"><a href="#与AttributeSet的配合" class="headerlink" title="与AttributeSet的配合"></a><strong>与AttributeSet的配合</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// AttributeSet中定义了属性：</span></span><br><span class="line">Strength, Intelligence, Dexterity, Vitality</span><br><span class="line"></span><br><span class="line"><span class="comment">// GameplayEffect修改这些属性</span></span><br><span class="line"><span class="comment">// 触发AttributeSet中的：</span></span><br><span class="line"><span class="number">1.</span> PreAttributeChange（验证）</span><br><span class="line"><span class="number">2.</span> PostGameplayEffectExecute（后处理）</span><br><span class="line"><span class="number">3.</span> OnRep函数（网络复制）</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="与UI系统的集成"><a href="#与UI系统的集成" class="headerlink" title="与UI系统的集成"></a><strong>与UI系统的集成</strong></h5>  <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 属性初始化后：</span></span><br><span class="line"><span class="number">1.</span> AttributeSet属性值更新</span><br><span class="line"><span class="number">2.</span> 触发属性变化委托</span><br><span class="line"><span class="number">3.</span> WidgetController收到通知</span><br><span class="line"><span class="number">4.</span> UI更新显示</span><br></pre></td></tr></table></figure></div>
+
+<p>  <strong>总结</strong>：这个系统使用GameplayEffect来初始化角色的主属性，实现了配置驱动的属性设置。通过GameplayEffect系统，属性初始化可以触发完整的GAS事件流程，支持网络复制，并且可以在蓝图中灵活配置。</p>
+<p>- </p>
+<p>  Attribute Based Modifiers</p>
+<p>  09:09</p>
+<p>- </p>
+<p>  Modifier Order of Operations</p>
+<p>  11:08</p>
+<p>- </p>
+<p>  Modifier Coefficients</p>
+<p>  06:54</p>
+<p>- </p>
+<p>  Secondary Attributes</p>
+<p>  13:47</p>
+<p>- </p>
+<p>  Derived Attributes</p>
+<p>  31:39</p>
+<p>- </p>
+<p>  Custom Calculations</p>
+<p>  06:14</p>
+<p>- </p>
+<p>  Player Level and Combat Interface</p>
+<p>  13:07</p>
+<p>- </p>
+<p>  Modifier Magnitude Calculations</p>
+<p>  37:27</p>
+<p>- </p>
+<p>  Initializing Vital Attributes</p>
+<p>  07:47</p>
 <h2 id="8-Attribute-Menu-属性菜单"><a href="#8-Attribute-Menu-属性菜单" class="headerlink" title="8.Attribute Menu &#x2F; 属性菜单"></a>8.Attribute Menu &#x2F; 属性菜单</h2><ul>
 <li><p>21个讲座·4 小时 42 分钟 &#x2F; 21 Lectures · 4 Hours 42 Minutes</p>
 </li>
@@ -8631,6 +8668,22 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>游戏开发</category>
+        <category>Unreal Engine</category>
+      </categories>
+      <tags>
+        <tag>作品集</tag>
+        <tag>C++</tag>
+        <tag>Unreal Engine</tag>
+        <tag>GAS</tag>
+        <tag>学习报告</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《GAS_Nexus》技术报告</title>
+    <url>/2026/03/19/%E3%80%8AGAS-Nexus%E3%80%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>游戏开发</category>
         <category>Unreal Engine</category>
